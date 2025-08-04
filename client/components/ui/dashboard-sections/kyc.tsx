@@ -57,7 +57,7 @@ export function KYCSection() {
       description: "Passport, Driver's License, or National ID Card",
       required: true,
       status: "uploaded",
-      icon: <Passport className="h-6 w-6" />
+      icon: <IdCard className="h-6 w-6" />
     },
     {
       id: "addressProof",
