@@ -432,7 +432,10 @@ export default function Dashboard() {
 
                 {/* Quick Actions */}
                 <div className="grid md:grid-cols-3 gap-6">
-                  <Card className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow">
+                  <Card
+                    className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+                    onClick={() => setCurrentView("shipments")}
+                  >
                     <CardContent className="p-6 text-center">
                       <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                         <Package className="h-6 w-6 text-blue-600" />
@@ -446,7 +449,10 @@ export default function Dashboard() {
                     </CardContent>
                   </Card>
 
-                  <Card className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow">
+                  <Card
+                    className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+                    onClick={() => setCurrentView("tracking")}
+                  >
                     <CardContent className="p-6 text-center">
                       <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                         <MapPin className="h-6 w-6 text-green-600" />
@@ -460,7 +466,10 @@ export default function Dashboard() {
                     </CardContent>
                   </Card>
 
-                  <Card className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow">
+                  <Card
+                    className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+                    onClick={() => setCurrentView("payments")}
+                  >
                     <CardContent className="p-6 text-center">
                       <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                         <DollarSign className="h-6 w-6 text-orange-600" />
