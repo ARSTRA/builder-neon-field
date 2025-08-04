@@ -434,7 +434,7 @@ export default function Track() {
                   <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <Download className="h-8 w-8 text-royal-600" />
                   </div>
-                  <h4 className="font-semibold text-gray-8007 mb-2">Digital Documentation</h4>
+                  <h4 className="font-semibold text-gray-800 mb-2">Digital Documentation</h4>
                   <p className="text-sm text-gray-600">Electronic receipts, invoices, and customs documentation</p>
                 </div>
               </div>
