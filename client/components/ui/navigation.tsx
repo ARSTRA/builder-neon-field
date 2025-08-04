@@ -109,15 +109,26 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Button
-              onClick={() => {
-                setIsQuoteModalOpen(true);
-                setIsMenuOpen(false);
-              }}
-              className="w-full mt-4 bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white"
-            >
-              Get Quote
-            </Button>
+            <div className="space-y-3 mt-4">
+              <Button
+                onClick={() => {
+                  setIsQuoteModalOpen(true);
+                  setIsMenuOpen(false);
+                }}
+                className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white"
+              >
+                Get Quote
+              </Button>
+              <Link to="/login" className="block w-full">
+                <Button
+                  variant="outline"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white"
+                >
+                  Sign In
+                </Button>
+              </Link>
+            </div>
           </div>
         )}
       </div>
