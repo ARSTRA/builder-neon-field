@@ -32,7 +32,7 @@ import {
   AlertTriangle,
   Star,
   Mail,
-  Phone
+  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -41,12 +41,29 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Progress } from "@/components/ui/progress";
 import { UserManagement } from "@/components/ui/admin-sections/user-management";
 import { ChatManagement } from "@/components/ui/admin-sections/chat-management";
@@ -71,44 +88,44 @@ export default function Admin() {
       id: "dashboard",
       label: "Dashboard",
       icon: <LayoutDashboard className="h-5 w-5" />,
-      color: "text-blue-600"
+      color: "text-blue-600",
     },
     {
       id: "users",
       label: "User Management",
       icon: <Users className="h-5 w-5" />,
-      color: "text-green-600"
+      color: "text-green-600",
     },
     {
       id: "payments",
       label: "Payment & Currency",
       icon: <CreditCard className="h-5 w-5" />,
-      color: "text-purple-600"
+      color: "text-purple-600",
     },
     {
       id: "tracking",
       label: "Tracking Management",
       icon: <Package className="h-5 w-5" />,
-      color: "text-orange-600"
+      color: "text-orange-600",
     },
     {
       id: "chat",
       label: "Live Chat Support",
       icon: <MessageSquare className="h-5 w-5" />,
-      color: "text-pink-600"
+      color: "text-pink-600",
     },
     {
       id: "contacts",
       label: "Contact Management",
       icon: <Mail className="h-5 w-5" />,
-      color: "text-teal-600"
+      color: "text-teal-600",
     },
     {
       id: "general",
       label: "General Settings",
       icon: <Settings className="h-5 w-5" />,
-      color: "text-gray-600"
-    }
+      color: "text-gray-600",
+    },
   ];
 
   const handleLogout = () => {
@@ -124,7 +141,7 @@ export default function Admin() {
       change: "+12.5%",
       icon: <Users className="h-6 w-6" />,
       color: "bg-blue-500",
-      trend: "up"
+      trend: "up",
     },
     {
       title: "Active Shipments",
@@ -132,7 +149,7 @@ export default function Admin() {
       change: "+8.2%",
       icon: <Package className="h-6 w-6" />,
       color: "bg-green-500",
-      trend: "up"
+      trend: "up",
     },
     {
       title: "Monthly Revenue",
@@ -140,7 +157,7 @@ export default function Admin() {
       change: "+15.3%",
       icon: <DollarSign className="h-6 w-6" />,
       color: "bg-purple-500",
-      trend: "up"
+      trend: "up",
     },
     {
       title: "Support Tickets",
@@ -148,8 +165,8 @@ export default function Admin() {
       change: "-5.7%",
       icon: <MessageSquare className="h-6 w-6" />,
       color: "bg-orange-500",
-      trend: "down"
-    }
+      trend: "down",
+    },
   ];
 
   const recentUsers = [
@@ -160,7 +177,7 @@ export default function Admin() {
       status: "active",
       joinDate: "2024-12-10",
       shipments: 23,
-      revenue: "$12,450"
+      revenue: "$12,450",
     },
     {
       id: "2",
@@ -169,7 +186,7 @@ export default function Admin() {
       status: "active",
       joinDate: "2024-12-08",
       shipments: 45,
-      revenue: "$28,670"
+      revenue: "$28,670",
     },
     {
       id: "3",
@@ -178,8 +195,8 @@ export default function Admin() {
       status: "pending",
       joinDate: "2024-12-12",
       shipments: 0,
-      revenue: "$0"
-    }
+      revenue: "$0",
+    },
   ];
 
   const activeChatSessions = [
@@ -190,7 +207,7 @@ export default function Admin() {
       topic: "Shipment Tracking",
       duration: "5 min",
       status: "active",
-      priority: "normal"
+      priority: "normal",
     },
     {
       id: "2",
@@ -199,7 +216,7 @@ export default function Admin() {
       topic: "Payment Issue",
       duration: "12 min",
       status: "active",
-      priority: "high"
+      priority: "high",
     },
     {
       id: "3",
@@ -208,8 +225,8 @@ export default function Admin() {
       topic: "Service Inquiry",
       duration: "3 min",
       status: "active",
-      priority: "low"
-    }
+      priority: "low",
+    },
   ];
 
   const renderDashboard = () => (
@@ -218,7 +235,9 @@ export default function Admin() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
-          <p className="text-gray-600">Welcome back! Here's what's happening with GlobalTrack today.</p>
+          <p className="text-gray-600">
+            Welcome back! Here's what's happening with GlobalTrack today.
+          </p>
         </div>
         <div className="mt-4 sm:mt-0 flex space-x-3">
           <Button variant="outline">
@@ -235,18 +254,31 @@ export default function Admin() {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {dashboardStats.map((stat, index) => (
-          <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+          <Card
+            key={index}
+            className="border-0 shadow-lg hover:shadow-xl transition-shadow"
+          >
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">{stat.title}</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-1">{stat.value}</p>
+                  <p className="text-sm font-medium text-gray-600">
+                    {stat.title}
+                  </p>
+                  <p className="text-3xl font-bold text-gray-900 mt-1">
+                    {stat.value}
+                  </p>
                   <div className="flex items-center mt-2">
-                    <TrendingUp className={`h-4 w-4 mr-1 ${stat.trend === 'up' ? 'text-green-500' : 'text-red-500'}`} />
-                    <span className={`text-sm font-medium ${stat.trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>
+                    <TrendingUp
+                      className={`h-4 w-4 mr-1 ${stat.trend === "up" ? "text-green-500" : "text-red-500"}`}
+                    />
+                    <span
+                      className={`text-sm font-medium ${stat.trend === "up" ? "text-green-600" : "text-red-600"}`}
+                    >
                       {stat.change}
                     </span>
-                    <span className="text-sm text-gray-500 ml-1">from last month</span>
+                    <span className="text-sm text-gray-500 ml-1">
+                      from last month
+                    </span>
                   </div>
                 </div>
                 <div className={`p-3 rounded-lg ${stat.color}`}>
@@ -264,8 +296,8 @@ export default function Admin() {
         <Card className="border-0 shadow-lg">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>Recent User Registrations</CardTitle>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               onClick={() => setCurrentView("users")}
             >
@@ -275,10 +307,18 @@ export default function Admin() {
           <CardContent>
             <div className="space-y-4">
               {recentUsers.map((user) => (
-                <div key={user.id} className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                <div
+                  key={user.id}
+                  className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50 transition-colors"
+                >
                   <div className="flex items-center space-x-3">
                     <Avatar className="h-10 w-10">
-                      <AvatarFallback>{user.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                      <AvatarFallback>
+                        {user.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </AvatarFallback>
                     </Avatar>
                     <div>
                       <p className="font-medium text-gray-900">{user.name}</p>
@@ -286,10 +326,18 @@ export default function Admin() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <Badge className={user.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}>
+                    <Badge
+                      className={
+                        user.status === "active"
+                          ? "bg-green-100 text-green-800"
+                          : "bg-yellow-100 text-yellow-800"
+                      }
+                    >
                       {user.status}
                     </Badge>
-                    <p className="text-sm text-gray-500 mt-1">{user.joinDate}</p>
+                    <p className="text-sm text-gray-500 mt-1">
+                      {user.joinDate}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -301,8 +349,8 @@ export default function Admin() {
         <Card className="border-0 shadow-lg">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>Active Chat Sessions</CardTitle>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               onClick={() => setCurrentView("chat")}
             >
@@ -312,23 +360,34 @@ export default function Admin() {
           <CardContent>
             <div className="space-y-4">
               {activeChatSessions.map((session) => (
-                <div key={session.id} className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                <div
+                  key={session.id}
+                  className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50 transition-colors"
+                >
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                     <div>
-                      <p className="font-medium text-gray-900">{session.user}</p>
+                      <p className="font-medium text-gray-900">
+                        {session.user}
+                      </p>
                       <p className="text-sm text-gray-600">{session.topic}</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <Badge className={
-                      session.priority === 'high' ? 'bg-red-100 text-red-800' :
-                      session.priority === 'normal' ? 'bg-blue-100 text-blue-800' :
-                      'bg-gray-100 text-gray-800'
-                    }>
+                    <Badge
+                      className={
+                        session.priority === "high"
+                          ? "bg-red-100 text-red-800"
+                          : session.priority === "normal"
+                            ? "bg-blue-100 text-blue-800"
+                            : "bg-gray-100 text-gray-800"
+                      }
+                    >
                       {session.priority}
                     </Badge>
-                    <p className="text-sm text-gray-500 mt-1">{session.duration}</p>
+                    <p className="text-sm text-gray-500 mt-1">
+                      {session.duration}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -393,7 +452,9 @@ export default function Admin() {
                   <Truck className="h-4 w-4 text-orange-600" />
                   <span className="text-sm">GT240003</span>
                 </div>
-                <Badge className="bg-yellow-100 text-yellow-800">Processing</Badge>
+                <Badge className="bg-yellow-100 text-yellow-800">
+                  Processing
+                </Badge>
               </div>
             </div>
           </CardContent>
@@ -404,24 +465,24 @@ export default function Admin() {
             <CardTitle>Quick Actions</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="w-full justify-start"
               onClick={() => setCurrentView("users")}
             >
               <Users className="h-4 w-4 mr-2" />
               Add New User
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="w-full justify-start"
               onClick={() => setCurrentView("tracking")}
             >
               <Package className="h-4 w-4 mr-2" />
               Create Shipment
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="w-full justify-start"
               onClick={() => setCurrentView("chat")}
             >
@@ -446,7 +507,11 @@ export default function Admin() {
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                 className="lg:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100"
               >
-                {isSidebarOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isSidebarOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
               </button>
 
               <div className="flex items-center space-x-2 ml-4 lg:ml-0">
@@ -454,7 +519,9 @@ export default function Admin() {
                   <span className="text-white font-bold text-sm">GT</span>
                 </div>
                 <div>
-                  <span className="text-xl font-bold text-royal-600">GlobalTrack</span>
+                  <span className="text-xl font-bold text-royal-600">
+                    GlobalTrack
+                  </span>
                   <span className="text-lg text-orange-500 ml-1">Admin</span>
                 </div>
               </div>
@@ -485,14 +552,21 @@ export default function Admin() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="flex items-center space-x-2">
+                  <Button
+                    variant="ghost"
+                    className="flex items-center space-x-2"
+                  >
                     <Avatar className="h-8 w-8">
                       <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" />
                       <AvatarFallback>AD</AvatarFallback>
                     </Avatar>
                     <div className="hidden md:block text-left">
-                      <p className="text-sm font-medium text-gray-900">Admin User</p>
-                      <p className="text-xs text-gray-500">admin@globaltrack.com</p>
+                      <p className="text-sm font-medium text-gray-900">
+                        Admin User
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        admin@globaltrack.com
+                      </p>
                     </div>
                   </Button>
                 </DropdownMenuTrigger>
@@ -510,7 +584,9 @@ export default function Admin() {
 
       <div className="flex">
         {/* Sidebar */}
-        <div className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} fixed inset-y-0 left-0 z-30 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0`}>
+        <div
+          className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} fixed inset-y-0 left-0 z-30 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0`}
+        >
           <div className="flex flex-col h-full pt-16 lg:pt-0">
             <nav className="flex-1 px-4 py-6 space-y-2">
               {sidebarItems.map((item) => (
@@ -526,7 +602,9 @@ export default function Admin() {
                       : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                   }`}
                 >
-                  <div className={`${currentView === item.id ? item.color : 'text-gray-400 group-hover:text-gray-600'} transition-colors`}>
+                  <div
+                    className={`${currentView === item.id ? item.color : "text-gray-400 group-hover:text-gray-600"} transition-colors`}
+                  >
                     {item.icon}
                   </div>
                   <span className="font-medium">{item.label}</span>
@@ -547,9 +625,16 @@ export default function Admin() {
                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <CreditCard className="h-8 w-8 text-gray-400" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Payment & Currency Management</h3>
-                <p className="text-gray-600 mb-6">Payment management interface is being loaded...</p>
-                <Button onClick={() => setCurrentView("dashboard")} variant="outline">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Payment & Currency Management
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Payment management interface is being loaded...
+                </p>
+                <Button
+                  onClick={() => setCurrentView("dashboard")}
+                  variant="outline"
+                >
                   Back to Dashboard
                 </Button>
               </div>
@@ -559,9 +644,16 @@ export default function Admin() {
                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Package className="h-8 w-8 text-gray-400" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Tracking Management</h3>
-                <p className="text-gray-600 mb-6">Tracking management interface is being loaded...</p>
-                <Button onClick={() => setCurrentView("dashboard")} variant="outline">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Tracking Management
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Tracking management interface is being loaded...
+                </p>
+                <Button
+                  onClick={() => setCurrentView("dashboard")}
+                  variant="outline"
+                >
                   Back to Dashboard
                 </Button>
               </div>
@@ -571,9 +663,16 @@ export default function Admin() {
                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Mail className="h-8 w-8 text-gray-400" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Contact Management</h3>
-                <p className="text-gray-600 mb-6">Contact management interface is being loaded...</p>
-                <Button onClick={() => setCurrentView("dashboard")} variant="outline">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Contact Management
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Contact management interface is being loaded...
+                </p>
+                <Button
+                  onClick={() => setCurrentView("dashboard")}
+                  variant="outline"
+                >
                   Back to Dashboard
                 </Button>
               </div>
@@ -583,9 +682,16 @@ export default function Admin() {
                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Settings className="h-8 w-8 text-gray-400" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">General Settings</h3>
-                <p className="text-gray-600 mb-6">General settings interface is being loaded...</p>
-                <Button onClick={() => setCurrentView("dashboard")} variant="outline">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  General Settings
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  General settings interface is being loaded...
+                </p>
+                <Button
+                  onClick={() => setCurrentView("dashboard")}
+                  variant="outline"
+                >
                   Back to Dashboard
                 </Button>
               </div>

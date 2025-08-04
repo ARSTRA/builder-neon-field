@@ -13,14 +13,20 @@ import {
   Download,
   Eye,
   RefreshCw,
-  X
+  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -28,11 +34,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function KYCSection() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [uploadedFiles, setUploadedFiles] = useState<{[key: string]: File | null}>({
+  const [uploadedFiles, setUploadedFiles] = useState<{
+    [key: string]: File | null;
+  }>({
     passport: null,
     addressProof: null,
     businessLicense: null,
-    bankStatement: null
+    bankStatement: null,
   });
 
   const kycStatus = {
@@ -40,14 +48,14 @@ export function KYCSection() {
     personalInfo: "completed",
     documents: "in_progress",
     verification: "pending",
-    completionPercentage: 65
+    completionPercentage: 65,
   };
 
   const steps = [
     { id: 1, title: "Personal Information", status: "completed" },
     { id: 2, title: "Document Upload", status: "in_progress" },
     { id: 3, title: "Verification Review", status: "pending" },
-    { id: 4, title: "Account Approval", status: "pending" }
+    { id: 4, title: "Account Approval", status: "pending" },
   ];
 
   const requiredDocuments = [
@@ -57,15 +65,16 @@ export function KYCSection() {
       description: "Passport, Driver's License, or National ID Card",
       required: true,
       status: "uploaded",
-      icon: <IdCard className="h-6 w-6" />
+      icon: <IdCard className="h-6 w-6" />,
     },
     {
       id: "addressProof",
       title: "Proof of Address",
-      description: "Utility bill, Bank statement, or Lease agreement (within 3 months)",
+      description:
+        "Utility bill, Bank statement, or Lease agreement (within 3 months)",
       required: true,
       status: "pending",
-      icon: <FileText className="h-6 w-6" />
+      icon: <FileText className="h-6 w-6" />,
     },
     {
       id: "businessLicense",
@@ -73,7 +82,7 @@ export function KYCSection() {
       description: "Certificate of incorporation or Business registration",
       required: false,
       status: "pending",
-      icon: <Building className="h-6 w-6" />
+      icon: <Building className="h-6 w-6" />,
     },
     {
       id: "bankStatement",
@@ -81,8 +90,8 @@ export function KYCSection() {
       description: "Recent bank statement (within 3 months)",
       required: false,
       status: "pending",
-      icon: <CreditCard className="h-6 w-6" />
-    }
+      icon: <CreditCard className="h-6 w-6" />,
+    },
   ];
 
   const getStatusIcon = (status: string) => {
@@ -115,20 +124,23 @@ export function KYCSection() {
     }
   };
 
-  const handleFileUpload = (documentType: string, event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = (
+    documentType: string,
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const file = event.target.files?.[0];
     if (file) {
-      setUploadedFiles(prev => ({
+      setUploadedFiles((prev) => ({
         ...prev,
-        [documentType]: file
+        [documentType]: file,
       }));
     }
   };
 
   const removeFile = (documentType: string) => {
-    setUploadedFiles(prev => ({
+    setUploadedFiles((prev) => ({
       ...prev,
-      [documentType]: null
+      [documentType]: null,
     }));
   };
 
@@ -138,7 +150,9 @@ export function KYCSection() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">KYC Verification</h1>
-          <p className="text-gray-600">Complete your identity verification to unlock all features</p>
+          <p className="text-gray-600">
+            Complete your identity verification to unlock all features
+          </p>
         </div>
         <div className="mt-4 sm:mt-0">
           <Badge className={getStatusColor(kycStatus.overall)}>
@@ -158,11 +172,15 @@ export function KYCSection() {
         <CardContent>
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-700">Overall Progress</span>
-              <span className="text-sm font-medium text-gray-900">{kycStatus.completionPercentage}%</span>
+              <span className="text-sm font-medium text-gray-700">
+                Overall Progress
+              </span>
+              <span className="text-sm font-medium text-gray-900">
+                {kycStatus.completionPercentage}%
+              </span>
             </div>
             <Progress value={kycStatus.completionPercentage} className="h-2" />
-            
+
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
               {steps.map((step) => (
                 <div
@@ -171,12 +189,14 @@ export function KYCSection() {
                     step.status === "completed"
                       ? "border-green-200 bg-green-50"
                       : step.status === "in_progress"
-                      ? "border-yellow-200 bg-yellow-50"
-                      : "border-gray-200 bg-gray-50"
+                        ? "border-yellow-200 bg-yellow-50"
+                        : "border-gray-200 bg-gray-50"
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-900">Step {step.id}</span>
+                    <span className="text-sm font-medium text-gray-900">
+                      Step {step.id}
+                    </span>
                     {getStatusIcon(step.status)}
                   </div>
                   <p className="text-sm text-gray-600">{step.title}</p>
@@ -199,13 +219,18 @@ export function KYCSection() {
           <Alert>
             <Shield className="h-4 w-4" />
             <AlertDescription>
-              All documents are encrypted and stored securely. We only use this information for verification purposes and comply with all data protection regulations.
+              All documents are encrypted and stored securely. We only use this
+              information for verification purposes and comply with all data
+              protection regulations.
             </AlertDescription>
           </Alert>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {requiredDocuments.map((doc) => (
-              <Card key={doc.id} className="border-2 border-dashed border-gray-200 hover:border-gray-300 transition-colors">
+              <Card
+                key={doc.id}
+                className="border-2 border-dashed border-gray-200 hover:border-gray-300 transition-colors"
+              >
                 <CardContent className="p-6">
                   <div className="text-center">
                     <div className="flex justify-center mb-4">
@@ -213,12 +238,16 @@ export function KYCSection() {
                         {doc.icon}
                       </div>
                     </div>
-                    
+
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       {doc.title}
-                      {doc.required && <span className="text-red-500 ml-1">*</span>}
+                      {doc.required && (
+                        <span className="text-red-500 ml-1">*</span>
+                      )}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-4">{doc.description}</p>
+                    <p className="text-sm text-gray-600 mb-4">
+                      {doc.description}
+                    </p>
 
                     {uploadedFiles[doc.id] ? (
                       <div className="space-y-3">
@@ -229,13 +258,17 @@ export function KYCSection() {
                           </span>
                         </div>
                         <div className="flex space-x-2">
-                          <Button variant="outline" size="sm" className="flex-1">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="flex-1"
+                          >
                             <Eye className="h-4 w-4 mr-2" />
                             Preview
                           </Button>
-                          <Button 
-                            variant="outline" 
-                            size="sm" 
+                          <Button
+                            variant="outline"
+                            size="sm"
                             onClick={() => removeFile(doc.id)}
                             className="text-red-600 hover:text-red-700"
                           >
@@ -257,7 +290,9 @@ export function KYCSection() {
                           className="inline-flex items-center justify-center w-full px-4 py-2 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-gray-400 transition-colors"
                         >
                           <Upload className="h-5 w-5 mr-2 text-gray-400" />
-                          <span className="text-sm font-medium text-gray-600">Upload File</span>
+                          <span className="text-sm font-medium text-gray-600">
+                            Upload File
+                          </span>
                         </label>
                         <p className="text-xs text-gray-500">
                           Supported formats: PDF, JPG, PNG (Max 10MB)
@@ -359,23 +394,36 @@ export function KYCSection() {
                       <SelectItem value="corporation">Corporation</SelectItem>
                       <SelectItem value="llc">LLC</SelectItem>
                       <SelectItem value="partnership">Partnership</SelectItem>
-                      <SelectItem value="sole-proprietorship">Sole Proprietorship</SelectItem>
+                      <SelectItem value="sole-proprietorship">
+                        Sole Proprietorship
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 <div>
                   <Label htmlFor="taxId">Tax ID / EIN</Label>
-                  <Input id="taxId" placeholder="Enter tax identification number" />
+                  <Input
+                    id="taxId"
+                    placeholder="Enter tax identification number"
+                  />
                 </div>
                 <div>
-                  <Label htmlFor="registrationNumber">Business Registration Number</Label>
-                  <Input id="registrationNumber" placeholder="Enter registration number" />
+                  <Label htmlFor="registrationNumber">
+                    Business Registration Number
+                  </Label>
+                  <Input
+                    id="registrationNumber"
+                    placeholder="Enter registration number"
+                  />
                 </div>
               </div>
 
               <div>
                 <Label htmlFor="businessAddress">Business Address</Label>
-                <Textarea id="businessAddress" placeholder="Enter business address" />
+                <Textarea
+                  id="businessAddress"
+                  placeholder="Enter business address"
+                />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -387,7 +435,9 @@ export function KYCSection() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="technology">Technology</SelectItem>
-                      <SelectItem value="manufacturing">Manufacturing</SelectItem>
+                      <SelectItem value="manufacturing">
+                        Manufacturing
+                      </SelectItem>
                       <SelectItem value="retail">Retail</SelectItem>
                       <SelectItem value="healthcare">Healthcare</SelectItem>
                       <SelectItem value="finance">Finance</SelectItem>
@@ -396,7 +446,10 @@ export function KYCSection() {
                 </div>
                 <div>
                   <Label htmlFor="businessWebsite">Business Website</Label>
-                  <Input id="businessWebsite" placeholder="https://example.com" />
+                  <Input
+                    id="businessWebsite"
+                    placeholder="https://example.com"
+                  />
                 </div>
               </div>
             </CardContent>
@@ -412,12 +465,16 @@ export function KYCSection() {
               <Alert>
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription>
-                  Please review all information carefully before submitting. Once submitted, your application will be reviewed within 2-3 business days.
+                  Please review all information carefully before submitting.
+                  Once submitted, your application will be reviewed within 2-3
+                  business days.
                 </AlertDescription>
               </Alert>
 
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Verification Checklist</h3>
+                <h3 className="text-lg font-semibold">
+                  Verification Checklist
+                </h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between p-3 border rounded-lg">
                     <span>Personal Information Complete</span>
@@ -439,19 +496,25 @@ export function KYCSection() {
               </div>
 
               <div className="bg-blue-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-blue-900 mb-2">What happens next?</h4>
+                <h4 className="font-semibold text-blue-900 mb-2">
+                  What happens next?
+                </h4>
                 <ul className="text-sm text-blue-800 space-y-1">
-                  <li>• Your documents will be reviewed by our verification team</li>
-                  <li>• You'll receive email updates on your verification status</li>
+                  <li>
+                    • Your documents will be reviewed by our verification team
+                  </li>
+                  <li>
+                    • You'll receive email updates on your verification status
+                  </li>
                   <li>• The process typically takes 2-3 business days</li>
-                  <li>• Once approved, you'll have access to all premium features</li>
+                  <li>
+                    • Once approved, you'll have access to all premium features
+                  </li>
                 </ul>
               </div>
 
               <div className="flex justify-end space-x-3">
-                <Button variant="outline">
-                  Save as Draft
-                </Button>
+                <Button variant="outline">Save as Draft</Button>
                 <Button className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
                   Submit for Review
                 </Button>

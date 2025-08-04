@@ -1,13 +1,13 @@
 import { useState, useRef, useEffect } from "react";
-import { 
-  MessageCircle, 
-  Send, 
-  X, 
+import {
+  MessageCircle,
+  Send,
+  X,
   Minimize2,
   User,
   Clock,
   Smile,
-  Paperclip
+  Paperclip,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -34,8 +34,8 @@ export function ChatWidget() {
       sender: "system",
       content: "👋 Welcome to GlobalTrack Support! How can we help you today?",
       timestamp: new Date(),
-      status: "read"
-    }
+      status: "read",
+    },
   ]);
   const [newMessage, setNewMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -56,10 +56,10 @@ export function ChatWidget() {
         sender: "user",
         content: newMessage,
         timestamp: new Date(),
-        status: "sent"
+        status: "sent",
       };
 
-      setMessages(prev => [...prev, message]);
+      setMessages((prev) => [...prev, message]);
       setNewMessage("");
 
       // Simulate agent response
@@ -69,17 +69,18 @@ export function ChatWidget() {
         const agentResponse: Message = {
           id: (Date.now() + 1).toString(),
           sender: "agent",
-          content: "Thank you for your message! I'll help you right away. For more detailed assistance, please visit our full chat page.",
+          content:
+            "Thank you for your message! I'll help you right away. For more detailed assistance, please visit our full chat page.",
           timestamp: new Date(),
-          status: "delivered"
+          status: "delivered",
         };
-        setMessages(prev => [...prev, agentResponse]);
+        setMessages((prev) => [...prev, agentResponse]);
       }, 1500);
     }
   };
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   };
 
   // Floating chat button
@@ -102,9 +103,11 @@ export function ChatWidget() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      <Card className={`w-80 shadow-2xl transition-all duration-300 ${
-        isMinimized ? 'h-16' : 'h-96'
-      }`}>
+      <Card
+        className={`w-80 shadow-2xl transition-all duration-300 ${
+          isMinimized ? "h-16" : "h-96"
+        }`}
+      >
         {/* Chat Header */}
         <CardHeader className="bg-gradient-to-r from-royal-600 to-orange-500 text-white rounded-t-lg p-4">
           <div className="flex items-center justify-between">
@@ -151,17 +154,23 @@ export function ChatWidget() {
                     key={message.id}
                     className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
                   >
-                    <div className={`max-w-[70%] rounded-lg px-3 py-2 text-sm ${
-                      message.sender === "user"
-                        ? "bg-gradient-to-r from-royal-600 to-orange-500 text-white"
-                        : message.sender === "system"
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-gray-100 text-gray-900"
-                    }`}>
+                    <div
+                      className={`max-w-[70%] rounded-lg px-3 py-2 text-sm ${
+                        message.sender === "user"
+                          ? "bg-gradient-to-r from-royal-600 to-orange-500 text-white"
+                          : message.sender === "system"
+                            ? "bg-blue-100 text-blue-800"
+                            : "bg-gray-100 text-gray-900"
+                      }`}
+                    >
                       <p>{message.content}</p>
-                      <p className={`text-xs mt-1 ${
-                        message.sender === "user" ? "text-white/70" : "text-gray-500"
-                      }`}>
+                      <p
+                        className={`text-xs mt-1 ${
+                          message.sender === "user"
+                            ? "text-white/70"
+                            : "text-gray-500"
+                        }`}
+                      >
                         {formatTime(message.timestamp)}
                       </p>
                     </div>
@@ -173,8 +182,14 @@ export function ChatWidget() {
                     <div className="bg-gray-100 rounded-lg px-3 py-2">
                       <div className="flex space-x-1">
                         <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
+                        <div
+                          className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                          style={{ animationDelay: "0.1s" }}
+                        ></div>
+                        <div
+                          className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                          style={{ animationDelay: "0.2s" }}
+                        ></div>
                       </div>
                     </div>
                   </div>
@@ -192,7 +207,7 @@ export function ChatWidget() {
                   placeholder="Type a message..."
                   className="text-sm"
                   onKeyPress={(e) => {
-                    if (e.key === 'Enter') {
+                    if (e.key === "Enter") {
                       e.preventDefault();
                       handleSendMessage();
                     }

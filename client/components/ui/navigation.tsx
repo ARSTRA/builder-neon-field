@@ -46,7 +46,10 @@ export function Navigation() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <LogoMark size="sm" className="transition-transform hover:scale-105 mr-3" />
+            <LogoMark
+              size="sm"
+              className="transition-transform hover:scale-105 mr-3"
+            />
             <div>
               <span className="text-xl font-bold text-royal-600">
                 GlobalTrack

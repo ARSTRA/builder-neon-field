@@ -16,7 +16,7 @@ import {
   Package,
   DollarSign,
   Download,
-  Upload
+  Upload,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,12 +24,29 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function UserManagement() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -50,7 +67,8 @@ export function UserManagement() {
       shipments: 23,
       totalSpent: "$12,450",
       kycStatus: "verified",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      avatar:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: "2",
@@ -64,7 +82,8 @@ export function UserManagement() {
       shipments: 45,
       totalSpent: "$28,670",
       kycStatus: "verified",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b332c3f2?w=150&h=150&fit=crop&crop=face"
+      avatar:
+        "https://images.unsplash.com/photo-1494790108755-2616b332c3f2?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: "3",
@@ -78,7 +97,8 @@ export function UserManagement() {
       shipments: 0,
       totalSpent: "$0",
       kycStatus: "pending",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: "4",
@@ -92,7 +112,8 @@ export function UserManagement() {
       shipments: 12,
       totalSpent: "$3,240",
       kycStatus: "rejected",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+      avatar:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: "5",
@@ -106,8 +127,9 @@ export function UserManagement() {
       shipments: 156,
       totalSpent: "$89,320",
       kycStatus: "verified",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
-    }
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    },
   ];
 
   const getStatusColor = (status: string) => {
@@ -149,10 +171,12 @@ export function UserManagement() {
     }
   };
 
-  const filteredUsers = users.filter(user => {
-    const matchesSearch = user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  const filteredUsers = users.filter((user) => {
+    const matchesSearch =
+      user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       user.email.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStatus = filterStatus === "all" || user.status === filterStatus;
+    const matchesStatus =
+      filterStatus === "all" || user.status === filterStatus;
     return matchesSearch && matchesStatus;
   });
 
@@ -177,7 +201,9 @@ export function UserManagement() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">User Management</h1>
-          <p className="text-gray-600">Manage user accounts, permissions, and settings</p>
+          <p className="text-gray-600">
+            Manage user accounts, permissions, and settings
+          </p>
         </div>
         <div className="mt-4 sm:mt-0 flex space-x-3">
           <Button variant="outline">
@@ -188,7 +214,10 @@ export function UserManagement() {
             <Upload className="h-4 w-4 mr-2" />
             Import Users
           </Button>
-          <Dialog open={isAddUserModalOpen} onOpenChange={setIsAddUserModalOpen}>
+          <Dialog
+            open={isAddUserModalOpen}
+            onOpenChange={setIsAddUserModalOpen}
+          >
             <DialogTrigger asChild>
               <Button className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
                 <Plus className="h-4 w-4 mr-2" />
@@ -210,7 +239,7 @@ export function UserManagement() {
                     <Input id="lastName" placeholder="Enter last name" />
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="email">Email Address</Label>
@@ -262,10 +291,17 @@ export function UserManagement() {
                 </div>
 
                 <div className="flex justify-end space-x-3 pt-4">
-                  <Button type="button" variant="outline" onClick={() => setIsAddUserModalOpen(false)}>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => setIsAddUserModalOpen(false)}
+                  >
                     Cancel
                   </Button>
-                  <Button type="submit" className="bg-gradient-to-r from-royal-600 to-orange-500">
+                  <Button
+                    type="submit"
+                    className="bg-gradient-to-r from-royal-600 to-orange-500"
+                  >
                     Create User
                   </Button>
                 </div>
@@ -295,7 +331,9 @@ export function UserManagement() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Active Users</p>
+                <p className="text-sm font-medium text-gray-600">
+                  Active Users
+                </p>
                 <p className="text-2xl font-bold text-gray-900">11,234</p>
               </div>
               <div className="p-3 bg-green-100 rounded-lg">
@@ -309,7 +347,9 @@ export function UserManagement() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Pending Verification</p>
+                <p className="text-sm font-medium text-gray-600">
+                  Pending Verification
+                </p>
                 <p className="text-2xl font-bold text-gray-900">423</p>
               </div>
               <div className="p-3 bg-yellow-100 rounded-lg">
@@ -323,7 +363,9 @@ export function UserManagement() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">New This Month</p>
+                <p className="text-sm font-medium text-gray-600">
+                  New This Month
+                </p>
                 <p className="text-2xl font-bold text-gray-900">1,190</p>
               </div>
               <div className="p-3 bg-purple-100 rounded-lg">
@@ -374,26 +416,50 @@ export function UserManagement() {
             <table className="w-full">
               <thead className="bg-gray-50 border-b">
                 <tr>
-                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
-                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
-                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">KYC</th>
-                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">Activity</th>
-                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">Revenue</th>
-                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    User
+                  </th>
+                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Status
+                  </th>
+                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Role
+                  </th>
+                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    KYC
+                  </th>
+                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Activity
+                  </th>
+                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Revenue
+                  </th>
+                  <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Actions
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {filteredUsers.map((user) => (
-                  <tr key={user.id} className="hover:bg-gray-50 transition-colors">
+                  <tr
+                    key={user.id}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
                     <td className="py-4 px-6">
                       <div className="flex items-center space-x-3">
                         <Avatar className="h-10 w-10">
                           <AvatarImage src={user.avatar} alt={user.name} />
-                          <AvatarFallback>{user.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                          <AvatarFallback>
+                            {user.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
+                          </AvatarFallback>
                         </Avatar>
                         <div>
-                          <p className="font-medium text-gray-900">{user.name}</p>
+                          <p className="font-medium text-gray-900">
+                            {user.name}
+                          </p>
                           <p className="text-sm text-gray-600">{user.email}</p>
                           <p className="text-sm text-gray-500">{user.phone}</p>
                         </div>
@@ -416,12 +482,16 @@ export function UserManagement() {
                     </td>
                     <td className="py-4 px-6">
                       <div className="text-sm">
-                        <p className="text-gray-900">{user.shipments} shipments</p>
+                        <p className="text-gray-900">
+                          {user.shipments} shipments
+                        </p>
                         <p className="text-gray-600">Last: {user.lastLogin}</p>
                       </div>
                     </td>
                     <td className="py-4 px-6">
-                      <p className="font-medium text-gray-900">{user.totalSpent}</p>
+                      <p className="font-medium text-gray-900">
+                        {user.totalSpent}
+                      </p>
                     </td>
                     <td className="py-4 px-6">
                       <div className="flex items-center space-x-2">
@@ -433,11 +503,7 @@ export function UserManagement() {
                         >
                           <Eye className="h-4 w-4" />
                         </Button>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          title="Edit User"
-                        >
+                        <Button variant="ghost" size="sm" title="Edit User">
                           <Edit className="h-4 w-4" />
                         </Button>
                         <DropdownMenu>
@@ -448,12 +514,16 @@ export function UserManagement() {
                           </DropdownMenuTrigger>
                           <DropdownMenuContent>
                             {user.status === "active" ? (
-                              <DropdownMenuItem onClick={() => handleSuspendUser(user.id)}>
+                              <DropdownMenuItem
+                                onClick={() => handleSuspendUser(user.id)}
+                              >
                                 <UserX className="h-4 w-4 mr-2" />
                                 Suspend User
                               </DropdownMenuItem>
                             ) : (
-                              <DropdownMenuItem onClick={() => handleActivateUser(user.id)}>
+                              <DropdownMenuItem
+                                onClick={() => handleActivateUser(user.id)}
+                              >
                                 <UserCheck className="h-4 w-4 mr-2" />
                                 Activate User
                               </DropdownMenuItem>
@@ -462,7 +532,10 @@ export function UserManagement() {
                               <Mail className="h-4 w-4 mr-2" />
                               Send Email
                             </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => handleDeleteUser(user.id)} className="text-red-600">
+                            <DropdownMenuItem
+                              onClick={() => handleDeleteUser(user.id)}
+                              className="text-red-600"
+                            >
                               <Trash2 className="h-4 w-4 mr-2" />
                               Delete User
                             </DropdownMenuItem>
@@ -480,7 +553,10 @@ export function UserManagement() {
 
       {/* User Details Modal */}
       {selectedUser && (
-        <Dialog open={!!selectedUser} onOpenChange={() => setSelectedUser(null)}>
+        <Dialog
+          open={!!selectedUser}
+          onOpenChange={() => setSelectedUser(null)}
+        >
           <DialogContent className="max-w-3xl">
             <DialogHeader>
               <DialogTitle>User Details - {selectedUser.name}</DialogTitle>
@@ -498,19 +574,51 @@ export function UserManagement() {
                   <div>
                     <h3 className="font-semibold mb-3">Personal Information</h3>
                     <div className="space-y-2 text-sm">
-                      <div><span className="text-gray-600">Name:</span> {selectedUser.name}</div>
-                      <div><span className="text-gray-600">Email:</span> {selectedUser.email}</div>
-                      <div><span className="text-gray-600">Phone:</span> {selectedUser.phone}</div>
-                      <div><span className="text-gray-600">Join Date:</span> {selectedUser.joinDate}</div>
+                      <div>
+                        <span className="text-gray-600">Name:</span>{" "}
+                        {selectedUser.name}
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Email:</span>{" "}
+                        {selectedUser.email}
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Phone:</span>{" "}
+                        {selectedUser.phone}
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Join Date:</span>{" "}
+                        {selectedUser.joinDate}
+                      </div>
                     </div>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-3">Account Status</h3>
                     <div className="space-y-2 text-sm">
-                      <div><span className="text-gray-600">Status:</span> <Badge className={getStatusColor(selectedUser.status)}>{selectedUser.status}</Badge></div>
-                      <div><span className="text-gray-600">Role:</span> <Badge className={getRoleColor(selectedUser.role)}>{selectedUser.role}</Badge></div>
-                      <div><span className="text-gray-600">KYC:</span> <Badge className={getKycStatusColor(selectedUser.kycStatus)}>{selectedUser.kycStatus}</Badge></div>
-                      <div><span className="text-gray-600">Last Login:</span> {selectedUser.lastLogin}</div>
+                      <div>
+                        <span className="text-gray-600">Status:</span>{" "}
+                        <Badge className={getStatusColor(selectedUser.status)}>
+                          {selectedUser.status}
+                        </Badge>
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Role:</span>{" "}
+                        <Badge className={getRoleColor(selectedUser.role)}>
+                          {selectedUser.role}
+                        </Badge>
+                      </div>
+                      <div>
+                        <span className="text-gray-600">KYC:</span>{" "}
+                        <Badge
+                          className={getKycStatusColor(selectedUser.kycStatus)}
+                        >
+                          {selectedUser.kycStatus}
+                        </Badge>
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Last Login:</span>{" "}
+                        {selectedUser.lastLogin}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -519,21 +627,27 @@ export function UserManagement() {
               <TabsContent value="activity">
                 <div className="text-center py-8">
                   <Package className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-600">Activity history would be displayed here</p>
+                  <p className="text-gray-600">
+                    Activity history would be displayed here
+                  </p>
                 </div>
               </TabsContent>
 
               <TabsContent value="payments">
                 <div className="text-center py-8">
                   <DollarSign className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-600">Payment history would be displayed here</p>
+                  <p className="text-gray-600">
+                    Payment history would be displayed here
+                  </p>
                 </div>
               </TabsContent>
 
               <TabsContent value="settings">
                 <div className="text-center py-8">
                   <Users className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-600">User settings would be displayed here</p>
+                  <p className="text-gray-600">
+                    User settings would be displayed here
+                  </p>
                 </div>
               </TabsContent>
             </Tabs>

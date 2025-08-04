@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { 
-  Package, 
-  Plus, 
-  Search, 
-  Filter, 
-  Download, 
-  Eye, 
-  Edit, 
-  MapPin, 
+import {
+  Package,
+  Plus,
+  Search,
+  Filter,
+  Download,
+  Eye,
+  Edit,
+  MapPin,
   Calendar,
   Truck,
   Ship,
@@ -15,18 +15,35 @@ import {
   CheckCircle,
   AlertCircle,
   Clock,
-  MoreHorizontal
+  MoreHorizontal,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function ShipmentsSection() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -47,7 +64,7 @@ export function ShipmentsSection() {
       value: "$1,250.00",
       weight: "25 lbs",
       progress: 75,
-      description: "Electronics shipment"
+      description: "Electronics shipment",
     },
     {
       id: "GT240002",
@@ -61,7 +78,7 @@ export function ShipmentsSection() {
       value: "$3,890.00",
       weight: "10 lbs",
       progress: 100,
-      description: "Medical supplies"
+      description: "Medical supplies",
     },
     {
       id: "GT240003",
@@ -75,7 +92,7 @@ export function ShipmentsSection() {
       value: "$5,200.00",
       weight: "500 lbs",
       progress: 60,
-      description: "Machinery parts"
+      description: "Machinery parts",
     },
     {
       id: "GT240004",
@@ -89,7 +106,7 @@ export function ShipmentsSection() {
       value: "$890.00",
       weight: "15 lbs",
       progress: 0,
-      description: "Fashion accessories"
+      description: "Fashion accessories",
     },
     {
       id: "GT240005",
@@ -103,8 +120,8 @@ export function ShipmentsSection() {
       value: "$2,340.00",
       weight: "75 lbs",
       progress: 25,
-      description: "Auto parts"
-    }
+      description: "Auto parts",
+    },
   ];
 
   const getStatusIcon = (status: string) => {
@@ -152,20 +169,22 @@ export function ShipmentsSection() {
     }
   };
 
-  const filteredShipments = shipments.filter(shipment => {
-    const matchesSearch = shipment.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  const filteredShipments = shipments.filter((shipment) => {
+    const matchesSearch =
+      shipment.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
       shipment.recipient.toLowerCase().includes(searchTerm.toLowerCase()) ||
       shipment.destination.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesStatus = statusFilter === "all" || shipment.status === statusFilter;
+
+    const matchesStatus =
+      statusFilter === "all" || shipment.status === statusFilter;
     const matchesTab = selectedTab === "all" || shipment.status === selectedTab;
-    
+
     return matchesSearch && matchesStatus && matchesTab;
   });
 
   const getTabCount = (status: string) => {
     if (status === "all") return shipments.length;
-    return shipments.filter(s => s.status === status).length;
+    return shipments.filter((s) => s.status === status).length;
   };
 
   return (
@@ -203,7 +222,7 @@ export function ShipmentsSection() {
                     <Input id="phone" placeholder="Enter phone number" />
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="origin">Origin</Label>
@@ -242,14 +261,24 @@ export function ShipmentsSection() {
 
                 <div>
                   <Label htmlFor="description">Package Description</Label>
-                  <Textarea id="description" placeholder="Describe the contents..." />
+                  <Textarea
+                    id="description"
+                    placeholder="Describe the contents..."
+                  />
                 </div>
 
                 <div className="flex justify-end space-x-3 pt-4">
-                  <Button type="button" variant="outline" onClick={() => setIsCreateModalOpen(false)}>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => setIsCreateModalOpen(false)}
+                  >
                     Cancel
                   </Button>
-                  <Button type="submit" className="bg-gradient-to-r from-royal-600 to-orange-500">
+                  <Button
+                    type="submit"
+                    className="bg-gradient-to-r from-royal-600 to-orange-500"
+                  >
                     Create Shipment
                   </Button>
                 </div>
@@ -298,10 +327,18 @@ export function ShipmentsSection() {
       <Tabs value={selectedTab} onValueChange={setSelectedTab}>
         <TabsList className="w-full justify-start">
           <TabsTrigger value="all">All ({getTabCount("all")})</TabsTrigger>
-          <TabsTrigger value="pending">Pending ({getTabCount("pending")})</TabsTrigger>
-          <TabsTrigger value="processing">Processing ({getTabCount("processing")})</TabsTrigger>
-          <TabsTrigger value="in_transit">In Transit ({getTabCount("in_transit")})</TabsTrigger>
-          <TabsTrigger value="delivered">Delivered ({getTabCount("delivered")})</TabsTrigger>
+          <TabsTrigger value="pending">
+            Pending ({getTabCount("pending")})
+          </TabsTrigger>
+          <TabsTrigger value="processing">
+            Processing ({getTabCount("processing")})
+          </TabsTrigger>
+          <TabsTrigger value="in_transit">
+            In Transit ({getTabCount("in_transit")})
+          </TabsTrigger>
+          <TabsTrigger value="delivered">
+            Delivered ({getTabCount("delivered")})
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value={selectedTab} className="mt-6">
@@ -311,15 +348,21 @@ export function ShipmentsSection() {
                 {filteredShipments.length === 0 ? (
                   <div className="text-center py-12">
                     <Package className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">No shipments found</h3>
-                    <p className="text-gray-500">Try adjusting your search or filters</p>
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">
+                      No shipments found
+                    </h3>
+                    <p className="text-gray-500">
+                      Try adjusting your search or filters
+                    </p>
                   </div>
                 ) : (
                   filteredShipments.map((shipment, index) => (
                     <div
                       key={shipment.id}
                       className={`p-6 border-b border-gray-200 hover:bg-gray-50 transition-colors ${
-                        index === filteredShipments.length - 1 ? "border-b-0" : ""
+                        index === filteredShipments.length - 1
+                          ? "border-b-0"
+                          : ""
                       }`}
                     >
                       <div className="flex items-center justify-between">
@@ -332,32 +375,46 @@ export function ShipmentsSection() {
                               <h3 className="font-semibold text-gray-900 text-lg">
                                 {shipment.id}
                               </h3>
-                              <Badge className={getStatusColor(shipment.status)}>
+                              <Badge
+                                className={getStatusColor(shipment.status)}
+                              >
                                 {shipment.status.replace("_", " ")}
                               </Badge>
                             </div>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                               <div>
                                 <p className="text-gray-500">Recipient</p>
-                                <p className="font-medium">{shipment.recipient}</p>
+                                <p className="font-medium">
+                                  {shipment.recipient}
+                                </p>
                               </div>
                               <div>
                                 <p className="text-gray-500">Route</p>
-                                <p className="font-medium">{shipment.origin} → {shipment.destination}</p>
+                                <p className="font-medium">
+                                  {shipment.origin} → {shipment.destination}
+                                </p>
                               </div>
                               <div>
                                 <p className="text-gray-500">Weight / Value</p>
-                                <p className="font-medium">{shipment.weight} / {shipment.value}</p>
+                                <p className="font-medium">
+                                  {shipment.weight} / {shipment.value}
+                                </p>
                               </div>
                               <div>
                                 <p className="text-gray-500">Delivery Date</p>
-                                <p className="font-medium">{shipment.deliveryDate}</p>
+                                <p className="font-medium">
+                                  {shipment.deliveryDate}
+                                </p>
                               </div>
                             </div>
                             <div className="mt-3">
                               <div className="flex items-center justify-between mb-1">
-                                <span className="text-sm text-gray-600">Progress</span>
-                                <span className="text-sm font-medium">{shipment.progress}%</span>
+                                <span className="text-sm text-gray-600">
+                                  Progress
+                                </span>
+                                <span className="text-sm font-medium">
+                                  {shipment.progress}%
+                                </span>
                               </div>
                               <div className="w-full bg-gray-200 rounded-full h-2">
                                 <div
@@ -368,12 +425,20 @@ export function ShipmentsSection() {
                             </div>
                           </div>
                         </div>
-                        
+
                         <div className="flex items-center space-x-2">
-                          <Button variant="ghost" size="sm" title="View Details">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            title="View Details"
+                          >
                             <Eye className="h-4 w-4" />
                           </Button>
-                          <Button variant="ghost" size="sm" title="Download Label">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            title="Download Label"
+                          >
                             <Download className="h-4 w-4" />
                           </Button>
                           <DropdownMenu>

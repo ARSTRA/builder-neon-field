@@ -17,7 +17,7 @@ import {
   Send,
   Paperclip,
   Settings,
-  BarChart3
+  BarChart3,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,13 +25,30 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Progress } from "@/components/ui/progress";
 
 export function ChatManagement() {
@@ -46,29 +63,29 @@ export function ChatManagement() {
       value: "47",
       change: "+12%",
       icon: <MessageSquare className="h-6 w-6" />,
-      color: "bg-blue-500"
+      color: "bg-blue-500",
     },
     {
       title: "Avg Response Time",
       value: "1.2 min",
       change: "-15%",
       icon: <Clock className="h-6 w-6" />,
-      color: "bg-green-500"
+      color: "bg-green-500",
     },
     {
       title: "Customer Satisfaction",
       value: "4.8/5",
       change: "+0.2",
       icon: <Star className="h-6 w-6" />,
-      color: "bg-yellow-500"
+      color: "bg-yellow-500",
     },
     {
       title: "Resolution Rate",
       value: "94%",
       change: "+3%",
       icon: <CheckCircle className="h-6 w-6" />,
-      color: "bg-purple-500"
-    }
+      color: "bg-purple-500",
+    },
   ];
 
   const agents = [
@@ -81,7 +98,8 @@ export function ChatManagement() {
       avgResponseTime: "45s",
       satisfaction: 4.9,
       totalChats: 127,
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b332c3f2?w=150&h=150&fit=crop&crop=face"
+      avatar:
+        "https://images.unsplash.com/photo-1494790108755-2616b332c3f2?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: "2",
@@ -92,7 +110,8 @@ export function ChatManagement() {
       avgResponseTime: "52s",
       satisfaction: 4.7,
       totalChats: 89,
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      avatar:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: "3",
@@ -103,7 +122,8 @@ export function ChatManagement() {
       avgResponseTime: "1m 15s",
       satisfaction: 4.8,
       totalChats: 156,
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+      avatar:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: "4",
@@ -114,8 +134,9 @@ export function ChatManagement() {
       avgResponseTime: "1m 30s",
       satisfaction: 4.6,
       totalChats: 94,
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
-    }
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    },
   ];
 
   const activeChats = [
@@ -130,7 +151,7 @@ export function ChatManagement() {
       startTime: "10:30 AM",
       duration: "5 min",
       lastMessage: "Can you please check the status of my shipment GT240001?",
-      messageCount: 8
+      messageCount: 8,
     },
     {
       id: "2",
@@ -142,8 +163,9 @@ export function ChatManagement() {
       priority: "high",
       startTime: "10:15 AM",
       duration: "20 min",
-      lastMessage: "The payment keeps getting declined even though the card is valid.",
-      messageCount: 15
+      lastMessage:
+        "The payment keeps getting declined even though the card is valid.",
+      messageCount: 15,
     },
     {
       id: "3",
@@ -155,8 +177,9 @@ export function ChatManagement() {
       priority: "normal",
       startTime: "10:45 AM",
       duration: "3 min",
-      lastMessage: "I need information about your international shipping rates.",
-      messageCount: 4
+      lastMessage:
+        "I need information about your international shipping rates.",
+      messageCount: 4,
     },
     {
       id: "4",
@@ -168,9 +191,10 @@ export function ChatManagement() {
       priority: "low",
       startTime: "09:30 AM",
       duration: "45 min",
-      lastMessage: "I'm having trouble completing the KYC verification process.",
-      messageCount: 12
-    }
+      lastMessage:
+        "I'm having trouble completing the KYC verification process.",
+      messageCount: 12,
+    },
   ];
 
   const chatHistory = [
@@ -185,7 +209,7 @@ export function ChatManagement() {
       endTime: "Dec 11, 3:15 PM",
       duration: "45 min",
       satisfaction: 5,
-      resolution: "Provided compensation and expedited shipping"
+      resolution: "Provided compensation and expedited shipping",
     },
     {
       id: "2",
@@ -198,8 +222,8 @@ export function ChatManagement() {
       endTime: "Dec 11, 1:20 PM",
       duration: "20 min",
       satisfaction: 4,
-      resolution: "Explained billing cycle and charges"
-    }
+      resolution: "Explained billing cycle and charges",
+    },
   ];
 
   const getStatusColor = (status: string) => {
@@ -236,7 +260,7 @@ export function ChatManagement() {
 
   const handleJoinChat = (chatId: string) => {
     console.log("Joining chat:", chatId);
-    const chat = activeChats.find(c => c.id === chatId);
+    const chat = activeChats.find((c) => c.id === chatId);
     setSelectedChat(chat);
   };
 
@@ -252,8 +276,12 @@ export function ChatManagement() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Live Chat Support Management</h1>
-          <p className="text-gray-600">Monitor and manage customer support conversations</p>
+          <h1 className="text-3xl font-bold text-gray-900">
+            Live Chat Support Management
+          </h1>
+          <p className="text-gray-600">
+            Monitor and manage customer support conversations
+          </p>
         </div>
         <div className="mt-4 sm:mt-0 flex space-x-3">
           <Button variant="outline">
@@ -274,11 +302,17 @@ export function ChatManagement() {
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">{stat.title}</p>
-                  <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
+                  <p className="text-sm font-medium text-gray-600">
+                    {stat.title}
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {stat.value}
+                  </p>
                   <div className="flex items-center mt-1">
                     <TrendingUp className="h-4 w-4 text-green-500 mr-1" />
-                    <span className="text-sm text-green-600">{stat.change}</span>
+                    <span className="text-sm text-green-600">
+                      {stat.change}
+                    </span>
                   </div>
                 </div>
                 <div className={`p-3 rounded-lg ${stat.color}`}>
@@ -292,7 +326,10 @@ export function ChatManagement() {
 
       <Tabs defaultValue="active" className="space-y-6">
         <TabsList>
-          <TabsTrigger value="active">Active Chats ({activeChats.filter(c => c.status === 'active').length})</TabsTrigger>
+          <TabsTrigger value="active">
+            Active Chats (
+            {activeChats.filter((c) => c.status === "active").length})
+          </TabsTrigger>
           <TabsTrigger value="agents">Agents ({agents.length})</TabsTrigger>
           <TabsTrigger value="history">Chat History</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
@@ -335,20 +372,34 @@ export function ChatManagement() {
           {/* Active Chats List */}
           <div className="grid lg:grid-cols-2 gap-6">
             {activeChats.map((chat) => (
-              <Card key={chat.id} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <Card
+                key={chat.id}
+                className="border-0 shadow-lg hover:shadow-xl transition-shadow"
+              >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-start space-x-3">
                       <div className="relative">
-                        <div className={`w-3 h-3 rounded-full ${
-                          chat.status === 'active' ? 'bg-green-500' : 
-                          chat.status === 'waiting' ? 'bg-orange-500' : 'bg-gray-500'
-                        }`}></div>
+                        <div
+                          className={`w-3 h-3 rounded-full ${
+                            chat.status === "active"
+                              ? "bg-green-500"
+                              : chat.status === "waiting"
+                                ? "bg-orange-500"
+                                : "bg-gray-500"
+                          }`}
+                        ></div>
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-semibold text-gray-900">{chat.customer}</h3>
-                        <p className="text-sm text-gray-600">{chat.customerEmail}</p>
-                        <p className="text-sm text-gray-500">with {chat.agent}</p>
+                        <h3 className="font-semibold text-gray-900">
+                          {chat.customer}
+                        </h3>
+                        <p className="text-sm text-gray-600">
+                          {chat.customerEmail}
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          with {chat.agent}
+                        </p>
                       </div>
                     </div>
                     <div className="flex flex-col items-end space-y-1">
@@ -363,7 +414,9 @@ export function ChatManagement() {
 
                   <div className="space-y-2 mb-4">
                     <p className="font-medium text-gray-800">{chat.topic}</p>
-                    <p className="text-sm text-gray-600 line-clamp-2">{chat.lastMessage}</p>
+                    <p className="text-sm text-gray-600 line-clamp-2">
+                      {chat.lastMessage}
+                    </p>
                   </div>
 
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
@@ -373,8 +426,8 @@ export function ChatManagement() {
                   </div>
 
                   <div className="flex space-x-2">
-                    <Button 
-                      size="sm" 
+                    <Button
+                      size="sm"
                       className="flex-1"
                       onClick={() => handleJoinChat(chat.id)}
                     >
@@ -394,7 +447,9 @@ export function ChatManagement() {
                         <DropdownMenuItem>Transfer Chat</DropdownMenuItem>
                         <DropdownMenuItem>Escalate to Manager</DropdownMenuItem>
                         <DropdownMenuItem>Add Note</DropdownMenuItem>
-                        <DropdownMenuItem className="text-red-600">Close Chat</DropdownMenuItem>
+                        <DropdownMenuItem className="text-red-600">
+                          Close Chat
+                        </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </div>
@@ -413,16 +468,29 @@ export function ChatManagement() {
                     <div className="relative">
                       <Avatar className="h-12 w-12">
                         <AvatarImage src={agent.avatar} alt={agent.name} />
-                        <AvatarFallback>{agent.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                        <AvatarFallback>
+                          {agent.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
+                        </AvatarFallback>
                       </Avatar>
-                      <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white ${
-                        agent.status === 'online' ? 'bg-green-500' :
-                        agent.status === 'busy' ? 'bg-red-500' :
-                        agent.status === 'away' ? 'bg-yellow-500' : 'bg-gray-500'
-                      }`}></div>
+                      <div
+                        className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white ${
+                          agent.status === "online"
+                            ? "bg-green-500"
+                            : agent.status === "busy"
+                              ? "bg-red-500"
+                              : agent.status === "away"
+                                ? "bg-yellow-500"
+                                : "bg-gray-500"
+                        }`}
+                      ></div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-gray-900">{agent.name}</h3>
+                      <h3 className="font-semibold text-gray-900">
+                        {agent.name}
+                      </h3>
                       <p className="text-sm text-gray-600">{agent.email}</p>
                       <Badge className={getStatusColor(agent.status)}>
                         {agent.status}
@@ -433,22 +501,30 @@ export function ChatManagement() {
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
                       <p className="text-sm text-gray-600">Active Chats</p>
-                      <p className="text-lg font-semibold">{agent.activeChats}</p>
+                      <p className="text-lg font-semibold">
+                        {agent.activeChats}
+                      </p>
                     </div>
                     <div>
                       <p className="text-sm text-gray-600">Response Time</p>
-                      <p className="text-lg font-semibold">{agent.avgResponseTime}</p>
+                      <p className="text-lg font-semibold">
+                        {agent.avgResponseTime}
+                      </p>
                     </div>
                     <div>
                       <p className="text-sm text-gray-600">Satisfaction</p>
                       <div className="flex items-center">
                         <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
-                        <p className="text-lg font-semibold">{agent.satisfaction}</p>
+                        <p className="text-lg font-semibold">
+                          {agent.satisfaction}
+                        </p>
                       </div>
                     </div>
                     <div>
                       <p className="text-sm text-gray-600">Total Chats</p>
-                      <p className="text-lg font-semibold">{agent.totalChats}</p>
+                      <p className="text-lg font-semibold">
+                        {agent.totalChats}
+                      </p>
                     </div>
                   </div>
 
@@ -477,13 +553,27 @@ export function ChatManagement() {
                 <table className="w-full">
                   <thead className="bg-gray-50 border-b">
                     <tr>
-                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">Customer</th>
-                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">Agent</th>
-                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">Topic</th>
-                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">Duration</th>
-                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">Satisfaction</th>
-                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">Status</th>
-                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">Actions</th>
+                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">
+                        Customer
+                      </th>
+                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">
+                        Agent
+                      </th>
+                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">
+                        Topic
+                      </th>
+                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">
+                        Duration
+                      </th>
+                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">
+                        Satisfaction
+                      </th>
+                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">
+                        Status
+                      </th>
+                      <th className="text-left py-3 px-6 text-xs font-medium text-gray-500 uppercase">
+                        Actions
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
@@ -491,8 +581,12 @@ export function ChatManagement() {
                       <tr key={chat.id} className="hover:bg-gray-50">
                         <td className="py-4 px-6">
                           <div>
-                            <p className="font-medium text-gray-900">{chat.customer}</p>
-                            <p className="text-sm text-gray-600">{chat.startTime}</p>
+                            <p className="font-medium text-gray-900">
+                              {chat.customer}
+                            </p>
+                            <p className="text-sm text-gray-600">
+                              {chat.startTime}
+                            </p>
                           </div>
                         </td>
                         <td className="py-4 px-6">
@@ -500,7 +594,9 @@ export function ChatManagement() {
                         </td>
                         <td className="py-4 px-6">
                           <div>
-                            <p className="font-medium text-gray-900">{chat.topic}</p>
+                            <p className="font-medium text-gray-900">
+                              {chat.topic}
+                            </p>
                             <Badge className={getPriorityColor(chat.priority)}>
                               {chat.priority}
                             </Badge>
@@ -542,7 +638,9 @@ export function ChatManagement() {
               </CardHeader>
               <CardContent>
                 <div className="h-64 flex items-center justify-center bg-gray-50 rounded-lg">
-                  <p className="text-gray-500">Response time chart would be displayed here</p>
+                  <p className="text-gray-500">
+                    Response time chart would be displayed here
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -553,7 +651,9 @@ export function ChatManagement() {
               </CardHeader>
               <CardContent>
                 <div className="h-64 flex items-center justify-center bg-gray-50 rounded-lg">
-                  <p className="text-gray-500">Satisfaction chart would be displayed here</p>
+                  <p className="text-gray-500">
+                    Satisfaction chart would be displayed here
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -563,7 +663,10 @@ export function ChatManagement() {
 
       {/* Chat View Modal */}
       {selectedChat && (
-        <Dialog open={!!selectedChat} onOpenChange={() => setSelectedChat(null)}>
+        <Dialog
+          open={!!selectedChat}
+          onOpenChange={() => setSelectedChat(null)}
+        >
           <DialogContent className="max-w-4xl h-[600px]">
             <DialogHeader>
               <DialogTitle className="flex items-center justify-between">
@@ -578,7 +681,7 @@ export function ChatManagement() {
                 </div>
               </DialogTitle>
             </DialogHeader>
-            
+
             <div className="flex h-[500px]">
               {/* Chat Messages */}
               <div className="flex-1 flex flex-col">
@@ -587,18 +690,23 @@ export function ChatManagement() {
                     <div className="flex justify-start">
                       <div className="bg-gray-100 rounded-lg px-4 py-2 max-w-xs">
                         <p className="text-sm">{selectedChat.lastMessage}</p>
-                        <p className="text-xs text-gray-500 mt-1">{selectedChat.startTime}</p>
+                        <p className="text-xs text-gray-500 mt-1">
+                          {selectedChat.startTime}
+                        </p>
                       </div>
                     </div>
                     <div className="flex justify-end">
                       <div className="bg-blue-600 text-white rounded-lg px-4 py-2 max-w-xs">
-                        <p className="text-sm">I'll help you with that right away. Let me check the status of your shipment.</p>
+                        <p className="text-sm">
+                          I'll help you with that right away. Let me check the
+                          status of your shipment.
+                        </p>
                         <p className="text-xs text-blue-200 mt-1">10:35 AM</p>
                       </div>
                     </div>
                   </div>
                 </ScrollArea>
-                
+
                 {/* Message Input */}
                 <div className="mt-4 flex space-x-2">
                   <Textarea
@@ -624,34 +732,67 @@ export function ChatManagement() {
                   <div>
                     <h4 className="font-semibold mb-2">Customer Info</h4>
                     <div className="space-y-2 text-sm">
-                      <p><span className="text-gray-600">Name:</span> {selectedChat.customer}</p>
-                      <p><span className="text-gray-600">Email:</span> {selectedChat.customerEmail}</p>
-                      <p><span className="text-gray-600">Topic:</span> {selectedChat.topic}</p>
+                      <p>
+                        <span className="text-gray-600">Name:</span>{" "}
+                        {selectedChat.customer}
+                      </p>
+                      <p>
+                        <span className="text-gray-600">Email:</span>{" "}
+                        {selectedChat.customerEmail}
+                      </p>
+                      <p>
+                        <span className="text-gray-600">Topic:</span>{" "}
+                        {selectedChat.topic}
+                      </p>
                     </div>
                   </div>
 
                   <div>
                     <h4 className="font-semibold mb-2">Chat Details</h4>
                     <div className="space-y-2 text-sm">
-                      <p><span className="text-gray-600">Agent:</span> {selectedChat.agent}</p>
-                      <p><span className="text-gray-600">Start Time:</span> {selectedChat.startTime}</p>
-                      <p><span className="text-gray-600">Duration:</span> {selectedChat.duration}</p>
-                      <p><span className="text-gray-600">Messages:</span> {selectedChat.messageCount}</p>
+                      <p>
+                        <span className="text-gray-600">Agent:</span>{" "}
+                        {selectedChat.agent}
+                      </p>
+                      <p>
+                        <span className="text-gray-600">Start Time:</span>{" "}
+                        {selectedChat.startTime}
+                      </p>
+                      <p>
+                        <span className="text-gray-600">Duration:</span>{" "}
+                        {selectedChat.duration}
+                      </p>
+                      <p>
+                        <span className="text-gray-600">Messages:</span>{" "}
+                        {selectedChat.messageCount}
+                      </p>
                     </div>
                   </div>
 
                   <div>
                     <h4 className="font-semibold mb-2">Quick Actions</h4>
                     <div className="space-y-2">
-                      <Button variant="outline" size="sm" className="w-full justify-start">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full justify-start"
+                      >
                         <UserCheck className="h-4 w-4 mr-2" />
                         Transfer Chat
                       </Button>
-                      <Button variant="outline" size="sm" className="w-full justify-start">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full justify-start"
+                      >
                         <AlertCircle className="h-4 w-4 mr-2" />
                         Escalate
                       </Button>
-                      <Button variant="outline" size="sm" className="w-full justify-start text-red-600">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full justify-start text-red-600"
+                      >
                         <CheckCircle className="h-4 w-4 mr-2" />
                         Close Chat
                       </Button>
