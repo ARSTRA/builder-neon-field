@@ -323,15 +323,19 @@ export default function Services() {
                       </Tabs>
 
                       <div className="flex gap-3 mt-8">
-                        <Button 
+                        <Button
                           onClick={() => setIsQuoteModalOpen(true)}
-                          className={`flex-1 bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white`}
+                          className={`flex-1 bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300`}
                         >
                           Get Quote
+                          <ArrowRight className="h-4 w-4 ml-2" />
                         </Button>
-                        <Button variant="outline" className="flex-1">
-                          <Phone className="h-4 w-4 mr-2" />
-                          Call Expert
+                        <Button
+                          variant="outline"
+                          className="group flex-1 border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
+                        >
+                          <Phone className="h-4 w-4 mr-2 group-hover:animate-pulse" />
+                          Expert Consult
                         </Button>
                       </div>
                     </CardContent>
