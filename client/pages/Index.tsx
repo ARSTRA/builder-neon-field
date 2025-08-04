@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Search,
   Package,
@@ -12,21 +12,50 @@ import {
   Star,
   ArrowRight,
   CheckCircle,
+  Phone,
+  MessageCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Logo } from "@/components/ui/logo";
+import { GetQuoteModal } from "@/components/ui/get-quote-modal";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Index() {
   const [trackingId, setTrackingId] = useState("");
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const navigate = useNavigate();
+  const { toast } = useToast();
 
   const handleTrackSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (trackingId.trim()) {
       // Navigate to track page with the tracking ID
-      window.location.href = `/track?id=${encodeURIComponent(trackingId)}`;
+      navigate(`/track?id=${encodeURIComponent(trackingId)}`);
+    } else {
+      toast({
+        title: "Please enter a tracking number",
+        description: "Enter your tracking number to track your package.",
+        variant: "destructive",
+      });
     }
+  };
+
+  const handleGetQuote = () => {
+    setIsQuoteModalOpen(true);
+  };
+
+  const handleCallExpert = () => {
+    // In a real app, this could open a phone dialer or show contact info
+    toast({
+      title: "Call Expert",
+      description: "Call us at 1-800-GLOBAL-1 for immediate assistance!",
+    });
+  };
+
+  const handleLiveChat = () => {
+    navigate('/chat');
   };
 
   const shippingServices = [
@@ -432,7 +461,10 @@ export default function Index() {
             logistics services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg">
+            <Button
+              onClick={handleGetQuote}
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg"
+            >
               Get Free Quote
             </Button>
             <Link to="/contact">
@@ -446,6 +478,33 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Get Quote Modal */}
+      <GetQuoteModal
+        open={isQuoteModalOpen}
+        onOpenChange={setIsQuoteModalOpen}
+      />
+
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        {/* Live Chat Button */}
+        <Button
+          onClick={handleLiveChat}
+          className="bg-royal-600 hover:bg-royal-700 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 group"
+          title="Live Chat Support"
+        >
+          <MessageCircle className="h-6 w-6 group-hover:animate-pulse" />
+        </Button>
+
+        {/* Call Expert Button */}
+        <Button
+          onClick={handleCallExpert}
+          className="bg-orange-500 hover:bg-orange-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 group"
+          title="Call Expert Now"
+        >
+          <Phone className="h-6 w-6 group-hover:animate-pulse" />
+        </Button>
+      </div>
     </div>
   );
 }
