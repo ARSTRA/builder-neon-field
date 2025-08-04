@@ -35,6 +35,7 @@ const App = () => (
               <div className="min-h-screen bg-white">
                 <Navigation />
                 <Index />
+                <ChatWidget />
               </div>
             }
           />
