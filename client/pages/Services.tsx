@@ -213,8 +213,10 @@ export default function Services() {
 
             {/* Floating elements for visual interest */}
             <div className="absolute top-20 left-10 w-16 h-16 bg-orange-400/20 rounded-full animate-pulse hidden lg:block"></div>
-            <div className="absolute bottom-20 right-10 w-12 h-12 bg-white/10 rounded-full animate-pulse hidden lg:block"></div>
-            <div className="absolute top-1/2 right-20 w-8 h-8 bg-orange-400/30 rounded-full animate-pulse hidden lg:block"></div>
+            <div className="absolute bottom-20 right-10 w-12 h-12 bg-white/10 rounded-full animate-pulse hidden lg:block delay-1000"></div>
+            <div className="absolute top-1/2 right-20 w-8 h-8 bg-orange-400/30 rounded-full animate-pulse hidden lg:block delay-500"></div>
+            <div className="absolute top-32 right-1/4 w-6 h-6 bg-white/20 rounded-full animate-pulse hidden lg:block delay-700"></div>
+            <div className="absolute bottom-32 left-1/4 w-10 h-10 bg-orange-400/15 rounded-full animate-pulse hidden lg:block delay-300"></div>
           </div>
         </div>
       </section>
