@@ -27,6 +27,33 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        // GlobalTrack Logistics Brand Colors
+        royal: {
+          50: "hsl(221, 100%, 97%)",
+          100: "hsl(221, 100%, 93%)",
+          200: "hsl(221, 100%, 86%)",
+          300: "hsl(221, 100%, 76%)",
+          400: "hsl(221, 89%, 65%)",
+          500: "hsl(221, 83%, 53%)", // Royal Blue
+          600: "hsl(221, 83%, 43%)",
+          700: "hsl(221, 80%, 36%)",
+          800: "hsl(221, 74%, 30%)",
+          900: "hsl(221, 70%, 25%)",
+          950: "hsl(221, 69%, 16%)",
+        },
+        orange: {
+          50: "hsl(33, 100%, 96%)",
+          100: "hsl(34, 100%, 92%)",
+          200: "hsl(32, 100%, 83%)",
+          300: "hsl(31, 100%, 72%)",
+          400: "hsl(27, 96%, 61%)",
+          500: "hsl(25, 95%, 53%)", // Gradient Orange
+          600: "hsl(21, 90%, 48%)",
+          700: "hsl(17, 88%, 40%)",
+          800: "hsl(15, 79%, 34%)",
+          900: "hsl(15, 75%, 28%)",
+          950: "hsl(13, 81%, 17%)",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
