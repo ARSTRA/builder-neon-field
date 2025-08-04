@@ -305,22 +305,25 @@ export default function About() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {teamMembers.map((member, index) => (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 overflow-hidden">
-                  <div className="relative">
-                    <img 
-                      src={member.image} 
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden hover:-translate-y-2">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={member.image}
                       alt={member.name}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-royal-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <p className="text-sm font-semibold">Connect</p>
+                    </div>
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">{member.name}</h3>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-royal-600 transition-colors duration-300">{member.name}</h3>
                     <p className="text-orange-600 font-semibold mb-3">{member.position}</p>
                     <p className="text-gray-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
                     <div className="space-y-1">
                       {member.specialties.map((specialty, idx) => (
-                        <Badge key={idx} variant="outline" className="mr-2 text-xs">
+                        <Badge key={idx} variant="outline" className="mr-2 text-xs hover:bg-royal-100 transition-colors duration-300">
                           {specialty}
                         </Badge>
                       ))}
