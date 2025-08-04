@@ -293,27 +293,33 @@ export default function Contact() {
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="name">Full Name *</Label>
-                          <Input
-                            id="name"
-                            required
-                            value={formData.name}
-                            onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                            placeholder="Enter your full name"
-                            className="border-gray-300 focus:border-royal-500"
-                          />
+                          <Label htmlFor="name" className="text-gray-700 font-medium">Full Name *</Label>
+                          <div className="relative">
+                            <Input
+                              id="name"
+                              required
+                              value={formData.name}
+                              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                              placeholder="Enter your full name"
+                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                            />
+                            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                          </div>
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="email">Email Address *</Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            required
-                            value={formData.email}
-                            onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                            placeholder="your@email.com"
-                            className="border-gray-300 focus:border-royal-500"
-                          />
+                          <Label htmlFor="email" className="text-gray-700 font-medium">Email Address *</Label>
+                          <div className="relative">
+                            <Input
+                              id="email"
+                              type="email"
+                              required
+                              value={formData.email}
+                              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                              placeholder="your@email.com"
+                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                            />
+                            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                          </div>
                         </div>
                       </div>
 
