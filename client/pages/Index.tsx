@@ -156,6 +156,60 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Brand Showcase Section */}
+      <section className="py-16 bg-white border-b">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-3 gap-12 items-center">
+            <div className="lg:col-span-1 text-center lg:text-left">
+              <Logo size="xl" className="justify-center lg:justify-start mb-6" />
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                Connecting the World Through Logistics
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                With our innovative tracking technology and global network, we bridge distances and connect businesses worldwide.
+                Our integrated approach combines air, sea, and ground transportation for seamless logistics solutions.
+              </p>
+            </div>
+
+            <div className="lg:col-span-2">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="text-center group">
+                  <div className="bg-gradient-to-br from-royal-50 to-royal-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
+                    <Plane className="h-10 w-10 text-royal-600 mx-auto" />
+                  </div>
+                  <h4 className="font-semibold text-gray-800">Air Freight</h4>
+                  <p className="text-sm text-gray-600">Fast Global Delivery</p>
+                </div>
+
+                <div className="text-center group">
+                  <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
+                    <Ship className="h-10 w-10 text-orange-500 mx-auto" />
+                  </div>
+                  <h4 className="font-semibold text-gray-800">Ocean Freight</h4>
+                  <p className="text-sm text-gray-600">Bulk Cargo Solutions</p>
+                </div>
+
+                <div className="text-center group">
+                  <div className="bg-gradient-to-br from-royal-50 to-royal-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
+                    <Truck className="h-10 w-10 text-royal-600 mx-auto" />
+                  </div>
+                  <h4 className="font-semibold text-gray-800">Ground Transport</h4>
+                  <p className="text-sm text-gray-600">Door-to-Door Service</p>
+                </div>
+
+                <div className="text-center group">
+                  <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
+                    <Package className="h-10 w-10 text-orange-500 mx-auto" />
+                  </div>
+                  <h4 className="font-semibold text-gray-800">Express Delivery</h4>
+                  <p className="text-sm text-gray-600">Priority Handling</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Shipping Services */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
