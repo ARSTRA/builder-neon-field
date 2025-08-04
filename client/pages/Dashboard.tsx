@@ -423,10 +423,19 @@ export default function Dashboard() {
                               </div>
                             </div>
                             <div className="flex space-x-2">
-                              <Button variant="ghost" size="sm">
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => setCurrentView("tracking")}
+                                title="Track Shipment"
+                              >
                                 <Eye className="h-4 w-4" />
                               </Button>
-                              <Button variant="ghost" size="sm">
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                title="Download Label"
+                              >
                                 <Download className="h-4 w-4" />
                               </Button>
                             </div>
