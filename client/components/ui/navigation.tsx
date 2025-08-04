@@ -131,6 +131,15 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
+              <Link to="/admin" className="block w-full">
+                <Button
+                  variant="outline"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-full border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
+                >
+                  Admin Panel
+                </Button>
+              </Link>
               <Link to="/login" className="block w-full">
                 <Button
                   variant="outline"
