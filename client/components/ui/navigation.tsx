@@ -49,7 +49,9 @@ export function Navigation() {
               <div className="absolute -top-1 -right-1 h-3 w-3 bg-orange-500 rounded-full"></div>
             </div>
             <div>
-              <span className="text-xl font-bold text-royal-600">GlobalTrack</span>
+              <span className="text-xl font-bold text-royal-600">
+                GlobalTrack
+              </span>
               <span className="text-lg text-orange-500 ml-1">Logistics</span>
             </div>
           </Link>
@@ -77,7 +79,10 @@ export function Navigation() {
                 Get Quote
               </Button>
               <Link to="/login">
-                <Button variant="outline" className="border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white">
+                <Button
+                  variant="outline"
+                  className="border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white"
+                >
                   Sign In
                 </Button>
               </Link>
@@ -90,7 +95,11 @@ export function Navigation() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 
@@ -102,7 +111,9 @@ export function Navigation() {
                 key={item.href}
                 to={item.href}
                 className={`block py-2 font-medium transition-colors hover:text-royal-600 ${
-                  location.pathname === item.href ? "text-royal-600" : "text-gray-700"
+                  location.pathname === item.href
+                    ? "text-royal-600"
+                    : "text-gray-700"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -133,7 +144,10 @@ export function Navigation() {
         )}
       </div>
 
-      <GetQuoteModal open={isQuoteModalOpen} onOpenChange={setIsQuoteModalOpen} />
+      <GetQuoteModal
+        open={isQuoteModalOpen}
+        onOpenChange={setIsQuoteModalOpen}
+      />
     </nav>
   );
 }

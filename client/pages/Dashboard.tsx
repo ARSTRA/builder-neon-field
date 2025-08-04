@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { 
-  Package, 
-  TrendingUp, 
-  Clock, 
-  DollarSign, 
-  User, 
-  CreditCard, 
-  Settings, 
-  LogOut, 
-  Bell, 
+import {
+  Package,
+  TrendingUp,
+  Clock,
+  DollarSign,
+  User,
+  CreditCard,
+  Settings,
+  LogOut,
+  Bell,
   Search,
   Plus,
   MapPin,
@@ -21,7 +21,7 @@ import {
   Eye,
   Download,
   Menu,
-  X
+  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -58,28 +58,28 @@ export default function Dashboard() {
       type: "ground",
       date: "2024-12-10",
       value: "$1,250.00",
-      progress: 75
+      progress: 75,
     },
     {
-      id: "GT240002", 
+      id: "GT240002",
       destination: "London, UK",
       origin: "Chicago, IL",
       status: "delivered",
       type: "air",
       date: "2024-12-08",
       value: "$3,890.00",
-      progress: 100
+      progress: 100,
     },
     {
       id: "GT240003",
       destination: "Singapore",
-      origin: "Seattle, WA", 
+      origin: "Seattle, WA",
       status: "customs",
       type: "ocean",
       date: "2024-12-05",
       value: "$5,200.00",
-      progress: 60
-    }
+      progress: 60,
+    },
   ];
 
   const dashboardStats = [
@@ -89,7 +89,7 @@ export default function Dashboard() {
       change: "+2 from last month",
       icon: <Package className="h-6 w-6" />,
       color: "text-blue-600",
-      bgColor: "bg-blue-100"
+      bgColor: "bg-blue-100",
     },
     {
       title: "Total Delivered",
@@ -97,7 +97,7 @@ export default function Dashboard() {
       change: "+18% this month",
       icon: <CheckCircle className="h-6 w-6" />,
       color: "text-green-600",
-      bgColor: "bg-green-100"
+      bgColor: "bg-green-100",
     },
     {
       title: "Monthly Spend",
@@ -105,7 +105,7 @@ export default function Dashboard() {
       change: "+5% from last month",
       icon: <DollarSign className="h-6 w-6" />,
       color: "text-orange-600",
-      bgColor: "bg-orange-100"
+      bgColor: "bg-orange-100",
     },
     {
       title: "On-Time Rate",
@@ -113,18 +113,46 @@ export default function Dashboard() {
       change: "+0.5% improvement",
       icon: <TrendingUp className="h-6 w-6" />,
       color: "text-purple-600",
-      bgColor: "bg-purple-100"
-    }
+      bgColor: "bg-purple-100",
+    },
   ];
 
   const sidebarItems = [
-    { id: "overview", label: "Overview", icon: <TrendingUp className="h-5 w-5" /> },
-    { id: "shipments", label: "Shipments", icon: <Package className="h-5 w-5" /> },
-    { id: "tracking", label: "Track Packages", icon: <MapPin className="h-5 w-5" /> },
-    { id: "payments", label: "Payment Methods", icon: <CreditCard className="h-5 w-5" /> },
-    { id: "profile", label: "Profile Settings", icon: <User className="h-5 w-5" /> },
-    { id: "kyc", label: "KYC Verification", icon: <CheckCircle className="h-5 w-5" /> },
-    { id: "settings", label: "Account Settings", icon: <Settings className="h-5 w-5" /> }
+    {
+      id: "overview",
+      label: "Overview",
+      icon: <TrendingUp className="h-5 w-5" />,
+    },
+    {
+      id: "shipments",
+      label: "Shipments",
+      icon: <Package className="h-5 w-5" />,
+    },
+    {
+      id: "tracking",
+      label: "Track Packages",
+      icon: <MapPin className="h-5 w-5" />,
+    },
+    {
+      id: "payments",
+      label: "Payment Methods",
+      icon: <CreditCard className="h-5 w-5" />,
+    },
+    {
+      id: "profile",
+      label: "Profile Settings",
+      icon: <User className="h-5 w-5" />,
+    },
+    {
+      id: "kyc",
+      label: "KYC Verification",
+      icon: <CheckCircle className="h-5 w-5" />,
+    },
+    {
+      id: "settings",
+      label: "Account Settings",
+      icon: <Settings className="h-5 w-5" />,
+    },
   ];
 
   const getStatusIcon = (status: string) => {
@@ -178,14 +206,22 @@ export default function Dashboard() {
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                 className="lg:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100"
               >
-                {isSidebarOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isSidebarOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
               </button>
-              
+
               <Link to="/" className="flex items-center space-x-2 ml-4 lg:ml-0">
                 <Package className="h-8 w-8 text-royal-600" />
                 <div>
-                  <span className="text-xl font-bold text-royal-600">GlobalTrack</span>
-                  <span className="text-lg text-orange-500 ml-1">Logistics</span>
+                  <span className="text-xl font-bold text-royal-600">
+                    GlobalTrack
+                  </span>
+                  <span className="text-lg text-orange-500 ml-1">
+                    Logistics
+                  </span>
                 </div>
               </Link>
             </div>
@@ -210,11 +246,13 @@ export default function Dashboard() {
                   3
                 </span>
               </Button>
-              
+
               <div className="flex items-center space-x-3">
                 <Avatar className="h-8 w-8">
                   <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" />
-                  <AvatarFallback>{userEmail.charAt(0).toUpperCase()}</AvatarFallback>
+                  <AvatarFallback>
+                    {userEmail.charAt(0).toUpperCase()}
+                  </AvatarFallback>
                 </Avatar>
                 <div className="hidden md:block">
                   <p className="text-sm font-medium text-gray-900">John Doe</p>
@@ -228,7 +266,9 @@ export default function Dashboard() {
 
       <div className="flex">
         {/* Sidebar */}
-        <div className={`${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} fixed inset-y-0 left-0 z-30 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0`}>
+        <div
+          className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} fixed inset-y-0 left-0 z-30 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0`}
+        >
           <div className="flex flex-col h-full pt-16 lg:pt-0">
             <nav className="flex-1 px-4 py-6 space-y-2">
               {sidebarItems.map((item) => (
@@ -240,8 +280,8 @@ export default function Dashboard() {
                   }}
                   className={`w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg transition-colors ${
                     currentView === item.id
-                      ? 'bg-royal-100 text-royal-700 border border-royal-200'
-                      : 'text-gray-700 hover:bg-gray-100'
+                      ? "bg-royal-100 text-royal-700 border border-royal-200"
+                      : "text-gray-700 hover:bg-gray-100"
                   }`}
                 >
                   {item.icon}
@@ -272,8 +312,13 @@ export default function Dashboard() {
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <h1 className="text-2xl font-bold text-gray-900">Dashboard Overview</h1>
-                    <p className="text-gray-600">Welcome back, John! Here's what's happening with your shipments.</p>
+                    <h1 className="text-2xl font-bold text-gray-900">
+                      Dashboard Overview
+                    </h1>
+                    <p className="text-gray-600">
+                      Welcome back, John! Here's what's happening with your
+                      shipments.
+                    </p>
                   </div>
                   <div className="mt-4 sm:mt-0">
                     <Button className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
@@ -290,9 +335,15 @@ export default function Dashboard() {
                       <CardContent className="p-6">
                         <div className="flex items-center justify-between">
                           <div>
-                            <p className="text-sm font-medium text-gray-600">{stat.title}</p>
-                            <p className="text-2xl font-bold text-gray-900 mt-1">{stat.value}</p>
-                            <p className="text-xs text-gray-500 mt-1">{stat.change}</p>
+                            <p className="text-sm font-medium text-gray-600">
+                              {stat.title}
+                            </p>
+                            <p className="text-2xl font-bold text-gray-900 mt-1">
+                              {stat.value}
+                            </p>
+                            <p className="text-xs text-gray-500 mt-1">
+                              {stat.change}
+                            </p>
                           </div>
                           <div className={`p-3 rounded-lg ${stat.bgColor}`}>
                             <div className={stat.color}>{stat.icon}</div>
@@ -314,35 +365,48 @@ export default function Dashboard() {
                   <CardContent>
                     <div className="space-y-4">
                       {recentShipments.map((shipment) => (
-                        <div key={shipment.id} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                        <div
+                          key={shipment.id}
+                          className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+                        >
                           <div className="flex items-center space-x-4">
                             <div className="p-2 bg-gray-100 rounded-lg">
                               {getTypeIcon(shipment.type)}
                             </div>
                             <div>
                               <div className="flex items-center space-x-2">
-                                <p className="font-semibold text-gray-900">{shipment.id}</p>
-                                <Badge className={getStatusColor(shipment.status)}>
+                                <p className="font-semibold text-gray-900">
+                                  {shipment.id}
+                                </p>
+                                <Badge
+                                  className={getStatusColor(shipment.status)}
+                                >
                                   {shipment.status.replace("_", " ")}
                                 </Badge>
                               </div>
                               <p className="text-sm text-gray-600">
                                 {shipment.origin} → {shipment.destination}
                               </p>
-                              <p className="text-xs text-gray-500">{shipment.date}</p>
+                              <p className="text-xs text-gray-500">
+                                {shipment.date}
+                              </p>
                             </div>
                           </div>
                           <div className="flex items-center space-x-4">
                             <div className="text-right">
-                              <p className="font-semibold text-gray-900">{shipment.value}</p>
+                              <p className="font-semibold text-gray-900">
+                                {shipment.value}
+                              </p>
                               <div className="flex items-center space-x-2">
                                 <div className="w-20 h-2 bg-gray-200 rounded-full">
-                                  <div 
+                                  <div
                                     className="h-2 bg-royal-600 rounded-full transition-all duration-300"
                                     style={{ width: `${shipment.progress}%` }}
                                   ></div>
                                 </div>
-                                <span className="text-xs text-gray-500">{shipment.progress}%</span>
+                                <span className="text-xs text-gray-500">
+                                  {shipment.progress}%
+                                </span>
                               </div>
                             </div>
                             <div className="flex space-x-2">
@@ -367,8 +431,12 @@ export default function Dashboard() {
                       <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                         <Package className="h-6 w-6 text-blue-600" />
                       </div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Create Shipment</h3>
-                      <p className="text-sm text-gray-600">Start a new shipment request</p>
+                      <h3 className="font-semibold text-gray-900 mb-2">
+                        Create Shipment
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        Start a new shipment request
+                      </p>
                     </CardContent>
                   </Card>
 
@@ -377,8 +445,12 @@ export default function Dashboard() {
                       <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                         <MapPin className="h-6 w-6 text-green-600" />
                       </div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Track Package</h3>
-                      <p className="text-sm text-gray-600">Track your shipments in real-time</p>
+                      <h3 className="font-semibold text-gray-900 mb-2">
+                        Track Package
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        Track your shipments in real-time
+                      </p>
                     </CardContent>
                   </Card>
 
@@ -387,8 +459,12 @@ export default function Dashboard() {
                       <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                         <DollarSign className="h-6 w-6 text-orange-600" />
                       </div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Billing & Payments</h3>
-                      <p className="text-sm text-gray-600">Manage your payment methods</p>
+                      <h3 className="font-semibold text-gray-900 mb-2">
+                        Billing & Payments
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        Manage your payment methods
+                      </p>
                     </CardContent>
                   </Card>
                 </div>
@@ -402,10 +478,11 @@ export default function Dashboard() {
                   <Package className="h-8 w-8 text-gray-400" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {sidebarItems.find(item => item.id === currentView)?.label}
+                  {sidebarItems.find((item) => item.id === currentView)?.label}
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  This section is under development. The full {currentView} functionality will be available soon.
+                  This section is under development. The full {currentView}{" "}
+                  functionality will be available soon.
                 </p>
                 <Button
                   onClick={() => setCurrentView("overview")}

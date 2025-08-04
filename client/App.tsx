@@ -27,36 +27,51 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           {/* Public pages with navigation */}
-          <Route path="/" element={
-            <div className="min-h-screen bg-white">
-              <Navigation />
-              <Index />
-            </div>
-          } />
-          <Route path="/track" element={
-            <div className="min-h-screen bg-white">
-              <Navigation />
-              <Track />
-            </div>
-          } />
-          <Route path="/services" element={
-            <div className="min-h-screen bg-white">
-              <Navigation />
-              <Services />
-            </div>
-          } />
-          <Route path="/about" element={
-            <div className="min-h-screen bg-white">
-              <Navigation />
-              <About />
-            </div>
-          } />
-          <Route path="/contact" element={
-            <div className="min-h-screen bg-white">
-              <Navigation />
-              <Contact />
-            </div>
-          } />
+          <Route
+            path="/"
+            element={
+              <div className="min-h-screen bg-white">
+                <Navigation />
+                <Index />
+              </div>
+            }
+          />
+          <Route
+            path="/track"
+            element={
+              <div className="min-h-screen bg-white">
+                <Navigation />
+                <Track />
+              </div>
+            }
+          />
+          <Route
+            path="/services"
+            element={
+              <div className="min-h-screen bg-white">
+                <Navigation />
+                <Services />
+              </div>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <div className="min-h-screen bg-white">
+                <Navigation />
+                <About />
+              </div>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <div className="min-h-screen bg-white">
+                <Navigation />
+                <Contact />
+              </div>
+            }
+          />
 
           {/* Auth pages without navigation */}
           <Route path="/login" element={<Login />} />
@@ -66,12 +81,15 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
 
           {/* 404 page */}
-          <Route path="*" element={
-            <div className="min-h-screen bg-white">
-              <Navigation />
-              <NotFound />
-            </div>
-          } />
+          <Route
+            path="*"
+            element={
+              <div className="min-h-screen bg-white">
+                <Navigation />
+                <NotFound />
+              </div>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

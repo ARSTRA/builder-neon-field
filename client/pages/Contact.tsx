@@ -1,13 +1,35 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Globe, Calendar, User, Building, Package, ArrowRight, CheckCircle, Star, Shield } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  MessageCircle,
+  Globe,
+  Calendar,
+  User,
+  Building,
+  Package,
+  ArrowRight,
+  CheckCircle,
+  Star,
+  Shield,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -17,7 +39,7 @@ export default function Contact() {
     company: "",
     subject: "",
     message: "",
-    urgency: ""
+    urgency: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,13 +48,13 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     setIsSubmitting(false);
     setSubmitted(true);
-    
+
     // Reset form after 3 seconds
     setTimeout(() => {
       setSubmitted(false);
@@ -43,7 +65,7 @@ export default function Contact() {
         company: "",
         subject: "",
         message: "",
-        urgency: ""
+        urgency: "",
       });
     }, 3000);
   };
@@ -56,29 +78,32 @@ export default function Contact() {
       phone: "+1 (555) 123-4567",
       email: "newyork@globaltrack.com",
       hours: "Mon-Fri: 8:00 AM - 6:00 PM EST",
-      image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      timezone: "EST"
+      image:
+        "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      timezone: "EST",
     },
     {
       city: "London",
-      country: "United Kingdom", 
+      country: "United Kingdom",
       address: "25 Bank Street, Canary Wharf, London E14 5JP",
       phone: "+44 20 7946 0958",
       email: "london@globaltrack.com",
       hours: "Mon-Fri: 9:00 AM - 5:00 PM GMT",
-      image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      timezone: "GMT"
+      image:
+        "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      timezone: "GMT",
     },
     {
       city: "Singapore",
       country: "Singapore",
       address: "1 Marina Bay Drive, Singapore 018989",
       phone: "+65 6123 4567",
-      email: "singapore@globaltrack.com", 
+      email: "singapore@globaltrack.com",
       hours: "Mon-Fri: 9:00 AM - 6:00 PM SGT",
-      image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      timezone: "SGT"
-    }
+      image:
+        "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      timezone: "SGT",
+    },
   ];
 
   const contactMethods = [
@@ -89,16 +114,16 @@ export default function Contact() {
       contact: "+1 (555) 123-4567",
       action: "Call Now",
       gradient: "from-blue-600 to-blue-800",
-      availability: "24/7 Support"
+      availability: "24/7 Support",
     },
     {
       icon: <MessageCircle className="h-8 w-8" />,
-      title: "Live Chat Support", 
+      title: "Live Chat Support",
       description: "Get instant answers to your shipping questions",
       contact: "Start Chat",
       action: "Chat Now",
       gradient: "from-green-600 to-green-800",
-      availability: "Online Now"
+      availability: "Online Now",
     },
     {
       icon: <Mail className="h-8 w-8" />,
@@ -107,7 +132,7 @@ export default function Contact() {
       contact: "info@globaltrack.com",
       action: "Send Email",
       gradient: "from-purple-600 to-purple-800",
-      availability: "24h Response"
+      availability: "24h Response",
     },
     {
       icon: <Calendar className="h-8 w-8" />,
@@ -116,31 +141,31 @@ export default function Contact() {
       contact: "Book Appointment",
       action: "Schedule Now",
       gradient: "from-orange-600 to-orange-800",
-      availability: "Same Day"
-    }
+      availability: "Same Day",
+    },
   ];
 
   const supportFeatures = [
     {
       icon: <Shield className="h-6 w-6 text-blue-600" />,
       title: "Secure Communication",
-      description: "All communications are encrypted and secure"
+      description: "All communications are encrypted and secure",
     },
     {
       icon: <Clock className="h-6 w-6 text-green-600" />,
       title: "Quick Response",
-      description: "Average response time under 30 minutes"
+      description: "Average response time under 30 minutes",
     },
     {
       icon: <Star className="h-6 w-6 text-orange-600" />,
       title: "Expert Support",
-      description: "Certified logistics professionals available"
+      description: "Certified logistics professionals available",
     },
     {
       icon: <Globe className="h-6 w-6 text-purple-600" />,
       title: "Global Coverage",
-      description: "Support available in multiple languages"
-    }
+      description: "Support available in multiple languages",
+    },
   ];
 
   if (submitted) {
@@ -151,9 +176,12 @@ export default function Contact() {
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="h-8 w-8 text-green-600" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Message Sent Successfully!</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Message Sent Successfully!
+            </h2>
             <p className="text-gray-600 mb-6">
-              Thank you for contacting GlobalTrack Logistics. Our team will review your message and respond within 24 hours.
+              Thank you for contacting GlobalTrack Logistics. Our team will
+              review your message and respond within 24 hours.
             </p>
             <p className="text-sm text-gray-500">
               For urgent matters, please call us directly at +1 (555) 123-4567
@@ -171,17 +199,18 @@ export default function Contact() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-royal-600/85 via-royal-700/80 to-royal-800/85"></div>
         <div className="absolute inset-0 bg-black/20"></div>
-        
+
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
               Get In <span className="text-orange-400">Touch</span>
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-fade-in-delay max-w-3xl mx-auto leading-relaxed">
-              Ready to streamline your logistics? Our expert team is here to help you find the 
-              perfect shipping solution for your business needs.
+              Ready to streamline your logistics? Our expert team is here to
+              help you find the perfect shipping solution for your business
+              needs.
             </p>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 animate-slide-up">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <Phone className="h-8 w-8 text-orange-400 mx-auto mb-2" />
@@ -206,7 +235,10 @@ export default function Contact() {
                 <Phone className="mr-2 h-5 w-5" />
                 Call Now: +1 (555) 123-4567
               </Button>
-              <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300">
+              <Button
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
+              >
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Start Live Chat
               </Button>
@@ -224,27 +256,40 @@ export default function Contact() {
                 Multiple Ways to Connect
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Choose the communication method that works best for you. Our team is ready to assist 
-                with all your logistics needs.
+                Choose the communication method that works best for you. Our
+                team is ready to assist with all your logistics needs.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
               {contactMethods.map((method, index) => (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white hover:-translate-y-2">
+                <Card
+                  key={index}
+                  className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white hover:-translate-y-2"
+                >
                   <CardContent className="p-8 text-center">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${method.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
+                    <div
+                      className={`w-16 h-16 bg-gradient-to-r ${method.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-500 shadow-lg`}
+                    >
                       {method.icon}
                     </div>
                     <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-royal-600 transition-colors duration-300">
                       {method.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">{method.description}</p>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      {method.description}
+                    </p>
                     <div className="mb-4">
-                      <div className="font-semibold text-gray-800">{method.contact}</div>
-                      <Badge className="mt-2 bg-green-100 text-green-800">{method.availability}</Badge>
+                      <div className="font-semibold text-gray-800">
+                        {method.contact}
+                      </div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">
+                        {method.availability}
+                      </Badge>
                     </div>
-                    <Button className={`w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white`}>
+                    <Button
+                      className={`w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white`}
+                    >
                       {method.action}
                     </Button>
                   </CardContent>
@@ -254,15 +299,21 @@ export default function Contact() {
 
             {/* Support Features */}
             <div className="bg-white rounded-3xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Why Choose Our Support?</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">
+                Why Choose Our Support?
+              </h3>
               <div className="grid md:grid-cols-4 gap-6">
                 {supportFeatures.map((feature, index) => (
                   <div key={index} className="text-center">
                     <div className="flex justify-center mb-4">
                       {feature.icon}
                     </div>
-                    <h4 className="font-semibold text-gray-800 mb-2">{feature.title}</h4>
-                    <p className="text-sm text-gray-600">{feature.description}</p>
+                    <h4 className="font-semibold text-gray-800 mb-2">
+                      {feature.title}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      {feature.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -283,8 +334,9 @@ export default function Contact() {
                     Send Us a Message
                   </h2>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    Have a specific question or need a custom solution? Fill out the form below 
-                    and our logistics experts will get back to you within 24 hours.
+                    Have a specific question or need a custom solution? Fill out
+                    the form below and our logistics experts will get back to
+                    you within 24 hours.
                   </p>
                 </div>
 
@@ -293,13 +345,23 @@ export default function Contact() {
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="name" className="text-gray-700 font-medium">Full Name *</Label>
+                          <Label
+                            htmlFor="name"
+                            className="text-gray-700 font-medium"
+                          >
+                            Full Name *
+                          </Label>
                           <div className="relative">
                             <Input
                               id="name"
                               required
                               value={formData.name}
-                              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                              onChange={(e) =>
+                                setFormData((prev) => ({
+                                  ...prev,
+                                  name: e.target.value,
+                                }))
+                              }
                               placeholder="Enter your full name"
                               className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
                             />
@@ -307,14 +369,24 @@ export default function Contact() {
                           </div>
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="email" className="text-gray-700 font-medium">Email Address *</Label>
+                          <Label
+                            htmlFor="email"
+                            className="text-gray-700 font-medium"
+                          >
+                            Email Address *
+                          </Label>
                           <div className="relative">
                             <Input
                               id="email"
                               type="email"
                               required
                               value={formData.email}
-                              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                              onChange={(e) =>
+                                setFormData((prev) => ({
+                                  ...prev,
+                                  email: e.target.value,
+                                }))
+                              }
                               placeholder="your@email.com"
                               className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
                             />
@@ -325,13 +397,23 @@ export default function Contact() {
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="phone" className="text-gray-700 font-medium">Phone Number</Label>
+                          <Label
+                            htmlFor="phone"
+                            className="text-gray-700 font-medium"
+                          >
+                            Phone Number
+                          </Label>
                           <div className="relative">
                             <Input
                               id="phone"
                               type="tel"
                               value={formData.phone}
-                              onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                              onChange={(e) =>
+                                setFormData((prev) => ({
+                                  ...prev,
+                                  phone: e.target.value,
+                                }))
+                              }
                               placeholder="+1 (555) 123-4567"
                               className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
                             />
@@ -339,12 +421,22 @@ export default function Contact() {
                           </div>
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="company" className="text-gray-700 font-medium">Company Name</Label>
+                          <Label
+                            htmlFor="company"
+                            className="text-gray-700 font-medium"
+                          >
+                            Company Name
+                          </Label>
                           <div className="relative">
                             <Input
                               id="company"
                               value={formData.company}
-                              onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
+                              onChange={(e) =>
+                                setFormData((prev) => ({
+                                  ...prev,
+                                  company: e.target.value,
+                                }))
+                              }
                               placeholder="Your company name"
                               className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
                             />
@@ -355,13 +447,23 @@ export default function Contact() {
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="subject" className="text-gray-700 font-medium">Subject *</Label>
+                          <Label
+                            htmlFor="subject"
+                            className="text-gray-700 font-medium"
+                          >
+                            Subject *
+                          </Label>
                           <div className="relative">
                             <Input
                               id="subject"
                               required
                               value={formData.subject}
-                              onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
+                              onChange={(e) =>
+                                setFormData((prev) => ({
+                                  ...prev,
+                                  subject: e.target.value,
+                                }))
+                              }
                               placeholder="Brief subject line"
                               className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
                             />
@@ -369,28 +471,59 @@ export default function Contact() {
                           </div>
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="urgency" className="text-gray-700 font-medium">Priority Level</Label>
-                          <Select value={formData.urgency} onValueChange={(value) => setFormData(prev => ({ ...prev, urgency: value }))}>
+                          <Label
+                            htmlFor="urgency"
+                            className="text-gray-700 font-medium"
+                          >
+                            Priority Level
+                          </Label>
+                          <Select
+                            value={formData.urgency}
+                            onValueChange={(value) =>
+                              setFormData((prev) => ({
+                                ...prev,
+                                urgency: value,
+                              }))
+                            }
+                          >
                             <SelectTrigger className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 h-12">
                               <SelectValue placeholder="Select priority" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="low">Low - General Inquiry</SelectItem>
-                              <SelectItem value="medium">Medium - Quote Request</SelectItem>
-                              <SelectItem value="high">High - Urgent Support</SelectItem>
-                              <SelectItem value="critical">Critical - Emergency</SelectItem>
+                              <SelectItem value="low">
+                                Low - General Inquiry
+                              </SelectItem>
+                              <SelectItem value="medium">
+                                Medium - Quote Request
+                              </SelectItem>
+                              <SelectItem value="high">
+                                High - Urgent Support
+                              </SelectItem>
+                              <SelectItem value="critical">
+                                Critical - Emergency
+                              </SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="message" className="text-gray-700 font-medium">Message *</Label>
+                        <Label
+                          htmlFor="message"
+                          className="text-gray-700 font-medium"
+                        >
+                          Message *
+                        </Label>
                         <Textarea
                           id="message"
                           required
                           value={formData.message}
-                          onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                          onChange={(e) =>
+                            setFormData((prev) => ({
+                              ...prev,
+                              message: e.target.value,
+                            }))
+                          }
                           placeholder="Please describe your logistics needs, shipping requirements, or any questions you have..."
                           rows={5}
                           className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 resize-none"
@@ -416,7 +549,8 @@ export default function Contact() {
                       </Button>
 
                       <p className="text-sm text-gray-500 text-center">
-                        By submitting this form, you agree to our privacy policy and terms of service.
+                        By submitting this form, you agree to our privacy policy
+                        and terms of service.
                       </p>
                     </form>
                   </CardContent>
@@ -430,18 +564,22 @@ export default function Contact() {
                     Our Global Offices
                   </h2>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    With offices strategically located around the world, we're always close to 
-                    your business. Visit us or connect with your local team.
+                    With offices strategically located around the world, we're
+                    always close to your business. Visit us or connect with your
+                    local team.
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   {offices.map((office, index) => (
-                    <Card key={index} className="overflow-hidden shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
+                    <Card
+                      key={index}
+                      className="overflow-hidden shadow-lg border-0 hover:shadow-xl transition-shadow duration-300"
+                    >
                       <div className="grid md:grid-cols-3">
                         <div className="relative h-48 md:h-auto">
-                          <img 
-                            src={office.image} 
+                          <img
+                            src={office.image}
                             alt={`${office.city} office`}
                             className="w-full h-full object-cover"
                           />
@@ -451,38 +589,54 @@ export default function Contact() {
                             <p className="text-sm">{office.country}</p>
                           </div>
                         </div>
-                        
+
                         <CardContent className="md:col-span-2 p-6">
                           <div className="space-y-3">
                             <div className="flex items-start space-x-3">
                               <MapPin className="h-5 w-5 text-royal-600 mt-1 flex-shrink-0" />
                               <div>
-                                <p className="font-medium text-gray-800">Address</p>
-                                <p className="text-gray-600 text-sm">{office.address}</p>
+                                <p className="font-medium text-gray-800">
+                                  Address
+                                </p>
+                                <p className="text-gray-600 text-sm">
+                                  {office.address}
+                                </p>
                               </div>
                             </div>
-                            
+
                             <div className="flex items-center space-x-3">
                               <Phone className="h-5 w-5 text-royal-600 flex-shrink-0" />
                               <div>
-                                <p className="font-medium text-gray-800">Phone</p>
-                                <p className="text-gray-600 text-sm">{office.phone}</p>
+                                <p className="font-medium text-gray-800">
+                                  Phone
+                                </p>
+                                <p className="text-gray-600 text-sm">
+                                  {office.phone}
+                                </p>
                               </div>
                             </div>
-                            
+
                             <div className="flex items-center space-x-3">
                               <Mail className="h-5 w-5 text-royal-600 flex-shrink-0" />
                               <div>
-                                <p className="font-medium text-gray-800">Email</p>
-                                <p className="text-gray-600 text-sm">{office.email}</p>
+                                <p className="font-medium text-gray-800">
+                                  Email
+                                </p>
+                                <p className="text-gray-600 text-sm">
+                                  {office.email}
+                                </p>
                               </div>
                             </div>
-                            
+
                             <div className="flex items-center space-x-3">
                               <Clock className="h-5 w-5 text-royal-600 flex-shrink-0" />
                               <div>
-                                <p className="font-medium text-gray-800">Hours</p>
-                                <p className="text-gray-600 text-sm">{office.hours}</p>
+                                <p className="font-medium text-gray-800">
+                                  Hours
+                                </p>
+                                <p className="text-gray-600 text-sm">
+                                  {office.hours}
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -504,33 +658,54 @@ export default function Contact() {
             <h2 className="text-4xl font-bold text-gray-800 mb-8">
               Frequently Asked Questions
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="p-6 text-left border-0 bg-white shadow-lg">
-                <h3 className="font-semibold text-gray-800 mb-3">How quickly do you respond to inquiries?</h3>
-                <p className="text-gray-600 text-sm">We respond to all inquiries within 24 hours. For urgent matters, call our 24/7 support line for immediate assistance.</p>
+                <h3 className="font-semibold text-gray-800 mb-3">
+                  How quickly do you respond to inquiries?
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  We respond to all inquiries within 24 hours. For urgent
+                  matters, call our 24/7 support line for immediate assistance.
+                </p>
               </Card>
-              
+
               <Card className="p-6 text-left border-0 bg-white shadow-lg">
-                <h3 className="font-semibold text-gray-800 mb-3">Do you provide quotes over the phone?</h3>
-                <p className="text-gray-600 text-sm">Yes! Our logistics experts can provide preliminary quotes over the phone and detailed quotes via email within hours.</p>
+                <h3 className="font-semibold text-gray-800 mb-3">
+                  Do you provide quotes over the phone?
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Yes! Our logistics experts can provide preliminary quotes over
+                  the phone and detailed quotes via email within hours.
+                </p>
               </Card>
-              
+
               <Card className="p-6 text-left border-0 bg-white shadow-lg">
-                <h3 className="font-semibold text-gray-800 mb-3">Can I schedule a site visit?</h3>
-                <p className="text-gray-600 text-sm">Absolutely. We offer on-site consultations for complex logistics projects. Contact us to schedule your visit.</p>
+                <h3 className="font-semibold text-gray-800 mb-3">
+                  Can I schedule a site visit?
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Absolutely. We offer on-site consultations for complex
+                  logistics projects. Contact us to schedule your visit.
+                </p>
               </Card>
-              
+
               <Card className="p-6 text-left border-0 bg-white shadow-lg">
-                <h3 className="font-semibold text-gray-800 mb-3">What languages do you support?</h3>
-                <p className="text-gray-600 text-sm">Our global team speaks 15+ languages including English, Spanish, Chinese, Arabic, French, German, and more.</p>
+                <h3 className="font-semibold text-gray-800 mb-3">
+                  What languages do you support?
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Our global team speaks 15+ languages including English,
+                  Spanish, Chinese, Arabic, French, German, and more.
+                </p>
               </Card>
             </div>
 
             <Card className="p-8 bg-gradient-to-r from-royal-600 to-orange-600 text-white border-0">
               <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
               <p className="text-lg mb-6 opacity-90">
-                Join thousands of businesses who trust GlobalTrack with their logistics needs.
+                Join thousands of businesses who trust GlobalTrack with their
+                logistics needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="bg-white text-royal-600 hover:bg-gray-100 px-8 py-3 font-semibold">
@@ -538,7 +713,10 @@ export default function Contact() {
                   Get Quote Now
                 </Button>
                 <Link to="/track">
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-royal-600 px-8 py-3 font-semibold">
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-royal-600 px-8 py-3 font-semibold"
+                  >
                     Track Shipment
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
