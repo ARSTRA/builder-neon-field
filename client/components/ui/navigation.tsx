@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Package, Phone, Mail, MapPin, Menu, X } from "lucide-react";
 import { Button } from "./button";
 import { useState } from "react";
+import { GetQuoteModal } from "./get-quote-modal";
 
 export function Navigation() {
   const location = useLocation();
