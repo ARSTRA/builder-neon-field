@@ -385,7 +385,7 @@ export default function Contact() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="message">Message *</Label>
+                        <Label htmlFor="message" className="text-gray-700 font-medium">Message *</Label>
                         <Textarea
                           id="message"
                           required
@@ -393,17 +393,20 @@ export default function Contact() {
                           onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                           placeholder="Please describe your logistics needs, shipping requirements, or any questions you have..."
                           rows={5}
-                          className="border-gray-300 focus:border-royal-500"
+                          className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 resize-none"
                         />
                       </div>
 
                       <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 py-4 text-lg font-semibold"
+                        className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
                         {isSubmitting ? (
-                          <>Sending Message...</>
+                          <>
+                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                            Sending Message...
+                          </>
                         ) : (
                           <>
                             Send Message
