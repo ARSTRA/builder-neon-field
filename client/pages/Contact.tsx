@@ -325,44 +325,53 @@ export default function Contact() {
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="phone">Phone Number</Label>
-                          <Input
-                            id="phone"
-                            type="tel"
-                            value={formData.phone}
-                            onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                            placeholder="+1 (555) 123-4567"
-                            className="border-gray-300 focus:border-royal-500"
-                          />
+                          <Label htmlFor="phone" className="text-gray-700 font-medium">Phone Number</Label>
+                          <div className="relative">
+                            <Input
+                              id="phone"
+                              type="tel"
+                              value={formData.phone}
+                              onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                              placeholder="+1 (555) 123-4567"
+                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                            />
+                            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                          </div>
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="company">Company Name</Label>
-                          <Input
-                            id="company"
-                            value={formData.company}
-                            onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
-                            placeholder="Your company name"
-                            className="border-gray-300 focus:border-royal-500"
-                          />
+                          <Label htmlFor="company" className="text-gray-700 font-medium">Company Name</Label>
+                          <div className="relative">
+                            <Input
+                              id="company"
+                              value={formData.company}
+                              onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
+                              placeholder="Your company name"
+                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                            />
+                            <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                          </div>
                         </div>
                       </div>
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="subject">Subject *</Label>
-                          <Input
-                            id="subject"
-                            required
-                            value={formData.subject}
-                            onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
-                            placeholder="Brief subject line"
-                            className="border-gray-300 focus:border-royal-500"
-                          />
+                          <Label htmlFor="subject" className="text-gray-700 font-medium">Subject *</Label>
+                          <div className="relative">
+                            <Input
+                              id="subject"
+                              required
+                              value={formData.subject}
+                              onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
+                              placeholder="Brief subject line"
+                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                            />
+                            <Package className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                          </div>
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="urgency">Priority Level</Label>
+                          <Label htmlFor="urgency" className="text-gray-700 font-medium">Priority Level</Label>
                           <Select value={formData.urgency} onValueChange={(value) => setFormData(prev => ({ ...prev, urgency: value }))}>
-                            <SelectTrigger className="border-gray-300 focus:border-royal-500">
+                            <SelectTrigger className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 h-12">
                               <SelectValue placeholder="Select priority" />
                             </SelectTrigger>
                             <SelectContent>
