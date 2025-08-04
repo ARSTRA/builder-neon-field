@@ -71,6 +71,14 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
+              <Link to="/admin">
+                <Button
+                  variant="outline"
+                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white mr-2"
+                >
+                  Admin
+                </Button>
+              </Link>
               <Link to="/login">
                 <Button
                   variant="outline"
