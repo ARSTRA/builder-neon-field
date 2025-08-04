@@ -16,6 +16,7 @@ export function Navigation() {
     { href: "/services", label: "Services" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact" },
+    { href: "/chat", label: "Live Chat" },
   ];
 
   return (
