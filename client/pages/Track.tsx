@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Search, Package, MapPin, Clock, CheckCircle, Truck, Plane, Ship, AlertCircle } from "lucide-react";
+import { Search, Package, MapPin, Clock, CheckCircle, Truck, Plane, Ship, AlertCircle, Download, Calendar, RotateCcw, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
 
 interface TrackingEvent {
   date: string;
@@ -13,6 +14,7 @@ interface TrackingEvent {
   status: string;
   description: string;
   icon: React.ReactNode;
+  completed: boolean;
 }
 
 interface PackageData {
@@ -27,6 +29,9 @@ interface PackageData {
   dimensions: string;
   events: TrackingEvent[];
   coordinates: { lat: number; lng: number };
+  progress: number;
+  carrier: string;
+  packageImage: string;
 }
 
 export default function Track() {
@@ -43,35 +48,50 @@ export default function Track() {
     currentLocation: "Los Angeles, CA",
     destination: "New York, NY",
     origin: "Shanghai, China",
-    estimatedDelivery: "Dec 15, 2024",
+    estimatedDelivery: "Dec 18, 2024",
     service: "Express Air Freight",
     weight: "2.5 kg",
     dimensions: "30x20x15 cm",
+    progress: 65,
+    carrier: "GlobalTrack Express",
+    packageImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     coordinates: { lat: 34.0522, lng: -118.2437 },
     events: [
+      {
+        date: "Dec 13, 2024",
+        time: "08:45",
+        location: "Los Angeles, CA",
+        status: "In Transit",
+        description: "Package is on the way to destination facility",
+        icon: <Truck className="h-5 w-5" />,
+        completed: false
+      },
       {
         date: "Dec 12, 2024",
         time: "14:30",
         location: "Los Angeles, CA",
-        status: "In Transit",
+        status: "Arrived at Facility",
         description: "Package arrived at Los Angeles sorting facility",
-        icon: <Truck className="h-5 w-5" />
+        icon: <Package className="h-5 w-5" />,
+        completed: true
       },
       {
         date: "Dec 11, 2024",
         time: "09:15",
         location: "San Francisco, CA",
-        status: "In Transit",
-        description: "Departed from San Francisco hub",
-        icon: <Plane className="h-5 w-5" />
+        status: "Departed",
+        description: "Departed from San Francisco international hub",
+        icon: <Plane className="h-5 w-5" />,
+        completed: true
       },
       {
         date: "Dec 10, 2024",
         time: "16:45",
         location: "Shanghai, China",
         status: "Picked Up",
-        description: "Package picked up from origin",
-        icon: <Package className="h-5 w-5" />
+        description: "Package picked up from origin and processed",
+        icon: <CheckCircle className="h-5 w-5" />,
+        completed: true
       }
     ]
   });
@@ -107,241 +127,340 @@ export default function Track() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "delivered":
-        return "bg-green-100 text-green-800";
+        return "bg-green-100 text-green-800 border-green-200";
       case "in_transit":
-        return "bg-blue-100 text-blue-800";
+        return "bg-blue-100 text-blue-800 border-blue-200";
       case "picked_up":
-        return "bg-yellow-100 text-yellow-800";
+        return "bg-yellow-100 text-yellow-800 border-yellow-200";
       case "exception":
-        return "bg-red-100 text-red-800";
+        return "bg-red-100 text-red-800 border-red-200";
       default:
-        return "bg-gray-100 text-gray-800";
+        return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
 
   const getStatusIcon = (status: string) => {
     switch (status) {
       case "delivered":
-        return <CheckCircle className="h-5 w-5 text-green-600" />;
+        return <CheckCircle className="h-6 w-6 text-green-600" />;
       case "in_transit":
-        return <Truck className="h-5 w-5 text-blue-600" />;
+        return <Truck className="h-6 w-6 text-blue-600" />;
       case "exception":
-        return <AlertCircle className="h-5 w-5 text-red-600" />;
+        return <AlertCircle className="h-6 w-6 text-red-600" />;
       default:
-        return <Clock className="h-5 w-5 text-gray-600" />;
+        return <Clock className="h-6 w-6 text-gray-600" />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Track Your Package</h1>
-          <p className="text-xl text-gray-600">Enter your tracking number to get real-time updates</p>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-royal-600 to-royal-800 text-white py-16">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl font-bold mb-4">Track Your Package</h1>
+            <p className="text-xl text-gray-200 mb-8">Real-time GPS tracking with live updates every step of the way</p>
+            
+            {/* Enhanced Search Form */}
+            <Card className="bg-white/10 backdrop-blur-sm border-0">
+              <CardContent className="p-8">
+                <form onSubmit={handleSearch} className="space-y-4">
+                  <div className="flex flex-col md:flex-row gap-4">
+                    <div className="relative flex-1">
+                      <Input
+                        type="text"
+                        placeholder="Enter your tracking number (e.g., GT123456789)"
+                        value={trackingId}
+                        onChange={(e) => setTrackingId(e.target.value)}
+                        className="bg-white text-gray-800 placeholder:text-gray-500 text-lg py-6 pl-12 border-0 shadow-lg"
+                      />
+                      <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-6 w-6 text-gray-500" />
+                    </div>
+                    <Button 
+                      type="submit" 
+                      disabled={loading}
+                      className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-6 px-8 text-lg font-semibold shadow-lg"
+                    >
+                      {loading ? "Searching..." : "Track Package"}
+                    </Button>
+                  </div>
+                  {error && (
+                    <div className="bg-red-500/20 border border-red-400 rounded-lg p-4 text-red-100">
+                      <div className="flex items-center">
+                        <AlertCircle className="h-5 w-5 mr-2" />
+                        {error}
+                      </div>
+                    </div>
+                  )}
+                </form>
+              </CardContent>
+            </Card>
+          </div>
         </div>
+      </section>
 
-        {/* Search Form */}
-        <Card className="max-w-2xl mx-auto mb-8">
-          <CardContent className="p-6">
-            <form onSubmit={handleSearch} className="flex flex-col md:flex-row gap-4">
-              <div className="relative flex-1">
-                <Input
-                  type="text"
-                  placeholder="Enter tracking number (e.g., GT123456789)"
-                  value={trackingId}
-                  onChange={(e) => setTrackingId(e.target.value)}
-                  className="pl-10"
-                />
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-              </div>
-              <Button 
-                type="submit" 
-                disabled={loading}
-                className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
-              >
-                {loading ? "Searching..." : "Track Package"}
-              </Button>
-            </form>
-            {error && (
-              <div className="mt-4 p-3 bg-red-100 border border-red-300 rounded-md text-red-700">
-                {error}
-              </div>
-            )}
-          </CardContent>
-        </Card>
-
+      <div className="container mx-auto px-4 py-8">
         {/* Package Information */}
         {packageData && (
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Package Details */}
-            <div className="lg:col-span-2">
-              <Card className="mb-6">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    {getStatusIcon(packageData.status)}
-                    Tracking: {packageData.trackingId}
-                    <Badge className={getStatusColor(packageData.status)}>
-                      {packageData.status.replace("_", " ").toUpperCase()}
-                    </Badge>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h3 className="font-semibold text-gray-800 mb-2">Shipment Details</h3>
-                      <div className="space-y-2 text-sm">
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Service:</span>
-                          <span className="font-medium">{packageData.service}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Weight:</span>
-                          <span className="font-medium">{packageData.weight}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Dimensions:</span>
-                          <span className="font-medium">{packageData.dimensions}</span>
-                        </div>
+          <div className="max-w-7xl mx-auto">
+            {/* Status Overview */}
+            <Card className="mb-8 shadow-xl border-0">
+              <CardContent className="p-8">
+                <div className="grid lg:grid-cols-3 gap-8 items-center">
+                  {/* Package Image & Basic Info */}
+                  <div className="lg:col-span-1">
+                    <div className="relative">
+                      <img 
+                        src={packageData.packageImage} 
+                        alt="Package in transit" 
+                        className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <Badge className={`${getStatusColor(packageData.status)} border font-semibold`}>
+                          {packageData.status.replace("_", " ").toUpperCase()}
+                        </Badge>
                       </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-800 mb-2">Delivery Information</h3>
-                      <div className="space-y-2 text-sm">
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Origin:</span>
-                          <span className="font-medium">{packageData.origin}</span>
+                  </div>
+
+                  {/* Status Details */}
+                  <div className="lg:col-span-2">
+                    <div className="flex items-center gap-3 mb-4">
+                      {getStatusIcon(packageData.status)}
+                      <div>
+                        <h2 className="text-2xl font-bold text-gray-900">Tracking: {packageData.trackingId}</h2>
+                        <p className="text-gray-600">{packageData.carrier}</p>
+                      </div>
+                    </div>
+
+                    {/* Progress Bar */}
+                    <div className="mb-6">
+                      <div className="flex justify-between text-sm text-gray-600 mb-2">
+                        <span>{packageData.origin}</span>
+                        <span>{packageData.progress}% Complete</span>
+                        <span>{packageData.destination}</span>
+                      </div>
+                      <Progress value={packageData.progress} className="h-3" />
+                    </div>
+
+                    {/* Key Information Grid */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between py-2 border-b border-gray-100">
+                          <span className="text-gray-600 flex items-center">
+                            <MapPin className="h-4 w-4 mr-2" />
+                            Current Location:
+                          </span>
+                          <span className="font-semibold text-blue-600">{packageData.currentLocation}</span>
                         </div>
-                        <div className="flex justify-between">
+                        <div className="flex items-center justify-between py-2 border-b border-gray-100">
+                          <span className="text-gray-600 flex items-center">
+                            <Package className="h-4 w-4 mr-2" />
+                            Service:
+                          </span>
+                          <span className="font-semibold">{packageData.service}</span>
+                        </div>
+                        <div className="flex items-center justify-between py-2">
+                          <span className="text-gray-600 flex items-center">
+                            <Clock className="h-4 w-4 mr-2" />
+                            Weight:
+                          </span>
+                          <span className="font-semibold">{packageData.weight}</span>
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between py-2 border-b border-gray-100">
+                          <span className="text-gray-600 flex items-center">
+                            <Calendar className="h-4 w-4 mr-2" />
+                            Est. Delivery:
+                          </span>
+                          <span className="font-semibold text-orange-600">{packageData.estimatedDelivery}</span>
+                        </div>
+                        <div className="flex items-center justify-between py-2 border-b border-gray-100">
                           <span className="text-gray-600">Destination:</span>
-                          <span className="font-medium">{packageData.destination}</span>
+                          <span className="font-semibold">{packageData.destination}</span>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Est. Delivery:</span>
-                          <span className="font-medium text-orange-600">{packageData.estimatedDelivery}</span>
+                        <div className="flex items-center justify-between py-2">
+                          <span className="text-gray-600">Dimensions:</span>
+                          <span className="font-semibold">{packageData.dimensions}</span>
                         </div>
                       </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Tracking Events */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Tracking History</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {packageData.events.map((event, index) => (
-                      <div key={index} className="flex items-start gap-4 pb-4 border-b border-gray-200 last:border-b-0">
-                        <div className="flex-shrink-0 p-2 bg-royal-100 rounded-full">
-                          {event.icon}
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
-                            <h4 className="font-semibold text-gray-800">{event.status}</h4>
-                            <div className="text-sm text-gray-600">
-                              {event.date} at {event.time}
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Tracking Timeline */}
+              <div className="lg:col-span-2">
+                <Card className="shadow-xl border-0">
+                  <CardHeader>
+                    <CardTitle className="text-2xl text-gray-900">Tracking Timeline</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <div className="space-y-6">
+                      {packageData.events.map((event, index) => (
+                        <div key={index} className="relative">
+                          {/* Timeline Line */}
+                          {index < packageData.events.length - 1 && (
+                            <div className="absolute left-6 top-12 w-0.5 h-16 bg-gray-200"></div>
+                          )}
+                          
+                          <div className="flex items-start gap-4">
+                            {/* Icon */}
+                            <div className={`flex-shrink-0 p-3 rounded-full border-2 ${
+                              event.completed 
+                                ? 'bg-green-100 border-green-500 text-green-600' 
+                                : 'bg-blue-100 border-blue-500 text-blue-600'
+                            }`}>
+                              {event.icon}
+                            </div>
+                            
+                            {/* Content */}
+                            <div className="flex-1 min-w-0">
+                              <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
+                                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                                  <h4 className="font-semibold text-gray-900 text-lg">{event.status}</h4>
+                                  <div className="text-sm text-gray-500">
+                                    {event.date} at {event.time}
+                                  </div>
+                                </div>
+                                <p className="text-gray-700 mb-2">{event.description}</p>
+                                <div className="flex items-center text-sm text-gray-500">
+                                  <MapPin className="h-4 w-4 mr-1" />
+                                  {event.location}
+                                </div>
+                              </div>
                             </div>
                           </div>
-                          <p className="text-gray-600 mb-1">{event.description}</p>
-                          <div className="flex items-center text-sm text-gray-500">
-                            <MapPin className="h-4 w-4 mr-1" />
-                            {event.location}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Sidebar */}
+              <div className="lg:col-span-1 space-y-6">
+                {/* Live Map */}
+                <Card className="shadow-xl border-0">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-xl">
+                      <MapPin className="h-6 w-6 text-royal-600" />
+                      Live Location
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    {/* Enhanced Mock Map */}
+                    <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 h-64 rounded-xl overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                        alt="Map view" 
+                        className="w-full h-full object-cover opacity-40"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg">
+                          <div className="w-12 h-12 bg-royal-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <MapPin className="h-6 w-6 text-white" />
                           </div>
+                          <p className="font-semibold text-gray-800">{packageData.currentLocation}</p>
+                          <p className="text-sm text-gray-600">GPS Tracking Active</p>
                         </div>
                       </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Map Section */}
-            <div className="lg:col-span-1">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <MapPin className="h-5 w-5" />
-                    Current Location
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  {/* Mock Google Maps - In production, use actual Google Maps API */}
-                  <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center mb-4">
-                    <div className="text-center">
-                      <MapPin className="h-12 w-12 text-royal-600 mx-auto mb-2" />
-                      <p className="text-gray-600 font-medium">{packageData.currentLocation}</p>
-                      <p className="text-sm text-gray-500">Live GPS Tracking</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <div className="p-3 bg-blue-50 rounded-lg">
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                        <span className="font-semibold text-blue-800">Current Location</span>
-                      </div>
-                      <p className="text-sm text-blue-700">{packageData.currentLocation}</p>
                     </div>
                     
-                    <div className="p-3 bg-green-50 rounded-lg">
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                        <span className="font-semibold text-green-800">Destination</span>
+                    <div className="mt-4 space-y-3">
+                      <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                        <div className="flex items-center gap-2 mb-1">
+                          <div className="w-3 h-3 bg-blue-600 rounded-full animate-pulse"></div>
+                          <span className="font-semibold text-blue-800">Current Location</span>
+                        </div>
+                        <p className="text-sm text-blue-700">{packageData.currentLocation}</p>
                       </div>
-                      <p className="text-sm text-green-700">{packageData.destination}</p>
+                      
+                      <div className="p-3 bg-green-50 rounded-lg border border-green-200">
+                        <div className="flex items-center gap-2 mb-1">
+                          <div className="w-3 h-3 bg-green-600 rounded-full"></div>
+                          <span className="font-semibold text-green-800">Final Destination</span>
+                        </div>
+                        <p className="text-sm text-green-700">{packageData.destination}</p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              {/* Quick Actions */}
-              <Card className="mt-6">
-                <CardHeader>
-                  <CardTitle>Need Help?</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Package className="h-4 w-4 mr-2" />
-                    Download Receipt
-                  </Button>
-                  <Button variant="outline" className="w-full justify-start">
-                    <Clock className="h-4 w-4 mr-2" />
-                    Schedule Redelivery
-                  </Button>
-                  <Button variant="outline" className="w-full justify-start">
-                    <AlertCircle className="h-4 w-4 mr-2" />
-                    Report Issue
-                  </Button>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+                
+                {/* Quick Actions */}
+                <Card className="shadow-xl border-0">
+                  <CardHeader>
+                    <CardTitle className="text-xl">Quick Actions</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <Button variant="outline" className="w-full justify-start hover:bg-royal-50 hover:border-royal-300">
+                      <Download className="h-4 w-4 mr-3" />
+                      Download Receipt
+                    </Button>
+                    <Button variant="outline" className="w-full justify-start hover:bg-orange-50 hover:border-orange-300">
+                      <RotateCcw className="h-4 w-4 mr-3" />
+                      Schedule Redelivery
+                    </Button>
+                    <Button variant="outline" className="w-full justify-start hover:bg-red-50 hover:border-red-300">
+                      <AlertCircle className="h-4 w-4 mr-3" />
+                      Report Issue
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                {/* Support */}
+                <Card className="shadow-xl border-0 bg-gradient-to-br from-royal-600 to-royal-700 text-white">
+                  <CardHeader>
+                    <CardTitle className="text-xl text-white">Need Help?</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <Button variant="secondary" className="w-full justify-start bg-white/20 hover:bg-white/30 text-white border-white/30">
+                      <Phone className="h-4 w-4 mr-3" />
+                      Call Support
+                    </Button>
+                    <Button variant="secondary" className="w-full justify-start bg-white/20 hover:bg-white/30 text-white border-white/30">
+                      <MessageCircle className="h-4 w-4 mr-3" />
+                      Live Chat
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         )}
 
         {/* Demo Notice */}
         {!packageData && !loading && (
-          <Card className="max-w-2xl mx-auto">
-            <CardContent className="p-6 text-center">
-              <Package className="h-12 w-12 text-royal-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Try Demo Tracking</h3>
-              <p className="text-gray-600 mb-4">
-                Use tracking number <code className="bg-gray-100 px-2 py-1 rounded">GT123456789</code> to see a demo of our tracking system.
-              </p>
-              <Button
-                onClick={() => {
-                  setTrackingId("GT123456789");
-                  setTimeout(() => handleSearch(new Event("submit") as any), 100);
-                }}
-                variant="outline"
-                className="border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white"
-              >
-                Try Demo
-              </Button>
-            </CardContent>
-          </Card>
+          <div className="max-w-4xl mx-auto">
+            <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50">
+              <CardContent className="p-12 text-center">
+                <div className="w-24 h-24 bg-royal-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Package className="h-12 w-12 text-royal-600" />
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">Try Our Demo Tracking</h3>
+                <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                  Experience our advanced tracking system with real-time GPS monitoring, 
+                  detailed timeline, and interactive maps.
+                </p>
+                <div className="bg-gray-100 rounded-lg p-4 mb-6 inline-block">
+                  <code className="text-lg font-mono text-royal-600">GT123456789</code>
+                </div>
+                <Button
+                  onClick={() => {
+                    setTrackingId("GT123456789");
+                    setTimeout(() => handleSearch(new Event("submit") as any), 100);
+                  }}
+                  className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-4 text-lg"
+                >
+                  Try Demo Tracking
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         )}
       </div>
     </div>
