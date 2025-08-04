@@ -367,7 +367,11 @@ export default function Dashboard() {
                 <Card className="border-0 shadow-lg">
                   <CardHeader className="flex flex-row items-center justify-between">
                     <CardTitle>Recent Shipments</CardTitle>
-                    <Button variant="outline" size="sm">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentView("shipments")}
+                    >
                       View All
                     </Button>
                   </CardHeader>
