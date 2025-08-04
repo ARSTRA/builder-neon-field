@@ -297,41 +297,109 @@ export default function Index() {
             </div>
 
             <div className="lg:col-span-2">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div className="text-center group">
-                  <div className="bg-gradient-to-br from-royal-50 to-royal-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
-                    <Plane className="h-10 w-10 text-royal-600 mx-auto" />
+              <div className="grid grid-cols-2 gap-6">
+                {/* Air Freight */}
+                <div className="group cursor-pointer">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2">
+                    <div className="relative h-40">
+                      <img
+                        src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop&auto=format&q=80"
+                        alt="Air Freight"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-royal-600/80 to-royal-800/60 group-hover:from-royal-700/70 group-hover:to-royal-900/50 transition-all duration-300"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Plane className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <div className="absolute top-3 right-3">
+                        <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                          <span className="text-white text-xs font-medium">24-48h</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white p-4 text-center">
+                      <h4 className="font-bold text-gray-800 mb-1">Air Freight</h4>
+                      <p className="text-sm text-gray-600">Fast Global Delivery</p>
+                    </div>
                   </div>
-                  <h4 className="font-semibold text-gray-800">Air Freight</h4>
-                  <p className="text-sm text-gray-600">Fast Global Delivery</p>
                 </div>
 
-                <div className="text-center group">
-                  <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
-                    <Ship className="h-10 w-10 text-orange-500 mx-auto" />
+                {/* Ocean Freight */}
+                <div className="group cursor-pointer">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2">
+                    <div className="relative h-40">
+                      <img
+                        src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format&q=80"
+                        alt="Ocean Freight"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/80 to-orange-700/60 group-hover:from-orange-600/70 group-hover:to-orange-800/50 transition-all duration-300"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Ship className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <div className="absolute top-3 right-3">
+                        <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                          <span className="text-white text-xs font-medium">Cost-Effective</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white p-4 text-center">
+                      <h4 className="font-bold text-gray-800 mb-1">Ocean Freight</h4>
+                      <p className="text-sm text-gray-600">Bulk Cargo Solutions</p>
+                    </div>
                   </div>
-                  <h4 className="font-semibold text-gray-800">Ocean Freight</h4>
-                  <p className="text-sm text-gray-600">Bulk Cargo Solutions</p>
                 </div>
 
-                <div className="text-center group">
-                  <div className="bg-gradient-to-br from-royal-50 to-royal-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
-                    <Truck className="h-10 w-10 text-royal-600 mx-auto" />
+                {/* Ground Transport */}
+                <div className="group cursor-pointer">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2">
+                    <div className="relative h-40">
+                      <img
+                        src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=400&fit=crop&auto=format&q=80"
+                        alt="Ground Transport"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-royal-600/80 to-royal-800/60 group-hover:from-royal-700/70 group-hover:to-royal-900/50 transition-all duration-300"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Truck className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <div className="absolute top-3 right-3">
+                        <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                          <span className="text-white text-xs font-medium">Door-to-Door</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white p-4 text-center">
+                      <h4 className="font-bold text-gray-800 mb-1">Ground Transport</h4>
+                      <p className="text-sm text-gray-600">Reliable & Flexible</p>
+                    </div>
                   </div>
-                  <h4 className="font-semibold text-gray-800">
-                    Ground Transport
-                  </h4>
-                  <p className="text-sm text-gray-600">Door-to-Door Service</p>
                 </div>
 
-                <div className="text-center group">
-                  <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
-                    <Package className="h-10 w-10 text-orange-500 mx-auto" />
+                {/* Express Delivery */}
+                <div className="group cursor-pointer">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2">
+                    <div className="relative h-40">
+                      <img
+                        src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&h=400&fit=crop&auto=format&q=80"
+                        alt="Express Delivery"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/80 to-orange-700/60 group-hover:from-orange-600/70 group-hover:to-orange-800/50 transition-all duration-300"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Package className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <div className="absolute top-3 right-3">
+                        <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                          <span className="text-white text-xs font-medium">Same-Day</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white p-4 text-center">
+                      <h4 className="font-bold text-gray-800 mb-1">Express Delivery</h4>
+                      <p className="text-sm text-gray-600">Priority Handling</p>
+                    </div>
                   </div>
-                  <h4 className="font-semibold text-gray-800">
-                    Express Delivery
-                  </h4>
-                  <p className="text-sm text-gray-600">Priority Handling</p>
                 </div>
               </div>
             </div>
