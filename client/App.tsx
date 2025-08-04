@@ -75,6 +75,7 @@ const App = () => (
               <div className="min-h-screen bg-white">
                 <Navigation />
                 <Contact />
+                <ChatWidget />
               </div>
             }
           />
