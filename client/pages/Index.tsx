@@ -447,50 +447,185 @@ export default function Index() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              What Our Clients Say
+          {/* Enhanced Header */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center justify-center p-2 bg-orange-100 rounded-full mb-6">
+              <Star className="h-6 w-6 text-orange-500" />
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+              What Our <span className="text-orange-500">Clients</span> Say
             </h2>
-            <p className="text-xl text-gray-600">
-              Trusted by thousands of businesses worldwide
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Trusted by thousands of businesses worldwide, from startups to Fortune 500 companies.
+              Here's what our satisfied customers have to say about their experience with GlobalTrack.
             </p>
+
+            {/* Customer Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-royal-600 mb-2">5,000+</div>
+                <div className="text-sm text-gray-600">Happy Clients</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-500 mb-2">4.9/5</div>
+                <div className="text-sm text-gray-600">Average Rating</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-royal-600 mb-2">98%</div>
+                <div className="text-sm text-gray-600">Would Recommend</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-500 mb-2">24/7</div>
+                <div className="text-sm text-gray-600">Support Rating</div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-5 w-5 text-yellow-400 fill-current"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-gray-600 mb-6 italic">
-                    "{testimonial.comment}"
-                  </p>
-                  <div className="flex items-center">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full mr-4"
-                    />
-                    <div>
-                      <div className="font-semibold text-gray-800">
-                        {testimonial.name}
+          {/* Featured Testimonial */}
+          <div className="mb-16">
+            <Card className="bg-gradient-to-br from-royal-600 to-royal-800 text-white border-0 shadow-2xl overflow-hidden">
+              <CardContent className="p-12 relative">
+                <div className="absolute top-8 right-8 opacity-20">
+                  <Star className="h-32 w-32" />
+                </div>
+                <div className="relative z-10">
+                  <div className="grid lg:grid-cols-3 gap-8 items-center">
+                    <div className="lg:col-span-2">
+                      <div className="flex items-center mb-6">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
+                        ))}
                       </div>
-                      <div className="text-sm text-gray-600">
-                        {testimonial.company}
+                      <blockquote className="text-2xl lg:text-3xl font-light leading-relaxed mb-8 italic">
+                        "{testimonials[1].comment}"
+                      </blockquote>
+                      <div className="flex items-center space-x-6">
+                        <img
+                          src={testimonials[1].image}
+                          alt={testimonials[1].name}
+                          className="w-20 h-20 rounded-full border-4 border-white/20 shadow-lg"
+                        />
+                        <div>
+                          <div className="text-xl font-bold">{testimonials[1].name}</div>
+                          <div className="text-orange-300 font-medium">{testimonials[1].title}</div>
+                          <div className="text-white/80">{testimonials[1].company}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="lg:col-span-1">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+                        <h4 className="text-lg font-semibold mb-4 text-orange-300">Success Metrics</h4>
+                        <div className="space-y-4">
+                          <div className="flex justify-between items-center">
+                            <span>Shipments Handled</span>
+                            <span className="font-bold text-orange-300">{testimonials[1].shipments}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span>Cost Savings</span>
+                            <span className="font-bold text-orange-300">{testimonials[1].savings}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span>On-Time Delivery</span>
+                            <span className="font-bold text-orange-300">99.8%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Grid of Testimonials */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {testimonials.slice(0, 6).map((testimonial, index) => (
+              <Card
+                key={index}
+                className={`group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden transform hover:-translate-y-2 ${
+                  index === 1 ? 'hidden' : '' // Hide the featured testimonial from grid
+                }`}
+              >
+                <CardContent className="p-0">
+                  {/* Image Header */}
+                  <div className="relative h-32 bg-gradient-to-br from-royal-100 to-orange-100">
+                    <div className="absolute inset-0 bg-gradient-to-r from-royal-600/20 to-orange-500/20"></div>
+                    <div className="absolute -bottom-8 left-6">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-16 h-16 rounded-full border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="absolute top-4 right-4 flex">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6 pt-12">
+                    <div className="mb-4">
+                      <div className="font-bold text-lg text-gray-800">{testimonial.name}</div>
+                      <div className="text-sm text-orange-600 font-medium">{testimonial.title}</div>
+                      <div className="text-sm text-gray-600">{testimonial.company}</div>
+                    </div>
+
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-4">
+                      "{testimonial.comment}"
+                    </p>
+
+                    {/* Success metrics */}
+                    <div className="flex justify-between items-center pt-4 border-t border-gray-100">
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-royal-600">{testimonial.shipments}</div>
+                        <div className="text-xs text-gray-500">Shipments</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-orange-500">{testimonial.savings}</div>
+                        <div className="text-xs text-gray-500">Savings</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-green-600">99.8%</div>
+                        <div className="text-xs text-gray-500">On-Time</div>
                       </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                Join Thousands of Satisfied Customers
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Ready to experience the GlobalTrack difference? Get started with a free quote today.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  onClick={handleGetQuote}
+                  className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-3"
+                >
+                  Get Your Free Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button
+                  onClick={handleCallExpert}
+                  variant="outline"
+                  className="border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white px-8 py-3"
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  Speak with Expert
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
