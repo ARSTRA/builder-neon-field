@@ -1,21 +1,427 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Globe, Users, Award, Target, Heart, Shield, Clock, Star, CheckCircle, ArrowRight, Phone, Mail, MapPin, Calendar, TrendingUp, Truck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { GetQuoteModal } from "@/components/ui/get-quote-modal";
+
 export default function About() {
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+
+  const teamMembers = [
+    {
+      name: "Marcus Rodriguez",
+      position: "Chief Executive Officer",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80",
+      bio: "25+ years in international logistics with expertise in supply chain optimization and global trade.",
+      specialties: ["Supply Chain Strategy", "International Trade", "Business Development"]
+    },
+    {
+      name: "Sarah Chen",
+      position: "Chief Operations Officer",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b332c3f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80",
+      bio: "Expert in logistics technology and operational excellence with a focus on customer satisfaction.",
+      specialties: ["Operations Management", "Technology Integration", "Quality Assurance"]
+    },
+    {
+      name: "David Thompson",
+      position: "VP of Global Sales",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80",
+      bio: "International sales leader with deep understanding of global markets and client relationships.",
+      specialties: ["Global Sales", "Client Relations", "Market Expansion"]
+    },
+    {
+      name: "Emma Williams",
+      position: "Head of Customer Success",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80",
+      bio: "Dedicated to ensuring exceptional customer experiences and long-term partnership success.",
+      specialties: ["Customer Success", "Account Management", "Service Excellence"]
+    }
+  ];
+
+  const values = [
+    {
+      icon: <Shield className="h-12 w-12" />,
+      title: "Reliability",
+      description: "We deliver on our promises with unwavering consistency and dependability.",
+      gradient: "from-blue-600 to-blue-800"
+    },
+    {
+      icon: <Globe className="h-12 w-12" />,
+      title: "Global Reach",
+      description: "Connecting businesses worldwide with seamless international logistics solutions.",
+      gradient: "from-green-600 to-green-800"
+    },
+    {
+      icon: <Clock className="h-12 w-12" />,
+      title: "Efficiency",
+      description: "Optimizing every process to deliver faster, smarter, and more cost-effective solutions.",
+      gradient: "from-orange-600 to-orange-800"
+    },
+    {
+      icon: <Heart className="h-12 w-12" />,
+      title: "Customer First",
+      description: "Your success is our mission, driving everything we do with passion and dedication.",
+      gradient: "from-purple-600 to-purple-800"
+    }
+  ];
+
+  const milestones = [
+    {
+      year: "2015",
+      title: "Company Founded",
+      description: "Started with a vision to revolutionize global logistics",
+      icon: <Star className="h-6 w-6" />
+    },
+    {
+      year: "2017",
+      title: "International Expansion",
+      description: "Extended services to 50+ countries worldwide",
+      icon: <Globe className="h-6 w-6" />
+    },
+    {
+      year: "2019",
+      title: "Technology Innovation",
+      description: "Launched AI-powered tracking and logistics platform",
+      icon: <TrendingUp className="h-6 w-6" />
+    },
+    {
+      year: "2021",
+      title: "50,000 Shipments",
+      description: "Reached milestone of 50,000+ successful deliveries",
+      icon: <Truck className="h-6 w-6" />
+    },
+    {
+      year: "2024",
+      title: "Industry Leadership",
+      description: "Recognized as a leading global logistics provider",
+      icon: <Award className="h-6 w-6" />
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-6">About Us</h1>
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <p className="text-xl text-gray-600 mb-8">
-              This page will tell the story of GlobalTrack Logistics, our mission, vision, team members, and company history.
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-royal-600 via-royal-700 to-royal-800 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-royal-600/85 via-royal-700/80 to-royal-800/85"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
+        
+        <div className="relative container mx-auto px-4 py-24 lg:py-32">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
+              About <span className="text-orange-400">GlobalTrack</span>
+            </h1>
+            <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-fade-in-delay max-w-3xl mx-auto leading-relaxed">
+              Pioneering the future of global logistics with innovation, reliability, and 
+              unwavering commitment to excellence since 2015.
             </p>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-              <p className="text-blue-800">
-                🚧 This page is under construction. Please continue prompting to have me build out the complete about page with team bios, company history, and mission statement.
-              </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-10 animate-slide-up">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <div className="text-3xl font-bold text-orange-400 mb-2">9+</div>
+                <div className="text-gray-200">Years Experience</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <div className="text-3xl font-bold text-orange-400 mb-2">120+</div>
+                <div className="text-gray-200">Countries Served</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <div className="text-3xl font-bold text-orange-400 mb-2">50K+</div>
+                <div className="text-gray-200">Happy Customers</div>
+              </div>
+            </div>
+
+            <Button 
+              onClick={() => setIsQuoteModalOpen(true)}
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Start Your Journey
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Story Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Image Side */}
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80" 
+                  alt="GlobalTrack team and operations" 
+                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-royal-600/20 to-orange-500/20 rounded-2xl"></div>
+                <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-royal-600">99.8%</div>
+                    <div className="text-sm text-gray-600">Success Rate</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content Side */}
+              <div>
+                <h2 className="text-4xl font-bold text-gray-800 mb-6">
+                  Our Story: Building the Future of Logistics
+                </h2>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Founded in 2015 with a simple yet powerful vision: to revolutionize global logistics 
+                  through innovation, technology, and unwavering commitment to customer success. What 
+                  started as a small team of logistics experts has grown into a global network spanning 
+                  120+ countries.
+                </p>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Today, GlobalTrack Logistics stands as a testament to what's possible when passion 
+                  meets purpose. We've successfully delivered over 50,000 shipments, built lasting 
+                  partnerships with businesses worldwide, and consistently maintained a 99.8% 
+                  on-time delivery rate.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="p-2 bg-royal-100 rounded-lg">
+                      <Target className="h-6 w-6 text-royal-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-2">Our Mission</h4>
+                      <p className="text-gray-600 text-sm">Connecting businesses globally through reliable, efficient, and innovative logistics solutions.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="p-2 bg-orange-100 rounded-lg">
+                      <Globe className="h-6 w-6 text-orange-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-2">Our Vision</h4>
+                      <p className="text-gray-600 text-sm">To be the world's most trusted and innovative logistics partner by 2030.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                Our Core Values
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                The principles that guide everything we do and shape our commitment to excellence
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {values.map((value, index) => (
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-white to-gray-50">
+                  <CardContent className="p-8 text-center">
+                    <div className={`w-20 h-20 bg-gradient-to-r ${value.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-300`}>
+                      {value.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-4">{value.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                Our Journey
+              </h2>
+              <p className="text-xl text-gray-600">
+                Key milestones that shaped GlobalTrack Logistics into who we are today
+              </p>
+            </div>
+
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-royal-600 to-orange-500 hidden lg:block"></div>
+              
+              <div className="space-y-8 lg:space-y-16">
+                {milestones.map((milestone, index) => (
+                  <div key={index} className={`flex flex-col lg:flex-row items-center gap-8 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                    {/* Content */}
+                    <div className="lg:w-1/2">
+                      <Card className="border-0 shadow-xl bg-white">
+                        <CardContent className="p-8">
+                          <div className="flex items-center mb-4">
+                            <div className="p-2 bg-royal-100 rounded-lg mr-4">
+                              {milestone.icon}
+                            </div>
+                            <Badge className="bg-gradient-to-r from-royal-600 to-orange-500 text-white">
+                              {milestone.year}
+                            </Badge>
+                          </div>
+                          <h3 className="text-2xl font-bold text-gray-800 mb-3">{milestone.title}</h3>
+                          <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                        </CardContent>
+                      </Card>
+                    </div>
+
+                    {/* Timeline Dot */}
+                    <div className="hidden lg:block w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+
+                    {/* Spacer */}
+                    <div className="lg:w-1/2"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                Meet Our Leadership Team
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Industry experts committed to delivering exceptional logistics solutions worldwide
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {teamMembers.map((member, index) => (
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 overflow-hidden">
+                  <div className="relative">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">{member.name}</h3>
+                    <p className="text-orange-600 font-semibold mb-3">{member.position}</p>
+                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
+                    <div className="space-y-1">
+                      {member.specialties.map((specialty, idx) => (
+                        <Badge key={idx} variant="outline" className="mr-2 text-xs">
+                          {specialty}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Global Presence Section */}
+      <section className="relative py-20 bg-gradient-to-r from-royal-600 to-royal-800 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Global Presence, Local Expertise
+            </h2>
+            <p className="text-xl text-gray-200 mb-12 leading-relaxed">
+              With offices and partners across six continents, we bring local knowledge 
+              and global capabilities to every shipment.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                <MapPin className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold mb-2">120+ Countries</h3>
+                <p className="text-gray-200">Worldwide coverage</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                <Users className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold mb-2">500+ Employees</h3>
+                <p className="text-gray-200">Global workforce</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                <Award className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold mb-2">25+ Awards</h3>
+                <p className="text-gray-200">Industry recognition</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={() => setIsQuoteModalOpen(true)}
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold"
+              >
+                Join Our Network
+              </Button>
+              <Link to="/contact">
+                <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold">
+                  Visit Our Offices
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+              Ready to Partner with Us?
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Experience the GlobalTrack difference. Let's discuss how we can optimize your logistics needs.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
+              <Card className="p-6 hover:shadow-lg transition-shadow border-0">
+                <Phone className="h-8 w-8 text-royal-600 mx-auto mb-4" />
+                <h3 className="font-semibold text-gray-800 mb-2">Call Us</h3>
+                <p className="text-gray-600">+1 (555) 123-4567</p>
+              </Card>
+              <Card className="p-6 hover:shadow-lg transition-shadow border-0">
+                <Mail className="h-8 w-8 text-royal-600 mx-auto mb-4" />
+                <h3 className="font-semibold text-gray-800 mb-2">Email Us</h3>
+                <p className="text-gray-600">info@globaltrack.com</p>
+              </Card>
+              <Card className="p-6 hover:shadow-lg transition-shadow border-0">
+                <Calendar className="h-8 w-8 text-royal-600 mx-auto mb-4" />
+                <h3 className="font-semibold text-gray-800 mb-2">Schedule Meeting</h3>
+                <p className="text-gray-600">Book consultation</p>
+              </Card>
+            </div>
+
+            <Button 
+              onClick={() => setIsQuoteModalOpen(true)}
+              className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-4 text-lg font-semibold"
+            >
+              Get Started Today
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <GetQuoteModal open={isQuoteModalOpen} onOpenChange={setIsQuoteModalOpen} />
     </div>
   );
 }
