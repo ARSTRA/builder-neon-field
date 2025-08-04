@@ -69,12 +69,19 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Button
-              onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white"
-            >
-              Get Quote
-            </Button>
+            <div className="flex items-center space-x-4">
+              <Button
+                onClick={() => setIsQuoteModalOpen(true)}
+                className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white"
+              >
+                Get Quote
+              </Button>
+              <Link to="/login">
+                <Button variant="outline" className="border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white">
+                  Sign In
+                </Button>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
