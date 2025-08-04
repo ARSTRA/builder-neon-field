@@ -129,30 +129,75 @@ export default function Index() {
   const testimonials = [
     {
       name: "Sarah Johnson",
+      title: "CEO",
       company: "Tech Solutions Inc.",
       rating: 5,
       comment:
-        "GlobalTrack has been our trusted shipping partner for over 3 years. Their tracking system is incredibly accurate and customer service is outstanding.",
+        "GlobalTrack has been our trusted shipping partner for over 3 years. Their tracking system is incredibly accurate and customer service is outstanding. The team goes above and beyond to ensure our shipments arrive on time.",
       image:
-        "https://images.unsplash.com/photo-1494790108755-2616b332c3f2?w=150&h=150&fit=crop&crop=face",
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+      shipments: "500+",
+      savings: "25%",
     },
     {
       name: "Michael Chen",
+      title: "Operations Director",
       company: "Import Export Ltd.",
       rating: 5,
       comment:
-        "The real-time tracking feature has revolutionized how we manage our supply chain. We always know exactly where our cargo is.",
+        "The real-time tracking feature has revolutionized how we manage our supply chain. We always know exactly where our cargo is, and their customer portal makes everything transparent and easy to manage.",
       image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+      shipments: "1200+",
+      savings: "30%",
     },
     {
       name: "Emma Rodriguez",
+      title: "Supply Chain Manager",
       company: "Global Retail Chain",
       rating: 5,
       comment:
-        "Professional service, competitive rates, and reliable delivery times. GlobalTrack consistently exceeds our expectations.",
+        "Professional service, competitive rates, and reliable delivery times. GlobalTrack consistently exceeds our expectations and has become an integral part of our logistics strategy.",
       image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+      shipments: "2500+",
+      savings: "35%",
+    },
+    {
+      name: "David Kim",
+      title: "Logistics Coordinator",
+      company: "Manufacturing Corp",
+      rating: 5,
+      comment:
+        "Outstanding service and support. The team at GlobalTrack understands our unique needs and always delivers solutions that work. Their expertise in international shipping is unmatched.",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+      shipments: "800+",
+      savings: "28%",
+    },
+    {
+      name: "Lisa Thompson",
+      title: "Head of Procurement",
+      company: "E-commerce Solutions",
+      rating: 5,
+      comment:
+        "GlobalTrack's technology platform and customer service are exceptional. They've helped us streamline our shipping process and reduce costs significantly while improving delivery times.",
+      image:
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+      shipments: "1800+",
+      savings: "40%",
+    },
+    {
+      name: "Robert Martinez",
+      title: "VP of Operations",
+      company: "Industrial Equipment Co.",
+      rating: 5,
+      comment:
+        "Reliable, professional, and cost-effective. GlobalTrack has been instrumental in helping us expand our international presence. Their expertise in heavy cargo shipping is particularly impressive.",
+      image:
+        "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+      shipments: "600+",
+      savings: "22%",
     },
   ];
 
