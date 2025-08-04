@@ -179,9 +179,11 @@ export default function Index() {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white">
-                    Learn More
-                  </Button>
+                  <Link to="/services">
+                    <Button variant="outline" className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white">
+                      Learn More
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
