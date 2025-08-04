@@ -95,12 +95,17 @@ export default function Index() {
         
         <div className="relative container mx-auto px-4 py-20 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
+            {/* Featured Logo */}
+            <div className="flex justify-center mb-8 animate-fade-in">
+              <Logo size="lg" className="text-white" />
+            </div>
+
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-delay">
               Global Shipping Solutions
               <span className="block text-orange-400 mt-2">You Can Trust</span>
             </h1>
-            <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-fade-in-delay">
-              Track your packages in real-time with our advanced GPS technology. 
+            <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-slide-up">
+              Track your packages in real-time with our advanced GPS technology.
               Fast, secure, and reliable shipping worldwide.
             </p>
 
