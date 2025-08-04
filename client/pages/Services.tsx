@@ -235,13 +235,31 @@ export default function Services() {
       {/* Main Services */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-              Complete Logistics Solutions
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose from our comprehensive range of shipping services, each designed to meet specific transportation needs with professional expertise and cutting-edge technology.
-            </p>
+          {/* Enhanced Header with Background */}
+          <div className="relative mb-16">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center rounded-3xl opacity-10"></div>
+            <div className="relative bg-gradient-to-r from-royal-50 to-orange-50 rounded-3xl p-12 text-center">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Complete Logistics Solutions
+              </h2>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Choose from our comprehensive range of shipping services, each designed to meet specific transportation needs with professional expertise and cutting-edge technology. Our integrated approach ensures seamless logistics management from pickup to final delivery.
+              </p>
+              <div className="flex justify-center mt-8 space-x-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-royal-600">4</div>
+                  <div className="text-sm text-gray-600">Main Services</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-orange-600">15+</div>
+                  <div className="text-sm text-gray-600">Specializations</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-royal-600">100%</div>
+                  <div className="text-sm text-gray-600">Satisfaction</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="space-y-20">
