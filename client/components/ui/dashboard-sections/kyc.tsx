@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { 
-  Shield, 
-  Upload, 
-  CheckCircle, 
-  AlertCircle, 
-  Clock, 
-  FileText, 
-  Camera, 
-  Passport,
+import {
+  Shield,
+  Upload,
+  CheckCircle,
+  AlertCircle,
+  Clock,
+  FileText,
+  Camera,
+  IdCard,
   CreditCard,
   Building,
   Download,
