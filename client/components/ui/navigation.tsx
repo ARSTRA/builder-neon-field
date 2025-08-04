@@ -102,12 +102,20 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Button className="w-full mt-4 bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white">
+            <Button
+              onClick={() => {
+                setIsQuoteModalOpen(true);
+                setIsMenuOpen(false);
+              }}
+              className="w-full mt-4 bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white"
+            >
               Get Quote
             </Button>
           </div>
         )}
       </div>
+
+      <GetQuoteModal open={isQuoteModalOpen} onOpenChange={setIsQuoteModalOpen} />
     </nav>
   );
 }
