@@ -7,6 +7,7 @@ import { GetQuoteModal } from "./get-quote-modal";
 export function Navigation() {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   const navItems = [
     { href: "/", label: "Home" },
