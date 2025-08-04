@@ -28,6 +28,12 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ShipmentsSection } from "@/components/ui/dashboard-sections/shipments";
+import { TrackingSection } from "@/components/ui/dashboard-sections/tracking";
+import { PaymentsSection } from "@/components/ui/dashboard-sections/payments";
+import { ProfileSection } from "@/components/ui/dashboard-sections/profile";
+import { KYCSection } from "@/components/ui/dashboard-sections/kyc";
+import { SettingsSection } from "@/components/ui/dashboard-sections/settings";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -321,7 +327,10 @@ export default function Dashboard() {
                     </p>
                   </div>
                   <div className="mt-4 sm:mt-0">
-                    <Button className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
+                    <Button
+                      onClick={() => setCurrentView("shipments")}
+                      className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+                    >
                       <Plus className="h-4 w-4 mr-2" />
                       New Shipment
                     </Button>
@@ -358,7 +367,11 @@ export default function Dashboard() {
                 <Card className="border-0 shadow-lg">
                   <CardHeader className="flex flex-row items-center justify-between">
                     <CardTitle>Recent Shipments</CardTitle>
-                    <Button variant="outline" size="sm">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentView("shipments")}
+                    >
                       View All
                     </Button>
                   </CardHeader>
@@ -410,10 +423,19 @@ export default function Dashboard() {
                               </div>
                             </div>
                             <div className="flex space-x-2">
-                              <Button variant="ghost" size="sm">
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => setCurrentView("tracking")}
+                                title="Track Shipment"
+                              >
                                 <Eye className="h-4 w-4" />
                               </Button>
-                              <Button variant="ghost" size="sm">
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                title="Download Label"
+                              >
                                 <Download className="h-4 w-4" />
                               </Button>
                             </div>
@@ -426,7 +448,10 @@ export default function Dashboard() {
 
                 {/* Quick Actions */}
                 <div className="grid md:grid-cols-3 gap-6">
-                  <Card className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow">
+                  <Card
+                    className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+                    onClick={() => setCurrentView("shipments")}
+                  >
                     <CardContent className="p-6 text-center">
                       <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                         <Package className="h-6 w-6 text-blue-600" />
@@ -440,7 +465,10 @@ export default function Dashboard() {
                     </CardContent>
                   </Card>
 
-                  <Card className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow">
+                  <Card
+                    className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+                    onClick={() => setCurrentView("tracking")}
+                  >
                     <CardContent className="p-6 text-center">
                       <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                         <MapPin className="h-6 w-6 text-green-600" />
@@ -454,7 +482,10 @@ export default function Dashboard() {
                     </CardContent>
                   </Card>
 
-                  <Card className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow">
+                  <Card
+                    className="border-0 shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+                    onClick={() => setCurrentView("payments")}
+                  >
                     <CardContent className="p-6 text-center">
                       <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                         <DollarSign className="h-6 w-6 text-orange-600" />
@@ -471,27 +502,13 @@ export default function Dashboard() {
               </div>
             )}
 
-            {/* Placeholder content for other views */}
-            {currentView !== "overview" && (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Package className="h-8 w-8 text-gray-400" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {sidebarItems.find((item) => item.id === currentView)?.label}
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  This section is under development. The full {currentView}{" "}
-                  functionality will be available soon.
-                </p>
-                <Button
-                  onClick={() => setCurrentView("overview")}
-                  variant="outline"
-                >
-                  Back to Overview
-                </Button>
-              </div>
-            )}
+            {/* Section Components */}
+            {currentView === "shipments" && <ShipmentsSection />}
+            {currentView === "tracking" && <TrackingSection />}
+            {currentView === "payments" && <PaymentsSection />}
+            {currentView === "profile" && <ProfileSection />}
+            {currentView === "kyc" && <KYCSection />}
+            {currentView === "settings" && <SettingsSection />}
           </div>
         </div>
       </div>

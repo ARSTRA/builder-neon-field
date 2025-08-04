@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
-import { Package, Phone, Mail, MapPin, Menu, X } from "lucide-react";
+import { Phone, Mail, MapPin, Menu, X } from "lucide-react";
 import { Button } from "./button";
 import { useState } from "react";
 import { GetQuoteModal } from "./get-quote-modal";
+import { Logo, LogoMark } from "./logo";
 
 export function Navigation() {
   const location = useLocation();
@@ -15,6 +16,7 @@ export function Navigation() {
     { href: "/services", label: "Services" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact" },
+    { href: "/chat", label: "Live Chat" },
   ];
 
   return (
@@ -43,11 +45,11 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="relative">
-              <Package className="h-8 w-8 text-royal-600" />
-              <div className="absolute -top-1 -right-1 h-3 w-3 bg-orange-500 rounded-full"></div>
-            </div>
+          <Link to="/" className="flex items-center">
+            <LogoMark
+              size="sm"
+              className="transition-transform hover:scale-105 mr-3"
+            />
             <div>
               <span className="text-xl font-bold text-royal-600">
                 GlobalTrack
@@ -78,6 +80,14 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
+              <Link to="/admin">
+                <Button
+                  variant="outline"
+                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white mr-2"
+                >
+                  Admin
+                </Button>
+              </Link>
               <Link to="/login">
                 <Button
                   variant="outline"
@@ -130,6 +140,15 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
+              <Link to="/admin" className="block w-full">
+                <Button
+                  variant="outline"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-full border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
+                >
+                  Admin Panel
+                </Button>
+              </Link>
               <Link to="/login" className="block w-full">
                 <Button
                   variant="outline"

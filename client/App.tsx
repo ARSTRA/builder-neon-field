@@ -7,14 +7,17 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "./components/ui/navigation";
+import { ChatWidget } from "./components/ui/chat-widget";
 import Index from "./pages/Index";
 import Track from "./pages/Track";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import LiveChat from "./pages/LiveChat";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +36,7 @@ const App = () => (
               <div className="min-h-screen bg-white">
                 <Navigation />
                 <Index />
+                <ChatWidget />
               </div>
             }
           />
@@ -42,6 +46,7 @@ const App = () => (
               <div className="min-h-screen bg-white">
                 <Navigation />
                 <Track />
+                <ChatWidget />
               </div>
             }
           />
@@ -51,6 +56,7 @@ const App = () => (
               <div className="min-h-screen bg-white">
                 <Navigation />
                 <Services />
+                <ChatWidget />
               </div>
             }
           />
@@ -60,6 +66,7 @@ const App = () => (
               <div className="min-h-screen bg-white">
                 <Navigation />
                 <About />
+                <ChatWidget />
               </div>
             }
           />
@@ -69,6 +76,16 @@ const App = () => (
               <div className="min-h-screen bg-white">
                 <Navigation />
                 <Contact />
+                <ChatWidget />
+              </div>
+            }
+          />
+          <Route
+            path="/chat"
+            element={
+              <div className="min-h-screen bg-white">
+                <Navigation />
+                <LiveChat />
               </div>
             }
           />
@@ -80,6 +97,9 @@ const App = () => (
           {/* Dashboard without main navigation */}
           <Route path="/dashboard" element={<Dashboard />} />
 
+          {/* Admin panel without main navigation */}
+          <Route path="/admin" element={<Admin />} />
+
           {/* 404 page */}
           <Route
             path="*"
@@ -87,6 +107,7 @@ const App = () => (
               <div className="min-h-screen bg-white">
                 <Navigation />
                 <NotFound />
+                <ChatWidget />
               </div>
             }
           />
