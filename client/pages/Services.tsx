@@ -149,28 +149,72 @@ export default function Services() {
         <div className="absolute inset-0 bg-black/20"></div>
         
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Service Icons Row */}
+            <div className="flex justify-center items-center space-x-8 mb-8 animate-fade-in">
+              <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl">
+                <Plane className="h-8 w-8 text-orange-400" />
+              </div>
+              <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl">
+                <Ship className="h-8 w-8 text-orange-400" />
+              </div>
+              <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl">
+                <Truck className="h-8 w-8 text-orange-400" />
+              </div>
+              <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl">
+                <Package className="h-8 w-8 text-orange-400" />
+              </div>
+            </div>
+
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
               Our <span className="text-orange-400">Services</span>
             </h1>
-            <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-fade-in-delay max-w-3xl mx-auto">
-              Comprehensive shipping solutions tailored to meet your unique logistics needs. 
-              From air freight to ground transport, we've got you covered worldwide.
+            <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-fade-in-delay max-w-4xl mx-auto leading-relaxed">
+              Comprehensive shipping solutions tailored to meet your unique logistics needs.
+              From air freight to ground transport, we've got you covered worldwide with
+              professional expertise and cutting-edge technology.
             </p>
+
+            {/* Statistics Row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 animate-fade-in-delay">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <div className="text-2xl lg:text-3xl font-bold text-orange-400">120+</div>
+                <div className="text-sm text-gray-300">Countries</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <div className="text-2xl lg:text-3xl font-bold text-orange-400">50K+</div>
+                <div className="text-sm text-gray-300">Shipments</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <div className="text-2xl lg:text-3xl font-bold text-orange-400">99.8%</div>
+                <div className="text-sm text-gray-300">On-Time</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <div className="text-2xl lg:text-3xl font-bold text-orange-400">24/7</div>
+                <div className="text-sm text-gray-300">Support</div>
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-              <Button 
+              <Button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Get Custom Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Link to="/contact">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg">
+                <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300">
                   Speak with Expert
+                  <Phone className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
+
+            {/* Floating elements for visual interest */}
+            <div className="absolute top-20 left-10 w-16 h-16 bg-orange-400/20 rounded-full animate-pulse hidden lg:block"></div>
+            <div className="absolute bottom-20 right-10 w-12 h-12 bg-white/10 rounded-full animate-pulse hidden lg:block"></div>
+            <div className="absolute top-1/2 right-20 w-8 h-8 bg-orange-400/30 rounded-full animate-pulse hidden lg:block"></div>
           </div>
         </div>
       </section>
