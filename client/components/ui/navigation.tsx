@@ -69,7 +69,10 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Button className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white">
+            <Button
+              onClick={() => setIsQuoteModalOpen(true)}
+              className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white"
+            >
               Get Quote
             </Button>
           </div>
