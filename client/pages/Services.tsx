@@ -394,9 +394,14 @@ export default function Services() {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
-                  <Button variant="outline" className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white">
-                    Learn More
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button variant="outline" className="flex-1 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300">
+                      Learn More
+                    </Button>
+                    <Button size="sm" className="bg-orange-500 hover:bg-orange-600 text-white px-3">
+                      <Phone className="h-4 w-4" />
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
