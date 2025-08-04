@@ -224,12 +224,12 @@ export default function About() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value, index) => (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-white to-gray-50">
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-gray-50 hover:-translate-y-2">
                   <CardContent className="p-8 text-center">
-                    <div className={`w-20 h-20 bg-gradient-to-r ${value.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-20 h-20 bg-gradient-to-r ${value.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
                       {value.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-4">{value.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-royal-600 transition-colors duration-300">{value.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{value.description}</p>
                   </CardContent>
                 </Card>
