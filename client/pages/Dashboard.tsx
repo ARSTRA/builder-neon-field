@@ -486,27 +486,13 @@ export default function Dashboard() {
               </div>
             )}
 
-            {/* Placeholder content for other views */}
-            {currentView !== "overview" && (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Package className="h-8 w-8 text-gray-400" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {sidebarItems.find((item) => item.id === currentView)?.label}
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  This section is under development. The full {currentView}{" "}
-                  functionality will be available soon.
-                </p>
-                <Button
-                  onClick={() => setCurrentView("overview")}
-                  variant="outline"
-                >
-                  Back to Overview
-                </Button>
-              </div>
-            )}
+            {/* Section Components */}
+            {currentView === "shipments" && <ShipmentsSection />}
+            {currentView === "tracking" && <TrackingSection />}
+            {currentView === "payments" && <PaymentsSection />}
+            {currentView === "profile" && <ProfileSection />}
+            {currentView === "kyc" && <KYCSection />}
+            {currentView === "settings" && <SettingsSection />}
           </div>
         </div>
       </div>
