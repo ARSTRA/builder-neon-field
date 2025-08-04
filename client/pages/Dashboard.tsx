@@ -28,6 +28,12 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ShipmentsSection } from "@/components/ui/dashboard-sections/shipments";
+import { TrackingSection } from "@/components/ui/dashboard-sections/tracking";
+import { PaymentsSection } from "@/components/ui/dashboard-sections/payments";
+import { ProfileSection } from "@/components/ui/dashboard-sections/profile";
+import { KYCSection } from "@/components/ui/dashboard-sections/kyc";
+import { SettingsSection } from "@/components/ui/dashboard-sections/settings";
 
 export default function Dashboard() {
   const navigate = useNavigate();
