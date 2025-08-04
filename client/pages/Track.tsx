@@ -324,6 +324,125 @@ export default function Track() {
         </div>
       </section>
 
+      {/* Tracking Capabilities Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Capability 1 */}
+              <Card className="group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
+                <CardContent className="p-8 text-center">
+                  <div className="relative mb-6">
+                    <img
+                      src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="Global tracking network"
+                      className="w-full h-32 object-cover rounded-xl opacity-80"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/50 to-transparent rounded-xl"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <MapPin className="h-12 w-12 text-white drop-shadow-lg" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Global Network Coverage</h3>
+                  <p className="text-gray-600 mb-4">
+                    Track packages across 120+ countries with seamless integration between carriers and logistics partners.
+                  </p>
+                  <div className="text-2xl font-bold text-blue-600">120+</div>
+                  <div className="text-sm text-gray-500">Countries Covered</div>
+                </CardContent>
+              </Card>
+
+              {/* Capability 2 */}
+              <Card className="group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
+                <CardContent className="p-8 text-center">
+                  <div className="relative mb-6">
+                    <img
+                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="Real-time analytics"
+                      className="w-full h-32 object-cover rounded-xl opacity-80"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-green-600/50 to-transparent rounded-xl"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Clock className="h-12 w-12 text-white drop-shadow-lg" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Real-Time Updates</h3>
+                  <p className="text-gray-600 mb-4">
+                    Receive instant notifications and updates every 15 minutes with precise location data and status changes.
+                  </p>
+                  <div className="text-2xl font-bold text-green-600">15min</div>
+                  <div className="text-sm text-gray-500">Update Frequency</div>
+                </CardContent>
+              </Card>
+
+              {/* Capability 3 */}
+              <Card className="group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-orange-100">
+                <CardContent className="p-8 text-center">
+                  <div className="relative mb-6">
+                    <img
+                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="Advanced analytics"
+                      className="w-full h-32 object-cover rounded-xl opacity-80"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-orange-600/50 to-transparent rounded-xl"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <CheckCircle className="h-12 w-12 text-white drop-shadow-lg" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Predictive Analytics</h3>
+                  <p className="text-gray-600 mb-4">
+                    AI-powered predictions for delivery times, potential delays, and route optimizations in real-time.
+                  </p>
+                  <div className="text-2xl font-bold text-orange-600">99.2%</div>
+                  <div className="text-sm text-gray-500">Accuracy Rate</div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Advanced Features Section */}
+            <div className="mt-16 bg-gradient-to-r from-royal-50 to-orange-50 rounded-3xl p-8 lg:p-12">
+              <div className="text-center mb-10">
+                <h3 className="text-3xl font-bold text-gray-800 mb-4">Advanced Tracking Features</h3>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Experience next-generation logistics technology with features designed for modern supply chain management
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <Package className="h-8 w-8 text-royal-600" />
+                  </div>
+                  <h4 className="font-semibold text-gray-800 mb-2">Package Insights</h4>
+                  <p className="text-sm text-gray-600">Detailed package information, photos, and handling instructions</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <MessageCircle className="h-8 w-8 text-royal-600" />
+                  </div>
+                  <h4 className="font-semibold text-gray-800 mb-2">Smart Notifications</h4>
+                  <p className="text-sm text-gray-600">Proactive alerts via SMS, email, and push notifications</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <Calendar className="h-8 w-8 text-royal-600" />
+                  </div>
+                  <h4 className="font-semibold text-gray-800 mb-2">Delivery Scheduling</h4>
+                  <p className="text-sm text-gray-600">Flexible delivery windows and rescheduling options</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <Download className="h-8 w-8 text-royal-600" />
+                  </div>
+                  <h4 className="font-semibold text-gray-8007 mb-2">Digital Documentation</h4>
+                  <p className="text-sm text-gray-600">Electronic receipts, invoices, and customs documentation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className="container mx-auto px-4 py-8">
         {/* Package Information */}
         {packageData && (
