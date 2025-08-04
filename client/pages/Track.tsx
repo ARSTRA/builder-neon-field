@@ -161,7 +161,7 @@ export default function Track() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-4">Track Your Package</h1>
             <p className="text-xl text-gray-200 mb-8">Real-time GPS tracking with live updates every step of the way</p>
-            
+
             {/* Enhanced Search Form */}
             <Card className="bg-white/10 backdrop-blur-sm border-0">
               <CardContent className="p-8">
@@ -177,8 +177,8 @@ export default function Track() {
                       />
                       <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-6 w-6 text-gray-500" />
                     </div>
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       disabled={loading}
                       className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-6 px-8 text-lg font-semibold shadow-lg"
                     >
@@ -196,6 +196,130 @@ export default function Track() {
                 </form>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Professional Tracking Overview Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                Advanced Package Tracking Technology
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Experience the future of logistics with our state-of-the-art tracking system powered by
+                real-time GPS, AI-driven analytics, and seamless integration across global networks.
+              </p>
+            </div>
+
+            {/* Features Grid */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+              {/* Image Side */}
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80"
+                  alt="GPS tracking technology"
+                  className="w-full h-80 object-cover rounded-2xl shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-royal-600/20 to-orange-500/20 rounded-2xl"></div>
+                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-semibold text-gray-800">Live Tracking Active</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content Side */}
+              <div className="space-y-6">
+                <h3 className="text-3xl font-bold text-gray-800">Real-Time GPS Monitoring</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Our advanced GPS tracking system provides precise location data updated every 15 minutes,
+                  ensuring you always know exactly where your package is throughout its journey.
+                </p>
+
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="p-2 bg-green-100 rounded-lg">
+                      <CheckCircle className="h-6 w-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Satellite-Grade Precision</h4>
+                      <p className="text-gray-600">Military-grade GPS accuracy within 3-meter radius</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="p-2 bg-blue-100 rounded-lg">
+                      <Clock className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Live Updates</h4>
+                      <p className="text-gray-600">Automatic notifications for every milestone</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="p-2 bg-purple-100 rounded-lg">
+                      <MapPin className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Interactive Maps</h4>
+                      <p className="text-gray-600">Visual journey tracking with estimated arrival times</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Second Feature Set */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Content Side */}
+              <div className="space-y-6 lg:order-2">
+                <h3 className="text-3xl font-bold text-gray-800">AI-Powered Logistics Intelligence</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Leveraging artificial intelligence and machine learning, our system predicts potential delays,
+                  optimizes routes in real-time, and provides proactive solutions to ensure on-time delivery.
+                </p>
+
+                <div className="bg-gradient-to-r from-royal-50 to-orange-50 rounded-xl p-6">
+                  <h4 className="font-semibold text-gray-800 mb-4">Smart Delivery Predictions</h4>
+                  <div className="grid md:grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div className="text-2xl font-bold text-royal-600">99.2%</div>
+                      <div className="text-sm text-gray-600">Accuracy Rate</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-orange-600">4hrs</div>
+                      <div className="text-sm text-gray-600">Avg. Prediction</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-royal-600">98.7%</div>
+                      <div className="text-sm text-gray-600">On-Time Delivery</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Image Side */}
+              <div className="relative lg:order-1">
+                <img
+                  src="https://images.unsplash.com/photo-1559223607-a43c990c692c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  alt="AI logistics technology"
+                  className="w-full h-80 object-cover rounded-2xl shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-500/20 rounded-2xl"></div>
+                <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">AI</span>
+                    </div>
+                    <span className="text-sm font-semibold text-gray-800">Smart Analytics</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
