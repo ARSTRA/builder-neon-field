@@ -173,6 +173,65 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Expert Consultation Section */}
+      <section className="relative py-20 bg-gradient-to-r from-royal-600 to-royal-800 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center opacity-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-royal-600/90 to-royal-800/90"></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Need Expert Logistics Guidance?
+            </h2>
+            <p className="text-xl lg:text-2xl mb-8 text-gray-200 leading-relaxed">
+              Our certified logistics professionals bring decades of experience in international shipping,
+              customs regulations, and supply chain optimization. Get personalized recommendations
+              tailored to your specific shipping requirements.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <Shield className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Certified Experts</h3>
+                <p className="text-gray-200">Licensed logistics professionals with international certifications</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <Clock className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
+                <p className="text-gray-200">Round-the-clock assistance for urgent shipping needs</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <Globe className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Global Network</h3>
+                <p className="text-gray-200">Direct partnerships with carriers in 120+ countries</p>
+              </div>
+            </div>
+
+            {/* Enhanced Call Expert Button */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4">Speak with a Logistics Expert Now</h3>
+              <p className="text-gray-200 mb-6">
+                Get instant answers to your shipping questions and personalized solution recommendations
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <Phone className="h-5 w-5 mr-3 group-hover:animate-pulse" />
+                  Call Expert Now
+                  <span className="ml-2 text-sm bg-white/20 px-2 py-1 rounded">Free</span>
+                </Button>
+                <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300">
+                  <MessageCircle className="h-5 w-5 mr-3" />
+                  Live Chat
+                </Button>
+              </div>
+              <p className="text-sm text-gray-300 mt-4">
+                ⚡ Average response time: Under 30 seconds
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Main Services */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
