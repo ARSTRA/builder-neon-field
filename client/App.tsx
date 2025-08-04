@@ -25,18 +25,54 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen bg-white">
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/track" element={<Track />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+        <Routes>
+          {/* Public pages with navigation */}
+          <Route path="/" element={
+            <div className="min-h-screen bg-white">
+              <Navigation />
+              <Index />
+            </div>
+          } />
+          <Route path="/track" element={
+            <div className="min-h-screen bg-white">
+              <Navigation />
+              <Track />
+            </div>
+          } />
+          <Route path="/services" element={
+            <div className="min-h-screen bg-white">
+              <Navigation />
+              <Services />
+            </div>
+          } />
+          <Route path="/about" element={
+            <div className="min-h-screen bg-white">
+              <Navigation />
+              <About />
+            </div>
+          } />
+          <Route path="/contact" element={
+            <div className="min-h-screen bg-white">
+              <Navigation />
+              <Contact />
+            </div>
+          } />
+
+          {/* Auth pages without navigation */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          {/* Dashboard without main navigation */}
+          <Route path="/dashboard" element={<Dashboard />} />
+
+          {/* 404 page */}
+          <Route path="*" element={
+            <div className="min-h-screen bg-white">
+              <Navigation />
+              <NotFound />
+            </div>
+          } />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
