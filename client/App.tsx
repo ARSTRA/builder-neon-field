@@ -97,6 +97,9 @@ const App = () => (
           {/* Dashboard without main navigation */}
           <Route path="/dashboard" element={<Dashboard />} />
 
+          {/* Admin panel without main navigation */}
+          <Route path="/admin" element={<Admin />} />
+
           {/* 404 page */}
           <Route
             path="*"
