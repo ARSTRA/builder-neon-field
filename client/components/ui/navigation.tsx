@@ -44,17 +44,8 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="relative">
-              <Package className="h-8 w-8 text-royal-600" />
-              <div className="absolute -top-1 -right-1 h-3 w-3 bg-orange-500 rounded-full"></div>
-            </div>
-            <div>
-              <span className="text-xl font-bold text-royal-600">
-                GlobalTrack
-              </span>
-              <span className="text-lg text-orange-500 ml-1">Logistics</span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <Logo size="sm" className="transition-transform hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation */}
