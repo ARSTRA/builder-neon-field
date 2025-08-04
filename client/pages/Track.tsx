@@ -557,34 +557,95 @@ export default function Track() {
           </div>
         )}
 
-        {/* Demo Notice */}
+        {/* Enhanced Demo Section */}
         {!packageData && !loading && (
-          <div className="max-w-4xl mx-auto">
-            <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50">
-              <CardContent className="p-12 text-center">
-                <div className="w-24 h-24 bg-royal-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Package className="h-12 w-12 text-royal-600" />
-                </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">Try Our Demo Tracking</h3>
-                <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                  Experience our advanced tracking system with real-time GPS monitoring, 
-                  detailed timeline, and interactive maps.
+          <>
+            {/* Demo Introduction */}
+            <section className="relative py-16 bg-gradient-to-r from-royal-600 to-royal-800 text-white mb-8 rounded-3xl overflow-hidden">
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
+              <div className="relative max-w-4xl mx-auto text-center px-4">
+                <h3 className="text-4xl font-bold mb-4">Experience GlobalTrack Demo</h3>
+                <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                  Test our comprehensive tracking system with a live demo shipment. See how our technology
+                  provides real-time updates, detailed analytics, and professional-grade logistics management.
                 </p>
-                <div className="bg-gray-100 rounded-lg p-4 mb-6 inline-block">
-                  <code className="text-lg font-mono text-royal-600">GT123456789</code>
+
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                    <Plane className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+                    <h4 className="text-xl font-semibold mb-2">Live GPS Tracking</h4>
+                    <p className="text-gray-200">Real-time location updates with interactive maps</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                    <Clock className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+                    <h4 className="text-xl font-semibold mb-2">Timeline History</h4>
+                    <p className="text-gray-200">Detailed journey log with timestamps and locations</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                    <Package className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+                    <h4 className="text-xl font-semibold mb-2">Package Details</h4>
+                    <p className="text-gray-200">Comprehensive shipment information and status</p>
+                  </div>
                 </div>
-                <Button
-                  onClick={() => {
-                    setTrackingId("GT123456789");
-                    setTimeout(() => handleSearch(new Event("submit") as any), 100);
-                  }}
-                  className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-4 text-lg"
-                >
-                  Try Demo Tracking
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </section>
+
+            {/* Demo CTA Card */}
+            <div className="max-w-4xl mx-auto">
+              <Card className="shadow-2xl border-0 bg-gradient-to-br from-white to-gray-50 overflow-hidden">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  {/* Image Side */}
+                  <div className="relative h-64 lg:h-auto">
+                    <img
+                      src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                      alt="Package tracking demo"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-royal-600/80 to-transparent"></div>
+                    <div className="absolute top-6 left-6 bg-white/20 backdrop-blur-sm p-3 rounded-lg">
+                      <div className="text-white font-semibold">Demo Package</div>
+                      <div className="text-white/80 text-sm">Shanghai → New York</div>
+                    </div>
+                  </div>
+
+                  {/* Content Side */}
+                  <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="w-16 h-16 bg-royal-100 rounded-full flex items-center justify-center mb-6">
+                      <Package className="h-8 w-8 text-royal-600" />
+                    </div>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4">Try Live Demo Tracking</h3>
+                    <p className="text-lg text-gray-600 mb-6">
+                      Experience our complete tracking system with a sample shipment from Shanghai to New York.
+                      See real-time updates, interactive maps, and detailed logistics information.
+                    </p>
+
+                    <div className="bg-royal-50 rounded-xl p-4 mb-6">
+                      <div className="text-sm text-gray-600 mb-2">Demo Tracking Number:</div>
+                      <div className="flex items-center justify-between bg-white rounded-lg p-3">
+                        <code className="text-lg font-mono text-royal-600 font-bold">GT123456789</code>
+                        <Badge className="bg-green-100 text-green-800">Active Demo</Badge>
+                      </div>
+                    </div>
+
+                    <Button
+                      onClick={() => {
+                        setTrackingId("GT123456789");
+                        setTimeout(() => handleSearch(new Event("submit") as any), 100);
+                      }}
+                      className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      Start Demo Tracking
+                      <Package className="ml-2 h-5 w-5" />
+                    </Button>
+
+                    <p className="text-sm text-gray-500 mt-4">
+                      * This is a demonstration of our tracking capabilities using simulated data
+                    </p>
+                  </CardContent>
+                </div>
+              </Card>
+            </div>
+          </>
         )}
       </div>
     </div>
