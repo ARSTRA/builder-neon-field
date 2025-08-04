@@ -327,7 +327,10 @@ export default function Dashboard() {
                     </p>
                   </div>
                   <div className="mt-4 sm:mt-0">
-                    <Button className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
+                    <Button
+                      onClick={() => setCurrentView("shipments")}
+                      className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+                    >
                       <Plus className="h-4 w-4 mr-2" />
                       New Shipment
                     </Button>
