@@ -1044,14 +1044,16 @@ Generated on: ${new Date().toLocaleDateString()}
                   <CardContent className="space-y-3">
                     <Button
                       variant="secondary"
-                      className="w-full justify-start bg-white/20 hover:bg-white/30 text-white border-white/30"
+                      onClick={handleCallSupport}
+                      className="w-full justify-start bg-white/20 hover:bg-white/30 text-white border-white/30 transition-all duration-200"
                     >
                       <Phone className="h-4 w-4 mr-3" />
                       Call Support
                     </Button>
                     <Button
                       variant="secondary"
-                      className="w-full justify-start bg-white/20 hover:bg-white/30 text-white border-white/30"
+                      onClick={handleLiveChat}
+                      className="w-full justify-start bg-white/20 hover:bg-white/30 text-white border-white/30 transition-all duration-200"
                     >
                       <MessageCircle className="h-4 w-4 mr-3" />
                       Live Chat
