@@ -647,7 +647,7 @@ export default function Services() {
               <Calendar className="mr-2 h-5 w-5" />
               Get Free Quote
             </Button>
-            <Link to="/live-chat">
+            <Link to="/chat">
               <Button
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg flex-1 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
