@@ -418,7 +418,8 @@ export default function Services() {
                       className="w-full h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+                        target.src =
+                          "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
                       }}
                       loading="lazy"
                     />
@@ -433,7 +434,9 @@ export default function Services() {
                     {/* Image overlay with service info */}
                     <div className="absolute bottom-6 left-6 right-6">
                       <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h4 className="font-semibold text-sm">{service.subtitle}</h4>
+                        <h4 className="font-semibold text-sm">
+                          {service.subtitle}
+                        </h4>
                       </div>
                     </div>
                   </div>
