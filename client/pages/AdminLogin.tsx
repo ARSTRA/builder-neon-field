@@ -11,6 +11,7 @@ import {
   BarChart3,
   Users,
   AlertTriangle,
+  CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
