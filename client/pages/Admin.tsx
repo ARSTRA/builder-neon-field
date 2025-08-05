@@ -71,6 +71,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export default function Admin() {
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [currentView, setCurrentView] = useState("dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
