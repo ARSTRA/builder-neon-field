@@ -77,12 +77,17 @@ export default function AdminLogin() {
       localStorage.setItem("adminRole", validAdmin.role);
       localStorage.setItem("adminLoginTime", new Date().toISOString());
 
+      setSuccess(`Welcome ${validAdmin.role}! Redirecting to admin portal...`);
+
       toast({
         title: "Admin Login Successful",
         description: `Welcome ${validAdmin.role} to GlobalTrack Admin Portal`,
       });
 
-      navigate("/admin");
+      // Small delay to show success message
+      setTimeout(() => {
+        navigate("/admin");
+      }, 1000);
     } else {
       setError("Invalid admin credentials. Please check your email and password and try again.");
       toast({
