@@ -50,6 +50,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function UserManagement() {
+  const { toast } = useToast();
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("all");
   const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
