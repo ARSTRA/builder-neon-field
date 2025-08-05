@@ -58,20 +58,21 @@ export default function AdminLogin() {
     if (validAdmin) {
       // Set admin session
       localStorage.setItem("isAdmin", "true");
-      localStorage.setItem("adminEmail", formData.email);
+      localStorage.setItem("adminEmail", validAdmin.email);
+      localStorage.setItem("adminRole", validAdmin.role);
       localStorage.setItem("adminLoginTime", new Date().toISOString());
-      
+
       toast({
         title: "Admin Login Successful",
-        description: "Welcome to GlobalTrack Admin Portal",
+        description: `Welcome ${validAdmin.role} to GlobalTrack Admin Portal`,
       });
-      
+
       navigate("/admin");
     } else {
-      setError("Invalid admin credentials. Please check your email and password.");
+      setError("Invalid admin credentials. Please check your email and password and try again.");
       toast({
         title: "Login Failed",
-        description: "Invalid admin credentials",
+        description: "Invalid admin credentials. Please verify your email and password.",
         variant: "destructive",
       });
     }
