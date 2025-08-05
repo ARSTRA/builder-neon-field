@@ -67,6 +67,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { UserManagement } from "@/components/ui/admin-sections/user-management";
 import { ChatManagement } from "@/components/ui/admin-sections/chat-management";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Admin() {
   const navigate = useNavigate();
