@@ -114,7 +114,7 @@ export default function Services() {
       description:
         "For time-critical shipments, our express delivery service guarantees fast transit times with priority handling. Same-day, next-day, and 2-day delivery options available with full tracking and insurance.",
       image:
-        "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://images.pexels.com/photos/6169135/pexels-photo-6169135.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&dpr=2",
       features: [
         "Same-day delivery",
         "Next-day express",
