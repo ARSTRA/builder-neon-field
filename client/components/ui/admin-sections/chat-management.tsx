@@ -329,11 +329,11 @@ export function ChatManagement() {
           </p>
         </div>
         <div className="mt-4 sm:mt-0 flex space-x-3">
-          <Button variant="outline">
+          <Button variant="outline" onClick={handleAnalytics}>
             <BarChart3 className="h-4 w-4 mr-2" />
             Analytics
           </Button>
-          <Button variant="outline">
+          <Button variant="outline" onClick={handleChatSettings}>
             <Settings className="h-4 w-4 mr-2" />
             Chat Settings
           </Button>
