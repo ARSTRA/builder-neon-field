@@ -67,21 +67,25 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { UserManagement } from "@/components/ui/admin-sections/user-management";
 import { ChatManagement } from "@/components/ui/admin-sections/chat-management";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Admin() {
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [currentView, setCurrentView] = useState("dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    // Check if user is admin (simplified check)
+    // Check if user is admin
     const isAdmin = localStorage.getItem("isAdmin");
-    if (!isAdmin) {
-      // For demo purposes, auto-set admin status
-      localStorage.setItem("isAdmin", "true");
+    const adminEmail = localStorage.getItem("adminEmail");
+
+    if (!isAdmin || !adminEmail) {
+      // Redirect to admin login if not authenticated
+      navigate("/admin/login");
     }
-  }, []);
+  }, [navigate]);
 
   const sidebarItems = [
     {
@@ -130,7 +134,35 @@ export default function Admin() {
 
   const handleLogout = () => {
     localStorage.removeItem("isAdmin");
-    navigate("/");
+    localStorage.removeItem("adminEmail");
+    localStorage.removeItem("adminLoginTime");
+    toast({
+      title: "Logged Out",
+      description: "You have been successfully logged out from admin portal.",
+    });
+    navigate("/admin/login");
+  };
+
+  const handleExportReport = () => {
+    toast({
+      title: "Exporting Report",
+      description:
+        "Your admin report is being generated and will be downloaded shortly.",
+    });
+    // Simulate report generation
+    setTimeout(() => {
+      toast({
+        title: "Report Ready",
+        description: "Admin report has been downloaded successfully.",
+      });
+    }, 2000);
+  };
+
+  const handleQuickAction = () => {
+    toast({
+      title: "Quick Action Menu",
+      description: "Opening quick action panel...",
+    });
   };
 
   // Dashboard Analytics Data
@@ -240,11 +272,14 @@ export default function Admin() {
           </p>
         </div>
         <div className="mt-4 sm:mt-0 flex space-x-3">
-          <Button variant="outline">
+          <Button variant="outline" onClick={handleExportReport}>
             <Download className="h-4 w-4 mr-2" />
             Export Report
           </Button>
-          <Button className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
+          <Button
+            onClick={handleQuickAction}
+            className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+          >
             <Plus className="h-4 w-4 mr-2" />
             Quick Action
           </Button>

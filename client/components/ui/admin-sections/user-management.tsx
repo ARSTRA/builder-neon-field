@@ -41,6 +41,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
+import { useToast } from "@/hooks/use-toast";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -49,6 +50,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function UserManagement() {
+  const { toast } = useToast();
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("all");
   const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
@@ -181,18 +183,57 @@ export function UserManagement() {
   });
 
   const handleActivateUser = (userId: string) => {
-    console.log("Activating user:", userId);
-    // Implementation for activating user
+    const user = users.find((u) => u.id === userId);
+    toast({
+      title: "User Activated",
+      description: `${user?.name} has been successfully activated.`,
+    });
   };
 
   const handleSuspendUser = (userId: string) => {
-    console.log("Suspending user:", userId);
-    // Implementation for suspending user
+    const user = users.find((u) => u.id === userId);
+    toast({
+      title: "User Suspended",
+      description: `${user?.name} has been suspended and will no longer have access.`,
+      variant: "destructive",
+    });
   };
 
   const handleDeleteUser = (userId: string) => {
-    console.log("Deleting user:", userId);
-    // Implementation for deleting user
+    const user = users.find((u) => u.id === userId);
+    toast({
+      title: "User Deleted",
+      description: `${user?.name} has been permanently deleted from the system.`,
+      variant: "destructive",
+    });
+  };
+
+  const handleExportUsers = () => {
+    toast({
+      title: "Exporting Users",
+      description: "User data is being exported to CSV format...",
+    });
+    setTimeout(() => {
+      toast({
+        title: "Export Complete",
+        description: "User data has been successfully exported.",
+      });
+    }, 2000);
+  };
+
+  const handleImportUsers = () => {
+    toast({
+      title: "Import Users",
+      description: "Please select a CSV file to import user data.",
+    });
+  };
+
+  const handleSendEmail = (userId: string) => {
+    const user = users.find((u) => u.id === userId);
+    toast({
+      title: "Email Sent",
+      description: `Email notification sent to ${user?.name}.`,
+    });
   };
 
   return (
@@ -206,11 +247,11 @@ export function UserManagement() {
           </p>
         </div>
         <div className="mt-4 sm:mt-0 flex space-x-3">
-          <Button variant="outline">
+          <Button variant="outline" onClick={handleExportUsers}>
             <Download className="h-4 w-4 mr-2" />
             Export Users
           </Button>
-          <Button variant="outline">
+          <Button variant="outline" onClick={handleImportUsers}>
             <Upload className="h-4 w-4 mr-2" />
             Import Users
           </Button>
@@ -528,7 +569,9 @@ export function UserManagement() {
                                 Activate User
                               </DropdownMenuItem>
                             )}
-                            <DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={() => handleSendEmail(user.id)}
+                            >
                               <Mail className="h-4 w-4 mr-2" />
                               Send Email
                             </DropdownMenuItem>

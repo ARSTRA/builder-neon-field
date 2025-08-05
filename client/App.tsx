@@ -18,6 +18,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
+import AdminLogin from "./pages/AdminLogin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -97,7 +98,8 @@ const App = () => (
           {/* Dashboard without main navigation */}
           <Route path="/dashboard" element={<Dashboard />} />
 
-          {/* Admin panel without main navigation */}
+          {/* Admin auth and panel without main navigation */}
+          <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<Admin />} />
 
           {/* 404 page */}

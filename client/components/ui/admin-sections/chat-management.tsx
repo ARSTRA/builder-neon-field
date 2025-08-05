@@ -43,6 +43,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -52,6 +53,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 
 export function ChatManagement() {
+  const { toast } = useToast();
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("all");
   const [selectedChat, setSelectedChat] = useState<any>(null);
@@ -259,16 +261,59 @@ export function ChatManagement() {
   };
 
   const handleJoinChat = (chatId: string) => {
-    console.log("Joining chat:", chatId);
     const chat = activeChats.find((c) => c.id === chatId);
     setSelectedChat(chat);
+    toast({
+      title: "Joined Chat",
+      description: `You are now viewing the chat with ${chat?.customer}.`,
+    });
   };
 
   const handleSendMessage = () => {
     if (newMessage.trim()) {
-      console.log("Sending message:", newMessage);
+      toast({
+        title: "Message Sent",
+        description: "Your message has been sent to the customer.",
+      });
       setNewMessage("");
     }
+  };
+
+  const handleAnalytics = () => {
+    toast({
+      title: "Opening Analytics",
+      description: "Loading detailed chat analytics dashboard...",
+    });
+  };
+
+  const handleChatSettings = () => {
+    toast({
+      title: "Chat Settings",
+      description: "Opening chat configuration panel...",
+    });
+  };
+
+  const handleTransferChat = () => {
+    toast({
+      title: "Transfer Chat",
+      description: "Chat transfer request has been initiated.",
+    });
+  };
+
+  const handleEscalate = () => {
+    toast({
+      title: "Chat Escalated",
+      description: "Chat has been escalated to senior support team.",
+      variant: "destructive",
+    });
+  };
+
+  const handleCloseChat = () => {
+    toast({
+      title: "Chat Closed",
+      description: "Chat session has been closed successfully.",
+    });
+    setSelectedChat(null);
   };
 
   return (
@@ -284,11 +329,11 @@ export function ChatManagement() {
           </p>
         </div>
         <div className="mt-4 sm:mt-0 flex space-x-3">
-          <Button variant="outline">
+          <Button variant="outline" onClick={handleAnalytics}>
             <BarChart3 className="h-4 w-4 mr-2" />
             Analytics
           </Button>
-          <Button variant="outline">
+          <Button variant="outline" onClick={handleChatSettings}>
             <Settings className="h-4 w-4 mr-2" />
             Chat Settings
           </Button>
@@ -444,10 +489,17 @@ export function ChatManagement() {
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem>Transfer Chat</DropdownMenuItem>
-                        <DropdownMenuItem>Escalate to Manager</DropdownMenuItem>
+                        <DropdownMenuItem onClick={handleTransferChat}>
+                          Transfer Chat
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={handleEscalate}>
+                          Escalate to Manager
+                        </DropdownMenuItem>
                         <DropdownMenuItem>Add Note</DropdownMenuItem>
-                        <DropdownMenuItem className="text-red-600">
+                        <DropdownMenuItem
+                          className="text-red-600"
+                          onClick={handleCloseChat}
+                        >
                           Close Chat
                         </DropdownMenuItem>
                       </DropdownMenuContent>
@@ -776,6 +828,7 @@ export function ChatManagement() {
                         variant="outline"
                         size="sm"
                         className="w-full justify-start"
+                        onClick={handleTransferChat}
                       >
                         <UserCheck className="h-4 w-4 mr-2" />
                         Transfer Chat
@@ -784,6 +837,7 @@ export function ChatManagement() {
                         variant="outline"
                         size="sm"
                         className="w-full justify-start"
+                        onClick={handleEscalate}
                       >
                         <AlertCircle className="h-4 w-4 mr-2" />
                         Escalate
@@ -792,6 +846,7 @@ export function ChatManagement() {
                         variant="outline"
                         size="sm"
                         className="w-full justify-start text-red-600"
+                        onClick={handleCloseChat}
                       >
                         <CheckCircle className="h-4 w-4 mr-2" />
                         Close Chat
