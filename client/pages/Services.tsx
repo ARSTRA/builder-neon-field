@@ -342,20 +342,24 @@ export default function Services() {
                 solution recommendations
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <Phone className="h-5 w-5 mr-3 group-hover:animate-pulse" />
-                  Call Expert Now
-                  <span className="ml-2 text-sm bg-white/20 px-2 py-1 rounded">
-                    Free
-                  </span>
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
-                >
-                  <MessageCircle className="h-5 w-5 mr-3" />
-                  Live Chat
-                </Button>
+                <Link to="/contact">
+                  <Button className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <Phone className="h-5 w-5 mr-3 group-hover:animate-pulse" />
+                    Call Expert Now
+                    <span className="ml-2 text-sm bg-white/20 px-2 py-1 rounded">
+                      Free
+                    </span>
+                  </Button>
+                </Link>
+                <Link to="/live-chat">
+                  <Button
+                    variant="outline"
+                    className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                  >
+                    <MessageCircle className="h-5 w-5 mr-3" />
+                    Live Chat
+                  </Button>
+                </Link>
               </div>
               <p className="text-sm text-gray-300 mt-4">
                 ⚡ Average response time: Under 30 seconds
@@ -507,13 +511,15 @@ export default function Services() {
                           Get Quote
                           <ArrowRight className="h-4 w-4 ml-2" />
                         </Button>
-                        <Button
-                          variant="outline"
-                          className="group flex-1 border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
-                        >
-                          <Phone className="h-4 w-4 mr-2 group-hover:animate-pulse" />
-                          Expert Consult
-                        </Button>
+                        <Link to="/contact">
+                          <Button
+                            variant="outline"
+                            className="group w-full border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
+                          >
+                            <Phone className="h-4 w-4 mr-2 group-hover:animate-pulse" />
+                            Expert Consult
+                          </Button>
+                        </Link>
                       </div>
                     </CardContent>
                   </Card>
