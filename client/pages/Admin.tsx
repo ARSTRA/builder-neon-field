@@ -134,7 +134,34 @@ export default function Admin() {
 
   const handleLogout = () => {
     localStorage.removeItem("isAdmin");
-    navigate("/");
+    localStorage.removeItem("adminEmail");
+    localStorage.removeItem("adminLoginTime");
+    toast({
+      title: "Logged Out",
+      description: "You have been successfully logged out from admin portal.",
+    });
+    navigate("/admin/login");
+  };
+
+  const handleExportReport = () => {
+    toast({
+      title: "Exporting Report",
+      description: "Your admin report is being generated and will be downloaded shortly.",
+    });
+    // Simulate report generation
+    setTimeout(() => {
+      toast({
+        title: "Report Ready",
+        description: "Admin report has been downloaded successfully.",
+      });
+    }, 2000);
+  };
+
+  const handleQuickAction = () => {
+    toast({
+      title: "Quick Action Menu",
+      description: "Opening quick action panel...",
+    });
   };
 
   // Dashboard Analytics Data
