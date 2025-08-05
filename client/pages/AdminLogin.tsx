@@ -35,6 +35,7 @@ export default function AdminLogin() {
     e.preventDefault();
     setIsLoading(true);
     setError("");
+    setSuccess("");
 
     // Basic validation
     if (!formData.email.trim() || !formData.password.trim()) {
