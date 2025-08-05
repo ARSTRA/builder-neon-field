@@ -43,7 +43,7 @@ export default function About() {
       name: "Sarah Chen",
       position: "Chief Operations Officer",
       image:
-        "https://images.unsplash.com/photo-1494790108755-2616b332c3f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80",
+        "https://images.pexels.com/photos/8872492/pexels-photo-8872492.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=2",
       bio: "Expert in logistics technology and operational excellence with a focus on customer satisfaction.",
       specialties: [
         "Operations Management",
