@@ -351,7 +351,7 @@ export default function Services() {
                     </span>
                   </Button>
                 </Link>
-                <Link to="/live-chat">
+                <Link to="/chat">
                   <Button
                     variant="outline"
                     className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
