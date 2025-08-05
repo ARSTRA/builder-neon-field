@@ -399,11 +399,11 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="space-y-20">
+          <div className="space-y-24">
             {mainServices.map((service, index) => (
               <div
                 key={service.id}
-                className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center`}
+                className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center lg:items-stretch`}
               >
                 {/* Image Side */}
                 <div className="lg:w-1/2">
