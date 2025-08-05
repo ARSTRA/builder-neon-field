@@ -62,7 +62,7 @@ export default function Services() {
       description:
         "Our ocean freight services offer the most economical solution for large volume shipments. With access to major shipping lines and container services, we handle everything from small LCL to full container loads.",
       image:
-        "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://images.pexels.com/photos/4604443/pexels-photo-4604443.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&dpr=2",
       features: [
         "Full Container Load (FCL)",
         "Less than Container Load (LCL)",
