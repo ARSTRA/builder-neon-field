@@ -280,20 +280,38 @@ export default function AdminLogin() {
                       </div>
                     </div>
                   </div>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    size="sm"
-                    className="w-full text-xs"
-                    onClick={() => {
-                      setFormData({
-                        email: "admin@globaltrack.com",
-                        password: "admin123"
-                      });
-                    }}
-                  >
-                    Use Super Admin Credentials
-                  </Button>
+                  <div className="grid grid-cols-2 gap-2">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      className="text-xs"
+                      onClick={() => {
+                        setFormData({
+                          email: "admin@globaltrack.com",
+                          password: "admin123"
+                        });
+                        setError("");
+                      }}
+                    >
+                      Use Super Admin
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      className="text-xs"
+                      onClick={() => {
+                        setFormData({
+                          email: "manager@globaltrack.com",
+                          password: "manager123"
+                        });
+                        setError("");
+                      }}
+                    >
+                      Use Manager
+                    </Button>
+                  </div>
                 </div>
               </div>
 
