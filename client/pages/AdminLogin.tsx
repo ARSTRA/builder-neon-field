@@ -226,8 +226,11 @@ export default function AdminLogin() {
                 </div>
 
                 {error && (
-                  <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-                    <p className="text-red-700 text-sm">{error}</p>
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-4 animate-pulse">
+                    <div className="flex items-center space-x-2">
+                      <AlertTriangle className="h-4 w-4 text-red-600" />
+                      <p className="text-red-700 text-sm font-medium">{error}</p>
+                    </div>
                   </div>
                 )}
 
