@@ -53,6 +53,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 
 export function ChatManagement() {
+  const { toast } = useToast();
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("all");
   const [selectedChat, setSelectedChat] = useState<any>(null);
