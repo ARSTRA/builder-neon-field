@@ -567,17 +567,22 @@ export default function Services() {
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <div className="flex gap-2">
                     <Button
+                      onClick={() => setIsQuoteModalOpen(true)}
                       variant="outline"
-                      className="flex-1 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300"
+                      className="flex-1 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 font-semibold"
                     >
-                      Learn More
+                      Get Quote
+                      <ArrowRight className="h-4 w-4 ml-2" />
                     </Button>
-                    <Button
-                      size="sm"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-3"
-                    >
-                      <Phone className="h-4 w-4" />
-                    </Button>
+                    <Link to="/contact">
+                      <Button
+                        size="sm"
+                        className="bg-orange-500 hover:bg-orange-600 text-white px-4 shadow-md hover:shadow-lg transition-all duration-300"
+                      >
+                        <Phone className="h-4 w-4 mr-1" />
+                        Call
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -642,13 +647,15 @@ export default function Services() {
               <Calendar className="mr-2 h-5 w-5" />
               Get Free Quote
             </Button>
-            <Button
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg flex-1"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Live Chat
-            </Button>
+            <Link to="/live-chat">
+              <Button
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg flex-1 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Live Chat
+              </Button>
+            </Link>
           </div>
 
           <div className="mt-12 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -677,9 +684,11 @@ export default function Services() {
       {/* Floating Expert Consultation Widget */}
       <div className="fixed bottom-6 right-6 z-50">
         <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 group">
-          <Button className="bg-transparent hover:bg-transparent p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
-            <Phone className="h-6 w-6 animate-pulse" />
-          </Button>
+          <Link to="/contact">
+            <Button className="bg-transparent hover:bg-transparent p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
+              <Phone className="h-6 w-6 animate-pulse" />
+            </Button>
+          </Link>
           <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap">
               Need help? Call an expert!
