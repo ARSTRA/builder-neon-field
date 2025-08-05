@@ -312,6 +312,7 @@ export default function AdminLogin() {
                           password: "admin123"
                         });
                         setError("");
+                        setSuccess("");
                       }}
                     >
                       Use Super Admin
@@ -327,6 +328,7 @@ export default function AdminLogin() {
                           password: "manager123"
                         });
                         setError("");
+                        setSuccess("");
                       }}
                     >
                       Use Manager
