@@ -436,9 +436,9 @@ export default function Services() {
                 </div>
 
                 {/* Content Side */}
-                <div className="lg:w-1/2">
-                  <Card className="border-0 shadow-xl bg-white">
-                    <CardContent className="p-8">
+                <div className="lg:w-1/2 flex">
+                  <Card className="border-0 shadow-xl bg-white w-full flex flex-col">
+                    <CardContent className="p-8 flex-1">
                       <div className="mb-6">
                         <Badge
                           className={`bg-gradient-to-r ${service.gradient} text-white mb-4`}
