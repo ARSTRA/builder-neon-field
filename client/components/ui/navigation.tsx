@@ -80,7 +80,7 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
-              <Link to="/admin">
+              <Link to="/admin/login">
                 <Button
                   variant="outline"
                   className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white mr-2"
