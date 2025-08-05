@@ -200,6 +200,102 @@ export default function Track() {
     }
   };
 
+  // Quick Actions Handlers
+  const handleDownloadReceipt = () => {
+    if (!packageData) return;
+
+    // Create a mock receipt PDF content
+    const receiptContent = `
+GlobalTrack Logistics - Shipping Receipt
+========================================
+
+Tracking ID: ${packageData.trackingId}
+Service: ${packageData.service}
+Origin: ${packageData.origin}
+Destination: ${packageData.destination}
+Weight: ${packageData.weight}
+Dimensions: ${packageData.dimensions}
+Status: ${packageData.status.replace("_", " ").toUpperCase()}
+Estimated Delivery: ${packageData.estimatedDelivery}
+
+Generated on: ${new Date().toLocaleDateString()}
+    `;
+
+    // Create and download file
+    const blob = new Blob([receiptContent], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `GlobalTrack_Receipt_${packageData.trackingId}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    toast({
+      title: "Receipt Downloaded",
+      description: "Your shipping receipt has been downloaded successfully.",
+    });
+  };
+
+  const handleScheduleRedelivery = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!redeliveryData.date || !redeliveryData.timeSlot) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    toast({
+      title: "Redelivery Scheduled",
+      description: `Your package will be redelivered on ${redeliveryData.date} during ${redeliveryData.timeSlot}.`,
+    });
+
+    setIsRedeliveryDialogOpen(false);
+    setRedeliveryData({ date: "", timeSlot: "", instructions: "" });
+  };
+
+  const handleReportIssue = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!reportData.issueType || !reportData.description) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    toast({
+      title: "Issue Reported",
+      description: "Your issue has been reported. Our support team will contact you within 24 hours.",
+    });
+
+    setIsReportDialogOpen(false);
+    setReportData({ issueType: "", description: "", priority: "" });
+  };
+
+  const handleCallSupport = () => {
+    toast({
+      title: "Calling Support",
+      description: "Connecting you to +1 (555) 123-4567...",
+    });
+    // In a real app, this could trigger a phone call
+  };
+
+  const handleLiveChat = () => {
+    navigate("/chat");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
