@@ -62,7 +62,7 @@ export default function Services() {
       description:
         "Our ocean freight services offer the most economical solution for large volume shipments. With access to major shipping lines and container services, we handle everything from small LCL to full container loads.",
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://images.pexels.com/photos/4604443/pexels-photo-4604443.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&dpr=2",
       features: [
         "Full Container Load (FCL)",
         "Less than Container Load (LCL)",
@@ -114,7 +114,7 @@ export default function Services() {
       description:
         "For time-critical shipments, our express delivery service guarantees fast transit times with priority handling. Same-day, next-day, and 2-day delivery options available with full tracking and insurance.",
       image:
-        "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://images.pexels.com/photos/6169135/pexels-photo-6169135.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&dpr=2",
       features: [
         "Same-day delivery",
         "Next-day express",
@@ -141,7 +141,7 @@ export default function Services() {
       description:
         "Certified handling of dangerous goods with proper documentation and safety protocols.",
       image:
-        "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.pexels.com/photos/2786527/pexels-photo-2786527.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
     },
     {
       icon: <Weight className="h-8 w-8 text-blue-600" />,
@@ -149,7 +149,7 @@ export default function Services() {
       description:
         "Specialized equipment and expertise for oversized and heavy lift cargo shipments.",
       image:
-        "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.pexels.com/photos/29224601/pexels-photo-29224601.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
     },
     {
       icon: <Globe className="h-8 w-8 text-purple-600" />,
@@ -157,7 +157,7 @@ export default function Services() {
       description:
         "End-to-end project logistics for complex, multi-modal transportation requirements.",
       image:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.pexels.com/photos/4742023/pexels-photo-4742023.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
     },
   ];
 
@@ -342,20 +342,24 @@ export default function Services() {
                 solution recommendations
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <Phone className="h-5 w-5 mr-3 group-hover:animate-pulse" />
-                  Call Expert Now
-                  <span className="ml-2 text-sm bg-white/20 px-2 py-1 rounded">
-                    Free
-                  </span>
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
-                >
-                  <MessageCircle className="h-5 w-5 mr-3" />
-                  Live Chat
-                </Button>
+                <Link to="/contact">
+                  <Button className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <Phone className="h-5 w-5 mr-3 group-hover:animate-pulse" />
+                    Call Expert Now
+                    <span className="ml-2 text-sm bg-white/20 px-2 py-1 rounded">
+                      Free
+                    </span>
+                  </Button>
+                </Link>
+                <Link to="/chat">
+                  <Button
+                    variant="outline"
+                    className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                  >
+                    <MessageCircle className="h-5 w-5 mr-3" />
+                    Live Chat
+                  </Button>
+                </Link>
               </div>
               <p className="text-sm text-gray-300 mt-4">
                 ⚡ Average response time: Under 30 seconds
@@ -399,37 +403,49 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="space-y-20">
+          <div className="space-y-24">
             {mainServices.map((service, index) => (
               <div
                 key={service.id}
-                className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center`}
+                className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center lg:items-stretch`}
               >
                 {/* Image Side */}
                 <div className="lg:w-1/2">
-                  <div className="relative group">
+                  <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
                     <img
                       src={service.image}
-                      alt={service.title}
-                      className="w-full h-80 lg:h-96 object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                      alt={`${service.title} - Professional shipping and logistics services`}
+                      className="w-full h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src =
+                          "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+                      }}
+                      loading="lazy"
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-20 rounded-2xl`}
+                      className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-20`}
                     ></div>
                     <div className="absolute top-6 left-6">
-                      <div
-                        className={`p-4 bg-white/20 backdrop-blur-sm rounded-xl text-white`}
-                      >
+                      <div className="p-4 bg-white/20 backdrop-blur-sm rounded-xl text-white shadow-lg">
                         {service.icon}
+                      </div>
+                    </div>
+                    {/* Image overlay with service info */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h4 className="font-semibold text-sm">
+                          {service.subtitle}
+                        </h4>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Content Side */}
-                <div className="lg:w-1/2">
-                  <Card className="border-0 shadow-xl bg-white">
-                    <CardContent className="p-8">
+                <div className="lg:w-1/2 flex">
+                  <Card className="border-0 shadow-xl bg-white w-full flex flex-col">
+                    <CardContent className="p-8 flex-1">
                       <div className="mb-6">
                         <Badge
                           className={`bg-gradient-to-r ${service.gradient} text-white mb-4`}
@@ -498,13 +514,15 @@ export default function Services() {
                           Get Quote
                           <ArrowRight className="h-4 w-4 ml-2" />
                         </Button>
-                        <Button
-                          variant="outline"
-                          className="group flex-1 border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
-                        >
-                          <Phone className="h-4 w-4 mr-2 group-hover:animate-pulse" />
-                          Expert Consult
-                        </Button>
+                        <Link to="/contact">
+                          <Button
+                            variant="outline"
+                            className="group w-full border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
+                          >
+                            <Phone className="h-4 w-4 mr-2 group-hover:animate-pulse" />
+                            Expert Consult
+                          </Button>
+                        </Link>
                       </div>
                     </CardContent>
                   </Card>
@@ -552,17 +570,22 @@ export default function Services() {
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <div className="flex gap-2">
                     <Button
+                      onClick={() => setIsQuoteModalOpen(true)}
                       variant="outline"
-                      className="flex-1 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300"
+                      className="flex-1 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 font-semibold"
                     >
-                      Learn More
+                      Get Quote
+                      <ArrowRight className="h-4 w-4 ml-2" />
                     </Button>
-                    <Button
-                      size="sm"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-3"
-                    >
-                      <Phone className="h-4 w-4" />
-                    </Button>
+                    <Link to="/contact">
+                      <Button
+                        size="sm"
+                        className="bg-orange-500 hover:bg-orange-600 text-white px-4 shadow-md hover:shadow-lg transition-all duration-300"
+                      >
+                        <Phone className="h-4 w-4 mr-1" />
+                        Call
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -622,18 +645,20 @@ export default function Services() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
             <Button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg flex-1"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg flex-1 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Calendar className="mr-2 h-5 w-5" />
               Get Free Quote
             </Button>
-            <Button
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg flex-1"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Live Chat
-            </Button>
+            <Link to="/chat">
+              <Button
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg flex-1 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Live Chat
+              </Button>
+            </Link>
           </div>
 
           <div className="mt-12 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -662,9 +687,11 @@ export default function Services() {
       {/* Floating Expert Consultation Widget */}
       <div className="fixed bottom-6 right-6 z-50">
         <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 group">
-          <Button className="bg-transparent hover:bg-transparent p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
-            <Phone className="h-6 w-6 animate-pulse" />
-          </Button>
+          <Link to="/contact">
+            <Button className="bg-transparent hover:bg-transparent p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
+              <Phone className="h-6 w-6 animate-pulse" />
+            </Button>
+          </Link>
           <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap">
               Need help? Call an expert!

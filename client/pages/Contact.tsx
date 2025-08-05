@@ -231,17 +231,22 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button
+                onClick={() => window.open("tel:+15551234567", "_self")}
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              >
                 <Phone className="mr-2 h-5 w-5" />
                 Call Now: +1 (555) 123-4567
               </Button>
-              <Button
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
-              >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Start Live Chat
-              </Button>
+              <Link to="/chat">
+                <Button
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Start Live Chat
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -288,7 +293,21 @@ export default function Contact() {
                       </Badge>
                     </div>
                     <Button
-                      className={`w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white`}
+                      onClick={() => {
+                        if (method.title === "Call Us Directly") {
+                          window.open("tel:+15551234567", "_self");
+                        } else if (method.title === "Live Chat Support") {
+                          window.location.href = "/chat";
+                        } else if (method.title === "Email Support") {
+                          window.open("mailto:info@globaltrack.com", "_self");
+                        } else if (method.title === "Schedule Meeting") {
+                          // For now, scroll to contact form - could integrate with calendar booking later
+                          document
+                            .querySelector("form")
+                            ?.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                      className={`w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white font-semibold transition-all duration-300 hover:shadow-lg`}
                     >
                       {method.action}
                     </Button>
@@ -610,9 +629,17 @@ export default function Contact() {
                                 <p className="font-medium text-gray-800">
                                   Phone
                                 </p>
-                                <p className="text-gray-600 text-sm">
+                                <button
+                                  onClick={() =>
+                                    window.open(
+                                      `tel:${office.phone.replace(/\s/g, "")}`,
+                                      "_self",
+                                    )
+                                  }
+                                  className="text-royal-600 text-sm hover:text-royal-800 transition-colors duration-200 font-medium hover:underline"
+                                >
                                   {office.phone}
-                                </p>
+                                </button>
                               </div>
                             </div>
 
@@ -622,9 +649,17 @@ export default function Contact() {
                                 <p className="font-medium text-gray-800">
                                   Email
                                 </p>
-                                <p className="text-gray-600 text-sm">
+                                <button
+                                  onClick={() =>
+                                    window.open(
+                                      `mailto:${office.email}`,
+                                      "_self",
+                                    )
+                                  }
+                                  className="text-royal-600 text-sm hover:text-royal-800 transition-colors duration-200 font-medium hover:underline"
+                                >
                                   {office.email}
-                                </p>
+                                </button>
                               </div>
                             </div>
 
@@ -708,7 +743,15 @@ export default function Contact() {
                 logistics needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-royal-600 hover:bg-gray-100 px-8 py-3 font-semibold">
+                <Button
+                  onClick={() => {
+                    // Scroll to contact form
+                    document
+                      .querySelector("form")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="bg-white text-royal-600 hover:bg-gray-100 px-8 py-3 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+                >
                   <Package className="mr-2 h-5 w-5" />
                   Get Quote Now
                 </Button>
