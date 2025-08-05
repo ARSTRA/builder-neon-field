@@ -242,10 +242,45 @@ export default function AdminLogin() {
 
               {/* Demo Credentials */}
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <h4 className="text-sm font-medium text-blue-800 mb-2">Demo Credentials:</h4>
-                <div className="text-xs text-blue-700 space-y-1">
-                  <p><strong>Email:</strong> admin@globaltrack.com</p>
-                  <p><strong>Password:</strong> admin123</p>
+                <h4 className="text-sm font-medium text-blue-800 mb-3">Demo Admin Accounts:</h4>
+                <div className="space-y-3">
+                  <div className="grid grid-cols-1 gap-2">
+                    <div className="bg-white/60 rounded p-2">
+                      <div className="text-xs text-blue-700">
+                        <p><strong>Super Admin:</strong></p>
+                        <p className="font-mono">admin@globaltrack.com</p>
+                        <p className="font-mono">admin123</p>
+                      </div>
+                    </div>
+                    <div className="bg-white/60 rounded p-2">
+                      <div className="text-xs text-blue-700">
+                        <p><strong>Manager:</strong></p>
+                        <p className="font-mono">manager@globaltrack.com</p>
+                        <p className="font-mono">manager123</p>
+                      </div>
+                    </div>
+                    <div className="bg-white/60 rounded p-2">
+                      <div className="text-xs text-blue-700">
+                        <p><strong>Support Admin:</strong></p>
+                        <p className="font-mono">support@globaltrack.com</p>
+                        <p className="font-mono">support123</p>
+                      </div>
+                    </div>
+                  </div>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    className="w-full text-xs"
+                    onClick={() => {
+                      setFormData({
+                        email: "admin@globaltrack.com",
+                        password: "admin123"
+                      });
+                    }}
+                  >
+                    Use Super Admin Credentials
+                  </Button>
                 </div>
               </div>
 
