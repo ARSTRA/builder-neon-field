@@ -407,20 +407,29 @@ export default function Services() {
               >
                 {/* Image Side */}
                 <div className="lg:w-1/2">
-                  <div className="relative group">
+                  <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
                     <img
                       src={service.image}
-                      alt={service.title}
-                      className="w-full h-80 lg:h-96 object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                      alt={`${service.title} - Professional shipping and logistics services`}
+                      className="w-full h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+                      }}
+                      loading="lazy"
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-20 rounded-2xl`}
+                      className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-20`}
                     ></div>
                     <div className="absolute top-6 left-6">
-                      <div
-                        className={`p-4 bg-white/20 backdrop-blur-sm rounded-xl text-white`}
-                      >
+                      <div className="p-4 bg-white/20 backdrop-blur-sm rounded-xl text-white shadow-lg">
                         {service.icon}
+                      </div>
+                    </div>
+                    {/* Image overlay with service info */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h4 className="font-semibold text-sm">{service.subtitle}</h4>
                       </div>
                     </div>
                   </div>
