@@ -141,7 +141,7 @@ export default function Services() {
       description:
         "Certified handling of dangerous goods with proper documentation and safety protocols.",
       image:
-        "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.pexels.com/photos/2786527/pexels-photo-2786527.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
     },
     {
       icon: <Weight className="h-8 w-8 text-blue-600" />,
@@ -149,7 +149,7 @@ export default function Services() {
       description:
         "Specialized equipment and expertise for oversized and heavy lift cargo shipments.",
       image:
-        "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.pexels.com/photos/29224601/pexels-photo-29224601.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
     },
     {
       icon: <Globe className="h-8 w-8 text-purple-600" />,
@@ -157,7 +157,7 @@ export default function Services() {
       description:
         "End-to-end project logistics for complex, multi-modal transportation requirements.",
       image:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.pexels.com/photos/4742023/pexels-photo-4742023.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
     },
   ];
 
