@@ -73,6 +73,20 @@ export default function Track() {
   const [packageData, setPackageData] = useState<PackageData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [isRedeliveryDialogOpen, setIsRedeliveryDialogOpen] = useState(false);
+  const [isReportDialogOpen, setIsReportDialogOpen] = useState(false);
+  const [redeliveryData, setRedeliveryData] = useState({
+    date: "",
+    timeSlot: "",
+    instructions: "",
+  });
+  const [reportData, setReportData] = useState({
+    issueType: "",
+    description: "",
+    priority: "",
+  });
+  const navigate = useNavigate();
+  const { toast } = useToast();
 
   // Mock data for demonstration
   const getMockPackageData = (id: string): PackageData => ({
