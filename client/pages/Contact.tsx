@@ -627,9 +627,12 @@ export default function Contact() {
                                 <p className="font-medium text-gray-800">
                                   Phone
                                 </p>
-                                <p className="text-gray-600 text-sm">
+                                <button
+                                  onClick={() => window.open(`tel:${office.phone.replace(/\s/g, '')}`, '_self')}
+                                  className="text-royal-600 text-sm hover:text-royal-800 transition-colors duration-200 font-medium hover:underline"
+                                >
                                   {office.phone}
-                                </p>
+                                </button>
                               </div>
                             </div>
 
@@ -639,9 +642,12 @@ export default function Contact() {
                                 <p className="font-medium text-gray-800">
                                   Email
                                 </p>
-                                <p className="text-gray-600 text-sm">
+                                <button
+                                  onClick={() => window.open(`mailto:${office.email}`, '_self')}
+                                  className="text-royal-600 text-sm hover:text-royal-800 transition-colors duration-200 font-medium hover:underline"
+                                >
                                   {office.email}
-                                </p>
+                                </button>
                               </div>
                             </div>
 
