@@ -489,10 +489,10 @@ export function ChatManagement() {
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem>Transfer Chat</DropdownMenuItem>
-                        <DropdownMenuItem>Escalate to Manager</DropdownMenuItem>
+                        <DropdownMenuItem onClick={handleTransferChat}>Transfer Chat</DropdownMenuItem>
+                        <DropdownMenuItem onClick={handleEscalate}>Escalate to Manager</DropdownMenuItem>
                         <DropdownMenuItem>Add Note</DropdownMenuItem>
-                        <DropdownMenuItem className="text-red-600">
+                        <DropdownMenuItem className="text-red-600" onClick={handleCloseChat}>
                           Close Chat
                         </DropdownMenuItem>
                       </DropdownMenuContent>
