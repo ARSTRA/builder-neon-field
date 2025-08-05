@@ -1,0 +1,320 @@
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  Eye,
+  EyeOff,
+  Mail,
+  Lock,
+  ArrowRight,
+  Shield,
+  Settings,
+  BarChart3,
+  Users,
+  AlertTriangle,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { useToast } from "@/hooks/use-toast";
+
+export default function AdminLogin() {
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError("");
+
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Admin credentials validation (in real app, use secure backend authentication)
+    const adminCredentials = [
+      { email: "admin@globaltrack.com", password: "admin123" },
+      { email: "admin@gt.com", password: "admin123" },
+      { email: "superadmin@globaltrack.com", password: "superadmin123" },
+    ];
+
+    const validAdmin = adminCredentials.find(
+      (admin) => admin.email === formData.email && admin.password === formData.password
+    );
+
+    if (validAdmin) {
+      // Set admin session
+      localStorage.setItem("isAdmin", "true");
+      localStorage.setItem("adminEmail", formData.email);
+      localStorage.setItem("adminLoginTime", new Date().toISOString());
+      
+      toast({
+        title: "Admin Login Successful",
+        description: "Welcome to GlobalTrack Admin Portal",
+      });
+      
+      navigate("/admin");
+    } else {
+      setError("Invalid admin credentials. Please check your email and password.");
+      toast({
+        title: "Login Failed",
+        description: "Invalid admin credentials",
+        variant: "destructive",
+      });
+    }
+
+    setIsLoading(false);
+  };
+
+  const adminFeatures = [
+    {
+      icon: <Users className="h-6 w-6 text-royal-600" />,
+      title: "User Management",
+      description: "Manage customer accounts and permissions",
+    },
+    {
+      icon: <BarChart3 className="h-6 w-6 text-royal-600" />,
+      title: "Analytics Dashboard",
+      description: "Monitor system performance and metrics",
+    },
+    {
+      icon: <Shield className="h-6 w-6 text-royal-600" />,
+      title: "Security Controls",
+      description: "Advanced security and access management",
+    },
+    {
+      icon: <Settings className="h-6 w-6 text-royal-600" />,
+      title: "System Settings",
+      description: "Configure platform settings and preferences",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center py-12 px-4">
+      <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-8 items-center">
+        {/* Left Side - Admin Login Form */}
+        <div className="w-full max-w-md mx-auto lg:mx-0">
+          <div className="text-center mb-8">
+            <Link to="/" className="inline-flex items-center space-x-2 mb-6">
+              <div className="w-10 h-10 bg-gradient-to-r from-royal-600 to-orange-500 rounded-lg flex items-center justify-center">
+                <Shield className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <span className="text-2xl font-bold text-royal-600">
+                  GlobalTrack
+                </span>
+                <span className="text-xl text-orange-500 ml-1">Admin</span>
+              </div>
+            </Link>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Admin Portal
+            </h1>
+            <p className="text-gray-600">
+              Secure access to administrative controls and system management
+            </p>
+          </div>
+
+          <Card className="shadow-2xl border-0 bg-white">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-center text-xl text-gray-800 flex items-center justify-center">
+                <Shield className="h-5 w-5 mr-2 text-royal-600" />
+                Administrator Sign In
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {/* Security Notice */}
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <div className="flex items-start space-x-3">
+                  <AlertTriangle className="h-5 w-5 text-amber-600 mt-0.5" />
+                  <div>
+                    <p className="text-sm font-medium text-amber-800">
+                      Restricted Access
+                    </p>
+                    <p className="text-xs text-amber-700 mt-1">
+                      This portal is for authorized administrators only. All access is logged and monitored.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-gray-700 font-medium">
+                    Admin Email Address
+                  </Label>
+                  <div className="relative">
+                    <Input
+                      id="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          email: e.target.value,
+                        }))
+                      }
+                      placeholder="admin@globaltrack.com"
+                      className="pl-10 h-12 border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20"
+                    />
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label
+                    htmlFor="password"
+                    className="text-gray-700 font-medium"
+                  >
+                    Admin Password
+                  </Label>
+                  <div className="relative">
+                    <Input
+                      id="password"
+                      type={showPassword ? "text" : "password"}
+                      required
+                      value={formData.password}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          password: e.target.value,
+                        }))
+                      }
+                      placeholder="Enter admin password"
+                      className="pl-10 pr-10 h-12 border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20"
+                    />
+                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                    >
+                      {showPassword ? (
+                        <EyeOff className="h-5 w-5" />
+                      ) : (
+                        <Eye className="h-5 w-5" />
+                      )}
+                    </button>
+                  </div>
+                </div>
+
+                {error && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+                    <p className="text-red-700 text-sm">{error}</p>
+                  </div>
+                )}
+
+                <div className="space-y-4">
+                  <Button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    {isLoading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                        Authenticating...
+                      </>
+                    ) : (
+                      <>
+                        <Shield className="mr-2 h-5 w-5" />
+                        Sign In to Admin Portal
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </form>
+
+              {/* Demo Credentials */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <h4 className="text-sm font-medium text-blue-800 mb-2">Demo Credentials:</h4>
+                <div className="text-xs text-blue-700 space-y-1">
+                  <p><strong>Email:</strong> admin@globaltrack.com</p>
+                  <p><strong>Password:</strong> admin123</p>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <p className="text-gray-600 text-sm">
+                  Need assistance?{" "}
+                  <Link
+                    to="/contact"
+                    className="text-royal-600 hover:text-royal-700 font-medium"
+                  >
+                    Contact IT Support
+                  </Link>
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <p className="text-center text-sm text-gray-500 mt-6">
+            Protected by enterprise security protocols.{" "}
+            <Link to="/privacy" className="text-royal-600 hover:text-royal-700">
+              Privacy Policy
+            </Link>
+          </p>
+        </div>
+
+        {/* Right Side - Admin Features */}
+        <div className="hidden lg:block">
+          <div className="bg-gradient-to-br from-royal-600 to-royal-800 rounded-3xl p-12 text-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
+            <div className="relative z-10">
+              <h2 className="text-4xl font-bold mb-6">
+                Administrative Control Center
+              </h2>
+              <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+                Comprehensive management tools for system administration, user management, 
+                analytics, and platform configuration. Secure access with advanced monitoring and logging.
+              </p>
+
+              <div className="space-y-6">
+                {adminFeatures.map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="p-2 bg-white/20 backdrop-blur-sm rounded-lg">
+                      {feature.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-1">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-200">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-xl">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">System Status</h4>
+                    <div className="flex items-center space-x-4">
+                      <Badge className="bg-green-500 text-white">
+                        All Systems Operational
+                      </Badge>
+                      <span className="text-sm text-gray-200">
+                        Uptime: 99.9%
+                      </span>
+                    </div>
+                  </div>
+                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                    <Settings className="h-6 w-6 text-white animate-spin" style={{animationDuration: '3s'}} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
