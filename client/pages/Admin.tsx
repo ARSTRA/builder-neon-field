@@ -75,13 +75,15 @@ export default function Admin() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    // Check if user is admin (simplified check)
+    // Check if user is admin
     const isAdmin = localStorage.getItem("isAdmin");
-    if (!isAdmin) {
-      // For demo purposes, auto-set admin status
-      localStorage.setItem("isAdmin", "true");
+    const adminEmail = localStorage.getItem("adminEmail");
+
+    if (!isAdmin || !adminEmail) {
+      // Redirect to admin login if not authenticated
+      navigate("/admin/login");
     }
-  }, []);
+  }, [navigate]);
 
   const sidebarItems = [
     {
