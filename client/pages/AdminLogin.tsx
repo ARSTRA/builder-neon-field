@@ -38,15 +38,21 @@ export default function AdminLogin() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
+    // Trim whitespace from input values
+    const email = formData.email.trim().toLowerCase();
+    const password = formData.password.trim();
+
     // Admin credentials validation (in real app, use secure backend authentication)
     const adminCredentials = [
-      { email: "admin@globaltrack.com", password: "admin123" },
-      { email: "admin@gt.com", password: "admin123" },
-      { email: "superadmin@globaltrack.com", password: "superadmin123" },
+      { email: "admin@globaltrack.com", password: "admin123", role: "Super Admin" },
+      { email: "admin@gt.com", password: "admin123", role: "Admin" },
+      { email: "superadmin@globaltrack.com", password: "superadmin123", role: "Super Admin" },
+      { email: "manager@globaltrack.com", password: "manager123", role: "Manager" },
+      { email: "support@globaltrack.com", password: "support123", role: "Support Admin" },
     ];
 
     const validAdmin = adminCredentials.find(
-      (admin) => admin.email === formData.email && admin.password === formData.password
+      (admin) => admin.email.toLowerCase() === email && admin.password === password
     );
 
     if (validAdmin) {
