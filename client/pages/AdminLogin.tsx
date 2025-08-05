@@ -35,8 +35,21 @@ export default function AdminLogin() {
     setIsLoading(true);
     setError("");
 
+    // Basic validation
+    if (!formData.email.trim() || !formData.password.trim()) {
+      setError("Please enter both email and password.");
+      setIsLoading(false);
+      return;
+    }
+
+    if (!formData.email.includes("@")) {
+      setError("Please enter a valid email address.");
+      setIsLoading(false);
+      return;
+    }
+
     // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     // Trim whitespace from input values
     const email = formData.email.trim().toLowerCase();
