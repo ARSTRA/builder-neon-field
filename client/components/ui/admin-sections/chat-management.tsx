@@ -489,10 +489,17 @@ export function ChatManagement() {
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem onClick={handleTransferChat}>Transfer Chat</DropdownMenuItem>
-                        <DropdownMenuItem onClick={handleEscalate}>Escalate to Manager</DropdownMenuItem>
+                        <DropdownMenuItem onClick={handleTransferChat}>
+                          Transfer Chat
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={handleEscalate}>
+                          Escalate to Manager
+                        </DropdownMenuItem>
                         <DropdownMenuItem>Add Note</DropdownMenuItem>
-                        <DropdownMenuItem className="text-red-600" onClick={handleCloseChat}>
+                        <DropdownMenuItem
+                          className="text-red-600"
+                          onClick={handleCloseChat}
+                        >
                           Close Chat
                         </DropdownMenuItem>
                       </DropdownMenuContent>
@@ -818,32 +825,32 @@ export function ChatManagement() {
                     <h4 className="font-semibold mb-2">Quick Actions</h4>
                     <div className="space-y-2">
                       <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full justify-start"
-                      onClick={handleTransferChat}
-                    >
-                      <UserCheck className="h-4 w-4 mr-2" />
-                      Transfer Chat
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full justify-start"
-                      onClick={handleEscalate}
-                    >
-                      <AlertCircle className="h-4 w-4 mr-2" />
-                      Escalate
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full justify-start text-red-600"
-                      onClick={handleCloseChat}
-                    >
-                      <CheckCircle className="h-4 w-4 mr-2" />
-                      Close Chat
-                    </Button>
+                        variant="outline"
+                        size="sm"
+                        className="w-full justify-start"
+                        onClick={handleTransferChat}
+                      >
+                        <UserCheck className="h-4 w-4 mr-2" />
+                        Transfer Chat
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full justify-start"
+                        onClick={handleEscalate}
+                      >
+                        <AlertCircle className="h-4 w-4 mr-2" />
+                        Escalate
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full justify-start text-red-600"
+                        onClick={handleCloseChat}
+                      >
+                        <CheckCircle className="h-4 w-4 mr-2" />
+                        Close Chat
+                      </Button>
                     </div>
                   </div>
                 </div>

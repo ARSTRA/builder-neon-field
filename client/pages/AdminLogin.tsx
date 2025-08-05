@@ -60,15 +60,32 @@ export default function AdminLogin() {
 
     // Admin credentials validation (in real app, use secure backend authentication)
     const adminCredentials = [
-      { email: "admin@globaltrack.com", password: "admin123", role: "Super Admin" },
+      {
+        email: "admin@globaltrack.com",
+        password: "admin123",
+        role: "Super Admin",
+      },
       { email: "admin@gt.com", password: "admin123", role: "Admin" },
-      { email: "superadmin@globaltrack.com", password: "superadmin123", role: "Super Admin" },
-      { email: "manager@globaltrack.com", password: "manager123", role: "Manager" },
-      { email: "support@globaltrack.com", password: "support123", role: "Support Admin" },
+      {
+        email: "superadmin@globaltrack.com",
+        password: "superadmin123",
+        role: "Super Admin",
+      },
+      {
+        email: "manager@globaltrack.com",
+        password: "manager123",
+        role: "Manager",
+      },
+      {
+        email: "support@globaltrack.com",
+        password: "support123",
+        role: "Support Admin",
+      },
     ];
 
     const validAdmin = adminCredentials.find(
-      (admin) => admin.email.toLowerCase() === email && admin.password === password
+      (admin) =>
+        admin.email.toLowerCase() === email && admin.password === password,
     );
 
     if (validAdmin) {
@@ -90,10 +107,13 @@ export default function AdminLogin() {
         navigate("/admin");
       }, 1000);
     } else {
-      setError("Invalid admin credentials. Please check your email and password and try again.");
+      setError(
+        "Invalid admin credentials. Please check your email and password and try again.",
+      );
       toast({
         title: "Login Failed",
-        description: "Invalid admin credentials. Please verify your email and password.",
+        description:
+          "Invalid admin credentials. Please verify your email and password.",
         variant: "destructive",
       });
     }
@@ -166,7 +186,8 @@ export default function AdminLogin() {
                       Restricted Access
                     </p>
                     <p className="text-xs text-amber-700 mt-1">
-                      This portal is for authorized administrators only. All access is logged and monitored.
+                      This portal is for authorized administrators only. All
+                      access is logged and monitored.
                     </p>
                   </div>
                 </div>
@@ -237,7 +258,9 @@ export default function AdminLogin() {
                   <div className="bg-red-50 border border-red-200 rounded-lg p-4 animate-pulse">
                     <div className="flex items-center space-x-2">
                       <AlertTriangle className="h-4 w-4 text-red-600" />
-                      <p className="text-red-700 text-sm font-medium">{error}</p>
+                      <p className="text-red-700 text-sm font-medium">
+                        {error}
+                      </p>
                     </div>
                   </div>
                 )}
@@ -246,7 +269,9 @@ export default function AdminLogin() {
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4 animate-pulse">
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="h-4 w-4 text-green-600" />
-                      <p className="text-green-700 text-sm font-medium">{success}</p>
+                      <p className="text-green-700 text-sm font-medium">
+                        {success}
+                      </p>
                     </div>
                   </div>
                 )}
@@ -275,26 +300,34 @@ export default function AdminLogin() {
 
               {/* Demo Credentials */}
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <h4 className="text-sm font-medium text-blue-800 mb-3">Demo Admin Accounts:</h4>
+                <h4 className="text-sm font-medium text-blue-800 mb-3">
+                  Demo Admin Accounts:
+                </h4>
                 <div className="space-y-3">
                   <div className="grid grid-cols-1 gap-2">
                     <div className="bg-white/60 rounded p-2">
                       <div className="text-xs text-blue-700">
-                        <p><strong>Super Admin:</strong></p>
+                        <p>
+                          <strong>Super Admin:</strong>
+                        </p>
                         <p className="font-mono">admin@globaltrack.com</p>
                         <p className="font-mono">admin123</p>
                       </div>
                     </div>
                     <div className="bg-white/60 rounded p-2">
                       <div className="text-xs text-blue-700">
-                        <p><strong>Manager:</strong></p>
+                        <p>
+                          <strong>Manager:</strong>
+                        </p>
                         <p className="font-mono">manager@globaltrack.com</p>
                         <p className="font-mono">manager123</p>
                       </div>
                     </div>
                     <div className="bg-white/60 rounded p-2">
                       <div className="text-xs text-blue-700">
-                        <p><strong>Support Admin:</strong></p>
+                        <p>
+                          <strong>Support Admin:</strong>
+                        </p>
                         <p className="font-mono">support@globaltrack.com</p>
                         <p className="font-mono">support123</p>
                       </div>
@@ -309,7 +342,7 @@ export default function AdminLogin() {
                       onClick={() => {
                         setFormData({
                           email: "admin@globaltrack.com",
-                          password: "admin123"
+                          password: "admin123",
                         });
                         setError("");
                         setSuccess("");
@@ -325,7 +358,7 @@ export default function AdminLogin() {
                       onClick={() => {
                         setFormData({
                           email: "manager@globaltrack.com",
-                          password: "manager123"
+                          password: "manager123",
                         });
                         setError("");
                         setSuccess("");
@@ -368,8 +401,9 @@ export default function AdminLogin() {
                 Administrative Control Center
               </h2>
               <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-                Comprehensive management tools for system administration, user management, 
-                analytics, and platform configuration. Secure access with advanced monitoring and logging.
+                Comprehensive management tools for system administration, user
+                management, analytics, and platform configuration. Secure access
+                with advanced monitoring and logging.
               </p>
 
               <div className="space-y-6">
@@ -391,7 +425,9 @@ export default function AdminLogin() {
               <div className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-xl">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="text-lg font-semibold mb-2">System Status</h4>
+                    <h4 className="text-lg font-semibold mb-2">
+                      System Status
+                    </h4>
                     <div className="flex items-center space-x-4">
                       <Badge className="bg-green-500 text-white">
                         All Systems Operational
@@ -402,7 +438,10 @@ export default function AdminLogin() {
                     </div>
                   </div>
                   <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                    <Settings className="h-6 w-6 text-white animate-spin" style={{animationDuration: '3s'}} />
+                    <Settings
+                      className="h-6 w-6 text-white animate-spin"
+                      style={{ animationDuration: "3s" }}
+                    />
                   </div>
                 </div>
               </div>

@@ -55,7 +55,7 @@ export default function Index() {
   };
 
   const handleLiveChat = () => {
-    navigate('/chat');
+    navigate("/chat");
   };
 
   const shippingServices = [
@@ -313,13 +313,19 @@ export default function Index() {
                       </div>
                       <div className="absolute top-3 right-3">
                         <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
-                          <span className="text-white text-xs font-medium">24-48h</span>
+                          <span className="text-white text-xs font-medium">
+                            24-48h
+                          </span>
                         </div>
                       </div>
                     </div>
                     <div className="bg-white p-4 text-center">
-                      <h4 className="font-bold text-gray-800 mb-1">Air Freight</h4>
-                      <p className="text-sm text-gray-600">Fast Global Delivery</p>
+                      <h4 className="font-bold text-gray-800 mb-1">
+                        Air Freight
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        Fast Global Delivery
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -339,13 +345,19 @@ export default function Index() {
                       </div>
                       <div className="absolute top-3 right-3">
                         <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
-                          <span className="text-white text-xs font-medium">Cost-Effective</span>
+                          <span className="text-white text-xs font-medium">
+                            Cost-Effective
+                          </span>
                         </div>
                       </div>
                     </div>
                     <div className="bg-white p-4 text-center">
-                      <h4 className="font-bold text-gray-800 mb-1">Ocean Freight</h4>
-                      <p className="text-sm text-gray-600">Bulk Cargo Solutions</p>
+                      <h4 className="font-bold text-gray-800 mb-1">
+                        Ocean Freight
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        Bulk Cargo Solutions
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -365,13 +377,19 @@ export default function Index() {
                       </div>
                       <div className="absolute top-3 right-3">
                         <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
-                          <span className="text-white text-xs font-medium">Door-to-Door</span>
+                          <span className="text-white text-xs font-medium">
+                            Door-to-Door
+                          </span>
                         </div>
                       </div>
                     </div>
                     <div className="bg-white p-4 text-center">
-                      <h4 className="font-bold text-gray-800 mb-1">Ground Transport</h4>
-                      <p className="text-sm text-gray-600">Reliable & Flexible</p>
+                      <h4 className="font-bold text-gray-800 mb-1">
+                        Ground Transport
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        Reliable & Flexible
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -391,12 +409,16 @@ export default function Index() {
                       </div>
                       <div className="absolute top-3 right-3">
                         <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
-                          <span className="text-white text-xs font-medium">Same-Day</span>
+                          <span className="text-white text-xs font-medium">
+                            Same-Day
+                          </span>
                         </div>
                       </div>
                     </div>
                     <div className="bg-white p-4 text-center">
-                      <h4 className="font-bold text-gray-800 mb-1">Express Delivery</h4>
+                      <h4 className="font-bold text-gray-800 mb-1">
+                        Express Delivery
+                      </h4>
                       <p className="text-sm text-gray-600">Priority Handling</p>
                     </div>
                   </div>
@@ -526,26 +548,35 @@ export default function Index() {
               What Our <span className="text-orange-500">Clients</span> Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Trusted by thousands of businesses worldwide, from startups to Fortune 500 companies.
-              Here's what our satisfied customers have to say about their experience with GlobalTrack.
+              Trusted by thousands of businesses worldwide, from startups to
+              Fortune 500 companies. Here's what our satisfied customers have to
+              say about their experience with GlobalTrack.
             </p>
 
             {/* Customer Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
               <div className="text-center">
-                <div className="text-3xl font-bold text-royal-600 mb-2">5,000+</div>
+                <div className="text-3xl font-bold text-royal-600 mb-2">
+                  5,000+
+                </div>
                 <div className="text-sm text-gray-600">Happy Clients</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-500 mb-2">4.9/5</div>
+                <div className="text-3xl font-bold text-orange-500 mb-2">
+                  4.9/5
+                </div>
                 <div className="text-sm text-gray-600">Average Rating</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-royal-600 mb-2">98%</div>
+                <div className="text-3xl font-bold text-royal-600 mb-2">
+                  98%
+                </div>
                 <div className="text-sm text-gray-600">Would Recommend</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-500 mb-2">24/7</div>
+                <div className="text-3xl font-bold text-orange-500 mb-2">
+                  24/7
+                </div>
                 <div className="text-sm text-gray-600">Support Rating</div>
               </div>
             </div>
@@ -563,7 +594,10 @@ export default function Index() {
                     <div className="lg:col-span-2">
                       <div className="flex items-center mb-6">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
+                          <Star
+                            key={i}
+                            className="h-6 w-6 text-yellow-400 fill-current"
+                          />
                         ))}
                       </div>
                       <blockquote className="text-2xl lg:text-3xl font-light leading-relaxed mb-8 italic">
@@ -576,27 +610,41 @@ export default function Index() {
                           className="w-20 h-20 rounded-full border-4 border-white/20 shadow-lg"
                         />
                         <div>
-                          <div className="text-xl font-bold">{testimonials[1].name}</div>
-                          <div className="text-orange-300 font-medium">{testimonials[1].title}</div>
-                          <div className="text-white/80">{testimonials[1].company}</div>
+                          <div className="text-xl font-bold">
+                            {testimonials[1].name}
+                          </div>
+                          <div className="text-orange-300 font-medium">
+                            {testimonials[1].title}
+                          </div>
+                          <div className="text-white/80">
+                            {testimonials[1].company}
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div className="lg:col-span-1">
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                        <h4 className="text-lg font-semibold mb-4 text-orange-300">Success Metrics</h4>
+                        <h4 className="text-lg font-semibold mb-4 text-orange-300">
+                          Success Metrics
+                        </h4>
                         <div className="space-y-4">
                           <div className="flex justify-between items-center">
                             <span>Shipments Handled</span>
-                            <span className="font-bold text-orange-300">{testimonials[1].shipments}</span>
+                            <span className="font-bold text-orange-300">
+                              {testimonials[1].shipments}
+                            </span>
                           </div>
                           <div className="flex justify-between items-center">
                             <span>Cost Savings</span>
-                            <span className="font-bold text-orange-300">{testimonials[1].savings}</span>
+                            <span className="font-bold text-orange-300">
+                              {testimonials[1].savings}
+                            </span>
                           </div>
                           <div className="flex justify-between items-center">
                             <span>On-Time Delivery</span>
-                            <span className="font-bold text-orange-300">99.8%</span>
+                            <span className="font-bold text-orange-300">
+                              99.8%
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -613,7 +661,7 @@ export default function Index() {
               <Card
                 key={index}
                 className={`group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden transform hover:-translate-y-2 ${
-                  index === 1 ? 'hidden' : '' // Hide the featured testimonial from grid
+                  index === 1 ? "hidden" : "" // Hide the featured testimonial from grid
                 }`}
               >
                 <CardContent className="p-0">
@@ -629,7 +677,10 @@ export default function Index() {
                     </div>
                     <div className="absolute top-4 right-4 flex">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                        <Star
+                          key={i}
+                          className="h-4 w-4 text-yellow-400 fill-current"
+                        />
                       ))}
                     </div>
                   </div>
@@ -637,9 +688,15 @@ export default function Index() {
                   {/* Content */}
                   <div className="p-6 pt-12">
                     <div className="mb-4">
-                      <div className="font-bold text-lg text-gray-800">{testimonial.name}</div>
-                      <div className="text-sm text-orange-600 font-medium">{testimonial.title}</div>
-                      <div className="text-sm text-gray-600">{testimonial.company}</div>
+                      <div className="font-bold text-lg text-gray-800">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-sm text-orange-600 font-medium">
+                        {testimonial.title}
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        {testimonial.company}
+                      </div>
                     </div>
 
                     <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-4">
@@ -649,15 +706,21 @@ export default function Index() {
                     {/* Success metrics */}
                     <div className="flex justify-between items-center pt-4 border-t border-gray-100">
                       <div className="text-center">
-                        <div className="text-lg font-bold text-royal-600">{testimonial.shipments}</div>
+                        <div className="text-lg font-bold text-royal-600">
+                          {testimonial.shipments}
+                        </div>
                         <div className="text-xs text-gray-500">Shipments</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-lg font-bold text-orange-500">{testimonial.savings}</div>
+                        <div className="text-lg font-bold text-orange-500">
+                          {testimonial.savings}
+                        </div>
                         <div className="text-xs text-gray-500">Savings</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-lg font-bold text-green-600">99.8%</div>
+                        <div className="text-lg font-bold text-green-600">
+                          99.8%
+                        </div>
                         <div className="text-xs text-gray-500">On-Time</div>
                       </div>
                     </div>
@@ -674,7 +737,8 @@ export default function Index() {
                 Join Thousands of Satisfied Customers
               </h3>
               <p className="text-gray-600 mb-6">
-                Ready to experience the GlobalTrack difference? Get started with a free quote today.
+                Ready to experience the GlobalTrack difference? Get started with
+                a free quote today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button

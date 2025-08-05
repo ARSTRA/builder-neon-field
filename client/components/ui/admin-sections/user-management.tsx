@@ -183,7 +183,7 @@ export function UserManagement() {
   });
 
   const handleActivateUser = (userId: string) => {
-    const user = users.find(u => u.id === userId);
+    const user = users.find((u) => u.id === userId);
     toast({
       title: "User Activated",
       description: `${user?.name} has been successfully activated.`,
@@ -191,7 +191,7 @@ export function UserManagement() {
   };
 
   const handleSuspendUser = (userId: string) => {
-    const user = users.find(u => u.id === userId);
+    const user = users.find((u) => u.id === userId);
     toast({
       title: "User Suspended",
       description: `${user?.name} has been suspended and will no longer have access.`,
@@ -200,7 +200,7 @@ export function UserManagement() {
   };
 
   const handleDeleteUser = (userId: string) => {
-    const user = users.find(u => u.id === userId);
+    const user = users.find((u) => u.id === userId);
     toast({
       title: "User Deleted",
       description: `${user?.name} has been permanently deleted from the system.`,
@@ -229,7 +229,7 @@ export function UserManagement() {
   };
 
   const handleSendEmail = (userId: string) => {
-    const user = users.find(u => u.id === userId);
+    const user = users.find((u) => u.id === userId);
     toast({
       title: "Email Sent",
       description: `Email notification sent to ${user?.name}.`,
@@ -569,7 +569,9 @@ export function UserManagement() {
                                 Activate User
                               </DropdownMenuItem>
                             )}
-                            <DropdownMenuItem onClick={() => handleSendEmail(user.id)}>
+                            <DropdownMenuItem
+                              onClick={() => handleSendEmail(user.id)}
+                            >
                               <Mail className="h-4 w-4 mr-2" />
                               Send Email
                             </DropdownMenuItem>

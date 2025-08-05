@@ -146,7 +146,8 @@ export default function Admin() {
   const handleExportReport = () => {
     toast({
       title: "Exporting Report",
-      description: "Your admin report is being generated and will be downloaded shortly.",
+      description:
+        "Your admin report is being generated and will be downloaded shortly.",
     });
     // Simulate report generation
     setTimeout(() => {
