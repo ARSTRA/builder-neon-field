@@ -261,16 +261,59 @@ export function ChatManagement() {
   };
 
   const handleJoinChat = (chatId: string) => {
-    console.log("Joining chat:", chatId);
     const chat = activeChats.find((c) => c.id === chatId);
     setSelectedChat(chat);
+    toast({
+      title: "Joined Chat",
+      description: `You are now viewing the chat with ${chat?.customer}.`,
+    });
   };
 
   const handleSendMessage = () => {
     if (newMessage.trim()) {
-      console.log("Sending message:", newMessage);
+      toast({
+        title: "Message Sent",
+        description: "Your message has been sent to the customer.",
+      });
       setNewMessage("");
     }
+  };
+
+  const handleAnalytics = () => {
+    toast({
+      title: "Opening Analytics",
+      description: "Loading detailed chat analytics dashboard...",
+    });
+  };
+
+  const handleChatSettings = () => {
+    toast({
+      title: "Chat Settings",
+      description: "Opening chat configuration panel...",
+    });
+  };
+
+  const handleTransferChat = () => {
+    toast({
+      title: "Transfer Chat",
+      description: "Chat transfer request has been initiated.",
+    });
+  };
+
+  const handleEscalate = () => {
+    toast({
+      title: "Chat Escalated",
+      description: "Chat has been escalated to senior support team.",
+      variant: "destructive",
+    });
+  };
+
+  const handleCloseChat = () => {
+    toast({
+      title: "Chat Closed",
+      description: "Chat session has been closed successfully.",
+    });
+    setSelectedChat(null);
   };
 
   return (
