@@ -569,7 +569,7 @@ export function UserManagement() {
                                 Activate User
                               </DropdownMenuItem>
                             )}
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => handleSendEmail(user.id)}>
                               <Mail className="h-4 w-4 mr-2" />
                               Send Email
                             </DropdownMenuItem>
