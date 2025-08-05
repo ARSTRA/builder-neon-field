@@ -247,11 +247,11 @@ export function UserManagement() {
           </p>
         </div>
         <div className="mt-4 sm:mt-0 flex space-x-3">
-          <Button variant="outline">
+          <Button variant="outline" onClick={handleExportUsers}>
             <Download className="h-4 w-4 mr-2" />
             Export Users
           </Button>
-          <Button variant="outline">
+          <Button variant="outline" onClick={handleImportUsers}>
             <Upload className="h-4 w-4 mr-2" />
             Import Users
           </Button>
