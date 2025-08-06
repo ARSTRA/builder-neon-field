@@ -436,6 +436,73 @@ export default function Admin() {
     },
   ];
 
+  // Currency Management Functions
+  const handleEditCurrency = (currency: any) => {
+    setEditingCurrency(currency);
+    setIsEditCurrencyModalOpen(true);
+  };
+
+  const handleAddCurrency = () => {
+    setIsAddCurrencyModalOpen(true);
+  };
+
+  const handleSaveCurrency = () => {
+    if (editingCurrency) {
+      toast({
+        title: "Currency Updated",
+        description: `${editingCurrency.name} settings have been updated successfully.`,
+      });
+    } else {
+      toast({
+        title: "Currency Added",
+        description: "New currency has been added to the system successfully.",
+      });
+    }
+    setIsEditCurrencyModalOpen(false);
+    setIsAddCurrencyModalOpen(false);
+    setEditingCurrency(null);
+  };
+
+  const handleToggleAutoUpdate = (enabled: boolean) => {
+    setAutoUpdateRates(enabled);
+    toast({
+      title: enabled ? "Auto-Update Enabled" : "Auto-Update Disabled",
+      description: enabled
+        ? "Exchange rates will now update automatically every hour."
+        : "Exchange rates will now be updated manually only.",
+    });
+  };
+
+  const handleUpdateAllRates = async () => {
+    setIsUpdatingRates(true);
+
+    // Simulate API call to update rates
+    setTimeout(() => {
+      setIsUpdatingRates(false);
+      toast({
+        title: "Rates Updated",
+        description: "All exchange rates have been updated with the latest market data.",
+      });
+    }, 2000);
+  };
+
+  const handleRemoveCurrency = (currencyCode: string) => {
+    const currency = currencies.find(c => c.code === currencyCode);
+    toast({
+      title: "Currency Removed",
+      description: `${currency?.name} has been removed from supported currencies.`,
+      variant: "destructive",
+    });
+  };
+
+  const handleToggleCurrencyStatus = (currencyCode: string, isActive: boolean) => {
+    const currency = currencies.find(c => c.code === currencyCode);
+    toast({
+      title: `Currency ${isActive ? 'Activated' : 'Deactivated'}`,
+      description: `${currency?.name} has been ${isActive ? 'activated' : 'deactivated'}.`,
+    });
+  };
+
   const renderDashboard = () => (
     <div className="space-y-6">
       {/* Header */}
