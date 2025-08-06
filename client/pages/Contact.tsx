@@ -292,10 +292,10 @@ export default function Contact() {
                     </div>
                     <Button
                       onClick={() => {
-                        if (method.title === "Call Us Directly") {
-                          window.open("tel:+15551234567", "_self");
-                        } else if (method.title === "Live Chat Support") {
+                        if (method.title === "Live Chat Support") {
                           window.location.href = "/chat";
+                        } else if (method.title === "Call Us Directly") {
+                          window.open("tel:+15551234567", "_self");
                         } else if (method.title === "Email Support") {
                           window.open("mailto:info@globaltrack.com", "_self");
                         } else if (method.title === "Schedule Meeting") {
@@ -305,7 +305,7 @@ export default function Contact() {
                             ?.scrollIntoView({ behavior: "smooth" });
                         }
                       }}
-                      className={`w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white font-semibold transition-all duration-300 hover:shadow-lg`}
+                      className={`w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white font-semibold transition-all duration-300 hover:shadow-lg transform hover:scale-105`}
                     >
                       {method.action}
                     </Button>
