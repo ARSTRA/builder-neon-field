@@ -83,17 +83,9 @@ export function Navigation() {
               <Link to="/admin/login">
                 <Button
                   variant="outline"
-                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white mr-2"
+                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
                 >
                   Admin
-                </Button>
-              </Link>
-              <Link to="/login">
-                <Button
-                  variant="outline"
-                  className="border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white"
-                >
-                  Sign In
                 </Button>
               </Link>
             </div>
