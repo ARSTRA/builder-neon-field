@@ -248,6 +248,70 @@ export function UserManagement() {
     });
   };
 
+  const handleEditUser = (user: any) => {
+    setEditingUser(user);
+    const [firstName, lastName] = user.name.split(" ");
+    setFormData({
+      firstName: firstName || "",
+      lastName: lastName || "",
+      email: user.email,
+      phone: user.phone,
+      role: user.role,
+      status: user.status,
+      notes: "",
+      sendWelcome: false,
+    });
+    setIsEditUserModalOpen(true);
+  };
+
+  const handleSaveUser = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (editingUser) {
+      toast({
+        title: "User Updated",
+        description: `${formData.firstName} ${formData.lastName} has been successfully updated.`,
+      });
+    } else {
+      toast({
+        title: "User Created",
+        description: `${formData.firstName} ${formData.lastName} has been successfully created.`,
+      });
+    }
+    setIsEditUserModalOpen(false);
+    setIsAddUserModalOpen(false);
+    setEditingUser(null);
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      role: "",
+      status: "",
+      notes: "",
+      sendWelcome: false,
+    });
+  };
+
+  const handleViewUser = (user: any) => {
+    setSelectedUser(user);
+  };
+
+  const handleResetPassword = (userId: string) => {
+    const user = users.find((u) => u.id === userId);
+    toast({
+      title: "Password Reset",
+      description: `Password reset email sent to ${user?.name}.`,
+    });
+  };
+
+  const handleDownloadUserData = (userId: string) => {
+    const user = users.find((u) => u.id === userId);
+    toast({
+      title: "Download Started",
+      description: `Downloading user data for ${user?.name}...`,
+    });
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
