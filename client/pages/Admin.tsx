@@ -1098,7 +1098,11 @@ export default function Admin() {
                               </div>
                             ))}
                           </div>
-                          <Button variant="outline" className="w-full mt-4">
+                          <Button
+                            variant="outline"
+                            className="w-full mt-4 hover:bg-green-50 hover:border-green-300"
+                            onClick={handleAddCurrency}
+                          >
                             <Plus className="h-4 w-4 mr-2" />
                             Add Currency
                           </Button>
