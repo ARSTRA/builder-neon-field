@@ -96,6 +96,11 @@ export default function Admin() {
     GBP: { USD: 1.37, EUR: 1.16, JPY: 150.8, CAD: 1.71, AUD: 1.85 },
   });
   const [isConverting, setIsConverting] = useState(false);
+  const [autoUpdateRates, setAutoUpdateRates] = useState(true);
+  const [isUpdatingRates, setIsUpdatingRates] = useState(false);
+  const [isAddCurrencyModalOpen, setIsAddCurrencyModalOpen] = useState(false);
+  const [editingCurrency, setEditingCurrency] = useState<any>(null);
+  const [isEditCurrencyModalOpen, setIsEditCurrencyModalOpen] = useState(false);
 
   useEffect(() => {
     // Check if user is admin
