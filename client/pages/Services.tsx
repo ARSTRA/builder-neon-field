@@ -267,13 +267,13 @@ export default function Services() {
                 Get Custom Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Link to="/contact">
+              <Link to="/chat">
                 <Button
                   variant="outline"
                   className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
                 >
-                  Speak with Expert
-                  <Phone className="ml-2 h-5 w-5" />
+                  CHAT with Expert
+                  <MessageCircle className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
