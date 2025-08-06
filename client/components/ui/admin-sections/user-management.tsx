@@ -636,10 +636,11 @@ export function UserManagement() {
                               <MoreHorizontal className="h-4 w-4" />
                             </Button>
                           </DropdownMenuTrigger>
-                          <DropdownMenuContent>
+                          <DropdownMenuContent className="w-48">
                             {user.status === "active" ? (
                               <DropdownMenuItem
                                 onClick={() => handleSuspendUser(user.id)}
+                                className="text-orange-600 hover:text-orange-700 hover:bg-orange-50"
                               >
                                 <UserX className="h-4 w-4 mr-2" />
                                 Suspend User
@@ -647,6 +648,7 @@ export function UserManagement() {
                             ) : (
                               <DropdownMenuItem
                                 onClick={() => handleActivateUser(user.id)}
+                                className="text-green-600 hover:text-green-700 hover:bg-green-50"
                               >
                                 <UserCheck className="h-4 w-4 mr-2" />
                                 Activate User
@@ -654,13 +656,28 @@ export function UserManagement() {
                             )}
                             <DropdownMenuItem
                               onClick={() => handleSendEmail(user.id)}
+                              className="hover:bg-blue-50"
                             >
                               <Mail className="h-4 w-4 mr-2" />
                               Send Email
                             </DropdownMenuItem>
                             <DropdownMenuItem
+                              onClick={() => handleResetPassword(user.id)}
+                              className="hover:bg-yellow-50"
+                            >
+                              <Eye className="h-4 w-4 mr-2" />
+                              Reset Password
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={() => handleDownloadUserData(user.id)}
+                              className="hover:bg-purple-50"
+                            >
+                              <Download className="h-4 w-4 mr-2" />
+                              Download Data
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
                               onClick={() => handleDeleteUser(user.id)}
-                              className="text-red-600"
+                              className="text-red-600 hover:text-red-700 hover:bg-red-50"
                             >
                               <Trash2 className="h-4 w-4 mr-2" />
                               Delete User
