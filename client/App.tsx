@@ -88,13 +88,6 @@ const App = () => (
             }
           />
 
-          {/* Auth pages without navigation */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-
-          {/* Dashboard without main navigation */}
-          <Route path="/dashboard" element={<Dashboard />} />
-
           {/* Admin auth and panel without main navigation */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<Admin />} />
