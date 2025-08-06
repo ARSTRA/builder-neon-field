@@ -250,7 +250,7 @@ export default function Admin() {
     { code: "JPY", name: "Japanese Yen", symbol: "¥", flag: "🇯🇵" },
     { code: "CAD", name: "Canadian Dollar", symbol: "C$", flag: "🇨🇦" },
     { code: "AUD", name: "Australian Dollar", symbol: "A$", flag: "🇦🇺" },
-    { code: "CHF", name: "Swiss Franc", symbol: "Fr", flag: "🇨🇭" },
+    { code: "CHF", name: "Swiss Franc", symbol: "Fr", flag: "🇨����" },
     { code: "CNY", name: "Chinese Yuan", symbol: "¥", flag: "🇨🇳" },
     { code: "INR", name: "Indian Rupee", symbol: "₹", flag: "🇮🇳" },
     { code: "BRL", name: "Brazilian Real", symbol: "R$", flag: "🇧🇷" },
@@ -1121,7 +1121,10 @@ export default function Admin() {
                             <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
                               <div className="flex items-center justify-between mb-2">
                                 <span className="font-medium text-blue-900">Auto-Update Rates</span>
-                                <Switch defaultChecked />
+                                <Switch
+                                  checked={autoUpdateRates}
+                                  onCheckedChange={handleToggleAutoUpdate}
+                                />
                               </div>
                               <p className="text-sm text-blue-700">Automatically update exchange rates every hour using live market data.</p>
                             </div>
