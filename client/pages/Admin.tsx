@@ -186,6 +186,148 @@ export default function Admin() {
     });
   };
 
+  // Currency Conversion Functions
+  const handleCurrencyConversion = async () => {
+    if (!conversionAmount || isNaN(Number(conversionAmount))) {
+      toast({
+        title: "Invalid Amount",
+        description: "Please enter a valid amount to convert.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsConverting(true);
+
+    // Simulate API call to get real exchange rates
+    setTimeout(() => {
+      const amount = parseFloat(conversionAmount);
+      let converted = 0;
+
+      if (baseCurrency === targetCurrency) {
+        converted = amount;
+      } else if (exchangeRates[baseCurrency] && exchangeRates[baseCurrency][targetCurrency]) {
+        converted = amount * exchangeRates[baseCurrency][targetCurrency];
+      } else {
+        // Fallback calculation through USD
+        const toUSD = baseCurrency === "USD" ? amount : amount / (exchangeRates["USD"][baseCurrency] || 1);
+        converted = targetCurrency === "USD" ? toUSD : toUSD * (exchangeRates["USD"][targetCurrency] || 1);
+      }
+
+      setConvertedAmount(converted.toFixed(2));
+      setIsConverting(false);
+
+      toast({
+        title: "Conversion Complete",
+        description: `${amount} ${baseCurrency} = ${converted.toFixed(2)} ${targetCurrency}`,
+      });
+    }, 1000);
+  };
+
+  const handlePaymentMethodToggle = (method: string, enabled: boolean) => {
+    toast({
+      title: `Payment Method ${enabled ? 'Enabled' : 'Disabled'}`,
+      description: `${method} has been ${enabled ? 'enabled' : 'disabled'} for customers.`,
+    });
+  };
+
+  const currencies = [
+    { code: "USD", name: "US Dollar", symbol: "$", flag: "🇺🇸" },
+    { code: "EUR", name: "Euro", symbol: "€", flag: "🇪🇺" },
+    { code: "GBP", name: "British Pound", symbol: "£", flag: "🇬🇧" },
+    { code: "JPY", name: "Japanese Yen", symbol: "¥", flag: "🇯🇵" },
+    { code: "CAD", name: "Canadian Dollar", symbol: "C$", flag: "🇨🇦" },
+    { code: "AUD", name: "Australian Dollar", symbol: "A$", flag: "🇦🇺" },
+    { code: "CHF", name: "Swiss Franc", symbol: "Fr", flag: "🇨🇭" },
+    { code: "CNY", name: "Chinese Yuan", symbol: "¥", flag: "🇨🇳" },
+    { code: "INR", name: "Indian Rupee", symbol: "₹", flag: "🇮🇳" },
+    { code: "BRL", name: "Brazilian Real", symbol: "R$", flag: "🇧🇷" },
+  ];
+
+  const paymentMethods = [
+    {
+      id: "visa",
+      name: "Visa",
+      icon: "💳",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$1,234,567",
+      color: "bg-blue-500",
+    },
+    {
+      id: "mastercard",
+      name: "Mastercard",
+      icon: "💳",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$987,654",
+      color: "bg-red-500",
+    },
+    {
+      id: "amex",
+      name: "American Express",
+      icon: "💳",
+      enabled: true,
+      fees: "3.5% + $0.30",
+      volume: "$543,210",
+      color: "bg-green-500",
+    },
+    {
+      id: "paypal",
+      name: "PayPal",
+      icon: "🅿️",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$765,432",
+      color: "bg-blue-600",
+    },
+    {
+      id: "stripe",
+      name: "Stripe",
+      icon: "💳",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$1,098,765",
+      color: "bg-purple-500",
+    },
+    {
+      id: "apple-pay",
+      name: "Apple Pay",
+      icon: "🍎",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$654,321",
+      color: "bg-gray-800",
+    },
+    {
+      id: "google-pay",
+      name: "Google Pay",
+      icon: "🅖",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$432,109",
+      color: "bg-blue-400",
+    },
+    {
+      id: "bank-transfer",
+      name: "Bank Transfer",
+      icon: "🏦",
+      enabled: true,
+      fees: "1.0% + $5.00",
+      volume: "$2,345,678",
+      color: "bg-green-600",
+    },
+    {
+      id: "crypto",
+      name: "Cryptocurrency",
+      icon: "₿",
+      enabled: false,
+      fees: "1.5% + $2.00",
+      volume: "$123,456",
+      color: "bg-orange-500",
+    },
+  ];
+
   // Dashboard Analytics Data
   const dashboardStats = [
     {
