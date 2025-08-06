@@ -55,6 +55,18 @@ export function UserManagement() {
   const [filterStatus, setFilterStatus] = useState("all");
   const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<any>(null);
+  const [isEditUserModalOpen, setIsEditUserModalOpen] = useState(false);
+  const [editingUser, setEditingUser] = useState<any>(null);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    role: "",
+    status: "",
+    notes: "",
+    sendWelcome: false,
+  });
 
   const users = [
     {
