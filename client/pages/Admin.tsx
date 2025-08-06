@@ -1576,7 +1576,6 @@ export default function Admin() {
                                 id="usdRate"
                                 placeholder="1.0000"
                                 className="mt-1"
-                                size="sm"
                               />
                             </div>
                             <div>
@@ -1585,7 +1584,6 @@ export default function Admin() {
                                 id="eurRate"
                                 placeholder="0.8500"
                                 className="mt-1"
-                                size="sm"
                               />
                             </div>
                           </div>
