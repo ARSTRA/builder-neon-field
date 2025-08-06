@@ -1425,6 +1425,208 @@ export default function Admin() {
                     </div>
                   </TabsContent>
                 </Tabs>
+
+                {/* Add Currency Modal */}
+                <Dialog open={isAddCurrencyModalOpen} onOpenChange={setIsAddCurrencyModalOpen}>
+                  <DialogContent className="max-w-md">
+                    <DialogHeader>
+                      <DialogTitle>Add New Currency</DialogTitle>
+                    </DialogHeader>
+                    <form onSubmit={(e) => { e.preventDefault(); handleSaveCurrency(); }} className="space-y-4">
+                      <div>
+                        <Label htmlFor="currencyCode">Currency Code</Label>
+                        <Input
+                          id="currencyCode"
+                          placeholder="e.g., AED"
+                          required
+                          className="mt-2"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="currencyName">Currency Name</Label>
+                        <Input
+                          id="currencyName"
+                          placeholder="e.g., UAE Dirham"
+                          required
+                          className="mt-2"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="currencySymbol">Currency Symbol</Label>
+                        <Input
+                          id="currencySymbol"
+                          placeholder="e.g., د.إ"
+                          required
+                          className="mt-2"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="currencyFlag">Flag Emoji</Label>
+                        <Input
+                          id="currencyFlag"
+                          placeholder="e.g., 🇦🇪"
+                          required
+                          className="mt-2"
+                        />
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Switch id="isActive" defaultChecked />
+                        <Label htmlFor="isActive">Active by default</Label>
+                      </div>
+                      <div className="flex justify-end space-x-3 pt-4">
+                        <Button
+                          type="button"
+                          variant="outline"
+                          onClick={() => setIsAddCurrencyModalOpen(false)}
+                        >
+                          Cancel
+                        </Button>
+                        <Button
+                          type="submit"
+                          className="bg-gradient-to-r from-green-600 to-green-700"
+                        >
+                          <Plus className="h-4 w-4 mr-2" />
+                          Add Currency
+                        </Button>
+                      </div>
+                    </form>
+                  </DialogContent>
+                </Dialog>
+
+                {/* Edit Currency Modal */}
+                <Dialog open={isEditCurrencyModalOpen} onOpenChange={setIsEditCurrencyModalOpen}>
+                  <DialogContent className="max-w-lg">
+                    <DialogHeader>
+                      <DialogTitle>
+                        {editingCurrency ? `Edit ${editingCurrency.name}` : "Edit Currency"}
+                      </DialogTitle>
+                    </DialogHeader>
+                    <form onSubmit={(e) => { e.preventDefault(); handleSaveCurrency(); }} className="space-y-4">
+                      {editingCurrency && (
+                        <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                          <div className="flex items-center space-x-3">
+                            <span className="text-2xl">{editingCurrency.flag}</span>
+                            <div>
+                              <h4 className="font-semibold text-blue-900">{editingCurrency.name}</h4>
+                              <p className="text-sm text-blue-700">{editingCurrency.code} • {editingCurrency.symbol}</p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="editCurrencyCode">Currency Code</Label>
+                          <Input
+                            id="editCurrencyCode"
+                            defaultValue={editingCurrency?.code || ""}
+                            required
+                            className="mt-2"
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="editCurrencySymbol">Symbol</Label>
+                          <Input
+                            id="editCurrencySymbol"
+                            defaultValue={editingCurrency?.symbol || ""}
+                            required
+                            className="mt-2"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="editCurrencyName">Currency Name</Label>
+                        <Input
+                          id="editCurrencyName"
+                          defaultValue={editingCurrency?.name || ""}
+                          required
+                          className="mt-2"
+                        />
+                      </div>
+
+                      <div>
+                        <Label htmlFor="editCurrencyFlag">Flag Emoji</Label>
+                        <Input
+                          id="editCurrencyFlag"
+                          defaultValue={editingCurrency?.flag || ""}
+                          required
+                          className="mt-2"
+                        />
+                      </div>
+
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <Label htmlFor="currencyActive">Currency Status</Label>
+                          <Switch
+                            id="currencyActive"
+                            defaultChecked={true}
+                            onCheckedChange={(checked) =>
+                              handleToggleCurrencyStatus(editingCurrency?.code || "", checked)
+                            }
+                          />
+                        </div>
+
+                        <div className="p-3 bg-gray-50 rounded-lg">
+                          <h5 className="font-medium text-gray-900 mb-2">Exchange Rate Settings</h5>
+                          <div className="grid grid-cols-2 gap-3">
+                            <div>
+                              <Label htmlFor="usdRate" className="text-sm">vs USD</Label>
+                              <Input
+                                id="usdRate"
+                                placeholder="1.0000"
+                                className="mt-1"
+                                size="sm"
+                              />
+                            </div>
+                            <div>
+                              <Label htmlFor="eurRate" className="text-sm">vs EUR</Label>
+                              <Input
+                                id="eurRate"
+                                placeholder="0.8500"
+                                className="mt-1"
+                                size="sm"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-end space-x-3 pt-4">
+                        <Button
+                          type="button"
+                          variant="outline"
+                          onClick={() => {
+                            setIsEditCurrencyModalOpen(false);
+                            setEditingCurrency(null);
+                          }}
+                        >
+                          Cancel
+                        </Button>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          className="text-red-600 hover:bg-red-50 hover:border-red-300"
+                          onClick={() => {
+                            handleRemoveCurrency(editingCurrency?.code || "");
+                            setIsEditCurrencyModalOpen(false);
+                            setEditingCurrency(null);
+                          }}
+                        >
+                          <Trash2 className="h-4 w-4 mr-2" />
+                          Remove
+                        </Button>
+                        <Button
+                          type="submit"
+                          className="bg-gradient-to-r from-blue-600 to-blue-700"
+                        >
+                          <Edit className="h-4 w-4 mr-2" />
+                          Update Currency
+                        </Button>
+                      </div>
+                    </form>
+                  </DialogContent>
+                </Dialog>
               </div>
             )}
             {currentView === "tracking" && (
