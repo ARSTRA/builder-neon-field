@@ -33,6 +33,15 @@ import {
   Star,
   Mail,
   Phone,
+  ArrowLeftRight,
+  Wallet,
+  Receipt,
+  Shield,
+  Zap,
+  RefreshCw,
+  TrendingDown,
+  Copy,
+  ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
