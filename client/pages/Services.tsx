@@ -514,13 +514,13 @@ export default function Services() {
                           Get Quote
                           <ArrowRight className="h-4 w-4 ml-2" />
                         </Button>
-                        <Link to="/contact">
+                        <Link to="/chat">
                           <Button
                             variant="outline"
                             className="group w-full border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
                           >
-                            <Phone className="h-4 w-4 mr-2 group-hover:animate-pulse" />
-                            Expert Consult
+                            <MessageCircle className="h-4 w-4 mr-2 group-hover:animate-pulse" />
+                            CHAT Expert
                           </Button>
                         </Link>
                       </div>
