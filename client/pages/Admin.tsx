@@ -250,7 +250,7 @@ export default function Admin() {
     { code: "JPY", name: "Japanese Yen", symbol: "¥", flag: "🇯🇵" },
     { code: "CAD", name: "Canadian Dollar", symbol: "C$", flag: "🇨🇦" },
     { code: "AUD", name: "Australian Dollar", symbol: "A$", flag: "🇦🇺" },
-    { code: "CHF", name: "Swiss Franc", symbol: "Fr", flag: "🇨����" },
+    { code: "CHF", name: "Swiss Franc", symbol: "Fr", flag: "🇨🇭" },
     { code: "CNY", name: "Chinese Yuan", symbol: "¥", flag: "🇨🇳" },
     { code: "INR", name: "Indian Rupee", symbol: "₹", flag: "🇮🇳" },
     { code: "BRL", name: "Brazilian Real", symbol: "R$", flag: "🇧🇷" },
@@ -1164,9 +1164,14 @@ export default function Admin() {
                               </div>
                             </div>
 
-                            <Button variant="outline" className="w-full">
-                              <RefreshCw className="h-4 w-4 mr-2" />
-                              Update All Rates Now
+                            <Button
+                              variant="outline"
+                              className="w-full hover:bg-blue-50 hover:border-blue-300"
+                              onClick={handleUpdateAllRates}
+                              disabled={isUpdatingRates}
+                            >
+                              <RefreshCw className={`h-4 w-4 mr-2 ${isUpdatingRates ? 'animate-spin' : ''}`} />
+                              {isUpdatingRates ? 'Updating Rates...' : 'Update All Rates Now'}
                             </Button>
                           </div>
                         </CardContent>
