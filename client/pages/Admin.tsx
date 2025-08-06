@@ -186,6 +186,13 @@ export default function Admin() {
     });
   };
 
+  const handleNotifications = () => {
+    toast({
+      title: "Notifications",
+      description: "You have 5 new notifications. Opening notification panel...",
+    });
+  };
+
   // Currency Conversion Functions
   const handleCurrencyConversion = async () => {
     if (!conversionAmount || isNaN(Number(conversionAmount))) {
