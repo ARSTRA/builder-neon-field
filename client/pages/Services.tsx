@@ -267,13 +267,13 @@ export default function Services() {
                 Get Custom Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Link to="/contact">
+              <Link to="/chat">
                 <Button
                   variant="outline"
                   className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
                 >
-                  Speak with Expert
-                  <Phone className="ml-2 h-5 w-5" />
+                  CHAT with Expert
+                  <MessageCircle className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
@@ -342,22 +342,22 @@ export default function Services() {
                 solution recommendations
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact">
+                <Link to="/chat">
                   <Button className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <Phone className="h-5 w-5 mr-3 group-hover:animate-pulse" />
-                    Call Expert Now
+                    <MessageCircle className="h-5 w-5 mr-3 group-hover:animate-pulse" />
+                    CHAT with Expert Now
                     <span className="ml-2 text-sm bg-white/20 px-2 py-1 rounded">
                       Free
                     </span>
                   </Button>
                 </Link>
-                <Link to="/chat">
+                <Link to="/contact">
                   <Button
                     variant="outline"
                     className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
                   >
-                    <MessageCircle className="h-5 w-5 mr-3" />
-                    Live Chat
+                    <Phone className="h-5 w-5 mr-3" />
+                    Call Support
                   </Button>
                 </Link>
               </div>
@@ -514,13 +514,13 @@ export default function Services() {
                           Get Quote
                           <ArrowRight className="h-4 w-4 ml-2" />
                         </Button>
-                        <Link to="/contact">
+                        <Link to="/chat">
                           <Button
                             variant="outline"
                             className="group w-full border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
                           >
-                            <Phone className="h-4 w-4 mr-2 group-hover:animate-pulse" />
-                            Expert Consult
+                            <MessageCircle className="h-4 w-4 mr-2 group-hover:animate-pulse" />
+                            CHAT Expert
                           </Button>
                         </Link>
                       </div>
@@ -577,13 +577,13 @@ export default function Services() {
                       Get Quote
                       <ArrowRight className="h-4 w-4 ml-2" />
                     </Button>
-                    <Link to="/contact">
+                    <Link to="/chat">
                       <Button
                         size="sm"
-                        className="bg-orange-500 hover:bg-orange-600 text-white px-4 shadow-md hover:shadow-lg transition-all duration-300"
+                        className="bg-orange-500 hover:bg-orange-600 text-white px-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                       >
-                        <Phone className="h-4 w-4 mr-1" />
-                        Call
+                        <MessageCircle className="h-4 w-4 mr-1" />
+                        CHAT
                       </Button>
                     </Link>
                   </div>
@@ -685,17 +685,17 @@ export default function Services() {
       </section>
 
       {/* Floating Expert Consultation Widget */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 group">
-          <Link to="/contact">
+      <div className="fixed bottom-6 left-6 z-50">
+        <div className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 group">
+          <Link to="/chat">
             <Button className="bg-transparent hover:bg-transparent p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
-              <Phone className="h-6 w-6 animate-pulse" />
+              <MessageCircle className="h-6 w-6 animate-pulse" />
             </Button>
           </Link>
-          <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute bottom-full left-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap">
-              Need help? Call an expert!
-              <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+              Need help? CHAT with an expert!
+              <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
             </div>
           </div>
         </div>

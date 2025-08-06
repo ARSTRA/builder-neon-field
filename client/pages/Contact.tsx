@@ -108,6 +108,15 @@ export default function Contact() {
 
   const contactMethods = [
     {
+      icon: <MessageCircle className="h-8 w-8" />,
+      title: "Live Chat Support",
+      description: "Get instant answers to your shipping questions",
+      contact: "Start Chat",
+      action: "CHAT NOW",
+      gradient: "from-green-600 to-green-800",
+      availability: "Online Now",
+    },
+    {
       icon: <Phone className="h-8 w-8" />,
       title: "Call Us Directly",
       description: "Speak with our logistics experts for immediate assistance",
@@ -115,15 +124,6 @@ export default function Contact() {
       action: "Call Now",
       gradient: "from-blue-600 to-blue-800",
       availability: "24/7 Support",
-    },
-    {
-      icon: <MessageCircle className="h-8 w-8" />,
-      title: "Live Chat Support",
-      description: "Get instant answers to your shipping questions",
-      contact: "Start Chat",
-      action: "Chat Now",
-      gradient: "from-green-600 to-green-800",
-      availability: "Online Now",
     },
     {
       icon: <Mail className="h-8 w-8" />,
@@ -231,22 +231,20 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                onClick={() => window.open("tel:+15551234567", "_self")}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                Call Now: +1 (555) 123-4567
-              </Button>
               <Link to="/chat">
-                <Button
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
-                >
+                <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  Start Live Chat
+                  CHAT NOW - Get Instant Help
                 </Button>
               </Link>
+              <Button
+                onClick={() => window.open("tel:+15551234567", "_self")}
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                Call: +1 (555) 123-4567
+              </Button>
             </div>
           </div>
         </div>
@@ -294,10 +292,10 @@ export default function Contact() {
                     </div>
                     <Button
                       onClick={() => {
-                        if (method.title === "Call Us Directly") {
-                          window.open("tel:+15551234567", "_self");
-                        } else if (method.title === "Live Chat Support") {
+                        if (method.title === "Live Chat Support") {
                           window.location.href = "/chat";
+                        } else if (method.title === "Call Us Directly") {
+                          window.open("tel:+15551234567", "_self");
                         } else if (method.title === "Email Support") {
                           window.open("mailto:info@globaltrack.com", "_self");
                         } else if (method.title === "Schedule Meeting") {
@@ -307,7 +305,7 @@ export default function Contact() {
                             ?.scrollIntoView({ behavior: "smooth" });
                         }
                       }}
-                      className={`w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white font-semibold transition-all duration-300 hover:shadow-lg`}
+                      className={`w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white font-semibold transition-all duration-300 hover:shadow-lg transform hover:scale-105`}
                     >
                       {method.action}
                     </Button>

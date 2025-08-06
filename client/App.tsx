@@ -14,9 +14,6 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import LiveChat from "./pages/LiveChat";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
 import AdminLogin from "./pages/AdminLogin";
 import NotFound from "./pages/NotFound";
@@ -90,13 +87,6 @@ const App = () => (
               </div>
             }
           />
-
-          {/* Auth pages without navigation */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-
-          {/* Dashboard without main navigation */}
-          <Route path="/dashboard" element={<Dashboard />} />
 
           {/* Admin auth and panel without main navigation */}
           <Route path="/admin/login" element={<AdminLogin />} />

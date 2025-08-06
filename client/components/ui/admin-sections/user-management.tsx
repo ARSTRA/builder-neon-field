@@ -55,6 +55,18 @@ export function UserManagement() {
   const [filterStatus, setFilterStatus] = useState("all");
   const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<any>(null);
+  const [isEditUserModalOpen, setIsEditUserModalOpen] = useState(false);
+  const [editingUser, setEditingUser] = useState<any>(null);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    role: "",
+    status: "",
+    notes: "",
+    sendWelcome: false,
+  });
 
   const users = [
     {
@@ -236,6 +248,70 @@ export function UserManagement() {
     });
   };
 
+  const handleEditUser = (user: any) => {
+    setEditingUser(user);
+    const [firstName, lastName] = user.name.split(" ");
+    setFormData({
+      firstName: firstName || "",
+      lastName: lastName || "",
+      email: user.email,
+      phone: user.phone,
+      role: user.role,
+      status: user.status,
+      notes: "",
+      sendWelcome: false,
+    });
+    setIsEditUserModalOpen(true);
+  };
+
+  const handleSaveUser = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (editingUser) {
+      toast({
+        title: "User Updated",
+        description: `${formData.firstName} ${formData.lastName} has been successfully updated.`,
+      });
+    } else {
+      toast({
+        title: "User Created",
+        description: `${formData.firstName} ${formData.lastName} has been successfully created.`,
+      });
+    }
+    setIsEditUserModalOpen(false);
+    setIsAddUserModalOpen(false);
+    setEditingUser(null);
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      role: "",
+      status: "",
+      notes: "",
+      sendWelcome: false,
+    });
+  };
+
+  const handleViewUser = (user: any) => {
+    setSelectedUser(user);
+  };
+
+  const handleResetPassword = (userId: string) => {
+    const user = users.find((u) => u.id === userId);
+    toast({
+      title: "Password Reset",
+      description: `Password reset email sent to ${user?.name}.`,
+    });
+  };
+
+  const handleDownloadUserData = (userId: string) => {
+    const user = users.find((u) => u.id === userId);
+    toast({
+      title: "Download Started",
+      description: `Downloading user data for ${user?.name}...`,
+    });
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -269,33 +345,57 @@ export function UserManagement() {
               <DialogHeader>
                 <DialogTitle>Add New User</DialogTitle>
               </DialogHeader>
-              <form className="space-y-4">
+              <form onSubmit={handleSaveUser} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="Enter first name" />
+                    <Input
+                      id="firstName"
+                      placeholder="Enter first name"
+                      value={formData.firstName}
+                      onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
+                      required
+                    />
                   </div>
                   <div>
                     <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Enter last name" />
+                    <Input
+                      id="lastName"
+                      placeholder="Enter last name"
+                      value={formData.lastName}
+                      onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
+                      required
+                    />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" type="email" placeholder="Enter email" />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Enter email"
+                      value={formData.email}
+                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      required
+                    />
                   </div>
                   <div>
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" placeholder="Enter phone number" />
+                    <Input
+                      id="phone"
+                      placeholder="Enter phone number"
+                      value={formData.phone}
+                      onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                    />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="role">User Role</Label>
-                    <Select>
+                    <Select value={formData.role} onValueChange={(value) => setFormData(prev => ({ ...prev, role: value }))}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select role" />
                       </SelectTrigger>
@@ -308,7 +408,7 @@ export function UserManagement() {
                   </div>
                   <div>
                     <Label htmlFor="status">Account Status</Label>
-                    <Select>
+                    <Select value={formData.status} onValueChange={(value) => setFormData(prev => ({ ...prev, status: value }))}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select status" />
                       </SelectTrigger>
@@ -323,11 +423,20 @@ export function UserManagement() {
 
                 <div>
                   <Label htmlFor="notes">Admin Notes</Label>
-                  <Textarea id="notes" placeholder="Enter any admin notes..." />
+                  <Textarea
+                    id="notes"
+                    placeholder="Enter any admin notes..."
+                    value={formData.notes}
+                    onChange={(e) => setFormData(prev => ({ ...prev, notes: e.target.value }))}
+                  />
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <Switch id="sendWelcome" />
+                  <Switch
+                    id="sendWelcome"
+                    checked={formData.sendWelcome}
+                    onCheckedChange={(checked) => setFormData(prev => ({ ...prev, sendWelcome: checked }))}
+                  />
                   <Label htmlFor="sendWelcome">Send welcome email</Label>
                 </div>
 
@@ -335,13 +444,25 @@ export function UserManagement() {
                   <Button
                     type="button"
                     variant="outline"
-                    onClick={() => setIsAddUserModalOpen(false)}
+                    onClick={() => {
+                      setIsAddUserModalOpen(false);
+                      setFormData({
+                        firstName: "",
+                        lastName: "",
+                        email: "",
+                        phone: "",
+                        role: "",
+                        status: "",
+                        notes: "",
+                        sendWelcome: false,
+                      });
+                    }}
                   >
                     Cancel
                   </Button>
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-royal-600 to-orange-500"
+                    className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
                   >
                     Create User
                   </Button>
@@ -539,12 +660,19 @@ export function UserManagement() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          onClick={() => setSelectedUser(user)}
+                          onClick={() => handleViewUser(user)}
                           title="View Details"
+                          className="hover:bg-blue-50 hover:text-blue-600"
                         >
                           <Eye className="h-4 w-4" />
                         </Button>
-                        <Button variant="ghost" size="sm" title="Edit User">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          title="Edit User"
+                          onClick={() => handleEditUser(user)}
+                          className="hover:bg-green-50 hover:text-green-600"
+                        >
                           <Edit className="h-4 w-4" />
                         </Button>
                         <DropdownMenu>
@@ -553,10 +681,11 @@ export function UserManagement() {
                               <MoreHorizontal className="h-4 w-4" />
                             </Button>
                           </DropdownMenuTrigger>
-                          <DropdownMenuContent>
+                          <DropdownMenuContent className="w-48">
                             {user.status === "active" ? (
                               <DropdownMenuItem
                                 onClick={() => handleSuspendUser(user.id)}
+                                className="text-orange-600 hover:text-orange-700 hover:bg-orange-50"
                               >
                                 <UserX className="h-4 w-4 mr-2" />
                                 Suspend User
@@ -564,6 +693,7 @@ export function UserManagement() {
                             ) : (
                               <DropdownMenuItem
                                 onClick={() => handleActivateUser(user.id)}
+                                className="text-green-600 hover:text-green-700 hover:bg-green-50"
                               >
                                 <UserCheck className="h-4 w-4 mr-2" />
                                 Activate User
@@ -571,13 +701,28 @@ export function UserManagement() {
                             )}
                             <DropdownMenuItem
                               onClick={() => handleSendEmail(user.id)}
+                              className="hover:bg-blue-50"
                             >
                               <Mail className="h-4 w-4 mr-2" />
                               Send Email
                             </DropdownMenuItem>
                             <DropdownMenuItem
+                              onClick={() => handleResetPassword(user.id)}
+                              className="hover:bg-yellow-50"
+                            >
+                              <Eye className="h-4 w-4 mr-2" />
+                              Reset Password
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={() => handleDownloadUserData(user.id)}
+                              className="hover:bg-purple-50"
+                            >
+                              <Download className="h-4 w-4 mr-2" />
+                              Download Data
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
                               onClick={() => handleDeleteUser(user.id)}
-                              className="text-red-600"
+                              className="text-red-600 hover:text-red-700 hover:bg-red-50"
                             >
                               <Trash2 className="h-4 w-4 mr-2" />
                               Delete User
@@ -697,6 +842,153 @@ export function UserManagement() {
           </DialogContent>
         </Dialog>
       )}
+
+      {/* Edit User Modal */}
+      <Dialog open={isEditUserModalOpen} onOpenChange={setIsEditUserModalOpen}>
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle>
+              {editingUser ? `Edit User - ${editingUser.name}` : "Edit User"}
+            </DialogTitle>
+          </DialogHeader>
+          <form onSubmit={handleSaveUser} className="space-y-4">
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="editFirstName">First Name</Label>
+                <Input
+                  id="editFirstName"
+                  placeholder="Enter first name"
+                  value={formData.firstName}
+                  onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="editLastName">Last Name</Label>
+                <Input
+                  id="editLastName"
+                  placeholder="Enter last name"
+                  value={formData.lastName}
+                  onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="editEmail">Email Address</Label>
+                <Input
+                  id="editEmail"
+                  type="email"
+                  placeholder="Enter email"
+                  value={formData.email}
+                  onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="editPhone">Phone Number</Label>
+                <Input
+                  id="editPhone"
+                  placeholder="Enter phone number"
+                  value={formData.phone}
+                  onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="editRole">User Role</Label>
+                <Select value={formData.role} onValueChange={(value) => setFormData(prev => ({ ...prev, role: value }))}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select role" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="customer">Customer</SelectItem>
+                    <SelectItem value="premium">Premium</SelectItem>
+                    <SelectItem value="enterprise">Enterprise</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <Label htmlFor="editStatus">Account Status</Label>
+                <Select value={formData.status} onValueChange={(value) => setFormData(prev => ({ ...prev, status: value }))}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select status" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="active">Active</SelectItem>
+                    <SelectItem value="pending">Pending</SelectItem>
+                    <SelectItem value="suspended">Suspended</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
+            <div>
+              <Label htmlFor="editNotes">Admin Notes</Label>
+              <Textarea
+                id="editNotes"
+                placeholder="Enter any admin notes..."
+                value={formData.notes}
+                onChange={(e) => setFormData(prev => ({ ...prev, notes: e.target.value }))}
+              />
+            </div>
+
+            {editingUser && (
+              <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <h4 className="font-semibold text-blue-900 mb-2">Current User Info</h4>
+                <div className="grid grid-cols-2 gap-4 text-sm text-blue-800">
+                  <div>
+                    <span className="font-medium">Original Name:</span> {editingUser.name}
+                  </div>
+                  <div>
+                    <span className="font-medium">Join Date:</span> {editingUser.joinDate}
+                  </div>
+                  <div>
+                    <span className="font-medium">Total Shipments:</span> {editingUser.shipments}
+                  </div>
+                  <div>
+                    <span className="font-medium">Total Spent:</span> {editingUser.totalSpent}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <div className="flex justify-end space-x-3 pt-4">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => {
+                  setIsEditUserModalOpen(false);
+                  setEditingUser(null);
+                  setFormData({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    phone: "",
+                    role: "",
+                    status: "",
+                    notes: "",
+                    sendWelcome: false,
+                  });
+                }}
+              >
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800"
+              >
+                <Edit className="h-4 w-4 mr-2" />
+                Update User
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

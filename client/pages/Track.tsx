@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import {
   Search,
   Package,
@@ -21,6 +21,24 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { useToast } from "@/hooks/use-toast";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface TrackingEvent {
   date: string;
@@ -55,6 +73,20 @@ export default function Track() {
   const [packageData, setPackageData] = useState<PackageData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [isRedeliveryDialogOpen, setIsRedeliveryDialogOpen] = useState(false);
+  const [isReportDialogOpen, setIsReportDialogOpen] = useState(false);
+  const [redeliveryData, setRedeliveryData] = useState({
+    date: "",
+    timeSlot: "",
+    instructions: "",
+  });
+  const [reportData, setReportData] = useState({
+    issueType: "",
+    description: "",
+    priority: "",
+  });
+  const navigate = useNavigate();
+  const { toast } = useToast();
 
   // Mock data for demonstration
   const getMockPackageData = (id: string): PackageData => ({
@@ -166,6 +198,102 @@ export default function Track() {
       default:
         return <Clock className="h-6 w-6 text-gray-600" />;
     }
+  };
+
+  // Quick Actions Handlers
+  const handleDownloadReceipt = () => {
+    if (!packageData) return;
+
+    // Create a mock receipt PDF content
+    const receiptContent = `
+GlobalTrack Logistics - Shipping Receipt
+========================================
+
+Tracking ID: ${packageData.trackingId}
+Service: ${packageData.service}
+Origin: ${packageData.origin}
+Destination: ${packageData.destination}
+Weight: ${packageData.weight}
+Dimensions: ${packageData.dimensions}
+Status: ${packageData.status.replace("_", " ").toUpperCase()}
+Estimated Delivery: ${packageData.estimatedDelivery}
+
+Generated on: ${new Date().toLocaleDateString()}
+    `;
+
+    // Create and download file
+    const blob = new Blob([receiptContent], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `GlobalTrack_Receipt_${packageData.trackingId}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    toast({
+      title: "Receipt Downloaded",
+      description: "Your shipping receipt has been downloaded successfully.",
+    });
+  };
+
+  const handleScheduleRedelivery = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!redeliveryData.date || !redeliveryData.timeSlot) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    toast({
+      title: "Redelivery Scheduled",
+      description: `Your package will be redelivered on ${redeliveryData.date} during ${redeliveryData.timeSlot}.`,
+    });
+
+    setIsRedeliveryDialogOpen(false);
+    setRedeliveryData({ date: "", timeSlot: "", instructions: "" });
+  };
+
+  const handleReportIssue = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!reportData.issueType || !reportData.description) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    toast({
+      title: "Issue Reported",
+      description: "Your issue has been reported. Our support team will contact you within 24 hours.",
+    });
+
+    setIsReportDialogOpen(false);
+    setReportData({ issueType: "", description: "", priority: "" });
+  };
+
+  const handleCallSupport = () => {
+    toast({
+      title: "Calling Support",
+      description: "Connecting you to +1 (555) 123-4567...",
+    });
+    // In a real app, this could trigger a phone call
+  };
+
+  const handleLiveChat = () => {
+    navigate("/chat");
   };
 
   return (
@@ -763,25 +891,146 @@ export default function Track() {
                   <CardContent className="space-y-3">
                     <Button
                       variant="outline"
-                      className="w-full justify-start hover:bg-royal-50 hover:border-royal-300"
+                      onClick={handleDownloadReceipt}
+                      className="w-full justify-start hover:bg-royal-50 hover:border-royal-300 transition-all duration-200"
                     >
                       <Download className="h-4 w-4 mr-3" />
                       Download Receipt
                     </Button>
-                    <Button
-                      variant="outline"
-                      className="w-full justify-start hover:bg-orange-50 hover:border-orange-300"
-                    >
-                      <RotateCcw className="h-4 w-4 mr-3" />
-                      Schedule Redelivery
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="w-full justify-start hover:bg-red-50 hover:border-red-300"
-                    >
-                      <AlertCircle className="h-4 w-4 mr-3" />
-                      Report Issue
-                    </Button>
+
+                    <Dialog open={isRedeliveryDialogOpen} onOpenChange={setIsRedeliveryDialogOpen}>
+                      <DialogTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className="w-full justify-start hover:bg-orange-50 hover:border-orange-300 transition-all duration-200"
+                        >
+                          <RotateCcw className="h-4 w-4 mr-3" />
+                          Schedule Redelivery
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-md">
+                        <DialogHeader>
+                          <DialogTitle>Schedule Redelivery</DialogTitle>
+                          <DialogDescription>
+                            Choose a new delivery date and time that works for you.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <form onSubmit={handleScheduleRedelivery} className="space-y-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="redelivery-date">Preferred Date *</Label>
+                            <Input
+                              id="redelivery-date"
+                              type="date"
+                              required
+                              min={new Date().toISOString().split('T')[0]}
+                              value={redeliveryData.date}
+                              onChange={(e) => setRedeliveryData(prev => ({ ...prev, date: e.target.value }))}
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="time-slot">Time Slot *</Label>
+                            <Select value={redeliveryData.timeSlot} onValueChange={(value) => setRedeliveryData(prev => ({ ...prev, timeSlot: value }))}>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select time slot" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="9am-12pm">9:00 AM - 12:00 PM</SelectItem>
+                                <SelectItem value="12pm-3pm">12:00 PM - 3:00 PM</SelectItem>
+                                <SelectItem value="3pm-6pm">3:00 PM - 6:00 PM</SelectItem>
+                                <SelectItem value="6pm-9pm">6:00 PM - 9:00 PM</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="instructions">Special Instructions</Label>
+                            <Textarea
+                              id="instructions"
+                              placeholder="Any special delivery instructions..."
+                              value={redeliveryData.instructions}
+                              onChange={(e) => setRedeliveryData(prev => ({ ...prev, instructions: e.target.value }))}
+                            />
+                          </div>
+                          <div className="flex gap-3">
+                            <Button type="button" variant="outline" onClick={() => setIsRedeliveryDialogOpen(false)} className="flex-1">
+                              Cancel
+                            </Button>
+                            <Button type="submit" className="flex-1 bg-orange-500 hover:bg-orange-600">
+                              Schedule
+                            </Button>
+                          </div>
+                        </form>
+                      </DialogContent>
+                    </Dialog>
+
+                    <Dialog open={isReportDialogOpen} onOpenChange={setIsReportDialogOpen}>
+                      <DialogTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className="w-full justify-start hover:bg-red-50 hover:border-red-300 transition-all duration-200"
+                        >
+                          <AlertCircle className="h-4 w-4 mr-3" />
+                          Report Issue
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-md">
+                        <DialogHeader>
+                          <DialogTitle>Report an Issue</DialogTitle>
+                          <DialogDescription>
+                            Let us know about any problems with your shipment.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <form onSubmit={handleReportIssue} className="space-y-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="issue-type">Issue Type *</Label>
+                            <Select value={reportData.issueType} onValueChange={(value) => setReportData(prev => ({ ...prev, issueType: value }))}>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select issue type" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="damaged">Package Damaged</SelectItem>
+                                <SelectItem value="missing">Package Missing/Lost</SelectItem>
+                                <SelectItem value="delayed">Delivery Delayed</SelectItem>
+                                <SelectItem value="wrong-address">Wrong Delivery Address</SelectItem>
+                                <SelectItem value="customs">Customs Issue</SelectItem>
+                                <SelectItem value="other">Other</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="priority">Priority</Label>
+                            <Select value={reportData.priority} onValueChange={(value) => setReportData(prev => ({ ...prev, priority: value }))}>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select priority" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="low">Low</SelectItem>
+                                <SelectItem value="medium">Medium</SelectItem>
+                                <SelectItem value="high">High</SelectItem>
+                                <SelectItem value="urgent">Urgent</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="description">Description *</Label>
+                            <Textarea
+                              id="description"
+                              placeholder="Please describe the issue in detail..."
+                              required
+                              value={reportData.description}
+                              onChange={(e) => setReportData(prev => ({ ...prev, description: e.target.value }))}
+                            />
+                          </div>
+                          <div className="flex gap-3">
+                            <Button type="button" variant="outline" onClick={() => setIsReportDialogOpen(false)} className="flex-1">
+                              Cancel
+                            </Button>
+                            <Button type="submit" className="flex-1 bg-red-500 hover:bg-red-600">
+                              Report Issue
+                            </Button>
+                          </div>
+                        </form>
+                      </DialogContent>
+                    </Dialog>
                   </CardContent>
                 </Card>
 
@@ -795,14 +1044,16 @@ export default function Track() {
                   <CardContent className="space-y-3">
                     <Button
                       variant="secondary"
-                      className="w-full justify-start bg-white/20 hover:bg-white/30 text-white border-white/30"
+                      onClick={handleCallSupport}
+                      className="w-full justify-start bg-white/20 hover:bg-white/30 text-white border-white/30 transition-all duration-200"
                     >
                       <Phone className="h-4 w-4 mr-3" />
                       Call Support
                     </Button>
                     <Button
                       variant="secondary"
-                      className="w-full justify-start bg-white/20 hover:bg-white/30 text-white border-white/30"
+                      onClick={handleLiveChat}
+                      className="w-full justify-start bg-white/20 hover:bg-white/30 text-white border-white/30 transition-all duration-200"
                     >
                       <MessageCircle className="h-4 w-4 mr-3" />
                       Live Chat
