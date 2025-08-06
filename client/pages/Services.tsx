@@ -342,22 +342,22 @@ export default function Services() {
                 solution recommendations
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact">
+                <Link to="/chat">
                   <Button className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <Phone className="h-5 w-5 mr-3 group-hover:animate-pulse" />
-                    Call Expert Now
+                    <MessageCircle className="h-5 w-5 mr-3 group-hover:animate-pulse" />
+                    CHAT with Expert Now
                     <span className="ml-2 text-sm bg-white/20 px-2 py-1 rounded">
                       Free
                     </span>
                   </Button>
                 </Link>
-                <Link to="/chat">
+                <Link to="/contact">
                   <Button
                     variant="outline"
                     className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
                   >
-                    <MessageCircle className="h-5 w-5 mr-3" />
-                    Live Chat
+                    <Phone className="h-5 w-5 mr-3" />
+                    Call Support
                   </Button>
                 </Link>
               </div>
