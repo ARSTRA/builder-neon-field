@@ -108,6 +108,15 @@ export default function Contact() {
 
   const contactMethods = [
     {
+      icon: <MessageCircle className="h-8 w-8" />,
+      title: "Live Chat Support",
+      description: "Get instant answers to your shipping questions",
+      contact: "Start Chat",
+      action: "CHAT NOW",
+      gradient: "from-green-600 to-green-800",
+      availability: "Online Now",
+    },
+    {
       icon: <Phone className="h-8 w-8" />,
       title: "Call Us Directly",
       description: "Speak with our logistics experts for immediate assistance",
@@ -115,15 +124,6 @@ export default function Contact() {
       action: "Call Now",
       gradient: "from-blue-600 to-blue-800",
       availability: "24/7 Support",
-    },
-    {
-      icon: <MessageCircle className="h-8 w-8" />,
-      title: "Live Chat Support",
-      description: "Get instant answers to your shipping questions",
-      contact: "Start Chat",
-      action: "Chat Now",
-      gradient: "from-green-600 to-green-800",
-      availability: "Online Now",
     },
     {
       icon: <Mail className="h-8 w-8" />,
