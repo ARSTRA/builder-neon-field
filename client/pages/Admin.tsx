@@ -1085,7 +1085,13 @@ export default function Admin() {
                                 </div>
                                 <div className="flex items-center space-x-2">
                                   <Badge className="bg-green-100 text-green-800">Active</Badge>
-                                  <Button variant="outline" size="sm">
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => handleEditCurrency(currency)}
+                                    className="hover:bg-blue-50 hover:border-blue-300"
+                                    title="Edit Currency Settings"
+                                  >
                                     <Edit className="h-4 w-4" />
                                   </Button>
                                 </div>
