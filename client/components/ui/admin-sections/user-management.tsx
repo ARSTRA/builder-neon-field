@@ -345,33 +345,57 @@ export function UserManagement() {
               <DialogHeader>
                 <DialogTitle>Add New User</DialogTitle>
               </DialogHeader>
-              <form className="space-y-4">
+              <form onSubmit={handleSaveUser} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="Enter first name" />
+                    <Input
+                      id="firstName"
+                      placeholder="Enter first name"
+                      value={formData.firstName}
+                      onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
+                      required
+                    />
                   </div>
                   <div>
                     <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Enter last name" />
+                    <Input
+                      id="lastName"
+                      placeholder="Enter last name"
+                      value={formData.lastName}
+                      onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
+                      required
+                    />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" type="email" placeholder="Enter email" />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Enter email"
+                      value={formData.email}
+                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      required
+                    />
                   </div>
                   <div>
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" placeholder="Enter phone number" />
+                    <Input
+                      id="phone"
+                      placeholder="Enter phone number"
+                      value={formData.phone}
+                      onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                    />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="role">User Role</Label>
-                    <Select>
+                    <Select value={formData.role} onValueChange={(value) => setFormData(prev => ({ ...prev, role: value }))}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select role" />
                       </SelectTrigger>
@@ -384,7 +408,7 @@ export function UserManagement() {
                   </div>
                   <div>
                     <Label htmlFor="status">Account Status</Label>
-                    <Select>
+                    <Select value={formData.status} onValueChange={(value) => setFormData(prev => ({ ...prev, status: value }))}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select status" />
                       </SelectTrigger>
@@ -399,11 +423,20 @@ export function UserManagement() {
 
                 <div>
                   <Label htmlFor="notes">Admin Notes</Label>
-                  <Textarea id="notes" placeholder="Enter any admin notes..." />
+                  <Textarea
+                    id="notes"
+                    placeholder="Enter any admin notes..."
+                    value={formData.notes}
+                    onChange={(e) => setFormData(prev => ({ ...prev, notes: e.target.value }))}
+                  />
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <Switch id="sendWelcome" />
+                  <Switch
+                    id="sendWelcome"
+                    checked={formData.sendWelcome}
+                    onCheckedChange={(checked) => setFormData(prev => ({ ...prev, sendWelcome: checked }))}
+                  />
                   <Label htmlFor="sendWelcome">Send welcome email</Label>
                 </div>
 
@@ -411,13 +444,25 @@ export function UserManagement() {
                   <Button
                     type="button"
                     variant="outline"
-                    onClick={() => setIsAddUserModalOpen(false)}
+                    onClick={() => {
+                      setIsAddUserModalOpen(false);
+                      setFormData({
+                        firstName: "",
+                        lastName: "",
+                        email: "",
+                        phone: "",
+                        role: "",
+                        status: "",
+                        notes: "",
+                        sendWelcome: false,
+                      });
+                    }}
                   >
                     Cancel
                   </Button>
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-royal-600 to-orange-500"
+                    className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
                   >
                     Create User
                   </Button>
