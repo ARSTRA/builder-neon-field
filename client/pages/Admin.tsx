@@ -819,22 +819,509 @@ export default function Admin() {
             {currentView === "users" && <UserManagement />}
             {currentView === "chat" && <ChatManagement />}
             {currentView === "payments" && (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CreditCard className="h-8 w-8 text-gray-400" />
+              <div className="space-y-8">
+                {/* Header */}
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <h1 className="text-3xl font-bold text-gray-900">Payment & Currency Management</h1>
+                    <p className="text-gray-600 mt-2">
+                      Manage payment methods, currency settings, and conversion rates for global transactions.
+                    </p>
+                  </div>
+                  <div className="mt-4 sm:mt-0 flex space-x-3">
+                    <Button variant="outline">
+                      <Download className="h-4 w-4 mr-2" />
+                      Export Transactions
+                    </Button>
+                    <Button className="bg-gradient-to-r from-royal-600 to-orange-500">
+                      <Plus className="h-4 w-4 mr-2" />
+                      Add Payment Method
+                    </Button>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Payment & Currency Management
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Payment management interface is being loaded...
-                </p>
-                <Button
-                  onClick={() => setCurrentView("dashboard")}
-                  variant="outline"
-                >
-                  Back to Dashboard
-                </Button>
+
+                {/* Payment Overview Stats */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <Card className="border-0 shadow-lg">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-sm font-medium text-gray-600">Total Revenue</p>
+                          <p className="text-3xl font-bold text-gray-900">$2,847,293</p>
+                          <div className="flex items-center mt-2">
+                            <TrendingUp className="h-4 w-4 mr-1 text-green-500" />
+                            <span className="text-sm font-medium text-green-600">+12.5%</span>
+                            <span className="text-sm text-gray-500 ml-1">this month</span>
+                          </div>
+                        </div>
+                        <div className="p-3 rounded-lg bg-green-500">
+                          <DollarSign className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-0 shadow-lg">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-sm font-medium text-gray-600">Transactions</p>
+                          <p className="text-3xl font-bold text-gray-900">18,432</p>
+                          <div className="flex items-center mt-2">
+                            <TrendingUp className="h-4 w-4 mr-1 text-green-500" />
+                            <span className="text-sm font-medium text-green-600">+8.2%</span>
+                            <span className="text-sm text-gray-500 ml-1">this month</span>
+                          </div>
+                        </div>
+                        <div className="p-3 rounded-lg bg-blue-500">
+                          <Receipt className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-0 shadow-lg">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-sm font-medium text-gray-600">Processing Fees</p>
+                          <p className="text-3xl font-bold text-gray-900">$89,234</p>
+                          <div className="flex items-center mt-2">
+                            <TrendingDown className="h-4 w-4 mr-1 text-red-500" />
+                            <span className="text-sm font-medium text-red-600">-2.1%</span>
+                            <span className="text-sm text-gray-500 ml-1">optimized</span>
+                          </div>
+                        </div>
+                        <div className="p-3 rounded-lg bg-purple-500">
+                          <CreditCard className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-0 shadow-lg">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-sm font-medium text-gray-600">Success Rate</p>
+                          <p className="text-3xl font-bold text-gray-900">99.2%</p>
+                          <div className="flex items-center mt-2">
+                            <CheckCircle className="h-4 w-4 mr-1 text-green-500" />
+                            <span className="text-sm font-medium text-green-600">+0.3%</span>
+                            <span className="text-sm text-gray-500 ml-1">improved</span>
+                          </div>
+                        </div>
+                        <div className="p-3 rounded-lg bg-green-600">
+                          <Shield className="h-6 w-6 text-white" />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Main Content Tabs */}
+                <Tabs defaultValue="methods" className="space-y-6">
+                  <TabsList className="grid w-full grid-cols-4 lg:w-auto lg:grid-cols-4">
+                    <TabsTrigger value="methods">Payment Methods</TabsTrigger>
+                    <TabsTrigger value="currency">Currency Settings</TabsTrigger>
+                    <TabsTrigger value="converter">Currency Converter</TabsTrigger>
+                    <TabsTrigger value="analytics">Analytics</TabsTrigger>
+                  </TabsList>
+
+                  {/* Payment Methods Tab */}
+                  <TabsContent value="methods" className="space-y-6">
+                    <Card className="border-0 shadow-lg">
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <CreditCard className="h-5 w-5 mr-2 text-purple-600" />
+                          Accepted Payment Methods
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {paymentMethods.map((method) => (
+                            <Card key={method.id} className="border border-gray-200 hover:shadow-md transition-shadow">
+                              <CardContent className="p-4">
+                                <div className="flex items-center justify-between mb-3">
+                                  <div className="flex items-center space-x-3">
+                                    <div className={`w-10 h-10 ${method.color} rounded-lg flex items-center justify-center text-white text-lg`}>
+                                      {method.icon}
+                                    </div>
+                                    <div>
+                                      <h3 className="font-semibold text-gray-900">{method.name}</h3>
+                                      <p className="text-sm text-gray-500">Fees: {method.fees}</p>
+                                    </div>
+                                  </div>
+                                  <Switch
+                                    checked={method.enabled}
+                                    onCheckedChange={(checked) => handlePaymentMethodToggle(method.name, checked)}
+                                  />
+                                </div>
+                                <div className="space-y-2">
+                                  <div className="flex justify-between text-sm">
+                                    <span className="text-gray-600">Monthly Volume:</span>
+                                    <span className="font-medium text-gray-900">{method.volume}</span>
+                                  </div>
+                                  <div className="w-full bg-gray-200 rounded-full h-2">
+                                    <div
+                                      className={`h-2 rounded-full ${method.color}`}
+                                      style={{ width: `${Math.random() * 80 + 20}%` }}
+                                    ></div>
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+
+                  {/* Currency Settings Tab */}
+                  <TabsContent value="currency" className="space-y-6">
+                    <div className="grid lg:grid-cols-2 gap-6">
+                      <Card className="border-0 shadow-lg">
+                        <CardHeader>
+                          <CardTitle className="flex items-center">
+                            <Globe className="h-5 w-5 mr-2 text-blue-600" />
+                            Supported Currencies
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-3">
+                            {currencies.slice(0, 6).map((currency) => (
+                              <div key={currency.code} className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50">
+                                <div className="flex items-center space-x-3">
+                                  <span className="text-2xl">{currency.flag}</span>
+                                  <div>
+                                    <p className="font-medium text-gray-900">{currency.name}</p>
+                                    <p className="text-sm text-gray-500">{currency.code} • {currency.symbol}</p>
+                                  </div>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                  <Badge className="bg-green-100 text-green-800">Active</Badge>
+                                  <Button variant="outline" size="sm">
+                                    <Edit className="h-4 w-4" />
+                                  </Button>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          <Button variant="outline" className="w-full mt-4">
+                            <Plus className="h-4 w-4 mr-2" />
+                            Add Currency
+                          </Button>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="border-0 shadow-lg">
+                        <CardHeader>
+                          <CardTitle className="flex items-center">
+                            <RefreshCw className="h-5 w-5 mr-2 text-green-600" />
+                            Exchange Rate Settings
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-4">
+                            <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                              <div className="flex items-center justify-between mb-2">
+                                <span className="font-medium text-blue-900">Auto-Update Rates</span>
+                                <Switch defaultChecked />
+                              </div>
+                              <p className="text-sm text-blue-700">Automatically update exchange rates every hour using live market data.</p>
+                            </div>
+
+                            <div className="space-y-3">
+                              <div className="flex items-center justify-between p-3 border rounded-lg">
+                                <div>
+                                  <p className="font-medium">USD/EUR</p>
+                                  <p className="text-sm text-gray-500">Last updated: 5 min ago</p>
+                                </div>
+                                <div className="text-right">
+                                  <p className="font-bold text-lg">0.8524</p>
+                                  <p className="text-sm text-green-600">+0.12%</p>
+                                </div>
+                              </div>
+
+                              <div className="flex items-center justify-between p-3 border rounded-lg">
+                                <div>
+                                  <p className="font-medium">USD/GBP</p>
+                                  <p className="text-sm text-gray-500">Last updated: 5 min ago</p>
+                                </div>
+                                <div className="text-right">
+                                  <p className="font-bold text-lg">0.7341</p>
+                                  <p className="text-sm text-red-600">-0.08%</p>
+                                </div>
+                              </div>
+
+                              <div className="flex items-center justify-between p-3 border rounded-lg">
+                                <div>
+                                  <p className="font-medium">EUR/GBP</p>
+                                  <p className="text-sm text-gray-500">Last updated: 5 min ago</p>
+                                </div>
+                                <div className="text-right">
+                                  <p className="font-bold text-lg">0.8612</p>
+                                  <p className="text-sm text-green-600">+0.05%</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <Button variant="outline" className="w-full">
+                              <RefreshCw className="h-4 w-4 mr-2" />
+                              Update All Rates Now
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </TabsContent>
+
+                  {/* Currency Converter Tab */}
+                  <TabsContent value="converter" className="space-y-6">
+                    <div className="grid lg:grid-cols-2 gap-6">
+                      <Card className="border-0 shadow-lg">
+                        <CardHeader>
+                          <CardTitle className="flex items-center">
+                            <ArrowLeftRight className="h-5 w-5 mr-2 text-orange-600" />
+                            Currency Converter
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-6">
+                          <div className="space-y-4">
+                            <div>
+                              <Label htmlFor="amount">Amount</Label>
+                              <div className="relative mt-2">
+                                <Input
+                                  id="amount"
+                                  type="number"
+                                  placeholder="Enter amount"
+                                  value={conversionAmount}
+                                  onChange={(e) => setConversionAmount(e.target.value)}
+                                  className="text-lg font-medium h-12"
+                                />
+                                <DollarSign className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                              </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4">
+                              <div>
+                                <Label htmlFor="from-currency">From</Label>
+                                <Select value={baseCurrency} onValueChange={setBaseCurrency}>
+                                  <SelectTrigger className="h-12 mt-2">
+                                    <SelectValue />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    {currencies.map((currency) => (
+                                      <SelectItem key={currency.code} value={currency.code}>
+                                        <div className="flex items-center space-x-2">
+                                          <span>{currency.flag}</span>
+                                          <span>{currency.code}</span>
+                                          <span className="text-gray-500">- {currency.name}</span>
+                                        </div>
+                                      </SelectItem>
+                                    ))}
+                                  </SelectContent>
+                                </Select>
+                              </div>
+
+                              <div>
+                                <Label htmlFor="to-currency">To</Label>
+                                <Select value={targetCurrency} onValueChange={setTargetCurrency}>
+                                  <SelectTrigger className="h-12 mt-2">
+                                    <SelectValue />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    {currencies.map((currency) => (
+                                      <SelectItem key={currency.code} value={currency.code}>
+                                        <div className="flex items-center space-x-2">
+                                          <span>{currency.flag}</span>
+                                          <span>{currency.code}</span>
+                                          <span className="text-gray-500">- {currency.name}</span>
+                                        </div>
+                                      </SelectItem>
+                                    ))}
+                                  </SelectContent>
+                                </Select>
+                              </div>
+                            </div>
+
+                            <Button
+                              onClick={handleCurrencyConversion}
+                              disabled={isConverting}
+                              className="w-full h-12 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700"
+                            >
+                              {isConverting ? (
+                                <>
+                                  <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
+                                  Converting...
+                                </>
+                              ) : (
+                                <>
+                                  <ArrowLeftRight className="h-4 w-4 mr-2" />
+                                  Convert Currency
+                                </>
+                              )}
+                            </Button>
+
+                            {convertedAmount && (
+                              <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                                <div className="text-center">
+                                  <p className="text-sm text-green-700 mb-1">Converted Amount</p>
+                                  <p className="text-3xl font-bold text-green-900">
+                                    {currencies.find(c => c.code === targetCurrency)?.symbol}{convertedAmount} {targetCurrency}
+                                  </p>
+                                  <p className="text-sm text-green-600 mt-2">
+                                    {conversionAmount} {baseCurrency} = {convertedAmount} {targetCurrency}
+                                  </p>
+                                  <Button variant="outline" size="sm" className="mt-3" onClick={() => {
+                                    navigator.clipboard.writeText(`${convertedAmount} ${targetCurrency}`);
+                                    toast({ title: "Copied!", description: "Converted amount copied to clipboard." });
+                                  }}>
+                                    <Copy className="h-4 w-4 mr-2" />
+                                    Copy Result
+                                  </Button>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="border-0 shadow-lg">
+                        <CardHeader>
+                          <CardTitle className="flex items-center">
+                            <Globe className="h-5 w-5 mr-2 text-blue-600" />
+                            Quick Conversions
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-4">
+                            <div className="text-center p-4 bg-blue-50 rounded-lg">
+                              <h3 className="font-semibold text-blue-900 mb-2">Popular Conversions</h3>
+                              <p className="text-sm text-blue-700">Frequently used by customers</p>
+                            </div>
+
+                            <div className="space-y-3">
+                              <div className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50">
+                                <div className="flex items-center space-x-2">
+                                  <span>🇺🇸 USD</span>
+                                  <ArrowLeftRight className="h-4 w-4 text-gray-400" />
+                                  <span>🇪🇺 EUR</span>
+                                </div>
+                                <div className="text-right">
+                                  <p className="font-medium">1 USD = 0.85 EUR</p>
+                                  <p className="text-sm text-green-600">+0.12%</p>
+                                </div>
+                              </div>
+
+                              <div className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50">
+                                <div className="flex items-center space-x-2">
+                                  <span>🇺🇸 USD</span>
+                                  <ArrowLeftRight className="h-4 w-4 text-gray-400" />
+                                  <span>🇬🇧 GBP</span>
+                                </div>
+                                <div className="text-right">
+                                  <p className="font-medium">1 USD = 0.73 GBP</p>
+                                  <p className="text-sm text-red-600">-0.08%</p>
+                                </div>
+                              </div>
+
+                              <div className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50">
+                                <div className="flex items-center space-x-2">
+                                  <span>🇪🇺 EUR</span>
+                                  <ArrowLeftRight className="h-4 w-4 text-gray-400" />
+                                  <span>🇬🇧 GBP</span>
+                                </div>
+                                <div className="text-right">
+                                  <p className="font-medium">1 EUR = 0.86 GBP</p>
+                                  <p className="text-sm text-green-600">+0.05%</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="pt-4 border-t">
+                              <Button variant="outline" className="w-full">
+                                <ExternalLink className="h-4 w-4 mr-2" />
+                                View Live Market Rates
+                              </Button>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </TabsContent>
+
+                  {/* Analytics Tab */}
+                  <TabsContent value="analytics" className="space-y-6">
+                    <div className="grid lg:grid-cols-2 gap-6">
+                      <Card className="border-0 shadow-lg">
+                        <CardHeader>
+                          <CardTitle className="flex items-center">
+                            <BarChart3 className="h-5 w-5 mr-2 text-purple-600" />
+                            Payment Method Usage
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-4">
+                            {paymentMethods.slice(0, 5).map((method, index) => {
+                              const percentage = [35, 22, 18, 15, 10][index];
+                              return (
+                                <div key={method.id} className="space-y-2">
+                                  <div className="flex justify-between text-sm">
+                                    <span className="flex items-center">
+                                      <span className="mr-2">{method.icon}</span>
+                                      {method.name}
+                                    </span>
+                                    <span className="font-medium">{percentage}%</span>
+                                  </div>
+                                  <div className="w-full bg-gray-200 rounded-full h-2">
+                                    <div
+                                      className={`h-2 rounded-full ${method.color}`}
+                                      style={{ width: `${percentage}%` }}
+                                    ></div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="border-0 shadow-lg">
+                        <CardHeader>
+                          <CardTitle className="flex items-center">
+                            <Globe className="h-5 w-5 mr-2 text-blue-600" />
+                            Currency Distribution
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-4">
+                            {currencies.slice(0, 5).map((currency, index) => {
+                              const percentage = [45, 25, 15, 10, 5][index];
+                              return (
+                                <div key={currency.code} className="space-y-2">
+                                  <div className="flex justify-between text-sm">
+                                    <span className="flex items-center">
+                                      <span className="mr-2">{currency.flag}</span>
+                                      {currency.code} - {currency.name}
+                                    </span>
+                                    <span className="font-medium">{percentage}%</span>
+                                  </div>
+                                  <div className="w-full bg-gray-200 rounded-full h-2">
+                                    <div
+                                      className="h-2 rounded-full bg-gradient-to-r from-blue-500 to-blue-600"
+                                      style={{ width: `${percentage}%` }}
+                                    ></div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </TabsContent>
+                </Tabs>
               </div>
             )}
             {currentView === "tracking" && (
