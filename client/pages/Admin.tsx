@@ -676,6 +676,7 @@ export default function Admin() {
             {currentView === "chat" && <ChatManagement />}
             {currentView === "payments" && <PaymentManagement />}
             {currentView === "tracking" && <TrackingManagement />}
+            {currentView === "quotes" && <QuoteManagement />}
             {currentView === "contacts" && <ContactManagement />}
             {currentView === "general" && <GeneralSettings />}
           </div>
