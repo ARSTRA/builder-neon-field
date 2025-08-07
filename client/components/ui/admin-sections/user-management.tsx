@@ -544,7 +544,15 @@ export function UserManagement() {
                         >
                           <Eye className="h-4 w-4" />
                         </Button>
-                        <Button variant="ghost" size="sm" title="Edit User">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          title="Edit User"
+                          onClick={() => toast({
+                            title: "Edit User",
+                            description: `Opening edit form for ${user.name}...`,
+                          })}
+                        >
                           <Edit className="h-4 w-4" />
                         </Button>
                         <DropdownMenu>
