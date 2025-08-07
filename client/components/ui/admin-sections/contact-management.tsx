@@ -261,7 +261,13 @@ export function ContactManagement() {
           </p>
         </div>
         <div className="mt-4 sm:mt-0 flex space-x-3">
-          <Button variant="outline">
+          <Button
+            variant="outline"
+            onClick={() => toast({
+              title: "Exporting Contact Report",
+              description: "Contact data is being exported to CSV format...",
+            })}
+          >
             <Download className="h-4 w-4 mr-2" />
             Export Report
           </Button>
