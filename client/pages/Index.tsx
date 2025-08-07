@@ -773,7 +773,10 @@ export default function Index() {
         {/* Animated Background Elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-orange-500/20 rounded-full animate-bounce-slow"></div>
         <div className="absolute bottom-20 right-10 w-16 h-16 bg-white/10 rounded-full animate-pulse-soft"></div>
-        <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-orange-400/30 rounded-full animate-bounce-slow" style={{animationDelay: '1s'}}></div>
+        <div
+          className="absolute top-1/2 left-1/4 w-12 h-12 bg-orange-400/30 rounded-full animate-bounce-slow"
+          style={{ animationDelay: "1s" }}
+        ></div>
 
         <div className="relative container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center">
@@ -789,7 +792,8 @@ export default function Index() {
                 </span>
               </h2>
               <p className="text-xl lg:text-2xl mb-4 text-gray-200 animate-slide-up">
-                Get a free quote today and experience the difference of professional logistics services.
+                Get a free quote today and experience the difference of
+                professional logistics services.
               </p>
               <p className="text-lg text-orange-300 mb-12 animate-slide-up">
                 Join 5,000+ businesses that trust us with their shipping needs

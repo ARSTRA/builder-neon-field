@@ -50,7 +50,8 @@ export function GeneralSettings() {
   const [settings, setSettings] = useState({
     general: {
       siteName: "GlobalTrack Logistics",
-      siteDescription: "Professional shipping and logistics solutions worldwide",
+      siteDescription:
+        "Professional shipping and logistics solutions worldwide",
       contactEmail: "info@globaltrack.com",
       supportPhone: "+1 (555) 123-4567",
       timezone: "UTC-5",
@@ -146,10 +147,14 @@ export function GeneralSettings() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">System Status</p>
+                <p className="text-sm font-medium text-gray-600">
+                  System Status
+                </p>
                 <div className="flex items-center mt-2">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span className="text-lg font-semibold text-green-600">Operational</span>
+                  <span className="text-lg font-semibold text-green-600">
+                    Operational
+                  </span>
                 </div>
               </div>
               <div className="p-3 rounded-lg bg-green-100">
@@ -163,10 +168,14 @@ export function GeneralSettings() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Database Status</p>
+                <p className="text-sm font-medium text-gray-600">
+                  Database Status
+                </p>
                 <div className="flex items-center mt-2">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span className="text-lg font-semibold text-green-600">Connected</span>
+                  <span className="text-lg font-semibold text-green-600">
+                    Connected
+                  </span>
                 </div>
               </div>
               <div className="p-3 rounded-lg bg-green-100">
@@ -180,10 +189,14 @@ export function GeneralSettings() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Security Status</p>
+                <p className="text-sm font-medium text-gray-600">
+                  Security Status
+                </p>
                 <div className="flex items-center mt-2">
                   <Shield className="h-5 w-5 text-green-500 mr-2" />
-                  <span className="text-lg font-semibold text-green-600">Secure</span>
+                  <span className="text-lg font-semibold text-green-600">
+                    Secure
+                  </span>
                 </div>
               </div>
               <div className="p-3 rounded-lg bg-green-100">
@@ -218,10 +231,15 @@ export function GeneralSettings() {
                   <Input
                     id="site-name"
                     value={settings.general.siteName}
-                    onChange={(e) => setSettings({
-                      ...settings,
-                      general: { ...settings.general, siteName: e.target.value }
-                    })}
+                    onChange={(e) =>
+                      setSettings({
+                        ...settings,
+                        general: {
+                          ...settings.general,
+                          siteName: e.target.value,
+                        },
+                      })
+                    }
                   />
                 </div>
                 <div>
@@ -230,10 +248,15 @@ export function GeneralSettings() {
                     id="contact-email"
                     type="email"
                     value={settings.general.contactEmail}
-                    onChange={(e) => setSettings({
-                      ...settings,
-                      general: { ...settings.general, contactEmail: e.target.value }
-                    })}
+                    onChange={(e) =>
+                      setSettings({
+                        ...settings,
+                        general: {
+                          ...settings.general,
+                          contactEmail: e.target.value,
+                        },
+                      })
+                    }
                   />
                 </div>
               </div>
@@ -243,10 +266,15 @@ export function GeneralSettings() {
                 <Textarea
                   id="site-description"
                   value={settings.general.siteDescription}
-                  onChange={(e) => setSettings({
-                    ...settings,
-                    general: { ...settings.general, siteDescription: e.target.value }
-                  })}
+                  onChange={(e) =>
+                    setSettings({
+                      ...settings,
+                      general: {
+                        ...settings.general,
+                        siteDescription: e.target.value,
+                      },
+                    })
+                  }
                 />
               </div>
 
@@ -258,10 +286,18 @@ export function GeneralSettings() {
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="UTC-8">Pacific Time (UTC-8)</SelectItem>
-                      <SelectItem value="UTC-7">Mountain Time (UTC-7)</SelectItem>
-                      <SelectItem value="UTC-6">Central Time (UTC-6)</SelectItem>
-                      <SelectItem value="UTC-5">Eastern Time (UTC-5)</SelectItem>
+                      <SelectItem value="UTC-8">
+                        Pacific Time (UTC-8)
+                      </SelectItem>
+                      <SelectItem value="UTC-7">
+                        Mountain Time (UTC-7)
+                      </SelectItem>
+                      <SelectItem value="UTC-6">
+                        Central Time (UTC-6)
+                      </SelectItem>
+                      <SelectItem value="UTC-5">
+                        Eastern Time (UTC-5)
+                      </SelectItem>
                       <SelectItem value="UTC+0">UTC (UTC+0)</SelectItem>
                     </SelectContent>
                   </Select>
@@ -301,19 +337,29 @@ export function GeneralSettings() {
               <div className="flex items-center justify-between">
                 <div>
                   <Label htmlFor="maintenance-mode">Maintenance Mode</Label>
-                  <p className="text-sm text-gray-600">Enable to put the site in maintenance mode</p>
+                  <p className="text-sm text-gray-600">
+                    Enable to put the site in maintenance mode
+                  </p>
                 </div>
                 <Switch
                   id="maintenance-mode"
                   checked={settings.general.maintenanceMode}
-                  onCheckedChange={(checked) => setSettings({
-                    ...settings,
-                    general: { ...settings.general, maintenanceMode: checked }
-                  })}
+                  onCheckedChange={(checked) =>
+                    setSettings({
+                      ...settings,
+                      general: {
+                        ...settings.general,
+                        maintenanceMode: checked,
+                      },
+                    })
+                  }
                 />
               </div>
 
-              <Button onClick={() => handleSave("General")} className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
+              <Button
+                onClick={() => handleSave("General")}
+                className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+              >
                 <Save className="h-4 w-4 mr-2" />
                 Save General Settings
               </Button>
@@ -331,76 +377,115 @@ export function GeneralSettings() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <Label htmlFor="email-notifications">Email Notifications</Label>
-                    <p className="text-sm text-gray-600">Receive notifications via email</p>
+                    <Label htmlFor="email-notifications">
+                      Email Notifications
+                    </Label>
+                    <p className="text-sm text-gray-600">
+                      Receive notifications via email
+                    </p>
                   </div>
                   <Switch
                     id="email-notifications"
                     checked={settings.notifications.emailNotifications}
-                    onCheckedChange={(checked) => setSettings({
-                      ...settings,
-                      notifications: { ...settings.notifications, emailNotifications: checked }
-                    })}
+                    onCheckedChange={(checked) =>
+                      setSettings({
+                        ...settings,
+                        notifications: {
+                          ...settings.notifications,
+                          emailNotifications: checked,
+                        },
+                      })
+                    }
                   />
                 </div>
 
                 <div className="flex items-center justify-between">
                   <div>
                     <Label htmlFor="sms-notifications">SMS Notifications</Label>
-                    <p className="text-sm text-gray-600">Receive notifications via SMS</p>
+                    <p className="text-sm text-gray-600">
+                      Receive notifications via SMS
+                    </p>
                   </div>
                   <Switch
                     id="sms-notifications"
                     checked={settings.notifications.smsNotifications}
-                    onCheckedChange={(checked) => setSettings({
-                      ...settings,
-                      notifications: { ...settings.notifications, smsNotifications: checked }
-                    })}
+                    onCheckedChange={(checked) =>
+                      setSettings({
+                        ...settings,
+                        notifications: {
+                          ...settings.notifications,
+                          smsNotifications: checked,
+                        },
+                      })
+                    }
                   />
                 </div>
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <Label htmlFor="push-notifications">Push Notifications</Label>
-                    <p className="text-sm text-gray-600">Receive browser push notifications</p>
+                    <Label htmlFor="push-notifications">
+                      Push Notifications
+                    </Label>
+                    <p className="text-sm text-gray-600">
+                      Receive browser push notifications
+                    </p>
                   </div>
                   <Switch
                     id="push-notifications"
                     checked={settings.notifications.pushNotifications}
-                    onCheckedChange={(checked) => setSettings({
-                      ...settings,
-                      notifications: { ...settings.notifications, pushNotifications: checked }
-                    })}
+                    onCheckedChange={(checked) =>
+                      setSettings({
+                        ...settings,
+                        notifications: {
+                          ...settings.notifications,
+                          pushNotifications: checked,
+                        },
+                      })
+                    }
                   />
                 </div>
 
                 <div className="flex items-center justify-between">
                   <div>
                     <Label htmlFor="admin-alerts">Admin Alerts</Label>
-                    <p className="text-sm text-gray-600">Critical system alerts for admins</p>
+                    <p className="text-sm text-gray-600">
+                      Critical system alerts for admins
+                    </p>
                   </div>
                   <Switch
                     id="admin-alerts"
                     checked={settings.notifications.adminAlerts}
-                    onCheckedChange={(checked) => setSettings({
-                      ...settings,
-                      notifications: { ...settings.notifications, adminAlerts: checked }
-                    })}
+                    onCheckedChange={(checked) =>
+                      setSettings({
+                        ...settings,
+                        notifications: {
+                          ...settings.notifications,
+                          adminAlerts: checked,
+                        },
+                      })
+                    }
                   />
                 </div>
 
                 <div className="flex items-center justify-between">
                   <div>
                     <Label htmlFor="customer-updates">Customer Updates</Label>
-                    <p className="text-sm text-gray-600">Notifications about customer activities</p>
+                    <p className="text-sm text-gray-600">
+                      Notifications about customer activities
+                    </p>
                   </div>
                   <Switch
                     id="customer-updates"
                     checked={settings.notifications.customerUpdates}
-                    onCheckedChange={(checked) => setSettings({
-                      ...settings,
-                      notifications: { ...settings.notifications, customerUpdates: checked }
-                    })}
+                    onCheckedChange={(checked) =>
+                      setSettings({
+                        ...settings,
+                        notifications: {
+                          ...settings.notifications,
+                          customerUpdates: checked,
+                        },
+                      })
+                    }
                   />
                 </div>
               </div>
@@ -412,7 +497,10 @@ export function GeneralSettings() {
                   <Mail className="h-4 w-4 mr-2" />
                   Test Email
                 </Button>
-                <Button onClick={() => handleSave("Notifications")} className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
+                <Button
+                  onClick={() => handleSave("Notifications")}
+                  className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+                >
                   <Save className="h-4 w-4 mr-2" />
                   Save Notification Settings
                 </Button>
@@ -431,53 +519,77 @@ export function GeneralSettings() {
               <Alert>
                 <Shield className="h-4 w-4" />
                 <AlertDescription>
-                  Security settings affect all users. Changes take effect immediately.
+                  Security settings affect all users. Changes take effect
+                  immediately.
                 </AlertDescription>
               </Alert>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <Label htmlFor="two-factor">Two-Factor Authentication</Label>
-                    <p className="text-sm text-gray-600">Require 2FA for all admin accounts</p>
+                    <Label htmlFor="two-factor">
+                      Two-Factor Authentication
+                    </Label>
+                    <p className="text-sm text-gray-600">
+                      Require 2FA for all admin accounts
+                    </p>
                   </div>
                   <Switch
                     id="two-factor"
                     checked={settings.security.twoFactorAuth}
-                    onCheckedChange={(checked) => setSettings({
-                      ...settings,
-                      security: { ...settings.security, twoFactorAuth: checked }
-                    })}
+                    onCheckedChange={(checked) =>
+                      setSettings({
+                        ...settings,
+                        security: {
+                          ...settings.security,
+                          twoFactorAuth: checked,
+                        },
+                      })
+                    }
                   />
                 </div>
 
                 <div className="flex items-center justify-between">
                   <div>
                     <Label htmlFor="ssl-required">SSL Required</Label>
-                    <p className="text-sm text-gray-600">Force HTTPS for all connections</p>
+                    <p className="text-sm text-gray-600">
+                      Force HTTPS for all connections
+                    </p>
                   </div>
                   <Switch
                     id="ssl-required"
                     checked={settings.security.sslRequired}
-                    onCheckedChange={(checked) => setSettings({
-                      ...settings,
-                      security: { ...settings.security, sslRequired: checked }
-                    })}
+                    onCheckedChange={(checked) =>
+                      setSettings({
+                        ...settings,
+                        security: {
+                          ...settings.security,
+                          sslRequired: checked,
+                        },
+                      })
+                    }
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="session-timeout">Session Timeout (minutes)</Label>
+                  <Label htmlFor="session-timeout">
+                    Session Timeout (minutes)
+                  </Label>
                   <Input
                     id="session-timeout"
                     type="number"
                     value={settings.security.sessionTimeout}
-                    onChange={(e) => setSettings({
-                      ...settings,
-                      security: { ...settings.security, sessionTimeout: e.target.value }
-                    })}
+                    onChange={(e) =>
+                      setSettings({
+                        ...settings,
+                        security: {
+                          ...settings.security,
+                          sessionTimeout: e.target.value,
+                        },
+                      })
+                    }
                   />
                 </div>
                 <div>
@@ -486,10 +598,15 @@ export function GeneralSettings() {
                     id="login-attempts"
                     type="number"
                     value={settings.security.loginAttempts}
-                    onChange={(e) => setSettings({
-                      ...settings,
-                      security: { ...settings.security, loginAttempts: e.target.value }
-                    })}
+                    onChange={(e) =>
+                      setSettings({
+                        ...settings,
+                        security: {
+                          ...settings.security,
+                          loginAttempts: e.target.value,
+                        },
+                      })
+                    }
                   />
                 </div>
               </div>
@@ -503,26 +620,40 @@ export function GeneralSettings() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="weak">Weak (6+ characters)</SelectItem>
-                      <SelectItem value="medium">Medium (8+ characters, mixed case)</SelectItem>
-                      <SelectItem value="strong">Strong (12+ characters, mixed case, numbers, symbols)</SelectItem>
+                      <SelectItem value="medium">
+                        Medium (8+ characters, mixed case)
+                      </SelectItem>
+                      <SelectItem value="strong">
+                        Strong (12+ characters, mixed case, numbers, symbols)
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 <div>
-                  <Label htmlFor="api-rate-limit">API Rate Limit (per hour)</Label>
+                  <Label htmlFor="api-rate-limit">
+                    API Rate Limit (per hour)
+                  </Label>
                   <Input
                     id="api-rate-limit"
                     type="number"
                     value={settings.security.apiRateLimit}
-                    onChange={(e) => setSettings({
-                      ...settings,
-                      security: { ...settings.security, apiRateLimit: e.target.value }
-                    })}
+                    onChange={(e) =>
+                      setSettings({
+                        ...settings,
+                        security: {
+                          ...settings.security,
+                          apiRateLimit: e.target.value,
+                        },
+                      })
+                    }
                   />
                 </div>
               </div>
 
-              <Button onClick={() => handleSave("Security")} className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
+              <Button
+                onClick={() => handleSave("Security")}
+                className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+              >
                 <Save className="h-4 w-4 mr-2" />
                 Save Security Settings
               </Button>
@@ -552,17 +683,26 @@ export function GeneralSettings() {
                       id="google-maps-key"
                       type={showApiKey ? "text" : "password"}
                       value={settings.integrations.googleMapsApiKey}
-                      onChange={(e) => setSettings({
-                        ...settings,
-                        integrations: { ...settings.integrations, googleMapsApiKey: e.target.value }
-                      })}
+                      onChange={(e) =>
+                        setSettings({
+                          ...settings,
+                          integrations: {
+                            ...settings.integrations,
+                            googleMapsApiKey: e.target.value,
+                          },
+                        })
+                      }
                     />
                     <Button
                       variant="outline"
                       size="sm"
                       onClick={() => setShowApiKey(!showApiKey)}
                     >
-                      {showApiKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      {showApiKey ? (
+                        <EyeOff className="h-4 w-4" />
+                      ) : (
+                        <Eye className="h-4 w-4" />
+                      )}
                     </Button>
                   </div>
                 </div>
@@ -574,24 +714,35 @@ export function GeneralSettings() {
                       id="stripe-key"
                       type={showSecretKey ? "text" : "password"}
                       value={settings.integrations.stripeApiKey}
-                      onChange={(e) => setSettings({
-                        ...settings,
-                        integrations: { ...settings.integrations, stripeApiKey: e.target.value }
-                      })}
+                      onChange={(e) =>
+                        setSettings({
+                          ...settings,
+                          integrations: {
+                            ...settings.integrations,
+                            stripeApiKey: e.target.value,
+                          },
+                        })
+                      }
                     />
                     <Button
                       variant="outline"
                       size="sm"
                       onClick={() => setShowSecretKey(!showSecretKey)}
                     >
-                      {showSecretKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      {showSecretKey ? (
+                        <EyeOff className="h-4 w-4" />
+                      ) : (
+                        <Eye className="h-4 w-4" />
+                      )}
                     </Button>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <Label htmlFor="email-service">Email Service Provider</Label>
+                    <Label htmlFor="email-service">
+                      Email Service Provider
+                    </Label>
                     <Select value={settings.integrations.emailService}>
                       <SelectTrigger>
                         <SelectValue />
@@ -609,16 +760,24 @@ export function GeneralSettings() {
                     <Input
                       id="analytics-id"
                       value={settings.integrations.analyticsId}
-                      onChange={(e) => setSettings({
-                        ...settings,
-                        integrations: { ...settings.integrations, analyticsId: e.target.value }
-                      })}
+                      onChange={(e) =>
+                        setSettings({
+                          ...settings,
+                          integrations: {
+                            ...settings.integrations,
+                            analyticsId: e.target.value,
+                          },
+                        })
+                      }
                     />
                   </div>
                 </div>
               </div>
 
-              <Button onClick={() => handleSave("Integrations")} className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
+              <Button
+                onClick={() => handleSave("Integrations")}
+                className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+              >
                 <Save className="h-4 w-4 mr-2" />
                 Save Integration Settings
               </Button>
@@ -654,18 +813,28 @@ export function GeneralSettings() {
                       id="primary-color"
                       type="color"
                       value={settings.appearance.primaryColor}
-                      onChange={(e) => setSettings({
-                        ...settings,
-                        appearance: { ...settings.appearance, primaryColor: e.target.value }
-                      })}
+                      onChange={(e) =>
+                        setSettings({
+                          ...settings,
+                          appearance: {
+                            ...settings.appearance,
+                            primaryColor: e.target.value,
+                          },
+                        })
+                      }
                       className="w-16 h-10"
                     />
                     <Input
                       value={settings.appearance.primaryColor}
-                      onChange={(e) => setSettings({
-                        ...settings,
-                        appearance: { ...settings.appearance, primaryColor: e.target.value }
-                      })}
+                      onChange={(e) =>
+                        setSettings({
+                          ...settings,
+                          appearance: {
+                            ...settings.appearance,
+                            primaryColor: e.target.value,
+                          },
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -677,10 +846,15 @@ export function GeneralSettings() {
                   <Input
                     id="logo-url"
                     value={settings.appearance.logoUrl}
-                    onChange={(e) => setSettings({
-                      ...settings,
-                      appearance: { ...settings.appearance, logoUrl: e.target.value }
-                    })}
+                    onChange={(e) =>
+                      setSettings({
+                        ...settings,
+                        appearance: {
+                          ...settings.appearance,
+                          logoUrl: e.target.value,
+                        },
+                      })
+                    }
                   />
                 </div>
                 <div>
@@ -688,10 +862,15 @@ export function GeneralSettings() {
                   <Input
                     id="favicon-url"
                     value={settings.appearance.faviconUrl}
-                    onChange={(e) => setSettings({
-                      ...settings,
-                      appearance: { ...settings.appearance, faviconUrl: e.target.value }
-                    })}
+                    onChange={(e) =>
+                      setSettings({
+                        ...settings,
+                        appearance: {
+                          ...settings.appearance,
+                          faviconUrl: e.target.value,
+                        },
+                      })
+                    }
                   />
                 </div>
               </div>
@@ -699,15 +878,21 @@ export function GeneralSettings() {
               <div className="flex items-center space-x-3">
                 <Button
                   variant="outline"
-                  onClick={() => toast({
-                    title: "Upload Logo",
-                    description: "File upload dialog would open here to select new logo.",
-                  })}
+                  onClick={() =>
+                    toast({
+                      title: "Upload Logo",
+                      description:
+                        "File upload dialog would open here to select new logo.",
+                    })
+                  }
                 >
                   <Upload className="h-4 w-4 mr-2" />
                   Upload Logo
                 </Button>
-                <Button onClick={() => handleSave("Appearance")} className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
+                <Button
+                  onClick={() => handleSave("Appearance")}
+                  className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+                >
                   <Save className="h-4 w-4 mr-2" />
                   Save Appearance Settings
                 </Button>
@@ -726,26 +911,33 @@ export function GeneralSettings() {
               <Alert>
                 <AlertTriangle className="h-4 w-4" />
                 <AlertDescription>
-                  Advanced settings should only be modified by experienced administrators.
+                  Advanced settings should only be modified by experienced
+                  administrators.
                 </AlertDescription>
               </Alert>
 
               <div className="space-y-4">
                 <div>
                   <Label htmlFor="debug-mode">Debug Mode</Label>
-                  <p className="text-sm text-gray-600 mb-2">Enable detailed error logging</p>
+                  <p className="text-sm text-gray-600 mb-2">
+                    Enable detailed error logging
+                  </p>
                   <Switch id="debug-mode" />
                 </div>
 
                 <div>
                   <Label htmlFor="cache-enabled">Cache Enabled</Label>
-                  <p className="text-sm text-gray-600 mb-2">Enable application caching</p>
+                  <p className="text-sm text-gray-600 mb-2">
+                    Enable application caching
+                  </p>
                   <Switch id="cache-enabled" defaultChecked />
                 </div>
 
                 <div>
                   <Label htmlFor="api-versioning">API Versioning</Label>
-                  <p className="text-sm text-gray-600 mb-2">Enable API version control</p>
+                  <p className="text-sm text-gray-600 mb-2">
+                    Enable API version control
+                  </p>
                   <Switch id="api-versioning" defaultChecked />
                 </div>
               </div>
@@ -757,30 +949,38 @@ export function GeneralSettings() {
                 <div className="flex space-x-3">
                   <Button
                     variant="outline"
-                    onClick={() => toast({
-                      title: "Cache Cleared",
-                      description: "Application cache has been cleared successfully.",
-                    })}
+                    onClick={() =>
+                      toast({
+                        title: "Cache Cleared",
+                        description:
+                          "Application cache has been cleared successfully.",
+                      })
+                    }
                   >
                     <RefreshCw className="h-4 w-4 mr-2" />
                     Clear Cache
                   </Button>
                   <Button
                     variant="outline"
-                    onClick={() => toast({
-                      title: "Database Optimized",
-                      description: "Database optimization completed successfully.",
-                    })}
+                    onClick={() =>
+                      toast({
+                        title: "Database Optimized",
+                        description:
+                          "Database optimization completed successfully.",
+                      })
+                    }
                   >
                     <Database className="h-4 w-4 mr-2" />
                     Optimize Database
                   </Button>
                   <Button
                     variant="outline"
-                    onClick={() => toast({
-                      title: "System Logs",
-                      description: "Opening system logs viewer...",
-                    })}
+                    onClick={() =>
+                      toast({
+                        title: "System Logs",
+                        description: "Opening system logs viewer...",
+                      })
+                    }
                   >
                     <FileText className="h-4 w-4 mr-2" />
                     View Logs
@@ -788,7 +988,10 @@ export function GeneralSettings() {
                 </div>
               </div>
 
-              <Button onClick={() => handleSave("Advanced")} className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600">
+              <Button
+                onClick={() => handleSave("Advanced")}
+                className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+              >
                 <Save className="h-4 w-4 mr-2" />
                 Save Advanced Settings
               </Button>

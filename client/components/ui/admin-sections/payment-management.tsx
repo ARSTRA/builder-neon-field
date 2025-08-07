@@ -236,7 +236,9 @@ export function PaymentManagement() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Payment & Currency Management</h1>
+          <h1 className="text-3xl font-bold text-gray-900">
+            Payment & Currency Management
+          </h1>
           <p className="text-gray-600">
             Manage payment methods, currencies, and transaction monitoring
           </p>
@@ -259,12 +261,19 @@ export function PaymentManagement() {
       {/* Payment Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {paymentStats.map((stat, index) => (
-          <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+          <Card
+            key={index}
+            className="border-0 shadow-lg hover:shadow-xl transition-shadow"
+          >
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">{stat.title}</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-1">{stat.value}</p>
+                  <p className="text-sm font-medium text-gray-600">
+                    {stat.title}
+                  </p>
+                  <p className="text-3xl font-bold text-gray-900 mt-1">
+                    {stat.value}
+                  </p>
                   <div className="flex items-center mt-2">
                     {stat.trend === "up" ? (
                       <TrendingUp className="h-4 w-4 mr-1 text-green-500" />
@@ -278,7 +287,9 @@ export function PaymentManagement() {
                     >
                       {stat.change}
                     </span>
-                    <span className="text-sm text-gray-500 ml-1">from last month</span>
+                    <span className="text-sm text-gray-500 ml-1">
+                      from last month
+                    </span>
                   </div>
                 </div>
                 <div className={`p-3 rounded-lg ${stat.color}`}>
@@ -327,10 +338,13 @@ export function PaymentManagement() {
                   </Select>
                   <Button
                     variant="outline"
-                    onClick={() => toast({
-                      title: "Exporting Transactions",
-                      description: "Transaction data is being exported to CSV format...",
-                    })}
+                    onClick={() =>
+                      toast({
+                        title: "Exporting Transactions",
+                        description:
+                          "Transaction data is being exported to CSV format...",
+                      })
+                    }
                   >
                     <Download className="h-4 w-4 mr-2" />
                     Export
@@ -343,28 +357,53 @@ export function PaymentManagement() {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b">
-                      <th className="text-left py-3 px-4 font-medium text-gray-900">Transaction ID</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-900">Customer</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-900">Amount</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-900">Method</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-900">Status</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-900">Date</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-900">Actions</th>
+                      <th className="text-left py-3 px-4 font-medium text-gray-900">
+                        Transaction ID
+                      </th>
+                      <th className="text-left py-3 px-4 font-medium text-gray-900">
+                        Customer
+                      </th>
+                      <th className="text-left py-3 px-4 font-medium text-gray-900">
+                        Amount
+                      </th>
+                      <th className="text-left py-3 px-4 font-medium text-gray-900">
+                        Method
+                      </th>
+                      <th className="text-left py-3 px-4 font-medium text-gray-900">
+                        Status
+                      </th>
+                      <th className="text-left py-3 px-4 font-medium text-gray-900">
+                        Date
+                      </th>
+                      <th className="text-left py-3 px-4 font-medium text-gray-900">
+                        Actions
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {transactions.map((transaction) => (
-                      <tr key={transaction.id} className="border-b hover:bg-gray-50">
+                      <tr
+                        key={transaction.id}
+                        className="border-b hover:bg-gray-50"
+                      >
                         <td className="py-3 px-4 text-sm font-medium text-royal-600">
                           {transaction.id}
                         </td>
-                        <td className="py-3 px-4 text-sm text-gray-900">{transaction.customer}</td>
+                        <td className="py-3 px-4 text-sm text-gray-900">
+                          {transaction.customer}
+                        </td>
                         <td className="py-3 px-4 text-sm font-semibold text-gray-900">
                           {transaction.amount}
                         </td>
-                        <td className="py-3 px-4 text-sm text-gray-600">{transaction.method}</td>
-                        <td className="py-3 px-4">{getStatusBadge(transaction.status)}</td>
-                        <td className="py-3 px-4 text-sm text-gray-600">{transaction.date}</td>
+                        <td className="py-3 px-4 text-sm text-gray-600">
+                          {transaction.method}
+                        </td>
+                        <td className="py-3 px-4">
+                          {getStatusBadge(transaction.status)}
+                        </td>
+                        <td className="py-3 px-4 text-sm text-gray-600">
+                          {transaction.date}
+                        </td>
                         <td className="py-3 px-4">
                           <DropdownMenu>
                             <DropdownMenuTrigger asChild>
@@ -414,19 +453,26 @@ export function PaymentManagement() {
                   >
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-royal-100 to-orange-100 rounded-lg flex items-center justify-center">
-                        <span className="font-bold text-royal-600">{currency.symbol}</span>
+                        <span className="font-bold text-royal-600">
+                          {currency.symbol}
+                        </span>
                       </div>
                       <div>
                         <div className="flex items-center space-x-2">
-                          <h3 className="font-semibold text-gray-900">{currency.code}</h3>
+                          <h3 className="font-semibold text-gray-900">
+                            {currency.code}
+                          </h3>
                           {currency.isDefault && (
-                            <Badge className="bg-blue-100 text-blue-800">Default</Badge>
+                            <Badge className="bg-blue-100 text-blue-800">
+                              Default
+                            </Badge>
                           )}
                           {getStatusBadge(currency.status)}
                         </div>
                         <p className="text-sm text-gray-600">{currency.name}</p>
                         <p className="text-xs text-gray-500">
-                          Rate: {currency.rate} | Updated: {currency.lastUpdated}
+                          Rate: {currency.rate} | Updated:{" "}
+                          {currency.lastUpdated}
                         </p>
                       </div>
                     </div>
@@ -434,21 +480,25 @@ export function PaymentManagement() {
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => toast({
-                          title: "Edit Currency",
-                          description: `Opening edit form for ${currency.name}...`,
-                        })}
+                        onClick={() =>
+                          toast({
+                            title: "Edit Currency",
+                            description: `Opening edit form for ${currency.name}...`,
+                          })
+                        }
                       >
                         <Edit className="h-4 w-4" />
                       </Button>
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => toast({
-                          title: "Delete Currency",
-                          description: `Are you sure you want to delete ${currency.name}?`,
-                          variant: "destructive",
-                        })}
+                        onClick={() =>
+                          toast({
+                            title: "Delete Currency",
+                            description: `Are you sure you want to delete ${currency.name}?`,
+                            variant: "destructive",
+                          })
+                        }
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>
@@ -484,8 +534,12 @@ export function PaymentManagement() {
                   >
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900">{method.name}</h3>
-                        <p className="text-sm text-gray-600">Provider: {method.provider}</p>
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          {method.name}
+                        </h3>
+                        <p className="text-sm text-gray-600">
+                          Provider: {method.provider}
+                        </p>
                       </div>
                       <div className="flex items-center space-x-2">
                         {getStatusBadge(method.status)}
@@ -522,10 +576,16 @@ export function PaymentManagement() {
                         <p className="font-medium">{method.monthlyVolume}</p>
                       </div>
                       <div>
-                        <span className="text-gray-600">Supported Currencies:</span>
+                        <span className="text-gray-600">
+                          Supported Currencies:
+                        </span>
                         <div className="flex space-x-1 mt-1">
                           {method.currencies.map((currency) => (
-                            <Badge key={currency} variant="outline" className="text-xs">
+                            <Badge
+                              key={currency}
+                              variant="outline"
+                              className="text-xs"
+                            >
                               {currency}
                             </Badge>
                           ))}
@@ -572,7 +632,10 @@ export function PaymentManagement() {
             </div>
             <div>
               <Label htmlFor="supported-currencies">Supported Currencies</Label>
-              <Input id="supported-currencies" placeholder="e.g., USD, EUR, GBP" />
+              <Input
+                id="supported-currencies"
+                placeholder="e.g., USD, EUR, GBP"
+              />
             </div>
             <div className="flex items-center space-x-2">
               <Switch id="method-active" defaultChecked />
@@ -580,16 +643,22 @@ export function PaymentManagement() {
             </div>
           </div>
           <div className="flex justify-end space-x-2">
-            <Button variant="outline" onClick={() => setIsPaymentMethodOpen(false)}>
+            <Button
+              variant="outline"
+              onClick={() => setIsPaymentMethodOpen(false)}
+            >
               Cancel
             </Button>
-            <Button onClick={() => {
-              toast({
-                title: "Payment Method Added",
-                description: "New payment method has been added successfully.",
-              });
-              setIsPaymentMethodOpen(false);
-            }}>
+            <Button
+              onClick={() => {
+                toast({
+                  title: "Payment Method Added",
+                  description:
+                    "New payment method has been added successfully.",
+                });
+                setIsPaymentMethodOpen(false);
+              }}
+            >
               Add Method
             </Button>
           </div>
@@ -607,25 +676,42 @@ export function PaymentManagement() {
               <Label htmlFor="currency-code" className="text-right">
                 Code
               </Label>
-              <Input id="currency-code" placeholder="USD" className="col-span-3" />
+              <Input
+                id="currency-code"
+                placeholder="USD"
+                className="col-span-3"
+              />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="currency-name" className="text-right">
                 Name
               </Label>
-              <Input id="currency-name" placeholder="US Dollar" className="col-span-3" />
+              <Input
+                id="currency-name"
+                placeholder="US Dollar"
+                className="col-span-3"
+              />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="currency-symbol" className="text-right">
                 Symbol
               </Label>
-              <Input id="currency-symbol" placeholder="$" className="col-span-3" />
+              <Input
+                id="currency-symbol"
+                placeholder="$"
+                className="col-span-3"
+              />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="exchange-rate" className="text-right">
                 Rate
               </Label>
-              <Input id="exchange-rate" placeholder="1.0" type="number" className="col-span-3" />
+              <Input
+                id="exchange-rate"
+                placeholder="1.0"
+                type="number"
+                className="col-span-3"
+              />
             </div>
             <div className="flex items-center space-x-2">
               <Switch id="is-default" />
@@ -633,7 +719,10 @@ export function PaymentManagement() {
             </div>
           </div>
           <div className="flex justify-end space-x-2">
-            <Button variant="outline" onClick={() => setIsAddCurrencyOpen(false)}>
+            <Button
+              variant="outline"
+              onClick={() => setIsAddCurrencyOpen(false)}
+            >
               Cancel
             </Button>
             <Button onClick={handleAddCurrency}>Add Currency</Button>

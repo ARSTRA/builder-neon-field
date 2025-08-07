@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Plane, 
-  Ship, 
-  Truck, 
-  Package, 
-  Building2, 
+import {
+  Plane,
+  Ship,
+  Truck,
+  Package,
+  Building2,
   Globe,
   Filter,
-  X
+  X,
 } from "lucide-react";
 
 interface GalleryImage {
@@ -27,17 +27,19 @@ const galleryImages: GalleryImage[] = [
     id: 1,
     src: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop&auto=format&q=80",
     title: "Boeing 747 Cargo Aircraft",
-    description: "Our fleet of modern cargo aircraft ensuring fast global delivery",
+    description:
+      "Our fleet of modern cargo aircraft ensuring fast global delivery",
     category: "Air Freight",
-    location: "Dubai International Airport"
+    location: "Dubai International Airport",
   },
   {
     id: 2,
     src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop&auto=format&q=80",
     title: "Container Ship Operations",
-    description: "Large-scale ocean freight operations handling thousands of containers",
-    category: "Ocean Freight", 
-    location: "Port of Rotterdam"
+    description:
+      "Large-scale ocean freight operations handling thousands of containers",
+    category: "Ocean Freight",
+    location: "Port of Rotterdam",
   },
   {
     id: 3,
@@ -45,7 +47,7 @@ const galleryImages: GalleryImage[] = [
     title: "Ground Transport Fleet",
     description: "Modern trucking fleet for reliable door-to-door delivery",
     category: "Ground Transport",
-    location: "Distribution Center, USA"
+    location: "Distribution Center, USA",
   },
   {
     id: 4,
@@ -53,7 +55,7 @@ const galleryImages: GalleryImage[] = [
     title: "Express Package Sorting",
     description: "High-tech sorting facility for express delivery services",
     category: "Express Delivery",
-    location: "Global Hub, Singapore"
+    location: "Global Hub, Singapore",
   },
   {
     id: 5,
@@ -61,7 +63,7 @@ const galleryImages: GalleryImage[] = [
     title: "Modern Warehouse Operations",
     description: "State-of-the-art warehousing and storage facilities",
     category: "Warehousing",
-    location: "London Distribution Center"
+    location: "London Distribution Center",
   },
   {
     id: 6,
@@ -69,7 +71,7 @@ const galleryImages: GalleryImage[] = [
     title: "Cargo Loading Operations",
     description: "Professional cargo handling and loading procedures",
     category: "Air Freight",
-    location: "Frankfurt Cargo Hub"
+    location: "Frankfurt Cargo Hub",
   },
   {
     id: 7,
@@ -77,7 +79,7 @@ const galleryImages: GalleryImage[] = [
     title: "International Port Operations",
     description: "24/7 port operations handling global trade",
     category: "Ocean Freight",
-    location: "Port of Shanghai"
+    location: "Port of Shanghai",
   },
   {
     id: 8,
@@ -85,7 +87,7 @@ const galleryImages: GalleryImage[] = [
     title: "Cross-Border Trucking",
     description: "Seamless cross-border transportation services",
     category: "Ground Transport",
-    location: "US-Canada Border"
+    location: "US-Canada Border",
   },
   {
     id: 9,
@@ -93,7 +95,7 @@ const galleryImages: GalleryImage[] = [
     title: "Last-Mile Delivery",
     description: "Efficient last-mile delivery solutions for urban areas",
     category: "Express Delivery",
-    location: "New York City"
+    location: "New York City",
   },
   {
     id: 10,
@@ -101,7 +103,7 @@ const galleryImages: GalleryImage[] = [
     title: "Cold Storage Facility",
     description: "Temperature-controlled storage for sensitive cargo",
     category: "Warehousing",
-    location: "Miami Cold Chain Hub"
+    location: "Miami Cold Chain Hub",
   },
   {
     id: 11,
@@ -109,7 +111,7 @@ const galleryImages: GalleryImage[] = [
     title: "Global Operations Center",
     description: "24/7 monitoring and coordination of worldwide operations",
     category: "Operations",
-    location: "GlobalTrack HQ"
+    location: "GlobalTrack HQ",
   },
   {
     id: 12,
@@ -117,27 +119,40 @@ const galleryImages: GalleryImage[] = [
     title: "Customer Service Center",
     description: "Dedicated customer support and tracking services",
     category: "Operations",
-    location: "Customer Care Center"
-  }
+    location: "Customer Care Center",
+  },
 ];
 
 const categories = [
   { name: "All", icon: Globe, color: "bg-gray-100 text-gray-800" },
   { name: "Air Freight", icon: Plane, color: "bg-blue-100 text-blue-800" },
   { name: "Ocean Freight", icon: Ship, color: "bg-cyan-100 text-cyan-800" },
-  { name: "Ground Transport", icon: Truck, color: "bg-green-100 text-green-800" },
-  { name: "Express Delivery", icon: Package, color: "bg-orange-100 text-orange-800" },
-  { name: "Warehousing", icon: Building2, color: "bg-purple-100 text-purple-800" },
-  { name: "Operations", icon: Filter, color: "bg-royal-100 text-royal-800" }
+  {
+    name: "Ground Transport",
+    icon: Truck,
+    color: "bg-green-100 text-green-800",
+  },
+  {
+    name: "Express Delivery",
+    icon: Package,
+    color: "bg-orange-100 text-orange-800",
+  },
+  {
+    name: "Warehousing",
+    icon: Building2,
+    color: "bg-purple-100 text-purple-800",
+  },
+  { name: "Operations", icon: Filter, color: "bg-royal-100 text-royal-800" },
 ];
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
-  const filteredImages = selectedCategory === "All" 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === selectedCategory);
+  const filteredImages =
+    selectedCategory === "All"
+      ? galleryImages
+      : galleryImages.filter((img) => img.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -158,8 +173,14 @@ export default function Gallery() {
         {/* Animated Background Elements */}
         <div className="absolute top-20 left-20 w-24 h-24 bg-orange-500/20 rounded-full animate-bounce-slow"></div>
         <div className="absolute bottom-32 right-16 w-16 h-16 bg-white/10 rounded-full animate-pulse-soft"></div>
-        <div className="absolute top-1/3 right-1/4 w-20 h-20 bg-orange-400/15 rounded-full animate-bounce-slow" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute bottom-20 left-1/3 w-12 h-12 bg-white/15 rounded-full animate-pulse-soft" style={{animationDelay: '0.8s'}}></div>
+        <div
+          className="absolute top-1/3 right-1/4 w-20 h-20 bg-orange-400/15 rounded-full animate-bounce-slow"
+          style={{ animationDelay: "1.5s" }}
+        ></div>
+        <div
+          className="absolute bottom-20 left-1/3 w-12 h-12 bg-white/15 rounded-full animate-pulse-soft"
+          style={{ animationDelay: "0.8s" }}
+        ></div>
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 text-center">
@@ -189,34 +210,43 @@ export default function Gallery() {
 
             {/* Description */}
             <p className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12 animate-slide-up">
-              Explore our state-of-the-art facilities, cutting-edge transportation network, and
-              professional operations across the globe. See how GlobalTrack delivers excellence
-              through innovation, technology, and expertise.
+              Explore our state-of-the-art facilities, cutting-edge
+              transportation network, and professional operations across the
+              globe. See how GlobalTrack delivers excellence through innovation,
+              technology, and expertise.
             </p>
 
             {/* Stats Bar */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12 animate-fade-in">
               <div className="text-center group cursor-pointer">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 group-hover:bg-white/20 transition-all duration-300 transform group-hover:-translate-y-2">
-                  <div className="text-4xl font-bold text-orange-400 mb-2">50+</div>
+                  <div className="text-4xl font-bold text-orange-400 mb-2">
+                    50+
+                  </div>
                   <div className="text-sm text-gray-300">Global Facilities</div>
                 </div>
               </div>
               <div className="text-center group cursor-pointer">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 group-hover:bg-white/20 transition-all duration-300 transform group-hover:-translate-y-2">
-                  <div className="text-4xl font-bold text-orange-400 mb-2">24/7</div>
+                  <div className="text-4xl font-bold text-orange-400 mb-2">
+                    24/7
+                  </div>
                   <div className="text-sm text-gray-300">Operations</div>
                 </div>
               </div>
               <div className="text-center group cursor-pointer">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 group-hover:bg-white/20 transition-all duration-300 transform group-hover:-translate-y-2">
-                  <div className="text-4xl font-bold text-orange-400 mb-2">120+</div>
+                  <div className="text-4xl font-bold text-orange-400 mb-2">
+                    120+
+                  </div>
                   <div className="text-sm text-gray-300">Countries</div>
                 </div>
               </div>
               <div className="text-center group cursor-pointer">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 group-hover:bg-white/20 transition-all duration-300 transform group-hover:-translate-y-2">
-                  <div className="text-4xl font-bold text-orange-400 mb-2">1M+</div>
+                  <div className="text-4xl font-bold text-orange-400 mb-2">
+                    1M+
+                  </div>
                   <div className="text-sm text-gray-300">Shipments</div>
                 </div>
               </div>
@@ -229,8 +259,18 @@ export default function Gallery() {
                 <div className="flex items-center justify-center space-x-2 text-orange-400">
                   <span className="text-sm">Scroll to explore</span>
                   <div className="animate-bounce">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                      />
                     </svg>
                   </div>
                 </div>
@@ -243,9 +283,18 @@ export default function Gallery() {
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Geometric shapes */}
           <div className="absolute top-1/4 left-10 w-1 h-20 bg-orange-500/30 transform rotate-45 animate-pulse-soft"></div>
-          <div className="absolute bottom-1/4 right-10 w-1 h-16 bg-white/20 transform -rotate-45 animate-pulse-soft" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-orange-400 rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
-          <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-white rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
+          <div
+            className="absolute bottom-1/4 right-10 w-1 h-16 bg-white/20 transform -rotate-45 animate-pulse-soft"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute top-1/2 left-1/4 w-2 h-2 bg-orange-400 rounded-full animate-ping"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-white rounded-full animate-ping"
+            style={{ animationDelay: "3s" }}
+          ></div>
         </div>
       </section>
 
@@ -258,7 +307,9 @@ export default function Gallery() {
               return (
                 <Button
                   key={category.name}
-                  variant={selectedCategory === category.name ? "default" : "outline"}
+                  variant={
+                    selectedCategory === category.name ? "default" : "outline"
+                  }
                   onClick={() => setSelectedCategory(category.name)}
                   className={`flex items-center space-x-2 ${
                     selectedCategory === category.name
@@ -280,7 +331,7 @@ export default function Gallery() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredImages.map((image) => (
-              <Card 
+              <Card
                 key={image.id}
                 className="group hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2"
                 onClick={() => setSelectedImage(image)}
@@ -294,7 +345,12 @@ export default function Gallery() {
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                     <div className="absolute top-3 left-3">
-                      <Badge className={categories.find(cat => cat.name === image.category)?.color}>
+                      <Badge
+                        className={
+                          categories.find((cat) => cat.name === image.category)
+                            ?.color
+                        }
+                      >
                         {image.category}
                       </Badge>
                     </div>
@@ -318,7 +374,9 @@ export default function Gallery() {
 
           {filteredImages.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-gray-500 text-lg">No images found for this category.</p>
+              <p className="text-gray-500 text-lg">
+                No images found for this category.
+              </p>
             </div>
           )}
         </div>
@@ -336,7 +394,7 @@ export default function Gallery() {
             >
               <X className="h-4 w-4" />
             </Button>
-            
+
             <div className="grid md:grid-cols-2">
               <div className="relative">
                 <img
@@ -346,7 +404,13 @@ export default function Gallery() {
                 />
               </div>
               <div className="p-8">
-                <Badge className={categories.find(cat => cat.name === selectedImage.category)?.color + " mb-4"}>
+                <Badge
+                  className={
+                    categories.find(
+                      (cat) => cat.name === selectedImage.category,
+                    )?.color + " mb-4"
+                  }
+                >
                   {selectedImage.category}
                 </Badge>
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">

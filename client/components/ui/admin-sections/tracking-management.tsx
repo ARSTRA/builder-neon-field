@@ -190,7 +190,9 @@ export function TrackingManagement() {
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "processing":
-        return <Badge className="bg-yellow-100 text-yellow-800">Processing</Badge>;
+        return (
+          <Badge className="bg-yellow-100 text-yellow-800">Processing</Badge>
+        );
       case "in_transit":
         return <Badge className="bg-blue-100 text-blue-800">In Transit</Badge>;
       case "delivered":
@@ -222,7 +224,8 @@ export function TrackingManagement() {
   const handleCreateShipment = () => {
     toast({
       title: "Shipment Created",
-      description: "New shipment has been created and tracking number assigned.",
+      description:
+        "New shipment has been created and tracking number assigned.",
     });
     setIsCreateShipmentOpen(false);
   };
@@ -239,7 +242,9 @@ export function TrackingManagement() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Tracking Management</h1>
+          <h1 className="text-3xl font-bold text-gray-900">
+            Tracking Management
+          </h1>
           <p className="text-gray-600">
             Monitor and manage all shipments and tracking information
           </p>
@@ -262,12 +267,19 @@ export function TrackingManagement() {
       {/* Tracking Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {trackingStats.map((stat, index) => (
-          <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+          <Card
+            key={index}
+            className="border-0 shadow-lg hover:shadow-xl transition-shadow"
+          >
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">{stat.title}</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-1">{stat.value}</p>
+                  <p className="text-sm font-medium text-gray-600">
+                    {stat.title}
+                  </p>
+                  <p className="text-3xl font-bold text-gray-900 mt-1">
+                    {stat.value}
+                  </p>
                   <div className="flex items-center mt-2">
                     <span
                       className={`text-sm font-medium ${
@@ -276,7 +288,9 @@ export function TrackingManagement() {
                     >
                       {stat.change}
                     </span>
-                    <span className="text-sm text-gray-500 ml-1">from last week</span>
+                    <span className="text-sm text-gray-500 ml-1">
+                      from last week
+                    </span>
                   </div>
                 </div>
                 <div className={`p-3 rounded-lg ${stat.color}`}>
@@ -327,10 +341,13 @@ export function TrackingManagement() {
                   </Select>
                   <Button
                     variant="outline"
-                    onClick={() => toast({
-                      title: "Exporting Shipments",
-                      description: "Shipment data is being exported to CSV format...",
-                    })}
+                    onClick={() =>
+                      toast({
+                        title: "Exporting Shipments",
+                        description:
+                          "Shipment data is being exported to CSV format...",
+                      })
+                    }
                   >
                     <Download className="h-4 w-4 mr-2" />
                     Export
@@ -352,8 +369,12 @@ export function TrackingManagement() {
                           {getServiceIcon(shipment.service)}
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-900">{shipment.id}</h3>
-                          <p className="text-sm text-gray-600">{shipment.customer}</p>
+                          <h3 className="font-semibold text-gray-900">
+                            {shipment.id}
+                          </h3>
+                          <p className="text-sm text-gray-600">
+                            {shipment.customer}
+                          </p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
@@ -365,11 +386,15 @@ export function TrackingManagement() {
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent>
-                            <DropdownMenuItem onClick={() => setSelectedShipment(shipment)}>
+                            <DropdownMenuItem
+                              onClick={() => setSelectedShipment(shipment)}
+                            >
                               <Eye className="h-4 w-4 mr-2" />
                               View Details
                             </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => handleUpdateStatus(shipment.id)}>
+                            <DropdownMenuItem
+                              onClick={() => handleUpdateStatus(shipment.id)}
+                            >
                               <Edit className="h-4 w-4 mr-2" />
                               Update Status
                             </DropdownMenuItem>
@@ -385,22 +410,30 @@ export function TrackingManagement() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                       <div>
                         <span className="text-sm text-gray-600">Route:</span>
-                        <p className="font-medium">{shipment.origin} → {shipment.destination}</p>
+                        <p className="font-medium">
+                          {shipment.origin} → {shipment.destination}
+                        </p>
                       </div>
                       <div>
                         <span className="text-sm text-gray-600">Service:</span>
                         <p className="font-medium">{shipment.service}</p>
                       </div>
                       <div>
-                        <span className="text-sm text-gray-600">Est. Delivery:</span>
-                        <p className="font-medium">{shipment.estimatedDelivery}</p>
+                        <span className="text-sm text-gray-600">
+                          Est. Delivery:
+                        </span>
+                        <p className="font-medium">
+                          {shipment.estimatedDelivery}
+                        </p>
                       </div>
                     </div>
 
                     <div className="space-y-2">
                       <div className="flex justify-between items-center">
                         <span className="text-sm text-gray-600">Progress</span>
-                        <span className="text-sm font-medium">{shipment.progress}%</span>
+                        <span className="text-sm font-medium">
+                          {shipment.progress}%
+                        </span>
                       </div>
                       <Progress value={shipment.progress} className="h-2" />
                       <p className="text-sm text-gray-600">
@@ -424,18 +457,25 @@ export function TrackingManagement() {
               <CardContent>
                 <div className="space-y-4">
                   {trackingEvents.map((event) => (
-                    <div key={event.id} className="flex items-start space-x-3 p-3 border rounded-lg">
+                    <div
+                      key={event.id}
+                      className="flex items-start space-x-3 p-3 border rounded-lg"
+                    >
                       <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mt-1">
                         {event.icon}
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-medium text-gray-900">{event.status}</h4>
+                          <h4 className="font-medium text-gray-900">
+                            {event.status}
+                          </h4>
                           <Badge variant="outline" className="text-xs">
                             {event.shipmentId}
                           </Badge>
                         </div>
-                        <p className="text-sm text-gray-600">{event.description}</p>
+                        <p className="text-sm text-gray-600">
+                          {event.description}
+                        </p>
                         <div className="flex items-center space-x-2 mt-2 text-xs text-gray-500">
                           <MapPin className="h-3 w-3" />
                           <span>{event.location}</span>
@@ -457,8 +497,12 @@ export function TrackingManagement() {
                 <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center">
                   <div className="text-center">
                     <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-600">Interactive tracking map would be integrated here</p>
-                    <p className="text-sm text-gray-500 mt-2">Real-time GPS tracking visualization</p>
+                    <p className="text-gray-600">
+                      Interactive tracking map would be integrated here
+                    </p>
+                    <p className="text-sm text-gray-500 mt-2">
+                      Real-time GPS tracking visualization
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -477,21 +521,27 @@ export function TrackingManagement() {
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between mb-2">
-                      <span className="text-sm text-gray-600">On-Time Delivery</span>
+                      <span className="text-sm text-gray-600">
+                        On-Time Delivery
+                      </span>
                       <span className="text-sm font-medium">98.2%</span>
                     </div>
                     <Progress value={98.2} className="h-2" />
                   </div>
                   <div>
                     <div className="flex justify-between mb-2">
-                      <span className="text-sm text-gray-600">Customer Satisfaction</span>
+                      <span className="text-sm text-gray-600">
+                        Customer Satisfaction
+                      </span>
                       <span className="text-sm font-medium">96.5%</span>
                     </div>
                     <Progress value={96.5} className="h-2" />
                   </div>
                   <div>
                     <div className="flex justify-between mb-2">
-                      <span className="text-sm text-gray-600">Average Transit Time</span>
+                      <span className="text-sm text-gray-600">
+                        Average Transit Time
+                      </span>
                       <span className="text-sm font-medium">87%</span>
                     </div>
                     <Progress value={87} className="h-2" />
@@ -574,10 +624,14 @@ export function TrackingManagement() {
                   <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
                     <div className="flex items-center space-x-2 mb-2">
                       <MapPin className="h-5 w-5 text-blue-600" />
-                      <span className="font-medium text-blue-900">Current Location</span>
+                      <span className="font-medium text-blue-900">
+                        Current Location
+                      </span>
                     </div>
                     <p className="text-blue-800">Frankfurt Hub, Germany</p>
-                    <p className="text-sm text-blue-600">Last updated: 2024-12-15 14:30</p>
+                    <p className="text-sm text-blue-600">
+                      Last updated: 2024-12-15 14:30
+                    </p>
                   </div>
 
                   {/* Location Update Form */}
@@ -600,8 +654,12 @@ export function TrackingManagement() {
                           <SelectItem value="airport">Airport</SelectItem>
                           <SelectItem value="port">Seaport</SelectItem>
                           <SelectItem value="warehouse">Warehouse</SelectItem>
-                          <SelectItem value="customs">Customs Office</SelectItem>
-                          <SelectItem value="delivery">Delivery Center</SelectItem>
+                          <SelectItem value="customs">
+                            Customs Office
+                          </SelectItem>
+                          <SelectItem value="delivery">
+                            Delivery Center
+                          </SelectItem>
                           <SelectItem value="transit">In Transit</SelectItem>
                         </SelectContent>
                       </Select>
@@ -633,7 +691,9 @@ export function TrackingManagement() {
                   </div>
 
                   <div>
-                    <Label htmlFor="coordinates">GPS Coordinates (Optional)</Label>
+                    <Label htmlFor="coordinates">
+                      GPS Coordinates (Optional)
+                    </Label>
                     <div className="grid grid-cols-2 gap-2">
                       <Input placeholder="Latitude (e.g., 51.4700)" />
                       <Input placeholder="Longitude (e.g., -0.4543)" />
@@ -648,12 +708,24 @@ export function TrackingManagement() {
                         <SelectValue placeholder="Select new status" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="departed">Departed from Location</SelectItem>
-                        <SelectItem value="arrived">Arrived at Location</SelectItem>
-                        <SelectItem value="processing">Processing at Location</SelectItem>
-                        <SelectItem value="customs">Customs Clearance</SelectItem>
-                        <SelectItem value="delayed">Delayed at Location</SelectItem>
-                        <SelectItem value="out_for_delivery">Out for Delivery</SelectItem>
+                        <SelectItem value="departed">
+                          Departed from Location
+                        </SelectItem>
+                        <SelectItem value="arrived">
+                          Arrived at Location
+                        </SelectItem>
+                        <SelectItem value="processing">
+                          Processing at Location
+                        </SelectItem>
+                        <SelectItem value="customs">
+                          Customs Clearance
+                        </SelectItem>
+                        <SelectItem value="delayed">
+                          Delayed at Location
+                        </SelectItem>
+                        <SelectItem value="out_for_delivery">
+                          Out for Delivery
+                        </SelectItem>
                         <SelectItem value="delivered">Delivered</SelectItem>
                       </SelectContent>
                     </Select>
@@ -672,11 +744,15 @@ export function TrackingManagement() {
                   {/* Estimated Times */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="departure-time">Estimated Departure</Label>
+                      <Label htmlFor="departure-time">
+                        Estimated Departure
+                      </Label>
                       <Input type="datetime-local" id="departure-time" />
                     </div>
                     <div>
-                      <Label htmlFor="arrival-time">Estimated Next Arrival</Label>
+                      <Label htmlFor="arrival-time">
+                        Estimated Next Arrival
+                      </Label>
                       <Input type="datetime-local" id="arrival-time" />
                     </div>
                   </div>
@@ -685,30 +761,39 @@ export function TrackingManagement() {
                   <div className="flex space-x-3 pt-4">
                     <Button
                       className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
-                      onClick={() => toast({
-                        title: "Location Updated",
-                        description: "Shipment location has been updated successfully.",
-                      })}
+                      onClick={() =>
+                        toast({
+                          title: "Location Updated",
+                          description:
+                            "Shipment location has been updated successfully.",
+                        })
+                      }
                     >
                       <MapPin className="h-4 w-4 mr-2" />
                       Update Location
                     </Button>
                     <Button
                       variant="outline"
-                      onClick={() => toast({
-                        title: "Notification Sent",
-                        description: "Customer has been notified of the location update.",
-                      })}
+                      onClick={() =>
+                        toast({
+                          title: "Notification Sent",
+                          description:
+                            "Customer has been notified of the location update.",
+                        })
+                      }
                     >
                       <Bell className="h-4 w-4 mr-2" />
                       Notify Customer
                     </Button>
                     <Button
                       variant="outline"
-                      onClick={() => toast({
-                        title: "GPS Tracking",
-                        description: "Real-time GPS tracking has been activated.",
-                      })}
+                      onClick={() =>
+                        toast({
+                          title: "GPS Tracking",
+                          description:
+                            "Real-time GPS tracking has been activated.",
+                        })
+                      }
                     >
                       <Navigation className="h-4 w-4 mr-2" />
                       Enable GPS
@@ -728,13 +813,20 @@ export function TrackingManagement() {
                 <CardContent>
                   <div className="space-y-4">
                     {trackingEvents.slice(0, 3).map((event) => (
-                      <div key={event.id} className="flex items-start space-x-3 p-3 border rounded-lg">
+                      <div
+                        key={event.id}
+                        className="flex items-start space-x-3 p-3 border rounded-lg"
+                      >
                         <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mt-1">
                           {event.icon}
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-medium text-gray-900">{event.status}</h4>
-                          <p className="text-sm text-gray-600">{event.location}</p>
+                          <h4 className="font-medium text-gray-900">
+                            {event.status}
+                          </h4>
+                          <p className="text-sm text-gray-600">
+                            {event.location}
+                          </p>
                           <div className="flex items-center space-x-2 mt-1 text-xs text-gray-500">
                             <Clock className="h-3 w-3" />
                             <span>{event.timestamp}</span>
@@ -743,10 +835,12 @@ export function TrackingManagement() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          onClick={() => toast({
-                            title: "Editing Location",
-                            description: `Editing location update for ${event.shipmentId}...`,
-                          })}
+                          onClick={() =>
+                            toast({
+                              title: "Editing Location",
+                              description: `Editing location update for ${event.shipmentId}...`,
+                            })
+                          }
                         >
                           <Edit className="h-3 w-3" />
                         </Button>
@@ -764,19 +858,27 @@ export function TrackingManagement() {
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Most Active Hub</span>
+                      <span className="text-sm text-gray-600">
+                        Most Active Hub
+                      </span>
                       <span className="font-medium">Frankfurt Hub</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Average Transit Time</span>
+                      <span className="text-sm text-gray-600">
+                        Average Transit Time
+                      </span>
                       <span className="font-medium">3.2 days</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Delayed Shipments</span>
+                      <span className="text-sm text-gray-600">
+                        Delayed Shipments
+                      </span>
                       <span className="font-medium text-red-600">2.3%</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">GPS Coverage</span>
+                      <span className="text-sm text-gray-600">
+                        GPS Coverage
+                      </span>
                       <span className="font-medium text-green-600">98.7%</span>
                     </div>
                   </div>
@@ -792,10 +894,12 @@ export function TrackingManagement() {
                   <Button
                     variant="outline"
                     className="w-full justify-start"
-                    onClick={() => toast({
-                      title: "Bulk Update",
-                      description: "Opening bulk location update tool...",
-                    })}
+                    onClick={() =>
+                      toast({
+                        title: "Bulk Update",
+                        description: "Opening bulk location update tool...",
+                      })
+                    }
                   >
                     <Package className="h-4 w-4 mr-2" />
                     Bulk Location Update
@@ -803,10 +907,13 @@ export function TrackingManagement() {
                   <Button
                     variant="outline"
                     className="w-full justify-start"
-                    onClick={() => toast({
-                      title: "Route Optimization",
-                      description: "Analyzing optimal routes for pending shipments...",
-                    })}
+                    onClick={() =>
+                      toast({
+                        title: "Route Optimization",
+                        description:
+                          "Analyzing optimal routes for pending shipments...",
+                      })
+                    }
                   >
                     <Navigation className="h-4 w-4 mr-2" />
                     Optimize Routes
@@ -814,10 +921,12 @@ export function TrackingManagement() {
                   <Button
                     variant="outline"
                     className="w-full justify-start"
-                    onClick={() => toast({
-                      title: "Location Report",
-                      description: "Generating location analytics report...",
-                    })}
+                    onClick={() =>
+                      toast({
+                        title: "Location Report",
+                        description: "Generating location analytics report...",
+                      })
+                    }
                   >
                     <Download className="h-4 w-4 mr-2" />
                     Generate Report
@@ -825,10 +934,12 @@ export function TrackingManagement() {
                   <Button
                     variant="outline"
                     className="w-full justify-start"
-                    onClick={() => toast({
-                      title: "Hub Management",
-                      description: "Opening distribution hub management...",
-                    })}
+                    onClick={() =>
+                      toast({
+                        title: "Hub Management",
+                        description: "Opening distribution hub management...",
+                      })
+                    }
                   >
                     <MapPin className="h-4 w-4 mr-2" />
                     Manage Hubs
@@ -847,12 +958,16 @@ export function TrackingManagement() {
               <div className="grid lg:grid-cols-2 gap-6">
                 {/* Geofencing */}
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-gray-900">Geofencing & Alerts</h4>
+                  <h4 className="font-semibold text-gray-900">
+                    Geofencing & Alerts
+                  </h4>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between p-3 border rounded-lg">
                       <div>
                         <p className="font-medium">Airport Security Zones</p>
-                        <p className="text-sm text-gray-600">Automatic notifications for restricted areas</p>
+                        <p className="text-sm text-gray-600">
+                          Automatic notifications for restricted areas
+                        </p>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -862,7 +977,9 @@ export function TrackingManagement() {
                     <div className="flex items-center justify-between p-3 border rounded-lg">
                       <div>
                         <p className="font-medium">Customs Boundaries</p>
-                        <p className="text-sm text-gray-600">Track customs clearance zones</p>
+                        <p className="text-sm text-gray-600">
+                          Track customs clearance zones
+                        </p>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -872,7 +989,9 @@ export function TrackingManagement() {
                     <div className="flex items-center justify-between p-3 border rounded-lg">
                       <div>
                         <p className="font-medium">Weather Alerts</p>
-                        <p className="text-sm text-gray-600">Monitor weather-related delays</p>
+                        <p className="text-sm text-gray-600">
+                          Monitor weather-related delays
+                        </p>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
@@ -884,45 +1003,62 @@ export function TrackingManagement() {
 
                 {/* Location Templates */}
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-gray-900">Location Templates</h4>
+                  <h4 className="font-semibold text-gray-900">
+                    Location Templates
+                  </h4>
                   <div className="space-y-3">
                     <Button
                       variant="outline"
                       className="w-full justify-start h-auto p-3"
-                      onClick={() => toast({
-                        title: "Template Applied",
-                        description: "Standard hub routing template has been applied.",
-                      })}
+                      onClick={() =>
+                        toast({
+                          title: "Template Applied",
+                          description:
+                            "Standard hub routing template has been applied.",
+                        })
+                      }
                     >
                       <div className="text-left">
                         <p className="font-medium">Standard Hub Routing</p>
-                        <p className="text-sm text-gray-600">Common distribution center path</p>
+                        <p className="text-sm text-gray-600">
+                          Common distribution center path
+                        </p>
                       </div>
                     </Button>
                     <Button
                       variant="outline"
                       className="w-full justify-start h-auto p-3"
-                      onClick={() => toast({
-                        title: "Template Applied",
-                        description: "Express delivery route template has been applied.",
-                      })}
+                      onClick={() =>
+                        toast({
+                          title: "Template Applied",
+                          description:
+                            "Express delivery route template has been applied.",
+                        })
+                      }
                     >
                       <div className="text-left">
                         <p className="font-medium">Express Delivery Route</p>
-                        <p className="text-sm text-gray-600">Direct routing for urgent shipments</p>
+                        <p className="text-sm text-gray-600">
+                          Direct routing for urgent shipments
+                        </p>
                       </div>
                     </Button>
                     <Button
                       variant="outline"
                       className="w-full justify-start h-auto p-3"
-                      onClick={() => toast({
-                        title: "Template Applied",
-                        description: "International customs route template has been applied.",
-                      })}
+                      onClick={() =>
+                        toast({
+                          title: "Template Applied",
+                          description:
+                            "International customs route template has been applied.",
+                        })
+                      }
                     >
                       <div className="text-left">
                         <p className="font-medium">International Customs</p>
-                        <p className="text-sm text-gray-600">Standard customs clearance path</p>
+                        <p className="text-sm text-gray-600">
+                          Standard customs clearance path
+                        </p>
                       </div>
                     </Button>
                   </div>
@@ -934,7 +1070,10 @@ export function TrackingManagement() {
       </Tabs>
 
       {/* Create Shipment Modal */}
-      <Dialog open={isCreateShipmentOpen} onOpenChange={setIsCreateShipmentOpen}>
+      <Dialog
+        open={isCreateShipmentOpen}
+        onOpenChange={setIsCreateShipmentOpen}
+      >
         <DialogContent className="sm:max-w-[600px]">
           <DialogHeader>
             <DialogTitle>Create New Shipment</DialogTitle>
@@ -986,11 +1125,17 @@ export function TrackingManagement() {
             </div>
             <div>
               <Label htmlFor="notes">Special Instructions</Label>
-              <Textarea id="notes" placeholder="Any special handling requirements..." />
+              <Textarea
+                id="notes"
+                placeholder="Any special handling requirements..."
+              />
             </div>
           </div>
           <div className="flex justify-end space-x-2">
-            <Button variant="outline" onClick={() => setIsCreateShipmentOpen(false)}>
+            <Button
+              variant="outline"
+              onClick={() => setIsCreateShipmentOpen(false)}
+            >
               Cancel
             </Button>
             <Button onClick={handleCreateShipment}>Create Shipment</Button>
@@ -1000,49 +1145,94 @@ export function TrackingManagement() {
 
       {/* Shipment Details Modal */}
       {selectedShipment && (
-        <Dialog open={!!selectedShipment} onOpenChange={() => setSelectedShipment(null)}>
+        <Dialog
+          open={!!selectedShipment}
+          onOpenChange={() => setSelectedShipment(null)}
+        >
           <DialogContent className="sm:max-w-[700px]">
             <DialogHeader>
-              <DialogTitle>Shipment Details - {selectedShipment.id}</DialogTitle>
+              <DialogTitle>
+                Shipment Details - {selectedShipment.id}
+              </DialogTitle>
             </DialogHeader>
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <h4 className="font-semibold mb-2">Shipment Information</h4>
                   <div className="space-y-2 text-sm">
-                    <div><span className="text-gray-600">Customer:</span> {selectedShipment.customer}</div>
-                    <div><span className="text-gray-600">Service:</span> {selectedShipment.service}</div>
-                    <div><span className="text-gray-600">Status:</span> {getStatusBadge(selectedShipment.status)}</div>
-                    <div><span className="text-gray-600">Weight:</span> {selectedShipment.actualWeight}</div>
-                    <div><span className="text-gray-600">Dimensions:</span> {selectedShipment.dimensions}</div>
-                    <div><span className="text-gray-600">Value:</span> {selectedShipment.value}</div>
+                    <div>
+                      <span className="text-gray-600">Customer:</span>{" "}
+                      {selectedShipment.customer}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Service:</span>{" "}
+                      {selectedShipment.service}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Status:</span>{" "}
+                      {getStatusBadge(selectedShipment.status)}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Weight:</span>{" "}
+                      {selectedShipment.actualWeight}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Dimensions:</span>{" "}
+                      {selectedShipment.dimensions}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Value:</span>{" "}
+                      {selectedShipment.value}
+                    </div>
                   </div>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Route & Timeline</h4>
                   <div className="space-y-2 text-sm">
-                    <div><span className="text-gray-600">Origin:</span> {selectedShipment.origin}</div>
-                    <div><span className="text-gray-600">Destination:</span> {selectedShipment.destination}</div>
-                    <div><span className="text-gray-600">Est. Delivery:</span> {selectedShipment.estimatedDelivery}</div>
-                    <div><span className="text-gray-600">Current Location:</span> {selectedShipment.currentLocation}</div>
-                    <div><span className="text-gray-600">Last Update:</span> {selectedShipment.lastUpdate}</div>
+                    <div>
+                      <span className="text-gray-600">Origin:</span>{" "}
+                      {selectedShipment.origin}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Destination:</span>{" "}
+                      {selectedShipment.destination}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Est. Delivery:</span>{" "}
+                      {selectedShipment.estimatedDelivery}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Current Location:</span>{" "}
+                      {selectedShipment.currentLocation}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Last Update:</span>{" "}
+                      {selectedShipment.lastUpdate}
+                    </div>
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Progress</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-sm text-gray-600">Delivery Progress</span>
-                    <span className="text-sm font-medium">{selectedShipment.progress}%</span>
+                    <span className="text-sm text-gray-600">
+                      Delivery Progress
+                    </span>
+                    <span className="text-sm font-medium">
+                      {selectedShipment.progress}%
+                    </span>
                   </div>
                   <Progress value={selectedShipment.progress} className="h-3" />
                 </div>
               </div>
             </div>
             <div className="flex justify-end space-x-2">
-              <Button variant="outline" onClick={() => setSelectedShipment(null)}>
+              <Button
+                variant="outline"
+                onClick={() => setSelectedShipment(null)}
+              >
                 Close
               </Button>
               <Button onClick={() => handleUpdateStatus(selectedShipment.id)}>

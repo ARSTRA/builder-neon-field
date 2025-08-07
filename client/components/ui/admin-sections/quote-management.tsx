@@ -117,7 +117,8 @@ export function QuoteManagement() {
       dimensions: "120x80x60 cm",
       value: "$25,000",
       estimatedCost: "$3,200",
-      notes: "Urgent delivery required for product launch. Temperature-controlled cargo.",
+      notes:
+        "Urgent delivery required for product launch. Temperature-controlled cargo.",
       validUntil: "2024-12-22",
     },
     {
@@ -191,7 +192,9 @@ export function QuoteManagement() {
       case "declined":
         return <Badge className="bg-red-100 text-red-800">Declined</Badge>;
       case "under_review":
-        return <Badge className="bg-blue-100 text-blue-800">Under Review</Badge>;
+        return (
+          <Badge className="bg-blue-100 text-blue-800">Under Review</Badge>
+        );
       case "expired":
         return <Badge className="bg-gray-100 text-gray-800">Expired</Badge>;
       default:
@@ -251,7 +254,8 @@ export function QuoteManagement() {
   const handleSaveQuote = () => {
     toast({
       title: "Quote Updated",
-      description: "Quote has been updated and customer will be notified of changes.",
+      description:
+        "Quote has been updated and customer will be notified of changes.",
     });
     setIsEditQuoteOpen(false);
     setSelectedQuote(null);
@@ -292,12 +296,19 @@ export function QuoteManagement() {
       {/* Quote Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {quoteStats.map((stat, index) => (
-          <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+          <Card
+            key={index}
+            className="border-0 shadow-lg hover:shadow-xl transition-shadow"
+          >
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">{stat.title}</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-1">{stat.value}</p>
+                  <p className="text-sm font-medium text-gray-600">
+                    {stat.title}
+                  </p>
+                  <p className="text-3xl font-bold text-gray-900 mt-1">
+                    {stat.value}
+                  </p>
                   <div className="flex items-center mt-2">
                     {stat.trend === "up" ? (
                       <TrendingUp className="h-4 w-4 mr-1 text-green-500" />
@@ -311,7 +322,9 @@ export function QuoteManagement() {
                     >
                       {stat.change}
                     </span>
-                    <span className="text-sm text-gray-500 ml-1">from last week</span>
+                    <span className="text-sm text-gray-500 ml-1">
+                      from last week
+                    </span>
                   </div>
                 </div>
                 <div className={`p-3 rounded-lg ${stat.color}`}>
@@ -376,18 +389,28 @@ export function QuoteManagement() {
                         </div>
                         <div>
                           <div className="flex items-center space-x-3 mb-1">
-                            <h3 className="font-semibold text-gray-900">{quote.id}</h3>
+                            <h3 className="font-semibold text-gray-900">
+                              {quote.id}
+                            </h3>
                             {getStatusBadge(quote.status)}
                             {getPriorityBadge(quote.priority)}
                           </div>
-                          <p className="text-sm text-gray-600">{quote.customer}</p>
-                          <p className="text-sm text-gray-500">{quote.company}</p>
+                          <p className="text-sm text-gray-600">
+                            {quote.customer}
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            {quote.company}
+                          </p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="text-right mr-4">
-                          <p className="text-2xl font-bold text-royal-600">{quote.estimatedCost}</p>
-                          <p className="text-sm text-gray-500">Estimated Cost</p>
+                          <p className="text-2xl font-bold text-royal-600">
+                            {quote.estimatedCost}
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            Estimated Cost
+                          </p>
                         </div>
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
@@ -396,23 +419,33 @@ export function QuoteManagement() {
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent>
-                            <DropdownMenuItem onClick={() => setSelectedQuote(quote)}>
+                            <DropdownMenuItem
+                              onClick={() => setSelectedQuote(quote)}
+                            >
                               <Eye className="h-4 w-4 mr-2" />
                               View Details
                             </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => handleEditQuote(quote)}>
+                            <DropdownMenuItem
+                              onClick={() => handleEditQuote(quote)}
+                            >
                               <Edit className="h-4 w-4 mr-2" />
                               Edit Quote
                             </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => handleSendQuote(quote.id)}>
+                            <DropdownMenuItem
+                              onClick={() => handleSendQuote(quote.id)}
+                            >
                               <Send className="h-4 w-4 mr-2" />
                               Send Quote
                             </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => handleAcceptQuote(quote.id)}>
+                            <DropdownMenuItem
+                              onClick={() => handleAcceptQuote(quote.id)}
+                            >
                               <CheckCircle className="h-4 w-4 mr-2" />
                               Accept
                             </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => handleDeclineQuote(quote.id)}>
+                            <DropdownMenuItem
+                              onClick={() => handleDeclineQuote(quote.id)}
+                            >
                               <XCircle className="h-4 w-4 mr-2" />
                               Decline
                             </DropdownMenuItem>
@@ -428,14 +461,18 @@ export function QuoteManagement() {
                       </div>
                       <div>
                         <span className="text-sm text-gray-600">Route:</span>
-                        <p className="font-medium">{quote.origin} → {quote.destination}</p>
+                        <p className="font-medium">
+                          {quote.origin} → {quote.destination}
+                        </p>
                       </div>
                       <div>
                         <span className="text-sm text-gray-600">Weight:</span>
                         <p className="font-medium">{quote.weight}</p>
                       </div>
                       <div>
-                        <span className="text-sm text-gray-600">Valid Until:</span>
+                        <span className="text-sm text-gray-600">
+                          Valid Until:
+                        </span>
                         <p className="font-medium">{quote.validUntil}</p>
                       </div>
                     </div>
@@ -522,8 +559,12 @@ export function QuoteManagement() {
                         <SelectContent>
                           <SelectItem value="air">Air Freight</SelectItem>
                           <SelectItem value="ocean">Ocean Freight</SelectItem>
-                          <SelectItem value="ground">Ground Transport</SelectItem>
-                          <SelectItem value="express">Express Delivery</SelectItem>
+                          <SelectItem value="ground">
+                            Ground Transport
+                          </SelectItem>
+                          <SelectItem value="express">
+                            Express Delivery
+                          </SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -592,29 +633,31 @@ export function QuoteManagement() {
         <DialogContent className="sm:max-w-[700px]">
           <DialogHeader>
             <DialogTitle>
-              {selectedQuote ? `Edit Quote ${selectedQuote.id}` : "Create New Quote"}
+              {selectedQuote
+                ? `Edit Quote ${selectedQuote.id}`
+                : "Create New Quote"}
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="customer-name">Customer Name</Label>
-                <Input 
-                  id="customer-name" 
-                  defaultValue={selectedQuote?.customer} 
-                  placeholder="Customer name" 
+                <Input
+                  id="customer-name"
+                  defaultValue={selectedQuote?.customer}
+                  placeholder="Customer name"
                 />
               </div>
               <div>
                 <Label htmlFor="company">Company</Label>
-                <Input 
-                  id="company" 
-                  defaultValue={selectedQuote?.company} 
-                  placeholder="Company name" 
+                <Input
+                  id="company"
+                  defaultValue={selectedQuote?.company}
+                  placeholder="Company name"
                 />
               </div>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="service-type">Service Type</Label>
@@ -625,8 +668,12 @@ export function QuoteManagement() {
                   <SelectContent>
                     <SelectItem value="Air Freight">Air Freight</SelectItem>
                     <SelectItem value="Ocean Freight">Ocean Freight</SelectItem>
-                    <SelectItem value="Ground Transport">Ground Transport</SelectItem>
-                    <SelectItem value="Express Delivery">Express Delivery</SelectItem>
+                    <SelectItem value="Ground Transport">
+                      Ground Transport
+                    </SelectItem>
+                    <SelectItem value="Express Delivery">
+                      Express Delivery
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -649,18 +696,18 @@ export function QuoteManagement() {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="origin">Origin</Label>
-                <Input 
-                  id="origin" 
-                  defaultValue={selectedQuote?.origin} 
-                  placeholder="Origin location" 
+                <Input
+                  id="origin"
+                  defaultValue={selectedQuote?.origin}
+                  placeholder="Origin location"
                 />
               </div>
               <div>
                 <Label htmlFor="destination">Destination</Label>
-                <Input 
-                  id="destination" 
-                  defaultValue={selectedQuote?.destination} 
-                  placeholder="Destination location" 
+                <Input
+                  id="destination"
+                  defaultValue={selectedQuote?.destination}
+                  placeholder="Destination location"
                 />
               </div>
             </div>
@@ -668,36 +715,36 @@ export function QuoteManagement() {
             <div className="grid grid-cols-3 gap-4">
               <div>
                 <Label htmlFor="weight">Weight</Label>
-                <Input 
-                  id="weight" 
-                  defaultValue={selectedQuote?.weight} 
-                  placeholder="Weight" 
+                <Input
+                  id="weight"
+                  defaultValue={selectedQuote?.weight}
+                  placeholder="Weight"
                 />
               </div>
               <div>
                 <Label htmlFor="dimensions">Dimensions</Label>
-                <Input 
-                  id="dimensions" 
-                  defaultValue={selectedQuote?.dimensions} 
-                  placeholder="L x W x H" 
+                <Input
+                  id="dimensions"
+                  defaultValue={selectedQuote?.dimensions}
+                  placeholder="L x W x H"
                 />
               </div>
               <div>
                 <Label htmlFor="estimated-cost">Estimated Cost</Label>
-                <Input 
-                  id="estimated-cost" 
-                  defaultValue={selectedQuote?.estimatedCost} 
-                  placeholder="$0.00" 
+                <Input
+                  id="estimated-cost"
+                  defaultValue={selectedQuote?.estimatedCost}
+                  placeholder="$0.00"
                 />
               </div>
             </div>
 
             <div>
               <Label htmlFor="quote-notes">Notes</Label>
-              <Textarea 
-                id="quote-notes" 
-                defaultValue={selectedQuote?.notes} 
-                placeholder="Additional notes and requirements..." 
+              <Textarea
+                id="quote-notes"
+                defaultValue={selectedQuote?.notes}
+                placeholder="Additional notes and requirements..."
                 rows={3}
               />
             </div>
@@ -705,10 +752,10 @@ export function QuoteManagement() {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="valid-until">Valid Until</Label>
-                <Input 
-                  id="valid-until" 
-                  type="date" 
-                  defaultValue={selectedQuote?.validUntil} 
+                <Input
+                  id="valid-until"
+                  type="date"
+                  defaultValue={selectedQuote?.validUntil}
                 />
               </div>
               <div>
@@ -731,16 +778,17 @@ export function QuoteManagement() {
             <Button variant="outline" onClick={() => setIsEditQuoteOpen(false)}>
               Cancel
             </Button>
-            <Button onClick={handleSaveQuote}>
-              Save Quote
-            </Button>
+            <Button onClick={handleSaveQuote}>Save Quote</Button>
           </div>
         </DialogContent>
       </Dialog>
 
       {/* Quote Details Modal */}
       {selectedQuote && !isEditQuoteOpen && (
-        <Dialog open={!!selectedQuote} onOpenChange={() => setSelectedQuote(null)}>
+        <Dialog
+          open={!!selectedQuote}
+          onOpenChange={() => setSelectedQuote(null)}
+        >
           <DialogContent className="sm:max-w-[600px]">
             <DialogHeader>
               <DialogTitle>Quote Details - {selectedQuote.id}</DialogTitle>
@@ -750,30 +798,68 @@ export function QuoteManagement() {
                 <div>
                   <h4 className="font-semibold mb-2">Customer Information</h4>
                   <div className="space-y-2 text-sm">
-                    <div><span className="text-gray-600">Name:</span> {selectedQuote.customer}</div>
-                    <div><span className="text-gray-600">Company:</span> {selectedQuote.company}</div>
-                    <div><span className="text-gray-600">Email:</span> {selectedQuote.email}</div>
-                    <div><span className="text-gray-600">Phone:</span> {selectedQuote.phone}</div>
+                    <div>
+                      <span className="text-gray-600">Name:</span>{" "}
+                      {selectedQuote.customer}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Company:</span>{" "}
+                      {selectedQuote.company}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Email:</span>{" "}
+                      {selectedQuote.email}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Phone:</span>{" "}
+                      {selectedQuote.phone}
+                    </div>
                   </div>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Shipment Details</h4>
                   <div className="space-y-2 text-sm">
-                    <div><span className="text-gray-600">Service:</span> {selectedQuote.service}</div>
-                    <div><span className="text-gray-600">Weight:</span> {selectedQuote.weight}</div>
-                    <div><span className="text-gray-600">Dimensions:</span> {selectedQuote.dimensions}</div>
-                    <div><span className="text-gray-600">Value:</span> {selectedQuote.value}</div>
+                    <div>
+                      <span className="text-gray-600">Service:</span>{" "}
+                      {selectedQuote.service}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Weight:</span>{" "}
+                      {selectedQuote.weight}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Dimensions:</span>{" "}
+                      {selectedQuote.dimensions}
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Value:</span>{" "}
+                      {selectedQuote.value}
+                    </div>
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Route & Pricing</h4>
                 <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div><span className="text-gray-600">Origin:</span> {selectedQuote.origin}</div>
-                  <div><span className="text-gray-600">Destination:</span> {selectedQuote.destination}</div>
-                  <div><span className="text-gray-600">Estimated Cost:</span> <span className="font-bold text-royal-600">{selectedQuote.estimatedCost}</span></div>
-                  <div><span className="text-gray-600">Valid Until:</span> {selectedQuote.validUntil}</div>
+                  <div>
+                    <span className="text-gray-600">Origin:</span>{" "}
+                    {selectedQuote.origin}
+                  </div>
+                  <div>
+                    <span className="text-gray-600">Destination:</span>{" "}
+                    {selectedQuote.destination}
+                  </div>
+                  <div>
+                    <span className="text-gray-600">Estimated Cost:</span>{" "}
+                    <span className="font-bold text-royal-600">
+                      {selectedQuote.estimatedCost}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-gray-600">Valid Until:</span>{" "}
+                    {selectedQuote.validUntil}
+                  </div>
                 </div>
               </div>
 
@@ -788,7 +874,9 @@ export function QuoteManagement() {
               {selectedQuote.notes && (
                 <div>
                   <h4 className="font-semibold mb-2">Notes</h4>
-                  <p className="text-gray-600 bg-gray-50 p-3 rounded-lg">{selectedQuote.notes}</p>
+                  <p className="text-gray-600 bg-gray-50 p-3 rounded-lg">
+                    {selectedQuote.notes}
+                  </p>
                 </div>
               )}
             </div>
