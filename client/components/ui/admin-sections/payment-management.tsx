@@ -425,10 +425,25 @@ export function PaymentManagement() {
                       </div>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Button variant="outline" size="sm">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => toast({
+                          title: "Edit Currency",
+                          description: `Opening edit form for ${currency.name}...`,
+                        })}
+                      >
                         <Edit className="h-4 w-4" />
                       </Button>
-                      <Button variant="outline" size="sm">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => toast({
+                          title: "Delete Currency",
+                          description: `Are you sure you want to delete ${currency.name}?`,
+                          variant: "destructive",
+                        })}
+                      >
                         <Trash2 className="h-4 w-4" />
                       </Button>
                     </div>
