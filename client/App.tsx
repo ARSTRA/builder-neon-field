@@ -83,6 +83,16 @@ const App = () => (
             }
           />
           <Route
+            path="/gallery"
+            element={
+              <div className="min-h-screen bg-white">
+                <Navigation />
+                <Gallery />
+                <ChatWidget />
+              </div>
+            }
+          />
+          <Route
             path="/chat"
             element={
               <div className="min-h-screen bg-white">
