@@ -289,9 +289,10 @@ export function TrackingManagement() {
 
       {/* Main Content Tabs */}
       <Tabs defaultValue="shipments" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="shipments">All Shipments</TabsTrigger>
           <TabsTrigger value="tracking">Live Tracking</TabsTrigger>
+          <TabsTrigger value="locations">Location Management</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
         </TabsList>
 
