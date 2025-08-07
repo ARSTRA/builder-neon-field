@@ -538,6 +538,398 @@ export function TrackingManagement() {
             </Card>
           </div>
         </TabsContent>
+
+        {/* Location Management Tab */}
+        <TabsContent value="locations" className="space-y-6">
+          <div className="grid lg:grid-cols-3 gap-6">
+            {/* Location Update Form */}
+            <div className="lg:col-span-2">
+              <Card className="border-0 shadow-lg">
+                <CardHeader>
+                  <CardTitle>Update Shipment Location</CardTitle>
+                  <p className="text-sm text-gray-600">
+                    Manually update the current location and status of shipments
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  {/* Shipment Selection */}
+                  <div>
+                    <Label htmlFor="shipment-select">Select Shipment</Label>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Choose shipment to update" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {shipments.map((shipment) => (
+                          <SelectItem key={shipment.id} value={shipment.id}>
+                            {shipment.id} - {shipment.customer}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Current Location Display */}
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <MapPin className="h-5 w-5 text-blue-600" />
+                      <span className="font-medium text-blue-900">Current Location</span>
+                    </div>
+                    <p className="text-blue-800">Frankfurt Hub, Germany</p>
+                    <p className="text-sm text-blue-600">Last updated: 2024-12-15 14:30</p>
+                  </div>
+
+                  {/* Location Update Form */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="new-location">New Location</Label>
+                      <Input
+                        id="new-location"
+                        placeholder="e.g., London Heathrow Airport"
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="location-type">Location Type</Label>
+                      <Select>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select type" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="hub">Distribution Hub</SelectItem>
+                          <SelectItem value="airport">Airport</SelectItem>
+                          <SelectItem value="port">Seaport</SelectItem>
+                          <SelectItem value="warehouse">Warehouse</SelectItem>
+                          <SelectItem value="customs">Customs Office</SelectItem>
+                          <SelectItem value="delivery">Delivery Center</SelectItem>
+                          <SelectItem value="transit">In Transit</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="country">Country</Label>
+                      <Select>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select country" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="US">United States</SelectItem>
+                          <SelectItem value="UK">United Kingdom</SelectItem>
+                          <SelectItem value="DE">Germany</SelectItem>
+                          <SelectItem value="FR">France</SelectItem>
+                          <SelectItem value="JP">Japan</SelectItem>
+                          <SelectItem value="CN">China</SelectItem>
+                          <SelectItem value="BR">Brazil</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div>
+                      <Label htmlFor="city">City</Label>
+                      <Input id="city" placeholder="e.g., London" />
+                    </div>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="coordinates">GPS Coordinates (Optional)</Label>
+                    <div className="grid grid-cols-2 gap-2">
+                      <Input placeholder="Latitude (e.g., 51.4700)" />
+                      <Input placeholder="Longitude (e.g., -0.4543)" />
+                    </div>
+                  </div>
+
+                  {/* Status Update */}
+                  <div>
+                    <Label htmlFor="status-update">Update Status</Label>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select new status" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="departed">Departed from Location</SelectItem>
+                        <SelectItem value="arrived">Arrived at Location</SelectItem>
+                        <SelectItem value="processing">Processing at Location</SelectItem>
+                        <SelectItem value="customs">Customs Clearance</SelectItem>
+                        <SelectItem value="delayed">Delayed at Location</SelectItem>
+                        <SelectItem value="out_for_delivery">Out for Delivery</SelectItem>
+                        <SelectItem value="delivered">Delivered</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Additional Notes */}
+                  <div>
+                    <Label htmlFor="location-notes">Additional Notes</Label>
+                    <Textarea
+                      id="location-notes"
+                      placeholder="Add any additional information about the location update..."
+                      rows={3}
+                    />
+                  </div>
+
+                  {/* Estimated Times */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="departure-time">Estimated Departure</Label>
+                      <Input type="datetime-local" id="departure-time" />
+                    </div>
+                    <div>
+                      <Label htmlFor="arrival-time">Estimated Next Arrival</Label>
+                      <Input type="datetime-local" id="arrival-time" />
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex space-x-3 pt-4">
+                    <Button
+                      className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+                      onClick={() => toast({
+                        title: "Location Updated",
+                        description: "Shipment location has been updated successfully.",
+                      })}
+                    >
+                      <MapPin className="h-4 w-4 mr-2" />
+                      Update Location
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={() => toast({
+                        title: "Notification Sent",
+                        description: "Customer has been notified of the location update.",
+                      })}
+                    >
+                      <Bell className="h-4 w-4 mr-2" />
+                      Notify Customer
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={() => toast({
+                        title: "GPS Tracking",
+                        description: "Real-time GPS tracking has been activated.",
+                      })}
+                    >
+                      <Navigation className="h-4 w-4 mr-2" />
+                      Enable GPS
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Location History & Map */}
+            <div className="space-y-6">
+              {/* Recent Location Updates */}
+              <Card className="border-0 shadow-lg">
+                <CardHeader>
+                  <CardTitle>Recent Location Updates</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {trackingEvents.slice(0, 3).map((event) => (
+                      <div key={event.id} className="flex items-start space-x-3 p-3 border rounded-lg">
+                        <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mt-1">
+                          {event.icon}
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-medium text-gray-900">{event.status}</h4>
+                          <p className="text-sm text-gray-600">{event.location}</p>
+                          <div className="flex items-center space-x-2 mt-1 text-xs text-gray-500">
+                            <Clock className="h-3 w-3" />
+                            <span>{event.timestamp}</span>
+                          </div>
+                        </div>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => toast({
+                            title: "Editing Location",
+                            description: `Editing location update for ${event.shipmentId}...`,
+                          })}
+                        >
+                          <Edit className="h-3 w-3" />
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Location Analytics */}
+              <Card className="border-0 shadow-lg">
+                <CardHeader>
+                  <CardTitle>Location Insights</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-600">Most Active Hub</span>
+                      <span className="font-medium">Frankfurt Hub</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-600">Average Transit Time</span>
+                      <span className="font-medium">3.2 days</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-600">Delayed Shipments</span>
+                      <span className="font-medium text-red-600">2.3%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-600">GPS Coverage</span>
+                      <span className="font-medium text-green-600">98.7%</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Quick Location Actions */}
+              <Card className="border-0 shadow-lg">
+                <CardHeader>
+                  <CardTitle>Quick Actions</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start"
+                    onClick={() => toast({
+                      title: "Bulk Update",
+                      description: "Opening bulk location update tool...",
+                    })}
+                  >
+                    <Package className="h-4 w-4 mr-2" />
+                    Bulk Location Update
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start"
+                    onClick={() => toast({
+                      title: "Route Optimization",
+                      description: "Analyzing optimal routes for pending shipments...",
+                    })}
+                  >
+                    <Navigation className="h-4 w-4 mr-2" />
+                    Optimize Routes
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start"
+                    onClick={() => toast({
+                      title: "Location Report",
+                      description: "Generating location analytics report...",
+                    })}
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Generate Report
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start"
+                    onClick={() => toast({
+                      title: "Hub Management",
+                      description: "Opening distribution hub management...",
+                    })}
+                  >
+                    <MapPin className="h-4 w-4 mr-2" />
+                    Manage Hubs
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Advanced Location Management */}
+          <Card className="border-0 shadow-lg">
+            <CardHeader>
+              <CardTitle>Advanced Location Management</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid lg:grid-cols-2 gap-6">
+                {/* Geofencing */}
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-gray-900">Geofencing & Alerts</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between p-3 border rounded-lg">
+                      <div>
+                        <p className="font-medium">Airport Security Zones</p>
+                        <p className="text-sm text-gray-600">Automatic notifications for restricted areas</p>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span className="text-sm text-green-600">Active</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between p-3 border rounded-lg">
+                      <div>
+                        <p className="font-medium">Customs Boundaries</p>
+                        <p className="text-sm text-gray-600">Track customs clearance zones</p>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span className="text-sm text-green-600">Active</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between p-3 border rounded-lg">
+                      <div>
+                        <p className="font-medium">Weather Alerts</p>
+                        <p className="text-sm text-gray-600">Monitor weather-related delays</p>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <span className="text-sm text-yellow-600">Warning</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Location Templates */}
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-gray-900">Location Templates</h4>
+                  <div className="space-y-3">
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start h-auto p-3"
+                      onClick={() => toast({
+                        title: "Template Applied",
+                        description: "Standard hub routing template has been applied.",
+                      })}
+                    >
+                      <div className="text-left">
+                        <p className="font-medium">Standard Hub Routing</p>
+                        <p className="text-sm text-gray-600">Common distribution center path</p>
+                      </div>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start h-auto p-3"
+                      onClick={() => toast({
+                        title: "Template Applied",
+                        description: "Express delivery route template has been applied.",
+                      })}
+                    >
+                      <div className="text-left">
+                        <p className="font-medium">Express Delivery Route</p>
+                        <p className="text-sm text-gray-600">Direct routing for urgent shipments</p>
+                      </div>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start h-auto p-3"
+                      onClick={() => toast({
+                        title: "Template Applied",
+                        description: "International customs route template has been applied.",
+                      })}
+                    >
+                      <div className="text-left">
+                        <p className="font-medium">International Customs</p>
+                        <p className="text-sm text-gray-600">Standard customs clearance path</p>
+                      </div>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
       </Tabs>
 
       {/* Create Shipment Modal */}
