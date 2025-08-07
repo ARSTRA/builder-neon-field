@@ -141,18 +141,111 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <section className="bg-gradient-to-br from-royal-600 to-royal-800 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6">
-              Operations <span className="text-orange-400">Gallery</span>
+      {/* Enhanced Hero Section */}
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Professional Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            alt="Global logistics operations"
+            className="w-full h-full object-cover"
+          />
+          {/* Multi-layer Overlay for Better Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-royal-900/85 via-royal-800/75 to-royal-700/80"></div>
+          <div className="absolute inset-0 bg-black/20"></div>
+        </div>
+
+        {/* Animated Background Elements */}
+        <div className="absolute top-20 left-20 w-24 h-24 bg-orange-500/20 rounded-full animate-bounce-slow"></div>
+        <div className="absolute bottom-32 right-16 w-16 h-16 bg-white/10 rounded-full animate-pulse-soft"></div>
+        <div className="absolute top-1/3 right-1/4 w-20 h-20 bg-orange-400/15 rounded-full animate-bounce-slow" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute bottom-20 left-1/3 w-12 h-12 bg-white/15 rounded-full animate-pulse-soft" style={{animationDelay: '0.8s'}}></div>
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <div className="max-w-5xl mx-auto">
+            {/* Icon Badge */}
+            <div className="inline-flex items-center justify-center p-4 bg-orange-500/20 backdrop-blur-sm rounded-full mb-8 animate-fade-in">
+              <div className="flex items-center space-x-2">
+                <Globe className="h-8 w-8 text-orange-400" />
+                <Plane className="h-6 w-6 text-white" />
+                <Ship className="h-6 w-6 text-white" />
+                <Truck className="h-6 w-6 text-white" />
+              </div>
+            </div>
+
+            {/* Main Heading */}
+            <h1 className="text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-delay">
+              <span className="text-white">Operations</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 mt-2">
+                Gallery
+              </span>
             </h1>
-            <p className="text-xl text-gray-200 leading-relaxed">
-              Explore our world-class logistics operations across the globe. From state-of-the-art 
-              facilities to cutting-edge transportation, see how GlobalTrack delivers excellence.
+
+            {/* Subtitle */}
+            <p className="text-2xl lg:text-3xl text-gray-200 mb-6 font-light animate-slide-up">
+              World-Class Logistics in Action
             </p>
+
+            {/* Description */}
+            <p className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12 animate-slide-up">
+              Explore our state-of-the-art facilities, cutting-edge transportation network, and
+              professional operations across the globe. See how GlobalTrack delivers excellence
+              through innovation, technology, and expertise.
+            </p>
+
+            {/* Stats Bar */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12 animate-fade-in">
+              <div className="text-center group cursor-pointer">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 group-hover:bg-white/20 transition-all duration-300 transform group-hover:-translate-y-2">
+                  <div className="text-4xl font-bold text-orange-400 mb-2">50+</div>
+                  <div className="text-sm text-gray-300">Global Facilities</div>
+                </div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 group-hover:bg-white/20 transition-all duration-300 transform group-hover:-translate-y-2">
+                  <div className="text-4xl font-bold text-orange-400 mb-2">24/7</div>
+                  <div className="text-sm text-gray-300">Operations</div>
+                </div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 group-hover:bg-white/20 transition-all duration-300 transform group-hover:-translate-y-2">
+                  <div className="text-4xl font-bold text-orange-400 mb-2">120+</div>
+                  <div className="text-sm text-gray-300">Countries</div>
+                </div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 group-hover:bg-white/20 transition-all duration-300 transform group-hover:-translate-y-2">
+                  <div className="text-4xl font-bold text-orange-400 mb-2">1M+</div>
+                  <div className="text-sm text-gray-300">Shipments</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up">
+              <div className="text-center">
+                <p className="text-gray-300 mb-4">Browse by category below</p>
+                <div className="flex items-center justify-center space-x-2 text-orange-400">
+                  <span className="text-sm">Scroll to explore</span>
+                  <div className="animate-bounce">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        {/* Floating Elements for Visual Interest */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Geometric shapes */}
+          <div className="absolute top-1/4 left-10 w-1 h-20 bg-orange-500/30 transform rotate-45 animate-pulse-soft"></div>
+          <div className="absolute bottom-1/4 right-10 w-1 h-16 bg-white/20 transform -rotate-45 animate-pulse-soft" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-orange-400 rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-white rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
         </div>
       </section>
 
