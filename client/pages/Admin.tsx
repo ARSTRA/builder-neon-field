@@ -659,82 +659,10 @@ export default function Admin() {
             {currentView === "dashboard" && renderDashboard()}
             {currentView === "users" && <UserManagement />}
             {currentView === "chat" && <ChatManagement />}
-            {currentView === "payments" && (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CreditCard className="h-8 w-8 text-gray-400" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Payment & Currency Management
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Payment management interface is being loaded...
-                </p>
-                <Button
-                  onClick={() => setCurrentView("dashboard")}
-                  variant="outline"
-                >
-                  Back to Dashboard
-                </Button>
-              </div>
-            )}
-            {currentView === "tracking" && (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Package className="h-8 w-8 text-gray-400" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Tracking Management
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Tracking management interface is being loaded...
-                </p>
-                <Button
-                  onClick={() => setCurrentView("dashboard")}
-                  variant="outline"
-                >
-                  Back to Dashboard
-                </Button>
-              </div>
-            )}
-            {currentView === "contacts" && (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Mail className="h-8 w-8 text-gray-400" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Contact Management
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Contact management interface is being loaded...
-                </p>
-                <Button
-                  onClick={() => setCurrentView("dashboard")}
-                  variant="outline"
-                >
-                  Back to Dashboard
-                </Button>
-              </div>
-            )}
-            {currentView === "general" && (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Settings className="h-8 w-8 text-gray-400" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  General Settings
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  General settings interface is being loaded...
-                </p>
-                <Button
-                  onClick={() => setCurrentView("dashboard")}
-                  variant="outline"
-                >
-                  Back to Dashboard
-                </Button>
-              </div>
-            )}
+            {currentView === "payments" && <PaymentManagement />}
+            {currentView === "tracking" && <TrackingManagement />}
+            {currentView === "contacts" && <ContactManagement />}
+            {currentView === "general" && <GeneralSettings />}
           </div>
         </div>
       </div>
