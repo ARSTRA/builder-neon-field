@@ -21,26 +21,6 @@ export function Navigation() {
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
-      {/* Top Contact Bar */}
-      <div className="bg-royal-600 text-white py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <Phone className="h-4 w-4" />
-              <span>+1 (555) 123-4567</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Mail className="h-4 w-4" />
-              <span>info@globaltrack.com</span>
-            </div>
-          </div>
-          <div className="flex items-center space-x-1">
-            <MapPin className="h-4 w-4" />
-            <span>Global Shipping Solutions</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation */}
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
