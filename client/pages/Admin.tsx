@@ -67,6 +67,10 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { UserManagement } from "@/components/ui/admin-sections/user-management";
 import { ChatManagement } from "@/components/ui/admin-sections/chat-management";
+import { PaymentManagement } from "@/components/ui/admin-sections/payment-management";
+import { TrackingManagement } from "@/components/ui/admin-sections/tracking-management";
+import { ContactManagement } from "@/components/ui/admin-sections/contact-management";
+import { GeneralSettings } from "@/components/ui/admin-sections/general-settings";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Admin() {
