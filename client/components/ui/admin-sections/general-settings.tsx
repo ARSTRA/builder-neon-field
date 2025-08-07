@@ -697,7 +697,13 @@ export function GeneralSettings() {
               </div>
 
               <div className="flex items-center space-x-3">
-                <Button variant="outline">
+                <Button
+                  variant="outline"
+                  onClick={() => toast({
+                    title: "Upload Logo",
+                    description: "File upload dialog would open here to select new logo.",
+                  })}
+                >
                   <Upload className="h-4 w-4 mr-2" />
                   Upload Logo
                 </Button>
