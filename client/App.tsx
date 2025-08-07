@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "./components/ui/navigation";
 import { ChatWidget } from "./components/ui/chat-widget";
+import { ScrollToTop } from "./components/ui/scroll-to-top";
 import Index from "./pages/Index";
 import Track from "./pages/Track";
 import Services from "./pages/Services";
