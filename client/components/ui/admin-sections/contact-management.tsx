@@ -464,13 +464,35 @@ export function ContactManagement() {
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="font-semibold text-gray-900">{template.name}</h3>
                       <div className="flex items-center space-x-2">
-                        <Button variant="outline" size="sm">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => toast({
+                            title: "Edit Template",
+                            description: `Opening edit form for ${template.name}...`,
+                          })}
+                        >
                           <Edit className="h-4 w-4" />
                         </Button>
-                        <Button variant="outline" size="sm">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => toast({
+                            title: "Preview Template",
+                            description: `Showing preview for ${template.name}...`,
+                          })}
+                        >
                           <Eye className="h-4 w-4" />
                         </Button>
-                        <Button variant="outline" size="sm">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => toast({
+                            title: "Delete Template",
+                            description: `Are you sure you want to delete ${template.name}?`,
+                            variant: "destructive",
+                          })}
+                        >
                           <Trash2 className="h-4 w-4" />
                         </Button>
                       </div>
