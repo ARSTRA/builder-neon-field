@@ -519,6 +519,62 @@ export function PaymentManagement() {
         </TabsContent>
       </Tabs>
 
+      {/* Add Payment Method Modal */}
+      <Dialog open={isPaymentMethodOpen} onOpenChange={setIsPaymentMethodOpen}>
+        <DialogContent className="sm:max-w-[500px]">
+          <DialogHeader>
+            <DialogTitle>Add Payment Method</DialogTitle>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div>
+              <Label htmlFor="method-name">Method Name</Label>
+              <Input id="method-name" placeholder="e.g., Credit Cards" />
+            </div>
+            <div>
+              <Label htmlFor="provider">Provider</Label>
+              <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select provider" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="stripe">Stripe</SelectItem>
+                  <SelectItem value="paypal">PayPal</SelectItem>
+                  <SelectItem value="square">Square</SelectItem>
+                  <SelectItem value="ach">ACH Bank Transfer</SelectItem>
+                  <SelectItem value="wire">Wire Transfer</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <Label htmlFor="processing-fees">Processing Fees</Label>
+              <Input id="processing-fees" placeholder="e.g., 2.9% + $0.30" />
+            </div>
+            <div>
+              <Label htmlFor="supported-currencies">Supported Currencies</Label>
+              <Input id="supported-currencies" placeholder="e.g., USD, EUR, GBP" />
+            </div>
+            <div className="flex items-center space-x-2">
+              <Switch id="method-active" defaultChecked />
+              <Label htmlFor="method-active">Enable this payment method</Label>
+            </div>
+          </div>
+          <div className="flex justify-end space-x-2">
+            <Button variant="outline" onClick={() => setIsPaymentMethodOpen(false)}>
+              Cancel
+            </Button>
+            <Button onClick={() => {
+              toast({
+                title: "Payment Method Added",
+                description: "New payment method has been added successfully.",
+              });
+              setIsPaymentMethodOpen(false);
+            }}>
+              Add Method
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
       {/* Add Currency Modal */}
       <Dialog open={isAddCurrencyOpen} onOpenChange={setIsAddCurrencyOpen}>
         <DialogContent className="sm:max-w-[425px]">
