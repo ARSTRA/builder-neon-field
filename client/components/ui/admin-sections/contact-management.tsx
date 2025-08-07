@@ -564,11 +564,11 @@ export function ContactManagement() {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <Label htmlFor="email-notifications">Email Notifications</Label>
-                    <input type="checkbox" id="email-notifications" defaultChecked />
+                    <Switch id="email-notifications" defaultChecked />
                   </div>
                   <div className="flex items-center justify-between">
                     <Label htmlFor="escalation-alerts">Escalation Alerts</Label>
-                    <input type="checkbox" id="escalation-alerts" defaultChecked />
+                    <Switch id="escalation-alerts" defaultChecked />
                   </div>
                 </div>
               </div>
