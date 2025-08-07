@@ -14,6 +14,7 @@ export function Navigation() {
     { href: "/", label: "Home" },
     { href: "/track", label: "Track Package" },
     { href: "/services", label: "Services" },
+    { href: "/gallery", label: "Gallery" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact" },
     { href: "/chat", label: "Live Chat" },
