@@ -550,7 +550,7 @@ export function ContactManagement() {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <Label htmlFor="auto-response">Enable Auto-Response</Label>
-                    <input type="checkbox" id="auto-response" defaultChecked />
+                    <Switch id="auto-response" defaultChecked />
                   </div>
                   <div>
                     <Label htmlFor="response-time">Target Response Time (hours)</Label>
