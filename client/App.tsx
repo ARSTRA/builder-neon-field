@@ -13,6 +13,7 @@ import Track from "./pages/Track";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
 import LiveChat from "./pages/LiveChat";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
