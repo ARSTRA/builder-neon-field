@@ -117,6 +117,12 @@ export default function Admin() {
       color: "text-orange-600",
     },
     {
+      id: "quotes",
+      label: "Quote Management",
+      icon: <BarChart3 className="h-5 w-5" />,
+      color: "text-indigo-600",
+    },
+    {
       id: "chat",
       label: "Live Chat Support",
       icon: <MessageSquare className="h-5 w-5" />,
