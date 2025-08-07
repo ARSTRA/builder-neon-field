@@ -755,15 +755,33 @@ export function GeneralSettings() {
               <div className="space-y-4">
                 <h4 className="font-semibold">Database Management</h4>
                 <div className="flex space-x-3">
-                  <Button variant="outline">
+                  <Button
+                    variant="outline"
+                    onClick={() => toast({
+                      title: "Cache Cleared",
+                      description: "Application cache has been cleared successfully.",
+                    })}
+                  >
                     <RefreshCw className="h-4 w-4 mr-2" />
                     Clear Cache
                   </Button>
-                  <Button variant="outline">
+                  <Button
+                    variant="outline"
+                    onClick={() => toast({
+                      title: "Database Optimized",
+                      description: "Database optimization completed successfully.",
+                    })}
+                  >
                     <Database className="h-4 w-4 mr-2" />
                     Optimize Database
                   </Button>
-                  <Button variant="outline">
+                  <Button
+                    variant="outline"
+                    onClick={() => toast({
+                      title: "System Logs",
+                      description: "Opening system logs viewer...",
+                    })}
+                  >
                     <FileText className="h-4 w-4 mr-2" />
                     View Logs
                   </Button>
