@@ -323,7 +323,13 @@ export function TrackingManagement() {
                       <SelectItem value="delayed">Delayed</SelectItem>
                     </SelectContent>
                   </Select>
-                  <Button variant="outline">
+                  <Button
+                    variant="outline"
+                    onClick={() => toast({
+                      title: "Exporting Shipments",
+                      description: "Shipment data is being exported to CSV format...",
+                    })}
+                  >
                     <Download className="h-4 w-4 mr-2" />
                     Export
                   </Button>
