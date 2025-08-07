@@ -582,7 +582,15 @@ export default function Admin() {
 
             {/* User Menu */}
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="sm" className="relative">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="relative"
+                onClick={() => toast({
+                  title: "Notifications",
+                  description: "You have 5 new notifications to review.",
+                })}
+              >
                 <Bell className="h-5 w-5" />
                 <span className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
                   5
