@@ -19,6 +19,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { validateAdminCredentials } from "@shared/admin-config";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
