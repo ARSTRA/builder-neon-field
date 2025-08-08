@@ -397,9 +397,10 @@ export function ContactManagement() {
                         <Avatar className="h-12 w-12">
                           <AvatarFallback>
                             {contact.name
-                              .split(" ")
-                              .map((n) => n[0])
-                              .join("")}
+                              ? contact.name.split(" ")
+                                  .map((n) => n ? n[0] : "")
+                                  .join("")
+                              : "C"}
                           </AvatarFallback>
                         </Avatar>
                         <div className="flex-1">
