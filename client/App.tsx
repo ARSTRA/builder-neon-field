@@ -116,6 +116,17 @@ export default function App() {
                   </div>
                 }
               />
+              <Route
+                path="/chat"
+                element={
+                  <div className="min-h-screen bg-white">
+                    <Navigation />
+                    <LiveChat />
+                    <SimpleChatWidget />
+                    <Footer />
+                  </div>
+                }
+              />
 
               {/* Auth pages without navigation */}
               <Route path="/login" element={<SimpleLogin />} />
