@@ -576,22 +576,21 @@ export default function Services() {
                     {service.title}
                   </h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
-                  <div className="flex gap-2">
+                  <div className="flex gap-3">
                     <Button
                       onClick={() => setIsQuoteModalOpen(true)}
                       variant="outline"
-                      className="flex-1 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 font-semibold"
+                      className="group flex-1 border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] rounded-lg"
                     >
                       Get Quote
-                      <ArrowRight className="h-4 w-4 ml-2" />
+                      <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
                     <Link to="/contact">
                       <Button
-                        size="sm"
-                        className="bg-orange-500 hover:bg-orange-600 text-white px-4 shadow-md hover:shadow-lg transition-all duration-300"
+                        className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] rounded-lg font-semibold"
                       >
-                        <Phone className="h-4 w-4 mr-1" />
-                        Call
+                        <Phone className="h-4 w-4 mr-2 group-hover:animate-pulse" />
+                        Call Expert
                       </Button>
                     </Link>
                   </div>
