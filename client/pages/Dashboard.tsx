@@ -42,6 +42,7 @@ export default function Dashboard() {
   const [currentView, setCurrentView] = useState("overview");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [userEmail] = useState(localStorage.getItem("userEmail") || "");
+  const { notifications, markAsRead, markAllAsRead, clearAll } = useNotifications("user");
 
   useEffect(() => {
     // Check if user is logged in
