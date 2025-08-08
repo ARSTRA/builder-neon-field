@@ -89,6 +89,49 @@ export function GeneralSettings() {
       logoUrl: "/logo.png",
       faviconUrl: "/favicon.ico",
     },
+    socialMedia: {
+      enableInFooter: true,
+      enableInHeader: true,
+      enableSharing: true,
+      platforms: {
+        facebook: {
+          enabled: true,
+          url: "https://facebook.com/globaltracklogistics",
+          displayInFooter: true,
+          displayInHeader: false,
+        },
+        twitter: {
+          enabled: true,
+          url: "https://twitter.com/globaltrack",
+          displayInFooter: true,
+          displayInHeader: true,
+        },
+        instagram: {
+          enabled: true,
+          url: "https://instagram.com/globaltrack_logistics",
+          displayInFooter: true,
+          displayInHeader: false,
+        },
+        linkedin: {
+          enabled: true,
+          url: "https://linkedin.com/company/globaltrack-logistics",
+          displayInFooter: true,
+          displayInHeader: false,
+        },
+        youtube: {
+          enabled: true,
+          url: "https://youtube.com/@globaltracklogistics",
+          displayInFooter: true,
+          displayInHeader: false,
+        },
+        whatsapp: {
+          enabled: true,
+          url: "https://wa.me/15551234567",
+          displayInFooter: true,
+          displayInHeader: true,
+        },
+      },
+    },
   });
 
   const handleSave = (section: string) => {
