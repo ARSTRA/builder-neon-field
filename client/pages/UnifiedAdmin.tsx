@@ -130,7 +130,7 @@ export default function UnifiedAdmin() {
     // Handle URL parameters for view
     const urlParams = new URLSearchParams(window.location.search);
     const viewParam = urlParams.get("view");
-    if (viewParam && sidebarItems.some(item => item.id === viewParam)) {
+    if (viewParam && sidebarItems.some((item) => item.id === viewParam)) {
       setCurrentView(viewParam);
     }
   }, [navigate]);
@@ -271,12 +271,36 @@ export default function UnifiedAdmin() {
   ];
 
   const categories = [
-    { id: "overview", label: "Overview & Analytics", icon: <Activity className="h-4 w-4" /> },
-    { id: "management", label: "User & Customer Management", icon: <Users className="h-4 w-4" /> },
-    { id: "operations", label: "Operations & Logistics", icon: <Truck className="h-4 w-4" /> },
-    { id: "financial", label: "Financial Management", icon: <DollarSign className="h-4 w-4" /> },
-    { id: "communication", label: "Communication & Support", icon: <Headphones className="h-4 w-4" /> },
-    { id: "system", label: "System & Configuration", icon: <Settings className="h-4 w-4" /> },
+    {
+      id: "overview",
+      label: "Overview & Analytics",
+      icon: <Activity className="h-4 w-4" />,
+    },
+    {
+      id: "management",
+      label: "User & Customer Management",
+      icon: <Users className="h-4 w-4" />,
+    },
+    {
+      id: "operations",
+      label: "Operations & Logistics",
+      icon: <Truck className="h-4 w-4" />,
+    },
+    {
+      id: "financial",
+      label: "Financial Management",
+      icon: <DollarSign className="h-4 w-4" />,
+    },
+    {
+      id: "communication",
+      label: "Communication & Support",
+      icon: <Headphones className="h-4 w-4" />,
+    },
+    {
+      id: "system",
+      label: "System & Configuration",
+      icon: <Settings className="h-4 w-4" />,
+    },
   ];
 
   const handleLogout = () => {
@@ -287,7 +311,8 @@ export default function UnifiedAdmin() {
     localStorage.removeItem("adminName");
     toast({
       title: "Logged Out",
-      description: "You have been successfully logged out from admin control center.",
+      description:
+        "You have been successfully logged out from admin control center.",
     });
     navigate("/login");
   };
@@ -300,7 +325,8 @@ export default function UnifiedAdmin() {
     setTimeout(() => {
       toast({
         title: "Report Ready",
-        description: "Comprehensive admin report has been downloaded successfully.",
+        description:
+          "Comprehensive admin report has been downloaded successfully.",
       });
     }, 2000);
   };
@@ -373,7 +399,8 @@ export default function UnifiedAdmin() {
             Unified Admin Control Center
           </h1>
           <p className="text-gray-600">
-            Complete management and oversight of GlobalTrack Logistics operations
+            Complete management and oversight of GlobalTrack Logistics
+            operations
           </p>
           <div className="flex items-center space-x-4 mt-2">
             <Badge className="bg-green-100 text-green-800">
@@ -404,7 +431,10 @@ export default function UnifiedAdmin() {
       {/* Comprehensive Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
         {comprehensiveStats.map((stat, index) => (
-          <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+          <Card
+            key={index}
+            className="border-0 shadow-lg hover:shadow-xl transition-shadow"
+          >
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div className="flex-1">
@@ -446,7 +476,7 @@ export default function UnifiedAdmin() {
             </CardHeader>
             <CardContent className="space-y-2">
               {sidebarItems
-                .filter(item => item.category === category.id)
+                .filter((item) => item.category === category.id)
                 .map((item) => (
                   <Button
                     key={item.id}
@@ -454,9 +484,7 @@ export default function UnifiedAdmin() {
                     className="w-full justify-start text-left h-auto py-3"
                     onClick={() => setCurrentView(item.id)}
                   >
-                    <div className={`mr-3 ${item.color}`}>
-                      {item.icon}
-                    </div>
+                    <div className={`mr-3 ${item.color}`}>{item.icon}</div>
                     <div className="flex-1">
                       <div className="font-medium">{item.label}</div>
                     </div>
@@ -516,8 +544,12 @@ export default function UnifiedAdmin() {
                 <div className="flex items-center space-x-3">
                   <Users className="h-5 w-5 text-blue-600" />
                   <div>
-                    <p className="font-medium text-gray-900">New User Registration</p>
-                    <p className="text-sm text-gray-600">john.doe@example.com</p>
+                    <p className="font-medium text-gray-900">
+                      New User Registration
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      john.doe@example.com
+                    </p>
                   </div>
                 </div>
                 <span className="text-xs text-gray-500">2 min ago</span>
@@ -526,8 +558,12 @@ export default function UnifiedAdmin() {
                 <div className="flex items-center space-x-3">
                   <Package className="h-5 w-5 text-green-600" />
                   <div>
-                    <p className="font-medium text-gray-900">Shipment Delivered</p>
-                    <p className="text-sm text-gray-600">GT240156 - New York, NY</p>
+                    <p className="font-medium text-gray-900">
+                      Shipment Delivered
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      GT240156 - New York, NY
+                    </p>
                   </div>
                 </div>
                 <span className="text-xs text-gray-500">5 min ago</span>
@@ -536,8 +572,12 @@ export default function UnifiedAdmin() {
                 <div className="flex items-center space-x-3">
                   <DollarSign className="h-5 w-5 text-purple-600" />
                   <div>
-                    <p className="font-medium text-gray-900">Payment Processed</p>
-                    <p className="text-sm text-gray-600">$2,450.00 - Invoice #INV-001</p>
+                    <p className="font-medium text-gray-900">
+                      Payment Processed
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      $2,450.00 - Invoice #INV-001
+                    </p>
                   </div>
                 </div>
                 <span className="text-xs text-gray-500">8 min ago</span>
@@ -552,7 +592,9 @@ export default function UnifiedAdmin() {
   const renderAnalytics = () => (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-gray-900">Analytics & Reports</h2>
+        <h2 className="text-2xl font-bold text-gray-900">
+          Analytics & Reports
+        </h2>
         <Button onClick={handleExportReport}>
           <Download className="h-4 w-4 mr-2" />
           Export All Reports
@@ -560,8 +602,12 @@ export default function UnifiedAdmin() {
       </div>
       <div className="text-center py-12">
         <BarChart3 className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-        <h3 className="text-lg font-medium text-gray-900 mb-2">Advanced Analytics Coming Soon</h3>
-        <p className="text-gray-600">Comprehensive reporting and analytics dashboard is being developed.</p>
+        <h3 className="text-lg font-medium text-gray-900 mb-2">
+          Advanced Analytics Coming Soon
+        </h3>
+        <p className="text-gray-600">
+          Comprehensive reporting and analytics dashboard is being developed.
+        </p>
       </div>
     </div>
   );
@@ -578,7 +624,11 @@ export default function UnifiedAdmin() {
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                 className="lg:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100"
               >
-                {isSidebarOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isSidebarOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
               </button>
 
               <div className="flex items-center space-x-3 ml-4 lg:ml-0">
@@ -586,8 +636,12 @@ export default function UnifiedAdmin() {
                   <Shield className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <span className="text-xl font-bold text-royal-600">GlobalTrack</span>
-                  <span className="text-lg text-orange-500 ml-1">Control Center</span>
+                  <span className="text-xl font-bold text-royal-600">
+                    GlobalTrack
+                  </span>
+                  <span className="text-lg text-orange-500 ml-1">
+                    Control Center
+                  </span>
                 </div>
               </div>
             </div>
@@ -625,13 +679,23 @@ export default function UnifiedAdmin() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="flex items-center space-x-2">
+                  <Button
+                    variant="ghost"
+                    className="flex items-center space-x-2"
+                  >
                     <Avatar className="h-8 w-8">
                       <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" />
-                      <AvatarFallback>{adminInfo.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                      <AvatarFallback>
+                        {adminInfo.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </AvatarFallback>
                     </Avatar>
                     <div className="hidden md:block text-left">
-                      <p className="text-sm font-medium text-gray-900">{adminInfo.name}</p>
+                      <p className="text-sm font-medium text-gray-900">
+                        {adminInfo.name}
+                      </p>
                       <p className="text-xs text-gray-500">{adminInfo.email}</p>
                     </div>
                   </Button>
@@ -673,7 +737,7 @@ export default function UnifiedAdmin() {
                   </div>
                   <div className="space-y-1">
                     {sidebarItems
-                      .filter(item => item.category === category.id)
+                      .filter((item) => item.category === category.id)
                       .map((item) => (
                         <button
                           key={item.id}
@@ -692,7 +756,9 @@ export default function UnifiedAdmin() {
                           >
                             {item.icon}
                           </div>
-                          <span className="font-medium text-sm">{item.label}</span>
+                          <span className="font-medium text-sm">
+                            {item.label}
+                          </span>
                         </button>
                       ))}
                   </div>
@@ -707,62 +773,79 @@ export default function UnifiedAdmin() {
           <div className="p-6">
             {currentView === "dashboard" && renderControlDashboard()}
             {currentView === "analytics" && renderAnalytics()}
-            
+
             {/* User & Customer Management */}
             {currentView === "users" && <UserManagement />}
             {currentView === "customers" && <UserManagement />}
             {currentView === "kyc" && <KYCSection />}
-            
+
             {/* Operations Management */}
             {currentView === "shipments" && <ShipmentsSection />}
             {currentView === "tracking" && <TrackingManagement />}
             {currentView === "logistics" && <TrackingSection />}
-            
+
             {/* Financial Management */}
             {currentView === "payments" && <PaymentManagement />}
             {currentView === "billing" && <PaymentsSection />}
             {currentView === "quotes" && <QuoteManagement />}
-            
+
             {/* Communication Management */}
             {currentView === "chat" && <ChatManagement />}
             {currentView === "contacts" && <ContactManagement />}
             {currentView === "notifications" && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-gray-900">Notification Center</h2>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Notification Center
+                </h2>
                 <NotificationTest type="admin" />
               </div>
             )}
-            
+
             {/* System Management */}
             {currentView === "general" && <GeneralSettings />}
             {currentView === "social" && <SocialMediaManagement />}
             {currentView === "security" && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-gray-900">Security & Access Control</h2>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Security & Access Control
+                </h2>
                 <div className="text-center py-12">
                   <Shield className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">Advanced Security Module</h3>
-                  <p className="text-gray-600">Enhanced security features and access controls are being developed.</p>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                    Advanced Security Module
+                  </h3>
+                  <p className="text-gray-600">
+                    Enhanced security features and access controls are being
+                    developed.
+                  </p>
                 </div>
               </div>
             )}
             {currentView === "database" && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-gray-900">Database Management</h2>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Database Management
+                </h2>
                 <div className="text-center py-12">
                   <Database className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">Database Administration Tools</h3>
-                  <p className="text-gray-600">Database management and administration tools are being developed.</p>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                    Database Administration Tools
+                  </h3>
+                  <p className="text-gray-600">
+                    Database management and administration tools are being
+                    developed.
+                  </p>
                 </div>
               </div>
             )}
 
             {/* Development: Notification Test Component */}
-            {currentView === "dashboard" && process.env.NODE_ENV === "development" && (
-              <div className="mt-8 max-w-md">
-                <NotificationTest type="admin" />
-              </div>
-            )}
+            {currentView === "dashboard" &&
+              process.env.NODE_ENV === "development" && (
+                <div className="mt-8 max-w-md">
+                  <NotificationTest type="admin" />
+                </div>
+              )}
           </div>
         </div>
       </div>

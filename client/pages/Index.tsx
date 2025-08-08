@@ -887,7 +887,6 @@ export default function Index() {
       <div className="hidden sm:block">
         <FloatingSocialBar show={true} position="bottom-left" />
       </div>
-
     </div>
   );
 }

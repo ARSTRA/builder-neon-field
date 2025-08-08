@@ -3,15 +3,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { Button } from "./button";
 import { Badge } from "./badge";
 import { Separator } from "./separator";
-import { 
-  Eye, 
-  EyeOff, 
-  Copy, 
-  Shield, 
-  User, 
+import {
+  Eye,
+  EyeOff,
+  Copy,
+  Shield,
+  User,
   Lock,
   CheckCircle,
-  AlertTriangle 
+  AlertTriangle,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { ADMIN_CREDENTIALS } from "@shared/admin-config";
@@ -64,12 +64,16 @@ export function AdminCredentialsInfo() {
             onClick={() => setShowPasswords(!showPasswords)}
             className="flex items-center space-x-2"
           >
-            {showPasswords ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            {showPasswords ? (
+              <EyeOff className="h-4 w-4" />
+            ) : (
+              <Eye className="h-4 w-4" />
+            )}
             <span>{showPasswords ? "Hide" : "Show"} Passwords</span>
           </Button>
         </div>
       </CardHeader>
-      
+
       <CardContent className="space-y-6">
         {ADMIN_CREDENTIALS.map((admin, index) => (
           <div key={index} className="bg-gray-50 rounded-lg p-4 border">
@@ -88,7 +92,9 @@ export function AdminCredentialsInfo() {
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Email:</label>
+                <label className="text-sm font-medium text-gray-700">
+                  Email:
+                </label>
                 <div className="flex items-center space-x-2">
                   <code className="flex-1 bg-white px-3 py-2 rounded border text-sm font-mono">
                     {admin.email}
@@ -105,7 +111,9 @@ export function AdminCredentialsInfo() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Password:</label>
+                <label className="text-sm font-medium text-gray-700">
+                  Password:
+                </label>
                 <div className="flex items-center space-x-2">
                   <code className="flex-1 bg-white px-3 py-2 rounded border text-sm font-mono">
                     {showPasswords ? admin.password : "••••••••••••"}
@@ -123,12 +131,14 @@ export function AdminCredentialsInfo() {
             </div>
 
             <div className="mt-3">
-              <label className="text-sm font-medium text-gray-700 mb-2 block">Permissions:</label>
+              <label className="text-sm font-medium text-gray-700 mb-2 block">
+                Permissions:
+              </label>
               <div className="flex flex-wrap gap-2">
                 {admin.permissions.map((permission, idx) => (
-                  <Badge 
-                    key={idx} 
-                    variant="secondary" 
+                  <Badge
+                    key={idx}
+                    variant="secondary"
                     className="text-xs bg-blue-50 text-blue-700 border-blue-200"
                   >
                     {permission.replace("_", " ")}
@@ -145,10 +155,17 @@ export function AdminCredentialsInfo() {
           <div className="flex items-start space-x-3">
             <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5" />
             <div>
-              <h4 className="font-semibold text-blue-800 mb-2">Security Notes</h4>
+              <h4 className="font-semibold text-blue-800 mb-2">
+                Security Notes
+              </h4>
               <ul className="text-sm text-blue-700 space-y-1">
-                <li>• These credentials are for development/testing purposes only</li>
-                <li>• In production, use environment variables and password hashing</li>
+                <li>
+                  • These credentials are for development/testing purposes only
+                </li>
+                <li>
+                  • In production, use environment variables and password
+                  hashing
+                </li>
                 <li>• Implement proper JWT token authentication</li>
                 <li>• Add rate limiting and security middleware</li>
                 <li>• Use HTTPS in production environments</li>
@@ -161,11 +178,17 @@ export function AdminCredentialsInfo() {
           <div className="flex items-start space-x-3">
             <Lock className="h-5 w-5 text-amber-600 mt-0.5" />
             <div>
-              <h4 className="font-semibold text-amber-800 mb-2">Access Instructions</h4>
+              <h4 className="font-semibold text-amber-800 mb-2">
+                Access Instructions
+              </h4>
               <div className="text-sm text-amber-700 space-y-2">
                 <p>Use these credentials to log in to the admin portal:</p>
                 <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li>Go to <code className="bg-white px-1 rounded">/admin/login</code> or <code className="bg-white px-1 rounded">/login</code></li>
+                  <li>
+                    Go to{" "}
+                    <code className="bg-white px-1 rounded">/admin/login</code>{" "}
+                    or <code className="bg-white px-1 rounded">/login</code>
+                  </li>
                   <li>Enter the email and password from above</li>
                   <li>Select "Admin" account type if prompted</li>
                   <li>You'll be redirected to the admin dashboard</li>

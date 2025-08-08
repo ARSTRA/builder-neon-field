@@ -15,8 +15,8 @@ export default function AdminSetup() {
             Admin Panel Setup
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Here are your admin login credentials for GlobalTrack Logistics. 
-            Use these to access the administrative features of your website.
+            Here are your admin login credentials for GlobalTrack Logistics. Use
+            these to access the administrative features of your website.
           </p>
         </div>
 
@@ -48,10 +48,12 @@ export default function AdminSetup() {
         {/* Footer */}
         <div className="text-center mt-8 text-sm text-gray-500">
           <p>
-            These credentials are automatically configured for your GlobalTrack Logistics website.
+            These credentials are automatically configured for your GlobalTrack
+            Logistics website.
           </p>
           <p className="mt-1">
-            For production use, please implement proper security measures as outlined above.
+            For production use, please implement proper security measures as
+            outlined above.
           </p>
         </div>
       </div>

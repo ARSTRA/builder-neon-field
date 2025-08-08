@@ -272,7 +272,6 @@ export default function AdminLogin() {
                 </div>
               </form>
 
-
               <div className="text-center">
                 <p className="text-gray-600 text-sm">
                   Need assistance?{" "}
