@@ -87,8 +87,8 @@ export default function Admin() {
     const adminEmail = localStorage.getItem("adminEmail");
 
     if (!isAdmin || !adminEmail) {
-      // Redirect to admin login if not authenticated
-      navigate("/admin/login");
+      // Redirect to unified login if not authenticated
+      navigate("/login");
     }
   }, [navigate]);
 
