@@ -68,7 +68,7 @@ export function SimpleSocialFooter({ className = "" }: SimpleSocialFooterProps) 
         Follow Us
       </h4>
       
-      <div className="flex items-center space-x-3 mb-6">
+      <div className="flex items-center flex-wrap gap-3 mb-6">
         {socialPlatforms.map((social) => {
           const Icon = social.icon;
           return (
@@ -76,19 +76,20 @@ export function SimpleSocialFooter({ className = "" }: SimpleSocialFooterProps) 
               key={social.name}
               onClick={() => handleSocialClick(social.url)}
               className={`
-                w-10 h-10 
+                w-10 h-10 sm:w-11 sm:h-11
                 ${social.bgColor}
                 ${social.shadowColor}
                 text-white
-                rounded-full 
-                flex items-center justify-center 
-                transition-all duration-300 
+                rounded-full
+                flex items-center justify-center
+                transition-all duration-300
                 shadow-lg hover:shadow-xl
                 transform hover:scale-110 hover:-translate-y-1
                 active:scale-95
                 group
                 relative
                 overflow-hidden
+                touch-manipulation
               `}
               title={`Follow us on ${social.name}`}
               aria-label={`Follow GlobalTrack on ${social.name}`}
@@ -97,14 +98,14 @@ export function SimpleSocialFooter({ className = "" }: SimpleSocialFooterProps) 
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </div>
-              
-              <Icon className="h-5 w-5 relative z-10" />
+
+              <Icon className="h-5 w-5 sm:h-5.5 sm:w-5.5 relative z-10" />
             </button>
           );
         })}
       </div>
 
-      <div className="text-sm text-gray-300 space-y-1">
+      <div className="text-xs sm:text-sm text-gray-300 space-y-1">
         <p>🌟 <strong>63.8K+</strong> followers across all platforms</p>
         <p>📈 <strong>5.2%</strong> average engagement rate</p>
         <p>📱 Join our growing community!</p>
