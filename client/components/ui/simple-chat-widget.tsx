@@ -84,15 +84,15 @@ export function SimpleChatWidget() {
   // Floating chat button
   if (!isOpen) {
     return (
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-20 right-4 sm:bottom-32 sm:right-6 z-40">
         <Button
           onClick={() => setIsOpen(true)}
-          className="h-14 w-14 rounded-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 animate-bounce"
+          className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 animate-bounce touch-manipulation"
         >
-          <MessageCircle className="h-6 w-6 text-white" />
+          <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
         </Button>
-        <div className={`absolute -top-2 -left-2 w-4 h-4 border-2 border-white rounded-full animate-pulse ${isOnline ? 'bg-green-500' : 'bg-red-500'}`}></div>
-        <div className="absolute -top-8 right-0 bg-gray-800 text-white text-xs py-1 px-2 rounded whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+        <div className={`absolute -top-1.5 -left-1.5 sm:-top-2 sm:-left-2 w-3 h-3 sm:w-4 sm:h-4 border-2 border-white rounded-full animate-pulse ${isOnline ? 'bg-green-500' : 'bg-red-500'}`}></div>
+        <div className="absolute -top-6 sm:-top-8 right-0 bg-gray-800 text-white text-xs py-1 px-2 rounded whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity hidden sm:block">
           {isOnline ? 'Online - Chat with us!' : 'Offline - Leave a message'}
         </div>
       </div>
@@ -101,7 +101,7 @@ export function SimpleChatWidget() {
 
   // Chat widget interface
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-20 right-4 sm:bottom-32 sm:right-6 z-40">
       <Card
         className={`w-72 sm:w-80 shadow-2xl transition-all duration-300 ${
           isMinimized ? "h-14 sm:h-16" : "h-80 sm:h-96"
