@@ -713,6 +713,10 @@ export function ChatManagement() {
             </Card>
           </div>
         </TabsContent>
+
+        <TabsContent value="configuration">
+          <ChatAdminPanel />
+        </TabsContent>
       </Tabs>
 
       {/* Chat View Modal */}
