@@ -17,6 +17,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Newspaper from "./pages/Newspaper";
+import LiveChat from "./pages/LiveChat";
 import Login from "./pages/Login";
 import SimpleLogin from "./pages/SimpleLogin";
 import Register from "./pages/Register";
