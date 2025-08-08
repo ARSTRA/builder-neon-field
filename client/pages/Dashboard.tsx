@@ -35,6 +35,7 @@ import { ProfileSection } from "@/components/ui/dashboard-sections/profile";
 import { KYCSection } from "@/components/ui/dashboard-sections/kyc";
 import { SettingsSection } from "@/components/ui/dashboard-sections/settings";
 import { NotificationDropdown } from "@/components/ui/notification-dropdown";
+import { NotificationTest } from "@/components/ui/notification-test";
 import { useNotifications } from "@/hooks/use-notifications";
 
 export default function Dashboard() {
