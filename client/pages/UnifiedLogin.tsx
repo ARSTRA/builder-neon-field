@@ -204,18 +204,6 @@ export default function UnifiedLogin() {
     },
   ];
 
-  const fillDemoCredentials = (type: "user" | "admin", variant?: string) => {
-    if (type === "admin") {
-      const credentials = variant === "manager" 
-        ? { email: "manager@globaltrack.com", password: "manager123" }
-        : { email: "admin@globaltrack.com", password: "admin123" };
-      setFormData(credentials);
-    } else {
-      setFormData({ email: "user@example.com", password: "user123" });
-    }
-    setError("");
-    setSuccess("");
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center py-12 px-4">
@@ -431,76 +419,6 @@ export default function UnifiedLogin() {
                 </Button>
               </form>
 
-              {/* Demo Credentials */}
-              <div className={`border rounded-lg p-4 ${
-                accountType === "admin" ? "bg-blue-50 border-blue-200" : "bg-gray-50 border-gray-200"
-              }`}>
-                <h4 className={`text-sm font-medium mb-3 ${
-                  accountType === "admin" ? "text-blue-800" : "text-gray-800"
-                }`}>
-                  Demo {accountType === "admin" ? "Admin Accounts" : "Account"}:
-                </h4>
-                
-                {accountType === "admin" ? (
-                  <div className="space-y-3">
-                    <div className="grid grid-cols-1 gap-2">
-                      <div className="bg-white/60 rounded p-2">
-                        <div className="text-xs text-blue-700">
-                          <p><strong>Super Admin:</strong></p>
-                          <p className="font-mono">admin@globaltrack.com</p>
-                          <p className="font-mono">admin123</p>
-                        </div>
-                      </div>
-                      <div className="bg-white/60 rounded p-2">
-                        <div className="text-xs text-blue-700">
-                          <p><strong>Manager:</strong></p>
-                          <p className="font-mono">manager@globaltrack.com</p>
-                          <p className="font-mono">manager123</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      <Button
-                        type="button"
-                        variant="outline"
-                        size="sm"
-                        className="text-xs"
-                        onClick={() => fillDemoCredentials("admin")}
-                      >
-                        Use Super Admin
-                      </Button>
-                      <Button
-                        type="button"
-                        variant="outline"
-                        size="sm"
-                        className="text-xs"
-                        onClick={() => fillDemoCredentials("admin", "manager")}
-                      >
-                        Use Manager
-                      </Button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="space-y-3">
-                    <div className="bg-white/60 rounded p-2">
-                      <div className="text-xs text-gray-700">
-                        <p><strong>Demo Customer:</strong></p>
-                        <p className="font-mono">user@example.com</p>
-                        <p className="font-mono">user123</p>
-                      </div>
-                    </div>
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      className="text-xs w-full"
-                      onClick={() => fillDemoCredentials("user")}
-                    >
-                      Use Demo Account
-                    </Button>
-                  </div>
-                )}
-              </div>
 
               {accountType === "user" && (
                 <>

@@ -155,15 +155,6 @@ export default function SimpleLogin() {
     },
   ];
 
-  const fillDemoCredentials = (type: "user" | "admin") => {
-    if (type === "admin") {
-      setFormData({ email: "admin@globaltrack.com", password: "admin123" });
-    } else {
-      setFormData({ email: "user@example.com", password: "user123" });
-    }
-    setError("");
-    setSuccess("");
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center py-12 px-4">
@@ -349,49 +340,6 @@ export default function SimpleLogin() {
                 </Button>
               </form>
 
-              {/* Demo Credentials */}
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                <h4 className="text-sm font-medium text-gray-800 mb-3">
-                  Demo Accounts:
-                </h4>
-                
-                <div className="space-y-3">
-                  <div className="bg-white/60 rounded p-2">
-                    <div className="text-xs text-gray-700">
-                      <p><strong>Customer Account:</strong></p>
-                      <p className="font-mono">user@example.com</p>
-                      <p className="font-mono">user123</p>
-                    </div>
-                  </div>
-                  <div className="bg-white/60 rounded p-2">
-                    <div className="text-xs text-gray-700">
-                      <p><strong>Admin Account:</strong></p>
-                      <p className="font-mono">admin@globaltrack.com</p>
-                      <p className="font-mono">admin123</p>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      className="text-xs"
-                      onClick={() => fillDemoCredentials("user")}
-                    >
-                      Use Customer
-                    </Button>
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      className="text-xs"
-                      onClick={() => fillDemoCredentials("admin")}
-                    >
-                      Use Admin
-                    </Button>
-                  </div>
-                </div>
-              </div>
 
               {!isAdminAccess && (
                 <>
