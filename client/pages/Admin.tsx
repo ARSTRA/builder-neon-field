@@ -93,6 +93,13 @@ export default function Admin() {
       // Redirect to unified login if not authenticated
       navigate("/login");
     }
+
+    // Handle URL parameters for view
+    const urlParams = new URLSearchParams(window.location.search);
+    const viewParam = urlParams.get("view");
+    if (viewParam && ["dashboard", "users", "shipments", "tracking", "quotes", "payments", "chat", "contacts", "general"].includes(viewParam)) {
+      setCurrentView(viewParam);
+    }
   }, [navigate]);
 
   const sidebarItems = [
