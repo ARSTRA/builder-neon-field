@@ -183,9 +183,37 @@ export default function Newspaper() {
   ];
 
   const allArticles = [...featuredArticles, ...regularArticles];
-  const filteredArticles = selectedCategory === "all" 
-    ? allArticles 
+  const filteredArticles = selectedCategory === "all"
+    ? allArticles
     : allArticles.filter(article => article.category === selectedCategory);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) {
+      setSubscribeMessage("Please enter a valid email address");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setSubscribeMessage("Please enter a valid email address");
+      return;
+    }
+
+    setIsSubscribing(true);
+    setSubscribeMessage("");
+
+    // Simulate API call
+    try {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setSubscribeMessage("🎉 Thank you for subscribing! You'll receive our latest updates soon.");
+      setEmail("");
+    } catch (error) {
+      setSubscribeMessage("Something went wrong. Please try again.");
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
 
   const companyStats = [
     { icon: <Globe className="h-8 w-8" />, value: "120+", label: "Countries Served", color: "text-blue-600" },
