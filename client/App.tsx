@@ -148,8 +148,9 @@ export default function App() {
               <Route path="/admin/login/legacy" element={<AdminLogin />} />
               <Route path="/register" element={<Register />} />
 
-              {/* Dashboard without main navigation */}
-              <Route path="/dashboard" element={<Dashboard />} />
+              {/* Smart Dashboard - redirects admins to unified admin center */}
+              <Route path="/dashboard" element={<SmartDashboard />} />
+              <Route path="/dashboard/user" element={<Dashboard />} />
 
               {/* Admin auth and panel without main navigation */}
               <Route path="/admin/setup" element={<AdminSetup />} />
