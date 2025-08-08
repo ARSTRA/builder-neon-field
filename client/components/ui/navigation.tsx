@@ -55,14 +55,6 @@ export function Navigation() {
               </Link>
             ))}
             <div className="flex items-center space-x-3 ml-6">
-              {/* Social Media Widget */}
-              <SocialMediaWidget
-                showInHeader={true}
-                style="compact"
-                size="sm"
-                className="hidden xl:flex"
-              />
-
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
                 size="sm"
@@ -135,17 +127,6 @@ export function Navigation() {
                 </Button>
               </Link>
 
-              {/* Social Media for Mobile */}
-              <div className="pt-4 border-t border-gray-200">
-                <p className="text-sm text-gray-600 mb-3 text-center">Follow Us</p>
-                <div className="flex justify-center">
-                  <SocialMediaWidget
-                    showInHeader={true}
-                    style="icons"
-                    size="sm"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         )}
