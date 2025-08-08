@@ -23,6 +23,7 @@ import SimpleLogin from "./pages/SimpleLogin";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
+import UnifiedAdmin from "./pages/UnifiedAdmin";
 import AdminLogin from "./pages/AdminLogin";
 import AdminSetup from "./pages/AdminSetup";
 import NotFound from "./pages/NotFound";
