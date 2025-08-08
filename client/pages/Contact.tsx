@@ -239,14 +239,20 @@ export default function Contact() {
                 Call Now: +1 (555) 123-4567
               </Button>
               <Button
-                onClick={() =>
-                  window.open("mailto:info@globaltrack.com", "_self")
-                }
+                onClick={() => {
+                  const subject = encodeURIComponent("GlobalTrack Support Request");
+                  const body = encodeURIComponent("Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards");
+                  window.open(`mailto:info@globaltrack.com?subject=${subject}&body=${body}`, "_blank");
+                }}
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
+                className="group border-3 border-white/90 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 relative overflow-hidden"
               >
-                <Mail className="mr-2 h-5 w-5" />
-                Email Support
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                <Mail className="mr-3 h-6 w-6 group-hover:animate-pulse relative z-10" />
+                <span className="relative z-10">Email Support</span>
+                <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
+                  INSTANT
+                </div>
               </Button>
             </div>
           </div>
