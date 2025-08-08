@@ -514,20 +514,20 @@ export default function Services() {
                         </TabsContent>
                       </Tabs>
 
-                      <div className="flex gap-3 mt-8">
+                      <div className="flex gap-4 mt-8">
                         <Button
                           onClick={() => setIsQuoteModalOpen(true)}
-                          className={`flex-1 bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300`}
+                          className={`group flex-1 bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] rounded-xl py-4 font-semibold`}
                         >
                           Get Quote
-                          <ArrowRight className="h-4 w-4 ml-2" />
+                          <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>
-                        <Link to="/contact">
+                        <Link to="/contact" className="flex-1">
                           <Button
                             variant="outline"
-                            className="group w-full border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
+                            className="group w-full border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-[1.02] rounded-xl py-4 font-semibold backdrop-blur-sm bg-royal-50/50 hover:bg-royal-600"
                           >
-                            <Phone className="h-4 w-4 mr-2 group-hover:animate-pulse" />
+                            <Phone className="h-5 w-5 mr-2 group-hover:animate-pulse" />
                             Expert Consult
                           </Button>
                         </Link>
