@@ -54,9 +54,10 @@ export class ErrorBoundary extends Component<Props, State> {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-gray-600 text-center">
-                We're sorry, but something unexpected happened. Please try refreshing the page or contact support if the problem persists.
+                We're sorry, but something unexpected happened. Please try
+                refreshing the page or contact support if the problem persists.
               </p>
-              
+
               {process.env.NODE_ENV === "development" && this.state.error && (
                 <details className="mt-4">
                   <summary className="cursor-pointer text-sm text-gray-500 hover:text-gray-700">
@@ -66,7 +67,9 @@ export class ErrorBoundary extends Component<Props, State> {
                     <div className="font-semibold mb-2">Error:</div>
                     <div className="mb-2">{this.state.error.message}</div>
                     <div className="font-semibold mb-2">Stack:</div>
-                    <div className="whitespace-pre-wrap">{this.state.error.stack}</div>
+                    <div className="whitespace-pre-wrap">
+                      {this.state.error.stack}
+                    </div>
                   </div>
                 </details>
               )}
@@ -81,7 +84,7 @@ export class ErrorBoundary extends Component<Props, State> {
                   Refresh Page
                 </Button>
                 <Button
-                  onClick={() => window.location.href = "/"}
+                  onClick={() => (window.location.href = "/")}
                   className="flex-1"
                   variant="outline"
                 >
@@ -102,7 +105,7 @@ export class ErrorBoundary extends Component<Props, State> {
 // Simple wrapper component for easier usage
 export function withErrorBoundary<T extends {}>(
   Component: React.ComponentType<T>,
-  fallback?: ReactNode
+  fallback?: ReactNode,
 ) {
   return function WithErrorBoundaryComponent(props: T) {
     return (

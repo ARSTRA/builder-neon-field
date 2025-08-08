@@ -492,8 +492,9 @@ export function UserManagement() {
                           <AvatarImage src={user.avatar} alt={user.name} />
                           <AvatarFallback>
                             {user.name
-                              ? user.name.split(" ")
-                                  .map((n) => n ? n[0] : "")
+                              ? user.name
+                                  .split(" ")
+                                  .map((n) => (n ? n[0] : ""))
                                   .join("")
                               : "U"}
                           </AvatarFallback>

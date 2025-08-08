@@ -397,8 +397,9 @@ export function ContactManagement() {
                         <Avatar className="h-12 w-12">
                           <AvatarFallback>
                             {contact.name
-                              ? contact.name.split(" ")
-                                  .map((n) => n ? n[0] : "")
+                              ? contact.name
+                                  .split(" ")
+                                  .map((n) => (n ? n[0] : ""))
                                   .join("")
                               : "C"}
                           </AvatarFallback>
@@ -717,8 +718,9 @@ export function ContactManagement() {
                 <Avatar className="h-12 w-12">
                   <AvatarFallback>
                     {selectedMessage.name
-                      ? selectedMessage.name.split(" ")
-                          .map((n: string) => n ? n[0] : "")
+                      ? selectedMessage.name
+                          .split(" ")
+                          .map((n: string) => (n ? n[0] : ""))
                           .join("")
                       : "M"}
                   </AvatarFallback>

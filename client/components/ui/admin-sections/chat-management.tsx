@@ -524,8 +524,9 @@ export function ChatManagement() {
                         <AvatarImage src={agent.avatar} alt={agent.name} />
                         <AvatarFallback>
                           {agent.name
-                            ? agent.name.split(" ")
-                                .map((n) => n ? n[0] : "")
+                            ? agent.name
+                                .split(" ")
+                                .map((n) => (n ? n[0] : ""))
                                 .join("")
                             : "A"}
                         </AvatarFallback>

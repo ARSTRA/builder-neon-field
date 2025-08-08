@@ -83,7 +83,8 @@ export default function Admin() {
   const [currentView, setCurrentView] = useState("dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const { notifications, markAsRead, markAllAsRead, clearAll } = useNotifications("admin");
+  const { notifications, markAsRead, markAllAsRead, clearAll } =
+    useNotifications("admin");
 
   useEffect(() => {
     // Check if user is admin
@@ -98,7 +99,20 @@ export default function Admin() {
     // Handle URL parameters for view
     const urlParams = new URLSearchParams(window.location.search);
     const viewParam = urlParams.get("view");
-    if (viewParam && ["dashboard", "users", "shipments", "tracking", "quotes", "payments", "chat", "contacts", "general"].includes(viewParam)) {
+    if (
+      viewParam &&
+      [
+        "dashboard",
+        "users",
+        "shipments",
+        "tracking",
+        "quotes",
+        "payments",
+        "chat",
+        "contacts",
+        "general",
+      ].includes(viewParam)
+    ) {
       setCurrentView(viewParam);
     }
   }, [navigate]);
@@ -372,8 +386,9 @@ export default function Admin() {
                     <Avatar className="h-10 w-10">
                       <AvatarFallback>
                         {user.name
-                          ? user.name.split(" ")
-                              .map((n) => n ? n[0] : "")
+                          ? user.name
+                              .split(" ")
+                              .map((n) => (n ? n[0] : ""))
                               .join("")
                           : "U"}
                       </AvatarFallback>
@@ -687,11 +702,12 @@ export default function Admin() {
             {currentView === "general" && <GeneralSettings />}
 
             {/* Development: Notification Test Component */}
-            {currentView === "dashboard" && process.env.NODE_ENV === "development" && (
-              <div className="mt-8 max-w-md">
-                <NotificationTest type="admin" />
-              </div>
-            )}
+            {currentView === "dashboard" &&
+              process.env.NODE_ENV === "development" && (
+                <div className="mt-8 max-w-md">
+                  <NotificationTest type="admin" />
+                </div>
+              )}
           </div>
         </div>
       </div>

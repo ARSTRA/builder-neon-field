@@ -43,7 +43,8 @@ export default function Dashboard() {
   const [currentView, setCurrentView] = useState("overview");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [userEmail] = useState(localStorage.getItem("userEmail") || "");
-  const { notifications, markAsRead, markAllAsRead, clearAll } = useNotifications("user");
+  const { notifications, markAsRead, markAllAsRead, clearAll } =
+    useNotifications("user");
 
   useEffect(() => {
     // Check if user is logged in
@@ -54,7 +55,17 @@ export default function Dashboard() {
     // Handle URL parameters for view
     const urlParams = new URLSearchParams(window.location.search);
     const viewParam = urlParams.get("view");
-    if (viewParam && ["overview", "tracking", "payments", "profile", "kyc", "settings"].includes(viewParam)) {
+    if (
+      viewParam &&
+      [
+        "overview",
+        "tracking",
+        "payments",
+        "profile",
+        "kyc",
+        "settings",
+      ].includes(viewParam)
+    ) {
       setCurrentView(viewParam as any);
     }
   }, [navigate]);
@@ -524,11 +535,12 @@ export default function Dashboard() {
             {currentView === "settings" && <SettingsSection />}
 
             {/* Development: Notification Test Component */}
-            {currentView === "overview" && process.env.NODE_ENV === "development" && (
-              <div className="mt-8">
-                <NotificationTest type="user" />
-              </div>
-            )}
+            {currentView === "overview" &&
+              process.env.NODE_ENV === "development" && (
+                <div className="mt-8">
+                  <NotificationTest type="user" />
+                </div>
+              )}
           </div>
         </div>
       </div>
