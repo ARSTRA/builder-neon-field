@@ -513,15 +513,15 @@ export default function Newspaper() {
       </section>
 
       {/* Newsletter Subscription */}
-      <section className="py-16 bg-gradient-to-r from-royal-600 via-royal-700 to-orange-600 text-white">
-        <div className="container mx-auto px-4">
+      <section className="py-12 lg:py-16 bg-gradient-to-r from-royal-600 via-royal-700 to-orange-600 text-white">
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-8">
-              <MessageCircle className="h-10 w-10 text-orange-400" />
+            <div className="w-16 h-16 lg:w-20 lg:h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 lg:mb-8">
+              <MessageCircle className="h-8 w-8 lg:h-10 lg:w-10 text-orange-400" />
             </div>
-            <h2 className="text-4xl font-bold mb-6">Stay Updated with GlobalTrack Times</h2>
-            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter and be the first to know about industry insights, 
+            <h2 className="text-2xl lg:text-4xl font-bold mb-4 lg:mb-6">Stay Updated with GlobalTrack Times</h2>
+            <p className="text-lg lg:text-xl text-gray-200 mb-6 lg:mb-8 max-w-2xl mx-auto leading-relaxed">
+              Subscribe to our newsletter and be the first to know about industry insights,
               company updates, and logistics innovations that matter to your business.
             </p>
             
