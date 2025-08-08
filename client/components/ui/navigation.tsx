@@ -100,49 +100,53 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className={`block py-2 font-medium transition-colors hover:text-royal-600 ${
-                  location.pathname === item.href
-                    ? "text-royal-600"
-                    : "text-gray-700"
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="space-y-3 mt-4">
+          <div className="lg:hidden py-4 border-t border-gray-100 bg-gray-50">
+            <div className="space-y-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                    location.pathname === item.href
+                      ? "text-royal-600 bg-royal-50 border-l-4 border-royal-600"
+                      : "text-gray-700 hover:text-royal-600 hover:bg-white"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            <div className="space-y-3 mt-6 px-4">
               <Button
                 onClick={() => {
                   setIsQuoteModalOpen(true);
                   setIsMenuOpen(false);
                 }}
-                className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white"
+                className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white shadow-md py-3"
               >
                 Get Quote
               </Button>
-              <Link to="/admin" className="block w-full">
-                <Button
-                  variant="outline"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="w-full border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
-                >
-                  Admin Panel
-                </Button>
-              </Link>
-              <Link to="/login" className="block w-full">
-                <Button
-                  variant="outline"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white"
-                >
-                  Sign In
-                </Button>
-              </Link>
+              <div className="grid grid-cols-2 gap-3">
+                <Link to="/admin/login" className="block">
+                  <Button
+                    variant="outline"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="w-full border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300"
+                  >
+                    Admin
+                  </Button>
+                </Link>
+                <Link to="/login" className="block">
+                  <Button
+                    variant="outline"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300"
+                  >
+                    Sign In
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         )}
