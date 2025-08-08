@@ -717,9 +717,10 @@ export function ContactManagement() {
                 <Avatar className="h-12 w-12">
                   <AvatarFallback>
                     {selectedMessage.name
-                      .split(" ")
-                      .map((n: string) => n[0])
-                      .join("")}
+                      ? selectedMessage.name.split(" ")
+                          .map((n: string) => n ? n[0] : "")
+                          .join("")
+                      : "M"}
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex-1">
