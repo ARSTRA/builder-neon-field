@@ -153,7 +153,8 @@ export default function App() {
               {/* Admin auth and panel without main navigation */}
               <Route path="/admin/setup" element={<AdminSetup />} />
               <Route path="/admin/login" element={<SimpleLogin />} />
-              <Route path="/admin" element={<Admin />} />
+              <Route path="/admin" element={<UnifiedAdmin />} />
+              <Route path="/admin/legacy" element={<Admin />} />
 
               {/* 404 page */}
               <Route
