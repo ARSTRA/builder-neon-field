@@ -43,6 +43,7 @@ const App = () => (
                 <Navigation />
                 <Index />
                 <ChatWidget />
+                <Footer />
               </div>
             }
           />
@@ -53,6 +54,7 @@ const App = () => (
                 <Navigation />
                 <Track />
                 <ChatWidget />
+                <Footer />
               </div>
             }
           />
@@ -63,6 +65,7 @@ const App = () => (
                 <Navigation />
                 <Services />
                 <ChatWidget />
+                <Footer />
               </div>
             }
           />
@@ -73,6 +76,7 @@ const App = () => (
                 <Navigation />
                 <About />
                 <ChatWidget />
+                <Footer />
               </div>
             }
           />
@@ -83,6 +87,7 @@ const App = () => (
                 <Navigation />
                 <Contact />
                 <ChatWidget />
+                <Footer />
               </div>
             }
           />
@@ -93,6 +98,7 @@ const App = () => (
                 <Navigation />
                 <Gallery />
                 <ChatWidget />
+                <Footer />
               </div>
             }
           />
@@ -102,6 +108,7 @@ const App = () => (
               <div className="min-h-screen bg-white">
                 <Navigation />
                 <LiveChat />
+                <Footer />
               </div>
             }
           />
@@ -112,6 +119,7 @@ const App = () => (
                 <Navigation />
                 <Newspaper />
                 <ChatWidget />
+                <Footer />
               </div>
             }
           />
