@@ -724,7 +724,7 @@ export default function Services() {
 
           {/* Secondary Live Chat Button */}
           <div className="absolute bottom-20 right-0 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0 delay-100">
-            <Link to="/chat">
+            <Link to="/contact">
               <Button className="bg-royal-600 hover:bg-royal-700 text-white p-4 rounded-xl shadow-xl hover:shadow-royal-600/30 transition-all duration-300 transform hover:scale-105 border border-white/20">
                 <MessageCircle className="h-5 w-5" />
               </Button>
