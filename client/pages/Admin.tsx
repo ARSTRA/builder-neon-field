@@ -372,9 +372,10 @@ export default function Admin() {
                     <Avatar className="h-10 w-10">
                       <AvatarFallback>
                         {user.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
+                          ? user.name.split(" ")
+                              .map((n) => n ? n[0] : "")
+                              .join("")
+                          : "U"}
                       </AvatarFallback>
                     </Avatar>
                     <div>
