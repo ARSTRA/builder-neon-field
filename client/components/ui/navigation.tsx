@@ -4,7 +4,6 @@ import { Button } from "./button";
 import { useState } from "react";
 import { GetQuoteModal } from "./get-quote-modal";
 import { Logo, LogoMark } from "./logo";
-import { SocialMediaWidget } from "./social-media-widget";
 
 export function Navigation() {
   const location = useLocation();
