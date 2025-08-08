@@ -30,6 +30,7 @@ type AccountType = "user" | "admin";
 
 export default function UnifiedLogin() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { toast } = useToast();
   const [accountType, setAccountType] = useState<AccountType>("user");
   const [formData, setFormData] = useState({
