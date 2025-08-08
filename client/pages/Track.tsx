@@ -219,15 +219,15 @@ export default function Track() {
       </section>
 
       {/* Professional Tracking Overview Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="container mx-auto px-4">
+      <section className="py-12 lg:py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            <div className="text-center mb-12 lg:mb-16">
+              <h2 className="text-2xl lg:text-4xl font-bold text-gray-800 mb-4 lg:mb-6">
                 Advanced Package Tracking Technology
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Experience the future of logistics with our state-of-the-art
                 tracking system powered by real-time GPS, AI-driven analytics,
                 and seamless integration across global networks.
