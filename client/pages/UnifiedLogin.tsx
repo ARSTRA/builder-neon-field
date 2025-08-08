@@ -50,30 +50,6 @@ export default function UnifiedLogin() {
     }
   }, [location.pathname]);
 
-  // Admin credentials from AdminLogin.tsx
-  const adminCredentials = [
-    {
-      email: "admin@globaltrack.com",
-      password: "admin123",
-      role: "Super Admin",
-    },
-    { email: "admin@gt.com", password: "admin123", role: "Admin" },
-    {
-      email: "superadmin@globaltrack.com",
-      password: "superadmin123",
-      role: "Super Admin",
-    },
-    {
-      email: "manager@globaltrack.com",
-      password: "manager123",
-      role: "Manager",
-    },
-    {
-      email: "support@globaltrack.com",
-      password: "support123",
-      role: "Support Admin",
-    },
-  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -101,11 +77,8 @@ export default function UnifiedLogin() {
     const password = formData.password.trim();
 
     if (accountType === "admin") {
-      // Admin login logic
-      const validAdmin = adminCredentials.find(
-        (admin) =>
-          admin.email.toLowerCase() === email && admin.password === password,
-      );
+      // Admin login logic using centralized configuration
+      const validAdmin = validateAdminCredentials(email, password);
 
       if (validAdmin) {
         // Set admin session
