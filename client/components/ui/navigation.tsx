@@ -22,10 +22,10 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       {/* Main Navigation */}
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+      <div className="container mx-auto px-4 lg:px-6">
+        <div className="flex justify-between items-center py-3 lg:py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <LogoMark
