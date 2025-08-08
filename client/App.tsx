@@ -42,7 +42,7 @@ export default function App() {
                 <div className="min-h-screen bg-white">
                   <Navigation />
                   <Index />
-                  <EnhancedChatWidget showSettings={true} />
+                  <EnhancedChatWidget />
                   <Footer />
                 </div>
               }
@@ -53,7 +53,7 @@ export default function App() {
                 <div className="min-h-screen bg-white">
                   <Navigation />
                   <Track />
-                  <EnhancedChatWidget showSettings={true} />
+                  <EnhancedChatWidget />
                   <Footer />
                 </div>
               }
@@ -64,7 +64,7 @@ export default function App() {
                 <div className="min-h-screen bg-white">
                   <Navigation />
                   <Services />
-                  <EnhancedChatWidget showSettings={true} />
+                  <EnhancedChatWidget />
                   <Footer />
                 </div>
               }
@@ -75,7 +75,7 @@ export default function App() {
                 <div className="min-h-screen bg-white">
                   <Navigation />
                   <About />
-                  <EnhancedChatWidget showSettings={true} />
+                  <EnhancedChatWidget />
                   <Footer />
                 </div>
               }
@@ -86,7 +86,7 @@ export default function App() {
                 <div className="min-h-screen bg-white">
                   <Navigation />
                   <Contact />
-                  <EnhancedChatWidget showSettings={true} />
+                  <EnhancedChatWidget />
                   <Footer />
                 </div>
               }
@@ -97,7 +97,7 @@ export default function App() {
                 <div className="min-h-screen bg-white">
                   <Navigation />
                   <Gallery />
-                  <EnhancedChatWidget showSettings={true} />
+                  <EnhancedChatWidget />
                   <Footer />
                 </div>
               }
@@ -108,7 +108,7 @@ export default function App() {
                 <div className="min-h-screen bg-white">
                   <Navigation />
                   <Newspaper />
-                  <EnhancedChatWidget showSettings={true} />
+                  <EnhancedChatWidget />
                   <Footer />
                 </div>
               }
@@ -134,7 +134,7 @@ export default function App() {
                 <div className="min-h-screen bg-white">
                   <Navigation />
                   <NotFound />
-                  <EnhancedChatWidget showSettings={true} />
+                  <EnhancedChatWidget />
                 </div>
               }
             />
