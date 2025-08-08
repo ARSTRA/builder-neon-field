@@ -103,22 +103,22 @@ export function SimpleChatWidget() {
   return (
     <div className="fixed bottom-6 right-6 z-50">
       <Card
-        className={`w-80 shadow-2xl transition-all duration-300 ${
-          isMinimized ? "h-16" : "h-96"
+        className={`w-72 sm:w-80 shadow-2xl transition-all duration-300 ${
+          isMinimized ? "h-14 sm:h-16" : "h-80 sm:h-96"
         }`}
       >
         {/* Chat Header */}
-        <CardHeader 
-          className="text-white rounded-t-lg p-4 bg-gradient-to-r from-royal-600 to-orange-500"
+        <CardHeader
+          className="text-white rounded-t-lg p-3 sm:p-4 bg-gradient-to-r from-royal-600 to-orange-500"
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Avatar className="h-6 w-6">
+              <Avatar className="h-5 w-5 sm:h-6 sm:w-6">
                 <AvatarImage src="https://images.unsplash.com/photo-1494790108755-2616b332c3f2?w=150&h=150&fit=crop&crop=face" />
-                <AvatarFallback>GT</AvatarFallback>
+                <AvatarFallback className="text-xs">GT</AvatarFallback>
               </Avatar>
               <div>
-                <h3 className="font-semibold text-sm">GlobalTrack Support</h3>
+                <h3 className="font-semibold text-xs sm:text-sm">GlobalTrack Support</h3>
                 <p className="text-xs opacity-90">
                   {isTyping ? "Typing..." : isOnline ? "Online" : "Offline"}
                 </p>
@@ -129,17 +129,17 @@ export function SimpleChatWidget() {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsMinimized(!isMinimized)}
-                className="text-white hover:bg-white/10 h-6 w-6 p-0"
+                className="text-white hover:bg-white/10 h-5 w-5 sm:h-6 sm:w-6 p-0 touch-manipulation"
               >
-                <Minimize2 className="h-3 w-3" />
+                <Minimize2 className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(false)}
-                className="text-white hover:bg-white/10 h-6 w-6 p-0"
+                className="text-white hover:bg-white/10 h-5 w-5 sm:h-6 sm:w-6 p-0 touch-manipulation"
               >
-                <X className="h-3 w-3" />
+                <X className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
               </Button>
             </div>
           </div>
