@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Globe, Shield } from "lucide-react";
 import { Logo, LogoMark } from "./logo";
-import { EnhancedSocialIcons } from "./enhanced-social-icons";
+import { SimpleSocialFooter } from "./simple-social-footer";
 
 export function Footer() {
   return (
@@ -109,13 +109,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Enhanced Social Media & Contact Section */}
+          {/* Social Media & Contact Section */}
           <div>
-            <EnhancedSocialIcons
-              showLabels={false}
-              size="md"
-              className=""
-            />
+            <SimpleSocialFooter className="" />
           </div>
         </div>
       </div>
