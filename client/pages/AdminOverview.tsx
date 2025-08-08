@@ -1,4 +1,3 @@
-import React from "react";
 import { AdminCredentialsInfo } from "@/components/ui/admin-credentials-info";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
