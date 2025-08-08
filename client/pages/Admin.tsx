@@ -151,7 +151,7 @@ export default function Admin() {
       title: "Logged Out",
       description: "You have been successfully logged out from admin portal.",
     });
-    navigate("/admin/login");
+    navigate("/login");
   };
 
   const handleExportReport = () => {
