@@ -224,10 +224,10 @@ export function ChatWidget() {
               </div>
               <div className="mt-2 text-center">
                 <Link
-                  to="/chat"
+                  to="/contact"
                   className="text-xs text-blue-600 hover:text-blue-800 underline"
                 >
-                  Open full chat experience →
+                  Contact our support team →
                 </Link>
               </div>
             </div>
