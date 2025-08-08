@@ -75,7 +75,7 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 touch-manipulation"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -95,7 +95,7 @@ export function Navigation() {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                  className={`block px-4 py-4 rounded-lg font-medium transition-all duration-200 touch-manipulation ${
                     location.pathname === item.href
                       ? "text-royal-600 bg-royal-50 border-l-4 border-royal-600"
                       : "text-gray-700 hover:text-royal-600 hover:bg-white"
@@ -112,7 +112,7 @@ export function Navigation() {
                   setIsQuoteModalOpen(true);
                   setIsMenuOpen(false);
                 }}
-                className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white shadow-md py-3"
+                className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white shadow-md py-4 touch-manipulation"
               >
                 Get Quote
               </Button>
@@ -120,7 +120,7 @@ export function Navigation() {
                 <Button
                   variant="outline"
                   onClick={() => setIsMenuOpen(false)}
-                  className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300"
+                  className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 py-4 touch-manipulation"
                 >
                   Sign In
                 </Button>
