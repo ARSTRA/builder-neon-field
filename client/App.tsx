@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "./components/ui/navigation";
 import { ChatWidget } from "./components/ui/chat-widget";
 import { ScrollToTop } from "./components/ui/scroll-to-top";
+import { Footer } from "./components/ui/footer";
 import Index from "./pages/Index";
 import Track from "./pages/Track";
 import Services from "./pages/Services";
