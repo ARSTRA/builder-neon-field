@@ -90,14 +90,6 @@ export function Footer() {
                   News & Updates
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/chat"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                >
-                  Live Chat
-                </Link>
-              </li>
             </ul>
           </div>
 
