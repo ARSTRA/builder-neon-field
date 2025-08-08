@@ -72,6 +72,8 @@ import { TrackingManagement } from "@/components/ui/admin-sections/tracking-mana
 import { QuoteManagement } from "@/components/ui/admin-sections/quote-management";
 import { ContactManagement } from "@/components/ui/admin-sections/contact-management";
 import { GeneralSettings } from "@/components/ui/admin-sections/general-settings";
+import { NotificationDropdown } from "@/components/ui/notification-dropdown";
+import { useNotifications } from "@/hooks/use-notifications";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Admin() {
