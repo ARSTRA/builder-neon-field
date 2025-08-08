@@ -458,17 +458,17 @@ export default function Newspaper() {
       </section>
 
       {/* Company Highlights */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-12 lg:py-16 bg-white">
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">GlobalTrack at a Glance</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className="text-center mb-8 lg:mb-12">
+              <h2 className="text-2xl lg:text-4xl font-bold text-gray-800 mb-4">GlobalTrack at a Glance</h2>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Leading the future of logistics with innovation, sustainability, and unwavering commitment to excellence
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-royal-50 to-royal-100">
                 <CardContent className="p-8 text-center">
                   <div className="w-16 h-16 bg-royal-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
