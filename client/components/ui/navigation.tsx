@@ -41,31 +41,33 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 to={item.href}
-                className={`font-medium transition-colors hover:text-royal-600 ${
+                className={`font-medium text-sm xl:text-base transition-all duration-200 hover:text-royal-600 py-2 ${
                   location.pathname === item.href
-                    ? "text-royal-600 border-b-2 border-royal-600 pb-1"
-                    : "text-gray-700"
+                    ? "text-royal-600 border-b-2 border-royal-600"
+                    : "text-gray-700 hover:text-royal-600"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 ml-6">
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white"
+                size="sm"
+                className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white shadow-md hover:shadow-lg transition-all duration-300 px-6"
               >
                 Get Quote
               </Button>
               <Link to="/admin/login">
                 <Button
                   variant="outline"
-                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white mr-2"
+                  size="sm"
+                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300"
                 >
                   Admin
                 </Button>
@@ -73,7 +75,8 @@ export function Navigation() {
               <Link to="/login">
                 <Button
                   variant="outline"
-                  className="border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white"
+                  size="sm"
+                  className="border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300"
                 >
                   Sign In
                 </Button>
