@@ -82,6 +82,7 @@ export default function Admin() {
   const [currentView, setCurrentView] = useState("dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const { notifications, markAsRead, markAllAsRead, clearAll } = useNotifications("admin");
 
   useEffect(() => {
     // Check if user is admin
