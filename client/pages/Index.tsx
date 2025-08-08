@@ -20,6 +20,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Logo } from "@/components/ui/logo";
 import { GetQuoteModal } from "@/components/ui/get-quote-modal";
+import { FloatingSocialBar } from "@/components/ui/floating-social-bar";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Index() {
