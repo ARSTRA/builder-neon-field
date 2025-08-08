@@ -684,6 +684,13 @@ export default function Admin() {
             {currentView === "quotes" && <QuoteManagement />}
             {currentView === "contacts" && <ContactManagement />}
             {currentView === "general" && <GeneralSettings />}
+
+            {/* Development: Notification Test Component */}
+            {currentView === "dashboard" && process.env.NODE_ENV === "development" && (
+              <div className="mt-8 max-w-md">
+                <NotificationTest type="admin" />
+              </div>
+            )}
           </div>
         </div>
       </div>
