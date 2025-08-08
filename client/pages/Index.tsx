@@ -892,6 +892,12 @@ export default function Index() {
         onOpenChange={setIsQuoteModalOpen}
       />
 
+      {/* Floating Social Media Bar */}
+      <FloatingSocialBar
+        show={true}
+        position="bottom-left"
+      />
+
       {/* Floating Action Buttons */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         {/* Live Chat Button */}
