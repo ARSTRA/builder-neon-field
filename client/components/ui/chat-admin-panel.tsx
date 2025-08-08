@@ -242,6 +242,9 @@ export function ChatAdminPanel() {
             <Settings className="h-5 w-5 mr-2" />
             Chat Configuration
           </CardTitle>
+          <p className="text-sm text-gray-600 mt-2">
+            Configure chat settings for all customer-facing pages. These settings are managed centrally and do not expose configuration options to public users.
+          </p>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="provider" className="w-full">
