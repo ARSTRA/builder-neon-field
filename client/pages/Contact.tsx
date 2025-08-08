@@ -118,12 +118,12 @@ export default function Contact() {
     },
     {
       icon: <MessageCircle className="h-8 w-8" />,
-      title: "Live Chat Support",
-      description: "Get instant answers to your shipping questions",
-      contact: "Start Chat",
-      action: "Chat Now",
+      title: "WhatsApp Support",
+      description: "Get instant answers via WhatsApp messaging",
+      contact: "Message Us",
+      action: "WhatsApp",
       gradient: "from-green-600 to-green-800",
-      availability: "Online Now",
+      availability: "24/7 Available",
     },
     {
       icon: <Mail className="h-8 w-8" />,
