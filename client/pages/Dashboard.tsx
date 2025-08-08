@@ -522,6 +522,13 @@ export default function Dashboard() {
             {currentView === "profile" && <ProfileSection />}
             {currentView === "kyc" && <KYCSection />}
             {currentView === "settings" && <SettingsSection />}
+
+            {/* Development: Notification Test Component */}
+            {currentView === "overview" && process.env.NODE_ENV === "development" && (
+              <div className="mt-8">
+                <NotificationTest type="user" />
+              </div>
+            )}
           </div>
         </div>
       </div>
