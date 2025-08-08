@@ -104,6 +104,16 @@ const App = () => (
               </div>
             }
           />
+          <Route
+            path="/newspaper"
+            element={
+              <div className="min-h-screen bg-white">
+                <Navigation />
+                <Newspaper />
+                <ChatWidget />
+              </div>
+            }
+          />
 
           {/* Auth pages without navigation */}
           <Route path="/login" element={<Login />} />
