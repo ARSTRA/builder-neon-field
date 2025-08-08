@@ -38,30 +38,6 @@ export default function SimpleLogin() {
   // Check if admin access is requested via URL parameters
   const isAdminAccess = location.search.includes('admin=true') || location.pathname.includes('/admin');
 
-  // Admin credentials
-  const adminCredentials = [
-    {
-      email: "admin@globaltrack.com",
-      password: "admin123",
-      role: "Super Admin",
-    },
-    { email: "admin@gt.com", password: "admin123", role: "Admin" },
-    {
-      email: "superadmin@globaltrack.com",
-      password: "superadmin123",
-      role: "Super Admin",
-    },
-    {
-      email: "manager@globaltrack.com",
-      password: "manager123",
-      role: "Manager",
-    },
-    {
-      email: "support@globaltrack.com",
-      password: "support123",
-      role: "Support Admin",
-    },
-  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -88,11 +64,8 @@ export default function SimpleLogin() {
     const email = formData.email.trim().toLowerCase();
     const password = formData.password.trim();
 
-    // Check if this is an admin account
-    const validAdmin = adminCredentials.find(
-      (admin) =>
-        admin.email.toLowerCase() === email && admin.password === password,
-    );
+    // Check if this is an admin account using centralized configuration
+    const validAdmin = validateAdminCredentials(email, password);
 
     if (validAdmin) {
       // Admin login
