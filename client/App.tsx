@@ -27,6 +27,7 @@ import Admin from "./pages/Admin";
 import UnifiedAdmin from "./pages/UnifiedAdmin";
 import AdminLogin from "./pages/AdminLogin";
 import AdminSetup from "./pages/AdminSetup";
+import AdminOverview from "./pages/AdminOverview";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
