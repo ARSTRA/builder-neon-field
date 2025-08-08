@@ -58,7 +58,7 @@ export function ProfileSection() {
   const handleSave = () => {
     setIsEditing(false);
     // Here you would typically save to your backend
-    console.log("Saving profile data:", profileData);
+    // console.log("Saving profile data:", profileData);
   };
 
   const handleInputChange = (field: string, value: string) => {
