@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GetQuoteModal } from "@/components/ui/get-quote-modal";
+import { SocialMediaShare } from "@/components/ui/social-media-share";
 
 export default function About() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
