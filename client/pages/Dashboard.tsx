@@ -49,6 +49,13 @@ export default function Dashboard() {
     if (!localStorage.getItem("isLoggedIn")) {
       navigate("/login");
     }
+
+    // Handle URL parameters for view
+    const urlParams = new URLSearchParams(window.location.search);
+    const viewParam = urlParams.get("view");
+    if (viewParam && ["overview", "tracking", "payments", "profile", "kyc", "settings"].includes(viewParam)) {
+      setCurrentView(viewParam as any);
+    }
   }, [navigate]);
 
   const handleLogout = () => {
