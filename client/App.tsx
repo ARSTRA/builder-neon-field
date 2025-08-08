@@ -1,7 +1,6 @@
 import "./global.css";
 
 import { Toaster } from "@/components/ui/toaster";
-import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -26,119 +25,119 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          {/* Public pages with navigation */}
-          <Route
-            path="/"
-            element={
-              <div className="min-h-screen bg-white">
-                <Navigation />
-                <Index />
-                <ChatWidget />
-                <Footer />
-              </div>
-            }
-          />
-          <Route
-            path="/track"
-            element={
-              <div className="min-h-screen bg-white">
-                <Navigation />
-                <Track />
-                <ChatWidget />
-                <Footer />
-              </div>
-            }
-          />
-          <Route
-            path="/services"
-            element={
-              <div className="min-h-screen bg-white">
-                <Navigation />
-                <Services />
-                <ChatWidget />
-                <Footer />
-              </div>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <div className="min-h-screen bg-white">
-                <Navigation />
-                <About />
-                <ChatWidget />
-                <Footer />
-              </div>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <div className="min-h-screen bg-white">
-                <Navigation />
-                <Contact />
-                <ChatWidget />
-                <Footer />
-              </div>
-            }
-          />
-          <Route
-            path="/gallery"
-            element={
-              <div className="min-h-screen bg-white">
-                <Navigation />
-                <Gallery />
-                <ChatWidget />
-                <Footer />
-              </div>
-            }
-          />
-          <Route
-            path="/newspaper"
-            element={
-              <div className="min-h-screen bg-white">
-                <Navigation />
-                <Newspaper />
-                <ChatWidget />
-                <Footer />
-              </div>
-            }
-          />
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            {/* Public pages with navigation */}
+            <Route
+              path="/"
+              element={
+                <div className="min-h-screen bg-white">
+                  <Navigation />
+                  <Index />
+                  <ChatWidget />
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="/track"
+              element={
+                <div className="min-h-screen bg-white">
+                  <Navigation />
+                  <Track />
+                  <ChatWidget />
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="/services"
+              element={
+                <div className="min-h-screen bg-white">
+                  <Navigation />
+                  <Services />
+                  <ChatWidget />
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <div className="min-h-screen bg-white">
+                  <Navigation />
+                  <About />
+                  <ChatWidget />
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <div className="min-h-screen bg-white">
+                  <Navigation />
+                  <Contact />
+                  <ChatWidget />
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="/gallery"
+              element={
+                <div className="min-h-screen bg-white">
+                  <Navigation />
+                  <Gallery />
+                  <ChatWidget />
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="/newspaper"
+              element={
+                <div className="min-h-screen bg-white">
+                  <Navigation />
+                  <Newspaper />
+                  <ChatWidget />
+                  <Footer />
+                </div>
+              }
+            />
 
-          {/* Auth pages without navigation */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+            {/* Auth pages without navigation */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
 
-          {/* Dashboard without main navigation */}
-          <Route path="/dashboard" element={<Dashboard />} />
+            {/* Dashboard without main navigation */}
+            <Route path="/dashboard" element={<Dashboard />} />
 
-          {/* Admin auth and panel without main navigation */}
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin" element={<Admin />} />
+            {/* Admin auth and panel without main navigation */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin" element={<Admin />} />
 
-          {/* 404 page */}
-          <Route
-            path="*"
-            element={
-              <div className="min-h-screen bg-white">
-                <Navigation />
-                <NotFound />
-                <ChatWidget />
-              </div>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
-
-createRoot(document.getElementById("root")!).render(<App />);
+            {/* 404 page */}
+            <Route
+              path="*"
+              element={
+                <div className="min-h-screen bg-white">
+                  <Navigation />
+                  <NotFound />
+                  <ChatWidget />
+                </div>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
