@@ -42,6 +42,13 @@ export default function UnifiedLogin() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
+  // Pre-select admin account type if accessing admin route
+  useEffect(() => {
+    if (location.pathname.includes('/admin')) {
+      setAccountType('admin');
+    }
+  }, [location.pathname]);
+
   // Admin credentials from AdminLogin.tsx
   const adminCredentials = [
     {
