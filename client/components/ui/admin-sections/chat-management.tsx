@@ -51,6 +51,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Progress } from "@/components/ui/progress";
+import { ChatAdminPanel } from "@/components/ui/chat-admin-panel";
 
 export function ChatManagement() {
   const { toast } = useToast();
