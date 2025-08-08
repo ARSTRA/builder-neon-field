@@ -239,7 +239,9 @@ export default function Contact() {
                 Call Now: +1 (555) 123-4567
               </Button>
               <Button
-                onClick={() => window.open("mailto:info@globaltrack.com", "_self")}
+                onClick={() =>
+                  window.open("mailto:info@globaltrack.com", "_self")
+                }
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
               >

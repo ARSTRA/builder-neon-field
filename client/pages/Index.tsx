@@ -911,7 +911,6 @@ export default function Index() {
           <Phone className="h-6 w-6 group-hover:animate-pulse" />
         </Button>
       </div>
-
     </div>
   );
 }

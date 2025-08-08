@@ -586,9 +586,7 @@ export default function Services() {
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
                     <Link to="/contact">
-                      <Button
-                        className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] rounded-lg font-semibold"
-                      >
+                      <Button className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] rounded-lg font-semibold">
                         <Phone className="h-4 w-4 mr-2 group-hover:animate-pulse" />
                         Call Expert
                       </Button>
@@ -717,7 +715,9 @@ export default function Services() {
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="font-semibold">Expert Available Now!</span>
               </div>
-              <div className="text-xs text-gray-300 mt-1">Free consultation • Average response: 30s</div>
+              <div className="text-xs text-gray-300 mt-1">
+                Free consultation • Average response: 30s
+              </div>
               <div className="absolute top-full right-6 w-0 h-0 border-l-4 border-r-4 border-t-6 border-transparent border-t-gray-900"></div>
             </div>
           </div>

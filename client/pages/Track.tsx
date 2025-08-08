@@ -175,7 +175,9 @@ export default function Track() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
         <div className="relative container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl lg:text-5xl font-bold mb-4 lg:mb-6">Track Your Package</h1>
+            <h1 className="text-3xl lg:text-5xl font-bold mb-4 lg:mb-6">
+              Track Your Package
+            </h1>
             <p className="text-lg lg:text-xl text-gray-200 mb-6 lg:mb-8 leading-relaxed">
               Real-time GPS tracking with live updates every step of the way
             </p>
@@ -826,9 +828,10 @@ export default function Track() {
                   Need Help Finding Your Package?
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-                  Enter your tracking number above to get real-time updates on your shipment.
-                  For tracking numbers starting with 'GT', our system provides detailed location
-                  tracking and delivery estimates.
+                  Enter your tracking number above to get real-time updates on
+                  your shipment. For tracking numbers starting with 'GT', our
+                  system provides detailed location tracking and delivery
+                  estimates.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button
@@ -840,7 +843,7 @@ export default function Track() {
                   </Button>
                   <Button
                     variant="outline"
-                    onClick={() => window.location.href = "/chat"}
+                    onClick={() => (window.location.href = "/chat")}
                     className="border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white px-8 py-3 font-semibold transition-all duration-300"
                   >
                     <MessageCircle className="mr-2 h-5 w-5" />
