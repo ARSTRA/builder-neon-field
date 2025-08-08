@@ -103,16 +103,6 @@ const App = () => (
             }
           />
           <Route
-            path="/chat"
-            element={
-              <div className="min-h-screen bg-white">
-                <Navigation />
-                <LiveChat />
-                <Footer />
-              </div>
-            }
-          />
-          <Route
             path="/newspaper"
             element={
               <div className="min-h-screen bg-white">
