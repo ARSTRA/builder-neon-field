@@ -524,17 +524,49 @@ export default function Newspaper() {
               company updates, and logistics innovations that matter to your business.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto mb-8">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-6 py-4 rounded-xl text-gray-800 placeholder:text-gray-500 border-0 focus:ring-2 focus:ring-orange-400 outline-none"
-              />
-              <Button className="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                Subscribe
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
+            <form onSubmit={handleSubscribe} className="max-w-lg mx-auto mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="relative flex-1">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email address"
+                    className="w-full px-6 py-4 pl-12 rounded-xl text-gray-800 placeholder:text-gray-500 border-0 focus:ring-2 focus:ring-orange-400 outline-none shadow-lg"
+                    disabled={isSubscribing}
+                    required
+                  />
+                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                </div>
+                <Button
+                  type="submit"
+                  disabled={isSubscribing}
+                  className="bg-orange-500 hover:bg-orange-600 disabled:bg-orange-400 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:transform-none"
+                >
+                  {isSubscribing ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                      Subscribing...
+                    </>
+                  ) : (
+                    <>
+                      Subscribe
+                      <Send className="ml-2 h-5 w-5" />
+                    </>
+                  )}
+                </Button>
+              </div>
+
+              {subscribeMessage && (
+                <div className={`mt-4 p-4 rounded-xl text-center ${
+                  subscribeMessage.includes("🎉")
+                    ? "bg-green-500/20 text-green-100 border border-green-400/30"
+                    : "bg-red-500/20 text-red-100 border border-red-400/30"
+                }`}>
+                  {subscribeMessage}
+                </div>
+              )}
+            </form>
             
             <p className="text-sm text-gray-300">
               Join 10,000+ logistics professionals who trust GlobalTrack Times for industry insights
