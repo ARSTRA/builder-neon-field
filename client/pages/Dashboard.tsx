@@ -270,7 +270,7 @@ export default function Dashboard() {
                 <Avatar className="h-8 w-8">
                   <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" />
                   <AvatarFallback>
-                    {userEmail.charAt(0).toUpperCase()}
+                    {userEmail ? userEmail.charAt(0).toUpperCase() : "U"}
                   </AvatarFallback>
                 </Avatar>
                 <div className="hidden md:block">
