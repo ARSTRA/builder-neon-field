@@ -84,6 +84,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  to="/newspaper"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
+                  News & Updates
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/chat"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                 >
