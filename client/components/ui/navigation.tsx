@@ -17,7 +17,6 @@ export function Navigation() {
     { href: "/gallery", label: "Gallery" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact" },
-    { href: "/chat", label: "Live Chat" },
   ];
 
   return (
