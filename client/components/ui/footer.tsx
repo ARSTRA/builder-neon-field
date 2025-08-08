@@ -109,50 +109,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Information */}
+          {/* Enhanced Social Media & Contact Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-orange-500">
-              Contact Information
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <Phone className="h-5 w-5 text-orange-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-white font-medium">Phone</p>
-                  <p className="text-gray-300">+1 (555) 123-4567</p>
-                  <p className="text-gray-300 text-sm">Available 24/7</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <Mail className="h-5 w-5 text-orange-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-white font-medium">Email</p>
-                  <p className="text-gray-300">info@globaltrack.com</p>
-                  <p className="text-gray-300 text-sm">
-                    Response within 2 hours
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-orange-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-white font-medium">Headquarters</p>
-                  <p className="text-gray-300">Global Shipping Solutions</p>
-                  <p className="text-gray-300 text-sm">International Network</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <Clock className="h-5 w-5 text-orange-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-white font-medium">Support Hours</p>
-                  <p className="text-gray-300">24/7 Customer Support</p>
-                  <p className="text-gray-300 text-sm">Always here to help</p>
-                </div>
-              </div>
-            </div>
+            <EnhancedSocialIcons
+              showLabels={false}
+              size="md"
+              className=""
+            />
           </div>
         </div>
       </div>
