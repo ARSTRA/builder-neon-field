@@ -303,8 +303,9 @@ export default function Contact() {
                       onClick={() => {
                         if (method.title === "Call Us Directly") {
                           window.open("tel:+15551234567", "_self");
-                        } else if (method.title === "Live Chat Support") {
-                          window.location.href = "/contact";
+                        } else if (method.title === "WhatsApp Support") {
+                          const message = encodeURIComponent("Hello! I would like to inquire about GlobalTrack logistics services.");
+                          window.open(`https://wa.me/15551234567?text=${message}`, "_blank");
                         } else if (method.title === "Email Support") {
                           const subject = encodeURIComponent("GlobalTrack Support Request");
                           const body = encodeURIComponent("Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards");
