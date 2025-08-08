@@ -912,8 +912,6 @@ export default function Index() {
         </Button>
       </div>
 
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }
