@@ -20,6 +20,14 @@ import {
   User,
   Calendar,
   MapPin,
+  Save,
+  X,
+  Building,
+  Globe,
+  MessageCircle,
+  PhoneCall,
+  History,
+  AlertCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -59,6 +67,12 @@ export function ContactManagement() {
   const [typeFilter, setTypeFilter] = useState("all");
   const [selectedMessage, setSelectedMessage] = useState<any>(null);
   const [isComposeOpen, setIsComposeOpen] = useState(false);
+  const [isEditingContact, setIsEditingContact] = useState(false);
+  const [editingContactId, setEditingContactId] = useState<string | null>(null);
+  const [editContactData, setEditContactData] = useState<any>({});
+  const [isAddingContact, setIsAddingContact] = useState(false);
+  const [contactHistory, setContactHistory] = useState<any[]>([]);
+  const [isViewingHistory, setIsViewingHistory] = useState(false);
 
   // Sample data
   const contactStats = [
@@ -96,13 +110,19 @@ export function ContactManagement() {
     },
   ];
 
-  const contacts = [
+  const [contacts, setContacts] = useState([
     {
       id: "1",
       name: "John Smith",
       email: "john.smith@techcorp.com",
       phone: "+1 (555) 123-4567",
+      alternatePhone: "+1 (555) 123-4568",
       company: "TechCorp Solutions",
+      jobTitle: "Logistics Manager",
+      address: "123 Business Ave, Tech City, TC 12345",
+      website: "https://techcorp.com",
+      industry: "Technology",
+      preferredContact: "email",
       subject: "Inquiry about Air Freight Services",
       message:
         "Hello, I'm interested in your air freight services for our upcoming shipment to Europe. Could you please provide a quote for 500kg of electronics equipment?",
@@ -113,13 +133,22 @@ export function ContactManagement() {
       lastReply: "2024-12-15 15:45",
       assignedTo: "Sarah Johnson",
       tags: ["air-freight", "europe", "electronics"],
+      notes: "Potential high-value client, expedite response",
+      lastModified: "2024-12-15 16:00",
+      modifiedBy: "Admin",
     },
     {
       id: "2",
       name: "Emily Rodriguez",
       email: "emily@globalmanufacturing.com",
       phone: "+1 (555) 987-6543",
+      alternatePhone: "+1 (555) 987-6544",
       company: "Global Manufacturing Inc.",
+      jobTitle: "Supply Chain Director",
+      address: "456 Industrial Blvd, Manufacturing City, MC 54321",
+      website: "https://globalmanufacturing.com",
+      industry: "Manufacturing",
+      preferredContact: "phone",
       subject: "Tracking Issue - GT240001",
       message:
         "I'm having trouble tracking my shipment GT240001. The last update was 3 days ago and I need to know the current status urgently.",
@@ -130,13 +159,22 @@ export function ContactManagement() {
       lastReply: "2024-12-15 11:30",
       assignedTo: "Mike Thompson",
       tags: ["tracking", "urgent", "gt240001"],
+      notes: "Regular customer, priority support required",
+      lastModified: "2024-12-15 12:00",
+      modifiedBy: "Mike Thompson",
     },
     {
       id: "3",
       name: "David Chen",
       email: "david.chen@retailplus.com",
       phone: "+1 (555) 456-7890",
+      alternatePhone: "+1 (555) 456-7891",
       company: "Retail Plus",
+      jobTitle: "Procurement Manager",
+      address: "789 Commerce St, Retail City, RC 98765",
+      website: "https://retailplus.com",
+      industry: "Retail",
+      preferredContact: "email",
       subject: "Bulk Shipping Quote Request",
       message:
         "We're looking for a long-term partnership for our monthly shipments from Asia to North America. Approximately 10 containers per month.",
@@ -147,13 +185,22 @@ export function ContactManagement() {
       lastReply: "2024-12-15 09:15",
       assignedTo: "Anna Davis",
       tags: ["bulk-shipping", "long-term", "asia"],
+      notes: "Contract signed, monthly recurring business",
+      lastModified: "2024-12-15 10:00",
+      modifiedBy: "Anna Davis",
     },
     {
       id: "4",
       name: "Lisa Thompson",
       email: "lisa@fashiontrends.com",
       phone: "+1 (555) 321-0987",
+      alternatePhone: "+1 (555) 321-0988",
       company: "Fashion Trends Ltd.",
+      jobTitle: "Operations Director",
+      address: "321 Fashion Ave, Style City, SC 11111",
+      website: "https://fashiontrends.com",
+      industry: "Fashion",
+      preferredContact: "phone",
       subject: "Complaint about Delayed Delivery",
       message:
         "Our shipment was supposed to arrive 3 days ago but it's still in transit. This is causing significant delays in our production schedule.",
@@ -164,8 +211,11 @@ export function ContactManagement() {
       lastReply: "2024-12-15 13:20",
       assignedTo: "Customer Success Team",
       tags: ["delay", "complaint", "production"],
+      notes: "Provide compensation offer, escalate to management",
+      lastModified: "2024-12-15 14:00",
+      modifiedBy: "Customer Success Team",
     },
-  ];
+  ]);
 
   const templates = [
     {
@@ -259,6 +309,106 @@ export function ContactManagement() {
     });
   };
 
+  const handleEditContact = (contact: any) => {
+    setEditingContactId(contact.id);
+    setEditContactData({ ...contact });
+    setIsEditingContact(true);
+  };
+
+  const handleSaveContact = () => {
+    setContacts((prev) =>
+      prev.map((contact) =>
+        contact.id === editingContactId
+          ? {
+              ...editContactData,
+              lastModified: new Date().toISOString().slice(0, 16).replace('T', ' '),
+              modifiedBy: "Admin",
+            }
+          : contact
+      )
+    );
+    setIsEditingContact(false);
+    setEditingContactId(null);
+    setEditContactData({});
+    toast({
+      title: "Contact Updated",
+      description: "Contact information has been successfully updated.",
+    });
+  };
+
+  const handleDeleteContact = (contactId: string) => {
+    setContacts((prev) => prev.filter((contact) => contact.id !== contactId));
+    toast({
+      title: "Contact Deleted",
+      description: "Contact has been successfully deleted.",
+      variant: "destructive",
+    });
+  };
+
+  const handleAddContact = () => {
+    const newContact = {
+      id: Date.now().toString(),
+      name: editContactData.name || "",
+      email: editContactData.email || "",
+      phone: editContactData.phone || "",
+      alternatePhone: editContactData.alternatePhone || "",
+      company: editContactData.company || "",
+      jobTitle: editContactData.jobTitle || "",
+      address: editContactData.address || "",
+      website: editContactData.website || "",
+      industry: editContactData.industry || "",
+      preferredContact: editContactData.preferredContact || "email",
+      subject: editContactData.subject || "",
+      message: editContactData.message || "",
+      status: "open",
+      priority: editContactData.priority || "medium",
+      type: editContactData.type || "inquiry",
+      createdAt: new Date().toISOString().slice(0, 16).replace('T', ' '),
+      lastReply: "",
+      assignedTo: "Unassigned",
+      tags: [],
+      notes: editContactData.notes || "",
+      lastModified: new Date().toISOString().slice(0, 16).replace('T', ' '),
+      modifiedBy: "Admin",
+    };
+    setContacts((prev) => [newContact, ...prev]);
+    setIsAddingContact(false);
+    setEditContactData({});
+    toast({
+      title: "Contact Added",
+      description: "New contact has been successfully added.",
+    });
+  };
+
+  const handleViewHistory = (contact: any) => {
+    // Mock history data - in real app, this would come from API
+    const mockHistory = [
+      {
+        id: "1",
+        action: "Contact Created",
+        details: "Contact was initially created",
+        timestamp: contact.createdAt,
+        performedBy: "System",
+      },
+      {
+        id: "2",
+        action: "Email Updated",
+        details: `Email changed from old@email.com to ${contact.email}`,
+        timestamp: contact.lastModified,
+        performedBy: contact.modifiedBy,
+      },
+      {
+        id: "3",
+        action: "Status Updated",
+        details: `Status changed to ${contact.status}`,
+        timestamp: contact.lastReply,
+        performedBy: contact.assignedTo,
+      },
+    ];
+    setContactHistory(mockHistory);
+    setIsViewingHistory(true);
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -334,8 +484,9 @@ export function ContactManagement() {
 
       {/* Main Content Tabs */}
       <Tabs defaultValue="messages" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="messages">Messages</TabsTrigger>
+          <TabsTrigger value="contacts">Contacts</TabsTrigger>
           <TabsTrigger value="templates">Templates</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
           <TabsTrigger value="settings">Settings</TabsTrigger>
@@ -411,10 +562,16 @@ export function ContactManagement() {
                             </h3>
                             {getTypeIcon(contact.type)}
                           </div>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-gray-600 flex items-center">
+                            <Mail className="h-3 w-3 mr-1" />
                             {contact.email}
                           </p>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-gray-600 flex items-center">
+                            <Phone className="h-3 w-3 mr-1" />
+                            {contact.phone}
+                          </p>
+                          <p className="text-sm text-gray-600 flex items-center">
+                            <Building className="h-3 w-3 mr-1" />
                             {contact.company}
                           </p>
                         </div>
@@ -436,6 +593,18 @@ export function ContactManagement() {
                               Reply
                             </DropdownMenuItem>
                             <DropdownMenuItem
+                              onClick={() => handleEditContact(contact)}
+                            >
+                              <Edit className="h-4 w-4 mr-2" />
+                              Edit Contact
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={() => handleViewHistory(contact)}
+                            >
+                              <History className="h-4 w-4 mr-2" />
+                              View History
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
                               onClick={() =>
                                 handleAssign(contact.id, "New Agent")
                               }
@@ -450,6 +619,13 @@ export function ContactManagement() {
                             >
                               <Archive className="h-4 w-4 mr-2" />
                               Close
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={() => handleDeleteContact(contact.id)}
+                              className="text-red-600"
+                            >
+                              <Trash2 className="h-4 w-4 mr-2" />
+                              Delete
                             </DropdownMenuItem>
                           </DropdownMenuContent>
                         </DropdownMenu>
@@ -488,6 +664,169 @@ export function ContactManagement() {
                           {tag}
                         </Badge>
                       ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Contacts Tab */}
+        <TabsContent value="contacts" className="space-y-6">
+          <Card className="border-0 shadow-lg">
+            <CardHeader>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <CardTitle>Contact Directory</CardTitle>
+                <div className="flex space-x-2 mt-4 sm:mt-0">
+                  <Button
+                    variant="outline"
+                    onClick={() =>
+                      toast({
+                        title: "Importing Contacts",
+                        description: "Contact import feature will be available soon...",
+                      })
+                    }
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Import
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      setEditContactData({});
+                      setIsAddingContact(true);
+                    }}
+                    className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+                  >
+                    <Plus className="h-4 w-4 mr-2" />
+                    Add Contact
+                  </Button>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-4">
+                {contacts.map((contact) => (
+                  <div
+                    key={contact.id}
+                    className="p-6 border rounded-lg hover:shadow-md transition-shadow"
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-start space-x-4">
+                        <Avatar className="h-16 w-16">
+                          <AvatarFallback className="text-lg">
+                            {contact.name
+                              ? contact.name
+                                  .split(" ")
+                                  .map((n) => (n ? n[0] : ""))
+                                  .join("")
+                              : "C"}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <h3 className="text-xl font-semibold text-gray-900">
+                              {contact.name}
+                            </h3>
+                            {contact.preferredContact === "email" && (
+                              <Mail className="h-4 w-4 text-blue-500" title="Prefers Email" />
+                            )}
+                            {contact.preferredContact === "phone" && (
+                              <Phone className="h-4 w-4 text-green-500" title="Prefers Phone" />
+                            )}
+                          </div>
+                          <p className="text-gray-600 font-medium mb-1">
+                            {contact.jobTitle} at {contact.company}
+                          </p>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
+                            <div className="flex items-center">
+                              <Mail className="h-3 w-3 mr-2" />
+                              {contact.email}
+                            </div>
+                            <div className="flex items-center">
+                              <Phone className="h-3 w-3 mr-2" />
+                              {contact.phone}
+                            </div>
+                            {contact.alternatePhone && (
+                              <div className="flex items-center">
+                                <PhoneCall className="h-3 w-3 mr-2" />
+                                {contact.alternatePhone} (Alt)
+                              </div>
+                            )}
+                            {contact.website && (
+                              <div className="flex items-center">
+                                <Globe className="h-3 w-3 mr-2" />
+                                <a
+                                  href={contact.website}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-blue-600 hover:underline"
+                                >
+                                  {contact.website.replace('https://', '')}
+                                </a>
+                              </div>
+                            )}
+                          </div>
+                          {contact.address && (
+                            <div className="flex items-start mt-2 text-sm text-gray-600">
+                              <MapPin className="h-3 w-3 mr-2 mt-1 flex-shrink-0" />
+                              {contact.address}
+                            </div>
+                          )}
+                          {contact.notes && (
+                            <div className="mt-2 p-2 bg-yellow-50 rounded text-sm text-gray-700">
+                              <div className="flex items-start">
+                                <AlertCircle className="h-3 w-3 mr-1 mt-0.5 text-yellow-600" />
+                                <span className="font-medium">Notes:</span>
+                              </div>
+                              <p>{contact.notes}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Badge className="bg-gray-100 text-gray-800">
+                          {contact.industry}
+                        </Badge>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="sm">
+                              <MoreHorizontal className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent>
+                            <DropdownMenuItem
+                              onClick={() => handleEditContact(contact)}
+                            >
+                              <Edit className="h-4 w-4 mr-2" />
+                              Edit Contact
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={() => handleViewHistory(contact)}
+                            >
+                              <History className="h-4 w-4 mr-2" />
+                              View History
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={() => setSelectedMessage(contact)}
+                            >
+                              <MessageCircle className="h-4 w-4 mr-2" />
+                              Send Message
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={() => handleDeleteContact(contact.id)}
+                              className="text-red-600"
+                            >
+                              <Trash2 className="h-4 w-4 mr-2" />
+                              Delete Contact
+                            </DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div>
+                    </div>
+                    <div className="text-xs text-gray-500 flex justify-between">
+                      <span>Created: {contact.createdAt}</span>
+                      <span>Last Modified: {contact.lastModified} by {contact.modifiedBy}</span>
                     </div>
                   </div>
                 ))}
@@ -729,12 +1068,25 @@ export function ContactManagement() {
                   <h3 className="font-semibold text-gray-900">
                     {selectedMessage.name}
                   </h3>
-                  <p className="text-sm text-gray-600">
-                    {selectedMessage.email}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {selectedMessage.company}
-                  </p>
+                  <div className="space-y-1">
+                    <p className="text-sm text-gray-600 flex items-center">
+                      <Mail className="h-3 w-3 mr-1" />
+                      {selectedMessage.email}
+                    </p>
+                    <p className="text-sm text-gray-600 flex items-center">
+                      <Phone className="h-3 w-3 mr-1" />
+                      {selectedMessage.phone}
+                    </p>
+                    <p className="text-sm text-gray-600 flex items-center">
+                      <Building className="h-3 w-3 mr-1" />
+                      {selectedMessage.company}
+                    </p>
+                    {selectedMessage.jobTitle && (
+                      <p className="text-sm text-gray-600">
+                        {selectedMessage.jobTitle}
+                      </p>
+                    )}
+                  </div>
                 </div>
                 <div className="flex space-x-2">
                   {getStatusBadge(selectedMessage.status)}
@@ -832,6 +1184,270 @@ export function ContactManagement() {
                 Send Message
               </Button>
             </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Edit Contact Modal */}
+      <Dialog open={isEditingContact || isAddingContact} onOpenChange={() => {
+        setIsEditingContact(false);
+        setIsAddingContact(false);
+        setEditContactData({});
+        setEditingContactId(null);
+      }}>
+        <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>
+              {isAddingContact ? "Add New Contact" : "Edit Contact Information"}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="space-y-6">
+            {/* Basic Information */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-gray-900 border-b pb-2">Basic Information</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="edit-name">Full Name *</Label>
+                  <Input
+                    id="edit-name"
+                    value={editContactData.name || ""}
+                    onChange={(e) => setEditContactData(prev => ({ ...prev, name: e.target.value }))}
+                    placeholder="John Smith"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="edit-job-title">Job Title</Label>
+                  <Input
+                    id="edit-job-title"
+                    value={editContactData.jobTitle || ""}
+                    onChange={(e) => setEditContactData(prev => ({ ...prev, jobTitle: e.target.value }))}
+                    placeholder="Logistics Manager"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="edit-email">Email Address *</Label>
+                  <Input
+                    id="edit-email"
+                    type="email"
+                    value={editContactData.email || ""}
+                    onChange={(e) => setEditContactData(prev => ({ ...prev, email: e.target.value }))}
+                    placeholder="john@company.com"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="edit-company">Company</Label>
+                  <Input
+                    id="edit-company"
+                    value={editContactData.company || ""}
+                    onChange={(e) => setEditContactData(prev => ({ ...prev, company: e.target.value }))}
+                    placeholder="TechCorp Solutions"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-gray-900 border-b pb-2">Contact Information</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="edit-phone">Primary Phone *</Label>
+                  <Input
+                    id="edit-phone"
+                    value={editContactData.phone || ""}
+                    onChange={(e) => setEditContactData(prev => ({ ...prev, phone: e.target.value }))}
+                    placeholder="+1 (555) 123-4567"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="edit-alt-phone">Alternate Phone</Label>
+                  <Input
+                    id="edit-alt-phone"
+                    value={editContactData.alternatePhone || ""}
+                    onChange={(e) => setEditContactData(prev => ({ ...prev, alternatePhone: e.target.value }))}
+                    placeholder="+1 (555) 123-4568"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="edit-website">Website</Label>
+                  <Input
+                    id="edit-website"
+                    value={editContactData.website || ""}
+                    onChange={(e) => setEditContactData(prev => ({ ...prev, website: e.target.value }))}
+                    placeholder="https://company.com"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="edit-preferred-contact">Preferred Contact Method</Label>
+                  <Select
+                    value={editContactData.preferredContact || "email"}
+                    onValueChange={(value) => setEditContactData(prev => ({ ...prev, preferredContact: value }))}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select preference" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="email">Email</SelectItem>
+                      <SelectItem value="phone">Phone</SelectItem>
+                      <SelectItem value="both">Either</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+              <div>
+                <Label htmlFor="edit-address">Address</Label>
+                <Textarea
+                  id="edit-address"
+                  value={editContactData.address || ""}
+                  onChange={(e) => setEditContactData(prev => ({ ...prev, address: e.target.value }))}
+                  placeholder="123 Business Ave, City, State 12345"
+                  rows={2}
+                />
+              </div>
+            </div>
+
+            {/* Business Information */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-gray-900 border-b pb-2">Business Information</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="edit-industry">Industry</Label>
+                  <Select
+                    value={editContactData.industry || ""}
+                    onValueChange={(value) => setEditContactData(prev => ({ ...prev, industry: value }))}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select industry" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Technology">Technology</SelectItem>
+                      <SelectItem value="Manufacturing">Manufacturing</SelectItem>
+                      <SelectItem value="Retail">Retail</SelectItem>
+                      <SelectItem value="Fashion">Fashion</SelectItem>
+                      <SelectItem value="Healthcare">Healthcare</SelectItem>
+                      <SelectItem value="Automotive">Automotive</SelectItem>
+                      <SelectItem value="Food & Beverage">Food & Beverage</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <Label htmlFor="edit-priority">Priority Level</Label>
+                  <Select
+                    value={editContactData.priority || "medium"}
+                    onValueChange={(value) => setEditContactData(prev => ({ ...prev, priority: value }))}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select priority" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="low">Low</SelectItem>
+                      <SelectItem value="medium">Medium</SelectItem>
+                      <SelectItem value="high">High</SelectItem>
+                      <SelectItem value="urgent">Urgent</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+            </div>
+
+            {/* Additional Information */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-gray-900 border-b pb-2">Additional Information</h4>
+              <div>
+                <Label htmlFor="edit-notes">Internal Notes</Label>
+                <Textarea
+                  id="edit-notes"
+                  value={editContactData.notes || ""}
+                  onChange={(e) => setEditContactData(prev => ({ ...prev, notes: e.target.value }))}
+                  placeholder="Add any internal notes about this contact..."
+                  rows={3}
+                />
+              </div>
+              {isAddingContact && (
+                <>
+                  <div>
+                    <Label htmlFor="edit-subject">Initial Subject</Label>
+                    <Input
+                      id="edit-subject"
+                      value={editContactData.subject || ""}
+                      onChange={(e) => setEditContactData(prev => ({ ...prev, subject: e.target.value }))}
+                      placeholder="Inquiry about services"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="edit-message">Initial Message</Label>
+                    <Textarea
+                      id="edit-message"
+                      value={editContactData.message || ""}
+                      onChange={(e) => setEditContactData(prev => ({ ...prev, message: e.target.value }))}
+                      placeholder="Initial message or inquiry..."
+                      rows={3}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="edit-type">Contact Type</Label>
+                    <Select
+                      value={editContactData.type || "inquiry"}
+                      onValueChange={(value) => setEditContactData(prev => ({ ...prev, type: value }))}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="inquiry">Inquiry</SelectItem>
+                        <SelectItem value="support">Support</SelectItem>
+                        <SelectItem value="quote">Quote Request</SelectItem>
+                        <SelectItem value="complaint">Complaint</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </>
+              )}
+            </div>
+
+            <div className="flex justify-end space-x-2 pt-4 border-t">
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setIsEditingContact(false);
+                  setIsAddingContact(false);
+                  setEditContactData({});
+                  setEditingContactId(null);
+                }}
+              >
+                <X className="h-4 w-4 mr-2" />
+                Cancel
+              </Button>
+              <Button
+                onClick={isAddingContact ? handleAddContact : handleSaveContact}
+                className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+              >
+                <Save className="h-4 w-4 mr-2" />
+                {isAddingContact ? "Add Contact" : "Save Changes"}
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Contact History Modal */}
+      <Dialog open={isViewingHistory} onOpenChange={setIsViewingHistory}>
+        <DialogContent className="sm:max-w-[600px]">
+          <DialogHeader>
+            <DialogTitle>Contact History</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 max-h-96 overflow-y-auto">
+            {contactHistory.map((entry) => (
+              <div key={entry.id} className="border-l-2 border-gray-200 pl-4 pb-4">
+                <div className="flex items-center justify-between mb-1">
+                  <h4 className="font-semibold text-gray-900">{entry.action}</h4>
+                  <span className="text-xs text-gray-500">{entry.timestamp}</span>
+                </div>
+                <p className="text-sm text-gray-600 mb-1">{entry.details}</p>
+                <p className="text-xs text-gray-500">by {entry.performedBy}</p>
+              </div>
+            ))}
           </div>
         </DialogContent>
       </Dialog>
