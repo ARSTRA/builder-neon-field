@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Globe, Shield } from "lucide-react";
 import { Logo, LogoMark } from "./logo";
+import { EnhancedSocialIcons } from "./enhanced-social-icons";
 
 export function Footer() {
   return (
