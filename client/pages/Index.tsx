@@ -892,30 +892,32 @@ export default function Index() {
         onOpenChange={setIsQuoteModalOpen}
       />
 
-      {/* Floating Social Media Bar */}
-      <FloatingSocialBar
-        show={true}
-        position="bottom-left"
-      />
+      {/* Floating Social Media Bar - Hidden on mobile to prevent overlap */}
+      <div className="hidden sm:block">
+        <FloatingSocialBar
+          show={true}
+          position="bottom-left"
+        />
+      </div>
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col gap-2 sm:gap-3">
         {/* Live Chat Button */}
         <Button
           onClick={handleLiveChat}
-          className="bg-royal-600 hover:bg-royal-700 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 group"
+          className="bg-royal-600 hover:bg-royal-700 text-white rounded-full p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 group touch-manipulation"
           title="Live Chat Support"
         >
-          <MessageCircle className="h-6 w-6 group-hover:animate-pulse" />
+          <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 group-hover:animate-pulse" />
         </Button>
 
         {/* Call Expert Button */}
         <Button
           onClick={handleCallExpert}
-          className="bg-orange-500 hover:bg-orange-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 group"
+          className="bg-orange-500 hover:bg-orange-600 text-white rounded-full p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 group touch-manipulation"
           title="Call Expert Now"
         >
-          <Phone className="h-6 w-6 group-hover:animate-pulse" />
+          <Phone className="h-5 w-5 sm:h-6 sm:w-6 group-hover:animate-pulse" />
         </Button>
       </div>
     </div>
