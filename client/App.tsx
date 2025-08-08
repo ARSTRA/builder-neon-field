@@ -17,7 +17,7 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Newspaper from "./pages/Newspaper";
 import Login from "./pages/Login";
-import UnifiedLogin from "./pages/UnifiedLogin";
+import SimpleLogin from "./pages/SimpleLogin";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
