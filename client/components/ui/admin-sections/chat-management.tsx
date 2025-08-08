@@ -379,6 +379,7 @@ export function ChatManagement() {
           <TabsTrigger value="agents">Agents ({agents.length})</TabsTrigger>
           <TabsTrigger value="history">Chat History</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
+          <TabsTrigger value="configuration">Configuration</TabsTrigger>
         </TabsList>
 
         <TabsContent value="active" className="space-y-6">
