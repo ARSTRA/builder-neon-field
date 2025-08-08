@@ -154,6 +154,7 @@ export default function App() {
               <Route path="/dashboard/user" element={<Dashboard />} />
 
               {/* Admin auth and panel without main navigation */}
+              <Route path="/admin/overview" element={<AdminOverview />} />
               <Route path="/admin/setup" element={<AdminSetup />} />
               <Route path="/admin/login" element={<SimpleLogin />} />
               <Route path="/admin" element={<UnifiedAdmin />} />
