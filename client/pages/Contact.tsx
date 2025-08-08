@@ -240,9 +240,16 @@ export default function Contact() {
               </Button>
               <Button
                 onClick={() => {
-                  const subject = encodeURIComponent("GlobalTrack Support Request");
-                  const body = encodeURIComponent("Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards");
-                  window.open(`mailto:info@globaltrack.com?subject=${subject}&body=${body}`, "_blank");
+                  const subject = encodeURIComponent(
+                    "GlobalTrack Support Request",
+                  );
+                  const body = encodeURIComponent(
+                    "Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards",
+                  );
+                  window.open(
+                    `mailto:info@globaltrack.com?subject=${subject}&body=${body}`,
+                    "_blank",
+                  );
                 }}
                 variant="outline"
                 className="group border-3 border-white/90 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 relative overflow-hidden"
@@ -304,12 +311,24 @@ export default function Contact() {
                         if (method.title === "Call Us Directly") {
                           window.open("tel:+15551234567", "_self");
                         } else if (method.title === "WhatsApp Support") {
-                          const message = encodeURIComponent("Hello! I would like to inquire about GlobalTrack logistics services.");
-                          window.open(`https://wa.me/15551234567?text=${message}`, "_blank");
+                          const message = encodeURIComponent(
+                            "Hello! I would like to inquire about GlobalTrack logistics services.",
+                          );
+                          window.open(
+                            `https://wa.me/15551234567?text=${message}`,
+                            "_blank",
+                          );
                         } else if (method.title === "Email Support") {
-                          const subject = encodeURIComponent("GlobalTrack Support Request");
-                          const body = encodeURIComponent("Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards");
-                          window.open(`mailto:info@globaltrack.com?subject=${subject}&body=${body}`, "_blank");
+                          const subject = encodeURIComponent(
+                            "GlobalTrack Support Request",
+                          );
+                          const body = encodeURIComponent(
+                            "Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards",
+                          );
+                          window.open(
+                            `mailto:info@globaltrack.com?subject=${subject}&body=${body}`,
+                            "_blank",
+                          );
                         } else if (method.title === "Schedule Meeting") {
                           // For now, scroll to contact form - could integrate with calendar booking later
                           document
