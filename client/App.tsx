@@ -160,6 +160,7 @@ export default function App() {
               <Route path="/admin/login" element={<SimpleLogin />} />
               <Route path="/admin" element={<UnifiedAdmin />} />
               <Route path="/admin/legacy" element={<Admin />} />
+              <Route path="/error-report" element={<ErrorReport />} />
 
               {/* 404 page */}
               <Route
