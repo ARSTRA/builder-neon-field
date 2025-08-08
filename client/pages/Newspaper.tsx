@@ -51,6 +51,9 @@ interface NewsArticle {
 
 export default function Newspaper() {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [email, setEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subscribeMessage, setSubscribeMessage] = useState("");
 
   const categories = [
     { id: "all", name: "All News", color: "bg-gray-500" },
