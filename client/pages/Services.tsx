@@ -344,23 +344,28 @@ export default function Services() {
                 Get instant answers to your shipping questions and personalized
                 solution recommendations
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Link to="/contact">
-                  <Button className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <Phone className="h-5 w-5 mr-3 group-hover:animate-pulse" />
-                    Call Expert Now
-                    <span className="ml-2 text-sm bg-white/20 px-2 py-1 rounded">
-                      Free
+                  <Button className="group relative bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 hover:from-orange-600 hover:via-orange-700 hover:to-orange-600 text-white px-10 py-5 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                    <Phone className="h-6 w-6 mr-3 group-hover:animate-pulse relative z-10" />
+                    <span className="relative z-10">Call Expert Now</span>
+                    <span className="ml-3 text-sm bg-white/25 px-3 py-1 rounded-full font-medium relative z-10 group-hover:bg-white/35 transition-colors duration-300">
+                      FREE
                     </span>
                   </Button>
                 </Link>
                 <Link to="/chat">
                   <Button
                     variant="outline"
-                    className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                    className="group relative border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 overflow-hidden"
                   >
-                    <MessageCircle className="h-5 w-5 mr-3" />
-                    Live Chat
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                    <MessageCircle className="h-6 w-6 mr-3 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
+                    <span className="relative z-10">Live Chat</span>
+                    <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-bounce">
+                      ONLINE
+                    </div>
                   </Button>
                 </Link>
               </div>
