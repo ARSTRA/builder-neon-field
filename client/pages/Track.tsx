@@ -171,12 +171,12 @@ export default function Track() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-royal-600 to-royal-800 text-white py-16">
+      <section className="relative bg-gradient-to-r from-royal-600 to-royal-800 text-white py-12 lg:py-16">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
-        <div className="relative container mx-auto px-4">
+        <div className="relative container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-4">Track Your Package</h1>
-            <p className="text-xl text-gray-200 mb-8">
+            <h1 className="text-3xl lg:text-5xl font-bold mb-4 lg:mb-6">Track Your Package</h1>
+            <p className="text-lg lg:text-xl text-gray-200 mb-6 lg:mb-8 leading-relaxed">
               Real-time GPS tracking with live updates every step of the way
             </p>
 
