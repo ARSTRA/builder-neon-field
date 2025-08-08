@@ -269,21 +269,22 @@ export default function Newspaper() {
       </section>
 
       {/* Navigation Categories */}
-      <section className="py-8 bg-white shadow-md sticky top-0 z-40">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-wrap justify-center gap-4">
+      <section className="py-4 lg:py-6 bg-white shadow-md sticky top-16 lg:top-20 z-40 border-b border-gray-100">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-2 lg:gap-4">
               {categories.map((category) => (
                 <Button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
                   variant={selectedCategory === category.id ? "default" : "outline"}
+                  size="sm"
                   className={`
-                    ${selectedCategory === category.id 
-                      ? `${category.color} text-white hover:opacity-90` 
-                      : 'border-gray-300 text-gray-700 hover:bg-gray-50'
+                    ${selectedCategory === category.id
+                      ? `${category.color} text-white hover:opacity-90 shadow-md`
+                      : 'border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400'
                     }
-                    px-6 py-2 font-semibold transition-all duration-300 transform hover:scale-105
+                    px-3 lg:px-6 py-2 text-xs lg:text-sm font-semibold transition-all duration-300 transform hover:scale-105 rounded-full
                   `}
                 >
                   {category.name}
