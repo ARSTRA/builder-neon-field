@@ -262,18 +262,21 @@ export default function Services() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-[1.02] rounded-xl"
               >
                 Get Custom Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
               <Link to="/contact">
                 <Button
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
+                  className="group border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-[1.02] rounded-xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/20"
                 >
+                  <Phone className="mr-3 h-5 w-5 group-hover:animate-pulse" />
                   Speak with Expert
-                  <Phone className="ml-2 h-5 w-5" />
+                  <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
+                    FREE
+                  </div>
                 </Button>
               </Link>
             </div>
