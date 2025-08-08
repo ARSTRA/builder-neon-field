@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ErrorBoundary } from "./components/ui/error-boundary";
 import { Navigation } from "./components/ui/navigation";
 import { SimpleChatWidget } from "./components/ui/simple-chat-widget";
 import { ScrollToTop } from "./components/ui/scroll-to-top";
