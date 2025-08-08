@@ -355,14 +355,14 @@ export default function Services() {
                     </span>
                   </Button>
                 </Link>
-                <Link to="/chat">
+                <Link to="/contact">
                   <Button
                     variant="outline"
                     className="group relative border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
                     <MessageCircle className="h-6 w-6 mr-3 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
-                    <span className="relative z-10">Live Chat</span>
+                    <span className="relative z-10">Contact Support</span>
                     <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-bounce">
                       ONLINE
                     </div>
