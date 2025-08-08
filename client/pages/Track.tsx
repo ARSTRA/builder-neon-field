@@ -843,7 +843,7 @@ export default function Track() {
                   </Button>
                   <Button
                     variant="outline"
-                    onClick={() => (window.location.href = "/chat")}
+                    onClick={() => (window.location.href = "/contact")}
                     className="border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white px-8 py-3 font-semibold transition-all duration-300"
                   >
                     <MessageCircle className="mr-2 h-5 w-5" />
