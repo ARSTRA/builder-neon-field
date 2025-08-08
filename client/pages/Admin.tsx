@@ -33,6 +33,7 @@ import {
   Star,
   Mail,
   Phone,
+  Share2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -72,6 +73,7 @@ import { TrackingManagement } from "@/components/ui/admin-sections/tracking-mana
 import { QuoteManagement } from "@/components/ui/admin-sections/quote-management";
 import { ContactManagement } from "@/components/ui/admin-sections/contact-management";
 import { GeneralSettings } from "@/components/ui/admin-sections/general-settings";
+import { SocialMediaManagement } from "@/components/ui/admin-sections/social-media-management";
 import { NotificationDropdown } from "@/components/ui/notification-dropdown";
 import { NotificationTest } from "@/components/ui/notification-test";
 import { useNotifications } from "@/hooks/use-notifications";
@@ -111,6 +113,7 @@ export default function Admin() {
         "chat",
         "contacts",
         "general",
+        "social",
       ].includes(viewParam)
     ) {
       setCurrentView(viewParam);
@@ -165,6 +168,12 @@ export default function Admin() {
       label: "General Settings",
       icon: <Settings className="h-5 w-5" />,
       color: "text-gray-600",
+    },
+    {
+      id: "social",
+      label: "Social Media",
+      icon: <Share2 className="h-5 w-5" />,
+      color: "text-blue-500",
     },
   ];
 
@@ -700,6 +709,7 @@ export default function Admin() {
             {currentView === "quotes" && <QuoteManagement />}
             {currentView === "contacts" && <ContactManagement />}
             {currentView === "general" && <GeneralSettings />}
+            {currentView === "social" && <SocialMediaManagement />}
 
             {/* Development: Notification Test Component */}
             {currentView === "dashboard" &&
