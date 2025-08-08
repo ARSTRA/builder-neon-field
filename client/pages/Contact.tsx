@@ -742,7 +742,7 @@ export default function Contact() {
                 Join thousands of businesses who trust GlobalTrack with their
                 logistics needs.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Button
                   onClick={() => {
                     // Scroll to contact form
@@ -750,18 +750,23 @@ export default function Contact() {
                       .querySelector("form")
                       ?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="bg-white text-royal-600 hover:bg-gray-100 px-8 py-3 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+                  className="group bg-white text-royal-600 hover:bg-gray-100 px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 rounded-2xl relative overflow-hidden"
                 >
-                  <Package className="mr-2 h-5 w-5" />
-                  Get Quote Now
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-royal-100/50 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                  <Package className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
+                  <span className="relative z-10">Get Quote Now</span>
                 </Button>
                 <Link to="/track">
                   <Button
                     variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-royal-600 px-8 py-3 font-semibold"
+                    className="group border-3 border-white/90 text-white hover:bg-white hover:text-royal-600 px-10 py-4 font-bold transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/10 hover:shadow-2xl hover:shadow-white/25 relative overflow-hidden"
                   >
-                    Track Shipment
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                    <span className="relative z-10">Track Shipment</span>
+                    <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
+                    <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
+                      LIVE
+                    </div>
                   </Button>
                 </Link>
               </div>
