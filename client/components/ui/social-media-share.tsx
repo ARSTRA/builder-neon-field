@@ -1,21 +1,21 @@
-import { 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
   MessageCircle,
   Mail,
   Link,
   Share2,
   Copy,
-  Check
+  Check,
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./button";
-import { 
-  Tooltip, 
-  TooltipContent, 
-  TooltipProvider, 
-  TooltipTrigger 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
 } from "./tooltip";
 import {
   DropdownMenu,
@@ -46,7 +46,7 @@ export function SocialMediaShare({
   showText = false,
   style = "icons",
   size = "md",
-  className = ""
+  className = "",
 }: SocialMediaShareProps) {
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
@@ -54,7 +54,7 @@ export function SocialMediaShare({
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
   const encodedDescription = encodeURIComponent(description);
-  const hashtagString = hashtags.map(tag => `#${tag}`).join(" ");
+  const hashtagString = hashtags.map((tag) => `#${tag}`).join(" ");
 
   const shareLinks = [
     {
@@ -66,7 +66,7 @@ export function SocialMediaShare({
     {
       name: "Twitter",
       icon: Twitter,
-      color: "#1DA1F2", 
+      color: "#1DA1F2",
       url: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}&hashtags=${hashtags.join(",")}`,
     },
     {
@@ -92,17 +92,21 @@ export function SocialMediaShare({
   const iconSize = {
     sm: "h-4 w-4",
     md: "h-5 w-5",
-    lg: "h-6 w-6"
+    lg: "h-6 w-6",
   }[size];
 
   const buttonSize = {
     sm: "p-1.5",
-    md: "p-2", 
-    lg: "p-2.5"
+    md: "p-2",
+    lg: "p-2.5",
   }[size];
 
   const handleShare = (shareUrl: string, platform: string) => {
-    window.open(shareUrl, "_blank", "width=600,height=400,scrollbars=yes,resizable=yes");
+    window.open(
+      shareUrl,
+      "_blank",
+      "width=600,height=400,scrollbars=yes,resizable=yes",
+    );
     toast({
       title: "Sharing",
       description: `Opening ${platform} share dialog...`,
@@ -229,7 +233,7 @@ export function SocialMediaShare({
                   className={`${buttonSize} hover:bg-gray-100 transition-all duration-200 hover:scale-110`}
                   onClick={() => handleShare(platform.url, platform.name)}
                 >
-                  <Icon 
+                  <Icon
                     className={iconSize}
                     style={{ color: platform.color }}
                   />
@@ -242,7 +246,7 @@ export function SocialMediaShare({
           </TooltipProvider>
         );
       })}
-      
+
       {/* Copy Link Button */}
       <TooltipProvider>
         <Tooltip>

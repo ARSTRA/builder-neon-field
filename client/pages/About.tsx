@@ -527,7 +527,9 @@ export default function About() {
             {/* Social Media Sharing */}
             <div className="mt-8 pt-8 border-t border-gray-200">
               <div className="text-center">
-                <p className="text-gray-600 mb-4">Share our story with others</p>
+                <p className="text-gray-600 mb-4">
+                  Share our story with others
+                </p>
                 <SocialMediaShare
                   title="About GlobalTrack Logistics - Professional Shipping Solutions"
                   description="Learn about GlobalTrack Logistics, a leading provider of worldwide shipping and logistics solutions with over 15 years of experience."

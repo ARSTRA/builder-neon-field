@@ -894,10 +894,7 @@ export default function Index() {
 
       {/* Floating Social Media Bar - Hidden on mobile to prevent overlap */}
       <div className="hidden sm:block">
-        <FloatingSocialBar
-          show={true}
-          position="bottom-left"
-        />
+        <FloatingSocialBar show={true} position="bottom-left" />
       </div>
 
       {/* Floating Action Buttons */}

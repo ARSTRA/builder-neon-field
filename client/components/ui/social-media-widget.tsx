@@ -1,19 +1,19 @@
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
-  Youtube, 
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
   MessageCircle,
   ExternalLink,
-  Share2
+  Share2,
 } from "lucide-react";
 import { Button } from "./button";
-import { 
-  Tooltip, 
-  TooltipContent, 
-  TooltipProvider, 
-  TooltipTrigger 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
 } from "./tooltip";
 import {
   DropdownMenu,
@@ -40,11 +40,11 @@ interface SocialMediaWidgetProps {
   className?: string;
 }
 
-export function SocialMediaWidget({ 
-  showInHeader = false, 
+export function SocialMediaWidget({
+  showInHeader = false,
   style = "icons",
   size = "md",
-  className = ""
+  className = "",
 }: SocialMediaWidgetProps) {
   // This would typically come from a context/store or API
   const socialMediaLinks: SocialMediaLink[] = [
@@ -98,20 +98,20 @@ export function SocialMediaWidget({
     },
   ];
 
-  const filteredLinks = showInHeader 
-    ? socialMediaLinks.filter(link => link.enabled && link.displayInHeader)
-    : socialMediaLinks.filter(link => link.enabled);
+  const filteredLinks = showInHeader
+    ? socialMediaLinks.filter((link) => link.enabled && link.displayInHeader)
+    : socialMediaLinks.filter((link) => link.enabled);
 
   const iconSize = {
     sm: "h-4 w-4",
-    md: "h-5 w-5", 
-    lg: "h-6 w-6"
+    md: "h-5 w-5",
+    lg: "h-6 w-6",
   }[size];
 
   const buttonSize = {
     sm: "p-1.5",
     md: "p-2",
-    lg: "p-2.5"
+    lg: "p-2.5",
   }[size];
 
   if (filteredLinks.length === 0) {
@@ -236,11 +236,11 @@ export function SocialMediaWidget({
                   className={`${buttonSize} text-gray-600 hover:text-gray-900 transition-all duration-200 hover:scale-110`}
                   onClick={() => openSocialLink(social.url, social.name)}
                 >
-                  <Icon 
-                    className={iconSize} 
-                    style={{ 
+                  <Icon
+                    className={iconSize}
+                    style={{
                       color: social.color,
-                      transition: "all 0.2s ease"
+                      transition: "all 0.2s ease",
                     }}
                   />
                 </Button>

@@ -321,11 +321,14 @@ export function ContactManagement() {
         contact.id === editingContactId
           ? {
               ...editContactData,
-              lastModified: new Date().toISOString().slice(0, 16).replace('T', ' '),
+              lastModified: new Date()
+                .toISOString()
+                .slice(0, 16)
+                .replace("T", " "),
               modifiedBy: "Admin",
             }
-          : contact
-      )
+          : contact,
+      ),
     );
     setIsEditingContact(false);
     setEditingContactId(null);
@@ -363,12 +366,12 @@ export function ContactManagement() {
       status: "open",
       priority: editContactData.priority || "medium",
       type: editContactData.type || "inquiry",
-      createdAt: new Date().toISOString().slice(0, 16).replace('T', ' '),
+      createdAt: new Date().toISOString().slice(0, 16).replace("T", " "),
       lastReply: "",
       assignedTo: "Unassigned",
       tags: [],
       notes: editContactData.notes || "",
-      lastModified: new Date().toISOString().slice(0, 16).replace('T', ' '),
+      lastModified: new Date().toISOString().slice(0, 16).replace("T", " "),
       modifiedBy: "Admin",
     };
     setContacts((prev) => [newContact, ...prev]);
@@ -684,7 +687,8 @@ export function ContactManagement() {
                     onClick={() =>
                       toast({
                         title: "Importing Contacts",
-                        description: "Contact import feature will be available soon...",
+                        description:
+                          "Contact import feature will be available soon...",
                       })
                     }
                   >
@@ -729,10 +733,16 @@ export function ContactManagement() {
                               {contact.name}
                             </h3>
                             {contact.preferredContact === "email" && (
-                              <Mail className="h-4 w-4 text-blue-500" title="Prefers Email" />
+                              <Mail
+                                className="h-4 w-4 text-blue-500"
+                                title="Prefers Email"
+                              />
                             )}
                             {contact.preferredContact === "phone" && (
-                              <Phone className="h-4 w-4 text-green-500" title="Prefers Phone" />
+                              <Phone
+                                className="h-4 w-4 text-green-500"
+                                title="Prefers Phone"
+                              />
                             )}
                           </div>
                           <p className="text-gray-600 font-medium mb-1">
@@ -762,7 +772,7 @@ export function ContactManagement() {
                                   rel="noopener noreferrer"
                                   className="text-blue-600 hover:underline"
                                 >
-                                  {contact.website.replace('https://', '')}
+                                  {contact.website.replace("https://", "")}
                                 </a>
                               </div>
                             )}
@@ -826,7 +836,10 @@ export function ContactManagement() {
                     </div>
                     <div className="text-xs text-gray-500 flex justify-between">
                       <span>Created: {contact.createdAt}</span>
-                      <span>Last Modified: {contact.lastModified} by {contact.modifiedBy}</span>
+                      <span>
+                        Last Modified: {contact.lastModified} by{" "}
+                        {contact.modifiedBy}
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -1189,12 +1202,15 @@ export function ContactManagement() {
       </Dialog>
 
       {/* Edit Contact Modal */}
-      <Dialog open={isEditingContact || isAddingContact} onOpenChange={() => {
-        setIsEditingContact(false);
-        setIsAddingContact(false);
-        setEditContactData({});
-        setEditingContactId(null);
-      }}>
+      <Dialog
+        open={isEditingContact || isAddingContact}
+        onOpenChange={() => {
+          setIsEditingContact(false);
+          setIsAddingContact(false);
+          setEditContactData({});
+          setEditingContactId(null);
+        }}
+      >
         <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>
@@ -1204,14 +1220,21 @@ export function ContactManagement() {
           <div className="space-y-6">
             {/* Basic Information */}
             <div className="space-y-4">
-              <h4 className="font-semibold text-gray-900 border-b pb-2">Basic Information</h4>
+              <h4 className="font-semibold text-gray-900 border-b pb-2">
+                Basic Information
+              </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="edit-name">Full Name *</Label>
                   <Input
                     id="edit-name"
                     value={editContactData.name || ""}
-                    onChange={(e) => setEditContactData(prev => ({ ...prev, name: e.target.value }))}
+                    onChange={(e) =>
+                      setEditContactData((prev) => ({
+                        ...prev,
+                        name: e.target.value,
+                      }))
+                    }
                     placeholder="John Smith"
                   />
                 </div>
@@ -1220,7 +1243,12 @@ export function ContactManagement() {
                   <Input
                     id="edit-job-title"
                     value={editContactData.jobTitle || ""}
-                    onChange={(e) => setEditContactData(prev => ({ ...prev, jobTitle: e.target.value }))}
+                    onChange={(e) =>
+                      setEditContactData((prev) => ({
+                        ...prev,
+                        jobTitle: e.target.value,
+                      }))
+                    }
                     placeholder="Logistics Manager"
                   />
                 </div>
@@ -1230,7 +1258,12 @@ export function ContactManagement() {
                     id="edit-email"
                     type="email"
                     value={editContactData.email || ""}
-                    onChange={(e) => setEditContactData(prev => ({ ...prev, email: e.target.value }))}
+                    onChange={(e) =>
+                      setEditContactData((prev) => ({
+                        ...prev,
+                        email: e.target.value,
+                      }))
+                    }
                     placeholder="john@company.com"
                   />
                 </div>
@@ -1239,7 +1272,12 @@ export function ContactManagement() {
                   <Input
                     id="edit-company"
                     value={editContactData.company || ""}
-                    onChange={(e) => setEditContactData(prev => ({ ...prev, company: e.target.value }))}
+                    onChange={(e) =>
+                      setEditContactData((prev) => ({
+                        ...prev,
+                        company: e.target.value,
+                      }))
+                    }
                     placeholder="TechCorp Solutions"
                   />
                 </div>
@@ -1248,14 +1286,21 @@ export function ContactManagement() {
 
             {/* Contact Information */}
             <div className="space-y-4">
-              <h4 className="font-semibold text-gray-900 border-b pb-2">Contact Information</h4>
+              <h4 className="font-semibold text-gray-900 border-b pb-2">
+                Contact Information
+              </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="edit-phone">Primary Phone *</Label>
                   <Input
                     id="edit-phone"
                     value={editContactData.phone || ""}
-                    onChange={(e) => setEditContactData(prev => ({ ...prev, phone: e.target.value }))}
+                    onChange={(e) =>
+                      setEditContactData((prev) => ({
+                        ...prev,
+                        phone: e.target.value,
+                      }))
+                    }
                     placeholder="+1 (555) 123-4567"
                   />
                 </div>
@@ -1264,7 +1309,12 @@ export function ContactManagement() {
                   <Input
                     id="edit-alt-phone"
                     value={editContactData.alternatePhone || ""}
-                    onChange={(e) => setEditContactData(prev => ({ ...prev, alternatePhone: e.target.value }))}
+                    onChange={(e) =>
+                      setEditContactData((prev) => ({
+                        ...prev,
+                        alternatePhone: e.target.value,
+                      }))
+                    }
                     placeholder="+1 (555) 123-4568"
                   />
                 </div>
@@ -1273,15 +1323,27 @@ export function ContactManagement() {
                   <Input
                     id="edit-website"
                     value={editContactData.website || ""}
-                    onChange={(e) => setEditContactData(prev => ({ ...prev, website: e.target.value }))}
+                    onChange={(e) =>
+                      setEditContactData((prev) => ({
+                        ...prev,
+                        website: e.target.value,
+                      }))
+                    }
                     placeholder="https://company.com"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="edit-preferred-contact">Preferred Contact Method</Label>
+                  <Label htmlFor="edit-preferred-contact">
+                    Preferred Contact Method
+                  </Label>
                   <Select
                     value={editContactData.preferredContact || "email"}
-                    onValueChange={(value) => setEditContactData(prev => ({ ...prev, preferredContact: value }))}
+                    onValueChange={(value) =>
+                      setEditContactData((prev) => ({
+                        ...prev,
+                        preferredContact: value,
+                      }))
+                    }
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Select preference" />
@@ -1299,7 +1361,12 @@ export function ContactManagement() {
                 <Textarea
                   id="edit-address"
                   value={editContactData.address || ""}
-                  onChange={(e) => setEditContactData(prev => ({ ...prev, address: e.target.value }))}
+                  onChange={(e) =>
+                    setEditContactData((prev) => ({
+                      ...prev,
+                      address: e.target.value,
+                    }))
+                  }
                   placeholder="123 Business Ave, City, State 12345"
                   rows={2}
                 />
@@ -1308,25 +1375,36 @@ export function ContactManagement() {
 
             {/* Business Information */}
             <div className="space-y-4">
-              <h4 className="font-semibold text-gray-900 border-b pb-2">Business Information</h4>
+              <h4 className="font-semibold text-gray-900 border-b pb-2">
+                Business Information
+              </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="edit-industry">Industry</Label>
                   <Select
                     value={editContactData.industry || ""}
-                    onValueChange={(value) => setEditContactData(prev => ({ ...prev, industry: value }))}
+                    onValueChange={(value) =>
+                      setEditContactData((prev) => ({
+                        ...prev,
+                        industry: value,
+                      }))
+                    }
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Select industry" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="Technology">Technology</SelectItem>
-                      <SelectItem value="Manufacturing">Manufacturing</SelectItem>
+                      <SelectItem value="Manufacturing">
+                        Manufacturing
+                      </SelectItem>
                       <SelectItem value="Retail">Retail</SelectItem>
                       <SelectItem value="Fashion">Fashion</SelectItem>
                       <SelectItem value="Healthcare">Healthcare</SelectItem>
                       <SelectItem value="Automotive">Automotive</SelectItem>
-                      <SelectItem value="Food & Beverage">Food & Beverage</SelectItem>
+                      <SelectItem value="Food & Beverage">
+                        Food & Beverage
+                      </SelectItem>
                       <SelectItem value="Other">Other</SelectItem>
                     </SelectContent>
                   </Select>
@@ -1335,7 +1413,12 @@ export function ContactManagement() {
                   <Label htmlFor="edit-priority">Priority Level</Label>
                   <Select
                     value={editContactData.priority || "medium"}
-                    onValueChange={(value) => setEditContactData(prev => ({ ...prev, priority: value }))}
+                    onValueChange={(value) =>
+                      setEditContactData((prev) => ({
+                        ...prev,
+                        priority: value,
+                      }))
+                    }
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Select priority" />
@@ -1353,13 +1436,20 @@ export function ContactManagement() {
 
             {/* Additional Information */}
             <div className="space-y-4">
-              <h4 className="font-semibold text-gray-900 border-b pb-2">Additional Information</h4>
+              <h4 className="font-semibold text-gray-900 border-b pb-2">
+                Additional Information
+              </h4>
               <div>
                 <Label htmlFor="edit-notes">Internal Notes</Label>
                 <Textarea
                   id="edit-notes"
                   value={editContactData.notes || ""}
-                  onChange={(e) => setEditContactData(prev => ({ ...prev, notes: e.target.value }))}
+                  onChange={(e) =>
+                    setEditContactData((prev) => ({
+                      ...prev,
+                      notes: e.target.value,
+                    }))
+                  }
                   placeholder="Add any internal notes about this contact..."
                   rows={3}
                 />
@@ -1371,7 +1461,12 @@ export function ContactManagement() {
                     <Input
                       id="edit-subject"
                       value={editContactData.subject || ""}
-                      onChange={(e) => setEditContactData(prev => ({ ...prev, subject: e.target.value }))}
+                      onChange={(e) =>
+                        setEditContactData((prev) => ({
+                          ...prev,
+                          subject: e.target.value,
+                        }))
+                      }
                       placeholder="Inquiry about services"
                     />
                   </div>
@@ -1380,7 +1475,12 @@ export function ContactManagement() {
                     <Textarea
                       id="edit-message"
                       value={editContactData.message || ""}
-                      onChange={(e) => setEditContactData(prev => ({ ...prev, message: e.target.value }))}
+                      onChange={(e) =>
+                        setEditContactData((prev) => ({
+                          ...prev,
+                          message: e.target.value,
+                        }))
+                      }
                       placeholder="Initial message or inquiry..."
                       rows={3}
                     />
@@ -1389,7 +1489,9 @@ export function ContactManagement() {
                     <Label htmlFor="edit-type">Contact Type</Label>
                     <Select
                       value={editContactData.type || "inquiry"}
-                      onValueChange={(value) => setEditContactData(prev => ({ ...prev, type: value }))}
+                      onValueChange={(value) =>
+                        setEditContactData((prev) => ({ ...prev, type: value }))
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Select type" />
@@ -1439,10 +1541,17 @@ export function ContactManagement() {
           </DialogHeader>
           <div className="space-y-4 max-h-96 overflow-y-auto">
             {contactHistory.map((entry) => (
-              <div key={entry.id} className="border-l-2 border-gray-200 pl-4 pb-4">
+              <div
+                key={entry.id}
+                className="border-l-2 border-gray-200 pl-4 pb-4"
+              >
                 <div className="flex items-center justify-between mb-1">
-                  <h4 className="font-semibold text-gray-900">{entry.action}</h4>
-                  <span className="text-xs text-gray-500">{entry.timestamp}</span>
+                  <h4 className="font-semibold text-gray-900">
+                    {entry.action}
+                  </h4>
+                  <span className="text-xs text-gray-500">
+                    {entry.timestamp}
+                  </span>
                 </div>
                 <p className="text-sm text-gray-600 mb-1">{entry.details}</p>
                 <p className="text-xs text-gray-500">by {entry.performedBy}</p>

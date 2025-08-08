@@ -1,10 +1,10 @@
 import { createContext, useContext, useState, ReactNode } from "react";
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
-  Youtube, 
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
   MessageCircle,
   Globe,
 } from "lucide-react";
@@ -52,7 +52,9 @@ interface SocialMediaContextType {
   getHeaderPlatforms: () => SocialMediaPlatform[];
 }
 
-const SocialMediaContext = createContext<SocialMediaContextType | undefined>(undefined);
+const SocialMediaContext = createContext<SocialMediaContextType | undefined>(
+  undefined,
+);
 
 // Default platforms configuration
 const defaultPlatforms: SocialMediaPlatform[] = [
@@ -177,50 +179,53 @@ const defaultSettings: SocialMediaSettings = {
 };
 
 export function SocialMediaProvider({ children }: { children: ReactNode }) {
-  const [platforms, setPlatforms] = useState<SocialMediaPlatform[]>(defaultPlatforms);
-  const [settings, setSettings] = useState<SocialMediaSettings>(defaultSettings);
+  const [platforms, setPlatforms] =
+    useState<SocialMediaPlatform[]>(defaultPlatforms);
+  const [settings, setSettings] =
+    useState<SocialMediaSettings>(defaultSettings);
 
-  const updatePlatform = (id: string, updates: Partial<SocialMediaPlatform>) => {
-    setPlatforms(prev => 
-      prev.map(platform => 
-        platform.id === id ? { ...platform, ...updates } : platform
-      )
+  const updatePlatform = (
+    id: string,
+    updates: Partial<SocialMediaPlatform>,
+  ) => {
+    setPlatforms((prev) =>
+      prev.map((platform) =>
+        platform.id === id ? { ...platform, ...updates } : platform,
+      ),
     );
   };
 
   const addPlatform = (platform: Omit<SocialMediaPlatform, "id">) => {
     const newPlatform: SocialMediaPlatform = {
       ...platform,
-      id: platform.platform.toLowerCase().replace(/\s+/g, '-'),
+      id: platform.platform.toLowerCase().replace(/\s+/g, "-"),
     };
-    setPlatforms(prev => [...prev, newPlatform]);
+    setPlatforms((prev) => [...prev, newPlatform]);
   };
 
   const removePlatform = (id: string) => {
-    setPlatforms(prev => prev.filter(platform => platform.id !== id));
+    setPlatforms((prev) => prev.filter((platform) => platform.id !== id));
   };
 
   const updateSettings = (updates: Partial<SocialMediaSettings>) => {
-    setSettings(prev => ({ ...prev, ...updates }));
+    setSettings((prev) => ({ ...prev, ...updates }));
   };
 
   const getActivePlatforms = () => {
-    return platforms.filter(platform => platform.enabled);
+    return platforms.filter((platform) => platform.enabled);
   };
 
   const getFooterPlatforms = () => {
-    return platforms.filter(platform => 
-      platform.enabled && 
-      platform.displayInFooter && 
-      settings.enableInFooter
+    return platforms.filter(
+      (platform) =>
+        platform.enabled && platform.displayInFooter && settings.enableInFooter,
     );
   };
 
   const getHeaderPlatforms = () => {
-    return platforms.filter(platform => 
-      platform.enabled && 
-      platform.displayInHeader && 
-      settings.enableInHeader
+    return platforms.filter(
+      (platform) =>
+        platform.enabled && platform.displayInHeader && settings.enableInHeader,
     );
   };
 
@@ -254,27 +259,27 @@ export function useSocialMedia() {
 // Hook for getting social media statistics
 export function useSocialMediaStats() {
   const { platforms } = useSocialMedia();
-  
+
   const totalFollowers = platforms
-    .filter(p => p.enabled && p.followers && p.followers !== "N/A")
+    .filter((p) => p.enabled && p.followers && p.followers !== "N/A")
     .reduce((total, platform) => {
       const followers = platform.followers!.replace(/[K,]/g, "");
       const multiplier = platform.followers!.includes("K") ? 1000 : 1;
-      return total + (parseFloat(followers) * multiplier);
+      return total + parseFloat(followers) * multiplier;
     }, 0);
 
   const averageEngagement = platforms
-    .filter(p => p.enabled && p.engagement && p.engagement !== "N/A")
+    .filter((p) => p.enabled && p.engagement && p.engagement !== "N/A")
     .reduce((total, platform, _, array) => {
       const engagement = parseFloat(platform.engagement!.replace("%", ""));
       return total + engagement / array.length;
     }, 0);
 
   const totalPosts = platforms
-    .filter(p => p.enabled && p.posts)
+    .filter((p) => p.enabled && p.posts)
     .reduce((total, platform) => total + (platform.posts || 0), 0);
 
-  const activePlatforms = platforms.filter(p => p.enabled).length;
+  const activePlatforms = platforms.filter((p) => p.enabled).length;
 
   return {
     totalFollowers: Math.round(totalFollowers),

@@ -236,20 +236,21 @@ export function SocialMediaManagement() {
   ];
 
   const handleSavePlatform = (platformId: string, data: any) => {
-    setSocialPlatforms(prev =>
-      prev.map(platform =>
-        platform.id === platformId ? { ...platform, ...data } : platform
-      )
+    setSocialPlatforms((prev) =>
+      prev.map((platform) =>
+        platform.id === platformId ? { ...platform, ...data } : platform,
+      ),
     );
     setIsEditing(null);
     toast({
       title: "Platform Updated",
-      description: "Social media platform settings have been saved successfully.",
+      description:
+        "Social media platform settings have been saved successfully.",
     });
   };
 
   const handleAddPlatform = () => {
-    const newId = newPlatform.platform.toLowerCase().replace(/\s+/g, '');
+    const newId = newPlatform.platform.toLowerCase().replace(/\s+/g, "");
     const platform = {
       id: newId,
       ...newPlatform,
@@ -260,7 +261,7 @@ export function SocialMediaManagement() {
       lastPost: "Never",
       color: "#666666",
     };
-    setSocialPlatforms(prev => [...prev, platform]);
+    setSocialPlatforms((prev) => [...prev, platform]);
     setNewPlatform({
       name: "",
       platform: "",
@@ -281,7 +282,9 @@ export function SocialMediaManagement() {
   };
 
   const handleDeletePlatform = (platformId: string) => {
-    setSocialPlatforms(prev => prev.filter(platform => platform.id !== platformId));
+    setSocialPlatforms((prev) =>
+      prev.filter((platform) => platform.id !== platformId),
+    );
     toast({
       title: "Platform Deleted",
       description: "Social media platform has been removed.",
@@ -289,11 +292,15 @@ export function SocialMediaManagement() {
     });
   };
 
-  const handleToggleVisibility = (platformId: string, field: string, value: boolean) => {
-    setSocialPlatforms(prev =>
-      prev.map(platform =>
-        platform.id === platformId ? { ...platform, [field]: value } : platform
-      )
+  const handleToggleVisibility = (
+    platformId: string,
+    field: string,
+    value: boolean,
+  ) => {
+    setSocialPlatforms((prev) =>
+      prev.map((platform) =>
+        platform.id === platformId ? { ...platform, [field]: value } : platform,
+      ),
     );
     toast({
       title: "Visibility Updated",
@@ -332,7 +339,8 @@ export function SocialMediaManagement() {
             onClick={() =>
               toast({
                 title: "Analytics Report",
-                description: "Generating comprehensive social media analytics...",
+                description:
+                  "Generating comprehensive social media analytics...",
               })
             }
           >
@@ -371,8 +379,8 @@ export function SocialMediaManagement() {
                         stat.trend === "up"
                           ? "text-green-600"
                           : stat.trend === "down"
-                          ? "text-red-600"
-                          : "text-gray-600"
+                            ? "text-red-600"
+                            : "text-gray-600"
                       }`}
                     >
                       {stat.change}
@@ -446,11 +454,15 @@ export function SocialMediaManagement() {
                             </div>
                             <div>
                               <span className="text-gray-500">Followers:</span>
-                              <p className="font-medium">{platform.followers}</p>
+                              <p className="font-medium">
+                                {platform.followers}
+                              </p>
                             </div>
                             <div>
                               <span className="text-gray-500">Engagement:</span>
-                              <p className="font-medium">{platform.engagement}</p>
+                              <p className="font-medium">
+                                {platform.engagement}
+                              </p>
                             </div>
                             <div>
                               <span className="text-gray-500">Posts:</span>
@@ -499,7 +511,11 @@ export function SocialMediaManagement() {
                           <Switch
                             checked={platform.displayInFooter}
                             onCheckedChange={(checked) =>
-                              handleToggleVisibility(platform.id, "displayInFooter", checked)
+                              handleToggleVisibility(
+                                platform.id,
+                                "displayInFooter",
+                                checked,
+                              )
                             }
                           />
                         </div>
@@ -508,7 +524,11 @@ export function SocialMediaManagement() {
                           <Switch
                             checked={platform.displayInHeader}
                             onCheckedChange={(checked) =>
-                              handleToggleVisibility(platform.id, "displayInHeader", checked)
+                              handleToggleVisibility(
+                                platform.id,
+                                "displayInHeader",
+                                checked,
+                              )
                             }
                           />
                         </div>
@@ -517,7 +537,11 @@ export function SocialMediaManagement() {
                           <Switch
                             checked={platform.autoPost}
                             onCheckedChange={(checked) =>
-                              handleToggleVisibility(platform.id, "autoPost", checked)
+                              handleToggleVisibility(
+                                platform.id,
+                                "autoPost",
+                                checked,
+                              )
                             }
                           />
                         </div>
@@ -530,7 +554,9 @@ export function SocialMediaManagement() {
                     {/* Edit Form */}
                     {isEditing === platform.id && (
                       <div className="mt-6 p-4 bg-gray-50 rounded-lg space-y-4">
-                        <h4 className="font-semibold">Edit Platform Settings</h4>
+                        <h4 className="font-semibold">
+                          Edit Platform Settings
+                        </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
                             <Label>Platform Name</Label>
@@ -548,7 +574,11 @@ export function SocialMediaManagement() {
                             <Label>API Key</Label>
                             <div className="relative">
                               <Input
-                                type={showPassword[platform.id] ? "text" : "password"}
+                                type={
+                                  showPassword[platform.id]
+                                    ? "text"
+                                    : "password"
+                                }
                                 defaultValue={platform.apiKey}
                               />
                               <Button
@@ -557,7 +587,7 @@ export function SocialMediaManagement() {
                                 size="sm"
                                 className="absolute right-0 top-0 h-full px-3"
                                 onClick={() =>
-                                  setShowPassword(prev => ({
+                                  setShowPassword((prev) => ({
                                     ...prev,
                                     [platform.id]: !prev[platform.id],
                                   }))
@@ -609,20 +639,29 @@ export function SocialMediaManagement() {
               <div>
                 <h4 className="font-semibold mb-4">Footer Social Links</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {socialPlatforms.filter(p => p.displayInFooter).map((platform) => (
-                    <div key={platform.id} className="flex items-center justify-between p-3 border rounded-lg">
-                      <div className="flex items-center space-x-3">
-                        <PlatformIcon platform={platform} />
-                        <span className="font-medium">{platform.name}</span>
+                  {socialPlatforms
+                    .filter((p) => p.displayInFooter)
+                    .map((platform) => (
+                      <div
+                        key={platform.id}
+                        className="flex items-center justify-between p-3 border rounded-lg"
+                      >
+                        <div className="flex items-center space-x-3">
+                          <PlatformIcon platform={platform} />
+                          <span className="font-medium">{platform.name}</span>
+                        </div>
+                        <Switch
+                          checked={platform.displayInFooter}
+                          onCheckedChange={(checked) =>
+                            handleToggleVisibility(
+                              platform.id,
+                              "displayInFooter",
+                              checked,
+                            )
+                          }
+                        />
                       </div>
-                      <Switch
-                        checked={platform.displayInFooter}
-                        onCheckedChange={(checked) =>
-                          handleToggleVisibility(platform.id, "displayInFooter", checked)
-                        }
-                      />
-                    </div>
-                  ))}
+                    ))}
                 </div>
               </div>
 
@@ -632,7 +671,10 @@ export function SocialMediaManagement() {
                 <h4 className="font-semibold mb-4">Header Social Links</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {socialPlatforms.map((platform) => (
-                    <div key={platform.id} className="flex items-center justify-between p-3 border rounded-lg">
+                    <div
+                      key={platform.id}
+                      className="flex items-center justify-between p-3 border rounded-lg"
+                    >
                       <div className="flex items-center space-x-3">
                         <PlatformIcon platform={platform} />
                         <span className="font-medium">{platform.name}</span>
@@ -640,7 +682,11 @@ export function SocialMediaManagement() {
                       <Switch
                         checked={platform.displayInHeader}
                         onCheckedChange={(checked) =>
-                          handleToggleVisibility(platform.id, "displayInHeader", checked)
+                          handleToggleVisibility(
+                            platform.id,
+                            "displayInHeader",
+                            checked,
+                          )
                         }
                       />
                     </div>
@@ -703,7 +749,9 @@ export function SocialMediaManagement() {
               <Alert>
                 <Zap className="h-4 w-4" />
                 <AlertDescription>
-                  Automation features help streamline your social media presence by automatically posting updates and engaging with your audience.
+                  Automation features help streamline your social media presence
+                  by automatically posting updates and engaging with your
+                  audience.
                 </AlertDescription>
               </Alert>
 
@@ -711,18 +759,27 @@ export function SocialMediaManagement() {
                 <h4 className="font-semibold mb-4">Auto-Posting Settings</h4>
                 <div className="space-y-4">
                   {socialPlatforms.map((platform) => (
-                    <div key={platform.id} className="flex items-center justify-between p-4 border rounded-lg">
+                    <div
+                      key={platform.id}
+                      className="flex items-center justify-between p-4 border rounded-lg"
+                    >
                       <div className="flex items-center space-x-3">
                         <PlatformIcon platform={platform} />
                         <div>
                           <p className="font-medium">{platform.name}</p>
-                          <p className="text-sm text-gray-600">Auto-post shipment updates and news</p>
+                          <p className="text-sm text-gray-600">
+                            Auto-post shipment updates and news
+                          </p>
                         </div>
                       </div>
                       <Switch
                         checked={platform.autoPost}
                         onCheckedChange={(checked) =>
-                          handleToggleVisibility(platform.id, "autoPost", checked)
+                          handleToggleVisibility(
+                            platform.id,
+                            "autoPost",
+                            checked,
+                          )
                         }
                       />
                     </div>
@@ -756,9 +813,15 @@ export function SocialMediaManagement() {
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="morning">Morning (8-12 PM)</SelectItem>
-                        <SelectItem value="business">Business Hours (9-5 PM)</SelectItem>
-                        <SelectItem value="evening">Evening (5-9 PM)</SelectItem>
+                        <SelectItem value="morning">
+                          Morning (8-12 PM)
+                        </SelectItem>
+                        <SelectItem value="business">
+                          Business Hours (9-5 PM)
+                        </SelectItem>
+                        <SelectItem value="evening">
+                          Evening (5-9 PM)
+                        </SelectItem>
                         <SelectItem value="night">Night (9-12 PM)</SelectItem>
                       </SelectContent>
                     </Select>
@@ -815,14 +878,19 @@ export function SocialMediaManagement() {
               <CardContent>
                 <div className="space-y-4">
                   {socialPlatforms.slice(0, 4).map((platform) => (
-                    <div key={platform.id} className="flex items-center justify-between">
+                    <div
+                      key={platform.id}
+                      className="flex items-center justify-between"
+                    >
                       <div className="flex items-center space-x-3">
                         <PlatformIcon platform={platform} />
                         <span className="font-medium">{platform.name}</span>
                       </div>
                       <div className="text-right">
                         <p className="font-semibold">{platform.followers}</p>
-                        <p className="text-sm text-gray-600">{platform.engagement} eng.</p>
+                        <p className="text-sm text-gray-600">
+                          {platform.engagement} eng.
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -841,7 +909,9 @@ export function SocialMediaManagement() {
                       <Facebook className="h-4 w-4 text-blue-600" />
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium">New shipment update posted</p>
+                      <p className="text-sm font-medium">
+                        New shipment update posted
+                      </p>
                       <p className="text-xs text-gray-600">2 hours ago</p>
                     </div>
                   </div>
@@ -850,7 +920,9 @@ export function SocialMediaManagement() {
                       <Twitter className="h-4 w-4 text-blue-600" />
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium">Industry news shared</p>
+                      <p className="text-sm font-medium">
+                        Industry news shared
+                      </p>
                       <p className="text-xs text-gray-600">4 hours ago</p>
                     </div>
                   </div>
@@ -859,7 +931,9 @@ export function SocialMediaManagement() {
                       <Instagram className="h-4 w-4 text-pink-600" />
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium">Behind the scenes photo</p>
+                      <p className="text-sm font-medium">
+                        Behind the scenes photo
+                      </p>
                       <p className="text-xs text-gray-600">6 hours ago</p>
                     </div>
                   </div>
@@ -868,7 +942,9 @@ export function SocialMediaManagement() {
                       <Linkedin className="h-4 w-4 text-blue-600" />
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium">Company milestone post</p>
+                      <p className="text-sm font-medium">
+                        Company milestone post
+                      </p>
                       <p className="text-xs text-gray-600">1 day ago</p>
                     </div>
                   </div>
@@ -890,7 +966,9 @@ export function SocialMediaManagement() {
               <Label>Platform Name</Label>
               <Input
                 value={newPlatform.name}
-                onChange={(e) => setNewPlatform(prev => ({ ...prev, name: e.target.value }))}
+                onChange={(e) =>
+                  setNewPlatform((prev) => ({ ...prev, name: e.target.value }))
+                }
                 placeholder="e.g., TikTok"
               />
             </div>
@@ -898,7 +976,12 @@ export function SocialMediaManagement() {
               <Label>Platform Type</Label>
               <Input
                 value={newPlatform.platform}
-                onChange={(e) => setNewPlatform(prev => ({ ...prev, platform: e.target.value }))}
+                onChange={(e) =>
+                  setNewPlatform((prev) => ({
+                    ...prev,
+                    platform: e.target.value,
+                  }))
+                }
                 placeholder="e.g., tiktok"
               />
             </div>
@@ -906,7 +989,9 @@ export function SocialMediaManagement() {
               <Label>Profile URL</Label>
               <Input
                 value={newPlatform.url}
-                onChange={(e) => setNewPlatform(prev => ({ ...prev, url: e.target.value }))}
+                onChange={(e) =>
+                  setNewPlatform((prev) => ({ ...prev, url: e.target.value }))
+                }
                 placeholder="https://..."
               />
             </div>
@@ -914,7 +999,12 @@ export function SocialMediaManagement() {
               <Label>Username/Handle</Label>
               <Input
                 value={newPlatform.username}
-                onChange={(e) => setNewPlatform(prev => ({ ...prev, username: e.target.value }))}
+                onChange={(e) =>
+                  setNewPlatform((prev) => ({
+                    ...prev,
+                    username: e.target.value,
+                  }))
+                }
                 placeholder="@username"
               />
             </div>
@@ -923,7 +1013,10 @@ export function SocialMediaManagement() {
                 <Switch
                   checked={newPlatform.displayInFooter}
                   onCheckedChange={(checked) =>
-                    setNewPlatform(prev => ({ ...prev, displayInFooter: checked }))
+                    setNewPlatform((prev) => ({
+                      ...prev,
+                      displayInFooter: checked,
+                    }))
                   }
                 />
                 <Label className="text-sm">Show in Footer</Label>
@@ -932,7 +1025,10 @@ export function SocialMediaManagement() {
                 <Switch
                   checked={newPlatform.displayInHeader}
                   onCheckedChange={(checked) =>
-                    setNewPlatform(prev => ({ ...prev, displayInHeader: checked }))
+                    setNewPlatform((prev) => ({
+                      ...prev,
+                      displayInHeader: checked,
+                    }))
                   }
                 />
                 <Label className="text-sm">Show in Header</Label>

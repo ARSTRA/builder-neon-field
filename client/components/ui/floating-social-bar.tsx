@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
-  Youtube, 
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
   MessageCircle,
   Share2,
   X,
   ChevronUp,
-  ChevronDown
+  ChevronDown,
 } from "lucide-react";
 
 interface FloatingSocialBarProps {
@@ -18,10 +18,10 @@ interface FloatingSocialBarProps {
   className?: string;
 }
 
-export function FloatingSocialBar({ 
-  show = true, 
+export function FloatingSocialBar({
+  show = true,
   position = "bottom-right",
-  className = "" 
+  className = "",
 }: FloatingSocialBarProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(show);
@@ -35,7 +35,7 @@ export function FloatingSocialBar({
       textColor: "text-white",
     },
     {
-      name: "Twitter", 
+      name: "Twitter",
       url: "https://twitter.com/globaltrack",
       icon: Twitter,
       color: "bg-sky-500 hover:bg-sky-600",
@@ -43,9 +43,10 @@ export function FloatingSocialBar({
     },
     {
       name: "Instagram",
-      url: "https://instagram.com/globaltrack_logistics", 
+      url: "https://instagram.com/globaltrack_logistics",
       icon: Instagram,
-      color: "bg-gradient-to-br from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700",
+      color:
+        "bg-gradient-to-br from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700",
       textColor: "text-white",
     },
     {
@@ -87,9 +88,13 @@ export function FloatingSocialBar({
     <div className={`fixed ${positionClasses[position]} z-40 ${className}`}>
       <div className="flex flex-col items-end space-y-2">
         {/* Social Icons */}
-        <div className={`transition-all duration-300 ${
-          isExpanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
-        } hidden sm:block`}>
+        <div
+          className={`transition-all duration-300 ${
+            isExpanded
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4 pointer-events-none"
+          } hidden sm:block`}
+        >
           <div className="flex flex-col space-y-2">
             {socialPlatforms.map((platform) => {
               const Icon = platform.icon;
@@ -111,7 +116,7 @@ export function FloatingSocialBar({
                   title={`Follow us on ${platform.name}`}
                 >
                   <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
-                  
+
                   {/* Tooltip */}
                   <div className="absolute right-12 sm:right-14 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-2 sm:px-3 py-1 rounded text-xs sm:text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden sm:block">
                     {platform.name}
@@ -138,10 +143,10 @@ export function FloatingSocialBar({
               </>
             )}
           </div>
-          
+
           {/* Main Tooltip */}
           <div className="absolute right-14 sm:right-16 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-2 sm:px-3 py-1 rounded text-xs sm:text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden sm:block">
-            {isExpanded ? 'Hide Social' : 'Follow Us'}
+            {isExpanded ? "Hide Social" : "Follow Us"}
             <div className="absolute left-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-l-gray-900"></div>
           </div>
         </button>

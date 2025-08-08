@@ -126,7 +126,6 @@ export function Navigation() {
                   Sign In
                 </Button>
               </Link>
-
             </div>
           </div>
         )}

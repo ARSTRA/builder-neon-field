@@ -1,9 +1,9 @@
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
-  Youtube, 
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
   MessageCircle,
 } from "lucide-react";
 
@@ -11,8 +11,9 @@ interface SimpleSocialFooterProps {
   className?: string;
 }
 
-export function SimpleSocialFooter({ className = "" }: SimpleSocialFooterProps) {
-  
+export function SimpleSocialFooter({
+  className = "",
+}: SimpleSocialFooterProps) {
   const socialPlatforms = [
     {
       name: "Facebook",
@@ -32,7 +33,8 @@ export function SimpleSocialFooter({ className = "" }: SimpleSocialFooterProps) 
       name: "Instagram",
       url: "https://instagram.com/globaltrack_logistics",
       icon: Instagram,
-      bgColor: "bg-gradient-to-br from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700",
+      bgColor:
+        "bg-gradient-to-br from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700",
       shadowColor: "hover:shadow-pink-500/30",
     },
     {
@@ -64,10 +66,8 @@ export function SimpleSocialFooter({ className = "" }: SimpleSocialFooterProps) 
 
   return (
     <div className={`${className}`}>
-      <h4 className="text-lg font-semibold text-orange-500 mb-4">
-        Follow Us
-      </h4>
-      
+      <h4 className="text-lg font-semibold text-orange-500 mb-4">Follow Us</h4>
+
       <div className="flex items-center flex-wrap gap-3 mb-6">
         {socialPlatforms.map((social) => {
           const Icon = social.icon;
@@ -106,8 +106,12 @@ export function SimpleSocialFooter({ className = "" }: SimpleSocialFooterProps) 
       </div>
 
       <div className="text-xs sm:text-sm text-gray-300 space-y-1">
-        <p>🌟 <strong>63.8K+</strong> followers across all platforms</p>
-        <p>📈 <strong>5.2%</strong> average engagement rate</p>
+        <p>
+          🌟 <strong>63.8K+</strong> followers across all platforms
+        </p>
+        <p>
+          📈 <strong>5.2%</strong> average engagement rate
+        </p>
         <p>📱 Join our growing community!</p>
       </div>
     </div>

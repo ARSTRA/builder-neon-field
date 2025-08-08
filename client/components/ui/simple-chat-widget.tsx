@@ -1,11 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import {
-  MessageCircle,
-  Send,
-  X,
-  Minimize2,
-  User,
-} from "lucide-react";
+import { MessageCircle, Send, X, Minimize2, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -66,7 +60,7 @@ export function SimpleChatWidget() {
         const agentResponse: Message = {
           id: (Date.now() + 1).toString(),
           sender: "agent",
-          content: isOnline 
+          content: isOnline
             ? "Thank you for your message! I'll help you right away. For more detailed assistance, please visit our full chat page."
             : "We are currently offline. Please leave a message and we will get back to you.",
           timestamp: new Date(),
@@ -91,9 +85,11 @@ export function SimpleChatWidget() {
         >
           <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
         </Button>
-        <div className={`absolute -top-1.5 -left-1.5 sm:-top-2 sm:-left-2 w-3 h-3 sm:w-4 sm:h-4 border-2 border-white rounded-full animate-pulse ${isOnline ? 'bg-green-500' : 'bg-red-500'}`}></div>
+        <div
+          className={`absolute -top-1.5 -left-1.5 sm:-top-2 sm:-left-2 w-3 h-3 sm:w-4 sm:h-4 border-2 border-white rounded-full animate-pulse ${isOnline ? "bg-green-500" : "bg-red-500"}`}
+        ></div>
         <div className="absolute -top-6 sm:-top-8 right-0 bg-gray-800 text-white text-xs py-1 px-2 rounded whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity hidden sm:block">
-          {isOnline ? 'Online - Chat with us!' : 'Offline - Leave a message'}
+          {isOnline ? "Online - Chat with us!" : "Offline - Leave a message"}
         </div>
       </div>
     );
@@ -108,9 +104,7 @@ export function SimpleChatWidget() {
         }`}
       >
         {/* Chat Header */}
-        <CardHeader
-          className="text-white rounded-t-lg p-3 sm:p-4 bg-gradient-to-r from-royal-600 to-orange-500"
-        >
+        <CardHeader className="text-white rounded-t-lg p-3 sm:p-4 bg-gradient-to-r from-royal-600 to-orange-500">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Avatar className="h-5 w-5 sm:h-6 sm:w-6">
@@ -118,7 +112,9 @@ export function SimpleChatWidget() {
                 <AvatarFallback className="text-xs">GT</AvatarFallback>
               </Avatar>
               <div>
-                <h3 className="font-semibold text-xs sm:text-sm">GlobalTrack Support</h3>
+                <h3 className="font-semibold text-xs sm:text-sm">
+                  GlobalTrack Support
+                </h3>
                 <p className="text-xs opacity-90">
                   {isTyping ? "Typing..." : isOnline ? "Online" : "Offline"}
                 </p>

@@ -1,12 +1,12 @@
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
-  Youtube, 
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
   MessageCircle,
   Mail,
-  Phone
+  Phone,
 } from "lucide-react";
 
 interface SocialIcon {
@@ -26,12 +26,11 @@ interface EnhancedSocialIconsProps {
   className?: string;
 }
 
-export function EnhancedSocialIcons({ 
-  showLabels = false, 
+export function EnhancedSocialIcons({
+  showLabels = false,
   size = "md",
-  className = "" 
+  className = "",
 }: EnhancedSocialIconsProps) {
-  
   const socialIcons: SocialIcon[] = [
     {
       name: "Facebook",
@@ -47,7 +46,7 @@ export function EnhancedSocialIcons({
       name: "Twitter",
       url: "https://twitter.com/globaltrack",
       icon: Twitter,
-      bgGradient: "bg-gradient-to-br from-sky-400 to-sky-600", 
+      bgGradient: "bg-gradient-to-br from-sky-400 to-sky-600",
       hoverGradient: "hover:from-sky-300 hover:to-sky-500",
       iconColor: "text-white",
       shadowColor: "shadow-sky-500/30",
@@ -57,8 +56,10 @@ export function EnhancedSocialIcons({
       name: "Instagram",
       url: "https://instagram.com/globaltrack_logistics",
       icon: Instagram,
-      bgGradient: "bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500",
-      hoverGradient: "hover:from-pink-400 hover:via-purple-400 hover:to-indigo-400",
+      bgGradient:
+        "bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500",
+      hoverGradient:
+        "hover:from-pink-400 hover:via-purple-400 hover:to-indigo-400",
       iconColor: "text-white",
       shadowColor: "shadow-pink-500/30",
       enabled: true,
@@ -79,7 +80,7 @@ export function EnhancedSocialIcons({
       icon: Youtube,
       bgGradient: "bg-gradient-to-br from-red-500 to-red-700",
       hoverGradient: "hover:from-red-400 hover:to-red-600",
-      iconColor: "text-white", 
+      iconColor: "text-white",
       shadowColor: "shadow-red-500/30",
       enabled: true,
     },
@@ -104,7 +105,7 @@ export function EnhancedSocialIcons({
     },
     md: {
       container: "w-12 h-12",
-      icon: "h-6 w-6", 
+      icon: "h-6 w-6",
       text: "text-sm",
       gap: "gap-4",
     },
@@ -116,7 +117,7 @@ export function EnhancedSocialIcons({
     },
   };
 
-  const activePlatforms = socialIcons.filter(platform => platform.enabled);
+  const activePlatforms = socialIcons.filter((platform) => platform.enabled);
 
   const handleSocialClick = (url: string, name: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
@@ -129,7 +130,7 @@ export function EnhancedSocialIcons({
           Connect With Us
         </h4>
       )}
-      
+
       <div className={`flex items-center ${sizeClasses[size].gap} flex-wrap`}>
         {activePlatforms.map((social) => {
           const Icon = social.icon;
@@ -161,12 +162,16 @@ export function EnhancedSocialIcons({
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </div>
-                
-                <Icon className={`${sizeClasses[size].icon} ${social.iconColor} relative z-10`} />
+
+                <Icon
+                  className={`${sizeClasses[size].icon} ${social.iconColor} relative z-10`}
+                />
               </button>
-              
+
               {showLabels && (
-                <p className={`${sizeClasses[size].text} text-center text-gray-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                <p
+                  className={`${sizeClasses[size].text} text-center text-gray-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                >
                   {social.name}
                 </p>
               )}
@@ -177,8 +182,12 @@ export function EnhancedSocialIcons({
 
       {/* Alternative Layout: Contact Info */}
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="group cursor-pointer" onClick={() => window.open("tel:+15551234567", "_self")}>
-          <div className={`
+        <div
+          className="group cursor-pointer"
+          onClick={() => window.open("tel:+15551234567", "_self")}
+        >
+          <div
+            className={`
             ${sizeClasses[size].container}
             bg-gradient-to-br from-emerald-500 to-emerald-700
             hover:from-emerald-400 hover:to-emerald-600
@@ -195,13 +204,16 @@ export function EnhancedSocialIcons({
             relative
             overflow-hidden
             inline-flex
-          `}>
+          `}
+          >
             {/* Shimmer effect */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </div>
-            
-            <Phone className={`${sizeClasses[size].icon} text-white relative z-10`} />
+
+            <Phone
+              className={`${sizeClasses[size].icon} text-white relative z-10`}
+            />
           </div>
           <div className="ml-4 inline-block align-middle">
             <h4 className="text-white font-semibold">Call Us</h4>
@@ -209,8 +221,12 @@ export function EnhancedSocialIcons({
           </div>
         </div>
 
-        <div className="group cursor-pointer" onClick={() => window.open("mailto:info@globaltrack.com", "_self")}>
-          <div className={`
+        <div
+          className="group cursor-pointer"
+          onClick={() => window.open("mailto:info@globaltrack.com", "_self")}
+        >
+          <div
+            className={`
             ${sizeClasses[size].container}
             bg-gradient-to-br from-orange-500 to-orange-700
             hover:from-orange-400 hover:to-orange-600
@@ -227,13 +243,16 @@ export function EnhancedSocialIcons({
             relative
             overflow-hidden
             inline-flex
-          `}>
+          `}
+          >
             {/* Shimmer effect */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </div>
-            
-            <Mail className={`${sizeClasses[size].icon} text-white relative z-10`} />
+
+            <Mail
+              className={`${sizeClasses[size].icon} text-white relative z-10`}
+            />
           </div>
           <div className="ml-4 inline-block align-middle">
             <h4 className="text-white font-semibold">Email Us</h4>
