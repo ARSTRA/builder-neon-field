@@ -181,24 +181,24 @@ export default function Track() {
             </p>
 
             {/* Enhanced Search Form */}
-            <Card className="bg-white/10 backdrop-blur-sm border-0">
-              <CardContent className="p-8">
+            <Card className="bg-white/10 backdrop-blur-sm border-0 shadow-xl">
+              <CardContent className="p-6 lg:p-8">
                 <form onSubmit={handleSearch} className="space-y-4">
-                  <div className="flex flex-col md:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <div className="relative flex-1">
                       <Input
                         type="text"
                         placeholder="Enter your tracking number (e.g., GT123456789)"
                         value={trackingId}
                         onChange={(e) => setTrackingId(e.target.value)}
-                        className="bg-white text-gray-800 placeholder:text-gray-500 text-lg py-6 pl-12 border-0 shadow-lg"
+                        className="bg-white text-gray-800 placeholder:text-gray-500 text-base lg:text-lg py-4 lg:py-6 pl-12 border-0 shadow-lg rounded-xl"
                       />
-                      <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-6 w-6 text-gray-500" />
+                      <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 lg:h-6 lg:w-6 text-gray-500" />
                     </div>
                     <Button
                       type="submit"
                       disabled={loading}
-                      className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-6 px-8 text-lg font-semibold shadow-lg"
+                      className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-4 lg:py-6 px-6 lg:px-8 text-base lg:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
                     >
                       {loading ? "Searching..." : "Track Package"}
                     </Button>
