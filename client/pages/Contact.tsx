@@ -304,9 +304,11 @@ export default function Contact() {
                         if (method.title === "Call Us Directly") {
                           window.open("tel:+15551234567", "_self");
                         } else if (method.title === "Live Chat Support") {
-                          window.location.href = "/chat";
+                          window.location.href = "/contact";
                         } else if (method.title === "Email Support") {
-                          window.open("mailto:info@globaltrack.com", "_self");
+                          const subject = encodeURIComponent("GlobalTrack Support Request");
+                          const body = encodeURIComponent("Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards");
+                          window.open(`mailto:info@globaltrack.com?subject=${subject}&body=${body}`, "_blank");
                         } else if (method.title === "Schedule Meeting") {
                           // For now, scroll to contact form - could integrate with calendar booking later
                           document
@@ -314,9 +316,10 @@ export default function Contact() {
                             ?.scrollIntoView({ behavior: "smooth" });
                         }
                       }}
-                      className={`w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white font-semibold transition-all duration-300 hover:shadow-lg`}
+                      className={`group w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white font-semibold transition-all duration-300 hover:shadow-lg transform hover:scale-105 relative overflow-hidden`}
                     >
-                      {method.action}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-500"></div>
+                      <span className="relative z-10">{method.action}</span>
                     </Button>
                   </CardContent>
                 </Card>
