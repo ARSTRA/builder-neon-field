@@ -230,8 +230,8 @@ export default function Newspaper() {
         <div className="absolute inset-0 bg-gradient-to-r from-royal-600/90 via-royal-700/85 to-orange-600/90"></div>
         <div className="absolute inset-0 bg-black/20"></div>
 
-        <div className="relative container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+        <div className="relative container mx-auto px-4 lg:px-6">
+          <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-center mb-8">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
                 <NewspaperIcon className="h-16 w-16 text-orange-400" />
