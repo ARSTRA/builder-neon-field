@@ -696,19 +696,39 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Floating Expert Consultation Widget */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 group">
-          <Link to="/contact">
-            <Button className="bg-transparent hover:bg-transparent p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
-              <Phone className="h-6 w-6 animate-pulse" />
-            </Button>
-          </Link>
-          <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap">
-              Need help? Call an expert!
-              <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+      {/* Enhanced Floating Expert Consultation Widget */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <div className="group">
+          {/* Main Button */}
+          <div className="relative">
+            <Link to="/contact">
+              <Button className="group/btn bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 hover:from-orange-600 hover:via-orange-700 hover:to-orange-600 text-white p-5 rounded-2xl shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-110 border-2 border-white/20">
+                <Phone className="h-7 w-7 group-hover/btn:animate-pulse" />
+                <div className="absolute -top-1 -right-1 bg-green-500 w-4 h-4 rounded-full animate-ping"></div>
+                <div className="absolute -top-1 -right-1 bg-green-500 w-4 h-4 rounded-full"></div>
+              </Button>
+            </Link>
+          </div>
+
+          {/* Tooltip */}
+          <div className="absolute bottom-full right-0 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white text-sm px-4 py-3 rounded-xl whitespace-nowrap shadow-2xl backdrop-blur-sm border border-white/10">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="font-semibold">Expert Available Now!</span>
+              </div>
+              <div className="text-xs text-gray-300 mt-1">Free consultation • Average response: 30s</div>
+              <div className="absolute top-full right-6 w-0 h-0 border-l-4 border-r-4 border-t-6 border-transparent border-t-gray-900"></div>
             </div>
+          </div>
+
+          {/* Secondary Live Chat Button */}
+          <div className="absolute bottom-20 right-0 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0 delay-100">
+            <Link to="/chat">
+              <Button className="bg-royal-600 hover:bg-royal-700 text-white p-4 rounded-xl shadow-xl hover:shadow-royal-600/30 transition-all duration-300 transform hover:scale-105 border border-white/20">
+                <MessageCircle className="h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
