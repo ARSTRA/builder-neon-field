@@ -115,14 +115,16 @@ export default function App() {
             />
 
             {/* Auth pages without navigation */}
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<UnifiedLogin />} />
+            <Route path="/login/legacy" element={<Login />} />
+            <Route path="/admin/login/legacy" element={<AdminLogin />} />
             <Route path="/register" element={<Register />} />
 
             {/* Dashboard without main navigation */}
             <Route path="/dashboard" element={<Dashboard />} />
 
             {/* Admin auth and panel without main navigation */}
-            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/login" element={<UnifiedLogin />} />
             <Route path="/admin" element={<Admin />} />
 
             {/* 404 page */}
