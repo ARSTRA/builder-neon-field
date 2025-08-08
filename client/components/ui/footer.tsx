@@ -182,6 +182,13 @@ export function Footer() {
               >
                 Security
               </Link>
+              <Link
+                to="/login?admin=true"
+                className="text-gray-400 hover:text-orange-400 transition-colors duration-200 flex items-center"
+              >
+                <Shield className="h-3 w-3 mr-1" />
+                Admin Access
+              </Link>
             </div>
           </div>
         </div>
