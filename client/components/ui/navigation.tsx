@@ -116,26 +116,15 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
-              <div className="grid grid-cols-2 gap-3">
-                <Link to="/admin/login" className="block">
-                  <Button
-                    variant="outline"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="w-full border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300"
-                  >
-                    Admin
-                  </Button>
-                </Link>
-                <Link to="/login" className="block">
-                  <Button
-                    variant="outline"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300"
-                  >
-                    Sign In
-                  </Button>
-                </Link>
-              </div>
+              <Link to="/login" className="block">
+                <Button
+                  variant="outline"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300"
+                >
+                  Sign In
+                </Button>
+              </Link>
             </div>
           </div>
         )}
