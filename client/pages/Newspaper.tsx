@@ -296,15 +296,15 @@ export default function Newspaper() {
       </section>
 
       {/* Featured Articles */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-12 lg:py-16 bg-white">
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center mb-12">
-              <Star className="h-8 w-8 text-orange-500 mr-3" />
-              <h2 className="text-4xl font-bold text-gray-800">Featured Stories</h2>
+            <div className="flex items-center mb-8 lg:mb-12">
+              <Star className="h-6 w-6 lg:h-8 lg:w-8 text-orange-500 mr-3" />
+              <h2 className="text-2xl lg:text-4xl font-bold text-gray-800">Featured Stories</h2>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
               {featuredArticles
                 .filter(article => selectedCategory === "all" || article.category === selectedCategory)
                 .map((article, index) => (
