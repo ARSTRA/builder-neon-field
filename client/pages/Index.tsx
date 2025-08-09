@@ -108,22 +108,22 @@ export default function Index() {
 
   const features = [
     {
-      icon: <Globe className="h-8 w-8 text-orange-500" />,
-      title: "Global Network",
+      icon: <Globe className="h-8 w-8 text-purple-500" />,
+      title: "AI-Powered Network",
       description:
-        "Worldwide shipping coverage with local expertise in every region.",
+        "Intelligent routing algorithms optimize delivery paths in real-time across our global nexus.",
     },
     {
-      icon: <Shield className="h-8 w-8 text-orange-500" />,
-      title: "Secure & Insured",
+      icon: <Shield className="h-8 w-8 text-blue-500" />,
+      title: "Blockchain Security",
       description:
-        "Full insurance coverage and secure handling for all shipments.",
+        "Immutable transaction records and smart contracts ensure complete shipment security.",
     },
     {
-      icon: <Clock className="h-8 w-8 text-orange-500" />,
-      title: "Real-Time Tracking",
+      icon: <Clock className="h-8 w-8 text-pink-500" />,
+      title: "Quantum Tracking",
       description:
-        "Live GPS tracking and updates throughout the shipping journey.",
+        "Next-gen sensors provide molecular-level precision tracking with predictive analytics.",
     },
   ];
 
