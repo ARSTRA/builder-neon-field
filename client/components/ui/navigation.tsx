@@ -31,10 +31,12 @@ export function Navigation() {
               className="transition-transform hover:scale-105 mr-3"
             />
             <div>
-              <span className="text-xl font-bold text-royal-600">
-                GlobalTrack
+              <span className="text-xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-teal-500 bg-clip-text text-transparent">
+                Ship
               </span>
-              <span className="text-lg text-orange-500 ml-1">Logistics</span>
+              <span className="text-xl font-bold bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                Nexa
+              </span>
             </div>
           </Link>
 
