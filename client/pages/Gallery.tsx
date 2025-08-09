@@ -111,7 +111,7 @@ const galleryImages: GalleryImage[] = [
     title: "Global Operations Center",
     description: "24/7 monitoring and coordination of worldwide operations",
     category: "Operations",
-    location: "GlobalTrack HQ",
+    location: "ShipNexa HQ",
   },
   {
     id: 12,
@@ -212,7 +212,7 @@ export default function Gallery() {
             <p className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12 animate-slide-up">
               Explore our state-of-the-art facilities, cutting-edge
               transportation network, and professional operations across the
-              globe. See how GlobalTrack delivers excellence through innovation,
+              globe. See how ShipNexa delivers excellence through innovation,
               technology, and expertise.
             </p>
 
