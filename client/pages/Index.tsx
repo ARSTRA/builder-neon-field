@@ -286,14 +286,14 @@ export default function Index() {
                 size="xl"
                 className="justify-center lg:justify-start mb-6"
               />
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                Connecting the World Through Logistics
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+                Revolutionizing Global Connectivity
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                With our innovative tracking technology and global network, we
-                bridge distances and connect businesses worldwide. Our
-                integrated approach combines air, sea, and ground transportation
-                for seamless logistics solutions.
+                ShipNexa leverages cutting-edge AI and blockchain technology to create
+                the most intelligent shipping network ever built. Our next-generation
+                platform seamlessly integrates air, sea, and ground logistics with
+                real-time visibility and predictive analytics.
               </p>
             </div>
 
