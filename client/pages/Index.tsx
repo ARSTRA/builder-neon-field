@@ -146,7 +146,7 @@ export default function Index() {
       company: "Import Export Ltd.",
       rating: 5,
       comment:
-        "The real-time tracking feature has revolutionized how we manage our supply chain. We always know exactly where our cargo is, and their customer portal makes everything transparent and easy to manage.",
+        "ShipNexa's quantum tracking and AI analytics have transformed our supply chain management. The predictive insights and blockchain transparency give us unprecedented visibility and control.",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "1200+",
@@ -170,7 +170,7 @@ export default function Index() {
       company: "Manufacturing Corp",
       rating: 5,
       comment:
-        "Outstanding service and support. The team at GlobalTrack understands our unique needs and always delivers solutions that work. Their expertise in international shipping is unmatched.",
+        "ShipNexa's next-generation platform and expert team deliver solutions that exceed expectations. Their innovative approach to international shipping sets new industry standards.",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "800+",
