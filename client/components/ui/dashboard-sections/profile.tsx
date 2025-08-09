@@ -58,7 +58,7 @@ export function ProfileSection() {
   const handleSave = () => {
     setIsEditing(false);
     // Here you would typically save to your backend
-    console.log("Saving profile data:", profileData);
+    // console.log("Saving profile data:", profileData);
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -125,8 +125,12 @@ export function ProfileSection() {
                   <Avatar className="h-24 w-24">
                     <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&crop=face" />
                     <AvatarFallback className="text-xl">
-                      {profileData.firstName.charAt(0)}
-                      {profileData.lastName.charAt(0)}
+                      {profileData.firstName
+                        ? profileData.firstName.charAt(0)
+                        : ""}
+                      {profileData.lastName
+                        ? profileData.lastName.charAt(0)
+                        : ""}
                     </AvatarFallback>
                   </Avatar>
                   {isEditing && (

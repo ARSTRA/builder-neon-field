@@ -262,18 +262,17 @@ export default function Services() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-[1.02] rounded-xl"
               >
                 Get Custom Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
               <Link to="/chat">
                 <Button
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
+                  className="group border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-[1.02] rounded-xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/20"
                 >
-                  CHAT with Expert
-                  <MessageCircle className="ml-2 h-5 w-5" />
+
                 </Button>
               </Link>
             </div>
@@ -341,23 +340,16 @@ export default function Services() {
                 Get instant answers to your shipping questions and personalized
                 solution recommendations
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/chat">
-                  <Button className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <MessageCircle className="h-5 w-5 mr-3 group-hover:animate-pulse" />
-                    CHAT with Expert Now
-                    <span className="ml-2 text-sm bg-white/20 px-2 py-1 rounded">
-                      Free
+
                     </span>
                   </Button>
                 </Link>
                 <Link to="/contact">
                   <Button
                     variant="outline"
-                    className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                    className="group relative border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 overflow-hidden"
                   >
-                    <Phone className="h-5 w-5 mr-3" />
-                    Call Support
+
                   </Button>
                 </Link>
               </div>
@@ -506,21 +498,20 @@ export default function Services() {
                         </TabsContent>
                       </Tabs>
 
-                      <div className="flex gap-3 mt-8">
+                      <div className="flex gap-4 mt-8">
                         <Button
                           onClick={() => setIsQuoteModalOpen(true)}
-                          className={`flex-1 bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300`}
+                          className={`group flex-1 bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] rounded-xl py-4 font-semibold`}
                         >
                           Get Quote
-                          <ArrowRight className="h-4 w-4 ml-2" />
+                          <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>
-                        <Link to="/chat">
+
                           <Button
                             variant="outline"
-                            className="group w-full border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
+                            className="group w-full border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-[1.02] rounded-xl py-4 font-semibold backdrop-blur-sm bg-royal-50/50 hover:bg-royal-600"
                           >
-                            <MessageCircle className="h-4 w-4 mr-2 group-hover:animate-pulse" />
-                            CHAT Expert
+
                           </Button>
                         </Link>
                       </div>
@@ -568,22 +559,16 @@ export default function Services() {
                     {service.title}
                   </h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
-                  <div className="flex gap-2">
+                  <div className="flex gap-3">
                     <Button
                       onClick={() => setIsQuoteModalOpen(true)}
                       variant="outline"
-                      className="flex-1 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 font-semibold"
+                      className="group flex-1 border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] rounded-lg"
                     >
                       Get Quote
-                      <ArrowRight className="h-4 w-4 ml-2" />
+                      <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
-                    <Link to="/chat">
-                      <Button
-                        size="sm"
-                        className="bg-orange-500 hover:bg-orange-600 text-white px-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                      >
-                        <MessageCircle className="h-4 w-4 mr-1" />
-                        CHAT
+
                       </Button>
                     </Link>
                   </div>
@@ -642,21 +627,26 @@ export default function Services() {
             shipping solution for your needs. Get a custom quote in minutes or
             speak with a specialist today.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-2xl mx-auto">
             <Button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg flex-1 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 hover:from-orange-600 hover:via-orange-700 hover:to-orange-600 text-white px-10 py-5 text-lg flex-1 font-bold shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105 rounded-2xl relative overflow-hidden"
             >
-              <Calendar className="mr-2 h-5 w-5" />
-              Get Free Quote
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+              <Calendar className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
+              <span className="relative z-10">Get Free Quote</span>
             </Button>
-            <Link to="/chat">
+            <Link to="/contact" className="flex-1">
               <Button
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg flex-1 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+                className="group w-full border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-white/20 transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5 relative overflow-hidden"
               >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Live Chat
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                <MessageCircle className="mr-3 h-6 w-6 group-hover:bounce transition-transform duration-300 relative z-10" />
+                <span className="relative z-10">Contact Support</span>
+                <div className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
+                  24/7
+                </div>
               </Button>
             </Link>
           </div>
@@ -684,19 +674,17 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Floating Expert Consultation Widget */}
-      <div className="fixed bottom-6 left-6 z-50">
-        <div className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 group">
-          <Link to="/chat">
-            <Button className="bg-transparent hover:bg-transparent p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
-              <MessageCircle className="h-6 w-6 animate-pulse" />
-            </Button>
-          </Link>
-          <div className="absolute bottom-full left-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap">
-              Need help? CHAT with an expert!
-              <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+
             </div>
+          </div>
+
+          {/* Secondary Live Chat Button */}
+          <div className="absolute bottom-20 right-0 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0 delay-100">
+            <Link to="/contact">
+              <Button className="bg-royal-600 hover:bg-royal-700 text-white p-4 rounded-xl shadow-xl hover:shadow-royal-600/30 transition-all duration-300 transform hover:scale-105 border border-white/20">
+                <MessageCircle className="h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

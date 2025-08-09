@@ -20,6 +20,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Logo } from "@/components/ui/logo";
 import { GetQuoteModal } from "@/components/ui/get-quote-modal";
+import { FloatingSocialBar } from "@/components/ui/floating-social-bar";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Index() {
@@ -762,31 +763,116 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-royal-600 to-royal-800 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Ship with GlobalTrack?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Get a free quote today and experience the difference of professional
-            logistics services.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={handleGetQuote}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg"
-            >
-              Get Free Quote
-            </Button>
-            <Link to="/contact">
+      {/* Enhanced CTA Section */}
+      <section className="relative py-24 bg-gradient-to-br from-royal-600 via-royal-700 to-royal-900 text-white overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
+        </div>
+
+        {/* Animated Background Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-orange-500/20 rounded-full animate-bounce-slow"></div>
+        <div className="absolute bottom-20 right-10 w-16 h-16 bg-white/10 rounded-full animate-pulse-soft"></div>
+        <div
+          className="absolute top-1/2 left-1/4 w-12 h-12 bg-orange-400/30 rounded-full animate-bounce-slow"
+          style={{ animationDelay: "1s" }}
+        ></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Enhanced Header */}
+            <div className="mb-8">
+              <div className="inline-flex items-center justify-center p-3 bg-orange-500/20 rounded-full mb-6 animate-fade-in">
+                <Package className="h-8 w-8 text-orange-400" />
+              </div>
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-delay">
+                Ready to Ship with
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-2">
+                  GlobalTrack?
+                </span>
+              </h2>
+              <p className="text-xl lg:text-2xl mb-4 text-gray-200 animate-slide-up">
+                Get a free quote today and experience the difference of
+                professional logistics services.
+              </p>
+              <p className="text-lg text-orange-300 mb-12 animate-slide-up">
+                Join 5,000+ businesses that trust us with their shipping needs
+              </p>
+            </div>
+
+            {/* Enhanced Action Buttons */}
+            <div className="flex flex-col lg:flex-row gap-6 justify-center items-center mb-12 animate-slide-up">
+              {/* Primary CTA - Get Quote */}
               <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-royal-600 px-8 py-3 text-lg"
+                onClick={handleGetQuote}
+                className="group relative bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
               >
-                Contact Us
+                <div className="flex items-center space-x-3">
+                  <Package className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
+                  <span>Get Free Quote</span>
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+                <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
-            </Link>
+
+              {/* Secondary CTA - Contact */}
+              <Link to="/contact" className="group">
+                <Button
+                  variant="outline"
+                  className="relative border-2 border-white/30 text-white hover:bg-white hover:text-royal-600 px-10 py-4 text-lg font-semibold rounded-xl backdrop-blur-sm bg-white/5 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                >
+                  <div className="flex items-center space-x-3">
+                    <Phone className="h-6 w-6 group-hover:animate-pulse" />
+                    <span>Contact Expert</span>
+                    <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-royal-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Button>
+              </Link>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto animate-fade-in">
+              <div className="text-center group cursor-pointer">
+                <div className="text-3xl font-bold text-orange-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                  50K+
+                </div>
+                <div className="text-sm text-gray-300">Packages Delivered</div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="text-3xl font-bold text-orange-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                  120+
+                </div>
+                <div className="text-sm text-gray-300">Countries Served</div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="text-3xl font-bold text-orange-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                  99.8%
+                </div>
+                <div className="text-sm text-gray-300">On-Time Delivery</div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="text-3xl font-bold text-orange-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                  24/7
+                </div>
+                <div className="text-sm text-gray-300">Expert Support</div>
+              </div>
+            </div>
+
+            {/* Additional Contact Options */}
+            <div className="mt-12 pt-8 border-t border-white/20">
+              <p className="text-gray-300 mb-4">Need immediate assistance?</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  onClick={handleCallExpert}
+                  variant="ghost"
+                  className="text-orange-400 hover:text-orange-300 hover:bg-white/10 transition-all duration-300"
+                >
+                  <Phone className="h-4 w-4 mr-2" />
+                  Call: +1 (555) 123-4567
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -797,25 +883,9 @@ export default function Index() {
         onOpenChange={setIsQuoteModalOpen}
       />
 
-      {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        {/* Live Chat Button */}
-        <Button
-          onClick={handleLiveChat}
-          className="bg-royal-600 hover:bg-royal-700 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 group"
-          title="Live Chat Support"
-        >
-          <MessageCircle className="h-6 w-6 group-hover:animate-pulse" />
-        </Button>
-
-        {/* Call Expert Button */}
-        <Button
-          onClick={handleCallExpert}
-          className="bg-orange-500 hover:bg-orange-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 group"
-          title="Call Expert Now"
-        >
-          <Phone className="h-6 w-6 group-hover:animate-pulse" />
-        </Button>
+      {/* Floating Social Media Bar - Hidden on mobile to prevent overlap */}
+      <div className="hidden sm:block">
+        <FloatingSocialBar show={true} position="bottom-left" />
       </div>
     </div>
   );

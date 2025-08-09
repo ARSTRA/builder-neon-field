@@ -34,17 +34,39 @@ import { PaymentsSection } from "@/components/ui/dashboard-sections/payments";
 import { ProfileSection } from "@/components/ui/dashboard-sections/profile";
 import { KYCSection } from "@/components/ui/dashboard-sections/kyc";
 import { SettingsSection } from "@/components/ui/dashboard-sections/settings";
+import { NotificationDropdown } from "@/components/ui/notification-dropdown";
+import { NotificationTest } from "@/components/ui/notification-test";
+import { useNotifications } from "@/hooks/use-notifications";
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const [currentView, setCurrentView] = useState("overview");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [userEmail] = useState(localStorage.getItem("userEmail") || "");
+  const { notifications, markAsRead, markAllAsRead, clearAll } =
+    useNotifications("user");
 
   useEffect(() => {
     // Check if user is logged in
     if (!localStorage.getItem("isLoggedIn")) {
       navigate("/login");
+    }
+
+    // Handle URL parameters for view
+    const urlParams = new URLSearchParams(window.location.search);
+    const viewParam = urlParams.get("view");
+    if (
+      viewParam &&
+      [
+        "overview",
+        "tracking",
+        "payments",
+        "profile",
+        "kyc",
+        "settings",
+      ].includes(viewParam)
+    ) {
+      setCurrentView(viewParam as any);
     }
   }, [navigate]);
 
@@ -246,18 +268,20 @@ export default function Dashboard() {
 
             {/* User Menu */}
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="sm" className="relative">
-                <Bell className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
-                  3
-                </span>
-              </Button>
+              <NotificationDropdown
+                notifications={notifications}
+                onNotificationRead={markAsRead}
+                onMarkAllRead={markAllAsRead}
+                onClearAll={clearAll}
+                showManageLink={true}
+                type="user"
+              />
 
               <div className="flex items-center space-x-3">
                 <Avatar className="h-8 w-8">
                   <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" />
                   <AvatarFallback>
-                    {userEmail.charAt(0).toUpperCase()}
+                    {userEmail ? userEmail.charAt(0).toUpperCase() : "U"}
                   </AvatarFallback>
                 </Avatar>
                 <div className="hidden md:block">
@@ -509,6 +533,14 @@ export default function Dashboard() {
             {currentView === "profile" && <ProfileSection />}
             {currentView === "kyc" && <KYCSection />}
             {currentView === "settings" && <SettingsSection />}
+
+            {/* Development: Notification Test Component */}
+            {currentView === "overview" &&
+              process.env.NODE_ENV === "development" && (
+                <div className="mt-8">
+                  <NotificationTest type="user" />
+                </div>
+              )}
           </div>
         </div>
       </div>
