@@ -22,253 +22,336 @@ export function Logo({ className, size = "md" }: LogoProps) {
 
   return (
     <div className={cn("flex items-center space-x-3", className)}>
-      {/* ShipNexa Logo Icon - Modern geometric design representing next-generation shipping */}
+      {/* Professional ShipNexa Logo - Modern logistics and shipping design */}
       <div className={cn("relative", sizeClasses[size])}>
         <svg
-          viewBox="0 0 100 100"
+          viewBox="0 0 120 120"
           className="w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Enhanced Gradient Definitions with vibrant colors */}
+          {/* Professional gradient definitions */}
           <defs>
+            {/* Primary brand gradient - Deep blue to teal */}
             <linearGradient
-              id="primaryGradient"
+              id="brandPrimary"
               x1="0%"
               y1="0%"
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stopColor="#667eea" />
-              <stop offset="50%" stopColor="#764ba2" />
-              <stop offset="100%" stopColor="#f093fb" />
+              <stop offset="0%" stopColor="#1e40af" />
+              <stop offset="50%" stopColor="#0891b2" />
+              <stop offset="100%" stopColor="#0d9488" />
             </linearGradient>
+            
+            {/* Secondary gradient - Ocean blues */}
             <linearGradient
-              id="secondaryGradient"
+              id="oceanGradient"
               x1="0%"
               y1="0%"
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stopColor="#4facfe" />
-              <stop offset="50%" stopColor="#00f2fe" />
-              <stop offset="100%" stopColor="#43e97b" />
+              <stop offset="0%" stopColor="#0c4a6e" />
+              <stop offset="50%" stopColor="#0e7490" />
+              <stop offset="100%" stopColor="#06b6d4" />
             </linearGradient>
+            
+            {/* Accent gradient - Warm oranges for energy */}
             <linearGradient
-              id="accentGradient"
+              id="energyGradient"
               x1="0%"
               y1="0%"
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stopColor="#fa709a" />
-              <stop offset="50%" stopColor="#fee140" />
-              <stop offset="100%" stopColor="#ff6b6b" />
+              <stop offset="0%" stopColor="#ea580c" />
+              <stop offset="50%" stopColor="#f59e0b" />
+              <stop offset="100%" stopColor="#eab308" />
             </linearGradient>
-            <radialGradient id="centerGradient" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#667eea" />
-              <stop offset="50%" stopColor="#764ba2" />
-              <stop offset="100%" stopColor="#f093fb" />
-            </radialGradient>
+            
+            {/* Technology gradient - Purple to blue */}
             <linearGradient
-              id="shipGradient"
+              id="techGradient"
               x1="0%"
               y1="0%"
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stopColor="#667eea" />
-              <stop offset="100%" stopColor="#764ba2" />
+              <stop offset="0%" stopColor="#7c3aed" />
+              <stop offset="50%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#06b6d4" />
             </linearGradient>
+            
+            {/* Container gradient - Professional grays with blue tint */}
+            <linearGradient
+              id="containerGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stopColor="#475569" />
+              <stop offset="50%" stopColor="#64748b" />
+              <stop offset="100%" stopColor="#94a3b8" />
+            </linearGradient>
+
+            {/* Shadow filter for depth */}
+            <filter id="logoShadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.3"/>
+            </filter>
           </defs>
 
-          {/* Outer ring with modern design */}
+          {/* Outer tech ring - representing global network */}
           <circle
-            cx="50"
-            cy="50"
-            r="45"
+            cx="60"
+            cy="60"
+            r="55"
             fill="none"
-            stroke="url(#primaryGradient)"
-            strokeWidth="3"
-            strokeDasharray="5,2"
-            className="opacity-60"
+            stroke="url(#brandPrimary)"
+            strokeWidth="2"
+            strokeDasharray="10,5"
+            className="opacity-30"
+            filter="url(#logoShadow)"
           >
             <animateTransform
               attributeName="transform"
-              attributeType="XML"
               type="rotate"
-              from="0 50 50"
-              to="360 50 50"
-              dur="20s"
+              from="0 60 60"
+              to="360 60 60"
+              dur="30s"
               repeatCount="indefinite"
             />
           </circle>
 
-          {/* Modern network connections */}
-          <path
-            d="M20 25 Q50 15 80 25 Q85 50 80 75 Q50 85 20 75 Q15 50 20 25"
+          {/* Inner connection ring */}
+          <circle
+            cx="60"
+            cy="60"
+            r="45"
             fill="none"
-            stroke="url(#secondaryGradient)"
-            strokeWidth="2"
+            stroke="url(#techGradient)"
+            strokeWidth="1.5"
+            strokeDasharray="8,3"
             className="opacity-40"
-          />
-
-          {/* Central Ship Icon - Modern geometric style */}
-          <g transform="translate(30,35)">
-            {/* Ship body */}
-            <path
-              d="M5 20 Q5 18 7 18 L33 18 Q35 18 35 20 L35 25 Q35 27 33 27 L7 27 Q5 27 5 25 Z"
-              fill="url(#shipGradient)"
+          >
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="360 60 60"
+              to="0 60 60"
+              dur="25s"
+              repeatCount="indefinite"
             />
-            {/* Containers with colorful design */}
-            <rect x="8" y="10" width="6" height="8" rx="1" fill="url(#accentGradient)" />
-            <rect x="16" y="8" width="6" height="10" rx="1" fill="url(#secondaryGradient)" />
-            <rect x="24" y="12" width="6" height="6" rx="1" fill="url(#primaryGradient)" />
-            
-            {/* Ship bridge */}
-            <rect x="30" y="14" width="4" height="4" rx="1" fill="url(#centerGradient)" />
-            
-            {/* Wave effects */}
+          </circle>
+
+          {/* Main shipping vessel - modern cargo ship design */}
+          <g transform="translate(25,50)" filter="url(#logoShadow)">
+            {/* Ship hull - sleek modern design */}
             <path
-              d="M0 28 Q10 30 20 28 Q30 26 40 28"
+              d="M8 25 Q8 22 12 22 L65 22 Q70 22 70 27 L70 32 Q70 35 65 35 L12 35 Q8 35 8 32 Z"
+              fill="url(#brandPrimary)"
+              className="opacity-90"
+            />
+            
+            {/* Ship superstructure */}
+            <rect x="55" y="15" width="12" height="7" rx="2" fill="url(#containerGradient)" />
+            <rect x="58" y="12" width="6" height="3" rx="1" fill="url(#techGradient)" />
+            
+            {/* Modern container stack - representing cargo efficiency */}
+            <rect x="15" y="8" width="8" height="14" rx="1" fill="url(#energyGradient)" />
+            <rect x="25" y="6" width="8" height="16" rx="1" fill="url(#oceanGradient)" />
+            <rect x="35" y="10" width="8" height="12" rx="1" fill="url(#techGradient)" />
+            <rect x="45" y="7" width="8" height="15" rx="1" fill="url(#brandPrimary)" />
+            
+            {/* Container details for realism */}
+            <rect x="17" y="10" width="4" height="2" rx="0.5" fill="rgba(255,255,255,0.3)" />
+            <rect x="27" y="8" width="4" height="2" rx="0.5" fill="rgba(255,255,255,0.3)" />
+            <rect x="37" y="12" width="4" height="2" rx="0.5" fill="rgba(255,255,255,0.3)" />
+            <rect x="47" y="9" width="4" height="2" rx="0.5" fill="rgba(255,255,255,0.3)" />
+            
+            {/* Dynamic wave pattern */}
+            <path
+              d="M5 37 Q15 35 25 37 Q35 39 45 37 Q55 35 65 37 Q75 39 85 37"
               fill="none"
-              stroke="url(#secondaryGradient)"
-              strokeWidth="1.5"
-              className="opacity-60"
-            />
-          </g>
-
-          {/* Flying elements representing speed and connectivity */}
-          <g transform="translate(65,20)">
-            <path
-              d="M0 5 L10 0 L15 3 L20 -2 L22 0 L18 6 L20 8 L18 10 L15 6 L10 12 L8 10 L10 8 L0 15 L-2 12 Z"
-              fill="url(#accentGradient)"
-              opacity="0.8"
-            />
-          </g>
-
-          {/* Data flow lines */}
-          <g>
-            <line
-              x1="50"
-              y1="50"
-              x2="75"
-              y2="25"
-              stroke="url(#primaryGradient)"
+              stroke="url(#oceanGradient)"
               strokeWidth="2"
-              className="opacity-70"
-              strokeDasharray="3,1"
+              className="opacity-60"
             >
               <animate
-                attributeName="stroke-dashoffset"
-                values="0;8"
-                dur="1s"
+                attributeName="d"
+                values="M5 37 Q15 35 25 37 Q35 39 45 37 Q55 35 65 37 Q75 39 85 37;M5 39 Q15 37 25 39 Q35 37 45 39 Q55 37 65 39 Q75 37 85 39;M5 37 Q15 35 25 37 Q35 39 45 37 Q55 35 65 37 Q75 39 85 37"
+                dur="3s"
                 repeatCount="indefinite"
               />
-            </line>
+            </path>
+          </g>
+
+          {/* Digital connectivity nodes - representing AI and IoT */}
+          <g className="opacity-80">
+            {/* Primary connection hub */}
+            <circle cx="60" cy="60" r="8" fill="url(#techGradient)">
+              <animate
+                attributeName="r"
+                values="6;10;6"
+                dur="2.5s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.8;1;0.8"
+                dur="2.5s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            
+            {/* Satellite connection points */}
+            <circle cx="85" cy="35" r="4" fill="url(#energyGradient)">
+              <animate
+                attributeName="opacity"
+                values="0.6;1;0.6"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <circle cx="35" cy="35" r="4" fill="url(#oceanGradient)">
+              <animate
+                attributeName="opacity"
+                values="1;0.6;1"
+                dur="2.2s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <circle cx="85" cy="85" r="4" fill="url(#brandPrimary)">
+              <animate
+                attributeName="opacity"
+                values="0.6;1;0.6"
+                dur="1.8s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <circle cx="35" cy="85" r="4" fill="url(#techGradient)">
+              <animate
+                attributeName="opacity"
+                values="1;0.6;1"
+                dur="2.1s"
+                repeatCount="indefinite"
+              />
+            </circle>
+          </g>
+
+          {/* Data flow connections */}
+          <g className="opacity-50">
             <line
-              x1="50"
-              y1="50"
-              x2="25"
-              y2="75"
-              stroke="url(#secondaryGradient)"
+              x1="60" y1="60" x2="85" y2="35"
+              stroke="url(#energyGradient)"
               strokeWidth="2"
-              className="opacity-70"
-              strokeDasharray="3,1"
+              strokeDasharray="4,2"
             >
               <animate
                 attributeName="stroke-dashoffset"
-                values="0;8"
+                values="0;12"
                 dur="1.5s"
                 repeatCount="indefinite"
               />
             </line>
             <line
-              x1="50"
-              y1="50"
-              x2="80"
-              y2="70"
-              stroke="url(#accentGradient)"
+              x1="60" y1="60" x2="35" y2="35"
+              stroke="url(#oceanGradient)"
               strokeWidth="2"
-              className="opacity-70"
-              strokeDasharray="3,1"
+              strokeDasharray="4,2"
             >
               <animate
                 attributeName="stroke-dashoffset"
-                values="0;8"
-                dur="1.2s"
+                values="0;12"
+                dur="1.7s"
+                repeatCount="indefinite"
+              />
+            </line>
+            <line
+              x1="60" y1="60" x2="85" y2="85"
+              stroke="url(#brandPrimary)"
+              strokeWidth="2"
+              strokeDasharray="4,2"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                values="0;12"
+                dur="1.3s"
+                repeatCount="indefinite"
+              />
+            </line>
+            <line
+              x1="60" y1="60" x2="35" y2="85"
+              stroke="url(#techGradient)"
+              strokeWidth="2"
+              strokeDasharray="4,2"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                values="0;12"
+                dur="1.6s"
                 repeatCount="indefinite"
               />
             </line>
           </g>
 
-          {/* Central hub with pulsing effect */}
-          <circle cx="50" cy="50" r="10" fill="url(#centerGradient)" opacity="0.9">
-            <animate
-              attributeName="r"
-              values="8;12;8"
-              dur="2s"
-              repeatCount="indefinite"
+          {/* Modern geometric accents - representing next-gen technology */}
+          <g className="opacity-60">
+            <path
+              d="M20 20 L30 20 L30 30"
+              fill="none"
+              stroke="url(#energyGradient)"
+              strokeWidth="3"
+              strokeLinecap="round"
             />
-            <animate
-              attributeName="opacity"
-              values="0.7;1;0.7"
-              dur="2s"
-              repeatCount="indefinite"
+            <path
+              d="M100 20 L90 20 L90 30"
+              fill="none"
+              stroke="url(#techGradient)"
+              strokeWidth="3"
+              strokeLinecap="round"
             />
-          </circle>
+            <path
+              d="M20 100 L30 100 L30 90"
+              fill="none"
+              stroke="url(#oceanGradient)"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+            <path
+              d="M100 100 L90 100 L90 90"
+              fill="none"
+              stroke="url(#brandPrimary)"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+          </g>
 
-          {/* Nexus connection points */}
-          <circle cx="75" cy="25" r="3" fill="url(#accentGradient)">
-            <animate
-              attributeName="opacity"
-              values="0.5;1;0.5"
-              dur="1.5s"
-              repeatCount="indefinite"
-            />
-          </circle>
-          <circle cx="25" cy="75" r="3" fill="url(#secondaryGradient)">
-            <animate
-              attributeName="opacity"
-              values="1;0.5;1"
-              dur="2s"
-              repeatCount="indefinite"
-            />
-          </circle>
-          <circle cx="80" cy="70" r="3" fill="url(#primaryGradient)">
-            <animate
-              attributeName="opacity"
-              values="0.5;1;0.5"
-              dur="1.8s"
-              repeatCount="indefinite"
-            />
-          </circle>
-
-          {/* Modern accent elements */}
-          <path
-            d="M15 15 L25 15 L25 25"
-            fill="none"
-            stroke="url(#accentGradient)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            className="opacity-50"
-          />
-          <path
-            d="M85 15 L75 15 L75 25"
-            fill="none"
-            stroke="url(#secondaryGradient)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            className="opacity-50"
-          />
+          {/* Speed lines representing fast delivery */}
+          <g transform="translate(80,25)" className="opacity-40">
+            <path
+              d="M0 8 L15 3 L20 6 L25 1 L27 3 L23 12 L25 15 L23 17 L20 12 L15 20 L13 18 L15 15 L0 25 L-2 22 Z"
+              fill="url(#energyGradient)"
+            >
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0;3,0;0,0"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </path>
+          </g>
         </svg>
       </div>
 
-      {/* Company Name - ShipNexa */}
+      {/* Professional Company Name - ShipNexa */}
       <div className="flex flex-col">
         <div className="flex items-baseline">
           <span
             className={cn(
-              "font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-teal-500 bg-clip-text text-transparent tracking-tight",
+              "font-bold bg-gradient-to-r from-blue-700 via-blue-600 to-teal-600 bg-clip-text text-transparent tracking-tight",
               textSizeClasses[size],
             )}
           >
@@ -276,7 +359,7 @@ export function Logo({ className, size = "md" }: LogoProps) {
           </span>
           <span
             className={cn(
-              "font-bold bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent ml-0.5",
+              "font-bold bg-gradient-to-r from-orange-600 via-orange-500 to-yellow-500 bg-clip-text text-transparent ml-0.5",
               textSizeClasses[size],
             )}
           >
@@ -284,7 +367,7 @@ export function Logo({ className, size = "md" }: LogoProps) {
           </span>
         </div>
         {size !== "sm" && (
-          <span className="text-xs text-gray-600 font-medium tracking-wide bg-gradient-to-r from-slate-600 to-slate-500 bg-clip-text text-transparent">
+          <span className="text-xs text-slate-600 font-medium tracking-wider bg-gradient-to-r from-slate-700 to-slate-600 bg-clip-text text-transparent">
             NEXT-GENERATION SHIPPING
           </span>
         )}
@@ -307,89 +390,100 @@ export function LogoMark({
   return (
     <div className={cn("relative", sizeClasses[size], className)}>
       <svg
-        viewBox="0 0 100 100"
+        viewBox="0 0 120 120"
         className="w-full h-full"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Same advanced gradients */}
+        {/* Professional mark version with same gradients */}
         <defs>
           <linearGradient
-            id="primaryGradientMark"
+            id="brandPrimaryMark"
             x1="0%"
             y1="0%"
             x2="100%"
             y2="100%"
           >
-            <stop offset="0%" stopColor="#667eea" />
-            <stop offset="50%" stopColor="#764ba2" />
-            <stop offset="100%" stopColor="#f093fb" />
+            <stop offset="0%" stopColor="#1e40af" />
+            <stop offset="50%" stopColor="#0891b2" />
+            <stop offset="100%" stopColor="#0d9488" />
           </linearGradient>
           <linearGradient
-            id="secondaryGradientMark"
+            id="oceanGradientMark"
             x1="0%"
             y1="0%"
             x2="100%"
             y2="100%"
           >
-            <stop offset="0%" stopColor="#4facfe" />
-            <stop offset="50%" stopColor="#00f2fe" />
-            <stop offset="100%" stopColor="#43e97b" />
+            <stop offset="0%" stopColor="#0c4a6e" />
+            <stop offset="50%" stopColor="#0e7490" />
+            <stop offset="100%" stopColor="#06b6d4" />
           </linearGradient>
           <linearGradient
-            id="accentGradientMark"
+            id="energyGradientMark"
             x1="0%"
             y1="0%"
             x2="100%"
             y2="100%"
           >
-            <stop offset="0%" stopColor="#fa709a" />
-            <stop offset="50%" stopColor="#fee140" />
-            <stop offset="100%" stopColor="#ff6b6b" />
+            <stop offset="0%" stopColor="#ea580c" />
+            <stop offset="50%" stopColor="#f59e0b" />
+            <stop offset="100%" stopColor="#eab308" />
           </linearGradient>
-          <radialGradient id="centerGradientMark" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#667eea" />
-            <stop offset="50%" stopColor="#764ba2" />
-            <stop offset="100%" stopColor="#f093fb" />
-          </radialGradient>
+          <linearGradient
+            id="techGradientMark"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stopColor="#7c3aed" />
+            <stop offset="50%" stopColor="#3b82f6" />
+            <stop offset="100%" stopColor="#06b6d4" />
+          </linearGradient>
+          <filter id="markShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="1" dy="1" stdDeviation="2" floodOpacity="0.3"/>
+          </filter>
         </defs>
 
-        {/* Simplified mark version with same design elements */}
+        {/* Simplified mark with core elements */}
         <circle
-          cx="50"
-          cy="50"
-          r="45"
+          cx="60"
+          cy="60"
+          r="55"
           fill="none"
-          stroke="url(#primaryGradientMark)"
-          strokeWidth="3"
-          strokeDasharray="5,2"
-          className="opacity-60"
+          stroke="url(#brandPrimaryMark)"
+          strokeWidth="2"
+          strokeDasharray="10,5"
+          className="opacity-30"
         >
           <animateTransform
             attributeName="transform"
-            attributeType="XML"
             type="rotate"
-            from="0 50 50"
-            to="360 50 50"
-            dur="20s"
+            from="0 60 60"
+            to="360 60 60"
+            dur="30s"
             repeatCount="indefinite"
           />
         </circle>
 
-        <g transform="translate(30,35)">
+        {/* Simplified ship */}
+        <g transform="translate(25,50)" filter="url(#markShadow)">
           <path
-            d="M5 20 Q5 18 7 18 L33 18 Q35 18 35 20 L35 25 Q35 27 33 27 L7 27 Q5 27 5 25 Z"
-            fill="url(#primaryGradientMark)"
+            d="M8 25 Q8 22 12 22 L65 22 Q70 22 70 27 L70 32 Q70 35 65 35 L12 35 Q8 35 8 32 Z"
+            fill="url(#brandPrimaryMark)"
           />
-          <rect x="8" y="10" width="6" height="8" rx="1" fill="url(#accentGradientMark)" />
-          <rect x="16" y="8" width="6" height="10" rx="1" fill="url(#secondaryGradientMark)" />
-          <rect x="24" y="12" width="6" height="6" rx="1" fill="url(#primaryGradientMark)" />
+          <rect x="15" y="8" width="8" height="14" rx="1" fill="url(#energyGradientMark)" />
+          <rect x="25" y="6" width="8" height="16" rx="1" fill="url(#oceanGradientMark)" />
+          <rect x="35" y="10" width="8" height="12" rx="1" fill="url(#techGradientMark)" />
+          <rect x="45" y="7" width="8" height="15" rx="1" fill="url(#brandPrimaryMark)" />
         </g>
 
-        <circle cx="50" cy="50" r="10" fill="url(#centerGradientMark)" opacity="0.9">
+        {/* Central hub */}
+        <circle cx="60" cy="60" r="8" fill="url(#techGradientMark)">
           <animate
             attributeName="r"
-            values="8;12;8"
-            dur="2s"
+            values="6;10;6"
+            dur="2.5s"
             repeatCount="indefinite"
           />
         </circle>
