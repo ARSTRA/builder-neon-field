@@ -22,7 +22,7 @@ export function SimpleChatWidget() {
     {
       id: "1",
       sender: "system",
-      content: "👋 Welcome to GlobalTrack Support! How can we help you today?",
+      content: "👋 Welcome to ShipNexa Support! How can we help you today?",
       timestamp: new Date(),
       status: "read",
     },
@@ -109,11 +109,11 @@ export function SimpleChatWidget() {
             <div className="flex items-center space-x-2">
               <Avatar className="h-5 w-5 sm:h-6 sm:w-6">
                 <AvatarImage src="https://images.unsplash.com/photo-1494790108755-2616b332c3f2?w=150&h=150&fit=crop&crop=face" />
-                <AvatarFallback className="text-xs">GT</AvatarFallback>
+                <AvatarFallback className="text-xs">SN</AvatarFallback>
               </Avatar>
               <div>
                 <h3 className="font-semibold text-xs sm:text-sm">
-                  GlobalTrack Support
+                  ShipNexa Support
                 </h3>
                 <p className="text-xs opacity-90">
                   {isTyping ? "Typing..." : isOnline ? "Online" : "Offline"}

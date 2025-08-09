@@ -14,10 +14,10 @@ export function Footer() {
             <div className="flex items-center mb-6">
               <LogoMark size="sm" className="text-white mr-3" />
               <div>
-                <span className="text-xl font-bold text-white">
-                  GlobalTrack
+                <span className="text-xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-teal-400 bg-clip-text text-transparent">
+                  Ship
                 </span>
-                <span className="text-lg text-orange-500 ml-1">Logistics</span>
+                <span className="text-xl font-bold bg-gradient-to-r from-pink-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">Nexa</span>
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -121,7 +121,7 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 GlobalTrack Logistics. All rights reserved.
+              © 2024 ShipNexa. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <Link

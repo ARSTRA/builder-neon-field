@@ -41,8 +41,8 @@ interface SocialMediaShareProps {
 export function SocialMediaShare({
   url = window.location.href,
   title = document.title,
-  description = "Check out this page from GlobalTrack Logistics",
-  hashtags = ["logistics", "shipping", "globaltrack"],
+  description = "Check out this page from ShipNexa",
+  hashtags = ["logistics", "shipping", "shipnexa"],
   showText = false,
   style = "icons",
   size = "md",
