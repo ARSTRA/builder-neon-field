@@ -15,8 +15,8 @@ export default function AdminSetup() {
             Admin Panel Setup
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Here are your admin login credentials for ShipNexa. Use
-            these to access the administrative features of your website.
+            Here are your admin login credentials for ShipNexa. Use these to
+            access the administrative features of your website.
           </p>
         </div>
 

@@ -43,7 +43,7 @@ export function Logo({ className, size = "md" }: LogoProps) {
               <stop offset="50%" stopColor="#0891b2" />
               <stop offset="100%" stopColor="#0d9488" />
             </linearGradient>
-            
+
             {/* Secondary gradient - Ocean blues */}
             <linearGradient
               id="oceanGradient"
@@ -56,7 +56,7 @@ export function Logo({ className, size = "md" }: LogoProps) {
               <stop offset="50%" stopColor="#0e7490" />
               <stop offset="100%" stopColor="#06b6d4" />
             </linearGradient>
-            
+
             {/* Accent gradient - Warm oranges for energy */}
             <linearGradient
               id="energyGradient"
@@ -69,7 +69,7 @@ export function Logo({ className, size = "md" }: LogoProps) {
               <stop offset="50%" stopColor="#f59e0b" />
               <stop offset="100%" stopColor="#eab308" />
             </linearGradient>
-            
+
             {/* Technology gradient - Purple to blue */}
             <linearGradient
               id="techGradient"
@@ -82,7 +82,7 @@ export function Logo({ className, size = "md" }: LogoProps) {
               <stop offset="50%" stopColor="#3b82f6" />
               <stop offset="100%" stopColor="#06b6d4" />
             </linearGradient>
-            
+
             {/* Container gradient - Professional grays with blue tint */}
             <linearGradient
               id="containerGradient"
@@ -97,8 +97,14 @@ export function Logo({ className, size = "md" }: LogoProps) {
             </linearGradient>
 
             {/* Shadow filter for depth */}
-            <filter id="logoShadow" x="-50%" y="-50%" width="200%" height="200%">
-              <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.3"/>
+            <filter
+              id="logoShadow"
+              x="-50%"
+              y="-50%"
+              width="200%"
+              height="200%"
+            >
+              <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.3" />
             </filter>
           </defs>
 
@@ -153,23 +159,93 @@ export function Logo({ className, size = "md" }: LogoProps) {
               fill="url(#brandPrimary)"
               className="opacity-90"
             />
-            
+
             {/* Ship superstructure */}
-            <rect x="55" y="15" width="12" height="7" rx="2" fill="url(#containerGradient)" />
-            <rect x="58" y="12" width="6" height="3" rx="1" fill="url(#techGradient)" />
-            
+            <rect
+              x="55"
+              y="15"
+              width="12"
+              height="7"
+              rx="2"
+              fill="url(#containerGradient)"
+            />
+            <rect
+              x="58"
+              y="12"
+              width="6"
+              height="3"
+              rx="1"
+              fill="url(#techGradient)"
+            />
+
             {/* Modern container stack - representing cargo efficiency */}
-            <rect x="15" y="8" width="8" height="14" rx="1" fill="url(#energyGradient)" />
-            <rect x="25" y="6" width="8" height="16" rx="1" fill="url(#oceanGradient)" />
-            <rect x="35" y="10" width="8" height="12" rx="1" fill="url(#techGradient)" />
-            <rect x="45" y="7" width="8" height="15" rx="1" fill="url(#brandPrimary)" />
-            
+            <rect
+              x="15"
+              y="8"
+              width="8"
+              height="14"
+              rx="1"
+              fill="url(#energyGradient)"
+            />
+            <rect
+              x="25"
+              y="6"
+              width="8"
+              height="16"
+              rx="1"
+              fill="url(#oceanGradient)"
+            />
+            <rect
+              x="35"
+              y="10"
+              width="8"
+              height="12"
+              rx="1"
+              fill="url(#techGradient)"
+            />
+            <rect
+              x="45"
+              y="7"
+              width="8"
+              height="15"
+              rx="1"
+              fill="url(#brandPrimary)"
+            />
+
             {/* Container details for realism */}
-            <rect x="17" y="10" width="4" height="2" rx="0.5" fill="rgba(255,255,255,0.3)" />
-            <rect x="27" y="8" width="4" height="2" rx="0.5" fill="rgba(255,255,255,0.3)" />
-            <rect x="37" y="12" width="4" height="2" rx="0.5" fill="rgba(255,255,255,0.3)" />
-            <rect x="47" y="9" width="4" height="2" rx="0.5" fill="rgba(255,255,255,0.3)" />
-            
+            <rect
+              x="17"
+              y="10"
+              width="4"
+              height="2"
+              rx="0.5"
+              fill="rgba(255,255,255,0.3)"
+            />
+            <rect
+              x="27"
+              y="8"
+              width="4"
+              height="2"
+              rx="0.5"
+              fill="rgba(255,255,255,0.3)"
+            />
+            <rect
+              x="37"
+              y="12"
+              width="4"
+              height="2"
+              rx="0.5"
+              fill="rgba(255,255,255,0.3)"
+            />
+            <rect
+              x="47"
+              y="9"
+              width="4"
+              height="2"
+              rx="0.5"
+              fill="rgba(255,255,255,0.3)"
+            />
+
             {/* Dynamic wave pattern */}
             <path
               d="M5 37 Q15 35 25 37 Q35 39 45 37 Q55 35 65 37 Q75 39 85 37"
@@ -204,7 +280,7 @@ export function Logo({ className, size = "md" }: LogoProps) {
                 repeatCount="indefinite"
               />
             </circle>
-            
+
             {/* Satellite connection points */}
             <circle cx="85" cy="35" r="4" fill="url(#energyGradient)">
               <animate
@@ -243,7 +319,10 @@ export function Logo({ className, size = "md" }: LogoProps) {
           {/* Data flow connections */}
           <g className="opacity-50">
             <line
-              x1="60" y1="60" x2="85" y2="35"
+              x1="60"
+              y1="60"
+              x2="85"
+              y2="35"
               stroke="url(#energyGradient)"
               strokeWidth="2"
               strokeDasharray="4,2"
@@ -256,7 +335,10 @@ export function Logo({ className, size = "md" }: LogoProps) {
               />
             </line>
             <line
-              x1="60" y1="60" x2="35" y2="35"
+              x1="60"
+              y1="60"
+              x2="35"
+              y2="35"
               stroke="url(#oceanGradient)"
               strokeWidth="2"
               strokeDasharray="4,2"
@@ -269,7 +351,10 @@ export function Logo({ className, size = "md" }: LogoProps) {
               />
             </line>
             <line
-              x1="60" y1="60" x2="85" y2="85"
+              x1="60"
+              y1="60"
+              x2="85"
+              y2="85"
               stroke="url(#brandPrimary)"
               strokeWidth="2"
               strokeDasharray="4,2"
@@ -282,7 +367,10 @@ export function Logo({ className, size = "md" }: LogoProps) {
               />
             </line>
             <line
-              x1="60" y1="60" x2="35" y2="85"
+              x1="60"
+              y1="60"
+              x2="35"
+              y2="85"
               stroke="url(#techGradient)"
               strokeWidth="2"
               strokeDasharray="4,2"
@@ -441,7 +529,7 @@ export function LogoMark({
             <stop offset="100%" stopColor="#06b6d4" />
           </linearGradient>
           <filter id="markShadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="1" dy="1" stdDeviation="2" floodOpacity="0.3"/>
+            <feDropShadow dx="1" dy="1" stdDeviation="2" floodOpacity="0.3" />
           </filter>
         </defs>
 
@@ -472,10 +560,38 @@ export function LogoMark({
             d="M8 25 Q8 22 12 22 L65 22 Q70 22 70 27 L70 32 Q70 35 65 35 L12 35 Q8 35 8 32 Z"
             fill="url(#brandPrimaryMark)"
           />
-          <rect x="15" y="8" width="8" height="14" rx="1" fill="url(#energyGradientMark)" />
-          <rect x="25" y="6" width="8" height="16" rx="1" fill="url(#oceanGradientMark)" />
-          <rect x="35" y="10" width="8" height="12" rx="1" fill="url(#techGradientMark)" />
-          <rect x="45" y="7" width="8" height="15" rx="1" fill="url(#brandPrimaryMark)" />
+          <rect
+            x="15"
+            y="8"
+            width="8"
+            height="14"
+            rx="1"
+            fill="url(#energyGradientMark)"
+          />
+          <rect
+            x="25"
+            y="6"
+            width="8"
+            height="16"
+            rx="1"
+            fill="url(#oceanGradientMark)"
+          />
+          <rect
+            x="35"
+            y="10"
+            width="8"
+            height="12"
+            rx="1"
+            fill="url(#techGradientMark)"
+          />
+          <rect
+            x="45"
+            y="7"
+            width="8"
+            height="15"
+            rx="1"
+            fill="url(#brandPrimaryMark)"
+          />
         </g>
 
         {/* Central hub */}

@@ -217,12 +217,17 @@ export default function Index() {
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-delay">
-              <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">Next-Generation</span>
-              <span className="block bg-gradient-to-r from-pink-300 via-orange-300 to-yellow-300 bg-clip-text text-transparent mt-2">Shipping Excellence</span>
+              <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
+                Next-Generation
+              </span>
+              <span className="block bg-gradient-to-r from-pink-300 via-orange-300 to-yellow-300 bg-clip-text text-transparent mt-2">
+                Shipping Excellence
+              </span>
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-slide-up">
-              Experience the future of logistics with AI-powered tracking, instant updates, and
-              seamless global connectivity that puts you in control.
+              Experience the future of logistics with AI-powered tracking,
+              instant updates, and seamless global connectivity that puts you in
+              control.
             </p>
 
             {/* Tracking Form */}
@@ -290,10 +295,11 @@ export default function Index() {
                 Revolutionizing Global Connectivity
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                ShipNexa leverages cutting-edge AI and blockchain technology to create
-                the most intelligent shipping network ever built. Our next-generation
-                platform seamlessly integrates air, sea, and ground logistics with
-                real-time visibility and predictive analytics.
+                ShipNexa leverages cutting-edge AI and blockchain technology to
+                create the most intelligent shipping network ever built. Our
+                next-generation platform seamlessly integrates air, sea, and
+                ground logistics with real-time visibility and predictive
+                analytics.
               </p>
             </div>
 
@@ -492,8 +498,9 @@ export default function Index() {
                 Why Choose ShipNexa?
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                We're pioneering the future of logistics with AI-driven intelligence,
-                blockchain security, and quantum-speed processing for unprecedented shipping performance.
+                We're pioneering the future of logistics with AI-driven
+                intelligence, blockchain security, and quantum-speed processing
+                for unprecedented shipping performance.
               </p>
 
               <div className="space-y-6">
@@ -738,8 +745,8 @@ export default function Index() {
                 Join Thousands of Satisfied Customers
               </h3>
               <p className="text-gray-600 mb-6">
-                Ready to experience the ShipNexa difference? Get started with
-                a free quote today.
+                Ready to experience the ShipNexa difference? Get started with a
+                free quote today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button

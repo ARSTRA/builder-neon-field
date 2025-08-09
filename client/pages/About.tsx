@@ -149,7 +149,10 @@ export default function About() {
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
-              About <span className="bg-gradient-to-r from-pink-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">ShipNexa</span>
+              About{" "}
+              <span className="bg-gradient-to-r from-pink-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                ShipNexa
+              </span>
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-fade-in-delay max-w-3xl mx-auto leading-relaxed">
               Pioneering the future of global logistics with innovation,
@@ -224,11 +227,11 @@ export default function About() {
                   network spanning 120+ countries.
                 </p>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Today, ShipNexa stands as a testament to what's
-                  possible when passion meets purpose. We've successfully
-                  delivered over 50,000 shipments, built lasting partnerships
-                  with businesses worldwide, and consistently maintained a 99.8%
-                  on-time delivery rate.
+                  Today, ShipNexa stands as a testament to what's possible when
+                  passion meets purpose. We've successfully delivered over
+                  50,000 shipments, built lasting partnerships with businesses
+                  worldwide, and consistently maintained a 99.8% on-time
+                  delivery rate.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -316,8 +319,7 @@ export default function About() {
                 Our Journey
               </h2>
               <p className="text-xl text-gray-600">
-                Key milestones that shaped ShipNexa into who we are
-                today
+                Key milestones that shaped ShipNexa into who we are today
               </p>
             </div>
 

@@ -17,7 +17,9 @@ export function Footer() {
                 <span className="text-xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-teal-400 bg-clip-text text-transparent">
                   Ship
                 </span>
-                <span className="text-xl font-bold bg-gradient-to-r from-pink-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">Nexa</span>
+                <span className="text-xl font-bold bg-gradient-to-r from-pink-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                  Nexa
+                </span>
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
