@@ -68,7 +68,7 @@ export default function Track() {
     weight: "2.5 kg",
     dimensions: "30x20x15 cm",
     progress: 65,
-    carrier: "GlobalTrack Express",
+    carrier: "ShipNexa Express",
     packageImage:
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     coordinates: { lat: 34.0522, lng: -118.2437 },
@@ -124,7 +124,7 @@ export default function Track() {
 
     // Simulate API call
     setTimeout(() => {
-      if (trackingId.toLowerCase().startsWith("gt")) {
+      if (trackingId.toLowerCase().startsWith("sn")) {
         setPackageData(getMockPackageData(trackingId));
       } else {
         setError("Tracking number not found. Please check and try again.");
@@ -190,7 +190,7 @@ export default function Track() {
                     <div className="relative flex-1">
                       <Input
                         type="text"
-                        placeholder="Enter your tracking number (e.g., GT123456789)"
+                        placeholder="Enter your tracking number (e.g., SN123456789)"
                         value={trackingId}
                         onChange={(e) => setTrackingId(e.target.value)}
                         className="bg-white text-gray-800 placeholder:text-gray-500 text-base lg:text-lg py-4 lg:py-6 pl-12 border-0 shadow-lg rounded-xl"
@@ -829,7 +829,7 @@ export default function Track() {
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
                   Enter your tracking number above to get real-time updates on
-                  your shipment. For tracking numbers starting with 'GT', our
+                  your shipment. For tracking numbers starting with 'SN', our
                   system provides detailed location tracking and delivery
                   estimates.
                 </p>
