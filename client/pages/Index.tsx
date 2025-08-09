@@ -134,7 +134,7 @@ export default function Index() {
       company: "Tech Solutions Inc.",
       rating: 5,
       comment:
-        "GlobalTrack has been our trusted shipping partner for over 3 years. Their tracking system is incredibly accurate and customer service is outstanding. The team goes above and beyond to ensure our shipments arrive on time.",
+        "ShipNexa has revolutionized our logistics operations. Their AI-powered platform and real-time analytics have increased our efficiency by 40%. The quantum tracking technology is simply incredible.",
       image:
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "500+",
