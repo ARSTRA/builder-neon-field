@@ -108,6 +108,15 @@ export default function Contact() {
 
   const contactMethods = [
     {
+      icon: <MessageCircle className="h-8 w-8" />,
+      title: "Live Chat Support",
+      description: "Get instant answers to your shipping questions",
+      contact: "Start Chat",
+      action: "CHAT NOW",
+      gradient: "from-green-600 to-green-800",
+      availability: "Online Now",
+    },
+    {
       icon: <Phone className="h-8 w-8" />,
       title: "Call Us Directly",
       description: "Speak with our logistics experts for immediate assistance",
@@ -117,15 +126,7 @@ export default function Contact() {
       availability: "24/7 Support",
     },
     {
-      icon: <MessageCircle className="h-8 w-8" />,
-      title: "WhatsApp Support",
-      description: "Get instant answers via WhatsApp messaging",
-      contact: "Message Us",
-      action: "WhatsApp",
-      gradient: "from-green-600 to-green-800",
-      availability: "24/7 Available",
-    },
-    {
+
       icon: <Mail className="h-8 w-8" />,
       title: "Email Support",
       description: "Send detailed inquiries for comprehensive responses",
@@ -231,36 +232,21 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/chat">
+                <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  CHAT NOW - Get Instant Help
+                </Button>
+              </Link>
               <Button
                 onClick={() => window.open("tel:+15551234567", "_self")}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
               >
                 <Phone className="mr-2 h-5 w-5" />
-                Call Now: +1 (555) 123-4567
+                Call: +1 (555) 123-4567
               </Button>
-              <Button
-                onClick={() => {
-                  const subject = encodeURIComponent(
-                    "GlobalTrack Support Request",
-                  );
-                  const body = encodeURIComponent(
-                    "Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards",
-                  );
-                  window.open(
-                    `mailto:info@globaltrack.com?subject=${subject}&body=${body}`,
-                    "_blank",
-                  );
-                }}
-                variant="outline"
-                className="group border-3 border-white/90 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                <Mail className="mr-3 h-6 w-6 group-hover:animate-pulse relative z-10" />
-                <span className="relative z-10">Email Support</span>
-                <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
-                  INSTANT
-                </div>
-              </Button>
+
             </div>
           </div>
         </div>
@@ -308,16 +294,7 @@ export default function Contact() {
                     </div>
                     <Button
                       onClick={() => {
-                        if (method.title === "Call Us Directly") {
-                          window.open("tel:+15551234567", "_self");
-                        } else if (method.title === "WhatsApp Support") {
-                          const message = encodeURIComponent(
-                            "Hello! I would like to inquire about GlobalTrack logistics services.",
-                          );
-                          window.open(
-                            `https://wa.me/15551234567?text=${message}`,
-                            "_blank",
-                          );
+
                         } else if (method.title === "Email Support") {
                           const subject = encodeURIComponent(
                             "GlobalTrack Support Request",
@@ -336,7 +313,7 @@ export default function Contact() {
                             ?.scrollIntoView({ behavior: "smooth" });
                         }
                       }}
-                      className={`group w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white font-semibold transition-all duration-300 hover:shadow-lg transform hover:scale-105 relative overflow-hidden`}
+
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-500"></div>
                       <span className="relative z-10">{method.action}</span>

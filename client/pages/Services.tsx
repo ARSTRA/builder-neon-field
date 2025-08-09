@@ -267,16 +267,12 @@ export default function Services() {
                 Get Custom Quote
                 <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
-              <Link to="/contact">
+              <Link to="/chat">
                 <Button
                   variant="outline"
                   className="group border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-[1.02] rounded-xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/20"
                 >
-                  <Phone className="mr-3 h-5 w-5 group-hover:animate-pulse" />
-                  Speak with Expert
-                  <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
-                    FREE
-                  </div>
+
                 </Button>
               </Link>
             </div>
@@ -344,14 +340,7 @@ export default function Services() {
                 Get instant answers to your shipping questions and personalized
                 solution recommendations
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link to="/contact">
-                  <Button className="group relative bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 hover:from-orange-600 hover:via-orange-700 hover:to-orange-600 text-white px-10 py-5 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                    <Phone className="h-6 w-6 mr-3 group-hover:animate-pulse relative z-10" />
-                    <span className="relative z-10">Call Expert Now</span>
-                    <span className="ml-3 text-sm bg-white/25 px-3 py-1 rounded-full font-medium relative z-10 group-hover:bg-white/35 transition-colors duration-300">
-                      FREE
+
                     </span>
                   </Button>
                 </Link>
@@ -360,12 +349,7 @@ export default function Services() {
                     variant="outline"
                     className="group relative border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                    <MessageCircle className="h-6 w-6 mr-3 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
-                    <span className="relative z-10">Contact Support</span>
-                    <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-bounce">
-                      ONLINE
-                    </div>
+
                   </Button>
                 </Link>
               </div>
@@ -522,13 +506,12 @@ export default function Services() {
                           Get Quote
                           <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>
-                        <Link to="/contact" className="flex-1">
+
                           <Button
                             variant="outline"
                             className="group w-full border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-[1.02] rounded-xl py-4 font-semibold backdrop-blur-sm bg-royal-50/50 hover:bg-royal-600"
                           >
-                            <Phone className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                            Expert Consult
+
                           </Button>
                         </Link>
                       </div>
@@ -585,10 +568,7 @@ export default function Services() {
                       Get Quote
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
-                    <Link to="/contact">
-                      <Button className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] rounded-lg font-semibold">
-                        <Phone className="h-4 w-4 mr-2 group-hover:animate-pulse" />
-                        Call Expert
+
                       </Button>
                     </Link>
                   </div>
@@ -694,31 +674,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Enhanced Floating Expert Consultation Widget */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <div className="group">
-          {/* Main Button */}
-          <div className="relative">
-            <Link to="/contact">
-              <Button className="group/btn bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 hover:from-orange-600 hover:via-orange-700 hover:to-orange-600 text-white p-5 rounded-2xl shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-110 border-2 border-white/20">
-                <Phone className="h-7 w-7 group-hover/btn:animate-pulse" />
-                <div className="absolute -top-1 -right-1 bg-green-500 w-4 h-4 rounded-full animate-ping"></div>
-                <div className="absolute -top-1 -right-1 bg-green-500 w-4 h-4 rounded-full"></div>
-              </Button>
-            </Link>
-          </div>
 
-          {/* Tooltip */}
-          <div className="absolute bottom-full right-0 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-            <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white text-sm px-4 py-3 rounded-xl whitespace-nowrap shadow-2xl backdrop-blur-sm border border-white/10">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="font-semibold">Expert Available Now!</span>
-              </div>
-              <div className="text-xs text-gray-300 mt-1">
-                Free consultation • Average response: 30s
-              </div>
-              <div className="absolute top-full right-6 w-0 h-0 border-l-4 border-r-4 border-t-6 border-transparent border-t-gray-900"></div>
             </div>
           </div>
 

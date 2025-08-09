@@ -61,13 +61,7 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
-              <Link to="/login">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300"
-                >
-                  Sign In
+
                 </Button>
               </Link>
             </div>
@@ -116,13 +110,7 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
-              <Link to="/login" className="block">
-                <Button
-                  variant="outline"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 py-4 touch-manipulation"
-                >
-                  Sign In
+
                 </Button>
               </Link>
             </div>

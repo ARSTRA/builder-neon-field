@@ -18,11 +18,7 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Newspaper from "./pages/Newspaper";
 import LiveChat from "./pages/LiveChat";
-import Login from "./pages/Login";
-import SimpleLogin from "./pages/SimpleLogin";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
-import SmartDashboard from "./pages/SmartDashboard";
+
 import Admin from "./pages/Admin";
 import UnifiedAdmin from "./pages/UnifiedAdmin";
 import AdminLogin from "./pages/AdminLogin";
@@ -144,23 +140,6 @@ export default function App() {
                 }
               />
 
-              {/* Auth pages without navigation */}
-              <Route path="/login" element={<SimpleLogin />} />
-              <Route path="/login/legacy" element={<Login />} />
-              <Route path="/admin/login/legacy" element={<AdminLogin />} />
-              <Route path="/register" element={<Register />} />
-
-              {/* Smart Dashboard - redirects admins to unified admin center */}
-              <Route path="/dashboard" element={<SmartDashboard />} />
-              <Route path="/dashboard/user" element={<Dashboard />} />
-
-              {/* Admin auth and panel without main navigation */}
-              <Route path="/admin/overview" element={<AdminOverview />} />
-              <Route path="/admin/setup" element={<AdminSetup />} />
-              <Route path="/admin/login" element={<SimpleLogin />} />
-              <Route path="/admin" element={<UnifiedAdmin />} />
-              <Route path="/admin/legacy" element={<Admin />} />
-              <Route path="/error-report" element={<ErrorReport />} />
 
               {/* 404 page */}
               <Route

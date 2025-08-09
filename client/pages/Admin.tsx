@@ -33,7 +33,7 @@ import {
   Star,
   Mail,
   Phone,
-  Share2,
+
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -87,6 +87,23 @@ export default function Admin() {
   const [searchTerm, setSearchTerm] = useState("");
   const { notifications, markAsRead, markAllAsRead, clearAll } =
     useNotifications("admin");
+
+  // Payment & Currency State
+  const [baseCurrency, setBaseCurrency] = useState("USD");
+  const [targetCurrency, setTargetCurrency] = useState("EUR");
+  const [conversionAmount, setConversionAmount] = useState("100");
+  const [convertedAmount, setConvertedAmount] = useState("");
+  const [exchangeRates, setExchangeRates] = useState({
+    USD: { EUR: 0.85, GBP: 0.73, JPY: 110.0, CAD: 1.25, AUD: 1.35 },
+    EUR: { USD: 1.18, GBP: 0.86, JPY: 129.5, CAD: 1.47, AUD: 1.59 },
+    GBP: { USD: 1.37, EUR: 1.16, JPY: 150.8, CAD: 1.71, AUD: 1.85 },
+  });
+  const [isConverting, setIsConverting] = useState(false);
+  const [autoUpdateRates, setAutoUpdateRates] = useState(true);
+  const [isUpdatingRates, setIsUpdatingRates] = useState(false);
+  const [isAddCurrencyModalOpen, setIsAddCurrencyModalOpen] = useState(false);
+  const [editingCurrency, setEditingCurrency] = useState<any>(null);
+  const [isEditCurrencyModalOpen, setIsEditCurrencyModalOpen] = useState(false);
 
   useEffect(() => {
     // Check if user is admin
@@ -210,6 +227,155 @@ export default function Admin() {
     });
   };
 
+  const handleNotifications = () => {
+    toast({
+      title: "Notifications",
+      description: "You have 5 new notifications. Opening notification panel...",
+    });
+  };
+
+  // Currency Conversion Functions
+  const handleCurrencyConversion = async () => {
+    if (!conversionAmount || isNaN(Number(conversionAmount))) {
+      toast({
+        title: "Invalid Amount",
+        description: "Please enter a valid amount to convert.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsConverting(true);
+
+    // Simulate API call to get real exchange rates
+    setTimeout(() => {
+      const amount = parseFloat(conversionAmount);
+      let converted = 0;
+
+      if (baseCurrency === targetCurrency) {
+        converted = amount;
+      } else if (exchangeRates[baseCurrency] && exchangeRates[baseCurrency][targetCurrency]) {
+        converted = amount * exchangeRates[baseCurrency][targetCurrency];
+      } else {
+        // Fallback calculation through USD
+        const toUSD = baseCurrency === "USD" ? amount : amount / (exchangeRates["USD"][baseCurrency] || 1);
+        converted = targetCurrency === "USD" ? toUSD : toUSD * (exchangeRates["USD"][targetCurrency] || 1);
+      }
+
+      setConvertedAmount(converted.toFixed(2));
+      setIsConverting(false);
+
+      toast({
+        title: "Conversion Complete",
+        description: `${amount} ${baseCurrency} = ${converted.toFixed(2)} ${targetCurrency}`,
+      });
+    }, 1000);
+  };
+
+  const handlePaymentMethodToggle = (method: string, enabled: boolean) => {
+    toast({
+      title: `Payment Method ${enabled ? 'Enabled' : 'Disabled'}`,
+      description: `${method} has been ${enabled ? 'enabled' : 'disabled'} for customers.`,
+    });
+  };
+
+  const currencies = [
+    { code: "USD", name: "US Dollar", symbol: "$", flag: "🇺🇸" },
+    { code: "EUR", name: "Euro", symbol: "€", flag: "🇪🇺" },
+    { code: "GBP", name: "British Pound", symbol: "£", flag: "🇬🇧" },
+    { code: "JPY", name: "Japanese Yen", symbol: "¥", flag: "🇯🇵" },
+    { code: "CAD", name: "Canadian Dollar", symbol: "C$", flag: "🇨🇦" },
+    { code: "AUD", name: "Australian Dollar", symbol: "A$", flag: "🇦🇺" },
+    { code: "CHF", name: "Swiss Franc", symbol: "Fr", flag: "🇨🇭" },
+    { code: "CNY", name: "Chinese Yuan", symbol: "¥", flag: "🇨🇳" },
+    { code: "INR", name: "Indian Rupee", symbol: "₹", flag: "🇮🇳" },
+    { code: "BRL", name: "Brazilian Real", symbol: "R$", flag: "🇧🇷" },
+  ];
+
+  const paymentMethods = [
+    {
+      id: "visa",
+      name: "Visa",
+      icon: "💳",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$1,234,567",
+      color: "bg-blue-500",
+    },
+    {
+      id: "mastercard",
+      name: "Mastercard",
+      icon: "💳",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$987,654",
+      color: "bg-red-500",
+    },
+    {
+      id: "amex",
+      name: "American Express",
+      icon: "💳",
+      enabled: true,
+      fees: "3.5% + $0.30",
+      volume: "$543,210",
+      color: "bg-green-500",
+    },
+    {
+      id: "paypal",
+      name: "PayPal",
+      icon: "🅿️",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$765,432",
+      color: "bg-blue-600",
+    },
+    {
+      id: "stripe",
+      name: "Stripe",
+      icon: "💳",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$1,098,765",
+      color: "bg-purple-500",
+    },
+    {
+      id: "apple-pay",
+      name: "Apple Pay",
+      icon: "🍎",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$654,321",
+      color: "bg-gray-800",
+    },
+    {
+      id: "google-pay",
+      name: "Google Pay",
+      icon: "🅖",
+      enabled: true,
+      fees: "2.9% + $0.30",
+      volume: "$432,109",
+      color: "bg-blue-400",
+    },
+    {
+      id: "bank-transfer",
+      name: "Bank Transfer",
+      icon: "🏦",
+      enabled: true,
+      fees: "1.0% + $5.00",
+      volume: "$2,345,678",
+      color: "bg-green-600",
+    },
+    {
+      id: "crypto",
+      name: "Cryptocurrency",
+      icon: "₿",
+      enabled: false,
+      fees: "1.5% + $2.00",
+      volume: "$123,456",
+      color: "bg-orange-500",
+    },
+  ];
+
   // Dashboard Analytics Data
   const dashboardStats = [
     {
@@ -305,6 +471,73 @@ export default function Admin() {
       priority: "low",
     },
   ];
+
+  // Currency Management Functions
+  const handleEditCurrency = (currency: any) => {
+    setEditingCurrency(currency);
+    setIsEditCurrencyModalOpen(true);
+  };
+
+  const handleAddCurrency = () => {
+    setIsAddCurrencyModalOpen(true);
+  };
+
+  const handleSaveCurrency = () => {
+    if (editingCurrency) {
+      toast({
+        title: "Currency Updated",
+        description: `${editingCurrency.name} settings have been updated successfully.`,
+      });
+    } else {
+      toast({
+        title: "Currency Added",
+        description: "New currency has been added to the system successfully.",
+      });
+    }
+    setIsEditCurrencyModalOpen(false);
+    setIsAddCurrencyModalOpen(false);
+    setEditingCurrency(null);
+  };
+
+  const handleToggleAutoUpdate = (enabled: boolean) => {
+    setAutoUpdateRates(enabled);
+    toast({
+      title: enabled ? "Auto-Update Enabled" : "Auto-Update Disabled",
+      description: enabled
+        ? "Exchange rates will now update automatically every hour."
+        : "Exchange rates will now be updated manually only.",
+    });
+  };
+
+  const handleUpdateAllRates = async () => {
+    setIsUpdatingRates(true);
+
+    // Simulate API call to update rates
+    setTimeout(() => {
+      setIsUpdatingRates(false);
+      toast({
+        title: "Rates Updated",
+        description: "All exchange rates have been updated with the latest market data.",
+      });
+    }, 2000);
+  };
+
+  const handleRemoveCurrency = (currencyCode: string) => {
+    const currency = currencies.find(c => c.code === currencyCode);
+    toast({
+      title: "Currency Removed",
+      description: `${currency?.name} has been removed from supported currencies.`,
+      variant: "destructive",
+    });
+  };
+
+  const handleToggleCurrencyStatus = (currencyCode: string, isActive: boolean) => {
+    const currency = currencies.find(c => c.code === currencyCode);
+    toast({
+      title: `Currency ${isActive ? 'Activated' : 'Deactivated'}`,
+      description: `${currency?.name} has been ${isActive ? 'activated' : 'deactivated'}.`,
+    });
+  };
 
   const renderDashboard = () => (
     <div className="space-y-6">
@@ -625,14 +858,6 @@ export default function Admin() {
 
             {/* User Menu */}
             <div className="flex items-center space-x-4">
-              <NotificationDropdown
-                notifications={notifications}
-                onNotificationRead={markAsRead}
-                onMarkAllRead={markAllAsRead}
-                onClearAll={clearAll}
-                showManageLink={true}
-                type="admin"
-              />
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -704,18 +929,7 @@ export default function Admin() {
             {currentView === "dashboard" && renderDashboard()}
             {currentView === "users" && <UserManagement />}
             {currentView === "chat" && <ChatManagement />}
-            {currentView === "payments" && <PaymentManagement />}
-            {currentView === "tracking" && <TrackingManagement />}
-            {currentView === "quotes" && <QuoteManagement />}
-            {currentView === "contacts" && <ContactManagement />}
-            {currentView === "general" && <GeneralSettings />}
-            {currentView === "social" && <SocialMediaManagement />}
 
-            {/* Development: Notification Test Component */}
-            {currentView === "dashboard" &&
-              process.env.NODE_ENV === "development" && (
-                <div className="mt-8 max-w-md">
-                  <NotificationTest type="admin" />
                 </div>
               )}
           </div>
