@@ -19,8 +19,8 @@ export interface AdminCredential {
 
 export const ADMIN_CREDENTIALS: AdminCredential[] = [
   {
-    email: "admin@globaltrack.com",
-    password: "GT2024@Admin!",
+    email: "admin@shipnexa.com",
+    password: "SN2024@Admin!",
     role: "Super Admin",
     permissions: [
       "full_access",
@@ -32,8 +32,8 @@ export const ADMIN_CREDENTIALS: AdminCredential[] = [
     department: "Administration",
   },
   {
-    email: "manager@globaltrack.com",
-    password: "GT2024@Manager!",
+    email: "manager@shipnexa.com",
+    password: "SN2024@Manager!",
     role: "Operations Manager",
     permissions: [
       "shipment_management",
@@ -44,15 +44,15 @@ export const ADMIN_CREDENTIALS: AdminCredential[] = [
     department: "Operations",
   },
   {
-    email: "support@globaltrack.com",
-    password: "GT2024@Support!",
+    email: "support@shipnexa.com",
+    password: "SN2024@Support!",
     role: "Support Admin",
     permissions: ["customer_support", "tracking", "basic_reports"],
     department: "Customer Support",
   },
   {
-    email: "finance@globaltrack.com",
-    password: "GT2024@Finance!",
+    email: "finance@shipnexa.com",
+    password: "SN2024@Finance!",
     role: "Finance Admin",
     permissions: ["billing", "financial_reports", "payment_management"],
     department: "Finance",
