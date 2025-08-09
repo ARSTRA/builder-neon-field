@@ -27,7 +27,7 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
-        // GlobalTrack Logistics Brand Colors
+        // ShipNexa Brand Colors
         royal: {
           50: "hsl(221, 100%, 97%)",
           100: "hsl(221, 100%, 93%)",
