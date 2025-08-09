@@ -158,7 +158,7 @@ export default function Index() {
       company: "Global Retail Chain",
       rating: 5,
       comment:
-        "Professional service, competitive rates, and reliable delivery times. GlobalTrack consistently exceeds our expectations and has become an integral part of our logistics strategy.",
+        "Professional service, competitive rates, and reliable delivery times. ShipNexa consistently exceeds our expectations and has become an integral part of our logistics strategy.",
       image:
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "2500+",
@@ -182,7 +182,7 @@ export default function Index() {
       company: "E-commerce Solutions",
       rating: 5,
       comment:
-        "GlobalTrack's technology platform and customer service are exceptional. They've helped us streamline our shipping process and reduce costs significantly while improving delivery times.",
+        "ShipNexa's AI-powered technology platform and customer service are exceptional. They've helped us streamline our shipping process and reduce costs significantly while improving delivery times.",
       image:
         "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "1800+",
@@ -194,7 +194,7 @@ export default function Index() {
       company: "Industrial Equipment Co.",
       rating: 5,
       comment:
-        "Reliable, professional, and cost-effective. GlobalTrack has been instrumental in helping us expand our international presence. Their expertise in heavy cargo shipping is particularly impressive.",
+        "Reliable, professional, and cost-effective. ShipNexa has been instrumental in helping us expand our international presence. Their expertise in heavy cargo shipping is particularly impressive.",
       image:
         "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "600+",
@@ -551,7 +551,7 @@ export default function Index() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Trusted by thousands of businesses worldwide, from startups to
               Fortune 500 companies. Here's what our satisfied customers have to
-              say about their experience with GlobalTrack.
+              say about their experience with ShipNexa.
             </p>
 
             {/* Customer Stats */}
@@ -738,7 +738,7 @@ export default function Index() {
                 Join Thousands of Satisfied Customers
               </h3>
               <p className="text-gray-600 mb-6">
-                Ready to experience the GlobalTrack difference? Get started with
+                Ready to experience the ShipNexa difference? Get started with
                 a free quote today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -787,8 +787,8 @@ export default function Index() {
               </div>
               <h2 className="text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-delay">
                 Ready to Ship with
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-2">
-                  GlobalTrack?
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 mt-2">
+                  ShipNexa?
                 </span>
               </h2>
               <p className="text-xl lg:text-2xl mb-4 text-gray-200 animate-slide-up">
