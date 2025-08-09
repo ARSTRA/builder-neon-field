@@ -488,12 +488,12 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                Why Choose GlobalTrack Logistics?
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+                Why Choose ShipNexa?
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                We combine cutting-edge technology with years of logistics
-                expertise to deliver unparalleled shipping solutions.
+                We're pioneering the future of logistics with AI-driven intelligence,
+                blockchain security, and quantum-speed processing for unprecedented shipping performance.
               </p>
 
               <div className="space-y-6">
