@@ -247,7 +247,7 @@ export default function Contact() {
                     "Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards",
                   );
                   window.open(
-                    `mailto:info@globaltrack.com?subject=${subject}&body=${body}`,
+                    `mailto:info@shipnexa.com?subject=${subject}&body=${body}`,
                     "_blank",
                   );
                 }}
@@ -326,7 +326,7 @@ export default function Contact() {
                             "Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards",
                           );
                           window.open(
-                            `mailto:info@globaltrack.com?subject=${subject}&body=${body}`,
+                            `mailto:info@shipnexa.com?subject=${subject}&body=${body}`,
                             "_blank",
                           );
                         } else if (method.title === "Schedule Meeting") {
