@@ -76,7 +76,7 @@ export default function Contact() {
       country: "United States",
       address: "1250 Broadway, Suite 3000, New York, NY 10001",
       phone: "+1 (555) 123-4567",
-      email: "newyork@globaltrack.com",
+      email: "newyork@shipnexa.com",
       hours: "Mon-Fri: 8:00 AM - 6:00 PM EST",
       image:
         "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -87,7 +87,7 @@ export default function Contact() {
       country: "United Kingdom",
       address: "25 Bank Street, Canary Wharf, London E14 5JP",
       phone: "+44 20 7946 0958",
-      email: "london@globaltrack.com",
+      email: "london@shipnexa.com",
       hours: "Mon-Fri: 9:00 AM - 5:00 PM GMT",
       image:
         "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
