@@ -636,10 +636,13 @@ export default function UnifiedAdmin() {
                   <Shield className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <span className="text-xl font-bold text-royal-600">
-                    GlobalTrack
+                  <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                    Ship
                   </span>
-                  <span className="text-lg text-orange-500 ml-1">
+                  <span className="text-xl font-bold bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
+                    Nexa
+                  </span>
+                  <span className="text-lg text-gray-600 ml-1">
                     Control Center
                   </span>
                 </div>
