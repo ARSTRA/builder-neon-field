@@ -73,13 +73,7 @@ export default function Login() {
         <div className="w-full max-w-md mx-auto lg:mx-0">
           <div className="text-center mb-8">
             <Link to="/" className="inline-flex items-center space-x-2 mb-6">
-              <Package className="h-8 w-8 text-royal-600" />
-              <div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-teal-500 bg-clip-text text-transparent">
-                  Ship
-                </span>
-                <span className="text-2xl font-bold bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent">Nexa</span>
-              </div>
+              <Logo size="md" />
             </Link>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
               Welcome Back
