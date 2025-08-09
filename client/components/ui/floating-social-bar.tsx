@@ -29,21 +29,21 @@ export function FloatingSocialBar({
   const socialPlatforms = [
     {
       name: "Facebook",
-      url: "https://facebook.com/globaltracklogistics",
+      url: "https://facebook.com/shipnexalogistics",
       icon: Facebook,
       color: "bg-blue-600 hover:bg-blue-700",
       textColor: "text-white",
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/globaltrack",
+      url: "https://twitter.com/shipnexa",
       icon: Twitter,
       color: "bg-sky-500 hover:bg-sky-600",
       textColor: "text-white",
     },
     {
       name: "Instagram",
-      url: "https://instagram.com/globaltrack_logistics",
+      url: "https://instagram.com/shipnexa_logistics",
       icon: Instagram,
       color:
         "bg-gradient-to-br from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700",
@@ -51,14 +51,14 @@ export function FloatingSocialBar({
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/company/globaltrack-logistics",
+      url: "https://linkedin.com/company/shipnexa-logistics",
       icon: Linkedin,
       color: "bg-blue-700 hover:bg-blue-800",
       textColor: "text-white",
     },
     {
       name: "YouTube",
-      url: "https://youtube.com/@globaltracklogistics",
+      url: "https://youtube.com/@shipnexalogistics",
       icon: Youtube,
       color: "bg-red-600 hover:bg-red-700",
       textColor: "text-white",
