@@ -98,7 +98,7 @@ export default function Contact() {
       country: "Singapore",
       address: "1 Marina Bay Drive, Singapore 018989",
       phone: "+65 6123 4567",
-      email: "singapore@globaltrack.com",
+      email: "singapore@shipnexa.com",
       hours: "Mon-Fri: 9:00 AM - 6:00 PM SGT",
       image:
         "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -129,7 +129,7 @@ export default function Contact() {
       icon: <Mail className="h-8 w-8" />,
       title: "Email Support",
       description: "Send detailed inquiries for comprehensive responses",
-      contact: "info@globaltrack.com",
+      contact: "info@shipnexa.com",
       action: "Send Email",
       gradient: "from-purple-600 to-purple-800",
       availability: "24h Response",
