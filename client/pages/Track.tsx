@@ -318,7 +318,7 @@ Generated on: ${new Date().toLocaleDateString()}
                     <div className="relative flex-1">
                       <Input
                         type="text"
-                        placeholder="Enter your tracking number (e.g., GT123456789)"
+                        placeholder="Enter your tracking number (e.g., SN123456789)"
                         value={trackingId}
                         onChange={(e) => setTrackingId(e.target.value)}
                         className="bg-white text-gray-800 placeholder:text-gray-500 text-base lg:text-lg py-4 lg:py-6 pl-12 border-0 shadow-lg rounded-xl"
