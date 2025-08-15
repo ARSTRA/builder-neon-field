@@ -300,7 +300,7 @@ Generated on: ${new Date().toLocaleDateString()}
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-royal-600 to-royal-800 text-white py-12 lg:py-16">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1996989/pexels-photo-1996989.jpeg')] bg-cover bg-center opacity-30"></div>
         <div className="relative container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl lg:text-5xl font-bold mb-4 lg:mb-6">
@@ -369,7 +369,7 @@ Generated on: ${new Date().toLocaleDateString()}
               {/* Image Side */}
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80"
+                  src="https://images.pexels.com/photos/3582491/pexels-photo-3582491.jpeg"
                   alt="GPS tracking technology"
                   className="w-full h-80 object-cover rounded-2xl shadow-2xl"
                 />
@@ -487,7 +487,7 @@ Generated on: ${new Date().toLocaleDateString()}
               {/* Image Side */}
               <div className="relative lg:order-1">
                 <img
-                  src="https://images.unsplash.com/photo-1559223607-a43c990c692c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  src="https://images.pexels.com/photos/6754998/pexels-photo-6754998.jpeg"
                   alt="AI logistics technology"
                   className="w-full h-80 object-cover rounded-2xl shadow-2xl"
                 />
