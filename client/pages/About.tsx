@@ -150,7 +150,7 @@ export default function About() {
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
-              About <span className="text-orange-400">GlobalTrack</span>
+              About <span className="text-orange-400">ShipNexa.it</span>
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-fade-in-delay max-w-3xl mx-auto leading-relaxed">
               Pioneering the future of global logistics with innovation,
@@ -198,7 +198,7 @@ export default function About() {
               <div className="relative">
                 <OptimizedImage
                   src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80"
-                  alt="GlobalTrack team and operations"
+                  alt="ShipNexa.it team and operations"
                   className="w-full h-96 rounded-2xl shadow-2xl"
                   {...ImagePresets.hero}
                 />
@@ -226,7 +226,7 @@ export default function About() {
                   network spanning 120+ countries.
                 </p>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Today, GlobalTrack Logistics stands as a testament to what's
+                  Today, ShipNexa.it Logistics stands as a testament to what's
                   possible when passion meets purpose. We've successfully
                   delivered over 50,000 shipments, built lasting partnerships
                   with businesses worldwide, and consistently maintained a 99.8%
@@ -318,7 +318,7 @@ export default function About() {
                 Our Journey
               </h2>
               <p className="text-xl text-gray-600">
-                Key milestones that shaped GlobalTrack Logistics into who we are
+                Key milestones that shaped ShipNexa.it Logistics into who we are
                 today
               </p>
             </div>
@@ -498,7 +498,7 @@ export default function About() {
               Ready to Partner with Us?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Experience the GlobalTrack difference. Let's discuss how we can
+              Experience the ShipNexa.it difference. Let's discuss how we can
               optimize your logistics needs.
             </p>
 
@@ -537,8 +537,8 @@ export default function About() {
                   Share our story with others
                 </p>
                 <SocialMediaShare
-                  title="About GlobalTrack Logistics - Professional Shipping Solutions"
-                  description="Learn about GlobalTrack Logistics, a leading provider of worldwide shipping and logistics solutions with over 15 years of experience."
+                  title="About ShipNexa.it Logistics - Professional Shipping Solutions"
+                  description="Learn about ShipNexa.it Logistics, a leading provider of worldwide shipping and logistics solutions with over 15 years of experience."
                   hashtags={["logistics", "shipping", "globaltrack", "aboutus"]}
                   showText={true}
                   style="icons"
