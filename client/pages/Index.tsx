@@ -95,7 +95,7 @@ export default function Index() {
       ],
     },
     {
-      icon: <Package className="h-12 w-12 text-royal-600" />,
+      icon: <Package className="h-12 w-12 text-shipblue-600" />,
       title: "Express Delivery",
       description:
         "Urgent shipments with guaranteed delivery times and priority handling.",
@@ -208,7 +208,7 @@ export default function Index() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-ocean-800 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6595787/pexels-photo-6595787.jpeg')] bg-cover bg-center opacity-25"></div>
 
         <div className="relative container mx-auto px-4 py-20 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
@@ -283,8 +283,9 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-1 text-center lg:text-left">
-              <Logo
+              <ShipNexaLogo
                 size="xl"
+                variant="full"
                 className="justify-center lg:justify-start mb-6"
               />
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
