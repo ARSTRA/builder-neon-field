@@ -78,7 +78,8 @@ const galleryImages: GalleryImage[] = [
     id: 7,
     src: "https://images.pexels.com/photos/6572431/pexels-photo-6572431.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
     title: "Advanced Port Terminal Operations",
-    description: "High-tech container terminal with automated cranes and advanced logistics systems operating 24/7 for global trade",
+    description:
+      "High-tech container terminal with automated cranes and advanced logistics systems operating 24/7 for global trade",
     category: "Ocean Freight",
     location: "Port of Baltimore, USA",
   },
@@ -126,7 +127,8 @@ const galleryImages: GalleryImage[] = [
     id: 13,
     src: "https://images.pexels.com/photos/28438355/pexels-photo-28438355.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
     title: "Container Securing Operations",
-    description: "Professional cargo securing and handling procedures ensuring safe ocean transport with experienced maritime logistics teams",
+    description:
+      "Professional cargo securing and handling procedures ensuring safe ocean transport with experienced maritime logistics teams",
     category: "Ocean Freight",
     location: "Port of Hamburg, Germany",
   },
@@ -134,7 +136,8 @@ const galleryImages: GalleryImage[] = [
     id: 14,
     src: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=800&h=600&q=80",
     title: "Ocean Freight Vessel Fleet",
-    description: "Modern container ship fleet providing reliable ocean freight services connecting global markets with eco-friendly solutions",
+    description:
+      "Modern container ship fleet providing reliable ocean freight services connecting global markets with eco-friendly solutions",
     category: "Ocean Freight",
     location: "International Waters",
   },
@@ -142,7 +145,8 @@ const galleryImages: GalleryImage[] = [
     id: 15,
     src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=800&h=600&q=80",
     title: "Mega Container Terminal",
-    description: "World-class container terminal facility with advanced automation, real-time tracking, and sustainable port operations",
+    description:
+      "World-class container terminal facility with advanced automation, real-time tracking, and sustainable port operations",
     category: "Ocean Freight",
     location: "Port of Singapore",
   },
@@ -364,9 +368,10 @@ export default function Gallery() {
                 Ocean Freight Excellence
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Discover our world-class ocean freight capabilities with modern container ships,
-                automated port terminals, and sustainable maritime logistics solutions connecting
-                global markets efficiently and reliably.
+                Discover our world-class ocean freight capabilities with modern
+                container ships, automated port terminals, and sustainable
+                maritime logistics solutions connecting global markets
+                efficiently and reliably.
               </p>
             </div>
 
@@ -375,24 +380,39 @@ export default function Gallery() {
                 <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Ship className="h-8 w-8 text-cyan-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Modern Fleet</h3>
-                <p className="text-gray-600">State-of-the-art container vessels with advanced navigation and cargo handling systems</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  Modern Fleet
+                </h3>
+                <p className="text-gray-600">
+                  State-of-the-art container vessels with advanced navigation
+                  and cargo handling systems
+                </p>
               </div>
 
               <div className="text-center p-6 bg-white rounded-xl shadow-lg">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Building2 className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Automated Ports</h3>
-                <p className="text-gray-600">Advanced terminal operations with automated cranes and real-time tracking systems</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  Automated Ports
+                </h3>
+                <p className="text-gray-600">
+                  Advanced terminal operations with automated cranes and
+                  real-time tracking systems
+                </p>
               </div>
 
               <div className="text-center p-6 bg-white rounded-xl shadow-lg">
                 <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Globe className="h-8 w-8 text-teal-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Global Network</h3>
-                <p className="text-gray-600">Comprehensive port coverage across major shipping routes and trade corridors</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  Global Network
+                </h3>
+                <p className="text-gray-600">
+                  Comprehensive port coverage across major shipping routes and
+                  trade corridors
+                </p>
               </div>
             </div>
           </div>

@@ -126,7 +126,6 @@ export default function Contact() {
       availability: "24/7 Support",
     },
     {
-
       icon: <Mail className="h-8 w-8" />,
       title: "Email Support",
       description: "Send detailed inquiries for comprehensive responses",
@@ -236,7 +235,9 @@ export default function Contact() {
                 <Button className="group bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-600 hover:via-orange-700 hover:to-orange-800 text-white px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-orange-500/40 transition-all duration-500 transform hover:scale-105 rounded-2xl border border-orange-300/30 backdrop-blur-sm relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
                   <MessageCircle className="mr-3 h-6 w-6 group-hover:bounce transition-all duration-300 relative z-10" />
-                  <span className="relative z-10">CHAT NOW - Get Instant Help</span>
+                  <span className="relative z-10">
+                    CHAT NOW - Get Instant Help
+                  </span>
                 </Button>
               </Link>
               <Button
@@ -322,7 +323,9 @@ export default function Contact() {
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <span className="relative z-10 tracking-wide">{method.action}</span>
+                      <span className="relative z-10 tracking-wide">
+                        {method.action}
+                      </span>
                       {method.title === "Call Us Directly" && (
                         <div className="absolute -top-1 -right-1 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-pulse z-20">
                           LIVE
@@ -775,7 +778,9 @@ export default function Contact() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-royal-100/30 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
                   <Package className="mr-3 h-6 w-6 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 relative z-10" />
-                  <span className="relative z-10 tracking-wide">Get Quote Now</span>
+                  <span className="relative z-10 tracking-wide">
+                    Get Quote Now
+                  </span>
                 </Button>
                 <Link to="/track">
                   <Button
@@ -783,7 +788,9 @@ export default function Contact() {
                     className="group border-2 border-white/70 text-white hover:bg-white hover:text-royal-600 px-12 py-5 font-bold transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 rounded-2xl backdrop-blur-md bg-white/10 hover:shadow-2xl hover:shadow-white/40 relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                    <span className="relative z-10 tracking-wide">Track Shipment</span>
+                    <span className="relative z-10 tracking-wide">
+                      Track Shipment
+                    </span>
                     <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 group-hover:scale-110 transition-transform duration-300 relative z-10" />
                     <div className="absolute -top-2 -right-2 bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-3 py-1 rounded-full animate-pulse font-bold shadow-lg">
                       LIVE

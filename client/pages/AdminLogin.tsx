@@ -68,15 +68,21 @@ export default function AdminLogin() {
       localStorage.setItem("adminEmail", validAdmin.email);
       localStorage.setItem("adminRole", validAdmin.role);
       localStorage.setItem("adminDepartment", validAdmin.department || "");
-      localStorage.setItem("adminPermissions", JSON.stringify(validAdmin.permissions));
+      localStorage.setItem(
+        "adminPermissions",
+        JSON.stringify(validAdmin.permissions),
+      );
       localStorage.setItem("adminLoginTime", new Date().toISOString());
-      localStorage.setItem("adminSessionId", `session_${Date.now()}_${Math.random()}`);
+      localStorage.setItem(
+        "adminSessionId",
+        `session_${Date.now()}_${Math.random()}`,
+      );
 
       setSuccess(`Welcome ${validAdmin.role}! Redirecting to admin portal...`);
 
       toast({
         title: "🎉 Admin Login Successful",
-        description: `Welcome ${validAdmin.role} from ${validAdmin.department || 'Administration'} department`,
+        description: `Welcome ${validAdmin.role} from ${validAdmin.department || "Administration"} department`,
       });
 
       // Role-based navigation delay
@@ -181,21 +187,27 @@ export default function AdminLogin() {
                     </p>
                     <div className="grid grid-cols-1 gap-3 text-xs">
                       <div className="bg-white rounded p-3 border border-blue-100">
-                        <div className="font-semibold text-blue-900 mb-1">Super Admin</div>
+                        <div className="font-semibold text-blue-900 mb-1">
+                          Super Admin
+                        </div>
                         <div className="text-blue-700">
                           <div>Email: admin@globaltrack.com</div>
                           <div>Password: GT2024@Admin!</div>
                         </div>
                       </div>
                       <div className="bg-white rounded p-3 border border-blue-100">
-                        <div className="font-semibold text-blue-900 mb-1">Operations Manager</div>
+                        <div className="font-semibold text-blue-900 mb-1">
+                          Operations Manager
+                        </div>
                         <div className="text-blue-700">
                           <div>Email: manager@globaltrack.com</div>
                           <div>Password: GT2024@Manager!</div>
                         </div>
                       </div>
                       <div className="bg-white rounded p-3 border border-blue-100">
-                        <div className="font-semibold text-blue-900 mb-1">Support Admin</div>
+                        <div className="font-semibold text-blue-900 mb-1">
+                          Support Admin
+                        </div>
                         <div className="text-blue-700">
                           <div>Email: support@globaltrack.com</div>
                           <div>Password: GT2024@Support!</div>
@@ -311,16 +323,20 @@ export default function AdminLogin() {
 
                   {/* Quick Login Buttons */}
                   <div className="space-y-2">
-                    <p className="text-center text-sm text-gray-600 mb-3">Quick Demo Login</p>
+                    <p className="text-center text-sm text-gray-600 mb-3">
+                      Quick Demo Login
+                    </p>
                     <div className="grid grid-cols-1 gap-2">
                       <Button
                         type="button"
                         variant="outline"
                         size="sm"
-                        onClick={() => setFormData({
-                          email: "admin@globaltrack.com",
-                          password: "GT2024@Admin!"
-                        })}
+                        onClick={() =>
+                          setFormData({
+                            email: "admin@globaltrack.com",
+                            password: "GT2024@Admin!",
+                          })
+                        }
                         className="text-xs h-8 text-royal-600 border-royal-200 hover:bg-royal-50"
                       >
                         <Shield className="mr-1 h-3 w-3" />
@@ -330,10 +346,12 @@ export default function AdminLogin() {
                         type="button"
                         variant="outline"
                         size="sm"
-                        onClick={() => setFormData({
-                          email: "manager@globaltrack.com",
-                          password: "GT2024@Manager!"
-                        })}
+                        onClick={() =>
+                          setFormData({
+                            email: "manager@globaltrack.com",
+                            password: "GT2024@Manager!",
+                          })
+                        }
                         className="text-xs h-8 text-blue-600 border-blue-200 hover:bg-blue-50"
                       >
                         <Users className="mr-1 h-3 w-3" />

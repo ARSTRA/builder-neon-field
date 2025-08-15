@@ -7,33 +7,33 @@ interface LoadingSpinnerProps {
   color?: "primary" | "secondary" | "white" | "gray";
 }
 
-export function LoadingSpinner({ 
-  size = "md", 
+export function LoadingSpinner({
+  size = "md",
   className,
-  color = "primary" 
+  color = "primary",
 }: LoadingSpinnerProps) {
   const sizeClasses = {
     sm: "h-4 w-4",
-    md: "h-6 w-6", 
+    md: "h-6 w-6",
     lg: "h-8 w-8",
-    xl: "h-12 w-12"
+    xl: "h-12 w-12",
   };
 
   const colorClasses = {
     primary: "text-royal-600",
     secondary: "text-orange-500",
     white: "text-white",
-    gray: "text-gray-500"
+    gray: "text-gray-500",
   };
 
   return (
-    <Loader2 
+    <Loader2
       className={cn(
         "animate-spin",
         sizeClasses[size],
         colorClasses[color],
-        className
-      )} 
+        className,
+      )}
     />
   );
 }
@@ -43,12 +43,15 @@ interface LoadingDotsProps {
   color?: "primary" | "secondary" | "white" | "gray";
 }
 
-export function LoadingDots({ className, color = "primary" }: LoadingDotsProps) {
+export function LoadingDots({
+  className,
+  color = "primary",
+}: LoadingDotsProps) {
   const colorClasses = {
     primary: "bg-royal-600",
-    secondary: "bg-orange-500", 
+    secondary: "bg-orange-500",
     white: "bg-white",
-    gray: "bg-gray-500"
+    gray: "bg-gray-500",
   };
 
   return (
@@ -58,11 +61,11 @@ export function LoadingDots({ className, color = "primary" }: LoadingDotsProps) 
           key={i}
           className={cn(
             "w-2 h-2 rounded-full animate-pulse",
-            colorClasses[color]
+            colorClasses[color],
           )}
           style={{
             animationDelay: `${i * 0.15}s`,
-            animationDuration: "1s"
+            animationDuration: "1s",
           }}
         />
       ))}
@@ -75,12 +78,14 @@ interface ShippingLoadingProps {
   className?: string;
 }
 
-export function ShippingLoading({ 
-  message = "Processing your request...", 
-  className 
+export function ShippingLoading({
+  message = "Processing your request...",
+  className,
 }: ShippingLoadingProps) {
   return (
-    <div className={cn("flex flex-col items-center justify-center p-8", className)}>
+    <div
+      className={cn("flex flex-col items-center justify-center p-8", className)}
+    >
       <div className="relative mb-6">
         {/* Rotating logistics icons */}
         <div className="relative w-20 h-20">
@@ -93,13 +98,13 @@ export function ShippingLoading({
             </div>
           </div>
         </div>
-        
+
         {/* Center loading spinner */}
         <div className="absolute inset-0 flex items-center justify-center">
           <LoadingSpinner size="lg" />
         </div>
       </div>
-      
+
       <p className="text-gray-600 text-center font-medium">{message}</p>
       <LoadingDots className="mt-3" />
     </div>
@@ -111,9 +116,9 @@ interface PageLoadingProps {
   subtitle?: string;
 }
 
-export function PageLoading({ 
-  title = "Loading...", 
-  subtitle = "Please wait while we prepare your content" 
+export function PageLoading({
+  title = "Loading...",
+  subtitle = "Please wait while we prepare your content",
 }: PageLoadingProps) {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -139,22 +144,22 @@ interface SkeletonProps {
   animation?: "pulse" | "wave";
 }
 
-export function Skeleton({ 
+export function Skeleton({
   className,
-  variant = "rectangular", 
+  variant = "rectangular",
   width,
   height,
-  animation = "pulse"
+  animation = "pulse",
 }: SkeletonProps) {
   const variantClasses = {
     text: "rounded",
     circular: "rounded-full",
-    rectangular: "rounded-lg"
+    rectangular: "rounded-lg",
   };
 
   const animationClasses = {
     pulse: "animate-pulse",
-    wave: "animate-pulse" // Could be enhanced with a wave animation
+    wave: "animate-pulse", // Could be enhanced with a wave animation
   };
 
   return (
@@ -163,11 +168,11 @@ export function Skeleton({
         "bg-gray-300",
         variantClasses[variant],
         animationClasses[animation],
-        className
+        className,
       )}
       style={{
-        width: typeof width === 'number' ? `${width}px` : width,
-        height: typeof height === 'number' ? `${height}px` : height
+        width: typeof width === "number" ? `${width}px` : width,
+        height: typeof height === "number" ? `${height}px` : height,
       }}
     />
   );
@@ -176,7 +181,12 @@ export function Skeleton({
 // Card skeleton for consistent loading states
 export function CardSkeleton({ className }: { className?: string }) {
   return (
-    <div className={cn("p-6 border border-gray-200 rounded-lg bg-white", className)}>
+    <div
+      className={cn(
+        "p-6 border border-gray-200 rounded-lg bg-white",
+        className,
+      )}
+    >
       <Skeleton variant="rectangular" height={200} className="mb-4" />
       <Skeleton variant="text" height={20} className="mb-2" />
       <Skeleton variant="text" height={16} width="70%" className="mb-4" />
@@ -195,10 +205,10 @@ interface LoadingOverlayProps {
   children: React.ReactNode;
 }
 
-export function LoadingOverlay({ 
-  isLoading, 
-  message = "Loading...", 
-  children 
+export function LoadingOverlay({
+  isLoading,
+  message = "Loading...",
+  children,
 }: LoadingOverlayProps) {
   return (
     <div className="relative">

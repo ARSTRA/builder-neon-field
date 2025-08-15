@@ -1,10 +1,22 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Package, Mail, Phone, MapPin, Calendar, Weight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { LoadingSpinner } from "@/components/ui/loading-states";
@@ -26,7 +38,7 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
     weight: "",
     dimensions: "",
     shipDate: "",
-    description: ""
+    description: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,13 +47,13 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     setIsSubmitting(false);
     setSubmitted(true);
-    
+
     // Reset form after 3 seconds
     setTimeout(() => {
       setSubmitted(false);
@@ -56,7 +68,7 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
         weight: "",
         dimensions: "",
         shipDate: "",
-        description: ""
+        description: "",
       });
       onOpenChange(false);
     }, 3000);
@@ -74,7 +86,8 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
               Quote Request Sent!
             </DialogTitle>
             <DialogDescription className="text-gray-600">
-              Thank you for your interest! Our team will review your request and send you a detailed quote within 24 hours.
+              Thank you for your interest! Our team will review your request and
+              send you a detailed quote within 24 hours.
             </DialogDescription>
           </div>
         </DialogContent>
@@ -86,9 +99,12 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-gray-900">Get Free Shipping Quote</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-gray-900">
+            Get Free Shipping Quote
+          </DialogTitle>
           <DialogDescription>
-            Fill out the form below and we'll provide you with a competitive quote for your shipping needs.
+            Fill out the form below and we'll provide you with a competitive
+            quote for your shipping needs.
           </DialogDescription>
         </DialogHeader>
 
@@ -107,7 +123,9 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
                     id="name"
                     required
                     value={formData.name}
-                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, name: e.target.value }))
+                    }
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -118,7 +136,12 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
                     type="email"
                     required
                     value={formData.email}
-                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        email: e.target.value,
+                      }))
+                    }
                     placeholder="your@email.com"
                   />
                 </div>
@@ -128,7 +151,12 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
                     id="phone"
                     type="tel"
                     value={formData.phone}
-                    onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        phone: e.target.value,
+                      }))
+                    }
                     placeholder="+1 (555) 123-4567"
                   />
                 </div>
@@ -137,7 +165,12 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
                   <Input
                     id="company"
                     value={formData.company}
-                    onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        company: e.target.value,
+                      }))
+                    }
                     placeholder="Your company name"
                   />
                 </div>
@@ -155,7 +188,12 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="serviceType">Service Type *</Label>
-                  <Select value={formData.serviceType} onValueChange={(value) => setFormData(prev => ({ ...prev, serviceType: value }))}>
+                  <Select
+                    value={formData.serviceType}
+                    onValueChange={(value) =>
+                      setFormData((prev) => ({ ...prev, serviceType: value }))
+                    }
+                  >
                     <SelectTrigger>
                       <SelectValue placeholder="Select shipping service" />
                     </SelectTrigger>
@@ -173,7 +211,12 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
                     id="shipDate"
                     type="date"
                     value={formData.shipDate}
-                    onChange={(e) => setFormData(prev => ({ ...prev, shipDate: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        shipDate: e.target.value,
+                      }))
+                    }
                   />
                 </div>
                 <div className="space-y-2">
@@ -182,7 +225,12 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
                     id="origin"
                     required
                     value={formData.origin}
-                    onChange={(e) => setFormData(prev => ({ ...prev, origin: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        origin: e.target.value,
+                      }))
+                    }
                     placeholder="City, State/Country"
                   />
                 </div>
@@ -192,7 +240,12 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
                     id="destination"
                     required
                     value={formData.destination}
-                    onChange={(e) => setFormData(prev => ({ ...prev, destination: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        destination: e.target.value,
+                      }))
+                    }
                     placeholder="City, State/Country"
                   />
                 </div>
@@ -201,7 +254,12 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
                   <Input
                     id="weight"
                     value={formData.weight}
-                    onChange={(e) => setFormData(prev => ({ ...prev, weight: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        weight: e.target.value,
+                      }))
+                    }
                     placeholder="e.g., 50 kg, 110 lbs"
                   />
                 </div>
@@ -210,7 +268,12 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
                   <Input
                     id="dimensions"
                     value={formData.dimensions}
-                    onChange={(e) => setFormData(prev => ({ ...prev, dimensions: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        dimensions: e.target.value,
+                      }))
+                    }
                     placeholder="L x W x H (cm or inches)"
                   />
                 </div>
@@ -220,7 +283,12 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
                 <Textarea
                   id="description"
                   value={formData.description}
-                  onChange={(e) => setFormData(prev => ({ ...prev, description: e.target.value }))}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      description: e.target.value,
+                    }))
+                  }
                   placeholder="Describe your cargo, special requirements, or any other details..."
                   rows={3}
                 />

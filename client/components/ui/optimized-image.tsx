@@ -85,7 +85,7 @@ export function OptimizedImage({
         className={cn(
           "w-full h-full transition-opacity duration-300",
           objectFitClasses[objectFit],
-          isLoading ? "opacity-0" : "opacity-100"
+          isLoading ? "opacity-0" : "opacity-100",
         )}
         width={width}
         height={height}

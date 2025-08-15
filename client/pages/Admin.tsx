@@ -34,7 +34,6 @@ import {
   Star,
   Mail,
   Phone,
-
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -231,7 +230,8 @@ export default function Admin() {
   const handleNotifications = () => {
     toast({
       title: "Notifications",
-      description: "You have 5 new notifications. Opening notification panel...",
+      description:
+        "You have 5 new notifications. Opening notification panel...",
     });
   };
 
@@ -255,12 +255,21 @@ export default function Admin() {
 
       if (baseCurrency === targetCurrency) {
         converted = amount;
-      } else if (exchangeRates[baseCurrency] && exchangeRates[baseCurrency][targetCurrency]) {
+      } else if (
+        exchangeRates[baseCurrency] &&
+        exchangeRates[baseCurrency][targetCurrency]
+      ) {
         converted = amount * exchangeRates[baseCurrency][targetCurrency];
       } else {
         // Fallback calculation through USD
-        const toUSD = baseCurrency === "USD" ? amount : amount / (exchangeRates["USD"][baseCurrency] || 1);
-        converted = targetCurrency === "USD" ? toUSD : toUSD * (exchangeRates["USD"][targetCurrency] || 1);
+        const toUSD =
+          baseCurrency === "USD"
+            ? amount
+            : amount / (exchangeRates["USD"][baseCurrency] || 1);
+        converted =
+          targetCurrency === "USD"
+            ? toUSD
+            : toUSD * (exchangeRates["USD"][targetCurrency] || 1);
       }
 
       setConvertedAmount(converted.toFixed(2));
@@ -275,8 +284,8 @@ export default function Admin() {
 
   const handlePaymentMethodToggle = (method: string, enabled: boolean) => {
     toast({
-      title: `Payment Method ${enabled ? 'Enabled' : 'Disabled'}`,
-      description: `${method} has been ${enabled ? 'enabled' : 'disabled'} for customers.`,
+      title: `Payment Method ${enabled ? "Enabled" : "Disabled"}`,
+      description: `${method} has been ${enabled ? "enabled" : "disabled"} for customers.`,
     });
   };
 
@@ -518,13 +527,14 @@ export default function Admin() {
       setIsUpdatingRates(false);
       toast({
         title: "Rates Updated",
-        description: "All exchange rates have been updated with the latest market data.",
+        description:
+          "All exchange rates have been updated with the latest market data.",
       });
     }, 2000);
   };
 
   const handleRemoveCurrency = (currencyCode: string) => {
-    const currency = currencies.find(c => c.code === currencyCode);
+    const currency = currencies.find((c) => c.code === currencyCode);
     toast({
       title: "Currency Removed",
       description: `${currency?.name} has been removed from supported currencies.`,
@@ -532,11 +542,14 @@ export default function Admin() {
     });
   };
 
-  const handleToggleCurrencyStatus = (currencyCode: string, isActive: boolean) => {
-    const currency = currencies.find(c => c.code === currencyCode);
+  const handleToggleCurrencyStatus = (
+    currencyCode: string,
+    isActive: boolean,
+  ) => {
+    const currency = currencies.find((c) => c.code === currencyCode);
     toast({
-      title: `Currency ${isActive ? 'Activated' : 'Deactivated'}`,
-      description: `${currency?.name} has been ${isActive ? 'activated' : 'deactivated'}.`,
+      title: `Currency ${isActive ? "Activated" : "Deactivated"}`,
+      description: `${currency?.name} has been ${isActive ? "activated" : "deactivated"}.`,
     });
   };
 
@@ -859,7 +872,6 @@ export default function Admin() {
 
             {/* User Menu */}
             <div className="flex items-center space-x-4">
-
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
