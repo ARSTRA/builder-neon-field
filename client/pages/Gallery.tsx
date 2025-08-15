@@ -34,12 +34,12 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop&auto=format&q=80",
-    title: "Container Ship Operations",
+    src: "https://images.pexels.com/photos/6379245/pexels-photo-6379245.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
+    title: "Modern Container Ship Operations",
     description:
-      "Large-scale ocean freight operations handling thousands of containers",
+      "State-of-the-art cargo vessels handling large-scale ocean freight operations with thousands of containers across global trade routes",
     category: "Ocean Freight",
-    location: "Port of Rotterdam",
+    location: "Port of Rotterdam, Netherlands",
   },
   {
     id: 3,
@@ -75,11 +75,11 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&auto=format&q=80",
-    title: "International Port Operations",
-    description: "24/7 port operations handling global trade",
+    src: "https://images.pexels.com/photos/6572431/pexels-photo-6572431.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
+    title: "Advanced Port Terminal Operations",
+    description: "High-tech container terminal with automated cranes and advanced logistics systems operating 24/7 for global trade",
     category: "Ocean Freight",
-    location: "Port of Shanghai",
+    location: "Port of Baltimore, USA",
   },
   {
     id: 8,
@@ -120,6 +120,30 @@ const galleryImages: GalleryImage[] = [
     description: "Dedicated customer support and tracking services",
     category: "Operations",
     location: "Customer Care Center",
+  },
+  {
+    id: 13,
+    src: "https://images.pexels.com/photos/28438355/pexels-photo-28438355.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
+    title: "Container Securing Operations",
+    description: "Professional cargo securing and handling procedures ensuring safe ocean transport with experienced maritime logistics teams",
+    category: "Ocean Freight",
+    location: "Port of Hamburg, Germany",
+  },
+  {
+    id: 14,
+    src: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=800&h=600&q=80",
+    title: "Ocean Freight Vessel Fleet",
+    description: "Modern container ship fleet providing reliable ocean freight services connecting global markets with eco-friendly solutions",
+    category: "Ocean Freight",
+    location: "International Waters",
+  },
+  {
+    id: 15,
+    src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=800&h=600&q=80",
+    title: "Mega Container Terminal",
+    description: "World-class container terminal facility with advanced automation, real-time tracking, and sustainable port operations",
+    category: "Ocean Freight",
+    location: "Port of Singapore",
   },
 ];
 
