@@ -733,16 +733,10 @@ export function ContactManagement() {
                               {contact.name}
                             </h3>
                             {contact.preferredContact === "email" && (
-                              <Mail
-                                className="h-4 w-4 text-blue-500"
-                                title="Prefers Email"
-                              />
+                              <Mail className="h-4 w-4 text-blue-500" />
                             )}
                             {contact.preferredContact === "phone" && (
-                              <Phone
-                                className="h-4 w-4 text-green-500"
-                                title="Prefers Phone"
-                              />
+                              <Phone className="h-4 w-4 text-green-500" />
                             )}
                           </div>
                           <p className="text-gray-600 font-medium mb-1">
