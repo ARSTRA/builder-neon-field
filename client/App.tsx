@@ -141,8 +141,11 @@ export default function App() {
                 }
               />
 
+              {/* Authentication routes */}
+              <Route path="/auth" element={<Auth />} />
+
               {/* Admin routes */}
-              <Route path="/login" element={<AdminLogin />} />
+              <Route path="/admin-login" element={<AdminLogin />} />
               <Route path="/admin/setup" element={<AdminSetup />} />
               <Route path="/admin/overview" element={<AdminOverview />} />
               <Route path="/admin" element={<Admin />} />
