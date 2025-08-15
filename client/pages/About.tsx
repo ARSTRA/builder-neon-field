@@ -448,18 +448,30 @@ export default function About() {
             <div className="grid md:grid-cols-3 gap-10 mb-16">
               <div className="bg-white/15 backdrop-blur-md rounded-2xl p-10 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl group">
                 <MapPin className="h-16 w-16 text-orange-400 mx-auto mb-6 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-3xl font-bold mb-3 drop-shadow-sm">120+ Countries</h3>
-                <p className="text-gray-100 text-lg drop-shadow-sm">Worldwide coverage</p>
+                <h3 className="text-3xl font-bold mb-3 drop-shadow-sm">
+                  120+ Countries
+                </h3>
+                <p className="text-gray-100 text-lg drop-shadow-sm">
+                  Worldwide coverage
+                </p>
               </div>
               <div className="bg-white/15 backdrop-blur-md rounded-2xl p-10 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl group">
                 <Users className="h-16 w-16 text-orange-400 mx-auto mb-6 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-3xl font-bold mb-3 drop-shadow-sm">500+ Employees</h3>
-                <p className="text-gray-100 text-lg drop-shadow-sm">Global workforce</p>
+                <h3 className="text-3xl font-bold mb-3 drop-shadow-sm">
+                  500+ Employees
+                </h3>
+                <p className="text-gray-100 text-lg drop-shadow-sm">
+                  Global workforce
+                </p>
               </div>
               <div className="bg-white/15 backdrop-blur-md rounded-2xl p-10 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl group">
                 <Award className="h-16 w-16 text-orange-400 mx-auto mb-6 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-3xl font-bold mb-3 drop-shadow-sm">25+ Awards</h3>
-                <p className="text-gray-100 text-lg drop-shadow-sm">Industry recognition</p>
+                <h3 className="text-3xl font-bold mb-3 drop-shadow-sm">
+                  25+ Awards
+                </h3>
+                <p className="text-gray-100 text-lg drop-shadow-sm">
+                  Industry recognition
+                </p>
               </div>
             </div>
 

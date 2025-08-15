@@ -214,16 +214,23 @@ export default function Index() {
           <div className="max-w-4xl mx-auto text-center">
             {/* Featured Logo */}
             <div className="flex justify-center mb-8 animate-fade-in">
-              <ShipNexaLogo size="xl" variant="full" className="drop-shadow-lg" />
+              <ShipNexaLogo
+                size="xl"
+                variant="full"
+                className="drop-shadow-lg"
+              />
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-delay text-white drop-shadow-lg">
               Next-Generation Logistics
-              <span className="block text-orange-400 mt-2 drop-shadow-lg">For Italy & Beyond</span>
+              <span className="block text-orange-400 mt-2 drop-shadow-lg">
+                For Italy & Beyond
+              </span>
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-100 drop-shadow-md animate-slide-up">
               Experience cutting-edge logistics technology with ShipNexa.it.
-              Fast, secure, and innovative shipping solutions across Italy and worldwide.
+              Fast, secure, and innovative shipping solutions across Italy and
+              worldwide.
             </p>
 
             {/* Tracking Form */}
@@ -258,20 +265,36 @@ export default function Index() {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">50K+</div>
-                <div className="text-sm text-gray-200 drop-shadow-md">Packages Delivered</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">
+                  50K+
+                </div>
+                <div className="text-sm text-gray-200 drop-shadow-md">
+                  Packages Delivered
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">120+</div>
-                <div className="text-sm text-gray-200 drop-shadow-md">Countries Served</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">
+                  120+
+                </div>
+                <div className="text-sm text-gray-200 drop-shadow-md">
+                  Countries Served
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">99.8%</div>
-                <div className="text-sm text-gray-200 drop-shadow-md">On-Time Delivery</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">
+                  99.8%
+                </div>
+                <div className="text-sm text-gray-200 drop-shadow-md">
+                  On-Time Delivery
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">24/7</div>
-                <div className="text-sm text-gray-200 drop-shadow-md">Customer Support</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">
+                  24/7
+                </div>
+                <div className="text-sm text-gray-200 drop-shadow-md">
+                  Customer Support
+                </div>
               </div>
             </div>
           </div>
@@ -294,8 +317,8 @@ export default function Index() {
               <p className="text-gray-600 leading-relaxed">
                 ShipNexa.it combines cutting-edge technology with local Italian
                 expertise to deliver world-class logistics solutions. Our
-                integrated approach connects Italy to the world through innovative
-                air, sea, and ground transportation networks.
+                integrated approach connects Italy to the world through
+                innovative air, sea, and ground transportation networks.
               </p>
             </div>
 

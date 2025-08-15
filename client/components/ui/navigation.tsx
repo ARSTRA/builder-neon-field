@@ -26,7 +26,10 @@ export function Navigation() {
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex justify-between items-center py-3 lg:py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center transition-transform hover:scale-105">
+          <Link
+            to="/"
+            className="flex items-center transition-transform hover:scale-105"
+          >
             <ShipNexaLogo size="lg" variant="full" />
           </Link>
 

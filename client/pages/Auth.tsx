@@ -95,7 +95,8 @@ export default function Auth() {
       localStorage.setItem("userEmail", signupData.email);
       toast({
         title: "Account created!",
-        description: "Welcome to ShipNexa.it. Your account has been created successfully.",
+        description:
+          "Welcome to ShipNexa.it. Your account has been created successfully.",
       });
       navigate("/dashboard");
     } else {
@@ -152,14 +153,16 @@ export default function Auth() {
 
       <div className="relative min-h-screen flex items-center justify-center py-12 px-4">
         <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-16 items-center">
-          
           {/* Left Side - Branding & Benefits */}
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-6">
-              <Link to="/" className="inline-flex justify-center lg:justify-start">
+              <Link
+                to="/"
+                className="inline-flex justify-center lg:justify-start"
+              >
                 <ShipNexaLogo size="xl" variant="full" />
               </Link>
-              
+
               <div className="space-y-4">
                 <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
                   Welcome to the Future of
@@ -168,8 +171,9 @@ export default function Auth() {
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 max-w-2xl">
-                  Join thousands of businesses already using ShipNexa.it for their shipping needs. 
-                  Experience next-generation logistics with Italian excellence.
+                  Join thousands of businesses already using ShipNexa.it for
+                  their shipping needs. Experience next-generation logistics
+                  with Italian excellence.
                 </p>
               </div>
             </div>
@@ -177,8 +181,13 @@ export default function Auth() {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center p-4 bg-white/50 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg">
-                  <div className="text-2xl font-bold text-shipblue-600">{stat.value}</div>
+                <div
+                  key={index}
+                  className="text-center p-4 bg-white/50 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg"
+                >
+                  <div className="text-2xl font-bold text-shipblue-600">
+                    {stat.value}
+                  </div>
                   <div className="text-sm text-gray-600">{stat.label}</div>
                 </div>
               ))}
@@ -187,13 +196,20 @@ export default function Auth() {
             {/* Benefits */}
             <div className="grid sm:grid-cols-2 gap-4">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start space-x-3 p-4 bg-white/30 backdrop-blur-sm rounded-xl border border-white/20">
+                <div
+                  key={index}
+                  className="flex items-start space-x-3 p-4 bg-white/30 backdrop-blur-sm rounded-xl border border-white/20"
+                >
                   <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
                     {benefit.icon}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">{benefit.title}</h4>
-                    <p className="text-sm text-gray-600">{benefit.description}</p>
+                    <h4 className="font-semibold text-gray-900">
+                      {benefit.title}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      {benefit.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -207,11 +223,9 @@ export default function Auth() {
                 <CardTitle className="text-2xl font-bold text-gray-900">
                   Get Started Today
                 </CardTitle>
-                <p className="text-gray-600">
-                  Access your logistics dashboard
-                </p>
+                <p className="text-gray-600">Access your logistics dashboard</p>
               </CardHeader>
-              
+
               <CardContent className="p-6">
                 <Tabs defaultValue="login" className="w-full">
                   <TabsList className="grid w-full grid-cols-2 mb-8">
@@ -235,7 +249,12 @@ export default function Auth() {
                             type="email"
                             placeholder="Enter your email"
                             value={loginData.email}
-                            onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
+                            onChange={(e) =>
+                              setLoginData({
+                                ...loginData,
+                                email: e.target.value,
+                              })
+                            }
                             className="pl-10 py-6 text-base"
                             required
                           />
@@ -251,7 +270,12 @@ export default function Auth() {
                             type={showPassword ? "text" : "password"}
                             placeholder="Enter your password"
                             value={loginData.password}
-                            onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
+                            onChange={(e) =>
+                              setLoginData({
+                                ...loginData,
+                                password: e.target.value,
+                              })
+                            }
                             className="pl-10 pr-10 py-6 text-base"
                             required
                           />
@@ -260,7 +284,11 @@ export default function Auth() {
                             onClick={() => setShowPassword(!showPassword)}
                             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                           >
-                            {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                            {showPassword ? (
+                              <EyeOff className="h-5 w-5" />
+                            ) : (
+                              <Eye className="h-5 w-5" />
+                            )}
                           </button>
                         </div>
                       </div>
@@ -270,7 +298,10 @@ export default function Auth() {
                           <input type="checkbox" className="rounded" />
                           <span className="text-gray-600">Remember me</span>
                         </label>
-                        <Link to="/forgot-password" className="text-shipblue-600 hover:text-shipblue-700">
+                        <Link
+                          to="/forgot-password"
+                          className="text-shipblue-600 hover:text-shipblue-700"
+                        >
                           Forgot password?
                         </Link>
                       </div>
@@ -298,7 +329,12 @@ export default function Auth() {
                               id="first-name"
                               placeholder="First name"
                               value={signupData.firstName}
-                              onChange={(e) => setSignupData({ ...signupData, firstName: e.target.value })}
+                              onChange={(e) =>
+                                setSignupData({
+                                  ...signupData,
+                                  firstName: e.target.value,
+                                })
+                              }
                               className="pl-10 py-6"
                               required
                             />
@@ -310,7 +346,12 @@ export default function Auth() {
                             id="last-name"
                             placeholder="Last name"
                             value={signupData.lastName}
-                            onChange={(e) => setSignupData({ ...signupData, lastName: e.target.value })}
+                            onChange={(e) =>
+                              setSignupData({
+                                ...signupData,
+                                lastName: e.target.value,
+                              })
+                            }
                             className="py-6"
                             required
                           />
@@ -326,7 +367,12 @@ export default function Auth() {
                             type="email"
                             placeholder="Enter your email"
                             value={signupData.email}
-                            onChange={(e) => setSignupData({ ...signupData, email: e.target.value })}
+                            onChange={(e) =>
+                              setSignupData({
+                                ...signupData,
+                                email: e.target.value,
+                              })
+                            }
                             className="pl-10 py-6"
                             required
                           />
@@ -342,7 +388,12 @@ export default function Auth() {
                             type="tel"
                             placeholder="+39 xxx xxx xxxx"
                             value={signupData.phone}
-                            onChange={(e) => setSignupData({ ...signupData, phone: e.target.value })}
+                            onChange={(e) =>
+                              setSignupData({
+                                ...signupData,
+                                phone: e.target.value,
+                              })
+                            }
                             className="pl-10 py-6"
                           />
                         </div>
@@ -356,7 +407,12 @@ export default function Auth() {
                             id="company"
                             placeholder="Company name"
                             value={signupData.company}
-                            onChange={(e) => setSignupData({ ...signupData, company: e.target.value })}
+                            onChange={(e) =>
+                              setSignupData({
+                                ...signupData,
+                                company: e.target.value,
+                              })
+                            }
                             className="pl-10 py-6"
                           />
                         </div>
@@ -371,7 +427,12 @@ export default function Auth() {
                             type={showPassword ? "text" : "password"}
                             placeholder="Create a password"
                             value={signupData.password}
-                            onChange={(e) => setSignupData({ ...signupData, password: e.target.value })}
+                            onChange={(e) =>
+                              setSignupData({
+                                ...signupData,
+                                password: e.target.value,
+                              })
+                            }
                             className="pl-10 pr-10 py-6"
                             required
                           />
@@ -380,13 +441,19 @@ export default function Auth() {
                             onClick={() => setShowPassword(!showPassword)}
                             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                           >
-                            {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                            {showPassword ? (
+                              <EyeOff className="h-5 w-5" />
+                            ) : (
+                              <Eye className="h-5 w-5" />
+                            )}
                           </button>
                         </div>
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="confirm-password">Confirm Password</Label>
+                        <Label htmlFor="confirm-password">
+                          Confirm Password
+                        </Label>
                         <div className="relative">
                           <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                           <Input
@@ -394,29 +461,50 @@ export default function Auth() {
                             type={showConfirmPassword ? "text" : "password"}
                             placeholder="Confirm your password"
                             value={signupData.confirmPassword}
-                            onChange={(e) => setSignupData({ ...signupData, confirmPassword: e.target.value })}
+                            onChange={(e) =>
+                              setSignupData({
+                                ...signupData,
+                                confirmPassword: e.target.value,
+                              })
+                            }
                             className="pl-10 pr-10 py-6"
                             required
                           />
                           <button
                             type="button"
-                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                            onClick={() =>
+                              setShowConfirmPassword(!showConfirmPassword)
+                            }
                             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                           >
-                            {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                            {showConfirmPassword ? (
+                              <EyeOff className="h-5 w-5" />
+                            ) : (
+                              <Eye className="h-5 w-5" />
+                            )}
                           </button>
                         </div>
                       </div>
 
                       <div className="flex items-start space-x-2 text-sm">
-                        <input type="checkbox" required className="mt-1 rounded" />
+                        <input
+                          type="checkbox"
+                          required
+                          className="mt-1 rounded"
+                        />
                         <span className="text-gray-600">
                           I agree to the{" "}
-                          <Link to="/terms" className="text-shipblue-600 hover:text-shipblue-700">
+                          <Link
+                            to="/terms"
+                            className="text-shipblue-600 hover:text-shipblue-700"
+                          >
                             Terms of Service
                           </Link>{" "}
                           and{" "}
-                          <Link to="/privacy" className="text-shipblue-600 hover:text-shipblue-700">
+                          <Link
+                            to="/privacy"
+                            className="text-shipblue-600 hover:text-shipblue-700"
+                          >
                             Privacy Policy
                           </Link>
                         </span>
@@ -437,7 +525,10 @@ export default function Auth() {
                 <div className="text-center mt-6 pt-6 border-t border-gray-200">
                   <p className="text-sm text-gray-600">
                     Need help?{" "}
-                    <Link to="/contact" className="text-shipblue-600 hover:text-shipblue-700 font-semibold">
+                    <Link
+                      to="/contact"
+                      className="text-shipblue-600 hover:text-shipblue-700 font-semibold"
+                    >
                       Contact Support
                     </Link>
                   </p>

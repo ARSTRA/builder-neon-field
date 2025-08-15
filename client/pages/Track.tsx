@@ -250,7 +250,7 @@ Generated on: ${new Date().toLocaleDateString()}
     }
 
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
       title: "Redelivery Scheduled",
@@ -273,11 +273,12 @@ Generated on: ${new Date().toLocaleDateString()}
     }
 
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
       title: "Issue Reported",
-      description: "Your issue has been reported. Our support team will contact you within 24 hours.",
+      description:
+        "Your issue has been reported. Our support team will contact you within 24 hours.",
     });
 
     setIsReportDialogOpen(false);
@@ -900,7 +901,10 @@ Generated on: ${new Date().toLocaleDateString()}
                       Download Receipt
                     </Button>
 
-                    <Dialog open={isRedeliveryDialogOpen} onOpenChange={setIsRedeliveryDialogOpen}>
+                    <Dialog
+                      open={isRedeliveryDialogOpen}
+                      onOpenChange={setIsRedeliveryDialogOpen}
+                    >
                       <DialogTrigger asChild>
                         <Button
                           variant="outline"
@@ -914,49 +918,91 @@ Generated on: ${new Date().toLocaleDateString()}
                         <DialogHeader>
                           <DialogTitle>Schedule Redelivery</DialogTitle>
                           <DialogDescription>
-                            Choose a new delivery date and time that works for you.
+                            Choose a new delivery date and time that works for
+                            you.
                           </DialogDescription>
                         </DialogHeader>
-                        <form onSubmit={handleScheduleRedelivery} className="space-y-4">
+                        <form
+                          onSubmit={handleScheduleRedelivery}
+                          className="space-y-4"
+                        >
                           <div className="space-y-2">
-                            <Label htmlFor="redelivery-date">Preferred Date *</Label>
+                            <Label htmlFor="redelivery-date">
+                              Preferred Date *
+                            </Label>
                             <Input
                               id="redelivery-date"
                               type="date"
                               required
-                              min={new Date().toISOString().split('T')[0]}
+                              min={new Date().toISOString().split("T")[0]}
                               value={redeliveryData.date}
-                              onChange={(e) => setRedeliveryData(prev => ({ ...prev, date: e.target.value }))}
+                              onChange={(e) =>
+                                setRedeliveryData((prev) => ({
+                                  ...prev,
+                                  date: e.target.value,
+                                }))
+                              }
                             />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="time-slot">Time Slot *</Label>
-                            <Select value={redeliveryData.timeSlot} onValueChange={(value) => setRedeliveryData(prev => ({ ...prev, timeSlot: value }))}>
+                            <Select
+                              value={redeliveryData.timeSlot}
+                              onValueChange={(value) =>
+                                setRedeliveryData((prev) => ({
+                                  ...prev,
+                                  timeSlot: value,
+                                }))
+                              }
+                            >
                               <SelectTrigger>
                                 <SelectValue placeholder="Select time slot" />
                               </SelectTrigger>
                               <SelectContent>
-                                <SelectItem value="9am-12pm">9:00 AM - 12:00 PM</SelectItem>
-                                <SelectItem value="12pm-3pm">12:00 PM - 3:00 PM</SelectItem>
-                                <SelectItem value="3pm-6pm">3:00 PM - 6:00 PM</SelectItem>
-                                <SelectItem value="6pm-9pm">6:00 PM - 9:00 PM</SelectItem>
+                                <SelectItem value="9am-12pm">
+                                  9:00 AM - 12:00 PM
+                                </SelectItem>
+                                <SelectItem value="12pm-3pm">
+                                  12:00 PM - 3:00 PM
+                                </SelectItem>
+                                <SelectItem value="3pm-6pm">
+                                  3:00 PM - 6:00 PM
+                                </SelectItem>
+                                <SelectItem value="6pm-9pm">
+                                  6:00 PM - 9:00 PM
+                                </SelectItem>
                               </SelectContent>
                             </Select>
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="instructions">Special Instructions</Label>
+                            <Label htmlFor="instructions">
+                              Special Instructions
+                            </Label>
                             <Textarea
                               id="instructions"
                               placeholder="Any special delivery instructions..."
                               value={redeliveryData.instructions}
-                              onChange={(e) => setRedeliveryData(prev => ({ ...prev, instructions: e.target.value }))}
+                              onChange={(e) =>
+                                setRedeliveryData((prev) => ({
+                                  ...prev,
+                                  instructions: e.target.value,
+                                }))
+                              }
                             />
                           </div>
                           <div className="flex gap-3">
-                            <Button type="button" variant="outline" onClick={() => setIsRedeliveryDialogOpen(false)} className="flex-1">
+                            <Button
+                              type="button"
+                              variant="outline"
+                              onClick={() => setIsRedeliveryDialogOpen(false)}
+                              className="flex-1"
+                            >
                               Cancel
                             </Button>
-                            <Button type="submit" className="flex-1 bg-orange-500 hover:bg-orange-600">
+                            <Button
+                              type="submit"
+                              className="flex-1 bg-orange-500 hover:bg-orange-600"
+                            >
                               Schedule
                             </Button>
                           </div>
@@ -964,7 +1010,10 @@ Generated on: ${new Date().toLocaleDateString()}
                       </DialogContent>
                     </Dialog>
 
-                    <Dialog open={isReportDialogOpen} onOpenChange={setIsReportDialogOpen}>
+                    <Dialog
+                      open={isReportDialogOpen}
+                      onOpenChange={setIsReportDialogOpen}
+                    >
                       <DialogTrigger asChild>
                         <Button
                           variant="outline"
@@ -981,26 +1030,55 @@ Generated on: ${new Date().toLocaleDateString()}
                             Let us know about any problems with your shipment.
                           </DialogDescription>
                         </DialogHeader>
-                        <form onSubmit={handleReportIssue} className="space-y-4">
+                        <form
+                          onSubmit={handleReportIssue}
+                          className="space-y-4"
+                        >
                           <div className="space-y-2">
                             <Label htmlFor="issue-type">Issue Type *</Label>
-                            <Select value={reportData.issueType} onValueChange={(value) => setReportData(prev => ({ ...prev, issueType: value }))}>
+                            <Select
+                              value={reportData.issueType}
+                              onValueChange={(value) =>
+                                setReportData((prev) => ({
+                                  ...prev,
+                                  issueType: value,
+                                }))
+                              }
+                            >
                               <SelectTrigger>
                                 <SelectValue placeholder="Select issue type" />
                               </SelectTrigger>
                               <SelectContent>
-                                <SelectItem value="damaged">Package Damaged</SelectItem>
-                                <SelectItem value="missing">Package Missing/Lost</SelectItem>
-                                <SelectItem value="delayed">Delivery Delayed</SelectItem>
-                                <SelectItem value="wrong-address">Wrong Delivery Address</SelectItem>
-                                <SelectItem value="customs">Customs Issue</SelectItem>
+                                <SelectItem value="damaged">
+                                  Package Damaged
+                                </SelectItem>
+                                <SelectItem value="missing">
+                                  Package Missing/Lost
+                                </SelectItem>
+                                <SelectItem value="delayed">
+                                  Delivery Delayed
+                                </SelectItem>
+                                <SelectItem value="wrong-address">
+                                  Wrong Delivery Address
+                                </SelectItem>
+                                <SelectItem value="customs">
+                                  Customs Issue
+                                </SelectItem>
                                 <SelectItem value="other">Other</SelectItem>
                               </SelectContent>
                             </Select>
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="priority">Priority</Label>
-                            <Select value={reportData.priority} onValueChange={(value) => setReportData(prev => ({ ...prev, priority: value }))}>
+                            <Select
+                              value={reportData.priority}
+                              onValueChange={(value) =>
+                                setReportData((prev) => ({
+                                  ...prev,
+                                  priority: value,
+                                }))
+                              }
+                            >
                               <SelectTrigger>
                                 <SelectValue placeholder="Select priority" />
                               </SelectTrigger>
@@ -1019,14 +1097,27 @@ Generated on: ${new Date().toLocaleDateString()}
                               placeholder="Please describe the issue in detail..."
                               required
                               value={reportData.description}
-                              onChange={(e) => setReportData(prev => ({ ...prev, description: e.target.value }))}
+                              onChange={(e) =>
+                                setReportData((prev) => ({
+                                  ...prev,
+                                  description: e.target.value,
+                                }))
+                              }
                             />
                           </div>
                           <div className="flex gap-3">
-                            <Button type="button" variant="outline" onClick={() => setIsReportDialogOpen(false)} className="flex-1">
+                            <Button
+                              type="button"
+                              variant="outline"
+                              onClick={() => setIsReportDialogOpen(false)}
+                              className="flex-1"
+                            >
                               Cancel
                             </Button>
-                            <Button type="submit" className="flex-1 bg-red-500 hover:bg-red-600">
+                            <Button
+                              type="submit"
+                              className="flex-1 bg-red-500 hover:bg-red-600"
+                            >
                               Report Issue
                             </Button>
                           </div>

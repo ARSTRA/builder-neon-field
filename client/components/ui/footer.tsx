@@ -13,7 +13,11 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <ShipNexaLogo size="lg" variant="full" className="filter brightness-0 invert" />
+              <ShipNexaLogo
+                size="lg"
+                variant="full"
+                className="filter brightness-0 invert"
+              />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               ShipNexa.it - Your next-generation logistics partner. We deliver
