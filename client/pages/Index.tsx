@@ -159,7 +159,7 @@ export default function Index() {
       company: "Global Retail Chain",
       rating: 5,
       comment:
-        "Professional service, competitive rates, and reliable delivery times. GlobalTrack consistently exceeds our expectations and has become an integral part of our logistics strategy.",
+        "Professional service, competitive rates, and reliable delivery times. ShipNexa.it consistently exceeds our expectations and has become an integral part of our logistics strategy.",
       image:
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "2500+",
@@ -491,7 +491,7 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                Why Choose GlobalTrack Logistics?
+                Why Choose ShipNexa.it?
               </h2>
               <p className="text-xl text-gray-600 mb-8">
                 We combine cutting-edge technology with years of logistics
@@ -553,7 +553,7 @@ export default function Index() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Trusted by thousands of businesses worldwide, from startups to
               Fortune 500 companies. Here's what our satisfied customers have to
-              say about their experience with GlobalTrack.
+              say about their experience with ShipNexa.it.
             </p>
 
             {/* Customer Stats */}
@@ -740,7 +740,7 @@ export default function Index() {
                 Join Thousands of Satisfied Customers
               </h3>
               <p className="text-gray-600 mb-6">
-                Ready to experience the GlobalTrack difference? Get started with
+                Ready to experience the ShipNexa.it difference? Get started with
                 a free quote today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -790,7 +790,7 @@ export default function Index() {
               <h2 className="text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-delay">
                 Ready to Ship with
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-2">
-                  GlobalTrack?
+                  ShipNexa.it?
                 </span>
               </h2>
               <p className="text-xl lg:text-2xl mb-4 text-gray-200 animate-slide-up">
