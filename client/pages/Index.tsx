@@ -228,7 +228,7 @@ export default function Index() {
 
             {/* Tracking Form */}
             <div className="bg-white/20 backdrop-blur-md rounded-2xl p-8 mb-8 animate-slide-up shadow-2xl border border-white/10">
-              <h3 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-semibold mb-4 text-white drop-shadow-md">
                 Track Your Package
               </h3>
               <form
