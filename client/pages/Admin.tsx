@@ -929,7 +929,13 @@ export default function Admin() {
           <div className="p-6">
             {currentView === "dashboard" && renderDashboard()}
             {currentView === "users" && <UserManagement />}
+            {currentView === "payments" && <PaymentManagement />}
+            {currentView === "tracking" && <TrackingManagement />}
+            {currentView === "quotes" && <QuoteManagement />}
             {currentView === "chat" && <ChatManagement />}
+            {currentView === "contacts" && <ContactManagement />}
+            {currentView === "general" && <GeneralSettings />}
+            {currentView === "social" && <SocialMediaManagement />}
           </div>
         </div>
       </div>
