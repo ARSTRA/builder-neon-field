@@ -214,14 +214,14 @@ export default function Index() {
           <div className="max-w-4xl mx-auto text-center">
             {/* Featured Logo */}
             <div className="flex justify-center mb-8 animate-fade-in">
-              <ShipNexaLogo size="xl" variant="full" className="brightness-0 invert" />
+              <ShipNexaLogo size="xl" variant="full" className="drop-shadow-lg" />
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-delay">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-delay text-white drop-shadow-lg">
               Next-Generation Logistics
-              <span className="block text-orange-400 mt-2">For Italy & Beyond</span>
+              <span className="block text-orange-400 mt-2 drop-shadow-lg">For Italy & Beyond</span>
             </h1>
-            <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-slide-up">
+            <p className="text-xl lg:text-2xl mb-8 text-gray-100 drop-shadow-md animate-slide-up">
               Experience cutting-edge logistics technology with ShipNexa.it.
               Fast, secure, and innovative shipping solutions across Italy and worldwide.
             </p>
