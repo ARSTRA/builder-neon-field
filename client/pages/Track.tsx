@@ -520,7 +520,7 @@ Generated on: ${new Date().toLocaleDateString()}
                     <img
                       src="https://images.pexels.com/photos/257636/pexels-photo-257636.jpeg"
                       alt="Global tracking network"
-                      className="w-full h-32 object-cover rounded-xl opacity-80"
+                      className="w-full h-32 object-cover rounded-xl opacity-90 transition-transform duration-300 hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-600/50 to-transparent rounded-xl"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
