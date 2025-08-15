@@ -2,28 +2,27 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Globe, Shield } from "lucide-react";
 import { Logo, LogoMark } from "./logo";
 import { SimpleSocialFooter } from "./simple-social-footer";
+import ShipNexaLogo from "./shipnexa-logo";
 
 export function Footer() {
   return (
-    <footer className="bg-royal-900 text-white">
+    <footer className="bg-shipblue-900 text-white">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center mb-6">
-              <LogoMark size="sm" className="text-white mr-3" />
-              <div>
-                <span className="text-xl font-bold text-white">
-                  GlobalTrack
-                </span>
-                <span className="text-lg text-orange-500 ml-1">Logistics</span>
-              </div>
+            <div className="mb-6">
+              <ShipNexaLogo
+                size="lg"
+                variant="full"
+                className="filter brightness-0 invert"
+              />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Your trusted partner for global shipping solutions. We provide
-              fast, secure, and reliable logistics services worldwide with
-              real-time tracking.
+              ShipNexa.it - Your next-generation logistics partner. We deliver
+              innovative, fast, and secure shipping solutions across Italy and
+              worldwide with advanced real-time tracking technology.
             </p>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
@@ -121,7 +120,7 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 GlobalTrack Logistics. All rights reserved.
+              © 2024 ShipNexa.it. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <Link

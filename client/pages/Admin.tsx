@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ShipNexaLogo from "@/components/ui/shipnexa-logo";
 import {
   LayoutDashboard,
   Users,
@@ -844,15 +845,8 @@ export default function Admin() {
               </button>
 
               <div className="flex items-center space-x-2 ml-4 lg:ml-0">
-                <div className="w-8 h-8 bg-gradient-to-r from-royal-600 to-orange-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">GT</span>
-                </div>
-                <div>
-                  <span className="text-xl font-bold text-royal-600">
-                    GlobalTrack
-                  </span>
-                  <span className="text-lg text-orange-500 ml-1">Admin</span>
-                </div>
+                <ShipNexaLogo size="md" variant="full" />
+                <span className="text-lg text-orange-500 ml-1">Admin</span>
               </div>
             </div>
 

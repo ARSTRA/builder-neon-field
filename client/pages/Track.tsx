@@ -102,7 +102,7 @@ export default function Track() {
     progress: 65,
     carrier: "GlobalTrack Express",
     packageImage:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/6754998/pexels-photo-6754998.jpeg",
     coordinates: { lat: 34.0522, lng: -118.2437 },
     events: [
       {
@@ -250,7 +250,7 @@ Generated on: ${new Date().toLocaleDateString()}
     }
 
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
       title: "Redelivery Scheduled",
@@ -273,11 +273,12 @@ Generated on: ${new Date().toLocaleDateString()}
     }
 
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
       title: "Issue Reported",
-      description: "Your issue has been reported. Our support team will contact you within 24 hours.",
+      description:
+        "Your issue has been reported. Our support team will contact you within 24 hours.",
     });
 
     setIsReportDialogOpen(false);
@@ -299,8 +300,8 @@ Generated on: ${new Date().toLocaleDateString()}
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-royal-600 to-royal-800 text-white py-12 lg:py-16">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
+      <section className="relative bg-gradient-to-r from-shipblue-600 to-shipblue-800 text-white py-12 lg:py-16">
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1996989/pexels-photo-1996989.jpeg')] bg-cover bg-center opacity-30"></div>
         <div className="relative container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl lg:text-5xl font-bold mb-4 lg:mb-6">
@@ -318,7 +319,7 @@ Generated on: ${new Date().toLocaleDateString()}
                     <div className="relative flex-1">
                       <Input
                         type="text"
-                        placeholder="Enter your tracking number (e.g., GT123456789)"
+                        placeholder="Enter your tracking number (e.g., SN123456789)"
                         value={trackingId}
                         onChange={(e) => setTrackingId(e.target.value)}
                         className="bg-white text-gray-800 placeholder:text-gray-500 text-base lg:text-lg py-4 lg:py-6 pl-12 border-0 shadow-lg rounded-xl"
@@ -369,11 +370,11 @@ Generated on: ${new Date().toLocaleDateString()}
               {/* Image Side */}
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80"
+                  src="https://images.pexels.com/photos/3582491/pexels-photo-3582491.jpeg"
                   alt="GPS tracking technology"
-                  className="w-full h-80 object-cover rounded-2xl shadow-2xl"
+                  className="w-full h-80 object-cover rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-royal-600/20 to-orange-500/20 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/30 to-orange-500/20 rounded-2xl"></div>
                 <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -453,13 +454,13 @@ Generated on: ${new Date().toLocaleDateString()}
                   delivery.
                 </p>
 
-                <div className="bg-gradient-to-r from-royal-50 to-orange-50 rounded-xl p-6">
+                <div className="bg-gradient-to-r from-shipblue-50 to-orange-50 rounded-xl p-6">
                   <h4 className="font-semibold text-gray-800 mb-4">
                     Smart Delivery Predictions
                   </h4>
                   <div className="grid md:grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-royal-600">
+                      <div className="text-2xl font-bold text-shipblue-600">
                         99.2%
                       </div>
                       <div className="text-sm text-gray-600">Accuracy Rate</div>
@@ -473,7 +474,7 @@ Generated on: ${new Date().toLocaleDateString()}
                       </div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-royal-600">
+                      <div className="text-2xl font-bold text-shipblue-600">
                         98.7%
                       </div>
                       <div className="text-sm text-gray-600">
@@ -487,11 +488,11 @@ Generated on: ${new Date().toLocaleDateString()}
               {/* Image Side */}
               <div className="relative lg:order-1">
                 <img
-                  src="https://images.unsplash.com/photo-1559223607-a43c990c692c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  src="https://images.pexels.com/photos/6754998/pexels-photo-6754998.jpeg"
                   alt="AI logistics technology"
-                  className="w-full h-80 object-cover rounded-2xl shadow-2xl"
+                  className="w-full h-80 object-cover rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-500/20 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/30 to-orange-500/20 rounded-2xl"></div>
                 <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl">
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
@@ -518,9 +519,9 @@ Generated on: ${new Date().toLocaleDateString()}
                 <CardContent className="p-8 text-center">
                   <div className="relative mb-6">
                     <img
-                      src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      src="https://images.pexels.com/photos/257636/pexels-photo-257636.jpeg"
                       alt="Global tracking network"
-                      className="w-full h-32 object-cover rounded-xl opacity-80"
+                      className="w-full h-32 object-cover rounded-xl opacity-90 transition-transform duration-300 hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-600/50 to-transparent rounded-xl"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -544,7 +545,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 <CardContent className="p-8 text-center">
                   <div className="relative mb-6">
                     <img
-                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      src="https://images.pexels.com/photos/7706382/pexels-photo-7706382.jpeg"
                       alt="Real-time analytics"
                       className="w-full h-32 object-cover rounded-xl opacity-80"
                     />
@@ -570,7 +571,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 <CardContent className="p-8 text-center">
                   <div className="relative mb-6">
                     <img
-                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      src="https://images.pexels.com/photos/8849295/pexels-photo-8849295.jpeg"
                       alt="Advanced analytics"
                       className="w-full h-32 object-cover rounded-xl opacity-80"
                     />
@@ -595,7 +596,7 @@ Generated on: ${new Date().toLocaleDateString()}
             </div>
 
             {/* Advanced Features Section */}
-            <div className="mt-16 bg-gradient-to-r from-royal-50 to-orange-50 rounded-3xl p-8 lg:p-12">
+            <div className="mt-16 bg-gradient-to-r from-shipblue-50 to-orange-50 rounded-3xl p-8 lg:p-12">
               <div className="text-center mb-10">
                 <h3 className="text-3xl font-bold text-gray-800 mb-4">
                   Advanced Tracking Features
@@ -609,7 +610,7 @@ Generated on: ${new Date().toLocaleDateString()}
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Package className="h-8 w-8 text-royal-600" />
+                    <Package className="h-8 w-8 text-shipblue-600" />
                   </div>
                   <h4 className="font-semibold text-gray-800 mb-2">
                     Package Insights
@@ -621,7 +622,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <MessageCircle className="h-8 w-8 text-royal-600" />
+                    <MessageCircle className="h-8 w-8 text-shipblue-600" />
                   </div>
                   <h4 className="font-semibold text-gray-800 mb-2">
                     Smart Notifications
@@ -632,7 +633,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Calendar className="h-8 w-8 text-royal-600" />
+                    <Calendar className="h-8 w-8 text-shipblue-600" />
                   </div>
                   <h4 className="font-semibold text-gray-800 mb-2">
                     Delivery Scheduling
@@ -643,7 +644,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Download className="h-8 w-8 text-royal-600" />
+                    <Download className="h-8 w-8 text-shipblue-600" />
                   </div>
                   <h4 className="font-semibold text-gray-800 mb-2">
                     Digital Documentation
@@ -830,7 +831,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 <Card className="shadow-xl border-0">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-xl">
-                      <MapPin className="h-6 w-6 text-royal-600" />
+                      <MapPin className="h-6 w-6 text-shipblue-600" />
                       Live Location
                     </CardTitle>
                   </CardHeader>
@@ -838,13 +839,13 @@ Generated on: ${new Date().toLocaleDateString()}
                     {/* Enhanced Mock Map */}
                     <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 h-64 rounded-xl overflow-hidden">
                       <img
-                        src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        src="https://images.pexels.com/photos/1996989/pexels-photo-1996989.jpeg"
                         alt="Map view"
                         className="w-full h-full object-cover opacity-40"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg">
-                          <div className="w-12 h-12 bg-royal-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <div className="w-12 h-12 bg-shipblue-600 rounded-full flex items-center justify-center mx-auto mb-3">
                             <MapPin className="h-6 w-6 text-white" />
                           </div>
                           <p className="font-semibold text-gray-800">
@@ -894,13 +895,16 @@ Generated on: ${new Date().toLocaleDateString()}
                     <Button
                       variant="outline"
                       onClick={handleDownloadReceipt}
-                      className="w-full justify-start hover:bg-royal-50 hover:border-royal-300 transition-all duration-200"
+                      className="w-full justify-start hover:bg-shipblue-50 hover:border-shipblue-300 transition-all duration-200"
                     >
                       <Download className="h-4 w-4 mr-3" />
                       Download Receipt
                     </Button>
 
-                    <Dialog open={isRedeliveryDialogOpen} onOpenChange={setIsRedeliveryDialogOpen}>
+                    <Dialog
+                      open={isRedeliveryDialogOpen}
+                      onOpenChange={setIsRedeliveryDialogOpen}
+                    >
                       <DialogTrigger asChild>
                         <Button
                           variant="outline"
@@ -914,49 +918,91 @@ Generated on: ${new Date().toLocaleDateString()}
                         <DialogHeader>
                           <DialogTitle>Schedule Redelivery</DialogTitle>
                           <DialogDescription>
-                            Choose a new delivery date and time that works for you.
+                            Choose a new delivery date and time that works for
+                            you.
                           </DialogDescription>
                         </DialogHeader>
-                        <form onSubmit={handleScheduleRedelivery} className="space-y-4">
+                        <form
+                          onSubmit={handleScheduleRedelivery}
+                          className="space-y-4"
+                        >
                           <div className="space-y-2">
-                            <Label htmlFor="redelivery-date">Preferred Date *</Label>
+                            <Label htmlFor="redelivery-date">
+                              Preferred Date *
+                            </Label>
                             <Input
                               id="redelivery-date"
                               type="date"
                               required
-                              min={new Date().toISOString().split('T')[0]}
+                              min={new Date().toISOString().split("T")[0]}
                               value={redeliveryData.date}
-                              onChange={(e) => setRedeliveryData(prev => ({ ...prev, date: e.target.value }))}
+                              onChange={(e) =>
+                                setRedeliveryData((prev) => ({
+                                  ...prev,
+                                  date: e.target.value,
+                                }))
+                              }
                             />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="time-slot">Time Slot *</Label>
-                            <Select value={redeliveryData.timeSlot} onValueChange={(value) => setRedeliveryData(prev => ({ ...prev, timeSlot: value }))}>
+                            <Select
+                              value={redeliveryData.timeSlot}
+                              onValueChange={(value) =>
+                                setRedeliveryData((prev) => ({
+                                  ...prev,
+                                  timeSlot: value,
+                                }))
+                              }
+                            >
                               <SelectTrigger>
                                 <SelectValue placeholder="Select time slot" />
                               </SelectTrigger>
                               <SelectContent>
-                                <SelectItem value="9am-12pm">9:00 AM - 12:00 PM</SelectItem>
-                                <SelectItem value="12pm-3pm">12:00 PM - 3:00 PM</SelectItem>
-                                <SelectItem value="3pm-6pm">3:00 PM - 6:00 PM</SelectItem>
-                                <SelectItem value="6pm-9pm">6:00 PM - 9:00 PM</SelectItem>
+                                <SelectItem value="9am-12pm">
+                                  9:00 AM - 12:00 PM
+                                </SelectItem>
+                                <SelectItem value="12pm-3pm">
+                                  12:00 PM - 3:00 PM
+                                </SelectItem>
+                                <SelectItem value="3pm-6pm">
+                                  3:00 PM - 6:00 PM
+                                </SelectItem>
+                                <SelectItem value="6pm-9pm">
+                                  6:00 PM - 9:00 PM
+                                </SelectItem>
                               </SelectContent>
                             </Select>
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="instructions">Special Instructions</Label>
+                            <Label htmlFor="instructions">
+                              Special Instructions
+                            </Label>
                             <Textarea
                               id="instructions"
                               placeholder="Any special delivery instructions..."
                               value={redeliveryData.instructions}
-                              onChange={(e) => setRedeliveryData(prev => ({ ...prev, instructions: e.target.value }))}
+                              onChange={(e) =>
+                                setRedeliveryData((prev) => ({
+                                  ...prev,
+                                  instructions: e.target.value,
+                                }))
+                              }
                             />
                           </div>
                           <div className="flex gap-3">
-                            <Button type="button" variant="outline" onClick={() => setIsRedeliveryDialogOpen(false)} className="flex-1">
+                            <Button
+                              type="button"
+                              variant="outline"
+                              onClick={() => setIsRedeliveryDialogOpen(false)}
+                              className="flex-1"
+                            >
                               Cancel
                             </Button>
-                            <Button type="submit" className="flex-1 bg-orange-500 hover:bg-orange-600">
+                            <Button
+                              type="submit"
+                              className="flex-1 bg-orange-500 hover:bg-orange-600"
+                            >
                               Schedule
                             </Button>
                           </div>
@@ -964,7 +1010,10 @@ Generated on: ${new Date().toLocaleDateString()}
                       </DialogContent>
                     </Dialog>
 
-                    <Dialog open={isReportDialogOpen} onOpenChange={setIsReportDialogOpen}>
+                    <Dialog
+                      open={isReportDialogOpen}
+                      onOpenChange={setIsReportDialogOpen}
+                    >
                       <DialogTrigger asChild>
                         <Button
                           variant="outline"
@@ -981,26 +1030,55 @@ Generated on: ${new Date().toLocaleDateString()}
                             Let us know about any problems with your shipment.
                           </DialogDescription>
                         </DialogHeader>
-                        <form onSubmit={handleReportIssue} className="space-y-4">
+                        <form
+                          onSubmit={handleReportIssue}
+                          className="space-y-4"
+                        >
                           <div className="space-y-2">
                             <Label htmlFor="issue-type">Issue Type *</Label>
-                            <Select value={reportData.issueType} onValueChange={(value) => setReportData(prev => ({ ...prev, issueType: value }))}>
+                            <Select
+                              value={reportData.issueType}
+                              onValueChange={(value) =>
+                                setReportData((prev) => ({
+                                  ...prev,
+                                  issueType: value,
+                                }))
+                              }
+                            >
                               <SelectTrigger>
                                 <SelectValue placeholder="Select issue type" />
                               </SelectTrigger>
                               <SelectContent>
-                                <SelectItem value="damaged">Package Damaged</SelectItem>
-                                <SelectItem value="missing">Package Missing/Lost</SelectItem>
-                                <SelectItem value="delayed">Delivery Delayed</SelectItem>
-                                <SelectItem value="wrong-address">Wrong Delivery Address</SelectItem>
-                                <SelectItem value="customs">Customs Issue</SelectItem>
+                                <SelectItem value="damaged">
+                                  Package Damaged
+                                </SelectItem>
+                                <SelectItem value="missing">
+                                  Package Missing/Lost
+                                </SelectItem>
+                                <SelectItem value="delayed">
+                                  Delivery Delayed
+                                </SelectItem>
+                                <SelectItem value="wrong-address">
+                                  Wrong Delivery Address
+                                </SelectItem>
+                                <SelectItem value="customs">
+                                  Customs Issue
+                                </SelectItem>
                                 <SelectItem value="other">Other</SelectItem>
                               </SelectContent>
                             </Select>
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="priority">Priority</Label>
-                            <Select value={reportData.priority} onValueChange={(value) => setReportData(prev => ({ ...prev, priority: value }))}>
+                            <Select
+                              value={reportData.priority}
+                              onValueChange={(value) =>
+                                setReportData((prev) => ({
+                                  ...prev,
+                                  priority: value,
+                                }))
+                              }
+                            >
                               <SelectTrigger>
                                 <SelectValue placeholder="Select priority" />
                               </SelectTrigger>
@@ -1019,14 +1097,27 @@ Generated on: ${new Date().toLocaleDateString()}
                               placeholder="Please describe the issue in detail..."
                               required
                               value={reportData.description}
-                              onChange={(e) => setReportData(prev => ({ ...prev, description: e.target.value }))}
+                              onChange={(e) =>
+                                setReportData((prev) => ({
+                                  ...prev,
+                                  description: e.target.value,
+                                }))
+                              }
                             />
                           </div>
                           <div className="flex gap-3">
-                            <Button type="button" variant="outline" onClick={() => setIsReportDialogOpen(false)} className="flex-1">
+                            <Button
+                              type="button"
+                              variant="outline"
+                              onClick={() => setIsReportDialogOpen(false)}
+                              className="flex-1"
+                            >
                               Cancel
                             </Button>
-                            <Button type="submit" className="flex-1 bg-red-500 hover:bg-red-600">
+                            <Button
+                              type="submit"
+                              className="flex-1 bg-red-500 hover:bg-red-600"
+                            >
                               Report Issue
                             </Button>
                           </div>
@@ -1037,7 +1128,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 </Card>
 
                 {/* Support */}
-                <Card className="shadow-xl border-0 bg-gradient-to-br from-royal-600 to-royal-700 text-white">
+                <Card className="shadow-xl border-0 bg-gradient-to-br from-shipblue-600 to-shipblue-700 text-white">
                   <CardHeader>
                     <CardTitle className="text-xl text-white">
                       Need Help?
@@ -1070,10 +1161,10 @@ Generated on: ${new Date().toLocaleDateString()}
         {/* Help Section */}
         {!packageData && !loading && (
           <div className="max-w-4xl mx-auto">
-            <Card className="shadow-xl border-0 bg-gradient-to-br from-royal-50 to-orange-50">
+            <Card className="shadow-xl border-0 bg-gradient-to-br from-shipblue-50 to-orange-50">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-royal-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Package className="h-8 w-8 text-royal-600" />
+                <div className="w-16 h-16 bg-shipblue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Package className="h-8 w-8 text-shipblue-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">
                   Need Help Finding Your Package?
@@ -1087,7 +1178,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button
                     onClick={() => window.open("tel:+15551234567", "_self")}
-                    className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <Phone className="mr-2 h-5 w-5" />
                     Call Support
@@ -1095,7 +1186,7 @@ Generated on: ${new Date().toLocaleDateString()}
                   <Button
                     variant="outline"
                     onClick={() => (window.location.href = "/contact")}
-                    className="border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white px-8 py-3 font-semibold transition-all duration-300"
+                    className="border-2 border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white px-8 py-3 font-semibold transition-all duration-300"
                   >
                     <MessageCircle className="mr-2 h-5 w-5" />
                     Live Chat

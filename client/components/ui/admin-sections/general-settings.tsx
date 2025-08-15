@@ -49,11 +49,11 @@ export function GeneralSettings() {
   // Sample settings data
   const [settings, setSettings] = useState({
     general: {
-      siteName: "GlobalTrack Logistics",
+      siteName: "ShipNexa.it",
       siteDescription:
-        "Professional shipping and logistics solutions worldwide",
-      contactEmail: "info@globaltrack.com",
-      supportPhone: "+1 (555) 123-4567",
+        "Next-generation shipping and logistics solutions for Italy and worldwide",
+      contactEmail: "info@shipnexa.it",
+      supportPhone: "+39 02 1234 5678",
       timezone: "UTC-5",
       language: "en",
       currency: "USD",

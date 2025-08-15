@@ -4,6 +4,7 @@ import { Button } from "./button";
 import { useState } from "react";
 import { GetQuoteModal } from "./get-quote-modal";
 import { Logo, LogoMark } from "./logo";
+import ShipNexaLogo from "./shipnexa-logo";
 
 export function Navigation() {
   const location = useLocation();
@@ -25,17 +26,11 @@ export function Navigation() {
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex justify-between items-center py-3 lg:py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <LogoMark
-              size="sm"
-              className="transition-transform hover:scale-105 mr-3"
-            />
-            <div>
-              <span className="text-xl font-bold text-royal-600">
-                GlobalTrack
-              </span>
-              <span className="text-lg text-orange-500 ml-1">Logistics</span>
-            </div>
+          <Link
+            to="/"
+            className="flex items-center transition-transform hover:scale-105"
+          >
+            <ShipNexaLogo size="lg" variant="full" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -44,20 +39,29 @@ export function Navigation() {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`font-medium text-sm xl:text-base transition-all duration-200 hover:text-royal-600 py-2 ${
+                className={`font-medium text-sm xl:text-base transition-all duration-200 hover:text-shipblue-600 py-2 ${
                   location.pathname === item.href
-                    ? "text-royal-600 border-b-2 border-royal-600"
-                    : "text-gray-700 hover:text-royal-600"
+                    ? "text-shipblue-600 border-b-2 border-shipblue-600"
+                    : "text-gray-700 hover:text-shipblue-600"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
             <div className="flex items-center space-x-3 ml-6">
+              <Link to="/auth">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white transition-all duration-300 px-6"
+                >
+                  Login
+                </Button>
+              </Link>
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
                 size="sm"
-                className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white shadow-md hover:shadow-lg transition-all duration-300 px-6"
+                className="bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white shadow-md hover:shadow-lg transition-all duration-300 px-6"
               >
                 Get Quote
               </Button>
@@ -105,12 +109,20 @@ export function Navigation() {
               ))}
             </div>
             <div className="space-y-3 mt-6 px-4">
+              <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
+                <Button
+                  variant="outline"
+                  className="w-full border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white transition-all duration-300 py-4 touch-manipulation"
+                >
+                  Login / Sign Up
+                </Button>
+              </Link>
               <Button
                 onClick={() => {
                   setIsQuoteModalOpen(true);
                   setIsMenuOpen(false);
                 }}
-                className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white shadow-md py-4 touch-manipulation"
+                className="w-full bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white shadow-md py-4 touch-manipulation"
               >
                 Get Quote
               </Button>

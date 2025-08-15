@@ -197,9 +197,9 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-royal-600 via-royal-700 to-royal-800 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-shipblue-800 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-royal-600/85 via-royal-700/80 to-royal-800/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/85 via-shipblue-700/80 to-shipblue-800/85"></div>
         <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
@@ -267,7 +267,7 @@ export default function Services() {
               <Link to="/contact">
                 <Button
                   variant="outline"
-                  className="group border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-[1.02] rounded-xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/20"
+                  className="group border-3 border-white/80 text-white hover:bg-white hover:text-shipblue-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-[1.02] rounded-xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/20"
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Talk to Expert
@@ -279,25 +279,26 @@ export default function Services() {
       </section>
 
       {/* Expert Consultation Section */}
-      <section className="relative py-20 bg-gradient-to-r from-royal-600 to-royal-800 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center opacity-30"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-royal-600/90 to-royal-800/90"></div>
+      <section className="relative py-24 bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-ocean-800 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/7979597/pexels-photo-7979597.jpeg')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-shipblue-800/85 to-ocean-900/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
 
         <div className="relative container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <div className="max-w-5xl mx-auto text-center text-white">
+            <h2 className="text-4xl lg:text-6xl font-bold mb-8 drop-shadow-lg">
               Need Expert Logistics Guidance?
             </h2>
-            <p className="text-xl lg:text-2xl mb-8 text-gray-200 leading-relaxed">
+            <p className="text-xl lg:text-2xl mb-12 text-gray-100 leading-relaxed drop-shadow-md">
               Our certified logistics professionals bring decades of experience
               in international shipping, customs regulations, and supply chain
               optimization. Get personalized recommendations tailored to your
               specific shipping requirements.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <Shield className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white/15 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <Shield className="h-14 w-14 text-orange-400 mx-auto mb-6 drop-shadow-lg" />
                 <h3 className="text-xl font-semibold mb-2">
                   Certified Experts
                 </h3>
@@ -306,43 +307,47 @@ export default function Services() {
                   certifications
                 </p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <Clock className="h-12 w-12 text-orange-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
+              <div className="bg-white/15 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <Clock className="h-14 w-14 text-orange-400 mx-auto mb-6 drop-shadow-lg" />
+                <h3 className="text-xl font-semibold mb-3 drop-shadow-sm">
+                  24/7 Support
+                </h3>
                 <p className="text-gray-200">
                   Round-the-clock assistance for urgent shipping needs
                 </p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <Globe className="h-12 w-12 text-orange-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Global Network</h3>
+              <div className="bg-white/15 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <Globe className="h-14 w-14 text-orange-400 mx-auto mb-6 drop-shadow-lg" />
+                <h3 className="text-xl font-semibold mb-3 drop-shadow-sm">
+                  Global Network
+                </h3>
                 <p className="text-gray-200">
                   Direct partnerships with carriers in 120+ countries
                 </p>
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">
+            <div className="bg-white/20 backdrop-blur-lg rounded-3xl p-10 max-w-3xl mx-auto border border-white/30 shadow-2xl">
+              <h3 className="text-3xl font-bold mb-6 drop-shadow-md">
                 Speak with a Logistics Expert Now
               </h3>
-              <p className="text-gray-200 mb-6">
+              <p className="text-gray-100 mb-8 text-lg drop-shadow-sm">
                 Get instant answers to your shipping questions and personalized
-                solution recommendations
+                solution recommendations from our certified logistics experts.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  onClick={() => window.open("tel:+15551234567", "_self")}
+                  onClick={() => window.open("tel:+390212345678", "_self")}
                   className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-[1.02] rounded-2xl relative overflow-hidden"
                 >
                   <Phone className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
-                  Call Expert: +1 (555) 123-4567
+                  Call Expert: +39 02 1234 5678
                 </Button>
                 <Link to="/contact">
                   <Button
                     variant="outline"
-                    className="group relative border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25"
+                    className="group relative border-3 border-white/80 text-white hover:bg-white hover:text-shipblue-600 px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25"
                   >
                     <MessageCircle className="mr-3 h-6 w-6 group-hover:bounce transition-transform duration-300" />
                     Contact Support
@@ -470,7 +475,7 @@ export default function Services() {
                         <Link to="/contact">
                           <Button
                             variant="outline"
-                            className="group border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-[1.02] rounded-xl py-4 font-semibold px-6"
+                            className="group border-2 border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-[1.02] rounded-xl py-4 font-semibold px-6"
                           >
                             <MessageCircle className="h-5 w-5 mr-2" />
                             Contact Expert
@@ -525,7 +530,7 @@ export default function Services() {
                     <Button
                       onClick={() => setIsQuoteModalOpen(true)}
                       variant="outline"
-                      className="group flex-1 border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] rounded-lg"
+                      className="group flex-1 border-2 border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] rounded-lg"
                     >
                       Get Quote
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
@@ -533,7 +538,7 @@ export default function Services() {
                     <Link to="/contact">
                       <Button
                         variant="outline"
-                        className="group border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] rounded-lg px-4"
+                        className="group border-2 border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] rounded-lg px-4"
                       >
                         <MessageCircle className="h-4 w-4" />
                       </Button>
@@ -565,7 +570,7 @@ export default function Services() {
                 className="p-6 hover:shadow-lg transition-shadow duration-300 border-0 bg-white"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="p-2 bg-royal-100 rounded-lg">
+                  <div className="p-2 bg-shipblue-100 rounded-lg">
                     {service.icon}
                   </div>
                   <div>
@@ -584,7 +589,7 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-royal-600 via-royal-700 to-orange-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-shipblue-600 via-shipblue-700 to-orange-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Ready to Ship with GlobalTrack?
@@ -605,7 +610,7 @@ export default function Services() {
             <Link to="/contact" className="flex-1">
               <Button
                 variant="outline"
-                className="group w-full border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-white/20 transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5"
+                className="group w-full border-3 border-white/80 text-white hover:bg-white hover:text-shipblue-600 px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-white/20 transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5"
               >
                 <MessageCircle className="mr-3 h-6 w-6 group-hover:bounce transition-transform duration-300" />
                 Contact Support

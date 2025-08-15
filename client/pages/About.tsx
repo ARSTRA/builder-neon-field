@@ -150,7 +150,7 @@ export default function About() {
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
-              About <span className="text-orange-400">GlobalTrack</span>
+              About <span className="text-orange-400">ShipNexa.it</span>
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-fade-in-delay max-w-3xl mx-auto leading-relaxed">
               Pioneering the future of global logistics with innovation,
@@ -198,7 +198,7 @@ export default function About() {
               <div className="relative">
                 <OptimizedImage
                   src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80"
-                  alt="GlobalTrack team and operations"
+                  alt="ShipNexa.it team and operations"
                   className="w-full h-96 rounded-2xl shadow-2xl"
                   {...ImagePresets.hero}
                 />
@@ -226,7 +226,7 @@ export default function About() {
                   network spanning 120+ countries.
                 </p>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Today, GlobalTrack Logistics stands as a testament to what's
+                  Today, ShipNexa.it Logistics stands as a testament to what's
                   possible when passion meets purpose. We've successfully
                   delivered over 50,000 shipments, built lasting partnerships
                   with businesses worldwide, and consistently maintained a 99.8%
@@ -318,7 +318,7 @@ export default function About() {
                 Our Journey
               </h2>
               <p className="text-xl text-gray-600">
-                Key milestones that shaped GlobalTrack Logistics into who we are
+                Key milestones that shaped ShipNexa.it Logistics into who we are
                 today
               </p>
             </div>
@@ -430,37 +430,52 @@ export default function About() {
       </section>
 
       {/* Global Presence Section */}
-      <section className="relative py-20 bg-gradient-to-r from-royal-600 to-royal-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center opacity-20"></div>
+      <section className="relative py-24 bg-gradient-to-br from-shipblue-700 via-shipblue-800 to-ocean-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/9716364/pexels-photo-9716364.jpeg')] bg-cover bg-center opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-shipblue-900/80 via-shipblue-800/70 to-ocean-900/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
         <div className="relative container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-4xl lg:text-6xl font-bold mb-8 drop-shadow-lg">
               Global Presence, Local Expertise
             </h2>
-            <p className="text-xl text-gray-200 mb-12 leading-relaxed">
-              With offices and partners across six continents, we bring local
-              knowledge and global capabilities to every shipment.
+            <p className="text-xl lg:text-2xl text-gray-100 mb-16 leading-relaxed drop-shadow-md max-w-4xl mx-auto">
+              ShipNexa.it combines Italian excellence with worldwide reach. Our
+              network spans six continents, delivering local expertise and
+              global capabilities to every shipment across the world.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
-                <MapPin className="h-12 w-12 text-orange-400 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-2">120+ Countries</h3>
-                <p className="text-gray-200">Worldwide coverage</p>
+            <div className="grid md:grid-cols-3 gap-10 mb-16">
+              <div className="bg-white/15 backdrop-blur-md rounded-2xl p-10 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl group">
+                <MapPin className="h-16 w-16 text-orange-400 mx-auto mb-6 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-3xl font-bold mb-3 drop-shadow-sm">
+                  120+ Countries
+                </h3>
+                <p className="text-gray-100 text-lg drop-shadow-sm">
+                  Worldwide coverage
+                </p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
-                <Users className="h-12 w-12 text-orange-400 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-2">500+ Employees</h3>
-                <p className="text-gray-200">Global workforce</p>
+              <div className="bg-white/15 backdrop-blur-md rounded-2xl p-10 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl group">
+                <Users className="h-16 w-16 text-orange-400 mx-auto mb-6 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-3xl font-bold mb-3 drop-shadow-sm">
+                  500+ Employees
+                </h3>
+                <p className="text-gray-100 text-lg drop-shadow-sm">
+                  Global workforce
+                </p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
-                <Award className="h-12 w-12 text-orange-400 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-2">25+ Awards</h3>
-                <p className="text-gray-200">Industry recognition</p>
+              <div className="bg-white/15 backdrop-blur-md rounded-2xl p-10 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl group">
+                <Award className="h-16 w-16 text-orange-400 mx-auto mb-6 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-3xl font-bold mb-3 drop-shadow-sm">
+                  25+ Awards
+                </h3>
+                <p className="text-gray-100 text-lg drop-shadow-sm">
+                  Industry recognition
+                </p>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-8 justify-center">
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
                 className="group bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 hover:from-orange-600 hover:via-orange-700 hover:to-orange-600 text-white px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105 rounded-2xl relative overflow-hidden"
@@ -472,7 +487,7 @@ export default function About() {
               <Link to="/contact">
                 <Button
                   variant="outline"
-                  className="group border-3 border-white/90 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 relative overflow-hidden"
+                  className="group border-3 border-white/90 text-white hover:bg-white hover:text-shipblue-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
                   <MapPin className="mr-3 h-6 w-6 group-hover:animate-pulse relative z-10" />
@@ -495,7 +510,7 @@ export default function About() {
               Ready to Partner with Us?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Experience the GlobalTrack difference. Let's discuss how we can
+              Experience the ShipNexa.it difference. Let's discuss how we can
               optimize your logistics needs.
             </p>
 
@@ -534,8 +549,8 @@ export default function About() {
                   Share our story with others
                 </p>
                 <SocialMediaShare
-                  title="About GlobalTrack Logistics - Professional Shipping Solutions"
-                  description="Learn about GlobalTrack Logistics, a leading provider of worldwide shipping and logistics solutions with over 15 years of experience."
+                  title="About ShipNexa.it Logistics - Professional Shipping Solutions"
+                  description="Learn about ShipNexa.it Logistics, a leading provider of worldwide shipping and logistics solutions with over 15 years of experience."
                   hashtags={["logistics", "shipping", "globaltrack", "aboutus"]}
                   showText={true}
                   style="icons"

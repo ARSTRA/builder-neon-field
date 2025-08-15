@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Logo } from "@/components/ui/logo";
+import ShipNexaLogo from "@/components/ui/shipnexa-logo";
 import { GetQuoteModal } from "@/components/ui/get-quote-modal";
 import { FloatingSocialBar } from "@/components/ui/floating-social-bar";
 import { useToast } from "@/hooks/use-toast";
@@ -61,7 +62,7 @@ export default function Index() {
 
   const shippingServices = [
     {
-      icon: <Plane className="h-12 w-12 text-royal-600" />,
+      icon: <Plane className="h-12 w-12 text-shipblue-600" />,
       title: "Air Freight",
       description:
         "Fast and reliable air cargo services worldwide with real-time tracking.",
@@ -72,7 +73,7 @@ export default function Index() {
       ],
     },
     {
-      icon: <Ship className="h-12 w-12 text-royal-600" />,
+      icon: <Ship className="h-12 w-12 text-shipblue-600" />,
       title: "Ocean Freight",
       description:
         "Cost-effective sea shipping for bulk cargo and container shipments.",
@@ -83,7 +84,7 @@ export default function Index() {
       ],
     },
     {
-      icon: <Truck className="h-12 w-12 text-royal-600" />,
+      icon: <Truck className="h-12 w-12 text-shipblue-600" />,
       title: "Ground Transport",
       description:
         "Domestic and cross-border trucking with door-to-door delivery.",
@@ -94,7 +95,7 @@ export default function Index() {
       ],
     },
     {
-      icon: <Package className="h-12 w-12 text-royal-600" />,
+      icon: <Package className="h-12 w-12 text-shipblue-600" />,
       title: "Express Delivery",
       description:
         "Urgent shipments with guaranteed delivery times and priority handling.",
@@ -134,7 +135,7 @@ export default function Index() {
       company: "Tech Solutions Inc.",
       rating: 5,
       comment:
-        "GlobalTrack has been our trusted shipping partner for over 3 years. Their tracking system is incredibly accurate and customer service is outstanding. The team goes above and beyond to ensure our shipments arrive on time.",
+        "ShipNexa.it has been our trusted shipping partner for over 3 years. Their tracking system is incredibly accurate and customer service is outstanding. The team goes above and beyond to ensure our shipments arrive on time.",
       image:
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "500+",
@@ -158,7 +159,7 @@ export default function Index() {
       company: "Global Retail Chain",
       rating: 5,
       comment:
-        "Professional service, competitive rates, and reliable delivery times. GlobalTrack consistently exceeds our expectations and has become an integral part of our logistics strategy.",
+        "Professional service, competitive rates, and reliable delivery times. ShipNexa.it consistently exceeds our expectations and has become an integral part of our logistics strategy.",
       image:
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "2500+",
@@ -170,7 +171,7 @@ export default function Index() {
       company: "Manufacturing Corp",
       rating: 5,
       comment:
-        "Outstanding service and support. The team at GlobalTrack understands our unique needs and always delivers solutions that work. Their expertise in international shipping is unmatched.",
+        "Outstanding service and support. The team at ShipNexa.it understands our unique needs and always delivers solutions that work. Their expertise in international shipping is unmatched.",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "800+",
@@ -182,7 +183,7 @@ export default function Index() {
       company: "E-commerce Solutions",
       rating: 5,
       comment:
-        "GlobalTrack's technology platform and customer service are exceptional. They've helped us streamline our shipping process and reduce costs significantly while improving delivery times.",
+        "ShipNexa.it's technology platform and customer service are exceptional. They've helped us streamline our shipping process and reduce costs significantly while improving delivery times.",
       image:
         "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "1800+",
@@ -194,7 +195,7 @@ export default function Index() {
       company: "Industrial Equipment Co.",
       rating: 5,
       comment:
-        "Reliable, professional, and cost-effective. GlobalTrack has been instrumental in helping us expand our international presence. Their expertise in heavy cargo shipping is particularly impressive.",
+        "Reliable, professional, and cost-effective. ShipNexa.it has been instrumental in helping us expand our international presence. Their expertise in heavy cargo shipping is particularly impressive.",
       image:
         "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "600+",
@@ -205,29 +206,36 @@ export default function Index() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-royal-600 via-royal-700 to-royal-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
+      <section className="relative bg-gray-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6595787/pexels-photo-6595787.jpeg')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
 
         <div className="relative container mx-auto px-4 py-20 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
             {/* Featured Logo */}
             <div className="flex justify-center mb-8 animate-fade-in">
-              <Logo size="lg" className="text-white" />
+              <ShipNexaLogo
+                size="xl"
+                variant="full"
+                className="drop-shadow-lg"
+              />
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-delay">
-              Global Shipping Solutions
-              <span className="block text-orange-400 mt-2">You Can Trust</span>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-delay text-white drop-shadow-lg">
+              Next-Generation Logistics
+              <span className="block text-orange-400 mt-2 drop-shadow-lg">
+                For Italy & Beyond
+              </span>
             </h1>
-            <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-slide-up">
-              Track your packages in real-time with our advanced GPS technology.
-              Fast, secure, and reliable shipping worldwide.
+            <p className="text-xl lg:text-2xl mb-8 text-gray-100 drop-shadow-md animate-slide-up">
+              Experience cutting-edge logistics technology with ShipNexa.it.
+              Fast, secure, and innovative shipping solutions across Italy and
+              worldwide.
             </p>
 
             {/* Tracking Form */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 animate-slide-up">
-              <h3 className="text-2xl font-semibold mb-4">
+            <div className="bg-white/20 backdrop-blur-md rounded-2xl p-8 mb-8 animate-slide-up shadow-2xl border border-white/10">
+              <h3 className="text-2xl font-semibold mb-4 text-white drop-shadow-md">
                 Track Your Package
               </h3>
               <form
@@ -237,7 +245,7 @@ export default function Index() {
                 <div className="relative flex-1">
                   <Input
                     type="text"
-                    placeholder="Enter your tracking number (e.g., GT123456789)"
+                    placeholder="Enter your tracking number (e.g., SN123456789)"
                     value={trackingId}
                     onChange={(e) => setTrackingId(e.target.value)}
                     className="bg-white/90 border-0 text-gray-800 placeholder:text-gray-500 text-lg py-6 pl-12"
@@ -257,20 +265,36 @@ export default function Index() {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">50K+</div>
-                <div className="text-sm text-gray-300">Packages Delivered</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">
+                  50K+
+                </div>
+                <div className="text-sm text-gray-200 drop-shadow-md">
+                  Packages Delivered
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">120+</div>
-                <div className="text-sm text-gray-300">Countries Served</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">
+                  120+
+                </div>
+                <div className="text-sm text-gray-200 drop-shadow-md">
+                  Countries Served
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">99.8%</div>
-                <div className="text-sm text-gray-300">On-Time Delivery</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">
+                  99.8%
+                </div>
+                <div className="text-sm text-gray-200 drop-shadow-md">
+                  On-Time Delivery
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">24/7</div>
-                <div className="text-sm text-gray-300">Customer Support</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">
+                  24/7
+                </div>
+                <div className="text-sm text-gray-200 drop-shadow-md">
+                  Customer Support
+                </div>
               </div>
             </div>
           </div>
@@ -282,18 +306,19 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-1 text-center lg:text-left">
-              <Logo
+              <ShipNexaLogo
                 size="xl"
+                variant="full"
                 className="justify-center lg:justify-start mb-6"
               />
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                Connecting the World Through Logistics
+                Next-Generation Italian Logistics
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                With our innovative tracking technology and global network, we
-                bridge distances and connect businesses worldwide. Our
-                integrated approach combines air, sea, and ground transportation
-                for seamless logistics solutions.
+                ShipNexa.it combines cutting-edge technology with local Italian
+                expertise to deliver world-class logistics solutions. Our
+                integrated approach connects Italy to the world through
+                innovative air, sea, and ground transportation networks.
               </p>
             </div>
 
@@ -308,7 +333,7 @@ export default function Index() {
                         alt="Air Freight"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-royal-600/80 to-royal-800/60 group-hover:from-royal-700/70 group-hover:to-royal-900/50 transition-all duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/80 to-shipblue-800/60 group-hover:from-shipblue-700/70 group-hover:to-shipblue-900/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <Plane className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" />
                       </div>
@@ -372,7 +397,7 @@ export default function Index() {
                         alt="Ground Transport"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-royal-600/80 to-royal-800/60 group-hover:from-royal-700/70 group-hover:to-royal-900/50 transition-all duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/80 to-shipblue-800/60 group-hover:from-shipblue-700/70 group-hover:to-shipblue-900/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <Truck className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" />
                       </div>
@@ -471,7 +496,7 @@ export default function Index() {
                   <Link to="/services">
                     <Button
                       variant="outline"
-                      className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white"
+                      className="w-full border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white"
                     >
                       Learn More
                     </Button>
@@ -489,7 +514,7 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                Why Choose GlobalTrack Logistics?
+                Why Choose ShipNexa.it?
               </h2>
               <p className="text-xl text-gray-600 mb-8">
                 We combine cutting-edge technology with years of logistics
@@ -512,7 +537,7 @@ export default function Index() {
 
               <div className="mt-8">
                 <Link to="/services">
-                  <Button className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-3">
+                  <Button className="bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white px-8 py-3">
                     View All Services
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -527,7 +552,7 @@ export default function Index() {
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
-                <div className="text-2xl font-bold text-royal-600">
+                <div className="text-2xl font-bold text-shipblue-600">
                   Live Tracking
                 </div>
                 <div className="text-gray-600">Real-time GPS monitoring</div>
@@ -551,13 +576,13 @@ export default function Index() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Trusted by thousands of businesses worldwide, from startups to
               Fortune 500 companies. Here's what our satisfied customers have to
-              say about their experience with GlobalTrack.
+              say about their experience with ShipNexa.it.
             </p>
 
             {/* Customer Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
               <div className="text-center">
-                <div className="text-3xl font-bold text-royal-600 mb-2">
+                <div className="text-3xl font-bold text-shipblue-600 mb-2">
                   5,000+
                 </div>
                 <div className="text-sm text-gray-600">Happy Clients</div>
@@ -569,7 +594,7 @@ export default function Index() {
                 <div className="text-sm text-gray-600">Average Rating</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-royal-600 mb-2">
+                <div className="text-3xl font-bold text-shipblue-600 mb-2">
                   98%
                 </div>
                 <div className="text-sm text-gray-600">Would Recommend</div>
@@ -585,7 +610,7 @@ export default function Index() {
 
           {/* Featured Testimonial */}
           <div className="mb-16">
-            <Card className="bg-gradient-to-br from-royal-600 to-royal-800 text-white border-0 shadow-2xl overflow-hidden">
+            <Card className="bg-gradient-to-br from-shipblue-600 to-shipblue-800 text-white border-0 shadow-2xl overflow-hidden">
               <CardContent className="p-12 relative">
                 <div className="absolute top-8 right-8 opacity-20">
                   <Star className="h-32 w-32" />
@@ -667,8 +692,8 @@ export default function Index() {
               >
                 <CardContent className="p-0">
                   {/* Image Header */}
-                  <div className="relative h-32 bg-gradient-to-br from-royal-100 to-orange-100">
-                    <div className="absolute inset-0 bg-gradient-to-r from-royal-600/20 to-orange-500/20"></div>
+                  <div className="relative h-32 bg-gradient-to-br from-shipblue-100 to-orange-100">
+                    <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/20 to-orange-500/20"></div>
                     <div className="absolute -bottom-8 left-6">
                       <img
                         src={testimonial.image}
@@ -707,7 +732,7 @@ export default function Index() {
                     {/* Success metrics */}
                     <div className="flex justify-between items-center pt-4 border-t border-gray-100">
                       <div className="text-center">
-                        <div className="text-lg font-bold text-royal-600">
+                        <div className="text-lg font-bold text-shipblue-600">
                           {testimonial.shipments}
                         </div>
                         <div className="text-xs text-gray-500">Shipments</div>
@@ -738,13 +763,13 @@ export default function Index() {
                 Join Thousands of Satisfied Customers
               </h3>
               <p className="text-gray-600 mb-6">
-                Ready to experience the GlobalTrack difference? Get started with
+                Ready to experience the ShipNexa.it difference? Get started with
                 a free quote today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   onClick={handleGetQuote}
-                  className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-3"
+                  className="bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white px-8 py-3"
                 >
                   Get Your Free Quote
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -752,7 +777,7 @@ export default function Index() {
                 <Button
                   onClick={handleCallExpert}
                   variant="outline"
-                  className="border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white px-8 py-3"
+                  className="border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white px-8 py-3"
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   Speak with Expert
@@ -764,7 +789,7 @@ export default function Index() {
       </section>
 
       {/* Enhanced CTA Section */}
-      <section className="relative py-24 bg-gradient-to-br from-royal-600 via-royal-700 to-royal-900 text-white overflow-hidden">
+      <section className="relative py-24 bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-shipblue-900 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
@@ -788,7 +813,7 @@ export default function Index() {
               <h2 className="text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-delay">
                 Ready to Ship with
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-2">
-                  GlobalTrack?
+                  ShipNexa.it?
                 </span>
               </h2>
               <p className="text-xl lg:text-2xl mb-4 text-gray-200 animate-slide-up">
@@ -819,14 +844,14 @@ export default function Index() {
               <Link to="/contact" className="group">
                 <Button
                   variant="outline"
-                  className="relative border-2 border-white/30 text-white hover:bg-white hover:text-royal-600 px-10 py-4 text-lg font-semibold rounded-xl backdrop-blur-sm bg-white/5 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                  className="relative border-2 border-white/30 text-white hover:bg-white hover:text-shipblue-600 px-10 py-4 text-lg font-semibold rounded-xl backdrop-blur-sm bg-white/5 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
                 >
                   <div className="flex items-center space-x-3">
                     <Phone className="h-6 w-6 group-hover:animate-pulse" />
                     <span>Contact Expert</span>
                     <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-royal-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-shipblue-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
               </Link>
             </div>
