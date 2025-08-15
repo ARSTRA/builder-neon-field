@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { OptimizedImage, ImagePresets } from "@/components/ui/optimized-image";
 import {
   Plane,
   Ship,
@@ -353,7 +354,7 @@ export default function Gallery() {
       {/* Image Gallery */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
             {filteredImages.map((image) => (
               <Card
                 key={image.id}
@@ -362,10 +363,11 @@ export default function Gallery() {
               >
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg">
-                    <img
+                    <OptimizedImage
                       src={image.src}
                       alt={image.title}
-                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-64 group-hover:scale-110 transition-transform duration-500"
+                      {...ImagePresets.gallery}
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                     <div className="absolute top-3 left-3">
@@ -421,10 +423,11 @@ export default function Gallery() {
 
             <div className="grid md:grid-cols-2">
               <div className="relative">
-                <img
+                <OptimizedImage
                   src={selectedImage.src}
                   alt={selectedImage.title}
-                  className="w-full h-96 md:h-full object-cover"
+                  className="w-full h-96 md:h-full"
+                  {...ImagePresets.hero}
                 />
               </div>
               <div className="p-8">
