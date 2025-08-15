@@ -102,7 +102,7 @@ export default function Track() {
     progress: 65,
     carrier: "GlobalTrack Express",
     packageImage:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/6754998/pexels-photo-6754998.jpeg",
     coordinates: { lat: 34.0522, lng: -118.2437 },
     events: [
       {
@@ -838,7 +838,7 @@ Generated on: ${new Date().toLocaleDateString()}
                     {/* Enhanced Mock Map */}
                     <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 h-64 rounded-xl overflow-hidden">
                       <img
-                        src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        src="https://images.pexels.com/photos/1996989/pexels-photo-1996989.jpeg"
                         alt="Map view"
                         className="w-full h-full object-cover opacity-40"
                       />
