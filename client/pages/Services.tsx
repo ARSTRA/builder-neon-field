@@ -279,9 +279,10 @@ export default function Services() {
       </section>
 
       {/* Expert Consultation Section */}
-      <section className="relative py-20 bg-gradient-to-r from-royal-600 to-royal-800 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center opacity-30"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-royal-600/90 to-royal-800/90"></div>
+      <section className="relative py-24 bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-ocean-800 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/7979597/pexels-photo-7979597.jpeg')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-shipblue-800/85 to-ocean-900/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
 
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
