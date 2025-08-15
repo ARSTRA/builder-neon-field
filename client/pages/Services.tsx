@@ -323,8 +323,8 @@ export default function Services() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">
+            <div className="bg-white/20 backdrop-blur-lg rounded-3xl p-10 max-w-3xl mx-auto border border-white/30 shadow-2xl">
+              <h3 className="text-3xl font-bold mb-6 drop-shadow-md">
                 Speak with a Logistics Expert Now
               </h3>
               <p className="text-gray-200 mb-6">
