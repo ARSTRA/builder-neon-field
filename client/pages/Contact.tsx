@@ -770,21 +770,21 @@ export default function Contact() {
                       .querySelector("form")
                       ?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="group bg-white text-royal-600 hover:bg-gray-100 px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 rounded-2xl relative overflow-hidden"
+                  className="group bg-white text-royal-600 hover:bg-gradient-to-r hover:from-white hover:to-gray-50 px-12 py-5 font-bold shadow-2xl hover:shadow-white/50 transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 rounded-2xl relative overflow-hidden border-2 border-white/30"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-royal-100/50 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                  <Package className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
-                  <span className="relative z-10">Get Quote Now</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-royal-100/30 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                  <Package className="mr-3 h-6 w-6 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                  <span className="relative z-10 tracking-wide">Get Quote Now</span>
                 </Button>
                 <Link to="/track">
                   <Button
                     variant="outline"
-                    className="group border-3 border-white/90 text-white hover:bg-white hover:text-royal-600 px-10 py-4 font-bold transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/10 hover:shadow-2xl hover:shadow-white/25 relative overflow-hidden"
+                    className="group border-2 border-white/70 text-white hover:bg-white hover:text-royal-600 px-12 py-5 font-bold transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 rounded-2xl backdrop-blur-md bg-white/10 hover:shadow-2xl hover:shadow-white/40 relative overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                    <span className="relative z-10">Track Shipment</span>
-                    <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
-                    <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                    <span className="relative z-10 tracking-wide">Track Shipment</span>
+                    <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                    <div className="absolute -top-2 -right-2 bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-3 py-1 rounded-full animate-pulse font-bold shadow-lg">
                       LIVE
                     </div>
                   </Button>
