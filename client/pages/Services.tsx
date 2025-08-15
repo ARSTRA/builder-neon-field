@@ -307,16 +307,16 @@ export default function Services() {
                   certifications
                 </p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <Clock className="h-12 w-12 text-orange-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
+              <div className="bg-white/15 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <Clock className="h-14 w-14 text-orange-400 mx-auto mb-6 drop-shadow-lg" />
+                <h3 className="text-xl font-semibold mb-3 drop-shadow-sm">24/7 Support</h3>
                 <p className="text-gray-200">
                   Round-the-clock assistance for urgent shipping needs
                 </p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <Globe className="h-12 w-12 text-orange-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Global Network</h3>
+              <div className="bg-white/15 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <Globe className="h-14 w-14 text-orange-400 mx-auto mb-6 drop-shadow-lg" />
+                <h3 className="text-xl font-semibold mb-3 drop-shadow-sm">Global Network</h3>
                 <p className="text-gray-200">
                   Direct partnerships with carriers in 120+ countries
                 </p>
