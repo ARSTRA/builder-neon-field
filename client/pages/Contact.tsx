@@ -641,9 +641,11 @@ export default function Contact() {
                             </div>
 
                             <div className="flex items-center space-x-3">
-                              <Phone className="h-5 w-5 text-royal-600 flex-shrink-0" />
-                              <div>
-                                <p className="font-medium text-gray-800">
+                              <div className="w-8 h-8 bg-gradient-to-br from-royal-500 to-royal-700 rounded-lg flex items-center justify-center shadow-md">
+                                <Phone className="h-4 w-4 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <p className="font-medium text-gray-800 mb-1">
                                   Phone
                                 </p>
                                 <button
@@ -653,8 +655,9 @@ export default function Contact() {
                                       "_self",
                                     )
                                   }
-                                  className="text-royal-600 text-sm hover:text-royal-800 transition-colors duration-200 font-medium hover:underline"
+                                  className="group inline-flex items-center px-4 py-2 bg-gradient-to-r from-royal-50 to-royal-100 text-royal-700 hover:from-royal-600 hover:to-royal-700 hover:text-white rounded-xl text-sm font-semibold transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md border border-royal-200 hover:border-royal-600"
                                 >
+                                  <Phone className="mr-2 h-4 w-4 group-hover:animate-pulse" />
                                   {office.phone}
                                 </button>
                               </div>
