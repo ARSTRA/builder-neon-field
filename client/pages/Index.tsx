@@ -289,13 +289,13 @@ export default function Index() {
                 className="justify-center lg:justify-start mb-6"
               />
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                Connecting the World Through Logistics
+                Next-Generation Italian Logistics
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                With our innovative tracking technology and global network, we
-                bridge distances and connect businesses worldwide. Our
-                integrated approach combines air, sea, and ground transportation
-                for seamless logistics solutions.
+                ShipNexa.it combines cutting-edge technology with local Italian
+                expertise to deliver world-class logistics solutions. Our
+                integrated approach connects Italy to the world through innovative
+                air, sea, and ground transportation networks.
               </p>
             </div>
 
