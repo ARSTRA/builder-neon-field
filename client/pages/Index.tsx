@@ -218,12 +218,12 @@ export default function Index() {
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-delay">
-              Global Shipping Solutions
-              <span className="block text-orange-400 mt-2">You Can Trust</span>
+              Next-Generation Logistics
+              <span className="block text-orange-400 mt-2">For Italy & Beyond</span>
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-200 animate-slide-up">
-              Track your packages in real-time with our advanced GPS technology.
-              Fast, secure, and reliable shipping worldwide.
+              Experience cutting-edge logistics technology with ShipNexa.it.
+              Fast, secure, and innovative shipping solutions across Italy and worldwide.
             </p>
 
             {/* Tracking Form */}
@@ -238,7 +238,7 @@ export default function Index() {
                 <div className="relative flex-1">
                   <Input
                     type="text"
-                    placeholder="Enter your tracking number (e.g., GT123456789)"
+                    placeholder="Enter your tracking number (e.g., SN123456789)"
                     value={trackingId}
                     onChange={(e) => setTrackingId(e.target.value)}
                     className="bg-white/90 border-0 text-gray-800 placeholder:text-gray-500 text-lg py-6 pl-12"
