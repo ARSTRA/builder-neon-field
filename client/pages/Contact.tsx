@@ -270,25 +270,26 @@ export default function Contact() {
               {contactMethods.map((method, index) => (
                 <Card
                   key={index}
-                  className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white hover:-translate-y-2"
+                  className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white hover:-translate-y-3 hover:rotate-1 relative overflow-hidden"
                 >
-                  <CardContent className="p-8 text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <CardContent className="p-8 text-center relative z-10">
                     <div
-                      className={`w-16 h-16 bg-gradient-to-r ${method.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-500 shadow-lg`}
+                      className={`w-20 h-20 bg-gradient-to-br ${method.gradient} rounded-3xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500 shadow-xl group-hover:shadow-2xl`}
                     >
                       {method.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-royal-600 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-royal-600 transition-colors duration-300 min-h-[56px] flex items-center justify-center">
                       {method.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                    <p className="text-gray-600 mb-5 text-sm leading-relaxed min-h-[40px]">
                       {method.description}
                     </p>
-                    <div className="mb-4">
-                      <div className="font-semibold text-gray-800">
+                    <div className="mb-6 min-h-[60px] flex flex-col justify-center">
+                      <div className="font-semibold text-gray-800 mb-2">
                         {method.contact}
                       </div>
-                      <Badge className="mt-2 bg-green-100 text-green-800">
+                      <Badge className="bg-gradient-to-r from-green-100 to-green-200 text-green-800 border border-green-300 px-3 py-1 font-medium">
                         {method.availability}
                       </Badge>
                     </div>
