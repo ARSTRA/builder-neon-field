@@ -185,10 +185,11 @@ export default function Gallery() {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Professional Background Image */}
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Global logistics operations"
-            className="w-full h-full object-cover"
+          <OptimizedImage
+            src="https://images.pexels.com/photos/6379245/pexels-photo-6379245.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&dpr=1"
+            alt="Modern container ship and port operations showcasing global logistics excellence"
+            className="w-full h-full"
+            {...ImagePresets.hero}
           />
           {/* Multi-layer Overlay for Better Text Readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-royal-900/85 via-royal-800/75 to-royal-700/80"></div>
