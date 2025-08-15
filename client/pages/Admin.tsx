@@ -929,9 +929,6 @@ export default function Admin() {
             {currentView === "dashboard" && renderDashboard()}
             {currentView === "users" && <UserManagement />}
             {currentView === "chat" && <ChatManagement />}
-
-                </div>
-              )}
           </div>
         </div>
       </div>
