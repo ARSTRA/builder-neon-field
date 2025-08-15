@@ -435,13 +435,14 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-br from-shipblue-900/80 via-shipblue-800/70 to-ocean-900/85"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
         <div className="relative container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-4xl lg:text-6xl font-bold mb-8 drop-shadow-lg">
               Global Presence, Local Expertise
             </h2>
-            <p className="text-xl text-gray-200 mb-12 leading-relaxed">
-              With offices and partners across six continents, we bring local
-              knowledge and global capabilities to every shipment.
+            <p className="text-xl lg:text-2xl text-gray-100 mb-16 leading-relaxed drop-shadow-md max-w-4xl mx-auto">
+              ShipNexa.it combines Italian excellence with worldwide reach. Our
+              network spans six continents, delivering local expertise and
+              global capabilities to every shipment across the world.
             </p>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
