@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Package, Mail, Phone, MapPin, Calendar, Weight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { LoadingSpinner } from "@/components/ui/loading-states";
 
 interface GetQuoteModalProps {
   open: boolean;
@@ -241,7 +242,14 @@ export function GetQuoteModal({ open, onOpenChange }: GetQuoteModalProps) {
               disabled={isSubmitting}
               className="flex-1 bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
             >
-              {isSubmitting ? "Sending Request..." : "Get Quote"}
+              {isSubmitting ? (
+                <>
+                  <LoadingSpinner size="sm" color="white" className="mr-2" />
+                  Sending Request...
+                </>
+              ) : (
+                "Get Quote"
+              )}
             </Button>
           </div>
         </form>
