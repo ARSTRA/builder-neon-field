@@ -206,9 +206,9 @@ export default function Index() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-ocean-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6595787/pexels-photo-6595787.jpeg')] bg-cover bg-center opacity-25"></div>
+      <section className="relative bg-gray-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6595787/pexels-photo-6595787.jpeg')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
 
         <div className="relative container mx-auto px-4 py-20 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
