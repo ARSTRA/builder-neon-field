@@ -672,7 +672,8 @@ export function UserManagement() {
                           variant="ghost"
                           size="sm"
                           title="Edit User"
-
+                          onClick={() => handleEditUser(user)}
+                          className="hover:bg-green-50 hover:text-green-600"
                         >
                           <Edit className="h-4 w-4" />
                         </Button>
