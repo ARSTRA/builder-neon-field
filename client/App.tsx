@@ -18,6 +18,7 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Newspaper from "./pages/Newspaper";
 import LiveChat from "./pages/LiveChat";
+import Auth from "./pages/Auth";
 
 import Admin from "./pages/Admin";
 import UnifiedAdmin from "./pages/UnifiedAdmin";
