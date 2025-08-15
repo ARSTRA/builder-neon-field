@@ -167,6 +167,41 @@ export default function AdminLogin() {
                 </div>
               </div>
 
+              {/* Demo Credentials */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="flex items-start space-x-3">
+                  <Shield className="h-5 w-5 text-blue-600 mt-0.5" />
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-blue-800 mb-3">
+                      Demo Access Credentials
+                    </p>
+                    <div className="grid grid-cols-1 gap-3 text-xs">
+                      <div className="bg-white rounded p-3 border border-blue-100">
+                        <div className="font-semibold text-blue-900 mb-1">Super Admin</div>
+                        <div className="text-blue-700">
+                          <div>Email: admin@globaltrack.com</div>
+                          <div>Password: GT2024@Admin!</div>
+                        </div>
+                      </div>
+                      <div className="bg-white rounded p-3 border border-blue-100">
+                        <div className="font-semibold text-blue-900 mb-1">Operations Manager</div>
+                        <div className="text-blue-700">
+                          <div>Email: manager@globaltrack.com</div>
+                          <div>Password: GT2024@Manager!</div>
+                        </div>
+                      </div>
+                      <div className="bg-white rounded p-3 border border-blue-100">
+                        <div className="font-semibold text-blue-900 mb-1">Support Admin</div>
+                        <div className="text-blue-700">
+                          <div>Email: support@globaltrack.com</div>
+                          <div>Password: GT2024@Support!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-gray-700 font-medium">
