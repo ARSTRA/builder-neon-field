@@ -285,19 +285,19 @@ export default function Services() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
 
         <div className="relative container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <div className="max-w-5xl mx-auto text-center text-white">
+            <h2 className="text-4xl lg:text-6xl font-bold mb-8 drop-shadow-lg">
               Need Expert Logistics Guidance?
             </h2>
-            <p className="text-xl lg:text-2xl mb-8 text-gray-200 leading-relaxed">
+            <p className="text-xl lg:text-2xl mb-12 text-gray-100 leading-relaxed drop-shadow-md">
               Our certified logistics professionals bring decades of experience
               in international shipping, customs regulations, and supply chain
               optimization. Get personalized recommendations tailored to your
               specific shipping requirements.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white/15 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
                 <Shield className="h-12 w-12 text-orange-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">
                   Certified Experts
