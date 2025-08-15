@@ -29,6 +29,7 @@ import {
   Plane,
   Clock,
   CheckCircle,
+  Share2,
   AlertTriangle,
   Star,
   Mail,
