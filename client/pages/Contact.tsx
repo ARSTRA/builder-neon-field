@@ -294,7 +294,11 @@ export default function Contact() {
                     </div>
                     <Button
                       onClick={() => {
-
+                        if (method.title === "Live Chat Support") {
+                          // Handle live chat
+                          window.open("/chat", "_blank");
+                        } else if (method.title === "Call Us Directly") {
+                          window.open("tel:+15551234567", "_self");
                         } else if (method.title === "Email Support") {
                           const subject = encodeURIComponent(
                             "GlobalTrack Support Request",
