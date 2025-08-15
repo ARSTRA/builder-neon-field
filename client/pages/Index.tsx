@@ -62,7 +62,7 @@ export default function Index() {
 
   const shippingServices = [
     {
-      icon: <Plane className="h-12 w-12 text-royal-600" />,
+      icon: <Plane className="h-12 w-12 text-shipblue-600" />,
       title: "Air Freight",
       description:
         "Fast and reliable air cargo services worldwide with real-time tracking.",
@@ -73,7 +73,7 @@ export default function Index() {
       ],
     },
     {
-      icon: <Ship className="h-12 w-12 text-royal-600" />,
+      icon: <Ship className="h-12 w-12 text-shipblue-600" />,
       title: "Ocean Freight",
       description:
         "Cost-effective sea shipping for bulk cargo and container shipments.",
@@ -84,7 +84,7 @@ export default function Index() {
       ],
     },
     {
-      icon: <Truck className="h-12 w-12 text-royal-600" />,
+      icon: <Truck className="h-12 w-12 text-shipblue-600" />,
       title: "Ground Transport",
       description:
         "Domestic and cross-border trucking with door-to-door delivery.",
