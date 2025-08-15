@@ -334,11 +334,11 @@ export default function Services() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  onClick={() => window.open("tel:+15551234567", "_self")}
+                  onClick={() => window.open("tel:+390212345678", "_self")}
                   className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-[1.02] rounded-2xl relative overflow-hidden"
                 >
                   <Phone className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
-                  Call Expert: +1 (555) 123-4567
+                  Call Expert: +39 02 1234 5678
                 </Button>
                 <Link to="/contact">
                   <Button
