@@ -518,7 +518,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 <CardContent className="p-8 text-center">
                   <div className="relative mb-6">
                     <img
-                      src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      src="https://images.pexels.com/photos/257636/pexels-photo-257636.jpeg"
                       alt="Global tracking network"
                       className="w-full h-32 object-cover rounded-xl opacity-80"
                     />
@@ -544,7 +544,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 <CardContent className="p-8 text-center">
                   <div className="relative mb-6">
                     <img
-                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      src="https://images.pexels.com/photos/7706382/pexels-photo-7706382.jpeg"
                       alt="Real-time analytics"
                       className="w-full h-32 object-cover rounded-xl opacity-80"
                     />
@@ -570,7 +570,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 <CardContent className="p-8 text-center">
                   <div className="relative mb-6">
                     <img
-                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      src="https://images.pexels.com/photos/8849295/pexels-photo-8849295.jpeg"
                       alt="Advanced analytics"
                       className="w-full h-32 object-cover rounded-xl opacity-80"
                     />
