@@ -304,6 +304,39 @@ export default function AdminLogin() {
                       </>
                     )}
                   </Button>
+
+                  {/* Quick Login Buttons */}
+                  <div className="space-y-2">
+                    <p className="text-center text-sm text-gray-600 mb-3">Quick Demo Login</p>
+                    <div className="grid grid-cols-1 gap-2">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setFormData({
+                          email: "admin@globaltrack.com",
+                          password: "GT2024@Admin!"
+                        })}
+                        className="text-xs h-8 text-royal-600 border-royal-200 hover:bg-royal-50"
+                      >
+                        <Shield className="mr-1 h-3 w-3" />
+                        Fill Super Admin
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setFormData({
+                          email: "manager@globaltrack.com",
+                          password: "GT2024@Manager!"
+                        })}
+                        className="text-xs h-8 text-blue-600 border-blue-200 hover:bg-blue-50"
+                      >
+                        <Users className="mr-1 h-3 w-3" />
+                        Fill Operations Manager
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </form>
 
