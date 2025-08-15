@@ -299,7 +299,7 @@ Generated on: ${new Date().toLocaleDateString()}
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-royal-600 to-royal-800 text-white py-12 lg:py-16">
+      <section className="relative bg-gradient-to-r from-shipblue-600 to-shipblue-800 text-white py-12 lg:py-16">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1996989/pexels-photo-1996989.jpeg')] bg-cover bg-center opacity-30"></div>
         <div className="relative container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
@@ -373,7 +373,7 @@ Generated on: ${new Date().toLocaleDateString()}
                   alt="GPS tracking technology"
                   className="w-full h-80 object-cover rounded-2xl shadow-2xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-royal-600/20 to-orange-500/20 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/20 to-orange-500/20 rounded-2xl"></div>
                 <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -453,13 +453,13 @@ Generated on: ${new Date().toLocaleDateString()}
                   delivery.
                 </p>
 
-                <div className="bg-gradient-to-r from-royal-50 to-orange-50 rounded-xl p-6">
+                <div className="bg-gradient-to-r from-shipblue-50 to-orange-50 rounded-xl p-6">
                   <h4 className="font-semibold text-gray-800 mb-4">
                     Smart Delivery Predictions
                   </h4>
                   <div className="grid md:grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-royal-600">
+                      <div className="text-2xl font-bold text-shipblue-600">
                         99.2%
                       </div>
                       <div className="text-sm text-gray-600">Accuracy Rate</div>
@@ -473,7 +473,7 @@ Generated on: ${new Date().toLocaleDateString()}
                       </div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-royal-600">
+                      <div className="text-2xl font-bold text-shipblue-600">
                         98.7%
                       </div>
                       <div className="text-sm text-gray-600">
@@ -595,7 +595,7 @@ Generated on: ${new Date().toLocaleDateString()}
             </div>
 
             {/* Advanced Features Section */}
-            <div className="mt-16 bg-gradient-to-r from-royal-50 to-orange-50 rounded-3xl p-8 lg:p-12">
+            <div className="mt-16 bg-gradient-to-r from-shipblue-50 to-orange-50 rounded-3xl p-8 lg:p-12">
               <div className="text-center mb-10">
                 <h3 className="text-3xl font-bold text-gray-800 mb-4">
                   Advanced Tracking Features
@@ -609,7 +609,7 @@ Generated on: ${new Date().toLocaleDateString()}
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Package className="h-8 w-8 text-royal-600" />
+                    <Package className="h-8 w-8 text-shipblue-600" />
                   </div>
                   <h4 className="font-semibold text-gray-800 mb-2">
                     Package Insights
@@ -621,7 +621,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <MessageCircle className="h-8 w-8 text-royal-600" />
+                    <MessageCircle className="h-8 w-8 text-shipblue-600" />
                   </div>
                   <h4 className="font-semibold text-gray-800 mb-2">
                     Smart Notifications
@@ -632,7 +632,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Calendar className="h-8 w-8 text-royal-600" />
+                    <Calendar className="h-8 w-8 text-shipblue-600" />
                   </div>
                   <h4 className="font-semibold text-gray-800 mb-2">
                     Delivery Scheduling
@@ -643,7 +643,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Download className="h-8 w-8 text-royal-600" />
+                    <Download className="h-8 w-8 text-shipblue-600" />
                   </div>
                   <h4 className="font-semibold text-gray-800 mb-2">
                     Digital Documentation
@@ -830,7 +830,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 <Card className="shadow-xl border-0">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-xl">
-                      <MapPin className="h-6 w-6 text-royal-600" />
+                      <MapPin className="h-6 w-6 text-shipblue-600" />
                       Live Location
                     </CardTitle>
                   </CardHeader>
@@ -844,7 +844,7 @@ Generated on: ${new Date().toLocaleDateString()}
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg">
-                          <div className="w-12 h-12 bg-royal-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <div className="w-12 h-12 bg-shipblue-600 rounded-full flex items-center justify-center mx-auto mb-3">
                             <MapPin className="h-6 w-6 text-white" />
                           </div>
                           <p className="font-semibold text-gray-800">
@@ -894,7 +894,7 @@ Generated on: ${new Date().toLocaleDateString()}
                     <Button
                       variant="outline"
                       onClick={handleDownloadReceipt}
-                      className="w-full justify-start hover:bg-royal-50 hover:border-royal-300 transition-all duration-200"
+                      className="w-full justify-start hover:bg-shipblue-50 hover:border-shipblue-300 transition-all duration-200"
                     >
                       <Download className="h-4 w-4 mr-3" />
                       Download Receipt
@@ -1037,7 +1037,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 </Card>
 
                 {/* Support */}
-                <Card className="shadow-xl border-0 bg-gradient-to-br from-royal-600 to-royal-700 text-white">
+                <Card className="shadow-xl border-0 bg-gradient-to-br from-shipblue-600 to-shipblue-700 text-white">
                   <CardHeader>
                     <CardTitle className="text-xl text-white">
                       Need Help?
@@ -1070,10 +1070,10 @@ Generated on: ${new Date().toLocaleDateString()}
         {/* Help Section */}
         {!packageData && !loading && (
           <div className="max-w-4xl mx-auto">
-            <Card className="shadow-xl border-0 bg-gradient-to-br from-royal-50 to-orange-50">
+            <Card className="shadow-xl border-0 bg-gradient-to-br from-shipblue-50 to-orange-50">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-royal-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Package className="h-8 w-8 text-royal-600" />
+                <div className="w-16 h-16 bg-shipblue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Package className="h-8 w-8 text-shipblue-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">
                   Need Help Finding Your Package?
@@ -1087,7 +1087,7 @@ Generated on: ${new Date().toLocaleDateString()}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button
                     onClick={() => window.open("tel:+15551234567", "_self")}
-                    className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <Phone className="mr-2 h-5 w-5" />
                     Call Support
@@ -1095,7 +1095,7 @@ Generated on: ${new Date().toLocaleDateString()}
                   <Button
                     variant="outline"
                     onClick={() => (window.location.href = "/contact")}
-                    className="border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white px-8 py-3 font-semibold transition-all duration-300"
+                    className="border-2 border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white px-8 py-3 font-semibold transition-all duration-300"
                   >
                     <MessageCircle className="mr-2 h-5 w-5" />
                     Live Chat
