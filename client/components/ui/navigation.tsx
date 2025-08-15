@@ -4,6 +4,7 @@ import { Button } from "./button";
 import { useState } from "react";
 import { GetQuoteModal } from "./get-quote-modal";
 import { Logo, LogoMark } from "./logo";
+import ShipNexaLogo from "./shipnexa-logo";
 
 export function Navigation() {
   const location = useLocation();
@@ -25,17 +26,8 @@ export function Navigation() {
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex justify-between items-center py-3 lg:py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <LogoMark
-              size="sm"
-              className="transition-transform hover:scale-105 mr-3"
-            />
-            <div>
-              <span className="text-xl font-bold text-royal-600">
-                GlobalTrack
-              </span>
-              <span className="text-lg text-orange-500 ml-1">Logistics</span>
-            </div>
+          <Link to="/" className="flex items-center transition-transform hover:scale-105">
+            <ShipNexaLogo size="lg" variant="full" />
           </Link>
 
           {/* Desktop Navigation */}
