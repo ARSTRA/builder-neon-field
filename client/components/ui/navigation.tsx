@@ -46,10 +46,19 @@ export function Navigation() {
               </Link>
             ))}
             <div className="flex items-center space-x-3 ml-6">
+              <Link to="/auth">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white transition-all duration-300 px-6"
+                >
+                  Login
+                </Button>
+              </Link>
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
                 size="sm"
-                className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white shadow-md hover:shadow-lg transition-all duration-300 px-6"
+                className="bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white shadow-md hover:shadow-lg transition-all duration-300 px-6"
               >
                 Get Quote
               </Button>
