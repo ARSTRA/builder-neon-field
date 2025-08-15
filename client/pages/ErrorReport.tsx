@@ -122,7 +122,7 @@ export default function ErrorReport() {
 
       try {
         const result = await runIndividualCheck(check.id);
-        checks[i] = { ...check, ...result };
+        checks[i] = { ...check, ...result } as SystemCheck;
       } catch (error) {
         checks[i] = {
           ...check,
