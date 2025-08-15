@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Globe, Shield } from "lucide-react";
 import { Logo, LogoMark } from "./logo";
 import { SimpleSocialFooter } from "./simple-social-footer";
+import ShipNexaLogo from "./shipnexa-logo";
 
 export function Footer() {
   return (
@@ -11,14 +12,8 @@ export function Footer() {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center mb-6">
-              <LogoMark size="sm" className="text-white mr-3" />
-              <div>
-                <span className="text-xl font-bold text-white">
-                  GlobalTrack
-                </span>
-                <span className="text-lg text-orange-500 ml-1">Logistics</span>
-              </div>
+            <div className="mb-6">
+              <ShipNexaLogo size="lg" variant="full" className="filter brightness-0 invert" />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Your trusted partner for global shipping solutions. We provide
