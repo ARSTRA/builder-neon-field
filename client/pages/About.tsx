@@ -463,7 +463,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-8 justify-center">
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
                 className="group bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 hover:from-orange-600 hover:via-orange-700 hover:to-orange-600 text-white px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105 rounded-2xl relative overflow-hidden"
@@ -475,7 +475,7 @@ export default function About() {
               <Link to="/contact">
                 <Button
                   variant="outline"
-                  className="group border-3 border-white/90 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 relative overflow-hidden"
+                  className="group border-3 border-white/90 text-white hover:bg-white hover:text-shipblue-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
                   <MapPin className="mr-3 h-6 w-6 group-hover:animate-pulse relative z-10" />
