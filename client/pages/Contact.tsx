@@ -126,7 +126,6 @@ export default function Contact() {
       availability: "24/7 Support",
     },
     {
-
       icon: <Mail className="h-8 w-8" />,
       title: "Email Support",
       description: "Send detailed inquiries for comprehensive responses",
@@ -231,22 +230,24 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link to="/chat">
-                <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  CHAT NOW - Get Instant Help
+                <Button className="group bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-600 hover:via-orange-700 hover:to-orange-800 text-white px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-orange-500/40 transition-all duration-500 transform hover:scale-105 rounded-2xl border border-orange-300/30 backdrop-blur-sm relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                  <MessageCircle className="mr-3 h-6 w-6 group-hover:bounce transition-all duration-300 relative z-10" />
+                  <span className="relative z-10">
+                    CHAT NOW - Get Instant Help
+                  </span>
                 </Button>
               </Link>
               <Button
                 onClick={() => window.open("tel:+15551234567", "_self")}
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
+                className="group bg-white/15 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-500 transform hover:scale-105 rounded-2xl shadow-2xl hover:shadow-white/30 relative overflow-hidden"
               >
-                <Phone className="mr-2 h-5 w-5" />
-                Call: +1 (555) 123-4567
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                <Phone className="mr-3 h-6 w-6 group-hover:ring-2 group-hover:ring-royal-300 group-hover:rounded-full group-hover:p-1 transition-all duration-300 relative z-10" />
+                <span className="relative z-10">Call: +1 (555) 123-4567</span>
               </Button>
-
             </div>
           </div>
         </div>
@@ -270,31 +271,36 @@ export default function Contact() {
               {contactMethods.map((method, index) => (
                 <Card
                   key={index}
-                  className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white hover:-translate-y-2"
+                  className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white hover:-translate-y-3 hover:rotate-1 relative overflow-hidden"
                 >
-                  <CardContent className="p-8 text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <CardContent className="p-8 text-center relative z-10">
                     <div
-                      className={`w-16 h-16 bg-gradient-to-r ${method.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-500 shadow-lg`}
+                      className={`w-20 h-20 bg-gradient-to-br ${method.gradient} rounded-3xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500 shadow-xl group-hover:shadow-2xl`}
                     >
                       {method.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-royal-600 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-royal-600 transition-colors duration-300 min-h-[56px] flex items-center justify-center">
                       {method.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                    <p className="text-gray-600 mb-5 text-sm leading-relaxed min-h-[40px]">
                       {method.description}
                     </p>
-                    <div className="mb-4">
-                      <div className="font-semibold text-gray-800">
+                    <div className="mb-6 min-h-[60px] flex flex-col justify-center">
+                      <div className="font-semibold text-gray-800 mb-2">
                         {method.contact}
                       </div>
-                      <Badge className="mt-2 bg-green-100 text-green-800">
+                      <Badge className="bg-gradient-to-r from-green-100 to-green-200 text-green-800 border border-green-300 px-3 py-1 font-medium">
                         {method.availability}
                       </Badge>
                     </div>
                     <Button
                       onClick={() => {
-
+                        if (method.title === "Live Chat Support") {
+                          // Handle live chat
+                          window.open("/chat", "_blank");
+                        } else if (method.title === "Call Us Directly") {
+                          window.open("tel:+15551234567", "_self");
                         } else if (method.title === "Email Support") {
                           const subject = encodeURIComponent(
                             "GlobalTrack Support Request",
@@ -313,10 +319,18 @@ export default function Contact() {
                             ?.scrollIntoView({ behavior: "smooth" });
                         }
                       }}
-
+                      className={`group w-full bg-gradient-to-br ${method.gradient} hover:shadow-2xl text-white font-bold py-5 px-6 rounded-2xl shadow-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 relative overflow-hidden border border-white/20`}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-500"></div>
-                      <span className="relative z-10">{method.action}</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 tracking-wide">
+                        {method.action}
+                      </span>
+                      {method.title === "Call Us Directly" && (
+                        <div className="absolute -top-1 -right-1 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-pulse z-20">
+                          LIVE
+                        </div>
+                      )}
                     </Button>
                   </CardContent>
                 </Card>
@@ -631,9 +645,11 @@ export default function Contact() {
                             </div>
 
                             <div className="flex items-center space-x-3">
-                              <Phone className="h-5 w-5 text-royal-600 flex-shrink-0" />
-                              <div>
-                                <p className="font-medium text-gray-800">
+                              <div className="w-8 h-8 bg-gradient-to-br from-royal-500 to-royal-700 rounded-lg flex items-center justify-center shadow-md">
+                                <Phone className="h-4 w-4 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <p className="font-medium text-gray-800 mb-1">
                                   Phone
                                 </p>
                                 <button
@@ -643,8 +659,9 @@ export default function Contact() {
                                       "_self",
                                     )
                                   }
-                                  className="text-royal-600 text-sm hover:text-royal-800 transition-colors duration-200 font-medium hover:underline"
+                                  className="group inline-flex items-center px-4 py-2 bg-gradient-to-r from-royal-50 to-royal-100 text-royal-700 hover:from-royal-600 hover:to-royal-700 hover:text-white rounded-xl text-sm font-semibold transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md border border-royal-200 hover:border-royal-600"
                                 >
+                                  <Phone className="mr-2 h-4 w-4 group-hover:animate-pulse" />
                                   {office.phone}
                                 </button>
                               </div>
@@ -757,21 +774,25 @@ export default function Contact() {
                       .querySelector("form")
                       ?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="group bg-white text-royal-600 hover:bg-gray-100 px-10 py-4 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 rounded-2xl relative overflow-hidden"
+                  className="group bg-white text-royal-600 hover:bg-gradient-to-r hover:from-white hover:to-gray-50 px-12 py-5 font-bold shadow-2xl hover:shadow-white/50 transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 rounded-2xl relative overflow-hidden border-2 border-white/30"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-royal-100/50 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                  <Package className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
-                  <span className="relative z-10">Get Quote Now</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-royal-100/30 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                  <Package className="mr-3 h-6 w-6 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                  <span className="relative z-10 tracking-wide">
+                    Get Quote Now
+                  </span>
                 </Button>
                 <Link to="/track">
                   <Button
                     variant="outline"
-                    className="group border-3 border-white/90 text-white hover:bg-white hover:text-royal-600 px-10 py-4 font-bold transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/10 hover:shadow-2xl hover:shadow-white/25 relative overflow-hidden"
+                    className="group border-2 border-white/70 text-white hover:bg-white hover:text-royal-600 px-12 py-5 font-bold transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 rounded-2xl backdrop-blur-md bg-white/10 hover:shadow-2xl hover:shadow-white/40 relative overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                    <span className="relative z-10">Track Shipment</span>
-                    <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
-                    <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                    <span className="relative z-10 tracking-wide">
+                      Track Shipment
+                    </span>
+                    <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                    <div className="absolute -top-2 -right-2 bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-3 py-1 rounded-full animate-pulse font-bold shadow-lg">
                       LIVE
                     </div>
                   </Button>

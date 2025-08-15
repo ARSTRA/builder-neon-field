@@ -18,7 +18,7 @@ export function FloatingElementsManager({
       {children}
 
       {/* Mobile-specific floating elements positioning guide */}
-      <style jsx>{`
+      <style>{`
         @media (max-width: 640px) {
           /* Ensure floating elements don't overlap with bottom navigation */
           .floating-bottom-space {

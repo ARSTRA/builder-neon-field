@@ -63,23 +63,33 @@ export default function AdminLogin() {
     const validAdmin = validateAdminCredentials(email, password);
 
     if (validAdmin) {
-      // Set admin session
+      // Set admin session with enhanced security tracking
       localStorage.setItem("isAdmin", "true");
       localStorage.setItem("adminEmail", validAdmin.email);
       localStorage.setItem("adminRole", validAdmin.role);
+      localStorage.setItem("adminDepartment", validAdmin.department || "");
+      localStorage.setItem(
+        "adminPermissions",
+        JSON.stringify(validAdmin.permissions),
+      );
       localStorage.setItem("adminLoginTime", new Date().toISOString());
+      localStorage.setItem(
+        "adminSessionId",
+        `session_${Date.now()}_${Math.random()}`,
+      );
 
       setSuccess(`Welcome ${validAdmin.role}! Redirecting to admin portal...`);
 
       toast({
-        title: "Admin Login Successful",
-        description: `Welcome ${validAdmin.role} to GlobalTrack Admin Portal`,
+        title: "🎉 Admin Login Successful",
+        description: `Welcome ${validAdmin.role} from ${validAdmin.department || "Administration"} department`,
       });
 
-      // Small delay to show success message
+      // Role-based navigation delay
+      const navigationDelay = validAdmin.role === "Super Admin" ? 1200 : 1000;
       setTimeout(() => {
         navigate("/admin");
-      }, 1000);
+      }, navigationDelay);
     } else {
       setError(
         "Invalid admin credentials. Please check your email and password and try again.",
@@ -163,6 +173,47 @@ export default function AdminLogin() {
                       This portal is for authorized administrators only. All
                       access is logged and monitored.
                     </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Demo Credentials */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="flex items-start space-x-3">
+                  <Shield className="h-5 w-5 text-blue-600 mt-0.5" />
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-blue-800 mb-3">
+                      Demo Access Credentials
+                    </p>
+                    <div className="grid grid-cols-1 gap-3 text-xs">
+                      <div className="bg-white rounded p-3 border border-blue-100">
+                        <div className="font-semibold text-blue-900 mb-1">
+                          Super Admin
+                        </div>
+                        <div className="text-blue-700">
+                          <div>Email: admin@globaltrack.com</div>
+                          <div>Password: GT2024@Admin!</div>
+                        </div>
+                      </div>
+                      <div className="bg-white rounded p-3 border border-blue-100">
+                        <div className="font-semibold text-blue-900 mb-1">
+                          Operations Manager
+                        </div>
+                        <div className="text-blue-700">
+                          <div>Email: manager@globaltrack.com</div>
+                          <div>Password: GT2024@Manager!</div>
+                        </div>
+                      </div>
+                      <div className="bg-white rounded p-3 border border-blue-100">
+                        <div className="font-semibold text-blue-900 mb-1">
+                          Support Admin
+                        </div>
+                        <div className="text-blue-700">
+                          <div>Email: support@globaltrack.com</div>
+                          <div>Password: GT2024@Support!</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -269,6 +320,45 @@ export default function AdminLogin() {
                       </>
                     )}
                   </Button>
+
+                  {/* Quick Login Buttons */}
+                  <div className="space-y-2">
+                    <p className="text-center text-sm text-gray-600 mb-3">
+                      Quick Demo Login
+                    </p>
+                    <div className="grid grid-cols-1 gap-2">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={() =>
+                          setFormData({
+                            email: "admin@globaltrack.com",
+                            password: "GT2024@Admin!",
+                          })
+                        }
+                        className="text-xs h-8 text-royal-600 border-royal-200 hover:bg-royal-50"
+                      >
+                        <Shield className="mr-1 h-3 w-3" />
+                        Fill Super Admin
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={() =>
+                          setFormData({
+                            email: "manager@globaltrack.com",
+                            password: "GT2024@Manager!",
+                          })
+                        }
+                        className="text-xs h-8 text-blue-600 border-blue-200 hover:bg-blue-50"
+                      >
+                        <Users className="mr-1 h-3 w-3" />
+                        Fill Operations Manager
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </form>
 

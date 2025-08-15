@@ -122,11 +122,11 @@ export default function ErrorReport() {
 
       try {
         const result = await runIndividualCheck(check.id);
-        checks[i] = { ...check, ...result };
+        checks[i] = { ...check, ...result } as SystemCheck;
       } catch (error) {
         checks[i] = {
           ...check,
-          status: "failed",
+          status: "failed" as const,
           details: `Error during check: ${error}`,
         };
       }
@@ -169,7 +169,7 @@ export default function ErrorReport() {
       case "runtime":
         return checkRuntimeErrors();
       default:
-        return { status: "info", details: "Check not implemented" };
+        return { status: "info" as const, details: "Check not implemented" };
     }
   };
 
@@ -178,13 +178,13 @@ export default function ErrorReport() {
     try {
       // In a real implementation, this would check actual build status
       return {
-        status: "passed",
+        status: "passed" as const,
         details:
           "Build system is working correctly. TypeScript compilation successful.",
       };
     } catch (error) {
       return {
-        status: "failed",
+        status: "failed" as const,
         details: "Build system has errors. Check console for details.",
       };
     }
@@ -198,19 +198,19 @@ export default function ErrorReport() {
 
       if (!isAdmin) {
         return {
-          status: "info",
+          status: "info" as const,
           details:
             "Admin routes require authentication. Login to test admin routes.",
         };
       }
 
       return {
-        status: "passed",
+        status: "passed" as const,
         details: "All routes are properly configured and accessible.",
       };
     } catch (error) {
       return {
-        status: "failed",
+        status: "failed" as const,
         details: "Route configuration has issues.",
       };
     }
@@ -234,18 +234,18 @@ export default function ErrorReport() {
 
       if (missingComponents.length > 0) {
         return {
-          status: "warning",
+          status: "warning" as const,
           details: `Some components not found on current page: ${missingComponents.join(", ")}`,
         };
       }
 
       return {
-        status: "passed",
+        status: "passed" as const,
         details: "All UI components are properly loaded and functional.",
       };
     } catch (error) {
       return {
-        status: "failed",
+        status: "failed" as const,
         details: "Component system has errors.",
       };
     }
@@ -258,18 +258,18 @@ export default function ErrorReport() {
 
       if (!isAdmin || !adminEmail) {
         return {
-          status: "info",
+          status: "info" as const,
           details: "Admin system accessible but not currently authenticated.",
         };
       }
 
       return {
-        status: "passed",
+        status: "passed" as const,
         details: `Admin system working. Logged in as: ${adminEmail}`,
       };
     } catch (error) {
       return {
-        status: "failed",
+        status: "failed" as const,
         details: "Admin system has authentication errors.",
       };
     }
@@ -285,14 +285,14 @@ export default function ErrorReport() {
 
       if (bundleSize > 2.5) {
         return {
-          status: "warning",
+          status: "warning" as const,
           details: `Large bundle size: ${bundleSize}MB. Consider code splitting.`,
         };
       }
 
       if (loadTime > 3000) {
         return {
-          status: "warning",
+          status: "warning" as const,
           details: `Slow load time: ${loadTime}ms. Optimize for better performance.`,
         };
       }
@@ -306,7 +306,7 @@ export default function ErrorReport() {
       };
     } catch (error) {
       return {
-        status: "failed",
+        status: "failed" as const,
         details: "Performance check failed.",
       };
     }
@@ -322,18 +322,18 @@ export default function ErrorReport() {
 
       if (!hasResponsiveClasses) {
         return {
-          status: "warning",
+          status: "warning" as const,
           details: "Limited responsive design classes detected.",
         };
       }
 
       return {
-        status: "passed",
+        status: "passed" as const,
         details: `Responsive design implemented. Current viewport: ${viewportWidth}px`,
       };
     } catch (error) {
       return {
-        status: "failed",
+        status: "failed" as const,
         details: "Responsive design check failed.",
       };
     }
@@ -346,12 +346,12 @@ export default function ErrorReport() {
       const adminData = localStorage.getItem("adminEmail");
 
       return {
-        status: "passed",
+        status: "passed" as const,
         details: "Data flow and state management working correctly.",
       };
     } catch (error) {
       return {
-        status: "failed",
+        status: "failed" as const,
         details: "Data flow has issues.",
       };
     }
@@ -365,12 +365,12 @@ export default function ErrorReport() {
 
       // This is a simplified implementation
       return {
-        status: "passed",
+        status: "passed" as const,
         details: "No critical runtime errors detected.",
       };
     } catch (error) {
       return {
-        status: "failed",
+        status: "failed" as const,
         details: "Runtime errors detected in console.",
       };
     }

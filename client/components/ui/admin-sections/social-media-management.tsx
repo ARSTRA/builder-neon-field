@@ -260,6 +260,7 @@ export function SocialMediaManagement() {
       posts: 0,
       lastPost: "Never",
       color: "#666666",
+      description: "",
     };
     setSocialPlatforms((prev) => [...prev, platform]);
     setNewPlatform({

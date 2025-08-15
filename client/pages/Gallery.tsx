@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { OptimizedImage, ImagePresets } from "@/components/ui/optimized-image";
 import {
   Plane,
   Ship,
@@ -34,12 +35,12 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop&auto=format&q=80",
-    title: "Container Ship Operations",
+    src: "https://images.pexels.com/photos/6379245/pexels-photo-6379245.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
+    title: "Modern Container Ship Operations",
     description:
-      "Large-scale ocean freight operations handling thousands of containers",
+      "State-of-the-art cargo vessels handling large-scale ocean freight operations with thousands of containers across global trade routes",
     category: "Ocean Freight",
-    location: "Port of Rotterdam",
+    location: "Port of Rotterdam, Netherlands",
   },
   {
     id: 3,
@@ -75,11 +76,12 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&auto=format&q=80",
-    title: "International Port Operations",
-    description: "24/7 port operations handling global trade",
+    src: "https://images.pexels.com/photos/6572431/pexels-photo-6572431.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
+    title: "Advanced Port Terminal Operations",
+    description:
+      "High-tech container terminal with automated cranes and advanced logistics systems operating 24/7 for global trade",
     category: "Ocean Freight",
-    location: "Port of Shanghai",
+    location: "Port of Baltimore, USA",
   },
   {
     id: 8,
@@ -121,6 +123,33 @@ const galleryImages: GalleryImage[] = [
     category: "Operations",
     location: "Customer Care Center",
   },
+  {
+    id: 13,
+    src: "https://images.pexels.com/photos/28438355/pexels-photo-28438355.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
+    title: "Container Securing Operations",
+    description:
+      "Professional cargo securing and handling procedures ensuring safe ocean transport with experienced maritime logistics teams",
+    category: "Ocean Freight",
+    location: "Port of Hamburg, Germany",
+  },
+  {
+    id: 14,
+    src: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=800&h=600&q=80",
+    title: "Ocean Freight Vessel Fleet",
+    description:
+      "Modern container ship fleet providing reliable ocean freight services connecting global markets with eco-friendly solutions",
+    category: "Ocean Freight",
+    location: "International Waters",
+  },
+  {
+    id: 15,
+    src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=800&h=600&q=80",
+    title: "Mega Container Terminal",
+    description:
+      "World-class container terminal facility with advanced automation, real-time tracking, and sustainable port operations",
+    category: "Ocean Freight",
+    location: "Port of Singapore",
+  },
 ];
 
 const categories = [
@@ -160,10 +189,11 @@ export default function Gallery() {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Professional Background Image */}
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Global logistics operations"
-            className="w-full h-full object-cover"
+          <OptimizedImage
+            src="https://images.pexels.com/photos/6379245/pexels-photo-6379245.jpeg?auto=compress&cs=tinysrgb&w=2070&h=1380&dpr=1"
+            alt="Modern container ship and port operations showcasing global logistics excellence"
+            className="w-full h-full"
+            {...ImagePresets.hero}
           />
           {/* Multi-layer Overlay for Better Text Readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-royal-900/85 via-royal-800/75 to-royal-700/80"></div>
@@ -326,10 +356,73 @@ export default function Gallery() {
         </div>
       </section>
 
+      {/* Ocean Freight Showcase Section */}
+      {selectedCategory === "Ocean Freight" && (
+        <section className="py-16 bg-gradient-to-br from-cyan-50 to-blue-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center justify-center p-3 bg-cyan-100 rounded-full mb-6">
+                <Ship className="h-8 w-8 text-cyan-600" />
+              </div>
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                Ocean Freight Excellence
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Discover our world-class ocean freight capabilities with modern
+                container ships, automated port terminals, and sustainable
+                maritime logistics solutions connecting global markets
+                efficiently and reliably.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Ship className="h-8 w-8 text-cyan-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  Modern Fleet
+                </h3>
+                <p className="text-gray-600">
+                  State-of-the-art container vessels with advanced navigation
+                  and cargo handling systems
+                </p>
+              </div>
+
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Building2 className="h-8 w-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  Automated Ports
+                </h3>
+                <p className="text-gray-600">
+                  Advanced terminal operations with automated cranes and
+                  real-time tracking systems
+                </p>
+              </div>
+
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Globe className="h-8 w-8 text-teal-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  Global Network
+                </h3>
+                <p className="text-gray-600">
+                  Comprehensive port coverage across major shipping routes and
+                  trade corridors
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Image Gallery */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
             {filteredImages.map((image) => (
               <Card
                 key={image.id}
@@ -338,10 +431,11 @@ export default function Gallery() {
               >
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg">
-                    <img
+                    <OptimizedImage
                       src={image.src}
                       alt={image.title}
-                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-64 group-hover:scale-110 transition-transform duration-500"
+                      {...ImagePresets.gallery}
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                     <div className="absolute top-3 left-3">
@@ -397,10 +491,11 @@ export default function Gallery() {
 
             <div className="grid md:grid-cols-2">
               <div className="relative">
-                <img
+                <OptimizedImage
                   src={selectedImage.src}
                   alt={selectedImage.title}
-                  className="w-full h-96 md:h-full object-cover"
+                  className="w-full h-96 md:h-full"
+                  {...ImagePresets.hero}
                 />
               </div>
               <div className="p-8">

@@ -61,17 +61,16 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
-
-                </Button>
-              </Link>
             </div>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 touch-manipulation"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 touch-manipulation focus:outline-none focus:ring-2 focus:ring-royal-500 focus:ring-offset-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMenuOpen ? (
               <X className="h-6 w-6 text-gray-700" />
@@ -83,7 +82,12 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-100 bg-gray-50">
+          <div
+            id="mobile-menu"
+            className="lg:hidden py-4 border-t border-gray-100 bg-gray-50 animate-fade-in"
+            role="navigation"
+            aria-label="Mobile navigation menu"
+          >
             <div className="space-y-1">
               {navItems.map((item) => (
                 <Link
@@ -110,9 +114,6 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
-
-                </Button>
-              </Link>
             </div>
           </div>
         )}

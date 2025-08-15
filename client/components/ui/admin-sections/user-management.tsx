@@ -353,7 +353,12 @@ export function UserManagement() {
                       id="firstName"
                       placeholder="Enter first name"
                       value={formData.firstName}
-                      onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          firstName: e.target.value,
+                        }))
+                      }
                       required
                     />
                   </div>
@@ -363,7 +368,12 @@ export function UserManagement() {
                       id="lastName"
                       placeholder="Enter last name"
                       value={formData.lastName}
-                      onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          lastName: e.target.value,
+                        }))
+                      }
                       required
                     />
                   </div>
@@ -377,7 +387,12 @@ export function UserManagement() {
                       type="email"
                       placeholder="Enter email"
                       value={formData.email}
-                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          email: e.target.value,
+                        }))
+                      }
                       required
                     />
                   </div>
@@ -387,7 +402,12 @@ export function UserManagement() {
                       id="phone"
                       placeholder="Enter phone number"
                       value={formData.phone}
-                      onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          phone: e.target.value,
+                        }))
+                      }
                     />
                   </div>
                 </div>
@@ -395,7 +415,12 @@ export function UserManagement() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="role">User Role</Label>
-                    <Select value={formData.role} onValueChange={(value) => setFormData(prev => ({ ...prev, role: value }))}>
+                    <Select
+                      value={formData.role}
+                      onValueChange={(value) =>
+                        setFormData((prev) => ({ ...prev, role: value }))
+                      }
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Select role" />
                       </SelectTrigger>
@@ -408,7 +433,12 @@ export function UserManagement() {
                   </div>
                   <div>
                     <Label htmlFor="status">Account Status</Label>
-                    <Select value={formData.status} onValueChange={(value) => setFormData(prev => ({ ...prev, status: value }))}>
+                    <Select
+                      value={formData.status}
+                      onValueChange={(value) =>
+                        setFormData((prev) => ({ ...prev, status: value }))
+                      }
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Select status" />
                       </SelectTrigger>
@@ -427,7 +457,12 @@ export function UserManagement() {
                     id="notes"
                     placeholder="Enter any admin notes..."
                     value={formData.notes}
-                    onChange={(e) => setFormData(prev => ({ ...prev, notes: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        notes: e.target.value,
+                      }))
+                    }
                   />
                 </div>
 
@@ -435,7 +470,9 @@ export function UserManagement() {
                   <Switch
                     id="sendWelcome"
                     checked={formData.sendWelcome}
-                    onCheckedChange={(checked) => setFormData(prev => ({ ...prev, sendWelcome: checked }))}
+                    onCheckedChange={(checked) =>
+                      setFormData((prev) => ({ ...prev, sendWelcome: checked }))
+                    }
                   />
                   <Label htmlFor="sendWelcome">Send welcome email</Label>
                 </div>
@@ -672,7 +709,8 @@ export function UserManagement() {
                           variant="ghost"
                           size="sm"
                           title="Edit User"
-
+                          onClick={() => handleEditUser(user)}
+                          className="hover:bg-green-50 hover:text-green-600"
                         >
                           <Edit className="h-4 w-4" />
                         </Button>
@@ -860,7 +898,12 @@ export function UserManagement() {
                   id="editFirstName"
                   placeholder="Enter first name"
                   value={formData.firstName}
-                  onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      firstName: e.target.value,
+                    }))
+                  }
                   required
                 />
               </div>
@@ -870,7 +913,12 @@ export function UserManagement() {
                   id="editLastName"
                   placeholder="Enter last name"
                   value={formData.lastName}
-                  onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      lastName: e.target.value,
+                    }))
+                  }
                   required
                 />
               </div>
@@ -884,7 +932,9 @@ export function UserManagement() {
                   type="email"
                   placeholder="Enter email"
                   value={formData.email}
-                  onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, email: e.target.value }))
+                  }
                   required
                 />
               </div>
@@ -894,7 +944,9 @@ export function UserManagement() {
                   id="editPhone"
                   placeholder="Enter phone number"
                   value={formData.phone}
-                  onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, phone: e.target.value }))
+                  }
                 />
               </div>
             </div>
@@ -902,7 +954,12 @@ export function UserManagement() {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="editRole">User Role</Label>
-                <Select value={formData.role} onValueChange={(value) => setFormData(prev => ({ ...prev, role: value }))}>
+                <Select
+                  value={formData.role}
+                  onValueChange={(value) =>
+                    setFormData((prev) => ({ ...prev, role: value }))
+                  }
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Select role" />
                   </SelectTrigger>
@@ -915,7 +972,12 @@ export function UserManagement() {
               </div>
               <div>
                 <Label htmlFor="editStatus">Account Status</Label>
-                <Select value={formData.status} onValueChange={(value) => setFormData(prev => ({ ...prev, status: value }))}>
+                <Select
+                  value={formData.status}
+                  onValueChange={(value) =>
+                    setFormData((prev) => ({ ...prev, status: value }))
+                  }
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Select status" />
                   </SelectTrigger>
@@ -934,25 +996,33 @@ export function UserManagement() {
                 id="editNotes"
                 placeholder="Enter any admin notes..."
                 value={formData.notes}
-                onChange={(e) => setFormData(prev => ({ ...prev, notes: e.target.value }))}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, notes: e.target.value }))
+                }
               />
             </div>
 
             {editingUser && (
               <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-                <h4 className="font-semibold text-blue-900 mb-2">Current User Info</h4>
+                <h4 className="font-semibold text-blue-900 mb-2">
+                  Current User Info
+                </h4>
                 <div className="grid grid-cols-2 gap-4 text-sm text-blue-800">
                   <div>
-                    <span className="font-medium">Original Name:</span> {editingUser.name}
+                    <span className="font-medium">Original Name:</span>{" "}
+                    {editingUser.name}
                   </div>
                   <div>
-                    <span className="font-medium">Join Date:</span> {editingUser.joinDate}
+                    <span className="font-medium">Join Date:</span>{" "}
+                    {editingUser.joinDate}
                   </div>
                   <div>
-                    <span className="font-medium">Total Shipments:</span> {editingUser.shipments}
+                    <span className="font-medium">Total Shipments:</span>{" "}
+                    {editingUser.shipments}
                   </div>
                   <div>
-                    <span className="font-medium">Total Spent:</span> {editingUser.totalSpent}
+                    <span className="font-medium">Total Spent:</span>{" "}
+                    {editingUser.totalSpent}
                   </div>
                 </div>
               </div>

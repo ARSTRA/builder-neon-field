@@ -198,14 +198,12 @@ export default function Services() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-royal-600 via-royal-700 to-royal-800 text-white overflow-hidden">
-        {/* High-quality background image */}
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-royal-600/85 via-royal-700/80 to-royal-800/85"></div>
         <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
           <div className="max-w-5xl mx-auto text-center">
-            {/* Service Icons Row */}
             <div className="flex justify-center items-center space-x-8 mb-8 animate-fade-in">
               <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl">
                 <Plane className="h-8 w-8 text-orange-400" />
@@ -231,7 +229,6 @@ export default function Services() {
               technology.
             </p>
 
-            {/* Statistics Row */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 animate-fade-in-delay">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-2xl lg:text-3xl font-bold text-orange-400">
@@ -267,22 +264,16 @@ export default function Services() {
                 Get Custom Quote
                 <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
-              <Link to="/chat">
+              <Link to="/contact">
                 <Button
                   variant="outline"
                   className="group border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-[1.02] rounded-xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/20"
                 >
-
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Talk to Expert
                 </Button>
               </Link>
             </div>
-
-            {/* Floating elements for visual interest */}
-            <div className="absolute top-20 left-10 w-16 h-16 bg-orange-400/20 rounded-full animate-pulse hidden lg:block"></div>
-            <div className="absolute bottom-20 right-10 w-12 h-12 bg-white/10 rounded-full animate-pulse hidden lg:block delay-1000"></div>
-            <div className="absolute top-1/2 right-20 w-8 h-8 bg-orange-400/30 rounded-full animate-pulse hidden lg:block delay-500"></div>
-            <div className="absolute top-32 right-1/4 w-6 h-6 bg-white/20 rounded-full animate-pulse hidden lg:block delay-700"></div>
-            <div className="absolute bottom-32 left-1/4 w-10 h-10 bg-orange-400/15 rounded-full animate-pulse hidden lg:block delay-300"></div>
           </div>
         </div>
       </section>
@@ -331,7 +322,6 @@ export default function Services() {
               </div>
             </div>
 
-            {/* Enhanced Call Expert Button */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold mb-4">
                 Speak with a Logistics Expert Now
@@ -341,15 +331,21 @@ export default function Services() {
                 solution recommendations
               </p>
 
-                    </span>
-                  </Button>
-                </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  onClick={() => window.open("tel:+15551234567", "_self")}
+                  className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-[1.02] rounded-2xl relative overflow-hidden"
+                >
+                  <Phone className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
+                  Call Expert: +1 (555) 123-4567
+                </Button>
                 <Link to="/contact">
                   <Button
                     variant="outline"
-                    className="group relative border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 overflow-hidden"
+                    className="group relative border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25"
                   >
-
+                    <MessageCircle className="mr-3 h-6 w-6 group-hover:bounce transition-transform duration-300" />
+                    Contact Support
                   </Button>
                 </Link>
               </div>
@@ -364,35 +360,15 @@ export default function Services() {
       {/* Main Services */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          {/* Enhanced Header with Background */}
-          <div className="relative mb-16">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center rounded-3xl opacity-10"></div>
-            <div className="relative bg-gradient-to-r from-royal-50 to-orange-50 rounded-3xl p-12 text-center">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                Complete Logistics Solutions
-              </h2>
-              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Choose from our comprehensive range of shipping services, each
-                designed to meet specific transportation needs with professional
-                expertise and cutting-edge technology. Our integrated approach
-                ensures seamless logistics management from pickup to final
-                delivery.
-              </p>
-              <div className="flex justify-center mt-8 space-x-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-royal-600">4</div>
-                  <div className="text-sm text-gray-600">Main Services</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-600">15+</div>
-                  <div className="text-sm text-gray-600">Specializations</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-royal-600">100%</div>
-                  <div className="text-sm text-gray-600">Satisfaction</div>
-                </div>
-              </div>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+              Complete Logistics Solutions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Choose from our comprehensive range of shipping services, each
+              designed to meet specific transportation needs with professional
+              expertise and cutting-edge technology.
+            </p>
           </div>
 
           <div className="space-y-24">
@@ -401,18 +377,12 @@ export default function Services() {
                 key={service.id}
                 className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center lg:items-stretch`}
               >
-                {/* Image Side */}
                 <div className="lg:w-1/2">
                   <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
                     <img
                       src={service.image}
                       alt={`${service.title} - Professional shipping and logistics services`}
                       className="w-full h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src =
-                          "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
-                      }}
                       loading="lazy"
                     />
                     <div
@@ -423,18 +393,9 @@ export default function Services() {
                         {service.icon}
                       </div>
                     </div>
-                    {/* Image overlay with service info */}
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h4 className="font-semibold text-sm">
-                          {service.subtitle}
-                        </h4>
-                      </div>
-                    </div>
                   </div>
                 </div>
 
-                {/* Content Side */}
                 <div className="lg:w-1/2 flex">
                   <Card className="border-0 shadow-xl bg-white w-full flex flex-col">
                     <CardContent className="p-8 flex-1">
@@ -506,12 +467,13 @@ export default function Services() {
                           Get Quote
                           <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>
-
+                        <Link to="/contact">
                           <Button
                             variant="outline"
-                            className="group w-full border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-[1.02] rounded-xl py-4 font-semibold backdrop-blur-sm bg-royal-50/50 hover:bg-royal-600"
+                            className="group border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-[1.02] rounded-xl py-4 font-semibold px-6"
                           >
-
+                            <MessageCircle className="h-5 w-5 mr-2" />
+                            Contact Expert
                           </Button>
                         </Link>
                       </div>
@@ -568,7 +530,12 @@ export default function Services() {
                       Get Quote
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
-
+                    <Link to="/contact">
+                      <Button
+                        variant="outline"
+                        className="group border-2 border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] rounded-lg px-4"
+                      >
+                        <MessageCircle className="h-4 w-4" />
                       </Button>
                     </Link>
                   </div>
@@ -630,23 +597,18 @@ export default function Services() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-2xl mx-auto">
             <Button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="group bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 hover:from-orange-600 hover:via-orange-700 hover:to-orange-600 text-white px-10 py-5 text-lg flex-1 font-bold shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105 rounded-2xl relative overflow-hidden"
+              className="group bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 hover:from-orange-600 hover:via-orange-700 hover:to-orange-600 text-white px-10 py-5 text-lg flex-1 font-bold shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105 rounded-2xl"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-              <Calendar className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300 relative z-10" />
-              <span className="relative z-10">Get Free Quote</span>
+              <Calendar className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
+              Get Free Quote
             </Button>
             <Link to="/contact" className="flex-1">
               <Button
                 variant="outline"
-                className="group w-full border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-white/20 transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5 relative overflow-hidden"
+                className="group w-full border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-white/20 transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                <MessageCircle className="mr-3 h-6 w-6 group-hover:bounce transition-transform duration-300 relative z-10" />
-                <span className="relative z-10">Contact Support</span>
-                <div className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
-                  24/7
-                </div>
+                <MessageCircle className="mr-3 h-6 w-6 group-hover:bounce transition-transform duration-300" />
+                Contact Support
               </Button>
             </Link>
           </div>
@@ -673,21 +635,6 @@ export default function Services() {
           </div>
         </div>
       </section>
-
-
-            </div>
-          </div>
-
-          {/* Secondary Live Chat Button */}
-          <div className="absolute bottom-20 right-0 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0 delay-100">
-            <Link to="/contact">
-              <Button className="bg-royal-600 hover:bg-royal-700 text-white p-4 rounded-xl shadow-xl hover:shadow-royal-600/30 transition-all duration-300 transform hover:scale-105 border border-white/20">
-                <MessageCircle className="h-5 w-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
 
       <GetQuoteModal
         open={isQuoteModalOpen}
