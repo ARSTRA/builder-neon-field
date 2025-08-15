@@ -178,13 +178,13 @@ export default function ErrorReport() {
     try {
       // In a real implementation, this would check actual build status
       return {
-        status: "passed",
+        status: "passed" as const,
         details:
           "Build system is working correctly. TypeScript compilation successful.",
       };
     } catch (error) {
       return {
-        status: "failed",
+        status: "failed" as const,
         details: "Build system has errors. Check console for details.",
       };
     }
