@@ -310,7 +310,7 @@ export default function Index() {
                         alt="Air Freight"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-royal-600/80 to-royal-800/60 group-hover:from-royal-700/70 group-hover:to-royal-900/50 transition-all duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/80 to-shipblue-800/60 group-hover:from-shipblue-700/70 group-hover:to-shipblue-900/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <Plane className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" />
                       </div>
@@ -374,7 +374,7 @@ export default function Index() {
                         alt="Ground Transport"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-royal-600/80 to-royal-800/60 group-hover:from-royal-700/70 group-hover:to-royal-900/50 transition-all duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/80 to-shipblue-800/60 group-hover:from-shipblue-700/70 group-hover:to-shipblue-900/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <Truck className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" />
                       </div>
@@ -473,7 +473,7 @@ export default function Index() {
                   <Link to="/services">
                     <Button
                       variant="outline"
-                      className="w-full border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white"
+                      className="w-full border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white"
                     >
                       Learn More
                     </Button>
@@ -514,7 +514,7 @@ export default function Index() {
 
               <div className="mt-8">
                 <Link to="/services">
-                  <Button className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-3">
+                  <Button className="bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white px-8 py-3">
                     View All Services
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -529,7 +529,7 @@ export default function Index() {
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
-                <div className="text-2xl font-bold text-royal-600">
+                <div className="text-2xl font-bold text-shipblue-600">
                   Live Tracking
                 </div>
                 <div className="text-gray-600">Real-time GPS monitoring</div>
@@ -559,7 +559,7 @@ export default function Index() {
             {/* Customer Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
               <div className="text-center">
-                <div className="text-3xl font-bold text-royal-600 mb-2">
+                <div className="text-3xl font-bold text-shipblue-600 mb-2">
                   5,000+
                 </div>
                 <div className="text-sm text-gray-600">Happy Clients</div>
@@ -571,7 +571,7 @@ export default function Index() {
                 <div className="text-sm text-gray-600">Average Rating</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-royal-600 mb-2">
+                <div className="text-3xl font-bold text-shipblue-600 mb-2">
                   98%
                 </div>
                 <div className="text-sm text-gray-600">Would Recommend</div>
@@ -587,7 +587,7 @@ export default function Index() {
 
           {/* Featured Testimonial */}
           <div className="mb-16">
-            <Card className="bg-gradient-to-br from-royal-600 to-royal-800 text-white border-0 shadow-2xl overflow-hidden">
+            <Card className="bg-gradient-to-br from-shipblue-600 to-shipblue-800 text-white border-0 shadow-2xl overflow-hidden">
               <CardContent className="p-12 relative">
                 <div className="absolute top-8 right-8 opacity-20">
                   <Star className="h-32 w-32" />
@@ -669,8 +669,8 @@ export default function Index() {
               >
                 <CardContent className="p-0">
                   {/* Image Header */}
-                  <div className="relative h-32 bg-gradient-to-br from-royal-100 to-orange-100">
-                    <div className="absolute inset-0 bg-gradient-to-r from-royal-600/20 to-orange-500/20"></div>
+                  <div className="relative h-32 bg-gradient-to-br from-shipblue-100 to-orange-100">
+                    <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/20 to-orange-500/20"></div>
                     <div className="absolute -bottom-8 left-6">
                       <img
                         src={testimonial.image}
@@ -709,7 +709,7 @@ export default function Index() {
                     {/* Success metrics */}
                     <div className="flex justify-between items-center pt-4 border-t border-gray-100">
                       <div className="text-center">
-                        <div className="text-lg font-bold text-royal-600">
+                        <div className="text-lg font-bold text-shipblue-600">
                           {testimonial.shipments}
                         </div>
                         <div className="text-xs text-gray-500">Shipments</div>
@@ -746,7 +746,7 @@ export default function Index() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   onClick={handleGetQuote}
-                  className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-3"
+                  className="bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white px-8 py-3"
                 >
                   Get Your Free Quote
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -754,7 +754,7 @@ export default function Index() {
                 <Button
                   onClick={handleCallExpert}
                   variant="outline"
-                  className="border-royal-600 text-royal-600 hover:bg-royal-600 hover:text-white px-8 py-3"
+                  className="border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white px-8 py-3"
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   Speak with Expert
@@ -766,7 +766,7 @@ export default function Index() {
       </section>
 
       {/* Enhanced CTA Section */}
-      <section className="relative py-24 bg-gradient-to-br from-royal-600 via-royal-700 to-royal-900 text-white overflow-hidden">
+      <section className="relative py-24 bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-shipblue-900 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
@@ -821,14 +821,14 @@ export default function Index() {
               <Link to="/contact" className="group">
                 <Button
                   variant="outline"
-                  className="relative border-2 border-white/30 text-white hover:bg-white hover:text-royal-600 px-10 py-4 text-lg font-semibold rounded-xl backdrop-blur-sm bg-white/5 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                  className="relative border-2 border-white/30 text-white hover:bg-white hover:text-shipblue-600 px-10 py-4 text-lg font-semibold rounded-xl backdrop-blur-sm bg-white/5 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
                 >
                   <div className="flex items-center space-x-3">
                     <Phone className="h-6 w-6 group-hover:animate-pulse" />
                     <span>Contact Expert</span>
                     <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-royal-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-shipblue-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
               </Link>
             </div>
