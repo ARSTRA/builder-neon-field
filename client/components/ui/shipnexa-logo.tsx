@@ -69,13 +69,13 @@ export default function ShipNexaLogo({
 
       {/* Company Text */}
       <div className="flex items-center">
-        <span className={`font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent ${sizes.text}`}>
+        <span className={`font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent drop-shadow-sm ${sizes.text}`}>
           Ship
         </span>
-        <span className={`font-bold text-orange-500 ${sizes.text}`}>
+        <span className={`font-bold text-orange-500 drop-shadow-sm ${sizes.text}`}>
           Nexa
         </span>
-        <span className={`text-gray-600 font-medium ${sizes.text === 'text-sm' ? 'text-xs' : sizes.text === 'text-lg' ? 'text-sm' : sizes.text === 'text-xl' ? 'text-base' : 'text-lg'}`}>
+        <span className={`text-gray-600 font-medium drop-shadow-sm ${sizes.text === 'text-sm' ? 'text-xs' : sizes.text === 'text-lg' ? 'text-sm' : sizes.text === 'text-xl' ? 'text-base' : 'text-lg'}`}>
           .it
         </span>
       </div>
