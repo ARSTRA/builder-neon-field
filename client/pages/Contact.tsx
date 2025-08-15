@@ -231,22 +231,22 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link to="/chat">
-                <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  CHAT NOW - Get Instant Help
+                <Button className="group bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-600 hover:via-orange-700 hover:to-orange-800 text-white px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-orange-500/40 transition-all duration-500 transform hover:scale-105 rounded-2xl border border-orange-300/30 backdrop-blur-sm relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                  <MessageCircle className="mr-3 h-6 w-6 group-hover:bounce transition-all duration-300 relative z-10" />
+                  <span className="relative z-10">CHAT NOW - Get Instant Help</span>
                 </Button>
               </Link>
               <Button
                 onClick={() => window.open("tel:+15551234567", "_self")}
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
+                className="group bg-white/15 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-500 transform hover:scale-105 rounded-2xl shadow-2xl hover:shadow-white/30 relative overflow-hidden"
               >
-                <Phone className="mr-2 h-5 w-5" />
-                Call: +1 (555) 123-4567
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                <Phone className="mr-3 h-6 w-6 group-hover:ring-2 group-hover:ring-royal-300 group-hover:rounded-full group-hover:p-1 transition-all duration-300 relative z-10" />
+                <span className="relative z-10">Call: +1 (555) 123-4567</span>
               </Button>
-
             </div>
           </div>
         </div>
