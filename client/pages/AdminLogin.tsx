@@ -63,23 +63,27 @@ export default function AdminLogin() {
     const validAdmin = validateAdminCredentials(email, password);
 
     if (validAdmin) {
-      // Set admin session
+      // Set admin session with enhanced security tracking
       localStorage.setItem("isAdmin", "true");
       localStorage.setItem("adminEmail", validAdmin.email);
       localStorage.setItem("adminRole", validAdmin.role);
+      localStorage.setItem("adminDepartment", validAdmin.department || "");
+      localStorage.setItem("adminPermissions", JSON.stringify(validAdmin.permissions));
       localStorage.setItem("adminLoginTime", new Date().toISOString());
+      localStorage.setItem("adminSessionId", `session_${Date.now()}_${Math.random()}`);
 
       setSuccess(`Welcome ${validAdmin.role}! Redirecting to admin portal...`);
 
       toast({
-        title: "Admin Login Successful",
-        description: `Welcome ${validAdmin.role} to GlobalTrack Admin Portal`,
+        title: "🎉 Admin Login Successful",
+        description: `Welcome ${validAdmin.role} from ${validAdmin.department || 'Administration'} department`,
       });
 
-      // Small delay to show success message
+      // Role-based navigation delay
+      const navigationDelay = validAdmin.role === "Super Admin" ? 1200 : 1000;
       setTimeout(() => {
         navigate("/admin");
-      }, 1000);
+      }, navigationDelay);
     } else {
       setError(
         "Invalid admin credentials. Please check your email and password and try again.",
