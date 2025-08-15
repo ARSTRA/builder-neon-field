@@ -23,10 +23,10 @@ export default function ShipNexaLogo({
 
   if (variant === 'icon') {
     return (
-      <div className={`${sizes.container} aspect-square bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg ${className}`}>
+      <div className={`${sizes.container} aspect-square bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ${className}`}>
         <div className="relative">
-          <Ship className={`${sizes.icon} text-white`} />
-          <div className="absolute -top-1 -right-1 w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+          <Ship className={`${sizes.icon} text-white drop-shadow-sm`} />
+          <div className="absolute -top-1 -right-1 w-2 h-2 bg-orange-400 rounded-full animate-pulse shadow-sm"></div>
         </div>
       </div>
     );
@@ -51,20 +51,20 @@ export default function ShipNexaLogo({
   return (
     <div className={`flex items-center space-x-2 ${className}`}>
       {/* Logo Icon */}
-      <div className={`${sizes.container} aspect-square bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg relative overflow-hidden`}>
+      <div className={`${sizes.container} aspect-square bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group`}>
         {/* Background pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent"></div>
-        
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent group-hover:from-blue-400/30 transition-all duration-300"></div>
+
         {/* Main shipping icon */}
         <div className="relative z-10 flex items-center justify-center">
-          <Ship className={`${sizes.icon} text-white`} />
-          
+          <Ship className={`${sizes.icon} text-white drop-shadow-sm group-hover:scale-105 transition-transform duration-300`} />
+
           {/* Animated indicator */}
           <div className="absolute -top-1 -right-1 w-2 h-2 bg-orange-400 rounded-full animate-pulse shadow-sm"></div>
         </div>
-        
+
         {/* Subtle container pattern */}
-        <div className="absolute bottom-0 right-0 w-3 h-1 bg-white/20 rounded-tl"></div>
+        <div className="absolute bottom-0 right-0 w-3 h-1 bg-white/20 rounded-tl group-hover:bg-white/30 transition-all duration-300"></div>
       </div>
 
       {/* Company Text */}
