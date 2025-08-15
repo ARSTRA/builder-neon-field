@@ -351,6 +351,53 @@ export default function Gallery() {
         </div>
       </section>
 
+      {/* Ocean Freight Showcase Section */}
+      {selectedCategory === "Ocean Freight" && (
+        <section className="py-16 bg-gradient-to-br from-cyan-50 to-blue-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center justify-center p-3 bg-cyan-100 rounded-full mb-6">
+                <Ship className="h-8 w-8 text-cyan-600" />
+              </div>
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                Ocean Freight Excellence
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Discover our world-class ocean freight capabilities with modern container ships,
+                automated port terminals, and sustainable maritime logistics solutions connecting
+                global markets efficiently and reliably.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Ship className="h-8 w-8 text-cyan-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">Modern Fleet</h3>
+                <p className="text-gray-600">State-of-the-art container vessels with advanced navigation and cargo handling systems</p>
+              </div>
+
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Building2 className="h-8 w-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">Automated Ports</h3>
+                <p className="text-gray-600">Advanced terminal operations with automated cranes and real-time tracking systems</p>
+              </div>
+
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Globe className="h-8 w-8 text-teal-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">Global Network</h3>
+                <p className="text-gray-600">Comprehensive port coverage across major shipping routes and trade corridors</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Image Gallery */}
       <section className="py-16">
         <div className="container mx-auto px-4">
