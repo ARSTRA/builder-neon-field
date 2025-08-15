@@ -23,6 +23,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GetQuoteModal } from "@/components/ui/get-quote-modal";
 import { SocialMediaShare } from "@/components/ui/social-media-share";
+import { OptimizedImage, ImagePresets } from "@/components/ui/optimized-image";
 
 export default function About() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -195,15 +196,11 @@ export default function About() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Image Side */}
               <div className="relative">
-                <img
+                <OptimizedImage
                   src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80"
                   alt="GlobalTrack team and operations"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                  loading="lazy"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80';
-                  }}
+                  className="w-full h-96 rounded-2xl shadow-2xl"
+                  {...ImagePresets.hero}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-royal-600/20 to-orange-500/20 rounded-2xl"></div>
                 <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
@@ -392,15 +389,11 @@ export default function About() {
                   className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden hover:-translate-y-2"
                 >
                   <div className="relative overflow-hidden">
-                    <img
+                    <OptimizedImage
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                      loading="lazy"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80';
-                      }}
+                      className="w-full h-64 group-hover:scale-110 transition-transform duration-500"
+                      {...ImagePresets.card}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-royal-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
