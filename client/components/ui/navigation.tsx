@@ -106,12 +106,20 @@ export function Navigation() {
               ))}
             </div>
             <div className="space-y-3 mt-6 px-4">
+              <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
+                <Button
+                  variant="outline"
+                  className="w-full border-shipblue-600 text-shipblue-600 hover:bg-shipblue-600 hover:text-white transition-all duration-300 py-4 touch-manipulation"
+                >
+                  Login / Sign Up
+                </Button>
+              </Link>
               <Button
                 onClick={() => {
                   setIsQuoteModalOpen(true);
                   setIsMenuOpen(false);
                 }}
-                className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white shadow-md py-4 touch-manipulation"
+                className="w-full bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white shadow-md py-4 touch-manipulation"
               >
                 Get Quote
               </Button>
