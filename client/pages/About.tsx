@@ -445,11 +445,11 @@ export default function About() {
               global capabilities to every shipment across the world.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
-                <MapPin className="h-12 w-12 text-orange-400 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-2">120+ Countries</h3>
-                <p className="text-gray-200">Worldwide coverage</p>
+            <div className="grid md:grid-cols-3 gap-10 mb-16">
+              <div className="bg-white/15 backdrop-blur-md rounded-2xl p-10 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-3xl group">
+                <MapPin className="h-16 w-16 text-orange-400 mx-auto mb-6 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-3xl font-bold mb-3 drop-shadow-sm">120+ Countries</h3>
+                <p className="text-gray-100 text-lg drop-shadow-sm">Worldwide coverage</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
                 <Users className="h-12 w-12 text-orange-400 mx-auto mb-4" />
