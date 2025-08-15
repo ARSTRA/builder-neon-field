@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GetQuoteModal } from "@/components/ui/get-quote-modal";
+import { SocialMediaShare } from "@/components/ui/social-media-share";
 
 export default function About() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -456,19 +457,26 @@ export default function About() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold"
+                className="group bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 hover:from-orange-600 hover:via-orange-700 hover:to-orange-600 text-white px-10 py-5 text-lg font-bold shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105 rounded-2xl relative overflow-hidden"
               >
-                Join Our Network
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                <span className="relative z-10">Join Our Network</span>
+                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
               </Button>
               <Link to="/contact">
                 <Button
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-royal-600 px-8 py-4 text-lg font-semibold"
+                  className="group border-3 border-white/90 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-2xl backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25 relative overflow-hidden"
                 >
-                  Visit Our Offices
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                  <MapPin className="mr-3 h-6 w-6 group-hover:animate-pulse relative z-10" />
+                  <span className="relative z-10">Visit Our Offices</span>
+                  <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full animate-bounce">
+                    GLOBAL
+                  </div>
                 </Button>
               </Link>
             </div>
@@ -515,6 +523,23 @@ export default function About() {
               Get Started Today
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
+
+            {/* Social Media Sharing */}
+            <div className="mt-8 pt-8 border-t border-gray-200">
+              <div className="text-center">
+                <p className="text-gray-600 mb-4">
+                  Share our story with others
+                </p>
+                <SocialMediaShare
+                  title="About GlobalTrack Logistics - Professional Shipping Solutions"
+                  description="Learn about GlobalTrack Logistics, a leading provider of worldwide shipping and logistics solutions with over 15 years of experience."
+                  hashtags={["logistics", "shipping", "globaltrack", "aboutus"]}
+                  showText={true}
+                  style="icons"
+                  size="md"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

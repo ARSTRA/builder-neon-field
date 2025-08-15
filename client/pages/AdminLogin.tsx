@@ -19,6 +19,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { validateAdminCredentials } from "@shared/admin-config";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -58,35 +59,8 @@ export default function AdminLogin() {
     const email = formData.email.trim().toLowerCase();
     const password = formData.password.trim();
 
-    // Admin credentials validation (in real app, use secure backend authentication)
-    const adminCredentials = [
-      {
-        email: "admin@globaltrack.com",
-        password: "admin123",
-        role: "Super Admin",
-      },
-      { email: "admin@gt.com", password: "admin123", role: "Admin" },
-      {
-        email: "superadmin@globaltrack.com",
-        password: "superadmin123",
-        role: "Super Admin",
-      },
-      {
-        email: "manager@globaltrack.com",
-        password: "manager123",
-        role: "Manager",
-      },
-      {
-        email: "support@globaltrack.com",
-        password: "support123",
-        role: "Support Admin",
-      },
-    ];
-
-    const validAdmin = adminCredentials.find(
-      (admin) =>
-        admin.email.toLowerCase() === email && admin.password === password,
-    );
+    // Validate admin credentials using centralized configuration
+    const validAdmin = validateAdminCredentials(email, password);
 
     if (validAdmin) {
       // Set admin session
@@ -297,78 +271,6 @@ export default function AdminLogin() {
                   </Button>
                 </div>
               </form>
-
-              {/* Demo Credentials */}
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <h4 className="text-sm font-medium text-blue-800 mb-3">
-                  Demo Admin Accounts:
-                </h4>
-                <div className="space-y-3">
-                  <div className="grid grid-cols-1 gap-2">
-                    <div className="bg-white/60 rounded p-2">
-                      <div className="text-xs text-blue-700">
-                        <p>
-                          <strong>Super Admin:</strong>
-                        </p>
-                        <p className="font-mono">admin@globaltrack.com</p>
-                        <p className="font-mono">admin123</p>
-                      </div>
-                    </div>
-                    <div className="bg-white/60 rounded p-2">
-                      <div className="text-xs text-blue-700">
-                        <p>
-                          <strong>Manager:</strong>
-                        </p>
-                        <p className="font-mono">manager@globaltrack.com</p>
-                        <p className="font-mono">manager123</p>
-                      </div>
-                    </div>
-                    <div className="bg-white/60 rounded p-2">
-                      <div className="text-xs text-blue-700">
-                        <p>
-                          <strong>Support Admin:</strong>
-                        </p>
-                        <p className="font-mono">support@globaltrack.com</p>
-                        <p className="font-mono">support123</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      className="text-xs"
-                      onClick={() => {
-                        setFormData({
-                          email: "admin@globaltrack.com",
-                          password: "admin123",
-                        });
-                        setError("");
-                        setSuccess("");
-                      }}
-                    >
-                      Use Super Admin
-                    </Button>
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      className="text-xs"
-                      onClick={() => {
-                        setFormData({
-                          email: "manager@globaltrack.com",
-                          password: "manager123",
-                        });
-                        setError("");
-                        setSuccess("");
-                      }}
-                    >
-                      Use Manager
-                    </Button>
-                  </div>
-                </div>
-              </div>
 
               <div className="text-center">
                 <p className="text-gray-600 text-sm">

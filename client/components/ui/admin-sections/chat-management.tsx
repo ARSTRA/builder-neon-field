@@ -51,6 +51,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Progress } from "@/components/ui/progress";
+import { ChatAdminPanel } from "@/components/ui/chat-admin-panel";
 
 export function ChatManagement() {
   const { toast } = useToast();
@@ -378,6 +379,7 @@ export function ChatManagement() {
           <TabsTrigger value="agents">Agents ({agents.length})</TabsTrigger>
           <TabsTrigger value="history">Chat History</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
+          <TabsTrigger value="configuration">Configuration</TabsTrigger>
         </TabsList>
 
         <TabsContent value="active" className="space-y-6">
@@ -522,9 +524,11 @@ export function ChatManagement() {
                         <AvatarImage src={agent.avatar} alt={agent.name} />
                         <AvatarFallback>
                           {agent.name
-                            .split(" ")
-                            .map((n) => n[0])
-                            .join("")}
+                            ? agent.name
+                                .split(" ")
+                                .map((n) => (n ? n[0] : ""))
+                                .join("")
+                            : "A"}
                         </AvatarFallback>
                       </Avatar>
                       <div
@@ -710,6 +714,10 @@ export function ChatManagement() {
               </CardContent>
             </Card>
           </div>
+        </TabsContent>
+
+        <TabsContent value="configuration">
+          <ChatAdminPanel />
         </TabsContent>
       </Tabs>
 
