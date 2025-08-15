@@ -327,9 +327,9 @@ export default function Services() {
               <h3 className="text-3xl font-bold mb-6 drop-shadow-md">
                 Speak with a Logistics Expert Now
               </h3>
-              <p className="text-gray-200 mb-6">
+              <p className="text-gray-100 mb-8 text-lg drop-shadow-sm">
                 Get instant answers to your shipping questions and personalized
-                solution recommendations
+                solution recommendations from our certified logistics experts.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -343,7 +343,7 @@ export default function Services() {
                 <Link to="/contact">
                   <Button
                     variant="outline"
-                    className="group relative border-3 border-white/80 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25"
+                    className="group relative border-3 border-white/80 text-white hover:bg-white hover:text-shipblue-600 px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:shadow-2xl hover:shadow-white/25"
                   >
                     <MessageCircle className="mr-3 h-6 w-6 group-hover:bounce transition-transform duration-300" />
                     Contact Support
