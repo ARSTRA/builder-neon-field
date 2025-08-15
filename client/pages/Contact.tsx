@@ -317,7 +317,7 @@ export default function Contact() {
                             ?.scrollIntoView({ behavior: "smooth" });
                         }
                       }}
-
+                      className={`group w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden`}
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-500"></div>
                       <span className="relative z-10">{method.action}</span>
