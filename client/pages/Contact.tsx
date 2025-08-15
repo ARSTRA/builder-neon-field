@@ -317,10 +317,16 @@ export default function Contact() {
                             ?.scrollIntoView({ behavior: "smooth" });
                         }
                       }}
-                      className={`group w-full bg-gradient-to-r ${method.gradient} hover:opacity-90 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden`}
+                      className={`group w-full bg-gradient-to-br ${method.gradient} hover:shadow-2xl text-white font-bold py-5 px-6 rounded-2xl shadow-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 relative overflow-hidden border border-white/20`}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-500"></div>
-                      <span className="relative z-10">{method.action}</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 tracking-wide">{method.action}</span>
+                      {method.title === "Call Us Directly" && (
+                        <div className="absolute -top-1 -right-1 bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-pulse z-20">
+                          LIVE
+                        </div>
+                      )}
                     </Button>
                   </CardContent>
                 </Card>
