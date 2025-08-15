@@ -140,6 +140,13 @@ export default function App() {
                 }
               />
 
+              {/* Admin routes */}
+              <Route path="/login" element={<AdminLogin />} />
+              <Route path="/admin/setup" element={<AdminSetup />} />
+              <Route path="/admin/overview" element={<AdminOverview />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/unified-admin" element={<UnifiedAdmin />} />
+              <Route path="/error-report" element={<ErrorReport />} />
 
               {/* 404 page */}
               <Route
