@@ -298,7 +298,7 @@ export default function Services() {
 
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div className="bg-white/15 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-                <Shield className="h-12 w-12 text-orange-400 mx-auto mb-4" />
+                <Shield className="h-14 w-14 text-orange-400 mx-auto mb-6 drop-shadow-lg" />
                 <h3 className="text-xl font-semibold mb-2">
                   Certified Experts
                 </h3>
