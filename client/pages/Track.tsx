@@ -371,9 +371,9 @@ Generated on: ${new Date().toLocaleDateString()}
                 <img
                   src="https://images.pexels.com/photos/3582491/pexels-photo-3582491.jpeg"
                   alt="GPS tracking technology"
-                  className="w-full h-80 object-cover rounded-2xl shadow-2xl"
+                  className="w-full h-80 object-cover rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/20 to-orange-500/20 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/30 to-orange-500/20 rounded-2xl"></div>
                 <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
