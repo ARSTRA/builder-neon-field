@@ -36,10 +36,10 @@ export function Navigation() {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`font-medium text-sm xl:text-base transition-all duration-200 hover:text-royal-600 py-2 ${
+                className={`font-medium text-sm xl:text-base transition-all duration-200 hover:text-shipblue-600 py-2 ${
                   location.pathname === item.href
-                    ? "text-royal-600 border-b-2 border-royal-600"
-                    : "text-gray-700 hover:text-royal-600"
+                    ? "text-shipblue-600 border-b-2 border-shipblue-600"
+                    : "text-gray-700 hover:text-shipblue-600"
                 }`}
               >
                 {item.label}

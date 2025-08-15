@@ -6,7 +6,7 @@ import ShipNexaLogo from "./shipnexa-logo";
 
 export function Footer() {
   return (
-    <footer className="bg-royal-900 text-white">
+    <footer className="bg-shipblue-900 text-white">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
