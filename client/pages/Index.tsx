@@ -135,7 +135,7 @@ export default function Index() {
       company: "Tech Solutions Inc.",
       rating: 5,
       comment:
-        "GlobalTrack has been our trusted shipping partner for over 3 years. Their tracking system is incredibly accurate and customer service is outstanding. The team goes above and beyond to ensure our shipments arrive on time.",
+        "ShipNexa.it has been our trusted shipping partner for over 3 years. Their tracking system is incredibly accurate and customer service is outstanding. The team goes above and beyond to ensure our shipments arrive on time.",
       image:
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "500+",
@@ -171,7 +171,7 @@ export default function Index() {
       company: "Manufacturing Corp",
       rating: 5,
       comment:
-        "Outstanding service and support. The team at GlobalTrack understands our unique needs and always delivers solutions that work. Their expertise in international shipping is unmatched.",
+        "Outstanding service and support. The team at ShipNexa.it understands our unique needs and always delivers solutions that work. Their expertise in international shipping is unmatched.",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "800+",
@@ -183,7 +183,7 @@ export default function Index() {
       company: "E-commerce Solutions",
       rating: 5,
       comment:
-        "GlobalTrack's technology platform and customer service are exceptional. They've helped us streamline our shipping process and reduce costs significantly while improving delivery times.",
+        "ShipNexa.it's technology platform and customer service are exceptional. They've helped us streamline our shipping process and reduce costs significantly while improving delivery times.",
       image:
         "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "1800+",
@@ -195,7 +195,7 @@ export default function Index() {
       company: "Industrial Equipment Co.",
       rating: 5,
       comment:
-        "Reliable, professional, and cost-effective. GlobalTrack has been instrumental in helping us expand our international presence. Their expertise in heavy cargo shipping is particularly impressive.",
+        "Reliable, professional, and cost-effective. ShipNexa.it has been instrumental in helping us expand our international presence. Their expertise in heavy cargo shipping is particularly impressive.",
       image:
         "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
       shipments: "600+",
@@ -206,7 +206,7 @@ export default function Index() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-royal-600 via-royal-700 to-royal-800 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-ocean-800 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
 
@@ -214,7 +214,7 @@ export default function Index() {
           <div className="max-w-4xl mx-auto text-center">
             {/* Featured Logo */}
             <div className="flex justify-center mb-8 animate-fade-in">
-              <Logo size="lg" className="text-white" />
+              <ShipNexaLogo size="xl" variant="full" className="brightness-0 invert" />
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-delay">
