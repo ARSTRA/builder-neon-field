@@ -169,7 +169,7 @@ export default function ErrorReport() {
       case "runtime":
         return checkRuntimeErrors();
       default:
-        return { status: "info", details: "Check not implemented" };
+        return { status: "info" as const, details: "Check not implemented" };
     }
   };
 
