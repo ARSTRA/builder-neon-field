@@ -61,9 +61,6 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
-
-                </Button>
-              </Link>
             </div>
           </div>
 
@@ -110,9 +107,6 @@ export function Navigation() {
               >
                 Get Quote
               </Button>
-
-                </Button>
-              </Link>
             </div>
           </div>
         )}
