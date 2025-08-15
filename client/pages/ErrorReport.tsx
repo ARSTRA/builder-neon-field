@@ -126,7 +126,7 @@ export default function ErrorReport() {
       } catch (error) {
         checks[i] = {
           ...check,
-          status: "failed",
+          status: "failed" as const,
           details: `Error during check: ${error}`,
         };
       }
