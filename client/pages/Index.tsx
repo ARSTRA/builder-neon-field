@@ -258,20 +258,20 @@ export default function Index() {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">50K+</div>
-                <div className="text-sm text-gray-300">Packages Delivered</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">50K+</div>
+                <div className="text-sm text-gray-200 drop-shadow-md">Packages Delivered</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">120+</div>
-                <div className="text-sm text-gray-300">Countries Served</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">120+</div>
+                <div className="text-sm text-gray-200 drop-shadow-md">Countries Served</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">99.8%</div>
-                <div className="text-sm text-gray-300">On-Time Delivery</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">99.8%</div>
+                <div className="text-sm text-gray-200 drop-shadow-md">On-Time Delivery</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">24/7</div>
-                <div className="text-sm text-gray-300">Customer Support</div>
+                <div className="text-3xl font-bold text-orange-400 drop-shadow-lg">24/7</div>
+                <div className="text-sm text-gray-200 drop-shadow-md">Customer Support</div>
               </div>
             </div>
           </div>
