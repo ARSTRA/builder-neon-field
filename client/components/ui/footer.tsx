@@ -16,9 +16,9 @@ export function Footer() {
               <ShipNexaLogo size="lg" variant="full" className="filter brightness-0 invert" />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Your trusted partner for global shipping solutions. We provide
-              fast, secure, and reliable logistics services worldwide with
-              real-time tracking.
+              ShipNexa.it - Your next-generation logistics partner. We deliver
+              innovative, fast, and secure shipping solutions across Italy and
+              worldwide with advanced real-time tracking technology.
             </p>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
