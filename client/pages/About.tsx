@@ -430,8 +430,10 @@ export default function About() {
       </section>
 
       {/* Global Presence Section */}
-      <section className="relative py-20 bg-gradient-to-r from-royal-600 to-royal-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center opacity-20"></div>
+      <section className="relative py-24 bg-gradient-to-br from-shipblue-700 via-shipblue-800 to-ocean-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/9716364/pexels-photo-9716364.jpeg')] bg-cover bg-center opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-shipblue-900/80 via-shipblue-800/70 to-ocean-900/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
