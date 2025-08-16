@@ -45,7 +45,6 @@ export function ChatWidgetTest() {
           position={testConfig.position}
           theme={testConfig.theme}
           showQuickActions={testConfig.showQuickActions}
-          showSettings={testConfig.showSettings}
         />
       ),
     },
