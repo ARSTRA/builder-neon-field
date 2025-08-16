@@ -24,6 +24,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ShipNexaLogo from "@/components/ui/shipnexa-logo";
 import { useToast } from "@/hooks/use-toast";
+import { validateAdminCredentials } from "@shared/admin-config";
 
 export default function Auth() {
   const navigate = useNavigate();
