@@ -303,7 +303,7 @@ export function ModernChatWidget({
 
   // Chat interface
   return (
-    <div className={cn("fixed z-50", getPositionClasses(), className)} style={{ right: '24px', bottom: '24px' }}>
+    <div className={cn("relative", className)}>
       <Card
         className={cn(
           "shadow-2xl border-0 transition-all duration-300 backdrop-blur-sm",
