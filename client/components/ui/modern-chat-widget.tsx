@@ -340,7 +340,7 @@ export function ModernChatWidget({
                 <p className="text-xs opacity-90 truncate">
                   {isTyping ? (
                     <span className="flex items-center">
-                      <span className="animate-pulse mr-1">●</span>
+                      <span className="mr-1">●</span>
                       {currentAgent.name} is typing...
                     </span>
                   ) : (
