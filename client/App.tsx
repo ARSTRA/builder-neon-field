@@ -285,9 +285,9 @@ export default function App() {
               {/* Dashboard route */}
               <Route path="/dashboard" element={<Dashboard />} />
 
-              {/* Admin routes */}
-              <Route path="/admin-login" element={<AdminLogin />} />
-              <Route path="/AdminLogin" element={<AdminLogin />} />
+              {/* Admin routes - redirect to unified auth */}
+              <Route path="/admin-login" element={<Auth />} />
+              <Route path="/AdminLogin" element={<Auth />} />
               <Route path="/admin/setup" element={<AdminSetup />} />
               <Route path="/admin/overview" element={<AdminOverview />} />
               <Route path="/admin" element={<Admin />} />
