@@ -46,6 +46,8 @@ export default function App() {
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
+          <AccessibilityImprovements />
+          <LayoutFixes />
           <Toaster />
           <Sonner />
           <BrowserRouter>
