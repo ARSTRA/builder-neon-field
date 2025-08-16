@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import {
   Shield,
@@ -29,6 +30,7 @@ import { Separator } from "@/components/ui/separator";
 
 export default function PrivacyPolicy() {
   const [activeSection, setActiveSection] = useState("overview");
+  const { toast } = useToast();
 
   const sections = [
     { id: "overview", title: "Overview", icon: <Eye className="h-4 w-4" /> },
@@ -488,8 +490,11 @@ export default function PrivacyPolicy() {
                   link.href = 'data:application/pdf;base64,';
                   link.download = 'ShipNexa-Privacy-Policy.pdf';
                   link.click();
-                  // Show success message
-                  alert('Privacy Policy PDF download initiated!');
+                  // Show success message with toast
+                  toast({
+                    title: "Privacy Policy Downloaded",
+                    description: "Your PDF has been downloaded successfully.",
+                  });
                 }}
               >
                 <Download className="mr-2 h-5 w-5" />
