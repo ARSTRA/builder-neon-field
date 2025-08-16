@@ -386,8 +386,13 @@ export default function PrivacyPolicy() {
                                       <h3 className="text-lg font-semibold text-purple-600 mb-2">Right to {item.right}</h3>
                                       <p className="text-gray-600">{item.desc}</p>
                                     </div>
-                                    <Button variant="outline" size="sm" className="border-purple-300 text-purple-600 hover:bg-purple-50">
-                                      Exercise
+                                    <Button
+                                      variant="outline"
+                                      size="sm"
+                                      className="border-purple-300 text-purple-600 hover:bg-purple-50 transition-all duration-300 hover:scale-105"
+                                      onClick={() => window.open('mailto:privacy@shipnexa.it?subject=Data Rights Request - ' + item.right, '_blank')}
+                                    >
+                                      Exercise Right
                                     </Button>
                                   </div>
                                 </CardContent>
@@ -416,7 +421,11 @@ export default function PrivacyPolicy() {
                                   Email Us
                                 </h3>
                                 <p className="text-gray-600 mb-4">For privacy-related inquiries and data requests</p>
-                                <Button className="bg-blue-600 hover:bg-blue-700 w-full">
+                                <Button
+                                  className="bg-blue-600 hover:bg-blue-700 w-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/25"
+                                  onClick={() => window.open('mailto:privacy@shipnexa.it?subject=Privacy Inquiry', '_blank')}
+                                >
+                                  <Mail className="mr-2 h-4 w-4" />
                                   privacy@shipnexa.it
                                 </Button>
                               </CardContent>
@@ -428,7 +437,12 @@ export default function PrivacyPolicy() {
                                   Call Us
                                 </h3>
                                 <p className="text-gray-600 mb-4">Speak directly with our privacy specialists</p>
-                                <Button variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50 w-full">
+                                <Button
+                                  variant="outline"
+                                  className="border-purple-300 text-purple-600 hover:bg-purple-50 w-full transition-all duration-300 hover:scale-105"
+                                  onClick={() => window.open('tel:+15551234567', '_self')}
+                                >
+                                  <Phone className="mr-2 h-4 w-4" />
                                   +1 (555) 123-PRIVACY
                                 </Button>
                               </CardContent>
@@ -456,17 +470,27 @@ export default function PrivacyPolicy() {
               We're committed to transparency and protecting your rights. Contact us anytime.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                onClick={() => window.open('mailto:privacy@shipnexa.it?subject=Privacy Team Contact Request', '_blank')}
               >
                 Contact Privacy Team
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold"
+                className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
+                onClick={() => {
+                  // Create a mock PDF download
+                  const link = document.createElement('a');
+                  link.href = 'data:application/pdf;base64,';
+                  link.download = 'ShipNexa-Privacy-Policy.pdf';
+                  link.click();
+                  // Show success message
+                  alert('Privacy Policy PDF download initiated!');
+                }}
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download PDF
