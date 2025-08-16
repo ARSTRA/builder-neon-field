@@ -13,11 +13,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <ShipNexaLogo
-                size="lg"
-                variant="full"
-                className="filter brightness-0 invert"
-              />
+              <ShipNexaLogo size="lg" variant="full" className="" />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               ShipNexa.it - Your next-generation logistics partner. We deliver
@@ -108,15 +104,42 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social Media & Contact Section */}
+          {/* Contact & Social Media Section */}
           <div>
+            <h3 className="text-lg font-semibold mb-6 text-orange-500">
+              Contact Info
+            </h3>
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center space-x-3">
+                <Phone className="h-4 w-4 text-orange-500 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">+39 351 123 4567</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-4 w-4 text-orange-500 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">info@shipnexa.it</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-4 w-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm leading-relaxed">
+                  Via Roma 123
+                  <br />
+                  20121 Milano, Italy
+                </span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Clock className="h-4 w-4 text-orange-500 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">
+                  24/7 Customer Support
+                </span>
+              </div>
+            </div>
             <SimpleSocialFooter className="" />
           </div>
         </div>
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-royal-800">
+      <div className="border-t border-shipblue-800">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
@@ -142,7 +165,7 @@ export function Footer() {
                 Security
               </Link>
               <Link
-                to="/login?admin=true"
+                to="/admin-login"
                 className="text-gray-400 hover:text-orange-400 transition-colors duration-200 flex items-center"
               >
                 <Shield className="h-3 w-3 mr-1" />

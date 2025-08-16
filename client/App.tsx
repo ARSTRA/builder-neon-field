@@ -18,6 +18,9 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Newspaper from "./pages/Newspaper";
 import LiveChat from "./pages/LiveChat";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import Security from "./pages/Security";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 
@@ -136,6 +139,39 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <LiveChat />
+                    <SimpleChatWidget />
+                    <Footer />
+                  </div>
+                }
+              />
+              <Route
+                path="/privacy"
+                element={
+                  <div className="min-h-screen bg-white">
+                    <Navigation />
+                    <PrivacyPolicy />
+                    <SimpleChatWidget />
+                    <Footer />
+                  </div>
+                }
+              />
+              <Route
+                path="/terms"
+                element={
+                  <div className="min-h-screen bg-white">
+                    <Navigation />
+                    <TermsOfService />
+                    <SimpleChatWidget />
+                    <Footer />
+                  </div>
+                }
+              />
+              <Route
+                path="/security"
+                element={
+                  <div className="min-h-screen bg-white">
+                    <Navigation />
+                    <Security />
                     <SimpleChatWidget />
                     <Footer />
                   </div>
