@@ -416,7 +416,7 @@ export default function About() {
                         <Badge
                           key={idx}
                           variant="outline"
-                          className="mr-2 text-xs hover:bg-royal-100 transition-colors duration-300"
+                          className="mr-2 text-xs hover:bg-shipblue-100 transition-colors duration-300"
                         >
                           {specialty}
                         </Badge>
