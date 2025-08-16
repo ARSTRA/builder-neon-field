@@ -26,10 +26,10 @@ export function ChatRightSideTest() {
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
             <h3 className="text-lg font-semibold text-blue-800 mb-2">📱 Test on Different Devices:</h3>
             <ul className="list-disc list-inside text-blue-700 space-y-1">
-              <li>Desktop (>1024px): Should be 24px from right edge</li>
+              <li>Desktop (wider than 1024px): Should be 24px from right edge</li>
               <li>Tablet (768px-1024px): Should be 16px from right edge</li>
-              <li>Mobile (<768px): Should be 12px from right edge</li>
-              <li>Very small screens (<480px): Should remain on right side</li>
+              <li>Mobile (less than 768px): Should be 12px from right edge</li>
+              <li>Very small screens (less than 480px): Should remain on right side</li>
             </ul>
           </div>
         </div>
@@ -50,7 +50,7 @@ export function ChatRightSideTest() {
             <h3 className="text-xl font-semibold mb-4">Right Side Content</h3>
             <p className="text-gray-600 mb-4">
               This content is on the right side to test that the chat widget
-              doesn't interfere with page content.
+              doesn&apos;t interfere with page content.
             </p>
             <div className="h-32 bg-gray-100 rounded flex items-center justify-center">
               <span className="text-gray-500">Right Side Block</span>
