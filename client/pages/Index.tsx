@@ -368,6 +368,10 @@ export default function Index() {
                         src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format&q=80"
                         alt="Ocean Freight"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src = "https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg?w=600&h=400&fit=crop&auto=compress,format&q=80";
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/80 to-orange-700/60 group-hover:from-orange-600/70 group-hover:to-orange-800/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
