@@ -332,6 +332,10 @@ export default function Index() {
                         src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop&auto=format&q=80"
                         alt="Air Freight"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src = "https://images.pexels.com/photos/912050/pexels-photo-912050.jpeg?w=600&h=400&fit=crop&auto=compress,format&q=80";
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/80 to-shipblue-800/60 group-hover:from-shipblue-700/70 group-hover:to-shipblue-900/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
