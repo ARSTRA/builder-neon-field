@@ -326,8 +326,8 @@ export default function Index() {
               <div className="grid grid-cols-2 gap-6 max-w-4xl">
                 {/* Air Freight */}
                 <div className="group cursor-pointer">
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2">
-                    <div className="relative h-40">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 bg-gray-100">
+                    <div className="relative h-40 w-full">
                       <img
                         src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop&auto=format&q=80"
                         alt="Air Freight"
