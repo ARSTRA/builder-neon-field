@@ -440,6 +440,10 @@ export default function Index() {
                         src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&h=400&fit=crop&auto=format&q=80"
                         alt="Express Delivery"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src = "https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?w=600&h=400&fit=crop&auto=compress,format&q=80";
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/80 to-orange-700/60 group-hover:from-orange-600/70 group-hover:to-orange-800/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
