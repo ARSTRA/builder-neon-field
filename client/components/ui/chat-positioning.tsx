@@ -26,22 +26,25 @@ export function ChatPositioning({
       <style>{`
         .chat-positioning-container {
           position: fixed !important;
-          right: 24px !important;
+          right: 0px !important;
           bottom: 24px !important;
           z-index: 50 !important;
+          transform: translateX(-8px);
         }
-        
+
         @media (max-width: 768px) {
           .chat-positioning-container {
-            right: 16px !important;
+            right: 0px !important;
             bottom: 16px !important;
+            transform: translateX(-4px);
           }
         }
-        
+
         @media (max-width: 480px) {
           .chat-positioning-container {
-            right: 12px !important;
+            right: 0px !important;
             bottom: 12px !important;
+            transform: translateX(-2px);
           }
         }
         
