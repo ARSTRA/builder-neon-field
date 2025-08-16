@@ -127,16 +127,6 @@ export function ChatWidgetTest() {
                     <Label htmlFor="quick-actions">Show Quick Actions</Label>
                   </div>
                   
-                  <div className="flex items-center space-x-2">
-                    <Switch
-                      id="settings"
-                      checked={testConfig.showSettings}
-                      onCheckedChange={(checked) =>
-                        setTestConfig(prev => ({ ...prev, showSettings: checked }))
-                      }
-                    />
-                    <Label htmlFor="settings">Show Settings</Label>
-                  </div>
                 </div>
 
                 {/* Position Selection */}
