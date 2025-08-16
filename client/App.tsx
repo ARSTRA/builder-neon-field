@@ -55,7 +55,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Index />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -74,7 +74,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Track />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -93,7 +93,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Services />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -112,7 +112,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <About />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -131,7 +131,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Contact />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -150,7 +150,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Gallery />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -169,7 +169,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Newspaper />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -188,7 +188,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <LiveChat />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -207,7 +207,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <LiveChat />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -226,7 +226,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <PrivacyPolicy />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -245,7 +245,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <TermsOfService />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -264,7 +264,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Security />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
@@ -306,7 +306,7 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <NotFound />
-                    <ResponsiveChatLayout
+                    <ChatOnlyLayout
                       theme={{
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
