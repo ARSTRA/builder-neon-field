@@ -235,8 +235,8 @@ export default function AdminOverview() {
           </Card>
         </div>
 
-        {/* Admin Credentials */}
-        <AdminCredentialsInfo />
+        {/* Admin Access Information */}
+        <AdminAccessInfo />
 
         {/* Footer */}
         <div className="text-center mt-12 text-sm text-gray-500">
