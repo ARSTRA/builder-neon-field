@@ -293,6 +293,7 @@ export default function App() {
 
               {/* Test routes */}
               <Route path="/test/chat-widget" element={<ChatWidgetTest />} />
+              <Route path="/test/chat-position" element={<ChatPositionTest />} />
 
               {/* 404 page */}
               <Route
