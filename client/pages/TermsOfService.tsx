@@ -34,13 +34,41 @@ export default function TermsOfService() {
   const { toast } = useToast();
 
   const sections = [
-    { id: "overview", title: "Overview", icon: <FileText className="h-4 w-4" /> },
-    { id: "acceptance", title: "Acceptance", icon: <Handshake className="h-4 w-4" /> },
-    { id: "services", title: "Our Services", icon: <Truck className="h-4 w-4" /> },
-    { id: "responsibilities", title: "User Responsibilities", icon: <User className="h-4 w-4" /> },
-    { id: "payment", title: "Payment Terms", icon: <CreditCard className="h-4 w-4" /> },
-    { id: "liability", title: "Liability", icon: <Shield className="h-4 w-4" /> },
-    { id: "termination", title: "Termination", icon: <AlertTriangle className="h-4 w-4" /> },
+    {
+      id: "overview",
+      title: "Overview",
+      icon: <FileText className="h-4 w-4" />,
+    },
+    {
+      id: "acceptance",
+      title: "Acceptance",
+      icon: <Handshake className="h-4 w-4" />,
+    },
+    {
+      id: "services",
+      title: "Our Services",
+      icon: <Truck className="h-4 w-4" />,
+    },
+    {
+      id: "responsibilities",
+      title: "User Responsibilities",
+      icon: <User className="h-4 w-4" />,
+    },
+    {
+      id: "payment",
+      title: "Payment Terms",
+      icon: <CreditCard className="h-4 w-4" />,
+    },
+    {
+      id: "liability",
+      title: "Liability",
+      icon: <Shield className="h-4 w-4" />,
+    },
+    {
+      id: "termination",
+      title: "Termination",
+      icon: <AlertTriangle className="h-4 w-4" />,
+    },
     { id: "contact", title: "Contact", icon: <Mail className="h-4 w-4" /> },
   ];
 
@@ -48,25 +76,29 @@ export default function TermsOfService() {
     {
       icon: <Scale className="h-12 w-12" />,
       title: "Fair & Transparent",
-      description: "Clear, straightforward terms designed to protect both parties fairly.",
+      description:
+        "Clear, straightforward terms designed to protect both parties fairly.",
       color: "from-blue-500 to-indigo-500",
     },
     {
       icon: <Handshake className="h-12 w-12" />,
       title: "Mutual Respect",
-      description: "Built on partnership principles with respect for all users and stakeholders.",
+      description:
+        "Built on partnership principles with respect for all users and stakeholders.",
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: <Shield className="h-12 w-12" />,
       title: "Legal Protection",
-      description: "Comprehensive legal framework ensuring security for your business operations.",
+      description:
+        "Comprehensive legal framework ensuring security for your business operations.",
       color: "from-purple-500 to-violet-500",
     },
     {
       icon: <Globe className="h-12 w-12" />,
       title: "Global Compliance",
-      description: "Adhering to international laws and regulations across all jurisdictions.",
+      description:
+        "Adhering to international laws and regulations across all jurisdictions.",
       color: "from-orange-500 to-red-500",
     },
   ];
@@ -78,7 +110,7 @@ export default function TermsOfService() {
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/8730374/pexels-photo-8730374.jpeg')] bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-gray-900/85 to-orange-900/90"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
-        
+
         {/* Animated background elements */}
         <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-orange-400/20 to-red-500/20 rounded-full blur-3xl animate-pulse-soft"></div>
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-yellow-400/15 to-orange-500/15 rounded-full blur-3xl animate-bounce-slow"></div>
@@ -90,7 +122,7 @@ export default function TermsOfService() {
                 <Scale className="h-20 w-20 text-orange-400" />
               </div>
             </div>
-            
+
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
               <span className="bg-gradient-to-r from-orange-300 via-yellow-300 to-red-300 bg-clip-text text-transparent">
                 Terms of
@@ -98,10 +130,11 @@ export default function TermsOfService() {
               <br />
               <span className="text-white">Service</span>
             </h1>
-            
+
             <p className="text-xl lg:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in-delay">
-              📋 Clear, fair, and comprehensive terms governing our logistics services. 
-              Designed to protect your interests while ensuring exceptional service delivery.
+              📋 Clear, fair, and comprehensive terms governing our logistics
+              services. Designed to protect your interests while ensuring
+              exceptional service delivery.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -137,18 +170,22 @@ export default function TermsOfService() {
                 Our Service Principles
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Built on fairness, transparency, and mutual respect for sustainable partnerships
+                Built on fairness, transparency, and mutual respect for
+                sustainable partnerships
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {keyTerms.map((term, index) => (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden">
+                <Card
+                  key={index}
+                  className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden"
+                >
                   <CardContent className="p-8 text-center relative">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${term.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                      <div className="text-white">
-                        {term.icon}
-                      </div>
+                    <div
+                      className={`w-20 h-20 bg-gradient-to-br ${term.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                    >
+                      <div className="text-white">{term.icon}</div>
                     </div>
                     <h3 className="text-2xl font-bold text-gray-800 mb-4">
                       {term.title}
@@ -184,11 +221,15 @@ export default function TermsOfService() {
                         key={section.id}
                         onClick={() => setActiveSection(section.id)}
                         className={`w-full text-left px-6 py-4 border-b border-gray-100 hover:bg-orange-50 transition-colors duration-200 flex items-center ${
-                          activeSection === section.id ? 'bg-orange-50 text-orange-600 border-r-4 border-orange-600' : 'text-gray-700'
+                          activeSection === section.id
+                            ? "bg-orange-50 text-orange-600 border-r-4 border-orange-600"
+                            : "text-gray-700"
                         }`}
                       >
                         {section.icon}
-                        <span className="ml-3 font-medium">{section.title}</span>
+                        <span className="ml-3 font-medium">
+                          {section.title}
+                        </span>
                       </button>
                     ))}
                   </CardContent>
@@ -207,16 +248,33 @@ export default function TermsOfService() {
                             Terms of Service Overview
                           </h2>
                           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                            Welcome to ShipNexa.it! These Terms of Service ("Terms") govern your use of our logistics and shipping services. 
-                            By using our services, you agree to be bound by these terms and conditions.
+                            Welcome to ShipNexa.it! These Terms of Service
+                            ("Terms") govern your use of our logistics and
+                            shipping services. By using our services, you agree
+                            to be bound by these terms and conditions.
                           </p>
                           <div className="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-l-4 border-orange-500">
-                            <h3 className="text-xl font-semibold text-gray-800 mb-3">What You Can Expect</h3>
+                            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                              What You Can Expect
+                            </h3>
                             <ul className="space-y-2 text-gray-600">
-                              <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-2 text-green-500" /> Professional logistics services worldwide</li>
-                              <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-2 text-green-500" /> Transparent pricing and fair billing practices</li>
-                              <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-2 text-green-500" /> 24/7 customer support and tracking</li>
-                              <li className="flex items-center"><CheckCircle className="h-5 w-5 mr-2 text-green-500" /> Compliance with international shipping regulations</li>
+                              <li className="flex items-center">
+                                <CheckCircle className="h-5 w-5 mr-2 text-green-500" />{" "}
+                                Professional logistics services worldwide
+                              </li>
+                              <li className="flex items-center">
+                                <CheckCircle className="h-5 w-5 mr-2 text-green-500" />{" "}
+                                Transparent pricing and fair billing practices
+                              </li>
+                              <li className="flex items-center">
+                                <CheckCircle className="h-5 w-5 mr-2 text-green-500" />{" "}
+                                24/7 customer support and tracking
+                              </li>
+                              <li className="flex items-center">
+                                <CheckCircle className="h-5 w-5 mr-2 text-green-500" />{" "}
+                                Compliance with international shipping
+                                regulations
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -231,8 +289,10 @@ export default function TermsOfService() {
                         </h2>
                         <div className="space-y-6">
                           <p className="text-lg text-gray-600 leading-relaxed">
-                            By accessing and using ShipNexa.it services, you acknowledge that you have read, understood, 
-                            and agree to be bound by these Terms of Service and our Privacy Policy.
+                            By accessing and using ShipNexa.it services, you
+                            acknowledge that you have read, understood, and
+                            agree to be bound by these Terms of Service and our
+                            Privacy Policy.
                           </p>
                           <div className="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
                             <h3 className="text-xl font-semibold text-gray-800 mb-3 flex items-center">
@@ -240,25 +300,35 @@ export default function TermsOfService() {
                               Important Notice
                             </h3>
                             <p className="text-gray-700">
-                              If you do not agree to these terms, please do not use our services. 
-                              Continued use of our platform constitutes acceptance of any updates to these terms.
+                              If you do not agree to these terms, please do not
+                              use our services. Continued use of our platform
+                              constitutes acceptance of any updates to these
+                              terms.
                             </p>
                           </div>
                           <div className="grid md:grid-cols-2 gap-6">
                             <Card className="border border-green-200">
                               <CardContent className="p-6">
-                                <h4 className="text-lg font-semibold text-green-700 mb-3">✅ By Using Our Services, You Agree To:</h4>
+                                <h4 className="text-lg font-semibold text-green-700 mb-3">
+                                  ✅ By Using Our Services, You Agree To:
+                                </h4>
                                 <ul className="text-gray-600 space-y-2">
                                   <li>• Provide accurate information</li>
-                                  <li>• Use services for legitimate purposes</li>
+                                  <li>
+                                    • Use services for legitimate purposes
+                                  </li>
                                   <li>• Comply with all applicable laws</li>
-                                  <li>• Respect intellectual property rights</li>
+                                  <li>
+                                    • Respect intellectual property rights
+                                  </li>
                                 </ul>
                               </CardContent>
                             </Card>
                             <Card className="border border-red-200">
                               <CardContent className="p-6">
-                                <h4 className="text-lg font-semibold text-red-700 mb-3">❌ You May Not:</h4>
+                                <h4 className="text-lg font-semibold text-red-700 mb-3">
+                                  ❌ You May Not:
+                                </h4>
                                 <ul className="text-gray-600 space-y-2">
                                   <li>• Use services for illegal activities</li>
                                   <li>• Interfere with platform operations</li>
@@ -280,42 +350,57 @@ export default function TermsOfService() {
                         </h2>
                         <div className="space-y-6">
                           <p className="text-lg text-gray-600 leading-relaxed">
-                            ShipNexa.it provides comprehensive logistics and shipping services designed to meet your business needs.
+                            ShipNexa.it provides comprehensive logistics and
+                            shipping services designed to meet your business
+                            needs.
                           </p>
                           <div className="grid gap-6">
                             {[
-                              { 
-                                title: "International Shipping", 
+                              {
+                                title: "International Shipping",
                                 desc: "Worldwide delivery services with real-time tracking and customs handling",
                                 icon: <Globe className="h-6 w-6" />,
-                                color: "blue" 
+                                color: "blue",
                               },
-                              { 
-                                title: "Package Tracking", 
+                              {
+                                title: "Package Tracking",
                                 desc: "Advanced tracking system providing real-time updates and delivery notifications",
                                 icon: <Package className="h-6 w-6" />,
-                                color: "green" 
+                                color: "green",
                               },
-                              { 
-                                title: "Supply Chain Management", 
+                              {
+                                title: "Supply Chain Management",
                                 desc: "End-to-end logistics solutions including warehousing and distribution",
                                 icon: <Building className="h-6 w-6" />,
-                                color: "purple" 
+                                color: "purple",
                               },
-                              { 
-                                title: "Customer Support", 
+                              {
+                                title: "Customer Support",
                                 desc: "24/7 multilingual support team to assist with all your shipping needs",
                                 icon: <Users className="h-6 w-6" />,
-                                color: "orange" 
+                                color: "orange",
                               },
                             ].map((service, index) => (
-                              <Card key={index} className={`border border-${service.color}-200 hover:shadow-md transition-shadow duration-200`}>
+                              <Card
+                                key={index}
+                                className={`border border-${service.color}-200 hover:shadow-md transition-shadow duration-200`}
+                              >
                                 <CardContent className="p-6">
                                   <div className="flex items-start space-x-4">
-                                    <div className={`text-${service.color}-600 mt-1`}>{service.icon}</div>
+                                    <div
+                                      className={`text-${service.color}-600 mt-1`}
+                                    >
+                                      {service.icon}
+                                    </div>
                                     <div>
-                                      <h3 className={`text-xl font-semibold text-${service.color}-600 mb-3`}>{service.title}</h3>
-                                      <p className="text-gray-600">{service.desc}</p>
+                                      <h3
+                                        className={`text-xl font-semibold text-${service.color}-600 mb-3`}
+                                      >
+                                        {service.title}
+                                      </h3>
+                                      <p className="text-gray-600">
+                                        {service.desc}
+                                      </p>
                                     </div>
                                   </div>
                                 </CardContent>
@@ -334,7 +419,9 @@ export default function TermsOfService() {
                         </h2>
                         <div className="space-y-6">
                           <p className="text-lg text-gray-600 leading-relaxed">
-                            As a user of our services, you have certain responsibilities to ensure smooth operations and compliance with applicable laws.
+                            As a user of our services, you have certain
+                            responsibilities to ensure smooth operations and
+                            compliance with applicable laws.
                           </p>
                           <div className="grid gap-6">
                             <Card className="border border-blue-200">
@@ -348,15 +435,18 @@ export default function TermsOfService() {
                                 <ul className="space-y-3 text-gray-600">
                                   <li className="flex items-start">
                                     <CheckCircle className="h-5 w-5 mr-3 mt-0.5 text-green-500 flex-shrink-0" />
-                                    Maintain accurate and up-to-date account information
+                                    Maintain accurate and up-to-date account
+                                    information
                                   </li>
                                   <li className="flex items-start">
                                     <CheckCircle className="h-5 w-5 mr-3 mt-0.5 text-green-500 flex-shrink-0" />
-                                    Keep login credentials secure and confidential
+                                    Keep login credentials secure and
+                                    confidential
                                   </li>
                                   <li className="flex items-start">
                                     <CheckCircle className="h-5 w-5 mr-3 mt-0.5 text-green-500 flex-shrink-0" />
-                                    Notify us immediately of any unauthorized access
+                                    Notify us immediately of any unauthorized
+                                    access
                                   </li>
                                 </ul>
                               </CardContent>
@@ -377,7 +467,8 @@ export default function TermsOfService() {
                                   </li>
                                   <li className="flex items-start">
                                     <CheckCircle className="h-5 w-5 mr-3 mt-0.5 text-green-500 flex-shrink-0" />
-                                    Comply with international shipping regulations
+                                    Comply with international shipping
+                                    regulations
                                   </li>
                                   <li className="flex items-start">
                                     <CheckCircle className="h-5 w-5 mr-3 mt-0.5 text-green-500 flex-shrink-0" />
@@ -399,18 +490,25 @@ export default function TermsOfService() {
                         </h2>
                         <div className="space-y-6">
                           <p className="text-lg text-gray-600 leading-relaxed">
-                            Our payment terms are designed to be fair, transparent, and convenient for all users.
+                            Our payment terms are designed to be fair,
+                            transparent, and convenient for all users.
                           </p>
                           <div className="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
-                            <h3 className="text-xl font-semibold text-green-800 mb-3">Payment Security</h3>
+                            <h3 className="text-xl font-semibold text-green-800 mb-3">
+                              Payment Security
+                            </h3>
                             <p className="text-green-700">
-                              All payments are processed through secure, encrypted channels with industry-standard protection.
+                              All payments are processed through secure,
+                              encrypted channels with industry-standard
+                              protection.
                             </p>
                           </div>
                           <div className="grid md:grid-cols-2 gap-6">
                             <Card className="border border-purple-200">
                               <CardContent className="p-6">
-                                <h4 className="text-lg font-semibold text-purple-600 mb-4">Accepted Payment Methods</h4>
+                                <h4 className="text-lg font-semibold text-purple-600 mb-4">
+                                  Accepted Payment Methods
+                                </h4>
                                 <ul className="space-y-2 text-gray-600">
                                   <li>• Major credit and debit cards</li>
                                   <li>• PayPal and digital wallets</li>
@@ -421,11 +519,17 @@ export default function TermsOfService() {
                             </Card>
                             <Card className="border border-orange-200">
                               <CardContent className="p-6">
-                                <h4 className="text-lg font-semibold text-orange-600 mb-4">Billing Policies</h4>
+                                <h4 className="text-lg font-semibold text-orange-600 mb-4">
+                                  Billing Policies
+                                </h4>
                                 <ul className="space-y-2 text-gray-600">
-                                  <li>• Transparent pricing with no hidden fees</li>
+                                  <li>
+                                    • Transparent pricing with no hidden fees
+                                  </li>
                                   <li>• Payment due upon service completion</li>
-                                  <li>• Detailed invoices for all transactions</li>
+                                  <li>
+                                    • Detailed invoices for all transactions
+                                  </li>
                                   <li>• Refund policy for service issues</li>
                                 </ul>
                               </CardContent>
@@ -443,15 +547,20 @@ export default function TermsOfService() {
                         </h2>
                         <div className="space-y-6">
                           <p className="text-lg text-gray-600 leading-relaxed">
-                            We maintain comprehensive insurance coverage and clear liability terms to protect both parties.
+                            We maintain comprehensive insurance coverage and
+                            clear liability terms to protect both parties.
                           </p>
                           <div className="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-500">
                             <div className="flex items-center mb-3">
                               <AlertTriangle className="h-6 w-6 mr-2 text-yellow-600" />
-                              <h3 className="text-xl font-semibold text-yellow-800">Important Notice</h3>
+                              <h3 className="text-xl font-semibold text-yellow-800">
+                                Important Notice
+                              </h3>
                             </div>
                             <p className="text-yellow-700">
-                              Our liability is limited to the declared value of shipped goods or actual damages, whichever is lower.
+                              Our liability is limited to the declared value of
+                              shipped goods or actual damages, whichever is
+                              lower.
                             </p>
                           </div>
                           <div className="grid gap-4">
@@ -461,7 +570,10 @@ export default function TermsOfService() {
                               "Clear claim procedures and timely processing",
                               "Limitation of liability as per industry standards",
                             ].map((item, index) => (
-                              <div key={index} className="flex items-center p-4 bg-gray-50 rounded-lg">
+                              <div
+                                key={index}
+                                className="flex items-center p-4 bg-gray-50 rounded-lg"
+                              >
                                 <Shield className="h-5 w-5 mr-3 text-green-500 flex-shrink-0" />
                                 <span className="text-gray-700">{item}</span>
                               </div>
@@ -479,22 +591,28 @@ export default function TermsOfService() {
                         </h2>
                         <div className="space-y-6">
                           <p className="text-lg text-gray-600 leading-relaxed">
-                            Both parties may terminate the service agreement under certain conditions. Here's what you need to know:
+                            Both parties may terminate the service agreement
+                            under certain conditions. Here's what you need to
+                            know:
                           </p>
                           <div className="grid md:grid-cols-2 gap-6">
                             <Card className="border border-blue-200">
                               <CardHeader className="bg-blue-50">
-                                <CardTitle className="text-blue-700">User-Initiated Termination</CardTitle>
+                                <CardTitle className="text-blue-700">
+                                  User-Initiated Termination
+                                </CardTitle>
                               </CardHeader>
                               <CardContent className="p-6">
                                 <ul className="space-y-3 text-gray-600">
                                   <li className="flex items-start">
                                     <CheckCircle className="h-5 w-5 mr-3 mt-0.5 text-green-500 flex-shrink-0" />
-                                    Cancel services at any time with 30 days notice
+                                    Cancel services at any time with 30 days
+                                    notice
                                   </li>
                                   <li className="flex items-start">
                                     <CheckCircle className="h-5 w-5 mr-3 mt-0.5 text-green-500 flex-shrink-0" />
-                                    Complete pending shipments before termination
+                                    Complete pending shipments before
+                                    termination
                                   </li>
                                   <li className="flex items-start">
                                     <CheckCircle className="h-5 w-5 mr-3 mt-0.5 text-green-500 flex-shrink-0" />
@@ -505,7 +623,9 @@ export default function TermsOfService() {
                             </Card>
                             <Card className="border border-red-200">
                               <CardHeader className="bg-red-50">
-                                <CardTitle className="text-red-700">Service-Initiated Termination</CardTitle>
+                                <CardTitle className="text-red-700">
+                                  Service-Initiated Termination
+                                </CardTitle>
                               </CardHeader>
                               <CardContent className="p-6">
                                 <ul className="space-y-3 text-gray-600">
@@ -537,7 +657,8 @@ export default function TermsOfService() {
                         </h2>
                         <div className="space-y-6">
                           <p className="text-lg text-gray-600 leading-relaxed">
-                            For questions about these Terms of Service or legal matters, please contact our legal department.
+                            For questions about these Terms of Service or legal
+                            matters, please contact our legal department.
                           </p>
                           <div className="grid md:grid-cols-2 gap-6">
                             <Card className="border border-orange-200 hover:shadow-md transition-shadow duration-200">
@@ -546,10 +667,17 @@ export default function TermsOfService() {
                                   <Mail className="h-6 w-6 mr-2 text-orange-600" />
                                   Legal Department
                                 </h3>
-                                <p className="text-gray-600 mb-4">For terms and legal inquiries</p>
+                                <p className="text-gray-600 mb-4">
+                                  For terms and legal inquiries
+                                </p>
                                 <Button
                                   className="bg-orange-600 hover:bg-orange-700 w-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-orange-500/25"
-                                  onClick={() => window.open('mailto:legal@shipnexa.it?subject=Terms of Service Inquiry', '_blank')}
+                                  onClick={() =>
+                                    window.open(
+                                      "mailto:legal@shipnexa.it?subject=Terms of Service Inquiry",
+                                      "_blank",
+                                    )
+                                  }
                                 >
                                   <Mail className="mr-2 h-4 w-4" />
                                   legal@shipnexa.it
@@ -562,7 +690,9 @@ export default function TermsOfService() {
                                   <Building className="h-6 w-6 mr-2 text-blue-600" />
                                   Business Address
                                 </h3>
-                                <p className="text-gray-600 mb-4">Official registered address</p>
+                                <p className="text-gray-600 mb-4">
+                                  Official registered address
+                                </p>
                                 <div className="text-sm text-gray-600">
                                   <p>ShipNexa.it Legal Department</p>
                                   <p>1250 Broadway, Suite 3000</p>
@@ -590,7 +720,8 @@ export default function TermsOfService() {
               Ready to Get Started?
             </h2>
             <p className="text-xl mb-8 text-orange-100">
-              By proceeding, you agree to these terms and join thousands of satisfied customers worldwide.
+              By proceeding, you agree to these terms and join thousands of
+              satisfied customers worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -598,13 +729,17 @@ export default function TermsOfService() {
                 className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 onClick={() => {
                   // Store acceptance and redirect to services or dashboard
-                  localStorage.setItem('termsAccepted', new Date().toISOString());
+                  localStorage.setItem(
+                    "termsAccepted",
+                    new Date().toISOString(),
+                  );
                   toast({
                     title: "Terms Accepted",
-                    description: "Terms of Service accepted successfully. Redirecting to services...",
+                    description:
+                      "Terms of Service accepted successfully. Redirecting to services...",
                   });
                   setTimeout(() => {
-                    window.location.href = '/services';
+                    window.location.href = "/services";
                   }, 1500);
                 }}
               >
@@ -617,9 +752,9 @@ export default function TermsOfService() {
                 className="border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
                 onClick={() => {
                   // Create a mock PDF download
-                  const link = document.createElement('a');
-                  link.href = 'data:application/pdf;base64,';
-                  link.download = 'ShipNexa-Terms-of-Service.pdf';
+                  const link = document.createElement("a");
+                  link.href = "data:application/pdf;base64,";
+                  link.download = "ShipNexa-Terms-of-Service.pdf";
                   link.click();
                   // Show success message with toast
                   toast({

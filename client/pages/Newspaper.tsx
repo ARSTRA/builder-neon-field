@@ -286,7 +286,11 @@ export default function Newspaper() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40"></div>
 
         {/* Newspaper texture overlay */}
-        <div className={"absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.03\"%3E%3Cpath d=\"M20 20c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8zm0-20c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8zm20 0c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8zm0 20c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"}></div>
+        <div
+          className={
+            'absolute inset-0 bg-[url(\'data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="M20 20c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8zm0-20c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8zm20 0c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8zm0 20c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')] opacity-20'
+          }
+        ></div>
 
         <div className="relative container mx-auto px-4 lg:px-6">
           <div className="max-w-7xl mx-auto">
@@ -328,20 +332,37 @@ export default function Newspaper() {
             <div className="text-center mb-12">
               <p className="text-2xl lg:text-3xl text-gray-100 mb-6 max-w-5xl mx-auto leading-relaxed animate-fade-in-delay font-light">
                 Your premier digital publication for
-                <span className="text-orange-400 font-semibold"> breaking news</span>,
-                <span className="text-royal-300 font-semibold"> industry insights</span>, and
-                <span className="text-cyan-400 font-semibold"> innovative solutions</span>
+                <span className="text-orange-400 font-semibold">
+                  {" "}
+                  breaking news
+                </span>
+                ,
+                <span className="text-royal-300 font-semibold">
+                  {" "}
+                  industry insights
+                </span>
+                , and
+                <span className="text-cyan-400 font-semibold">
+                  {" "}
+                  innovative solutions
+                </span>
                 <br className="hidden lg:block" />
-                shaping the future of global logistics and supply chain excellence
+                shaping the future of global logistics and supply chain
+                excellence
               </p>
 
               {/* News categories preview */}
               <div className="flex flex-wrap justify-center gap-3 mb-8">
-                {["Breaking News", "Industry Analysis", "Tech Innovation", "Global Trade"].map((category, index) => (
+                {[
+                  "Breaking News",
+                  "Industry Analysis",
+                  "Tech Innovation",
+                  "Global Trade",
+                ].map((category, index) => (
                   <Badge
                     key={category}
                     className="bg-white/10 text-white border-white/20 px-4 py-2 text-sm hover:bg-white/20 transition-all duration-300"
-                    style={{animationDelay: `${index * 0.1}s`}}
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {category}
                   </Badge>
@@ -356,13 +377,17 @@ export default function Newspaper() {
                   key={index}
                   className="bg-white/5 backdrop-blur-md rounded-2xl p-6 text-center border border-white/10 hover:bg-white/10 transition-all duration-300 group"
                 >
-                  <div className={`${stat.color} mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`${stat.color} mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300`}
+                  >
                     {stat.icon}
                   </div>
                   <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-gray-300 font-medium">{stat.label}</div>
+                  <div className="text-sm text-gray-300 font-medium">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -373,9 +398,13 @@ export default function Newspaper() {
                 <Calendar className="h-5 w-5 mr-3 text-orange-400" />
                 <span className="font-semibold">Updated Daily</span>
                 <span className="mx-3 text-white/60">•</span>
-                <span className="text-orange-400 font-bold">December 2024 Edition</span>
+                <span className="text-orange-400 font-bold">
+                  December 2024 Edition
+                </span>
                 <span className="mx-3 text-white/60">•</span>
-                <span className="text-cyan-400 font-medium">🌐 Worldwide Coverage</span>
+                <span className="text-cyan-400 font-medium">
+                  🌐 Worldwide Coverage
+                </span>
               </div>
             </div>
           </div>
@@ -688,8 +717,14 @@ export default function Newspaper() {
 
         {/* Geometric Decorations */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-orange-400/30 to-pink-500/30 rounded-full blur-3xl animate-bounce-slow"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-cyan-400/30 to-blue-500/30 rounded-full blur-3xl animate-bounce-slow" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-br from-green-400/20 to-emerald-500/20 rounded-full blur-2xl animate-pulse-soft" style={{animationDelay: '0.5s'}}></div>
+        <div
+          className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-cyan-400/30 to-blue-500/30 rounded-full blur-3xl animate-bounce-slow"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-br from-green-400/20 to-emerald-500/20 rounded-full blur-2xl animate-pulse-soft"
+          style={{ animationDelay: "0.5s" }}
+        ></div>
 
         <div className="relative container mx-auto px-4 lg:px-6">
           <div className="max-w-5xl mx-auto">
@@ -706,15 +741,17 @@ export default function Newspaper() {
               </div>
 
               <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-white">
-                Stay Updated with{' '}
+                Stay Updated with{" "}
                 <span className="bg-gradient-to-r from-orange-300 via-pink-300 to-purple-300 bg-clip-text text-transparent">
                   GlobalTrack Times
                 </span>
               </h2>
 
               <p className="text-lg lg:text-xl text-gray-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                🚀 Join our vibrant community and be the first to discover breakthrough innovations,
-                exclusive industry insights, and game-changing logistics solutions that will transform your business!
+                🚀 Join our vibrant community and be the first to discover
+                breakthrough innovations, exclusive industry insights, and
+                game-changing logistics solutions that will transform your
+                business!
               </p>
             </div>
 
@@ -772,24 +809,37 @@ export default function Newspaper() {
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <TrendingUp className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-white font-bold text-lg mb-2">📈 Industry Trends</h3>
-                  <p className="text-gray-200 text-sm">Weekly insights on market movements and logistics innovations</p>
+                  <h3 className="text-white font-bold text-lg mb-2">
+                    📈 Industry Trends
+                  </h3>
+                  <p className="text-gray-200 text-sm">
+                    Weekly insights on market movements and logistics
+                    innovations
+                  </p>
                 </div>
 
                 <div className="text-center group">
                   <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Zap className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-white font-bold text-lg mb-2">⚡ Breaking News</h3>
-                  <p className="text-gray-200 text-sm">Real-time updates on major industry developments</p>
+                  <h3 className="text-white font-bold text-lg mb-2">
+                    ⚡ Breaking News
+                  </h3>
+                  <p className="text-gray-200 text-sm">
+                    Real-time updates on major industry developments
+                  </p>
                 </div>
 
                 <div className="text-center group">
                   <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Star className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-white font-bold text-lg mb-2">🌟 Exclusive Content</h3>
-                  <p className="text-gray-200 text-sm">Subscriber-only access to premium reports and case studies</p>
+                  <h3 className="text-white font-bold text-lg mb-2">
+                    🌟 Exclusive Content
+                  </h3>
+                  <p className="text-gray-200 text-sm">
+                    Subscriber-only access to premium reports and case studies
+                  </p>
                 </div>
               </div>
 

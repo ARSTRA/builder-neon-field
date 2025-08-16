@@ -13,11 +13,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <ShipNexaLogo
-                size="lg"
-                variant="full"
-                className=""
-              />
+              <ShipNexaLogo size="lg" variant="full" className="" />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               ShipNexa.it - Your next-generation logistics partner. We deliver
@@ -125,13 +121,16 @@ export function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-orange-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-300 text-sm leading-relaxed">
-                  Via Roma 123<br />
+                  Via Roma 123
+                  <br />
                   20121 Milano, Italy
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="h-4 w-4 text-orange-500 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">24/7 Customer Support</span>
+                <span className="text-gray-300 text-sm">
+                  24/7 Customer Support
+                </span>
               </div>
             </div>
             <SimpleSocialFooter className="" />
