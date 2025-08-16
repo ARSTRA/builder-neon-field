@@ -524,7 +524,7 @@ export default function About() {
               <Card className="p-6 hover:shadow-lg transition-shadow border-0">
                 <Mail className="h-8 w-8 text-shipblue-600 mx-auto mb-4" />
                 <h3 className="font-semibold text-gray-800 mb-2">Email Us</h3>
-                <p className="text-gray-600">info@globaltrack.com</p>
+                <p className="text-gray-600">info@shipnexa.it</p>
               </Card>
               <Card className="p-6 hover:shadow-lg transition-shadow border-0">
                 <Calendar className="h-8 w-8 text-shipblue-600 mx-auto mb-4" />
