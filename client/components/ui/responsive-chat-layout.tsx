@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ModernChatWidget } from "./modern-chat-widget";
+import { ChatPositioning } from "./chat-positioning";
 import { cn } from "@/lib/utils";
 
 interface ResponsiveChatLayoutProps {
