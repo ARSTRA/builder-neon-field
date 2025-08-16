@@ -398,8 +398,8 @@ export default function Index() {
 
                 {/* Ground Transport */}
                 <div className="group cursor-pointer">
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2">
-                    <div className="relative h-40">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 bg-gray-100">
+                    <div className="relative h-40 w-full">
                       <img
                         src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=400&fit=crop&auto=format&q=80"
                         alt="Ground Transport"
