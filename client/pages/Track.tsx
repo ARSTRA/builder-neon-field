@@ -100,7 +100,7 @@ export default function Track() {
     weight: "2.5 kg",
     dimensions: "30x20x15 cm",
     progress: 65,
-    carrier: "GlobalTrack Express",
+    carrier: "ShipNexa Express",
     packageImage:
       "https://images.pexels.com/photos/6754998/pexels-photo-6754998.jpeg",
     coordinates: { lat: 34.0522, lng: -118.2437 },
@@ -206,8 +206,8 @@ export default function Track() {
 
     // Create a mock receipt PDF content
     const receiptContent = `
-GlobalTrack Logistics - Shipping Receipt
-========================================
+ShipNexa - Shipping Receipt
+============================
 
 Tracking ID: ${packageData.trackingId}
 Service: ${packageData.service}
@@ -226,7 +226,7 @@ Generated on: ${new Date().toLocaleDateString()}
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `GlobalTrack_Receipt_${packageData.trackingId}.txt`;
+    a.download = `ShipNexa_Receipt_${packageData.trackingId}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
