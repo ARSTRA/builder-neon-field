@@ -150,6 +150,7 @@ export default function App() {
 
               {/* Admin routes */}
               <Route path="/admin-login" element={<AdminLogin />} />
+              <Route path="/AdminLogin" element={<AdminLogin />} />
               <Route path="/admin/setup" element={<AdminSetup />} />
               <Route path="/admin/overview" element={<AdminOverview />} />
               <Route path="/admin" element={<Admin />} />
