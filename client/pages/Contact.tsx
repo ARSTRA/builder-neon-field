@@ -16,6 +16,7 @@ import {
   CheckCircle,
   Star,
   Shield,
+  Ship,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -76,7 +77,7 @@ export default function Contact() {
       country: "United States",
       address: "1250 Broadway, Suite 3000, New York, NY 10001",
       phone: "+1 (555) 123-4567",
-      email: "newyork@globaltrack.com",
+      email: "newyork@shipnexa.it",
       hours: "Mon-Fri: 8:00 AM - 6:00 PM EST",
       image:
         "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -87,7 +88,7 @@ export default function Contact() {
       country: "United Kingdom",
       address: "25 Bank Street, Canary Wharf, London E14 5JP",
       phone: "+44 20 7946 0958",
-      email: "london@globaltrack.com",
+      email: "london@shipnexa.it",
       hours: "Mon-Fri: 9:00 AM - 5:00 PM GMT",
       image:
         "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -98,7 +99,7 @@ export default function Contact() {
       country: "Singapore",
       address: "1 Marina Bay Drive, Singapore 018989",
       phone: "+65 6123 4567",
-      email: "singapore@globaltrack.com",
+      email: "singapore@shipnexa.it",
       hours: "Mon-Fri: 9:00 AM - 6:00 PM SGT",
       image:
         "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -129,7 +130,7 @@ export default function Contact() {
       icon: <Mail className="h-8 w-8" />,
       title: "Email Support",
       description: "Send detailed inquiries for comprehensive responses",
-      contact: "info@globaltrack.com",
+      contact: "info@shipnexa.it",
       action: "Send Email",
       gradient: "from-purple-600 to-purple-800",
       availability: "24h Response",
@@ -180,8 +181,8 @@ export default function Contact() {
               Message Sent Successfully!
             </h2>
             <p className="text-gray-600 mb-6">
-              Thank you for contacting GlobalTrack Logistics. Our team will
-              review your message and respond within 24 hours.
+              Thank you for contacting ShipNexa. Our team will review your
+              message and respond within 24 hours.
             </p>
             <p className="text-sm text-gray-500">
               For urgent matters, please call us directly at +1 (555) 123-4567
@@ -195,9 +196,9 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-royal-600 via-royal-700 to-royal-800 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-shipblue-800 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-royal-600/85 via-royal-700/80 to-royal-800/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/85 via-shipblue-700/80 to-shipblue-800/85"></div>
         <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
@@ -242,10 +243,10 @@ export default function Contact() {
               </Link>
               <Button
                 onClick={() => window.open("tel:+15551234567", "_self")}
-                className="group bg-white/15 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-500 transform hover:scale-105 rounded-2xl shadow-2xl hover:shadow-white/30 relative overflow-hidden"
+                className="group bg-white/15 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white hover:text-shipblue-600 px-10 py-5 text-lg font-bold transition-all duration-500 transform hover:scale-105 rounded-2xl shadow-2xl hover:shadow-white/30 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                <Phone className="mr-3 h-6 w-6 group-hover:ring-2 group-hover:ring-royal-300 group-hover:rounded-full group-hover:p-1 transition-all duration-300 relative z-10" />
+                <Phone className="mr-3 h-6 w-6 group-hover:ring-2 group-hover:ring-shipblue-300 group-hover:rounded-full group-hover:p-1 transition-all duration-300 relative z-10" />
                 <span className="relative z-10">Call: +1 (555) 123-4567</span>
               </Button>
             </div>
@@ -280,7 +281,7 @@ export default function Contact() {
                     >
                       {method.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-royal-600 transition-colors duration-300 min-h-[56px] flex items-center justify-center">
+                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-shipblue-600 transition-colors duration-300 min-h-[56px] flex items-center justify-center">
                       {method.title}
                     </h3>
                     <p className="text-gray-600 mb-5 text-sm leading-relaxed min-h-[40px]">
@@ -303,13 +304,13 @@ export default function Contact() {
                           window.open("tel:+15551234567", "_self");
                         } else if (method.title === "Email Support") {
                           const subject = encodeURIComponent(
-                            "GlobalTrack Support Request",
+                            "ShipNexa Support Request",
                           );
                           const body = encodeURIComponent(
-                            "Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards",
+                            "Hello ShipNexa Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards",
                           );
                           window.open(
-                            `mailto:info@globaltrack.com?subject=${subject}&body=${body}`,
+                            `mailto:info@shipnexa.it?subject=${subject}&body=${body}`,
                             "_blank",
                           );
                         } else if (method.title === "Schedule Meeting") {
@@ -403,7 +404,7 @@ export default function Contact() {
                                 }))
                               }
                               placeholder="Enter your full name"
-                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                              className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 pl-10 h-12"
                             />
                             <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                           </div>
@@ -428,7 +429,7 @@ export default function Contact() {
                                 }))
                               }
                               placeholder="your@email.com"
-                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                              className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 pl-10 h-12"
                             />
                             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                           </div>
@@ -455,7 +456,7 @@ export default function Contact() {
                                 }))
                               }
                               placeholder="+1 (555) 123-4567"
-                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                              className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 pl-10 h-12"
                             />
                             <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                           </div>
@@ -478,7 +479,7 @@ export default function Contact() {
                                 }))
                               }
                               placeholder="Your company name"
-                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                              className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 pl-10 h-12"
                             />
                             <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                           </div>
@@ -505,7 +506,7 @@ export default function Contact() {
                                 }))
                               }
                               placeholder="Brief subject line"
-                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                              className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 pl-10 h-12"
                             />
                             <Package className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                           </div>
@@ -526,7 +527,7 @@ export default function Contact() {
                               }))
                             }
                           >
-                            <SelectTrigger className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 h-12">
+                            <SelectTrigger className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 h-12">
                               <SelectValue placeholder="Select priority" />
                             </SelectTrigger>
                             <SelectContent>
@@ -566,14 +567,14 @@ export default function Contact() {
                           }
                           placeholder="Please describe your logistics needs, shipping requirements, or any questions you have..."
                           rows={5}
-                          className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 resize-none"
+                          className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 resize-none"
                         />
                       </div>
 
                       <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
+                        className="w-full bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
                         {isSubmitting ? (
                           <>
@@ -623,7 +624,7 @@ export default function Contact() {
                             alt={`${office.city} office`}
                             className="w-full h-full object-cover"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-r from-royal-600/60 to-transparent"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/60 to-transparent"></div>
                           <div className="absolute bottom-4 left-4 text-white">
                             <h3 className="text-xl font-bold">{office.city}</h3>
                             <p className="text-sm">{office.country}</p>
@@ -633,7 +634,7 @@ export default function Contact() {
                         <CardContent className="md:col-span-2 p-6">
                           <div className="space-y-3">
                             <div className="flex items-start space-x-3">
-                              <MapPin className="h-5 w-5 text-royal-600 mt-1 flex-shrink-0" />
+                              <MapPin className="h-5 w-5 text-shipblue-600 mt-1 flex-shrink-0" />
                               <div>
                                 <p className="font-medium text-gray-800">
                                   Address
@@ -645,7 +646,7 @@ export default function Contact() {
                             </div>
 
                             <div className="flex items-center space-x-3">
-                              <div className="w-8 h-8 bg-gradient-to-br from-royal-500 to-royal-700 rounded-lg flex items-center justify-center shadow-md">
+                              <div className="w-8 h-8 bg-gradient-to-br from-shipblue-500 to-shipblue-700 rounded-lg flex items-center justify-center shadow-md">
                                 <Phone className="h-4 w-4 text-white" />
                               </div>
                               <div className="flex-1">
@@ -659,7 +660,7 @@ export default function Contact() {
                                       "_self",
                                     )
                                   }
-                                  className="group inline-flex items-center px-4 py-2 bg-gradient-to-r from-royal-50 to-royal-100 text-royal-700 hover:from-royal-600 hover:to-royal-700 hover:text-white rounded-xl text-sm font-semibold transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md border border-royal-200 hover:border-royal-600"
+                                  className="group inline-flex items-center px-4 py-2 bg-gradient-to-r from-shipblue-50 to-shipblue-100 text-shipblue-700 hover:from-shipblue-600 hover:to-shipblue-700 hover:text-white rounded-xl text-sm font-semibold transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md border border-shipblue-200 hover:border-shipblue-600"
                                 >
                                   <Phone className="mr-2 h-4 w-4 group-hover:animate-pulse" />
                                   {office.phone}
@@ -668,7 +669,7 @@ export default function Contact() {
                             </div>
 
                             <div className="flex items-center space-x-3">
-                              <Mail className="h-5 w-5 text-royal-600 flex-shrink-0" />
+                              <Mail className="h-5 w-5 text-shipblue-600 flex-shrink-0" />
                               <div>
                                 <p className="font-medium text-gray-800">
                                   Email
@@ -680,7 +681,7 @@ export default function Contact() {
                                       "_self",
                                     )
                                   }
-                                  className="text-royal-600 text-sm hover:text-royal-800 transition-colors duration-200 font-medium hover:underline"
+                                  className="text-shipblue-600 text-sm hover:text-shipblue-800 transition-colors duration-200 font-medium hover:underline"
                                 >
                                   {office.email}
                                 </button>
@@ -688,7 +689,7 @@ export default function Contact() {
                             </div>
 
                             <div className="flex items-center space-x-3">
-                              <Clock className="h-5 w-5 text-royal-600 flex-shrink-0" />
+                              <Clock className="h-5 w-5 text-shipblue-600 flex-shrink-0" />
                               <div>
                                 <p className="font-medium text-gray-800">
                                   Hours
@@ -760,43 +761,146 @@ export default function Contact() {
               </Card>
             </div>
 
-            <Card className="p-8 bg-gradient-to-r from-royal-600 to-orange-600 text-white border-0">
-              <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-              <p className="text-lg mb-6 opacity-90">
-                Join thousands of businesses who trust GlobalTrack with their
-                logistics needs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button
-                  onClick={() => {
-                    // Scroll to contact form
-                    document
-                      .querySelector("form")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="group bg-white text-royal-600 hover:bg-gradient-to-r hover:from-white hover:to-gray-50 px-12 py-5 font-bold shadow-2xl hover:shadow-white/50 transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 rounded-2xl relative overflow-hidden border-2 border-white/30"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-royal-100/30 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                  <Package className="mr-3 h-6 w-6 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 relative z-10" />
-                  <span className="relative z-10 tracking-wide">
-                    Get Quote Now
-                  </span>
-                </Button>
-                <Link to="/track">
+            {/* Enhanced Ready to Get Started Section */}
+            <Card className="relative overflow-hidden border-0 shadow-2xl bg-white">
+              {/* Background Design */}
+              <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-ocean-800"></div>
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center opacity-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/90 via-shipblue-700/80 to-ocean-800/90"></div>
+
+              {/* Floating Elements */}
+              <div className="absolute top-8 left-8 w-20 h-20 bg-orange-500/20 rounded-full blur-xl animate-pulse"></div>
+              <div className="absolute bottom-12 right-12 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-bounce-slow"></div>
+              <div className="absolute top-20 right-20 w-16 h-16 bg-shipblue-400/30 rounded-full blur-lg animate-pulse-soft"></div>
+
+              {/* Content */}
+              <div className="relative z-10 p-12 lg:p-16 text-center text-white">
+                {/* Header with Icons */}
+                <div className="flex justify-center items-center space-x-6 mb-8">
+                  <div className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl shadow-xl">
+                    <Ship className="h-8 w-8 text-orange-400" />
+                  </div>
+                  <div className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl shadow-xl transform -translate-y-2">
+                    <Package className="h-10 w-10 text-white" />
+                  </div>
+                  <div className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl shadow-xl">
+                    <Globe className="h-8 w-8 text-orange-400" />
+                  </div>
+                </div>
+
+                <h3 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-orange-200 to-white bg-clip-text text-transparent leading-tight">
+                  Ready to Get Started?
+                </h3>
+
+                <p className="text-xl lg:text-2xl mb-4 text-gray-100 max-w-4xl mx-auto leading-relaxed">
+                  Join thousands of businesses who trust{" "}
+                  <span className="font-bold text-orange-400">ShipNexa</span>{" "}
+                  with their logistics needs.
+                </p>
+
+                <p className="text-lg mb-10 text-gray-200 max-w-3xl mx-auto">
+                  Experience seamless shipping solutions with real-time
+                  tracking, competitive rates, and expert support across 120+
+                  countries worldwide.
+                </p>
+
+                {/* Statistics */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                  <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">
+                      99.8%
+                    </div>
+                    <div className="text-sm text-gray-200">
+                      On-Time Delivery
+                    </div>
+                  </div>
+                  <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">
+                      120+
+                    </div>
+                    <div className="text-sm text-gray-200">
+                      Countries Served
+                    </div>
+                  </div>
+                  <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">
+                      24/7
+                    </div>
+                    <div className="text-sm text-gray-200">Expert Support</div>
+                  </div>
+                  <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">
+                      50K+
+                    </div>
+                    <div className="text-sm text-gray-200">Happy Clients</div>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col lg:flex-row gap-6 justify-center max-w-4xl mx-auto">
                   <Button
-                    variant="outline"
-                    className="group border-2 border-white/70 text-white hover:bg-white hover:text-royal-600 px-12 py-5 font-bold transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 rounded-2xl backdrop-blur-md bg-white/10 hover:shadow-2xl hover:shadow-white/40 relative overflow-hidden"
+                    onClick={() => {
+                      // Scroll to contact form
+                      document
+                        .querySelector("form")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="group bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-600 hover:via-orange-700 hover:to-orange-800 text-white px-12 py-6 text-lg font-bold shadow-2xl hover:shadow-orange-500/40 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 rounded-2xl border border-orange-300/30 relative overflow-hidden flex-1 max-w-md mx-auto lg:mx-0"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                    <span className="relative z-10 tracking-wide">
-                      Track Shipment
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <Package className="mr-3 h-7 w-7 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                    <span className="relative z-10 tracking-wide text-lg">
+                      Get Free Quote Now
                     </span>
-                    <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 group-hover:scale-110 transition-transform duration-300 relative z-10" />
-                    <div className="absolute -top-2 -right-2 bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-3 py-1 rounded-full animate-pulse font-bold shadow-lg">
-                      LIVE
+                    <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-3 py-1 rounded-full animate-pulse font-bold shadow-lg">
+                      FREE
                     </div>
                   </Button>
-                </Link>
+
+                  <Link to="/track" className="flex-1 max-w-md mx-auto lg:mx-0">
+                    <Button
+                      variant="outline"
+                      className="group w-full border-3 border-white/70 text-white hover:bg-white hover:text-shipblue-600 px-12 py-6 text-lg font-bold transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 rounded-2xl backdrop-blur-md bg-white/10 hover:shadow-2xl hover:shadow-white/40 relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                      <span className="relative z-10 tracking-wide text-lg">
+                        Track Your Shipment
+                      </span>
+                      <ArrowRight className="ml-3 h-7 w-7 group-hover:translate-x-2 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                      <div className="absolute -top-2 -right-2 bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-3 py-1 rounded-full animate-pulse font-bold shadow-lg">
+                        LIVE
+                      </div>
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Contact Prompt */}
+                <div className="mt-12 pt-8 border-t border-white/20">
+                  <p className="text-gray-200 mb-4">
+                    Questions? Our logistics experts are standing by to help.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Button
+                      onClick={() => window.open("tel:+15551234567", "_self")}
+                      variant="ghost"
+                      className="group text-white hover:bg-white/20 px-6 py-3 font-semibold transition-all duration-300 rounded-xl backdrop-blur-sm"
+                    >
+                      <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                      Call: +1 (555) 123-4567
+                    </Button>
+                    <div className="text-gray-300">or</div>
+                    <Link to="/chat">
+                      <Button
+                        variant="ghost"
+                        className="group text-white hover:bg-white/20 px-6 py-3 font-semibold transition-all duration-300 rounded-xl backdrop-blur-sm"
+                      >
+                        <MessageCircle className="mr-2 h-5 w-5 group-hover:bounce transition-transform duration-300" />
+                        Start Live Chat
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </Card>
           </div>

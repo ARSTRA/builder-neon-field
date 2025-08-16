@@ -197,10 +197,9 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-shipblue-800 text-white overflow-hidden">
+      <section className="relative text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/85 via-shipblue-700/80 to-shipblue-800/85"></div>
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/50"></div>
 
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
           <div className="max-w-5xl mx-auto text-center">
@@ -279,10 +278,9 @@ export default function Services() {
       </section>
 
       {/* Expert Consultation Section */}
-      <section className="relative py-24 bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-ocean-800 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/7979597/pexels-photo-7979597.jpeg')] bg-cover bg-center opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-shipblue-800/85 to-ocean-900/85"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/7979597/pexels-photo-7979597.jpeg')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
 
         <div className="relative container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center text-white">
@@ -390,9 +388,7 @@ export default function Services() {
                       className="w-full h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-20`}
-                    ></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/10"></div>
                     <div className="absolute top-6 left-6">
                       <div className="p-4 bg-white/20 backdrop-blur-sm rounded-xl text-white shadow-lg">
                         {service.icon}
@@ -592,7 +588,7 @@ export default function Services() {
       <section className="py-20 bg-gradient-to-r from-shipblue-600 via-shipblue-700 to-orange-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Ready to Ship with GlobalTrack?
+            Ready to Ship with ShipNexa?
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Our logistics experts are standing by to help you choose the perfect

@@ -107,22 +107,22 @@ export default function AdminLogin() {
 
   const adminFeatures = [
     {
-      icon: <Users className="h-6 w-6 text-royal-600" />,
+      icon: <Users className="h-6 w-6 text-white" />,
       title: "User Management",
       description: "Manage customer accounts and permissions",
     },
     {
-      icon: <BarChart3 className="h-6 w-6 text-royal-600" />,
+      icon: <BarChart3 className="h-6 w-6 text-white" />,
       title: "Analytics Dashboard",
       description: "Monitor system performance and metrics",
     },
     {
-      icon: <Shield className="h-6 w-6 text-royal-600" />,
+      icon: <Shield className="h-6 w-6 text-white" />,
       title: "Security Controls",
       description: "Advanced security and access management",
     },
     {
-      icon: <Settings className="h-6 w-6 text-royal-600" />,
+      icon: <Settings className="h-6 w-6 text-white" />,
       title: "System Settings",
       description: "Configure platform settings and preferences",
     },
@@ -135,12 +135,12 @@ export default function AdminLogin() {
         <div className="w-full max-w-md mx-auto lg:mx-0">
           <div className="text-center mb-8">
             <Link to="/" className="inline-flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-royal-600 to-orange-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-shipblue-600 to-orange-500 rounded-lg flex items-center justify-center">
                 <Shield className="h-6 w-6 text-white" />
               </div>
               <div>
-                <span className="text-2xl font-bold text-royal-600">
-                  GlobalTrack
+                <span className="text-2xl font-bold text-shipblue-600">
+                  ShipNexa
                 </span>
                 <span className="text-xl text-orange-500 ml-1">Admin</span>
               </div>
@@ -156,7 +156,7 @@ export default function AdminLogin() {
           <Card className="shadow-2xl border-0 bg-white">
             <CardHeader className="pb-4">
               <CardTitle className="text-center text-xl text-gray-800 flex items-center justify-center">
-                <Shield className="h-5 w-5 mr-2 text-royal-600" />
+                <Shield className="h-5 w-5 mr-2 text-shipblue-600" />
                 Administrator Sign In
               </CardTitle>
             </CardHeader>
@@ -191,8 +191,8 @@ export default function AdminLogin() {
                           Super Admin
                         </div>
                         <div className="text-blue-700">
-                          <div>Email: admin@globaltrack.com</div>
-                          <div>Password: GT2024@Admin!</div>
+                          <div>Email: admin@shipnexa.it</div>
+                          <div>Password: SN2024@Admin!</div>
                         </div>
                       </div>
                       <div className="bg-white rounded p-3 border border-blue-100">
@@ -200,8 +200,8 @@ export default function AdminLogin() {
                           Operations Manager
                         </div>
                         <div className="text-blue-700">
-                          <div>Email: manager@globaltrack.com</div>
-                          <div>Password: GT2024@Manager!</div>
+                          <div>Email: manager@shipnexa.it</div>
+                          <div>Password: SN2024@Manager!</div>
                         </div>
                       </div>
                       <div className="bg-white rounded p-3 border border-blue-100">
@@ -209,8 +209,8 @@ export default function AdminLogin() {
                           Support Admin
                         </div>
                         <div className="text-blue-700">
-                          <div>Email: support@globaltrack.com</div>
-                          <div>Password: GT2024@Support!</div>
+                          <div>Email: support@shipnexa.it</div>
+                          <div>Password: SN2024@Support!</div>
                         </div>
                       </div>
                     </div>
@@ -235,8 +235,8 @@ export default function AdminLogin() {
                           email: e.target.value,
                         }))
                       }
-                      placeholder="admin@globaltrack.com"
-                      className="pl-10 h-12 border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20"
+                      placeholder="admin@shipnexa.it"
+                      className="pl-10 h-12 border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20"
                     />
                     <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                   </div>
@@ -262,7 +262,7 @@ export default function AdminLogin() {
                         }))
                       }
                       placeholder="Enter admin password"
-                      className="pl-10 pr-10 h-12 border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20"
+                      className="pl-10 pr-10 h-12 border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20"
                     />
                     <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     <button
@@ -305,7 +305,7 @@ export default function AdminLogin() {
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     {isLoading ? (
                       <>
@@ -333,11 +333,11 @@ export default function AdminLogin() {
                         size="sm"
                         onClick={() =>
                           setFormData({
-                            email: "admin@globaltrack.com",
-                            password: "GT2024@Admin!",
+                            email: "admin@shipnexa.it",
+                            password: "SN2024@Admin!",
                           })
                         }
-                        className="text-xs h-8 text-royal-600 border-royal-200 hover:bg-royal-50"
+                        className="text-xs h-8 text-shipblue-600 border-shipblue-200 hover:bg-shipblue-50"
                       >
                         <Shield className="mr-1 h-3 w-3" />
                         Fill Super Admin
@@ -348,8 +348,8 @@ export default function AdminLogin() {
                         size="sm"
                         onClick={() =>
                           setFormData({
-                            email: "manager@globaltrack.com",
-                            password: "GT2024@Manager!",
+                            email: "manager@shipnexa.it",
+                            password: "SN2024@Manager!",
                           })
                         }
                         className="text-xs h-8 text-blue-600 border-blue-200 hover:bg-blue-50"
@@ -367,7 +367,7 @@ export default function AdminLogin() {
                   Need assistance?{" "}
                   <Link
                     to="/contact"
-                    className="text-royal-600 hover:text-royal-700 font-medium"
+                    className="text-shipblue-600 hover:text-shipblue-700 font-medium"
                   >
                     Contact IT Support
                   </Link>
@@ -378,7 +378,10 @@ export default function AdminLogin() {
 
           <p className="text-center text-sm text-gray-500 mt-6">
             Protected by enterprise security protocols.{" "}
-            <Link to="/privacy" className="text-royal-600 hover:text-royal-700">
+            <Link
+              to="/privacy"
+              className="text-shipblue-600 hover:text-shipblue-700"
+            >
               Privacy Policy
             </Link>
           </p>
@@ -386,7 +389,7 @@ export default function AdminLogin() {
 
         {/* Right Side - Admin Features */}
         <div className="hidden lg:block">
-          <div className="bg-gradient-to-br from-royal-600 to-royal-800 rounded-3xl p-12 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-br from-shipblue-600 to-shipblue-800 rounded-3xl p-12 text-white relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
             <div className="relative z-10">
               <h2 className="text-4xl font-bold mb-6">

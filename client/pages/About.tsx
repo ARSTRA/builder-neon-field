@@ -142,9 +142,9 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-royal-600 via-royal-700 to-royal-800 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-shipblue-800 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-royal-600/85 via-royal-700/80 to-royal-800/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/85 via-shipblue-700/80 to-shipblue-800/85"></div>
         <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
@@ -202,10 +202,10 @@ export default function About() {
                   className="w-full h-96 rounded-2xl shadow-2xl"
                   {...ImagePresets.hero}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-royal-600/20 to-orange-500/20 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/20 to-orange-500/20 rounded-2xl"></div>
                 <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-royal-600">
+                    <div className="text-2xl font-bold text-shipblue-600">
                       99.8%
                     </div>
                     <div className="text-sm text-gray-600">Success Rate</div>
@@ -235,8 +235,8 @@ export default function About() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex items-start space-x-4">
-                    <div className="p-2 bg-royal-100 rounded-lg">
-                      <Target className="h-6 w-6 text-royal-600" />
+                    <div className="p-2 bg-shipblue-100 rounded-lg">
+                      <Target className="h-6 w-6 text-shipblue-600" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-2">
@@ -295,7 +295,7 @@ export default function About() {
                     >
                       {value.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-royal-600 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-shipblue-600 transition-colors duration-300">
                       {value.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -325,7 +325,7 @@ export default function About() {
 
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-royal-600 to-orange-500 hidden lg:block"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-shipblue-600 to-orange-500 hidden lg:block"></div>
 
               <div className="space-y-8 lg:space-y-16">
                 {milestones.map((milestone, index) => (
@@ -338,10 +338,10 @@ export default function About() {
                       <Card className="border-0 shadow-xl bg-white">
                         <CardContent className="p-8">
                           <div className="flex items-center mb-4">
-                            <div className="p-2 bg-royal-100 rounded-lg mr-4">
+                            <div className="p-2 bg-shipblue-100 rounded-lg mr-4">
                               {milestone.icon}
                             </div>
-                            <Badge className="bg-gradient-to-r from-royal-600 to-orange-500 text-white">
+                            <Badge className="bg-gradient-to-r from-shipblue-600 to-orange-500 text-white">
                               {milestone.year}
                             </Badge>
                           </div>
@@ -395,13 +395,13 @@ export default function About() {
                       className="w-full h-64 group-hover:scale-110 transition-transform duration-500"
                       {...ImagePresets.card}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-royal-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-shipblue-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                       <p className="text-sm font-semibold">Connect</p>
                     </div>
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-royal-600 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-shipblue-600 transition-colors duration-300">
                       {member.name}
                     </h3>
                     <p className="text-orange-600 font-semibold mb-3">
@@ -415,7 +415,7 @@ export default function About() {
                         <Badge
                           key={idx}
                           variant="outline"
-                          className="mr-2 text-xs hover:bg-royal-100 transition-colors duration-300"
+                          className="mr-2 text-xs hover:bg-shipblue-100 transition-colors duration-300"
                         >
                           {specialty}
                         </Badge>
@@ -516,17 +516,17 @@ export default function About() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               <Card className="p-6 hover:shadow-lg transition-shadow border-0">
-                <Phone className="h-8 w-8 text-royal-600 mx-auto mb-4" />
+                <Phone className="h-8 w-8 text-shipblue-600 mx-auto mb-4" />
                 <h3 className="font-semibold text-gray-800 mb-2">Call Us</h3>
                 <p className="text-gray-600">+1 (555) 123-4567</p>
               </Card>
               <Card className="p-6 hover:shadow-lg transition-shadow border-0">
-                <Mail className="h-8 w-8 text-royal-600 mx-auto mb-4" />
+                <Mail className="h-8 w-8 text-shipblue-600 mx-auto mb-4" />
                 <h3 className="font-semibold text-gray-800 mb-2">Email Us</h3>
-                <p className="text-gray-600">info@globaltrack.com</p>
+                <p className="text-gray-600">info@shipnexa.it</p>
               </Card>
               <Card className="p-6 hover:shadow-lg transition-shadow border-0">
-                <Calendar className="h-8 w-8 text-royal-600 mx-auto mb-4" />
+                <Calendar className="h-8 w-8 text-shipblue-600 mx-auto mb-4" />
                 <h3 className="font-semibold text-gray-800 mb-2">
                   Schedule Meeting
                 </h3>
@@ -536,7 +536,7 @@ export default function About() {
 
             <Button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-4 text-lg font-semibold"
+              className="bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white px-8 py-4 text-lg font-semibold"
             >
               Get Started Today
               <ArrowRight className="ml-2 h-5 w-5" />

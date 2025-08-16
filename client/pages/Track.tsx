@@ -100,7 +100,7 @@ export default function Track() {
     weight: "2.5 kg",
     dimensions: "30x20x15 cm",
     progress: 65,
-    carrier: "GlobalTrack Express",
+    carrier: "ShipNexa Express",
     packageImage:
       "https://images.pexels.com/photos/6754998/pexels-photo-6754998.jpeg",
     coordinates: { lat: 34.0522, lng: -118.2437 },
@@ -206,8 +206,8 @@ export default function Track() {
 
     // Create a mock receipt PDF content
     const receiptContent = `
-GlobalTrack Logistics - Shipping Receipt
-========================================
+ShipNexa - Shipping Receipt
+============================
 
 Tracking ID: ${packageData.trackingId}
 Service: ${packageData.service}
@@ -226,7 +226,7 @@ Generated on: ${new Date().toLocaleDateString()}
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `GlobalTrack_Receipt_${packageData.trackingId}.txt`;
+    a.download = `ShipNexa_Receipt_${packageData.trackingId}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -300,8 +300,9 @@ Generated on: ${new Date().toLocaleDateString()}
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-shipblue-600 to-shipblue-800 text-white py-12 lg:py-16">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1996989/pexels-photo-1996989.jpeg')] bg-cover bg-center opacity-30"></div>
+      <section className="relative text-white py-12 lg:py-16">
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1996989/pexels-photo-1996989.jpeg')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/40"></div>
         <div className="relative container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl lg:text-5xl font-bold mb-4 lg:mb-6">
@@ -374,7 +375,7 @@ Generated on: ${new Date().toLocaleDateString()}
                   alt="GPS tracking technology"
                   className="w-full h-80 object-cover rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/30 to-orange-500/20 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/10 rounded-2xl"></div>
                 <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -492,7 +493,7 @@ Generated on: ${new Date().toLocaleDateString()}
                   alt="AI logistics technology"
                   className="w-full h-80 object-cover rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/30 to-orange-500/20 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/10 rounded-2xl"></div>
                 <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl">
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">

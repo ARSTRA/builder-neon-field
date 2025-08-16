@@ -304,7 +304,7 @@ export default function Index() {
       {/* Brand Showcase Section */}
       <section className="py-16 bg-white border-b">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-12 items-center">
+          <div className="grid lg:grid-cols-3 gap-12 items-start lg:items-center">
             <div className="lg:col-span-1 text-center lg:text-left">
               <ShipNexaLogo
                 size="xl"
@@ -323,15 +323,20 @@ export default function Index() {
             </div>
 
             <div className="lg:col-span-2">
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
                 {/* Air Freight */}
                 <div className="group cursor-pointer">
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2">
-                    <div className="relative h-40">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 bg-gray-100">
+                    <div className="relative h-40 w-full">
                       <img
                         src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop&auto=format&q=80"
                         alt="Air Freight"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src =
+                            "https://images.pexels.com/photos/912050/pexels-photo-912050.jpeg?w=600&h=400&fit=crop&auto=compress,format&q=80";
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/80 to-shipblue-800/60 group-hover:from-shipblue-700/70 group-hover:to-shipblue-900/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -358,12 +363,17 @@ export default function Index() {
 
                 {/* Ocean Freight */}
                 <div className="group cursor-pointer">
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2">
-                    <div className="relative h-40">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 bg-gray-100">
+                    <div className="relative h-40 w-full">
                       <img
                         src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format&q=80"
                         alt="Ocean Freight"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src =
+                            "https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg?w=600&h=400&fit=crop&auto=compress,format&q=80";
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/80 to-orange-700/60 group-hover:from-orange-600/70 group-hover:to-orange-800/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -390,12 +400,17 @@ export default function Index() {
 
                 {/* Ground Transport */}
                 <div className="group cursor-pointer">
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2">
-                    <div className="relative h-40">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 bg-gray-100">
+                    <div className="relative h-40 w-full">
                       <img
                         src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=400&fit=crop&auto=format&q=80"
                         alt="Ground Transport"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src =
+                            "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?w=600&h=400&fit=crop&auto=compress,format&q=80";
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/80 to-shipblue-800/60 group-hover:from-shipblue-700/70 group-hover:to-shipblue-900/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -422,12 +437,17 @@ export default function Index() {
 
                 {/* Express Delivery */}
                 <div className="group cursor-pointer">
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2">
-                    <div className="relative h-40">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 bg-gray-100">
+                    <div className="relative h-40 w-full">
                       <img
                         src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&h=400&fit=crop&auto=format&q=80"
                         alt="Express Delivery"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src =
+                            "https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?w=600&h=400&fit=crop&auto=compress,format&q=80";
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/80 to-orange-700/60 group-hover:from-orange-600/70 group-hover:to-orange-800/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -550,6 +570,11 @@ export default function Index() {
                 src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Shipping containers at port"
                 className="rounded-2xl shadow-2xl"
+                loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg?w=800&h=600&fit=crop&auto=compress,format&q=80";
+                }}
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                 <div className="text-2xl font-bold text-shipblue-600">
@@ -634,6 +659,11 @@ export default function Index() {
                           src={testimonials[1].image}
                           alt={testimonials[1].name}
                           className="w-20 h-20 rounded-full border-4 border-white/20 shadow-lg"
+                          loading="lazy"
+                          onError={(e) => {
+                            e.currentTarget.src =
+                              "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?w=400&h=400&fit=crop&auto=compress,format&q=80";
+                          }}
                         />
                         <div>
                           <div className="text-xl font-bold">
@@ -699,6 +729,11 @@ export default function Index() {
                         src={testimonial.image}
                         alt={testimonial.name}
                         className="w-16 h-16 rounded-full border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src =
+                            "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?w=400&h=400&fit=crop&auto=compress,format&q=80";
+                        }}
                       />
                     </div>
                     <div className="absolute top-4 right-4 flex">

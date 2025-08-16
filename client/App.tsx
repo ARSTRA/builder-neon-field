@@ -19,6 +19,7 @@ import Gallery from "./pages/Gallery";
 import Newspaper from "./pages/Newspaper";
 import LiveChat from "./pages/LiveChat";
 import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
 
 import Admin from "./pages/Admin";
 import UnifiedAdmin from "./pages/UnifiedAdmin";
@@ -144,8 +145,12 @@ export default function App() {
               {/* Authentication routes */}
               <Route path="/auth" element={<Auth />} />
 
+              {/* Dashboard route */}
+              <Route path="/dashboard" element={<Dashboard />} />
+
               {/* Admin routes */}
               <Route path="/admin-login" element={<AdminLogin />} />
+              <Route path="/AdminLogin" element={<AdminLogin />} />
               <Route path="/admin/setup" element={<AdminSetup />} />
               <Route path="/admin/overview" element={<AdminOverview />} />
               <Route path="/admin" element={<Admin />} />
