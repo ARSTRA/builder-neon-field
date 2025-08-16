@@ -259,7 +259,7 @@ export function ModernChatWidget({
   if (!isOpen) {
     return (
       <TooltipProvider>
-        <div className={cn("fixed z-50", getPositionClasses(), className)}>
+        <div className={cn("fixed z-50", getPositionClasses(), className)} style={{ right: '24px', bottom: '24px' }}>
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
