@@ -16,7 +16,7 @@ export function Footer() {
               <ShipNexaLogo
                 size="lg"
                 variant="full"
-                className="filter brightness-0 invert"
+                className=""
               />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -116,7 +116,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-royal-800">
+      <div className="border-t border-shipblue-800">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
@@ -142,7 +142,7 @@ export function Footer() {
                 Security
               </Link>
               <Link
-                to="/login?admin=true"
+                to="/admin-login"
                 className="text-gray-400 hover:text-orange-400 transition-colors duration-200 flex items-center"
               >
                 <Shield className="h-3 w-3 mr-1" />
