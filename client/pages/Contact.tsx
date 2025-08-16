@@ -760,43 +760,131 @@ export default function Contact() {
               </Card>
             </div>
 
-            <Card className="p-8 bg-gradient-to-r from-royal-600 to-orange-600 text-white border-0">
-              <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-              <p className="text-lg mb-6 opacity-90">
-                Join thousands of businesses who trust GlobalTrack with their
-                logistics needs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button
-                  onClick={() => {
-                    // Scroll to contact form
-                    document
-                      .querySelector("form")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="group bg-white text-royal-600 hover:bg-gradient-to-r hover:from-white hover:to-gray-50 px-12 py-5 font-bold shadow-2xl hover:shadow-white/50 transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 rounded-2xl relative overflow-hidden border-2 border-white/30"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-royal-100/30 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                  <Package className="mr-3 h-6 w-6 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 relative z-10" />
-                  <span className="relative z-10 tracking-wide">
-                    Get Quote Now
-                  </span>
-                </Button>
-                <Link to="/track">
+            {/* Enhanced Ready to Get Started Section */}
+            <Card className="relative overflow-hidden border-0 shadow-2xl bg-white">
+              {/* Background Design */}
+              <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-ocean-800"></div>
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center opacity-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/90 via-shipblue-700/80 to-ocean-800/90"></div>
+
+              {/* Floating Elements */}
+              <div className="absolute top-8 left-8 w-20 h-20 bg-orange-500/20 rounded-full blur-xl animate-pulse"></div>
+              <div className="absolute bottom-12 right-12 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-bounce-slow"></div>
+              <div className="absolute top-20 right-20 w-16 h-16 bg-shipblue-400/30 rounded-full blur-lg animate-pulse-soft"></div>
+
+              {/* Content */}
+              <div className="relative z-10 p-12 lg:p-16 text-center text-white">
+                {/* Header with Icons */}
+                <div className="flex justify-center items-center space-x-6 mb-8">
+                  <div className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl shadow-xl">
+                    <Ship className="h-8 w-8 text-orange-400" />
+                  </div>
+                  <div className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl shadow-xl transform -translate-y-2">
+                    <Package className="h-10 w-10 text-white" />
+                  </div>
+                  <div className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl shadow-xl">
+                    <Globe className="h-8 w-8 text-orange-400" />
+                  </div>
+                </div>
+
+                <h3 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-orange-200 to-white bg-clip-text text-transparent leading-tight">
+                  Ready to Get Started?
+                </h3>
+
+                <p className="text-xl lg:text-2xl mb-4 text-gray-100 max-w-4xl mx-auto leading-relaxed">
+                  Join thousands of businesses who trust <span className="font-bold text-orange-400">ShipNexa</span> with their
+                  logistics needs.
+                </p>
+
+                <p className="text-lg mb-10 text-gray-200 max-w-3xl mx-auto">
+                  Experience seamless shipping solutions with real-time tracking, competitive rates, and expert support across 120+ countries worldwide.
+                </p>
+
+                {/* Statistics */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                  <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">99.8%</div>
+                    <div className="text-sm text-gray-200">On-Time Delivery</div>
+                  </div>
+                  <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">120+</div>
+                    <div className="text-sm text-gray-200">Countries Served</div>
+                  </div>
+                  <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">24/7</div>
+                    <div className="text-sm text-gray-200">Expert Support</div>
+                  </div>
+                  <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">50K+</div>
+                    <div className="text-sm text-gray-200">Happy Clients</div>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col lg:flex-row gap-6 justify-center max-w-4xl mx-auto">
                   <Button
-                    variant="outline"
-                    className="group border-2 border-white/70 text-white hover:bg-white hover:text-royal-600 px-12 py-5 font-bold transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 rounded-2xl backdrop-blur-md bg-white/10 hover:shadow-2xl hover:shadow-white/40 relative overflow-hidden"
+                    onClick={() => {
+                      // Scroll to contact form
+                      document
+                        .querySelector("form")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="group bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-600 hover:via-orange-700 hover:to-orange-800 text-white px-12 py-6 text-lg font-bold shadow-2xl hover:shadow-orange-500/40 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 rounded-2xl border border-orange-300/30 relative overflow-hidden flex-1 max-w-md mx-auto lg:mx-0"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                    <span className="relative z-10 tracking-wide">
-                      Track Shipment
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <Package className="mr-3 h-7 w-7 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                    <span className="relative z-10 tracking-wide text-lg">
+                      Get Free Quote Now
                     </span>
-                    <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 group-hover:scale-110 transition-transform duration-300 relative z-10" />
-                    <div className="absolute -top-2 -right-2 bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-3 py-1 rounded-full animate-pulse font-bold shadow-lg">
-                      LIVE
+                    <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-3 py-1 rounded-full animate-pulse font-bold shadow-lg">
+                      FREE
                     </div>
                   </Button>
-                </Link>
+
+                  <Link to="/track" className="flex-1 max-w-md mx-auto lg:mx-0">
+                    <Button
+                      variant="outline"
+                      className="group w-full border-3 border-white/70 text-white hover:bg-white hover:text-shipblue-600 px-12 py-6 text-lg font-bold transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 rounded-2xl backdrop-blur-md bg-white/10 hover:shadow-2xl hover:shadow-white/40 relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                      <span className="relative z-10 tracking-wide text-lg">
+                        Track Your Shipment
+                      </span>
+                      <ArrowRight className="ml-3 h-7 w-7 group-hover:translate-x-2 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                      <div className="absolute -top-2 -right-2 bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-3 py-1 rounded-full animate-pulse font-bold shadow-lg">
+                        LIVE
+                      </div>
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Contact Prompt */}
+                <div className="mt-12 pt-8 border-t border-white/20">
+                  <p className="text-gray-200 mb-4">
+                    Questions? Our logistics experts are standing by to help.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Button
+                      onClick={() => window.open("tel:+15551234567", "_self")}
+                      variant="ghost"
+                      className="group text-white hover:bg-white/20 px-6 py-3 font-semibold transition-all duration-300 rounded-xl backdrop-blur-sm"
+                    >
+                      <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                      Call: +1 (555) 123-4567
+                    </Button>
+                    <div className="text-gray-300">or</div>
+                    <Link to="/chat">
+                      <Button
+                        variant="ghost"
+                        className="group text-white hover:bg-white/20 px-6 py-3 font-semibold transition-all duration-300 rounded-xl backdrop-blur-sm"
+                      >
+                        <MessageCircle className="mr-2 h-5 w-5 group-hover:bounce transition-transform duration-300" />
+                        Start Live Chat
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </Card>
           </div>
