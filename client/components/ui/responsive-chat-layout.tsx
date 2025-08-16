@@ -45,7 +45,7 @@ export function ResponsiveChatLayout({
   // Mobile-specific positioning and sizing
   const getMobilePosition = () => {
     if (screenWidth < 480) {
-      return "bottom-2 right-2 left-2"; // Full width on very small screens
+      return "bottom-4 right-4"; // Keep on right side even on very small screens
     }
     return "bottom-4 right-4"; // Standard mobile positioning
   };
