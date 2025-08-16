@@ -26,7 +26,6 @@ import Dashboard from "./pages/Dashboard";
 
 import Admin from "./pages/Admin";
 import UnifiedAdmin from "./pages/UnifiedAdmin";
-import AdminLogin from "./pages/AdminLogin";
 import AdminSetup from "./pages/AdminSetup";
 import AdminOverview from "./pages/AdminOverview";
 import ErrorReport from "./pages/ErrorReport";
