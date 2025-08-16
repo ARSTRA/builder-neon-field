@@ -290,6 +290,9 @@ export default function App() {
               <Route path="/unified-admin" element={<UnifiedAdmin />} />
               <Route path="/error-report" element={<ErrorReport />} />
 
+              {/* Test routes */}
+              <Route path="/test/chat-widget" element={<ChatWidgetTest />} />
+
               {/* 404 page */}
               <Route
                 path="*"
