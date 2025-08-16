@@ -12,10 +12,10 @@ export function ChatPositioning({
   className, 
   forceRight = true 
 }: ChatPositioningProps) {
-  const positionStyles = forceRight 
-    ? { 
+  const positionStyles = forceRight
+    ? {
         position: 'fixed' as const,
-        right: '24px',
+        right: '0px',
         bottom: '24px',
         zIndex: 50
       }
