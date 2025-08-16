@@ -375,7 +375,7 @@ Generated on: ${new Date().toLocaleDateString()}
                   alt="GPS tracking technology"
                   className="w-full h-80 object-cover rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/30 to-orange-500/20 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/10 rounded-2xl"></div>
                 <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -493,7 +493,7 @@ Generated on: ${new Date().toLocaleDateString()}
                   alt="AI logistics technology"
                   className="w-full h-80 object-cover rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/30 to-orange-500/20 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/10 rounded-2xl"></div>
                 <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl">
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
