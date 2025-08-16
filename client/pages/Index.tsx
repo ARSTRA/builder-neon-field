@@ -723,6 +723,10 @@ export default function Index() {
                         src={testimonial.image}
                         alt={testimonial.name}
                         className="w-16 h-16 rounded-full border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src = "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?w=400&h=400&fit=crop&auto=compress,format&q=80";
+                        }}
                       />
                     </div>
                     <div className="absolute top-4 right-4 flex">
