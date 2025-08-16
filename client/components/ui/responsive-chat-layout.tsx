@@ -66,7 +66,7 @@ export function ResponsiveChatLayout({
   if (isMobile) {
     return (
       <div className={cn("mobile-chat-container", className)}>
-        <style jsx>{`
+        <style>{`
           .mobile-chat-container .chat-widget {
             width: ${screenWidth < 480 ? 'calc(100vw - 16px)' : '350px'} !important;
             max-height: ${screenWidth < 600 ? '70vh' : '80vh'} !important;
