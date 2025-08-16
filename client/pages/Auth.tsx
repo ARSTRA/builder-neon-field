@@ -24,6 +24,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ShipNexaLogo from "@/components/ui/shipnexa-logo";
 import { useToast } from "@/hooks/use-toast";
+import { validateAdminCredentials } from "@shared/admin-config";
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -51,7 +52,26 @@ export default function Auth() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate API call
+    // Check if this is an admin account using centralized configuration
+    const validAdmin = validateAdminCredentials(loginData.email, loginData.password);
+
+    if (validAdmin) {
+      // Admin login
+      localStorage.setItem("isAdmin", "true");
+      localStorage.setItem("adminEmail", validAdmin.email);
+      localStorage.setItem("adminRole", validAdmin.role);
+      localStorage.setItem("adminLoginTime", new Date().toISOString());
+
+      toast({
+        title: "Admin Access Granted",
+        description: `Welcome ${validAdmin.role} to ShipNexa Admin Portal`,
+      });
+      navigate("/unified-admin");
+      setIsLoading(false);
+      return;
+    }
+
+    // Simulate regular user API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     if (loginData.email && loginData.password) {

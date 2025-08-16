@@ -7,7 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ErrorBoundary } from "./components/ui/error-boundary";
 import { Navigation } from "./components/ui/navigation";
-import { SimpleChatWidget } from "./components/ui/simple-chat-widget";
+import { ChatOnlyLayout } from "./components/ui/chat-only-layout";
 import { ScrollToTop } from "./components/ui/scroll-to-top";
 import { Footer } from "./components/ui/footer";
 import Index from "./pages/Index";
@@ -26,11 +26,18 @@ import Dashboard from "./pages/Dashboard";
 
 import Admin from "./pages/Admin";
 import UnifiedAdmin from "./pages/UnifiedAdmin";
-import AdminLogin from "./pages/AdminLogin";
 import AdminSetup from "./pages/AdminSetup";
 import AdminOverview from "./pages/AdminOverview";
 import ErrorReport from "./pages/ErrorReport";
 import NotFound from "./pages/NotFound";
+import { ChatWidgetTest } from "./components/ui/chat-widget-test";
+import { ChatPositionTest } from "./components/ui/chat-position-test";
+import { ChatRightSideTest } from "./components/ui/chat-right-side-test";
+import { ChatExtremeRightTest } from "./components/ui/chat-extreme-right-test";
+import { ChatOnlyTest } from "./components/ui/chat-only-test";
+import { AdminIntegrationTest } from "./components/ui/admin-integration-test";
+import { AccessibilityImprovements } from "./components/ui/accessibility-improvements";
+import { LayoutFixes } from "./components/ui/layout-fixes";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +46,8 @@ export default function App() {
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
+          <AccessibilityImprovements />
+          <LayoutFixes />
           <Toaster />
           <Sonner />
           <BrowserRouter>
@@ -51,7 +60,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Index />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -62,7 +79,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Track />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -73,7 +98,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Services />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -84,7 +117,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <About />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -95,7 +136,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Contact />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -106,7 +155,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Gallery />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -117,7 +174,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Newspaper />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -128,7 +193,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <LiveChat />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -139,7 +212,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <LiveChat />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -150,7 +231,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <PrivacyPolicy />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -161,7 +250,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <TermsOfService />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -172,7 +269,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Security />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -184,14 +289,34 @@ export default function App() {
               {/* Dashboard route */}
               <Route path="/dashboard" element={<Dashboard />} />
 
-              {/* Admin routes */}
-              <Route path="/admin-login" element={<AdminLogin />} />
-              <Route path="/AdminLogin" element={<AdminLogin />} />
+              {/* Admin routes - redirect to unified auth */}
+              <Route path="/admin-login" element={<Auth />} />
+              <Route path="/AdminLogin" element={<Auth />} />
               <Route path="/admin/setup" element={<AdminSetup />} />
               <Route path="/admin/overview" element={<AdminOverview />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/unified-admin" element={<UnifiedAdmin />} />
               <Route path="/error-report" element={<ErrorReport />} />
+
+              {/* Test routes */}
+              <Route path="/test/chat-widget" element={<ChatWidgetTest />} />
+              <Route
+                path="/test/chat-position"
+                element={<ChatPositionTest />}
+              />
+              <Route
+                path="/test/chat-right-side"
+                element={<ChatRightSideTest />}
+              />
+              <Route
+                path="/test/chat-extreme-right"
+                element={<ChatExtremeRightTest />}
+              />
+              <Route path="/test/chat-only" element={<ChatOnlyTest />} />
+              <Route
+                path="/test/admin-integration"
+                element={<AdminIntegrationTest />}
+              />
 
               {/* 404 page */}
               <Route
@@ -200,7 +325,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <NotFound />
-                    <SimpleChatWidget />
+                    <ChatOnlyLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937",
+                      }}
+                      showQuickActions={true}
+                    />
                   </div>
                 }
               />

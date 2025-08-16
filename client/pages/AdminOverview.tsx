@@ -1,4 +1,4 @@
-import { AdminCredentialsInfo } from "@/components/ui/admin-credentials-info";
+import { AdminAccessInfo } from "@/components/ui/admin-access-info";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -235,8 +235,8 @@ export default function AdminOverview() {
           </Card>
         </div>
 
-        {/* Admin Credentials */}
-        <AdminCredentialsInfo />
+        {/* Admin Access Information */}
+        <AdminAccessInfo />
 
         {/* Footer */}
         <div className="text-center mt-12 text-sm text-gray-500">

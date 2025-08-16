@@ -1,4 +1,4 @@
-import { AdminCredentialsInfo } from "@/components/ui/admin-credentials-info";
+import { AdminAccessInfo } from "@/components/ui/admin-access-info";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -15,8 +15,8 @@ export default function AdminSetup() {
             Admin Panel Setup
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Here are your admin login credentials for GlobalTrack Logistics. Use
-            these to access the administrative features of your website.
+            Administrative access is integrated into the main login system.
+            Use your admin credentials in the regular login form to access administrative features.
           </p>
         </div>
 
@@ -28,22 +28,16 @@ export default function AdminSetup() {
               <span>Back to Website</span>
             </Button>
           </Link>
-          <Link to="/admin/login">
-            <Button className="flex items-center space-x-2 bg-royal-600 hover:bg-royal-700">
-              <span>Go to Admin Login</span>
-              <ExternalLink className="h-4 w-4" />
-            </Button>
-          </Link>
-          <Link to="/login">
-            <Button variant="outline" className="flex items-center space-x-2">
-              <span>Unified Login Page</span>
+          <Link to="/auth">
+            <Button className="flex items-center space-x-2 bg-shipblue-600 hover:bg-shipblue-700">
+              <span>Go to Login</span>
               <ExternalLink className="h-4 w-4" />
             </Button>
           </Link>
         </div>
 
-        {/* Admin Credentials Info */}
-        <AdminCredentialsInfo />
+        {/* Admin Access Info */}
+        <AdminAccessInfo />
 
         {/* Footer */}
         <div className="text-center mt-8 text-sm text-gray-500">

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { Button } from "./button";
 import { Badge } from "./badge";
@@ -18,7 +19,16 @@ import { ADMIN_CREDENTIALS } from "@shared/admin-config";
 
 export function AdminCredentialsInfo() {
   const [showPasswords, setShowPasswords] = useState(false);
+  const [showCredentials, setShowCredentials] = useState(false);
   const { toast } = useToast();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Only show credentials if special URL parameter is present
+    const urlParams = new URLSearchParams(location.search);
+    const showCredsParam = urlParams.get('show-credentials');
+    setShowCredentials(showCredsParam === 'true');
+  }, [location.search]);
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
@@ -43,6 +53,25 @@ export function AdminCredentialsInfo() {
         return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
+
+  if (!showCredentials) {
+    return (
+      <Card className="w-full max-w-4xl mx-auto">
+        <CardContent className="p-8 text-center">
+          <Shield className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+          <h3 className="text-lg font-semibold text-gray-700 mb-2">
+            Admin Access Available
+          </h3>
+          <p className="text-gray-600 mb-4">
+            Administrative access is available through the login system.
+          </p>
+          <p className="text-sm text-gray-500">
+            Use your admin credentials in the regular login form to access the admin panel.
+          </p>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card className="w-full max-w-4xl mx-auto">
