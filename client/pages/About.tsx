@@ -203,10 +203,10 @@ export default function About() {
                   className="w-full h-96 rounded-2xl shadow-2xl"
                   {...ImagePresets.hero}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-royal-600/20 to-orange-500/20 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/20 to-orange-500/20 rounded-2xl"></div>
                 <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-royal-600">
+                    <div className="text-2xl font-bold text-shipblue-600">
                       99.8%
                     </div>
                     <div className="text-sm text-gray-600">Success Rate</div>
