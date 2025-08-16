@@ -19,7 +19,16 @@ import { ADMIN_CREDENTIALS } from "@shared/admin-config";
 
 export function AdminCredentialsInfo() {
   const [showPasswords, setShowPasswords] = useState(false);
+  const [showCredentials, setShowCredentials] = useState(false);
   const { toast } = useToast();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Only show credentials if special URL parameter is present
+    const urlParams = new URLSearchParams(location.search);
+    const showCredsParam = urlParams.get('show-credentials');
+    setShowCredentials(showCredsParam === 'true');
+  }, [location.search]);
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
