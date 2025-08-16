@@ -197,10 +197,9 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-shipblue-800 text-white overflow-hidden">
+      <section className="relative text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/85 via-shipblue-700/80 to-shipblue-800/85"></div>
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/50"></div>
 
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
           <div className="max-w-5xl mx-auto text-center">
