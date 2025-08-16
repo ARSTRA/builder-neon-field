@@ -70,7 +70,6 @@ export function ChatWidgetTest() {
         <SimpleChatWidget
           theme={testConfig.theme}
           showQuickActions={testConfig.showQuickActions}
-          showSettings={testConfig.showSettings}
         />
       ),
     },
