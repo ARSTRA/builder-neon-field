@@ -378,7 +378,10 @@ export default function AdminLogin() {
 
           <p className="text-center text-sm text-gray-500 mt-6">
             Protected by enterprise security protocols.{" "}
-            <Link to="/privacy" className="text-shipblue-600 hover:text-shipblue-700">
+            <Link
+              to="/privacy"
+              className="text-shipblue-600 hover:text-shipblue-700"
+            >
               Privacy Policy
             </Link>
           </p>

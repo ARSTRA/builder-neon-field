@@ -247,9 +247,7 @@ export default function Dashboard() {
                   <span className="text-xl font-bold text-shipblue-600">
                     ShipNexa
                   </span>
-                  <span className="text-lg text-orange-500 ml-1">
-                    .it
-                  </span>
+                  <span className="text-lg text-orange-500 ml-1">.it</span>
                 </div>
               </Link>
             </div>

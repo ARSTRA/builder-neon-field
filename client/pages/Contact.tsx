@@ -181,8 +181,8 @@ export default function Contact() {
               Message Sent Successfully!
             </h2>
             <p className="text-gray-600 mb-6">
-              Thank you for contacting ShipNexa. Our team will
-              review your message and respond within 24 hours.
+              Thank you for contacting ShipNexa. Our team will review your
+              message and respond within 24 hours.
             </p>
             <p className="text-sm text-gray-500">
               For urgent matters, please call us directly at +1 (555) 123-4567
@@ -793,30 +793,45 @@ export default function Contact() {
                 </h3>
 
                 <p className="text-xl lg:text-2xl mb-4 text-gray-100 max-w-4xl mx-auto leading-relaxed">
-                  Join thousands of businesses who trust <span className="font-bold text-orange-400">ShipNexa</span> with their
-                  logistics needs.
+                  Join thousands of businesses who trust{" "}
+                  <span className="font-bold text-orange-400">ShipNexa</span>{" "}
+                  with their logistics needs.
                 </p>
 
                 <p className="text-lg mb-10 text-gray-200 max-w-3xl mx-auto">
-                  Experience seamless shipping solutions with real-time tracking, competitive rates, and expert support across 120+ countries worldwide.
+                  Experience seamless shipping solutions with real-time
+                  tracking, competitive rates, and expert support across 120+
+                  countries worldwide.
                 </p>
 
                 {/* Statistics */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                   <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">99.8%</div>
-                    <div className="text-sm text-gray-200">On-Time Delivery</div>
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">
+                      99.8%
+                    </div>
+                    <div className="text-sm text-gray-200">
+                      On-Time Delivery
+                    </div>
                   </div>
                   <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">120+</div>
-                    <div className="text-sm text-gray-200">Countries Served</div>
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">
+                      120+
+                    </div>
+                    <div className="text-sm text-gray-200">
+                      Countries Served
+                    </div>
                   </div>
                   <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">24/7</div>
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">
+                      24/7
+                    </div>
                     <div className="text-sm text-gray-200">Expert Support</div>
                   </div>
                   <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">50K+</div>
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">
+                      50K+
+                    </div>
                     <div className="text-sm text-gray-200">Happy Clients</div>
                   </div>
                 </div>
