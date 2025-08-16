@@ -166,7 +166,7 @@ export function ResponsiveChatLayout({
   // Desktop version
   return (
     <div className={cn("desktop-chat-container", className)}>
-      <style jsx>{`
+      <style>{`
         .desktop-chat-container .chat-widget {
           width: 384px !important;
           max-height: 600px !important;
