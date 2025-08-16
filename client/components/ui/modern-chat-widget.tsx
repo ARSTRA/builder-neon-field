@@ -262,7 +262,7 @@ export function ModernChatWidget({
               <Button
                 onClick={() => setIsOpen(true)}
                 className={cn(
-                  "relative h-16 w-16 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 group"
+                  "relative h-16 w-16 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 group chat-button-extreme-right"
                 )}
                 style={{
                   background: `linear-gradient(135deg, ${theme.primaryColor}, ${theme.secondaryColor})`,
