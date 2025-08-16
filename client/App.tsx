@@ -33,6 +33,7 @@ import ErrorReport from "./pages/ErrorReport";
 import NotFound from "./pages/NotFound";
 import { ChatWidgetTest } from "./components/ui/chat-widget-test";
 import { ChatPositionTest } from "./components/ui/chat-position-test";
+import { ChatRightSideTest } from "./components/ui/chat-right-side-test";
 
 const queryClient = new QueryClient();
 
