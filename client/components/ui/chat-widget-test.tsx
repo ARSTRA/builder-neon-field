@@ -56,7 +56,6 @@ export function ChatWidgetTest() {
         <ResponsiveChatLayout
           theme={testConfig.theme}
           showQuickActions={testConfig.showQuickActions}
-          showSettings={testConfig.showSettings}
         />
       ),
     },
