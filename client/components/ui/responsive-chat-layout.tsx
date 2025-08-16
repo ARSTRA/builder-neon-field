@@ -155,13 +155,15 @@ export function ResponsiveChatLayout({
           }
         `}</style>
         
-        <ModernChatWidget
-          className="chat-widget"
-          position="bottom-right"
-          theme={getMobileTheme()}
-          showQuickActions={showQuickActions}
-          showSettings={showSettings}
-        />
+        <ChatPositioning forceRight={true}>
+          <ModernChatWidget
+            className="chat-widget"
+            position="bottom-right"
+            theme={getMobileTheme()}
+            showQuickActions={showQuickActions}
+            showSettings={showSettings}
+          />
+        </ChatPositioning>
       </div>
     );
   }
