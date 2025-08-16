@@ -31,6 +31,7 @@ import AdminSetup from "./pages/AdminSetup";
 import AdminOverview from "./pages/AdminOverview";
 import ErrorReport from "./pages/ErrorReport";
 import NotFound from "./pages/NotFound";
+import { ChatWidgetTest } from "./components/ui/chat-widget-test";
 
 const queryClient = new QueryClient();
 
