@@ -654,6 +654,10 @@ export default function Index() {
                           src={testimonials[1].image}
                           alt={testimonials[1].name}
                           className="w-20 h-20 rounded-full border-4 border-white/20 shadow-lg"
+                          loading="lazy"
+                          onError={(e) => {
+                            e.currentTarget.src = "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?w=400&h=400&fit=crop&auto=compress,format&q=80";
+                          }}
                         />
                         <div>
                           <div className="text-xl font-bold">
