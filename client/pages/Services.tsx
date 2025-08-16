@@ -388,9 +388,7 @@ export default function Services() {
                       className="w-full h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-20`}
-                    ></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/10"></div>
                     <div className="absolute top-6 left-6">
                       <div className="p-4 bg-white/20 backdrop-blur-sm rounded-xl text-white shadow-lg">
                         {service.icon}
