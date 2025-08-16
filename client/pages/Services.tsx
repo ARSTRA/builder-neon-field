@@ -588,7 +588,7 @@ export default function Services() {
       <section className="py-20 bg-gradient-to-r from-shipblue-600 via-shipblue-700 to-orange-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Ready to Ship with GlobalTrack?
+            Ready to Ship with ShipNexa?
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Our logistics experts are standing by to help you choose the perfect
