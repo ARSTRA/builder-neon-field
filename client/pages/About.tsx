@@ -517,7 +517,7 @@ export default function About() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               <Card className="p-6 hover:shadow-lg transition-shadow border-0">
-                <Phone className="h-8 w-8 text-royal-600 mx-auto mb-4" />
+                <Phone className="h-8 w-8 text-shipblue-600 mx-auto mb-4" />
                 <h3 className="font-semibold text-gray-800 mb-2">Call Us</h3>
                 <p className="text-gray-600">+1 (555) 123-4567</p>
               </Card>
