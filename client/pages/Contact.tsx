@@ -77,7 +77,7 @@ export default function Contact() {
       country: "United States",
       address: "1250 Broadway, Suite 3000, New York, NY 10001",
       phone: "+1 (555) 123-4567",
-      email: "newyork@globaltrack.com",
+      email: "newyork@shipnexa.it",
       hours: "Mon-Fri: 8:00 AM - 6:00 PM EST",
       image:
         "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -88,7 +88,7 @@ export default function Contact() {
       country: "United Kingdom",
       address: "25 Bank Street, Canary Wharf, London E14 5JP",
       phone: "+44 20 7946 0958",
-      email: "london@globaltrack.com",
+      email: "london@shipnexa.it",
       hours: "Mon-Fri: 9:00 AM - 5:00 PM GMT",
       image:
         "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -99,7 +99,7 @@ export default function Contact() {
       country: "Singapore",
       address: "1 Marina Bay Drive, Singapore 018989",
       phone: "+65 6123 4567",
-      email: "singapore@globaltrack.com",
+      email: "singapore@shipnexa.it",
       hours: "Mon-Fri: 9:00 AM - 6:00 PM SGT",
       image:
         "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -130,7 +130,7 @@ export default function Contact() {
       icon: <Mail className="h-8 w-8" />,
       title: "Email Support",
       description: "Send detailed inquiries for comprehensive responses",
-      contact: "info@globaltrack.com",
+      contact: "info@shipnexa.it",
       action: "Send Email",
       gradient: "from-purple-600 to-purple-800",
       availability: "24h Response",
@@ -181,7 +181,7 @@ export default function Contact() {
               Message Sent Successfully!
             </h2>
             <p className="text-gray-600 mb-6">
-              Thank you for contacting GlobalTrack Logistics. Our team will
+              Thank you for contacting ShipNexa. Our team will
               review your message and respond within 24 hours.
             </p>
             <p className="text-sm text-gray-500">
@@ -304,13 +304,13 @@ export default function Contact() {
                           window.open("tel:+15551234567", "_self");
                         } else if (method.title === "Email Support") {
                           const subject = encodeURIComponent(
-                            "GlobalTrack Support Request",
+                            "ShipNexa Support Request",
                           );
                           const body = encodeURIComponent(
-                            "Hello GlobalTrack Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards",
+                            "Hello ShipNexa Team,\n\nI would like to inquire about your logistics services. Please contact me at your earliest convenience.\n\nBest regards",
                           );
                           window.open(
-                            `mailto:info@globaltrack.com?subject=${subject}&body=${body}`,
+                            `mailto:info@shipnexa.it?subject=${subject}&body=${body}`,
                             "_blank",
                           );
                         } else if (method.title === "Schedule Meeting") {
