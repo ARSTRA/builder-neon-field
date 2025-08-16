@@ -295,9 +295,15 @@ export function ModernChatWidget({
   // Chat interface
   return (
     <div className={cn("relative", className)}>
+      <style>{`
+        .chat-widget-extreme-right {
+          margin-right: 0 !important;
+          right: 0 !important;
+        }
+      `}</style>
       <Card
         className={cn(
-          "shadow-2xl border-0 transition-all duration-300 backdrop-blur-sm",
+          "shadow-2xl border-0 transition-all duration-300 backdrop-blur-sm chat-widget-extreme-right",
           isFullscreen
             ? "fixed inset-4 w-auto h-auto"
             : isMinimized
