@@ -775,7 +775,10 @@ export default function Security() {
                           <p className="text-red-700 mb-4">
                             For immediate security emergencies, contact our 24/7 security hotline:
                           </p>
-                          <Button className="bg-red-600 hover:bg-red-700">
+                          <Button
+                            className="bg-red-600 hover:bg-red-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red-500/25"
+                            onClick={() => window.open('tel:+15551234567', '_self')}
+                          >
                             <Phone className="h-4 w-4 mr-2" />
                             +1 (555) 123-SECURE
                           </Button>
@@ -789,7 +792,11 @@ export default function Security() {
                                 Security Team
                               </h3>
                               <p className="text-gray-600 mb-4">For vulnerability reports and security inquiries</p>
-                              <Button className="bg-blue-600 hover:bg-blue-700 w-full">
+                              <Button
+                                className="bg-blue-600 hover:bg-blue-700 w-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/25"
+                                onClick={() => window.open('mailto:security@shipnexa.it?subject=Security Inquiry', '_blank')}
+                              >
+                                <Mail className="mr-2 h-4 w-4" />
                                 security@shipnexa.it
                               </Button>
                             </CardContent>
@@ -802,7 +809,13 @@ export default function Security() {
                                 Bug Bounty Program
                               </h3>
                               <p className="text-gray-600 mb-4">Earn rewards for responsible disclosure</p>
-                              <Button variant="outline" className="border-green-300 text-green-600 hover:bg-green-50 w-full">
+                              <Button
+                                variant="outline"
+                                className="border-green-300 text-green-600 hover:bg-green-50 w-full transition-all duration-300 hover:scale-105"
+                                onClick={() => {
+                                  alert('Bug Bounty Program: We offer rewards from $100 to $10,000 for responsible security disclosures. Contact security@shipnexa.it for more details.');
+                                }}
+                              >
                                 Learn More
                               </Button>
                             </CardContent>
@@ -855,17 +868,27 @@ export default function Security() {
               Your data security is our top priority. Experience enterprise-grade protection with ShipNexa.it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 size="lg"
-                className="bg-white text-blue-800 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg"
+                className="bg-white text-blue-800 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                onClick={() => window.open('mailto:security@shipnexa.it?subject=Security Team Contact Request', '_blank')}
               >
                 Contact Security Team
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 text-lg font-semibold"
+                className="border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
+                onClick={() => {
+                  // Create a mock PDF download
+                  const link = document.createElement('a');
+                  link.href = 'data:application/pdf;base64,';
+                  link.download = 'ShipNexa-Security-Whitepaper.pdf';
+                  link.click();
+                  // Show success message
+                  alert('Security Whitepaper PDF download initiated!');
+                }}
               >
                 <Download className="mr-2 h-5 w-5" />
                 Security Whitepaper
