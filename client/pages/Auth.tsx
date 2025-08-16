@@ -52,7 +52,26 @@ export default function Auth() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate API call
+    // Check if this is an admin account using centralized configuration
+    const validAdmin = validateAdminCredentials(loginData.email, loginData.password);
+
+    if (validAdmin) {
+      // Admin login
+      localStorage.setItem("isAdmin", "true");
+      localStorage.setItem("adminEmail", validAdmin.email);
+      localStorage.setItem("adminRole", validAdmin.role);
+      localStorage.setItem("adminLoginTime", new Date().toISOString());
+
+      toast({
+        title: "Admin Access Granted",
+        description: `Welcome ${validAdmin.role} to ShipNexa Admin Portal`,
+      });
+      navigate("/unified-admin");
+      setIsLoading(false);
+      return;
+    }
+
+    // Simulate regular user API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     if (loginData.email && loginData.password) {
