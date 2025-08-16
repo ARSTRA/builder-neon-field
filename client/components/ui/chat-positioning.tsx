@@ -48,21 +48,30 @@ export function ChatPositioning({
           }
         }
         
-        /* Ensure chat widget never gets pushed off screen */
+        /* Ensure chat widget never gets pushed off screen - extreme right positioning */
         .chat-positioning-container * {
-          max-width: calc(100vw - 48px) !important;
+          max-width: calc(100vw - 16px) !important;
         }
-        
+
         @media (max-width: 768px) {
           .chat-positioning-container * {
-            max-width: calc(100vw - 32px) !important;
+            max-width: calc(100vw - 12px) !important;
           }
         }
-        
+
         @media (max-width: 480px) {
           .chat-positioning-container * {
-            max-width: calc(100vw - 24px) !important;
+            max-width: calc(100vw - 8px) !important;
           }
+        }
+
+        /* Additional styles for extreme right positioning */
+        .chat-positioning-container {
+          pointer-events: auto;
+        }
+
+        .chat-positioning-container .chat-widget {
+          margin-right: 0 !important;
         }
       `}</style>
       
