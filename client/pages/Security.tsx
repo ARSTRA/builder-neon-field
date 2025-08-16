@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import {
   Shield,
@@ -35,6 +36,7 @@ import { Progress } from "@/components/ui/progress";
 
 export default function Security() {
   const [activeSection, setActiveSection] = useState("overview");
+  const { toast } = useToast();
 
   const sections = [
     { id: "overview", title: "Overview", icon: <Shield className="h-4 w-4" /> },
@@ -813,7 +815,10 @@ export default function Security() {
                                 variant="outline"
                                 className="border-green-300 text-green-600 hover:bg-green-50 w-full transition-all duration-300 hover:scale-105"
                                 onClick={() => {
-                                  alert('Bug Bounty Program: We offer rewards from $100 to $10,000 for responsible security disclosures. Contact security@shipnexa.it for more details.');
+                                  toast({
+                                    title: "Bug Bounty Program",
+                                    description: "We offer rewards from $100 to $10,000 for responsible security disclosures. Contact security@shipnexa.it for more details.",
+                                  });
                                 }}
                               >
                                 Learn More
@@ -886,8 +891,11 @@ export default function Security() {
                   link.href = 'data:application/pdf;base64,';
                   link.download = 'ShipNexa-Security-Whitepaper.pdf';
                   link.click();
-                  // Show success message
-                  alert('Security Whitepaper PDF download initiated!');
+                  // Show success message with toast
+                  toast({
+                    title: "Security Whitepaper Downloaded",
+                    description: "Your PDF has been downloaded successfully.",
+                  });
                 }}
               >
                 <Download className="mr-2 h-5 w-5" />
