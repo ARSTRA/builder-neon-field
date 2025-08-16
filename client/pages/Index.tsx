@@ -304,7 +304,7 @@ export default function Index() {
       {/* Brand Showcase Section */}
       <section className="py-16 bg-white border-b">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-12 items-center">
+          <div className="grid lg:grid-cols-3 gap-12 items-start lg:items-center">
             <div className="lg:col-span-1 text-center lg:text-left">
               <ShipNexaLogo
                 size="xl"
