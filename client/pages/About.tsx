@@ -326,7 +326,7 @@ export default function About() {
 
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-royal-600 to-orange-500 hidden lg:block"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-shipblue-600 to-orange-500 hidden lg:block"></div>
 
               <div className="space-y-8 lg:space-y-16">
                 {milestones.map((milestone, index) => (
