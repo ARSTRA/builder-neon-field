@@ -242,13 +242,13 @@ export default function Dashboard() {
               </button>
 
               <Link to="/" className="flex items-center space-x-2 ml-4 lg:ml-0">
-                <Package className="h-8 w-8 text-royal-600" />
+                <Package className="h-8 w-8 text-shipblue-600" />
                 <div>
-                  <span className="text-xl font-bold text-royal-600">
-                    GlobalTrack
+                  <span className="text-xl font-bold text-shipblue-600">
+                    ShipNexa
                   </span>
                   <span className="text-lg text-orange-500 ml-1">
-                    Logistics
+                    .it
                   </span>
                 </div>
               </Link>
@@ -261,7 +261,7 @@ export default function Dashboard() {
                 <Input
                   type="text"
                   placeholder="Search shipments, tracking numbers..."
-                  className="pl-10 pr-4 py-2 w-full border-gray-300 focus:border-royal-500"
+                  className="pl-10 pr-4 py-2 w-full border-gray-300 focus:border-shipblue-500"
                 />
               </div>
             </div>
@@ -310,7 +310,7 @@ export default function Dashboard() {
                   }}
                   className={`w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg transition-colors ${
                     currentView === item.id
-                      ? "bg-royal-100 text-royal-700 border border-royal-200"
+                      ? "bg-shipblue-100 text-shipblue-700 border border-shipblue-200"
                       : "text-gray-700 hover:bg-gray-100"
                   }`}
                 >
@@ -353,7 +353,7 @@ export default function Dashboard() {
                   <div className="mt-4 sm:mt-0">
                     <Button
                       onClick={() => setCurrentView("shipments")}
-                      className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600"
+                      className="bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600"
                     >
                       <Plus className="h-4 w-4 mr-2" />
                       New Shipment
@@ -437,7 +437,7 @@ export default function Dashboard() {
                               <div className="flex items-center space-x-2">
                                 <div className="w-20 h-2 bg-gray-200 rounded-full">
                                   <div
-                                    className="h-2 bg-royal-600 rounded-full transition-all duration-300"
+                                    className="h-2 bg-shipblue-600 rounded-full transition-all duration-300"
                                     style={{ width: `${shipment.progress}%` }}
                                   ></div>
                                 </div>
