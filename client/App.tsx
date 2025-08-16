@@ -51,7 +51,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Index />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -62,7 +70,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Track />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -73,7 +89,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Services />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -84,7 +108,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <About />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -95,7 +127,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Contact />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -106,7 +146,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Gallery />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -117,7 +165,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Newspaper />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -128,7 +184,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <LiveChat />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -139,7 +203,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <LiveChat />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -150,7 +222,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <PrivacyPolicy />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -161,7 +241,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <TermsOfService />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -172,7 +260,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <Security />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                     <Footer />
                   </div>
                 }
@@ -200,7 +296,15 @@ export default function App() {
                   <div className="min-h-screen bg-white">
                     <Navigation />
                     <NotFound />
-                    <SimpleChatWidget />
+                    <ResponsiveChatLayout
+                      theme={{
+                        primaryColor: "#2563eb",
+                        secondaryColor: "#f59e0b",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1f2937"
+                      }}
+                      showQuickActions={true}
+                    />
                   </div>
                 }
               />
