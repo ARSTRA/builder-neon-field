@@ -17,21 +17,21 @@ export function SimpleSocialFooter({
   const socialPlatforms = [
     {
       name: "Facebook",
-      url: "https://facebook.com/globaltracklogistics",
+      url: "https://facebook.com/shipnexa.logistics",
       icon: Facebook,
       bgColor: "bg-blue-600 hover:bg-blue-700",
       shadowColor: "hover:shadow-blue-500/30",
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/globaltrack",
+      url: "https://twitter.com/shipnexa_it",
       icon: Twitter,
       bgColor: "bg-sky-500 hover:bg-sky-600",
       shadowColor: "hover:shadow-sky-500/30",
     },
     {
       name: "Instagram",
-      url: "https://instagram.com/globaltrack_logistics",
+      url: "https://instagram.com/shipnexa.logistics",
       icon: Instagram,
       bgColor:
         "bg-gradient-to-br from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700",
@@ -39,21 +39,21 @@ export function SimpleSocialFooter({
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/company/globaltrack-logistics",
+      url: "https://linkedin.com/company/shipnexa-logistics",
       icon: Linkedin,
       bgColor: "bg-blue-700 hover:bg-blue-800",
       shadowColor: "hover:shadow-blue-700/30",
     },
     {
       name: "YouTube",
-      url: "https://youtube.com/@globaltracklogistics",
+      url: "https://youtube.com/@shipnexalogistics",
       icon: Youtube,
       bgColor: "bg-red-600 hover:bg-red-700",
       shadowColor: "hover:shadow-red-500/30",
     },
     {
       name: "WhatsApp",
-      url: "https://wa.me/15551234567",
+      url: "https://wa.me/393511234567",
       icon: MessageCircle,
       bgColor: "bg-green-600 hover:bg-green-700",
       shadowColor: "hover:shadow-green-500/30",
@@ -92,7 +92,7 @@ export function SimpleSocialFooter({
                 touch-manipulation
               `}
               title={`Follow us on ${social.name}`}
-              aria-label={`Follow GlobalTrack on ${social.name}`}
+              aria-label={`Follow ShipNexa on ${social.name}`}
             >
               {/* Shimmer effect */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -107,12 +107,12 @@ export function SimpleSocialFooter({
 
       <div className="text-xs sm:text-sm text-gray-300 space-y-1">
         <p>
-          🌟 <strong>63.8K+</strong> followers across all platforms
+          🌟 <strong>25.4K+</strong> followers across all platforms
         </p>
         <p>
-          📈 <strong>5.2%</strong> average engagement rate
+          📈 <strong>4.8%</strong> average engagement rate
         </p>
-        <p>📱 Join our growing community!</p>
+        <p>📱 Join our ShipNexa community!</p>
       </div>
     </div>
   );
