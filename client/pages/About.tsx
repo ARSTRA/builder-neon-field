@@ -236,8 +236,8 @@ export default function About() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex items-start space-x-4">
-                    <div className="p-2 bg-royal-100 rounded-lg">
-                      <Target className="h-6 w-6 text-royal-600" />
+                    <div className="p-2 bg-shipblue-100 rounded-lg">
+                      <Target className="h-6 w-6 text-shipblue-600" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-2">
