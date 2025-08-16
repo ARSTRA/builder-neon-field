@@ -280,7 +280,7 @@ export default function Newspaper() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Header Section */}
       <section className="relative bg-gradient-to-r from-royal-600 via-royal-700 to-orange-600 text-white py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6169641/pexels-photo-6169641.jpeg')] bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-royal-600/90 via-royal-700/85 to-orange-600/90"></div>
         <div className="absolute inset-0 bg-black/20"></div>
 
@@ -625,72 +625,141 @@ export default function Newspaper() {
         </div>
       </section>
 
-      {/* Newsletter Subscription */}
-      <section className="py-12 lg:py-16 bg-gradient-to-r from-royal-600 via-royal-700 to-orange-600 text-white">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-16 h-16 lg:w-20 lg:h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 lg:mb-8">
-              <MessageCircle className="h-8 w-8 lg:h-10 lg:w-10 text-orange-400" />
-            </div>
-            <h2 className="text-2xl lg:text-4xl font-bold mb-4 lg:mb-6">
-              Stay Updated with GlobalTrack Times
-            </h2>
-            <p className="text-lg lg:text-xl text-gray-200 mb-6 lg:mb-8 max-w-2xl mx-auto leading-relaxed">
-              Subscribe to our newsletter and be the first to know about
-              industry insights, company updates, and logistics innovations that
-              matter to your business.
-            </p>
+      {/* Newsletter Subscription - Enhanced Colorful Design */}
+      <section className="relative py-16 lg:py-24 overflow-hidden">
+        {/* Animated Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-teal-500">
+          <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 via-orange-500/20 to-yellow-500/20 animate-pulse-soft"></div>
+        </div>
 
-            <form onSubmit={handleSubscribe} className="max-w-lg mx-auto mb-8">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <div className="relative flex-1">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email address"
-                    className="w-full px-6 py-4 pl-12 rounded-xl text-gray-800 placeholder:text-gray-500 border-0 focus:ring-2 focus:ring-orange-400 outline-none shadow-lg"
-                    disabled={isSubscribing}
-                    required
-                  />
-                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+        {/* Geometric Decorations */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-orange-400/30 to-pink-500/30 rounded-full blur-3xl animate-bounce-slow"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-cyan-400/30 to-blue-500/30 rounded-full blur-3xl animate-bounce-slow" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-br from-green-400/20 to-emerald-500/20 rounded-full blur-2xl animate-pulse-soft" style={{animationDelay: '0.5s'}}></div>
+
+        <div className="relative container mx-auto px-4 lg:px-6">
+          <div className="max-w-5xl mx-auto">
+            {/* Header Section */}
+            <div className="text-center mb-12 lg:mb-16">
+              <div className="flex justify-center mb-6">
+                <div className="relative">
+                  <div className="w-20 h-20 lg:w-24 lg:h-24 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                    <MessageCircle className="h-10 w-10 lg:h-12 lg:w-12 text-white" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-ping"></div>
+                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-r from-green-400 to-cyan-500 rounded-full animate-pulse"></div>
                 </div>
-                <Button
-                  type="submit"
-                  disabled={isSubscribing}
-                  className="bg-orange-500 hover:bg-orange-600 disabled:bg-orange-400 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:transform-none"
-                >
-                  {isSubscribing ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                      Subscribing...
-                    </>
-                  ) : (
-                    <>
-                      Subscribe
-                      <Send className="ml-2 h-5 w-5" />
-                    </>
-                  )}
-                </Button>
               </div>
 
-              {subscribeMessage && (
-                <div
-                  className={`mt-4 p-4 rounded-xl text-center ${
-                    subscribeMessage.includes("🎉")
-                      ? "bg-green-500/20 text-green-100 border border-green-400/30"
-                      : "bg-red-500/20 text-red-100 border border-red-400/30"
-                  }`}
-                >
-                  {subscribeMessage}
-                </div>
-              )}
-            </form>
+              <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-white">
+                Stay Updated with{' '}
+                <span className="bg-gradient-to-r from-orange-300 via-pink-300 to-purple-300 bg-clip-text text-transparent">
+                  GlobalTrack Times
+                </span>
+              </h2>
 
-            <p className="text-sm text-gray-300">
-              Join 10,000+ logistics professionals who trust GlobalTrack Times
-              for industry insights
-            </p>
+              <p className="text-lg lg:text-xl text-gray-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+                🚀 Join our vibrant community and be the first to discover breakthrough innovations,
+                exclusive industry insights, and game-changing logistics solutions that will transform your business!
+              </p>
+            </div>
+
+            {/* Enhanced Newsletter Form */}
+            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 lg:p-12 border border-white/20 shadow-2xl">
+              <form onSubmit={handleSubscribe} className="max-w-2xl mx-auto">
+                <div className="flex flex-col lg:flex-row gap-6 justify-center mb-8">
+                  <div className="relative flex-1">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your professional email address"
+                      className="w-full px-8 py-5 pl-14 rounded-2xl text-gray-800 placeholder:text-gray-500 border-2 border-white/30 focus:border-orange-400 focus:ring-4 focus:ring-orange-400/20 outline-none shadow-xl bg-white/95 backdrop-blur-sm font-medium transition-all duration-300"
+                      disabled={isSubscribing}
+                      required
+                    />
+                    <Mail className="absolute left-5 top-1/2 transform -translate-y-1/2 h-6 w-6 text-gray-400" />
+                  </div>
+                  <Button
+                    type="submit"
+                    disabled={isSubscribing}
+                    className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 hover:from-orange-600 hover:via-pink-600 hover:to-purple-600 disabled:from-gray-400 disabled:to-gray-500 px-10 py-5 rounded-2xl font-bold text-white shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 disabled:transform-none border-0 text-lg"
+                  >
+                    {isSubscribing ? (
+                      <>
+                        <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
+                        Subscribing...
+                      </>
+                    ) : (
+                      <>
+                        🎯 Subscribe Now
+                        <Send className="ml-3 h-6 w-6" />
+                      </>
+                    )}
+                  </Button>
+                </div>
+
+                {subscribeMessage && (
+                  <div
+                    className={`p-6 rounded-2xl text-center font-medium text-lg backdrop-blur-sm ${
+                      subscribeMessage.includes("🎉")
+                        ? "bg-green-500/20 text-green-100 border-2 border-green-400/40 shadow-green-500/20 shadow-xl"
+                        : "bg-red-500/20 text-red-100 border-2 border-red-400/40 shadow-red-500/20 shadow-xl"
+                    }`}
+                  >
+                    {subscribeMessage}
+                  </div>
+                )}
+              </form>
+
+              {/* Enhanced Features */}
+              <div className="grid md:grid-cols-3 gap-6 mt-12">
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <TrendingUp className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-2">📈 Industry Trends</h3>
+                  <p className="text-gray-200 text-sm">Weekly insights on market movements and logistics innovations</p>
+                </div>
+
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Zap className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-2">⚡ Breaking News</h3>
+                  <p className="text-gray-200 text-sm">Real-time updates on major industry developments</p>
+                </div>
+
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Star className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-2">🌟 Exclusive Content</h3>
+                  <p className="text-gray-200 text-sm">Subscriber-only access to premium reports and case studies</p>
+                </div>
+              </div>
+
+              {/* Social Proof */}
+              <div className="text-center mt-8 pt-8 border-t border-white/20">
+                <p className="text-white/90 font-medium text-lg mb-2">
+                  🎉 Join 15,000+ logistics professionals worldwide
+                </p>
+                <div className="flex justify-center space-x-6 text-sm text-gray-200">
+                  <span className="flex items-center">
+                    <CheckCircle className="h-4 w-4 mr-2 text-green-400" />
+                    No spam, ever
+                  </span>
+                  <span className="flex items-center">
+                    <CheckCircle className="h-4 w-4 mr-2 text-green-400" />
+                    Unsubscribe anytime
+                  </span>
+                  <span className="flex items-center">
+                    <CheckCircle className="h-4 w-4 mr-2 text-green-400" />
+                    Free forever
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
