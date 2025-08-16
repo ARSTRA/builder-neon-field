@@ -54,6 +54,25 @@ export function AdminCredentialsInfo() {
     }
   };
 
+  if (!showCredentials) {
+    return (
+      <Card className="w-full max-w-4xl mx-auto">
+        <CardContent className="p-8 text-center">
+          <Shield className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+          <h3 className="text-lg font-semibold text-gray-700 mb-2">
+            Admin Access Available
+          </h3>
+          <p className="text-gray-600 mb-4">
+            Administrative access is available through the login system.
+          </p>
+          <p className="text-sm text-gray-500">
+            Use your admin credentials in the regular login form to access the admin panel.
+          </p>
+        </CardContent>
+      </Card>
+    );
+  }
+
   return (
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader>
