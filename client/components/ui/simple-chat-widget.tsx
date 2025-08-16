@@ -1,4 +1,4 @@
-import { ResponsiveChatLayout } from "./responsive-chat-layout";
+import { ChatOnlyLayout } from "./chat-only-layout";
 
 interface SimpleChatWidgetProps {
   className?: string;
@@ -9,7 +9,6 @@ interface SimpleChatWidgetProps {
     textColor?: string;
   };
   showQuickActions?: boolean;
-  showSettings?: boolean;
 }
 
 export function SimpleChatWidget({
@@ -21,14 +20,12 @@ export function SimpleChatWidget({
     textColor: "#1f2937",
   },
   showQuickActions = true,
-  showSettings = false,
 }: SimpleChatWidgetProps) {
   return (
-    <ResponsiveChatLayout
+    <ChatOnlyLayout
       className={className}
       theme={theme}
       showQuickActions={showQuickActions}
-      showSettings={showSettings}
       mobileBreakpoint={768}
     />
   );
