@@ -323,7 +323,7 @@ export default function Index() {
             </div>
 
             <div className="lg:col-span-2">
-              <div className="grid grid-cols-2 gap-6 max-w-4xl">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
                 {/* Air Freight */}
                 <div className="group cursor-pointer">
                   <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 bg-gray-100">
