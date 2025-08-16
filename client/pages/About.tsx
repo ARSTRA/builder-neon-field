@@ -402,7 +402,7 @@ export default function About() {
                     </div>
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-royal-600 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-shipblue-600 transition-colors duration-300">
                       {member.name}
                     </h3>
                     <p className="text-orange-600 font-semibold mb-3">
