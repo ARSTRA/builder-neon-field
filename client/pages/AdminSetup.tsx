@@ -28,15 +28,9 @@ export default function AdminSetup() {
               <span>Back to Website</span>
             </Button>
           </Link>
-          <Link to="/admin/login">
-            <Button className="flex items-center space-x-2 bg-royal-600 hover:bg-royal-700">
-              <span>Go to Admin Login</span>
-              <ExternalLink className="h-4 w-4" />
-            </Button>
-          </Link>
-          <Link to="/login">
-            <Button variant="outline" className="flex items-center space-x-2">
-              <span>Unified Login Page</span>
+          <Link to="/auth">
+            <Button className="flex items-center space-x-2 bg-shipblue-600 hover:bg-shipblue-700">
+              <span>Go to Login</span>
               <ExternalLink className="h-4 w-4" />
             </Button>
           </Link>
