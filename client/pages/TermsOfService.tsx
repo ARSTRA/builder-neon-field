@@ -545,7 +545,11 @@ export default function TermsOfService() {
                                   Legal Department
                                 </h3>
                                 <p className="text-gray-600 mb-4">For terms and legal inquiries</p>
-                                <Button className="bg-orange-600 hover:bg-orange-700 w-full">
+                                <Button
+                                  className="bg-orange-600 hover:bg-orange-700 w-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-orange-500/25"
+                                  onClick={() => window.open('mailto:legal@shipnexa.it?subject=Terms of Service Inquiry', '_blank')}
+                                >
+                                  <Mail className="mr-2 h-4 w-4" />
                                   legal@shipnexa.it
                                 </Button>
                               </CardContent>
@@ -587,17 +591,32 @@ export default function TermsOfService() {
               By proceeding, you agree to these terms and join thousands of satisfied customers worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 size="lg"
-                className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg"
+                className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                onClick={() => {
+                  // Store acceptance and redirect to services or dashboard
+                  localStorage.setItem('termsAccepted', new Date().toISOString());
+                  alert('Terms of Service accepted! Redirecting to services...');
+                  window.location.href = '/services';
+                }}
               >
                 Accept Terms & Continue
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg font-semibold"
+                className="border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
+                onClick={() => {
+                  // Create a mock PDF download
+                  const link = document.createElement('a');
+                  link.href = 'data:application/pdf;base64,';
+                  link.download = 'ShipNexa-Terms-of-Service.pdf';
+                  link.click();
+                  // Show success message
+                  alert('Terms of Service PDF download initiated!');
+                }}
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download PDF
