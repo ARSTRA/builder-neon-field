@@ -196,9 +196,9 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-royal-600 via-royal-700 to-royal-800 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-shipblue-600 via-shipblue-700 to-shipblue-800 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-royal-600/85 via-royal-700/80 to-royal-800/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-shipblue-600/85 via-shipblue-700/80 to-shipblue-800/85"></div>
         <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="relative container mx-auto px-4 py-24 lg:py-32">
@@ -243,10 +243,10 @@ export default function Contact() {
               </Link>
               <Button
                 onClick={() => window.open("tel:+15551234567", "_self")}
-                className="group bg-white/15 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white hover:text-royal-600 px-10 py-5 text-lg font-bold transition-all duration-500 transform hover:scale-105 rounded-2xl shadow-2xl hover:shadow-white/30 relative overflow-hidden"
+                className="group bg-white/15 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white hover:text-shipblue-600 px-10 py-5 text-lg font-bold transition-all duration-500 transform hover:scale-105 rounded-2xl shadow-2xl hover:shadow-white/30 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                <Phone className="mr-3 h-6 w-6 group-hover:ring-2 group-hover:ring-royal-300 group-hover:rounded-full group-hover:p-1 transition-all duration-300 relative z-10" />
+                <Phone className="mr-3 h-6 w-6 group-hover:ring-2 group-hover:ring-shipblue-300 group-hover:rounded-full group-hover:p-1 transition-all duration-300 relative z-10" />
                 <span className="relative z-10">Call: +1 (555) 123-4567</span>
               </Button>
             </div>
@@ -281,7 +281,7 @@ export default function Contact() {
                     >
                       {method.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-royal-600 transition-colors duration-300 min-h-[56px] flex items-center justify-center">
+                    <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-shipblue-600 transition-colors duration-300 min-h-[56px] flex items-center justify-center">
                       {method.title}
                     </h3>
                     <p className="text-gray-600 mb-5 text-sm leading-relaxed min-h-[40px]">
@@ -404,7 +404,7 @@ export default function Contact() {
                                 }))
                               }
                               placeholder="Enter your full name"
-                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                              className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 pl-10 h-12"
                             />
                             <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                           </div>
@@ -429,7 +429,7 @@ export default function Contact() {
                                 }))
                               }
                               placeholder="your@email.com"
-                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                              className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 pl-10 h-12"
                             />
                             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                           </div>
@@ -456,7 +456,7 @@ export default function Contact() {
                                 }))
                               }
                               placeholder="+1 (555) 123-4567"
-                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                              className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 pl-10 h-12"
                             />
                             <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                           </div>
@@ -479,7 +479,7 @@ export default function Contact() {
                                 }))
                               }
                               placeholder="Your company name"
-                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                              className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 pl-10 h-12"
                             />
                             <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                           </div>
@@ -506,7 +506,7 @@ export default function Contact() {
                                 }))
                               }
                               placeholder="Brief subject line"
-                              className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 pl-10 h-12"
+                              className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 pl-10 h-12"
                             />
                             <Package className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                           </div>
@@ -527,7 +527,7 @@ export default function Contact() {
                               }))
                             }
                           >
-                            <SelectTrigger className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 h-12">
+                            <SelectTrigger className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 h-12">
                               <SelectValue placeholder="Select priority" />
                             </SelectTrigger>
                             <SelectContent>
@@ -567,14 +567,14 @@ export default function Contact() {
                           }
                           placeholder="Please describe your logistics needs, shipping requirements, or any questions you have..."
                           rows={5}
-                          className="border-gray-300 focus:border-royal-500 focus:ring-2 focus:ring-royal-500/20 resize-none"
+                          className="border-gray-300 focus:border-shipblue-500 focus:ring-2 focus:ring-shipblue-500/20 resize-none"
                         />
                       </div>
 
                       <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
+                        className="w-full bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
                         {isSubmitting ? (
                           <>
@@ -624,7 +624,7 @@ export default function Contact() {
                             alt={`${office.city} office`}
                             className="w-full h-full object-cover"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-r from-royal-600/60 to-transparent"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-shipblue-600/60 to-transparent"></div>
                           <div className="absolute bottom-4 left-4 text-white">
                             <h3 className="text-xl font-bold">{office.city}</h3>
                             <p className="text-sm">{office.country}</p>
@@ -634,7 +634,7 @@ export default function Contact() {
                         <CardContent className="md:col-span-2 p-6">
                           <div className="space-y-3">
                             <div className="flex items-start space-x-3">
-                              <MapPin className="h-5 w-5 text-royal-600 mt-1 flex-shrink-0" />
+                              <MapPin className="h-5 w-5 text-shipblue-600 mt-1 flex-shrink-0" />
                               <div>
                                 <p className="font-medium text-gray-800">
                                   Address
@@ -646,7 +646,7 @@ export default function Contact() {
                             </div>
 
                             <div className="flex items-center space-x-3">
-                              <div className="w-8 h-8 bg-gradient-to-br from-royal-500 to-royal-700 rounded-lg flex items-center justify-center shadow-md">
+                              <div className="w-8 h-8 bg-gradient-to-br from-shipblue-500 to-shipblue-700 rounded-lg flex items-center justify-center shadow-md">
                                 <Phone className="h-4 w-4 text-white" />
                               </div>
                               <div className="flex-1">
@@ -660,7 +660,7 @@ export default function Contact() {
                                       "_self",
                                     )
                                   }
-                                  className="group inline-flex items-center px-4 py-2 bg-gradient-to-r from-royal-50 to-royal-100 text-royal-700 hover:from-royal-600 hover:to-royal-700 hover:text-white rounded-xl text-sm font-semibold transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md border border-royal-200 hover:border-royal-600"
+                                  className="group inline-flex items-center px-4 py-2 bg-gradient-to-r from-shipblue-50 to-shipblue-100 text-shipblue-700 hover:from-shipblue-600 hover:to-shipblue-700 hover:text-white rounded-xl text-sm font-semibold transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md border border-shipblue-200 hover:border-shipblue-600"
                                 >
                                   <Phone className="mr-2 h-4 w-4 group-hover:animate-pulse" />
                                   {office.phone}
@@ -669,7 +669,7 @@ export default function Contact() {
                             </div>
 
                             <div className="flex items-center space-x-3">
-                              <Mail className="h-5 w-5 text-royal-600 flex-shrink-0" />
+                              <Mail className="h-5 w-5 text-shipblue-600 flex-shrink-0" />
                               <div>
                                 <p className="font-medium text-gray-800">
                                   Email
@@ -681,7 +681,7 @@ export default function Contact() {
                                       "_self",
                                     )
                                   }
-                                  className="text-royal-600 text-sm hover:text-royal-800 transition-colors duration-200 font-medium hover:underline"
+                                  className="text-shipblue-600 text-sm hover:text-shipblue-800 transition-colors duration-200 font-medium hover:underline"
                                 >
                                   {office.email}
                                 </button>
@@ -689,7 +689,7 @@ export default function Contact() {
                             </div>
 
                             <div className="flex items-center space-x-3">
-                              <Clock className="h-5 w-5 text-royal-600 flex-shrink-0" />
+                              <Clock className="h-5 w-5 text-shipblue-600 flex-shrink-0" />
                               <div>
                                 <p className="font-medium text-gray-800">
                                   Hours
