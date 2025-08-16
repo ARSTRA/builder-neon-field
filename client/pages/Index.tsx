@@ -566,6 +566,10 @@ export default function Index() {
                 src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Shipping containers at port"
                 className="rounded-2xl shadow-2xl"
+                loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg?w=800&h=600&fit=crop&auto=compress,format&q=80";
+                }}
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                 <div className="text-2xl font-bold text-shipblue-600">
