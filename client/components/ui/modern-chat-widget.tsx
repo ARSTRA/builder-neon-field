@@ -251,6 +251,12 @@ export function ModernChatWidget({
     return (
       <TooltipProvider>
         <div className={cn("relative", className)}>
+          <style>{`
+            .chat-button-extreme-right {
+              margin-right: 0 !important;
+              right: 0 !important;
+            }
+          `}</style>
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
