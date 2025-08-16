@@ -65,7 +65,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -84,7 +84,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -103,7 +103,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -122,7 +122,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -141,7 +141,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -160,7 +160,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -179,7 +179,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -198,7 +198,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -217,7 +217,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -236,7 +236,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -255,7 +255,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -274,7 +274,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />
@@ -300,11 +300,23 @@ export default function App() {
 
               {/* Test routes */}
               <Route path="/test/chat-widget" element={<ChatWidgetTest />} />
-              <Route path="/test/chat-position" element={<ChatPositionTest />} />
-              <Route path="/test/chat-right-side" element={<ChatRightSideTest />} />
-              <Route path="/test/chat-extreme-right" element={<ChatExtremeRightTest />} />
+              <Route
+                path="/test/chat-position"
+                element={<ChatPositionTest />}
+              />
+              <Route
+                path="/test/chat-right-side"
+                element={<ChatRightSideTest />}
+              />
+              <Route
+                path="/test/chat-extreme-right"
+                element={<ChatExtremeRightTest />}
+              />
               <Route path="/test/chat-only" element={<ChatOnlyTest />} />
-              <Route path="/test/admin-integration" element={<AdminIntegrationTest />} />
+              <Route
+                path="/test/admin-integration"
+                element={<AdminIntegrationTest />}
+              />
 
               {/* 404 page */}
               <Route
@@ -318,7 +330,7 @@ export default function App() {
                         primaryColor: "#2563eb",
                         secondaryColor: "#f59e0b",
                         backgroundColor: "#ffffff",
-                        textColor: "#1f2937"
+                        textColor: "#1f2937",
                       }}
                       showQuickActions={true}
                     />

@@ -1,49 +1,52 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 export function AccessibilityImprovements() {
   useEffect(() => {
     // Add skip link for keyboard navigation
-    const skipLink = document.createElement('a');
-    skipLink.href = '#main-content';
-    skipLink.textContent = 'Skip to main content';
-    skipLink.className = 'sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white px-4 py-2 z-50';
-    skipLink.style.transform = 'translateY(-100%)';
-    skipLink.style.transition = 'transform 0.3s';
-    
-    skipLink.addEventListener('focus', () => {
-      skipLink.style.transform = 'translateY(0)';
+    const skipLink = document.createElement("a");
+    skipLink.href = "#main-content";
+    skipLink.textContent = "Skip to main content";
+    skipLink.className =
+      "sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white px-4 py-2 z-50";
+    skipLink.style.transform = "translateY(-100%)";
+    skipLink.style.transition = "transform 0.3s";
+
+    skipLink.addEventListener("focus", () => {
+      skipLink.style.transform = "translateY(0)";
     });
-    
-    skipLink.addEventListener('blur', () => {
-      skipLink.style.transform = 'translateY(-100%)';
+
+    skipLink.addEventListener("blur", () => {
+      skipLink.style.transform = "translateY(-100%)";
     });
-    
+
     document.body.insertBefore(skipLink, document.body.firstChild);
-    
+
     // Add keyboard navigation improvements
     const handleKeyDown = (e: KeyboardEvent) => {
       // Escape key to close modals/dropdowns
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         const openModals = document.querySelectorAll('[role="dialog"]');
-        openModals.forEach(modal => {
-          const closeButton = modal.querySelector('[aria-label="Close"]') as HTMLElement;
+        openModals.forEach((modal) => {
+          const closeButton = modal.querySelector(
+            '[aria-label="Close"]',
+          ) as HTMLElement;
           if (closeButton) {
             closeButton.click();
           }
         });
       }
     };
-    
-    document.addEventListener('keydown', handleKeyDown);
-    
+
+    document.addEventListener("keydown", handleKeyDown);
+
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("keydown", handleKeyDown);
       if (document.body.contains(skipLink)) {
         document.body.removeChild(skipLink);
       }
     };
   }, []);
-  
+
   return null; // This component only adds functionality, no UI
 }
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export function LayoutFixes() {
   const [viewport, setViewport] = useState({ width: 0, height: 0 });
@@ -16,33 +16,36 @@ export function LayoutFixes() {
     updateViewport();
 
     // Listen for resize events
-    window.addEventListener('resize', updateViewport);
-    window.addEventListener('orientationchange', updateViewport);
+    window.addEventListener("resize", updateViewport);
+    window.addEventListener("orientationchange", updateViewport);
 
     // Fix iOS viewport height issue
     const fixIOSViewport = () => {
       const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
     };
 
     fixIOSViewport();
-    window.addEventListener('resize', fixIOSViewport);
+    window.addEventListener("resize", fixIOSViewport);
 
     // Prevent horizontal scrolling on mobile
     const preventHorizontalScroll = () => {
       const body = document.body;
       const html = document.documentElement;
-      
+
       // Check for horizontal overflow
-      if (body.scrollWidth > window.innerWidth || html.scrollWidth > window.innerWidth) {
-        console.warn('Horizontal overflow detected - checking elements...');
-        
+      if (
+        body.scrollWidth > window.innerWidth ||
+        html.scrollWidth > window.innerWidth
+      ) {
+        console.warn("Horizontal overflow detected - checking elements...");
+
         // Find elements causing overflow
-        const allElements = document.querySelectorAll('*');
+        const allElements = document.querySelectorAll("*");
         allElements.forEach((element) => {
           const rect = element.getBoundingClientRect();
           if (rect.right > window.innerWidth) {
-            console.warn('Element causing overflow:', element);
+            console.warn("Element causing overflow:", element);
           }
         });
       }
@@ -52,9 +55,9 @@ export function LayoutFixes() {
     setTimeout(preventHorizontalScroll, 1000);
 
     return () => {
-      window.removeEventListener('resize', updateViewport);
-      window.removeEventListener('orientationchange', updateViewport);
-      window.removeEventListener('resize', fixIOSViewport);
+      window.removeEventListener("resize", updateViewport);
+      window.removeEventListener("orientationchange", updateViewport);
+      window.removeEventListener("resize", fixIOSViewport);
     };
   }, []);
 
@@ -197,9 +200,9 @@ export function LayoutFixes() {
           scroll-anchoring: none;
         }
       `}</style>
-      
+
       {/* Development viewport info */}
-      {process.env.NODE_ENV === 'development' && (
+      {process.env.NODE_ENV === "development" && (
         <div className="fixed top-2 left-2 bg-black text-white text-xs px-2 py-1 rounded z-50 opacity-50">
           {viewport.width} × {viewport.height}
         </div>
