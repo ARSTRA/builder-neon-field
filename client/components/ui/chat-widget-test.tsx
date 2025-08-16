@@ -14,7 +14,6 @@ import { Input } from "@/components/ui/input";
 export function ChatWidgetTest() {
   const [testConfig, setTestConfig] = useState({
     showQuickActions: true,
-    showSettings: false,
     position: "bottom-right" as const,
     theme: {
       primaryColor: "#2563eb",
