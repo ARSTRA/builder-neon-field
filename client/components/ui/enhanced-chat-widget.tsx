@@ -191,15 +191,15 @@ export function EnhancedChatWidget({
         
         <Button
           onClick={() => setIsOpen(true)}
-          className="h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 animate-bounce"
-          style={{ 
+          className="h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          style={{
             backgroundColor: currentConfig.theme?.primaryColor || '#2563eb',
             color: currentConfig.theme?.textColor || '#ffffff'
           }}
         >
           <MessageCircle className="h-6 w-6" />
         </Button>
-        <div className={`absolute -top-2 -left-2 w-4 h-4 border-2 border-white rounded-full animate-pulse ${isOnline ? 'bg-green-500' : 'bg-red-500'}`}></div>
+        <div className={`absolute -top-2 -left-2 w-4 h-4 border-2 border-white rounded-full ${isOnline ? 'bg-green-500' : 'bg-red-500'}`}></div>
         <div className="absolute -top-8 right-0 bg-gray-800 text-white text-xs py-1 px-2 rounded whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
           {isOnline ? 'Online - Chat with us!' : 'Offline - Leave a message'}
         </div>
