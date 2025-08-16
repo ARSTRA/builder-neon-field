@@ -339,10 +339,10 @@ export default function About() {
                       <Card className="border-0 shadow-xl bg-white">
                         <CardContent className="p-8">
                           <div className="flex items-center mb-4">
-                            <div className="p-2 bg-royal-100 rounded-lg mr-4">
+                            <div className="p-2 bg-shipblue-100 rounded-lg mr-4">
                               {milestone.icon}
                             </div>
-                            <Badge className="bg-gradient-to-r from-royal-600 to-orange-500 text-white">
+                            <Badge className="bg-gradient-to-r from-shipblue-600 to-orange-500 text-white">
                               {milestone.year}
                             </Badge>
                           </div>
