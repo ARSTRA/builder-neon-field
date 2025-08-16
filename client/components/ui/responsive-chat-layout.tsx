@@ -154,7 +154,7 @@ export function ResponsiveChatLayout({
         
         <ModernChatWidget
           className="chat-widget"
-          position={screenWidth < 480 ? "bottom-left" : "bottom-right"}
+          position="bottom-right"
           theme={getMobileTheme()}
           showQuickActions={showQuickActions}
           showSettings={showSettings}
