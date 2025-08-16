@@ -242,13 +242,14 @@ export function ModernChatWidget({
   };
 
   const getPositionClasses = () => {
+    // Always position on the right side as requested
     switch (position) {
-      case "bottom-left":
-        return "bottom-6 left-6";
       case "top-right":
         return "top-6 right-6";
       case "top-left":
-        return "top-6 left-6";
+        return "top-6 right-6"; // Force right side
+      case "bottom-left":
+        return "bottom-6 right-6"; // Force right side
       default:
         return "bottom-6 right-6";
     }
