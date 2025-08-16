@@ -301,6 +301,7 @@ export default function App() {
               <Route path="/test/chat-right-side" element={<ChatRightSideTest />} />
               <Route path="/test/chat-extreme-right" element={<ChatExtremeRightTest />} />
               <Route path="/test/chat-only" element={<ChatOnlyTest />} />
+              <Route path="/test/admin-integration" element={<AdminIntegrationTest />} />
 
               {/* 404 page */}
               <Route
