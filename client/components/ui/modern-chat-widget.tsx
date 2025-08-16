@@ -264,8 +264,7 @@ export function ModernChatWidget({
               <Button
                 onClick={() => setIsOpen(true)}
                 className={cn(
-                  "relative h-16 w-16 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 group",
-                  "animate-pulse hover:animate-none"
+                  "relative h-16 w-16 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 group"
                 )}
                 style={{
                   background: `linear-gradient(135deg, ${theme.primaryColor}, ${theme.secondaryColor})`,
@@ -273,17 +272,17 @@ export function ModernChatWidget({
                 }}
               >
                 <MessageCircle className="h-7 w-7 transition-transform group-hover:scale-110" />
-                
+
                 {/* Unread count badge */}
                 {unreadCount > 0 && (
                   <Badge className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-red-500 text-white border-2 border-white text-xs flex items-center justify-center">
                     {unreadCount > 9 ? "9+" : unreadCount}
                   </Badge>
                 )}
-                
+
                 {/* Online indicator */}
                 <div className="absolute -bottom-1 -right-1 h-5 w-5 bg-green-500 rounded-full border-2 border-white">
-                  <div className="h-full w-full bg-green-500 rounded-full animate-ping opacity-75"></div>
+                  <div className="h-full w-full bg-green-500 rounded-full opacity-100"></div>
                 </div>
               </Button>
             </TooltipTrigger>
