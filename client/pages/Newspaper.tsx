@@ -278,51 +278,105 @@ export default function Newspaper() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Header Section */}
-      <section className="relative bg-gradient-to-r from-royal-600 via-royal-700 to-orange-600 text-white py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6169641/pexels-photo-6169641.jpeg')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-royal-600/90 via-royal-700/85 to-orange-600/90"></div>
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* Header Section - Enhanced with Journalism Theme */}
+      <section className="relative bg-gradient-to-r from-slate-800 via-gray-800 to-slate-900 text-white py-24 lg:py-32 overflow-hidden">
+        {/* Professional journalism background */}
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/17604729/pexels-photo-17604729.jpeg')] bg-cover bg-center opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-royal-600/95 via-slate-800/90 to-orange-600/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40"></div>
+
+        {/* Newspaper texture overlay */}
+        <div className={"absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.03\"%3E%3Cpath d=\"M20 20c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8zm0-20c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8zm20 0c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8zm0 20c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"}></div>
 
         <div className="relative container mx-auto px-4 lg:px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center justify-center mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
-                <NewspaperIcon className="h-16 w-16 text-orange-400" />
+            {/* Enhanced Header Icon */}
+            <div className="flex items-center justify-center mb-12">
+              <div className="relative">
+                <div className="bg-gradient-to-br from-orange-500/20 to-royal-600/20 backdrop-blur-md rounded-3xl p-6 border border-white/10 shadow-2xl">
+                  <NewspaperIcon className="h-20 w-20 text-orange-400" />
+                </div>
+                {/* Floating elements */}
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-orange-400 rounded-full animate-ping"></div>
+                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-royal-500 rounded-full animate-pulse"></div>
               </div>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold text-center mb-6 animate-fade-in">
-              GlobalTrack <span className="text-orange-400">Times</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-center text-gray-200 mb-8 max-w-4xl mx-auto animate-fade-in-delay">
-              Your trusted source for the latest news, innovations, and insights
-              from the world of global logistics and supply chain excellence
-            </p>
+            {/* Main Title with enhanced typography */}
+            <div className="text-center mb-10">
+              <h1 className="text-6xl lg:text-8xl font-bold mb-4 animate-fade-in">
+                <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+                  GlobalTrack
+                </span>
+                <br className="lg:hidden" />
+                <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-yellow-400 bg-clip-text text-transparent ml-4 lg:ml-0">
+                  Times
+                </span>
+              </h1>
 
-            {/* Company Stats */}
-            <div className="grid md:grid-cols-4 gap-6 mb-8 animate-slide-up">
+              {/* Newspaper tagline */}
+              <div className="flex items-center justify-center mb-6">
+                <div className="h-px bg-gradient-to-r from-transparent via-orange-400 to-transparent w-24"></div>
+                <span className="mx-6 text-orange-400 font-semibold tracking-widest text-sm uppercase">
+                  Digital Edition
+                </span>
+                <div className="h-px bg-gradient-to-r from-transparent via-orange-400 to-transparent w-24"></div>
+              </div>
+            </div>
+
+            {/* Enhanced Description */}
+            <div className="text-center mb-12">
+              <p className="text-2xl lg:text-3xl text-gray-100 mb-6 max-w-5xl mx-auto leading-relaxed animate-fade-in-delay font-light">
+                Your premier digital publication for
+                <span className="text-orange-400 font-semibold"> breaking news</span>,
+                <span className="text-royal-300 font-semibold"> industry insights</span>, and
+                <span className="text-cyan-400 font-semibold"> innovative solutions</span>
+                <br className="hidden lg:block" />
+                shaping the future of global logistics and supply chain excellence
+              </p>
+
+              {/* News categories preview */}
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                {["Breaking News", "Industry Analysis", "Tech Innovation", "Global Trade"].map((category, index) => (
+                  <Badge
+                    key={category}
+                    className="bg-white/10 text-white border-white/20 px-4 py-2 text-sm hover:bg-white/20 transition-all duration-300"
+                    style={{animationDelay: `${index * 0.1}s`}}
+                  >
+                    {category}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Enhanced Company Stats with newspaper theme */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-12 animate-slide-up">
               {companyStats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"
+                  className="bg-white/5 backdrop-blur-md rounded-2xl p-6 text-center border border-white/10 hover:bg-white/10 transition-all duration-300 group"
                 >
-                  <div className={`${stat.color} mb-4 flex justify-center`}>
+                  <div className={`${stat.color} mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300`}>
                     {stat.icon}
                   </div>
-                  <div className="text-3xl font-bold text-orange-400 mb-1">
+                  <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-gray-200">{stat.label}</div>
+                  <div className="text-sm text-gray-300 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
 
+            {/* Publication info */}
             <div className="text-center">
-              <Badge className="bg-white/20 text-white border-white/30 px-4 py-2">
-                <Calendar className="h-4 w-4 mr-2" />
-                Updated Daily • December 2024 Edition
-              </Badge>
+              <div className="inline-flex items-center bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-md text-white border border-white/20 px-6 py-3 rounded-full shadow-lg">
+                <Calendar className="h-5 w-5 mr-3 text-orange-400" />
+                <span className="font-semibold">Updated Daily</span>
+                <span className="mx-3 text-white/60">•</span>
+                <span className="text-orange-400 font-bold">December 2024 Edition</span>
+                <span className="mx-3 text-white/60">•</span>
+                <span className="text-cyan-400 font-medium">🌐 Worldwide Coverage</span>
+              </div>
             </div>
           </div>
         </div>
