@@ -191,8 +191,8 @@ export default function AdminLogin() {
                           Super Admin
                         </div>
                         <div className="text-blue-700">
-                          <div>Email: admin@globaltrack.com</div>
-                          <div>Password: GT2024@Admin!</div>
+                          <div>Email: admin@shipnexa.it</div>
+                          <div>Password: SN2024@Admin!</div>
                         </div>
                       </div>
                       <div className="bg-white rounded p-3 border border-blue-100">
@@ -200,8 +200,8 @@ export default function AdminLogin() {
                           Operations Manager
                         </div>
                         <div className="text-blue-700">
-                          <div>Email: manager@globaltrack.com</div>
-                          <div>Password: GT2024@Manager!</div>
+                          <div>Email: manager@shipnexa.it</div>
+                          <div>Password: SN2024@Manager!</div>
                         </div>
                       </div>
                       <div className="bg-white rounded p-3 border border-blue-100">
@@ -209,8 +209,8 @@ export default function AdminLogin() {
                           Support Admin
                         </div>
                         <div className="text-blue-700">
-                          <div>Email: support@globaltrack.com</div>
-                          <div>Password: GT2024@Support!</div>
+                          <div>Email: support@shipnexa.it</div>
+                          <div>Password: SN2024@Support!</div>
                         </div>
                       </div>
                     </div>
