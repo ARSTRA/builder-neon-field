@@ -42,8 +42,8 @@ export default function AdminSetup() {
           </Link>
         </div>
 
-        {/* Admin Credentials Info */}
-        <AdminCredentialsInfo />
+        {/* Admin Access Info */}
+        <AdminAccessInfo />
 
         {/* Footer */}
         <div className="text-center mt-8 text-sm text-gray-500">
