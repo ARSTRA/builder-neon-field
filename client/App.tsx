@@ -35,6 +35,7 @@ import { ChatWidgetTest } from "./components/ui/chat-widget-test";
 import { ChatPositionTest } from "./components/ui/chat-position-test";
 import { ChatRightSideTest } from "./components/ui/chat-right-side-test";
 import { ChatExtremeRightTest } from "./components/ui/chat-extreme-right-test";
+import { ChatOnlyTest } from "./components/ui/chat-only-test";
 
 const queryClient = new QueryClient();
 
