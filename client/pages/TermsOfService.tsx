@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import {
   FileText,
@@ -30,6 +31,7 @@ import { Separator } from "@/components/ui/separator";
 
 export default function TermsOfService() {
   const [activeSection, setActiveSection] = useState("overview");
+  const { toast } = useToast();
 
   const sections = [
     { id: "overview", title: "Overview", icon: <FileText className="h-4 w-4" /> },
@@ -597,8 +599,13 @@ export default function TermsOfService() {
                 onClick={() => {
                   // Store acceptance and redirect to services or dashboard
                   localStorage.setItem('termsAccepted', new Date().toISOString());
-                  alert('Terms of Service accepted! Redirecting to services...');
-                  window.location.href = '/services';
+                  toast({
+                    title: "Terms Accepted",
+                    description: "Terms of Service accepted successfully. Redirecting to services...",
+                  });
+                  setTimeout(() => {
+                    window.location.href = '/services';
+                  }, 1500);
                 }}
               >
                 Accept Terms & Continue
@@ -614,8 +621,11 @@ export default function TermsOfService() {
                   link.href = 'data:application/pdf;base64,';
                   link.download = 'ShipNexa-Terms-of-Service.pdf';
                   link.click();
-                  // Show success message
-                  alert('Terms of Service PDF download initiated!');
+                  // Show success message with toast
+                  toast({
+                    title: "Terms of Service Downloaded",
+                    description: "Your PDF has been downloaded successfully.",
+                  });
                 }}
               >
                 <Download className="mr-2 h-5 w-5" />
