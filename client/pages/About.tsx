@@ -522,12 +522,12 @@ export default function About() {
                 <p className="text-gray-600">+1 (555) 123-4567</p>
               </Card>
               <Card className="p-6 hover:shadow-lg transition-shadow border-0">
-                <Mail className="h-8 w-8 text-royal-600 mx-auto mb-4" />
+                <Mail className="h-8 w-8 text-shipblue-600 mx-auto mb-4" />
                 <h3 className="font-semibold text-gray-800 mb-2">Email Us</h3>
                 <p className="text-gray-600">info@globaltrack.com</p>
               </Card>
               <Card className="p-6 hover:shadow-lg transition-shadow border-0">
-                <Calendar className="h-8 w-8 text-royal-600 mx-auto mb-4" />
+                <Calendar className="h-8 w-8 text-shipblue-600 mx-auto mb-4" />
                 <h3 className="font-semibold text-gray-800 mb-2">
                   Schedule Meeting
                 </h3>
@@ -537,7 +537,7 @@ export default function About() {
 
             <Button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-gradient-to-r from-royal-600 to-orange-500 hover:from-royal-700 hover:to-orange-600 text-white px-8 py-4 text-lg font-semibold"
+              className="bg-gradient-to-r from-shipblue-600 to-orange-500 hover:from-shipblue-700 hover:to-orange-600 text-white px-8 py-4 text-lg font-semibold"
             >
               Get Started Today
               <ArrowRight className="ml-2 h-5 w-5" />
