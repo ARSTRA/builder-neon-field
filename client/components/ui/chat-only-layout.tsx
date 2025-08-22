@@ -58,7 +58,7 @@ export function ChatOnlyLayout({
       <div className={cn("mobile-chat-only-container", className)}>
         <style>{`
           .mobile-chat-only-container .chat-only-widget {
-            width: ${screenWidth < 480 ? '350px' : '350px'} !important;
+            width: ${screenWidth < 480 ? '320px' : '350px'} !important;
             max-height: ${screenWidth < 600 ? '70vh' : '80vh'} !important;
           }
           
