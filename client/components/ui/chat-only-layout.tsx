@@ -34,15 +34,15 @@ export function ChatOnlyLayout({
     checkScreenSize();
 
     // Add event listener
-    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
 
     // Cleanup
-    return () => window.removeEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, [mobileBreakpoint]);
 
   const getMobileTheme = () => {
     if (!isMobile) return theme;
-    
+
     // Optimize theme for mobile
     return {
       ...theme,
@@ -58,8 +58,8 @@ export function ChatOnlyLayout({
       <div className={cn("mobile-chat-only-container", className)}>
         <style>{`
           .mobile-chat-only-container .chat-only-widget {
-            width: ${screenWidth < 480 ? '350px' : '350px'} !important;
-            max-height: ${screenWidth < 600 ? '70vh' : '80vh'} !important;
+            width: ${screenWidth < 480 ? "320px" : "350px"} !important;
+            max-height: ${screenWidth < 600 ? "70vh" : "80vh"} !important;
           }
           
           .mobile-chat-only-container .chat-only-widget[data-fullscreen="true"] {
@@ -76,7 +76,7 @@ export function ChatOnlyLayout({
           }
           
           .mobile-chat-only-container .chat-messages {
-            max-height: ${screenWidth < 600 ? '40vh' : '50vh'} !important;
+            max-height: ${screenWidth < 600 ? "40vh" : "50vh"} !important;
           }
           
           .mobile-chat-only-container .chat-input-area {
@@ -88,8 +88,8 @@ export function ChatOnlyLayout({
           }
           
           .mobile-chat-only-container .chat-floating-button {
-            height: ${screenWidth < 480 ? '56px' : '64px'} !important;
-            width: ${screenWidth < 480 ? '56px' : '64px'} !important;
+            height: ${screenWidth < 480 ? "56px" : "64px"} !important;
+            width: ${screenWidth < 480 ? "56px" : "64px"} !important;
           }
           
           /* Ensure proper touch targets for mobile */
@@ -100,7 +100,7 @@ export function ChatOnlyLayout({
           
           /* Optimize text sizes for mobile readability */
           .mobile-chat-only-container .chat-message-text {
-            font-size: ${screenWidth < 480 ? '14px' : '15px'} !important;
+            font-size: ${screenWidth < 480 ? "14px" : "15px"} !important;
             line-height: 1.5 !important;
           }
           
@@ -156,7 +156,7 @@ export function ChatOnlyLayout({
             }
           }
         `}</style>
-        
+
         <ChatOnlyWidget
           className="chat-only-widget"
           theme={getMobileTheme()}
@@ -230,7 +230,7 @@ export function ChatOnlyLayout({
           }
         }
       `}</style>
-      
+
       <ChatOnlyWidget
         className="chat-only-widget"
         theme={theme}
